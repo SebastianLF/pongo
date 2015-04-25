@@ -133,7 +133,7 @@ class TipsterController extends BaseController
     {
 
         $regles = array(
-            'nameTipsterEditInput' => 'required|max:30|unique:tipsters,name,' . $id . ',id,user_id,' . $this->currentUserId . ',deleted_at,NULL',
+            'nameTipsterEditInput' => 'required|max:30|unique:tipsters,name,' . $id . ',id,user_id,' . $this->currentUser->id . ',deleted_at,NULL',
             'indiceTipsterEditSelect' => 'required|in:3,5,10',
             'mtTipsterEditInput' => 'required|regex:/^\d+(\.\d{1,2})?$/',
             'suiviTipsterEditSelect' => 'required|in:n,b',
