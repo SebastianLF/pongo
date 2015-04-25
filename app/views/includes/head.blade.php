@@ -23,7 +23,7 @@
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/admin/pages/css/pricing-table.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/icheck/skins/all.css') }}
-
+{{ HTML::style('metronic_v3.6.2/theme/assets/admin/pages/css/login.css') }}
 <!-- END PAGE LEVEL STYLES -->
 <!-- BEGIN THEME STYLES -->
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/css/components-rounded.css') }}

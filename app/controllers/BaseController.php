@@ -7,6 +7,7 @@
 		public function __construct()
 		{
 			$this->currentUser = Auth::User();
+			$this->currentUserId = Auth::User()->id;
 			View::share(['user' => $this->currentUser]);
 
 			$this->beforeFilter(function () {
