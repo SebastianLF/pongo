@@ -36,8 +36,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN LOGIN -->
 <div class="content">
     <!-- BEGIN LOGIN FORM -->
-    <form class="login-form" action="index.html" method="post">
-        <h3 class="form-title">Sign In</h3>
+    {{ Form::open(array('url' => 'auth/login', 'method' => 'post', 'class' => '')) }}
+        <h3 class="form-title">Se connecter</h3>
         <div class="alert alert-danger display-hide">
             <button class="close" data-close="alert"></button>
 			<span>
@@ -45,55 +45,38 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
         <div class="form-group">
             <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-            <label class="control-label visible-ie8 visible-ie9">Username</label>
+            <label class="control-label visible-ie8 visible-ie9">Nom</label>
             <input class="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username"/>
         </div>
         <div class="form-group">
-            <label class="control-label visible-ie8 visible-ie9">Password</label>
+            <label class="control-label visible-ie8 visible-ie9">Mot de passe</label>
             <input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password"/>
         </div>
         <div class="form-actions">
-            <button type="submit" class="btn btn-success uppercase">Login</button>
-            <label class="rememberme check">
-                <input type="checkbox" name="remember" value="1"/>Remember </label>
+            <button type="submit" class="btn btn-success uppercase">GO !</button>
+
             <a href="javascript:;" id="forget-password" class="forget-password">Forgot Password?</a>
         </div>
-        <div class="login-options">
-            <h4>Or login with</h4>
-            <ul class="social-icons">
-                <li>
-                    <a class="social-icon-color facebook" data-original-title="facebook" href="#"></a>
-                </li>
-                <li>
-                    <a class="social-icon-color twitter" data-original-title="Twitter" href="#"></a>
-                </li>
-                <li>
-                    <a class="social-icon-color googleplus" data-original-title="Goole Plus" href="#"></a>
-                </li>
-                <li>
-                    <a class="social-icon-color linkedin" data-original-title="Linkedin" href="#"></a>
-                </li>
-            </ul>
-        </div>
+
         <div class="create-account">
             <p>
-                <a href="javascript:;" id="register-btn" class="uppercase">Create an account</a>
+                <a href="javascript:;" id="register-btn" class="uppercase">Creer un compte</a>
             </p>
         </div>
-    </form>
+    {{ Form::close() }}
     <!-- END LOGIN FORM -->
     <!-- BEGIN FORGOT PASSWORD FORM -->
     <form class="forget-form" action="index.html" method="post">
-        <h3>Forget Password ?</h3>
+        <h3>Mot de passe oublié ?</h3>
         <p>
-            Enter your e-mail address below to reset your password.
+            Entrez votre email.
         </p>
         <div class="form-group">
             <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email"/>
         </div>
         <div class="form-actions">
-            <button type="button" id="back-btn" class="btn btn-default">Back</button>
-            <button type="submit" class="btn btn-success uppercase pull-right">Submit</button>
+            <button type="button" id="back-btn" class="btn btn-default">Retour</button>
+            <button type="submit" class="btn btn-success uppercase pull-right">Envoyer</button>
         </div>
     </form>
     <!-- END FORGOT PASSWORD FORM -->
