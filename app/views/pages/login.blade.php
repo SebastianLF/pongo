@@ -42,7 +42,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <div class="alert alert-danger display-hide">
             <button class="close" data-close="alert"></button>
 			<span>
-			Enter any username and password. </span>
+			Entrez un nom et un mot de passe. </span>
         </div>
         <div class="form-group">
             <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
@@ -56,8 +56,8 @@ License: You must have a valid license purchased only from themeforest(the above
         <div class="form-actions">
             <button type="submit" class="btn btn-success uppercase">Login</button>
             <label class="rememberme check">
-                <input type="checkbox" name="remember" value="1"/>Remember </label>
-            <a href="javascript:;" id="forget-password" class="forget-password">Forgot Password?</a>
+                <input type="checkbox" name="remember" value="1"/>Se rappeler </label>
+            <a href="javascript:;" id="forget-password" class="forget-password">Mot de passe oublié?</a>
         </div>
 
         <div class="create-account">
