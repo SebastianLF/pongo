@@ -1,0 +1,74 @@
+<?php $__env->startSection('contenu'); ?>
+<div class="container">
+
+		<?php  ?>
+	<div class="panel panel-default">
+
+	  <div class="panel-heading">
+	    <h3 class="panel-title"><?php echo $tipster->pivot->name; ?></h3>
+	  </div>
+	  <div class="panel-body">
+	  
+	  <?php echo $id; ?>
+	  <?php var_dump(Session::all()); ?>
+	  							<div id="msgalert" class="collapse alert alert-success"><p class="text-center"><?php echo Session::get('message'); ?></p></div>
+								<div id="msgerrors" class=" alert alert-danger">
+									 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+									<p class="text-center"><?php echo $errors->first('namemodifinput'); ?></p>
+									<p class="text-center"><?php echo $errors->first('unitnumbermodifinput'); ?></p>
+									<p class="text-center"><?php echo $errors->first('staketypemodifselect'); ?></p>
+									<p class="text-center"><?php echo $errors->first('followtypemodifselect'); ?></p>
+								</div>
+	    <?php echo Form::open(array('url' => 'tipster/'.$id, 'method' => 'put', 'id' => 'tipsterform-edit', 'class' => 'form-horizontal', 'role' => 'form')); ?>
+
+									    <div class="namemodifcontainer form-group">
+										    <label class="col-sm-2 control-label">nom :</label>
+										    
+										    <div class="col-sm-2">
+										      	<input id="namemodifinput" type="text" name="namemodifinput" class="form-control" value="<?php echo $tipster->pivot->name; ?>">
+										    </div>
+									    </div>
+									    <div class="stakeindicatormodifcontainer form-group">
+											<label class="col-sm-2 control-label">Indice :</label>
+											<div class="col-sm-2">
+												<select id="staketypemodifselect" name="staketypemodifselect" class="form-control"  >
+													<option selected="selected" value="<?php echo $tipster->pivot->stakeindicator; ?>"><?php echo $tipster->pivot->stakeindicator; ?></option >
+												    <option >3</option>
+												    <option>5</option>
+												    <option>10</option>
+												    <option>15</option>
+												    <option>100</option>
+												</select>
+											</div>
+										</div>
+										<div class="stakeamountmodifcontainer form-group">
+											<label class="col-sm-2 control-label">1 unité =</label>
+											<div class="col-sm-2">
+										      	<input id="unitnumbermodifinput" name="unitnumbermodifinput" class="form-control"  placeholder="0.00" value="<?php echo $tipster->pivot->stakeamount; ?>">
+										   	</div>
+									   	</div>
+
+									 	
+										<div class="followmodifcontainer form-group">
+											<label class="col-sm-2 control-label">suivi :</label>
+										    <div class="col-sm-2">
+												<select id="followtypemodifselect" name="followtypemodifselect" class="form-control" >
+													<option selected="selected" value="<?php echo $tipster->pivot->followtype; ?>"><?php echo $tipster->pivot->followtype; ?></option >
+												    <option>Gratuit</option>
+												    <option>Payant</option>
+												    <option>Blanc</option>
+												</select>
+											</div>
+										</div>
+								  	<input id="tipsterformmodifinput" value="Enregistrer" type="submit" class="btn btn-success center-block"/>
+								<?php echo Form::close(); ?>
+
+	  </div>
+	</div>
+	<a href="<?php echo url('config'); ?>" class="btn btn-default">
+		<span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
+	</a>
+</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('templatenav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

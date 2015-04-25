@@ -1,0 +1,38 @@
+<div class="panel panel-default addtransactioncontainer">
+			  	<div class="panel-heading">Depot/Retrait</div>
+			  	<div class="panel-body">
+			  		<div class="panel panel-default">
+					  <div class="panel-body">
+					    <button class="btn btn-default"><span class="glyphicon glyphicon-plus"></span>ajouter un depot/retrait</button>
+					  </div>
+					</div>
+			  		
+			    	<table class="table">
+			    		<thead>
+			    			<tr>
+			    				<th>Date</th>
+			    				<th>Bookmaker</th>
+			    				<th>Compte</th>
+			    				<th>Somme</th>
+			    				<th>Type</th>
+			    			</tr>
+			    		</thead>
+			    		<tbody>
+			    			<tr>
+			    				<td>22/01/05</td>
+			    				<td><img src="img/parionsweb_logo.png" width="150px"></td>
+			    				<td>U58</td>
+			    				<td> - 100</td>
+			    				<td>retrait</td>
+			    			</tr>
+			    			<tr>
+			    				<td>22/01/05</td>
+			    				<td><img src="img/bet365_logo.png" width="150px"></td>
+			    				<td>pantoufle</td>
+			    				<td> + 100</td>
+			    				<td>depot</td>
+			    			</tr>
+			    		</tbody>
+			    	</table>
+			  	</div>
+			</div>

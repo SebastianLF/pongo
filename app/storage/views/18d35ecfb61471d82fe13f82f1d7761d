@@ -1,0 +1,74 @@
+<?php $__env->startSection('contenu'); ?>
+	<div class="avatar">
+						<img src="img/body.jpg" max-height="45px" width="65px" class="box">
+					</div>
+		<nav class="navbar navbar-default" role="navigation">
+		
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+      	
+        
+      </a>
+    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    
+		      <ul class="nav navbar-nav">
+		        <li ><a href="<?php echo url('dashboard'); ?>">Dashboard</a></li>
+		        <li><a href="#">Statistiques</a></li>
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+		          <ul class="dropdown-menu" role="menu">
+		            <li><a href="#">Action</a></li>
+		            <li><a href="#">Another action</a></li>
+		            <li><a href="#">Something else here</a></li>
+		            <li class="divider"></li>
+		            <li><a href="#">Separated link</a></li>
+		            <li class="divider"></li>
+		            <li><a href="#">One more separated link</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		      
+		      
+		   
+		
+		</nav>
+		
+		<header>
+			
+			<div class="profilheader ">
+				<div class="container-fluid">
+					
+					<div class="row">
+						<div class="col-md-4 profilname pull-left margl100"><span class="pseudo green">edofthedead</span> </div>
+						
+						
+					</div>
+					<div class="row">
+						<div class="col-md-4 pull-left datecontainer margl100"><span class="date grey">Mercredi 23 Avril  </span></div>
+						<div class="col-md-2 alignright  pull-right">
+							<div class="soldecontainer">
+								<span class="etiquette ">solde: </span><span class="glyphicon glyphicon-plus green" aria-hidden="true"></span><span class="number green">2583,00</span><span class="glyphicon glyphicon-euro green" aria-hidden="true"></span>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						
+						<div class="col-md-4 pull-left margl100"><span class="flag">15:30</span><span class="pays">PM</span></div>
+						
+					</div>
+				</div>
+			</div>
+		</header>
+		<section>
+		 <?php echo $__env->make('bet.lastbets', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		 <?php echo $__env->make('bet.addbet', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		 <?php echo $__env->make('dashboard.bookmakers', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+			
+		</section>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('template', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,54 @@
+
+        <div class="table-scrollable table-scrollable-borderless">
+            <table id="tipsterstable" class="table table-hover table-light">
+                <thead>
+                <tr class="uppercase">
+                    <th colspan="">Nom</th>
+                    <th>Suivi</th>
+                    <th>Indice</th>
+                    <th>Montant par indice</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach($tipsters as $tipster): ?>
+                    <tr>
+                        <td class="idtipstertd hidden"><?php echo $tipster->id; ?></td>
+                        <td class="name"><?php echo $tipster->name; ?></td>
+                        <td>
+
+                            <?php if($tipster->followtype == 'n'): ?>
+                                <span class=""><?php echo 'normal'; ?></span>
+                            <?php else: ?>
+                                <span class=""><?php echo 'à blanc'; ?></span>
+                            <?php endif; ?>
+                        </td>
+                        <td><?php echo $tipster->indice_unite; ?></td>
+                        <td class="">
+                            <span class="bold theme-font"><?php echo number_format($tipster->montant_par_unite, 2, '.', ',' ); ?></span>
+                            <span class="bold theme-font"><?php echo $user->devise; ?></span>
+                        </td>
+
+                        <td>
+                            <div class="action-tipster-btn ">
+                                <button type="button" class="tipsterEditButton btn btn-sm bg-yellow-saffron"
+                                        data-target="#tipsterEditModal" data-toggle="modal" data-id="<?php echo $tipster->id; ?>"
+                                        data-name="<?php echo $tipster->name; ?>" data-indice="<?php echo $tipster->indice_unite; ?>"
+                                        data-mt="<?php echo $tipster->montant_par_unite; ?>" data-suivi="<?php echo $tipster->followtype; ?>">
+
+                                    <i
+                                            class="fa fa-pencil-square-o fa-2x"></i></button>
+                                <button type="button" class="tipsterDeleteButton btn btn-sm red"><i
+                                            class="fa fa-trash-o fa-2x"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+        <?php echo $tipsters->links(); ?>
+
+
+
+

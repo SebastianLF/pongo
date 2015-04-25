@@ -1,0 +1,121 @@
+  <header class="">
+  <div class="container-fluid ">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="media">
+          <a class="pull-left" href="#">
+            <img class="img-circle media-object" src="<?php echo asset('img/ec.jpg'); ?>" alt="avatar">
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading"></h4>
+            <p></p>
+          </div>
+        </div>
+      
+        
+      </div>
+      
+      <div class="rectanglegreen pull-right">
+        <div class="rectangleprimary">
+          <div class="block-inline">
+            <p class="titlelight">BANKROLL ACTUELLE</p>
+            <p class="bankrollamount">€23,455.01</p>
+          </div>
+          <div class="graphbankrollcontainer block-inline">
+            <div class="graphbankroll">
+              <div class="subgraph1 block-inline"></div>
+              <div class="subgraph2 block-inline"></div>
+              <div class="subgraph3 block-inline"></div>
+              <div class="subgraph4 block-inline"></div>
+              <div class="subgraph5 block-inline"></div>
+              <div class="subgraph6 block-inline"></div>
+              <div class="subgraph7 block-inline"></div>
+              <div class="subgraph8 block-inline"></div>
+              <div class="subgraph9 block-inline"></div>
+              <div class="subgraph10 block-inline"></div>
+              <div class="subgraph11 block-inline"></div>
+              <div class="subgraph12 block-inline"></div>
+            </div>
+          </div>
+        </div>
+        <div class="subrectangle">
+          <p class="subtexte">40% ROI</p>
+        </div>
+      </div>
+      <div class="rectanglered pull-right">
+        <div class="rectangleprimary">
+          <div class="block-inline">
+            <p class="titlelight">PROFIT TOTAL ACTUEL</p>
+            <p class="bankrollamount">€110,455.01</p>
+          </div>
+          <div class="graphbankrollcontainer block-inline">
+            <div class="graphbankroll">
+              <div class="subgraph1 block-inline"></div>
+              <div class="subgraph2 block-inline"></div>
+              <div class="subgraph3 block-inline"></div>
+              <div class="subgraph4 block-inline"></div>
+              <div class="subgraph5 block-inline"></div>
+              <div class="subgraph6 block-inline"></div>
+              <div class="subgraph7 block-inline"></div>
+              <div class="subgraph8 block-inline"></div>
+              <div class="subgraph9 block-inline"></div>
+              <div class="subgraph10 block-inline"></div>
+              <div class="subgraph11 block-inline"></div>
+              <div class="subgraph12 block-inline"></div>
+            </div>
+          </div>
+        </div>
+        <div class="subrectanglered">
+          <p class="subtexte"></p>
+        </div>
+      </div>
+      <!-- <div class="rectanglemonth pull-right">
+        <div class="rectangleprimary">
+          <div class="block-inline">
+            <p class="titlelight">OCTOBRE</p>
+            <p class="bankrollamount">€50</p>
+          </div>
+          
+        </div>
+        <div class="subrectanglemonth">
+          <p class="subtexte"></p>
+        </div>-->
+      </div>
+
+    </div>
+  </div>  
+</header>
+
+  <nav class="navbar navbar-inverse navbar-static-top " role="navigation">
+    <div class="container-fluid ">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header ">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+       
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav ">
+
+          <li class="active"><a href="<?php echo url('dashboard'); ?>"><span class="glyphicon glyphicon-list-alt"></span>Dashboard</a></li>
+          <li class=""><a href="<?php echo url('stats'); ?>"><span class="glyphicon glyphicon-signal"></span>Statistiques</a></li>
+          <li class=""><a href="<?php echo url('config'); ?>"><span class="glyphicon glyphicon-cog"></span>Configuration</a></li>
+          <li class=""><a href="<?php echo url('account'); ?>"><span class="glyphicon glyphicon-user"></span>Compte</a></li>
+          <li class=""><a href="<?php echo url('test'); ?>"><span class="glyphicon glyphicon-user"></span>Test</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="pull-right"><a href="<?php echo url('auth/logout'); ?>"><span class="glyphicon glyphicon-off"></span>Se deconnecter</a></li>
+        </ul>
+        
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+<?php $__env->startSection('contenu'); ?>
+
+<?php echo $__env->make('template', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

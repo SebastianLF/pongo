@@ -1,0 +1,117 @@
+<table id="parislongtermetable" class=" table table-condensed" style="border-collapse:collapse;">
+    <thead>
+    <tr>
+        <th id="count" class="hidden "><?php echo $count_paris_longterme; ?></th>
+        <th></th>
+        <th>N°</th>
+        <th>date ajout</th>
+        <th>type</th>
+        <th>suivi</th>
+        <th>Sport</th>
+        <th>Compet.</th>
+        <th>Rencontre</th>
+        <th>Pari</th>
+        <th>Cote</th>
+        <th>Tipster</th>
+        <th>Bookmaker</th>
+        <th>Mise</th>
+        <th>Status</th>
+        <th>Retour</th>
+        <th>Actionqsdqsd</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach($parislongterme as $pari): ?>
+        <tr data-toggle="collapse" data-target="<?php echo '.row'.$pari->numero_pari; ?>"
+            class="mainrow accordion-toggle parisencours-accordeon">
+            <td class="hidden id"><?php echo $pari->id; ?></td>
+            <td class="subbetclick"><span data-toggle="collapse" data-target="<?php echo '.row'.$pari->numero_pari; ?>"
+                                          class="glyphicon glyphicon-chevron-right"></span></td>
+            <td><a href="javascript:;" class="primary-link">#<?php echo $pari->numero_pari; ?></a></td>
+            <td><?php echo $pari->created_at; ?></td>
+            <td>
+                <span class="label label-sm label-success label-mini"><?php echo $pari->type_profil == 's' ? 'simple' : 'combiné'; ?></span>
+            </td>
+            <td>
+                <span class="label label-sm label-success label-mini"><?php echo $pari->followtype == 'n' ? 'normal' : 'à blanc'; ?></span>
+            </td>
+            <td>
+                <span data-toggle="tooltip" title="<?php echo $pari->selections[0]->sport->name; ?>"><img width="25px"
+                                                                                               src="<?php echo $pari->selections[0]->sport->logo ? asset('img/logos/sports').'/'.$pari->selections[0]->sport->logo : ''; ?>"
+                                                                                               alt=""/><?php echo $pari->selections[0]->sport->logo ? '' : $pari->selections[0]->sport->name; ?></span>
+            </td>
+            <td>
+                <span data-toggle="tooltip" title="<?php echo $pari->selections[0]->competition->name; ?>"><img width="30px"
+                                                                                                     src="<?php echo $pari->selections[0]->competition->logo ? asset('img/logos/sports').'/'.$pari->selections[0]->competition->logo : ''; ?>"
+                                                                                                     alt=""/><?php echo e($pari->selections[0]->competition->logo ? '' : $pari->selections[0]->competition->name); ?></span>
+            </td>
+            <td>
+                <span data-toggle="tooltip" title="<?php echo $pari->selections[0]->equipe1->name; ?>"><img width="25px"
+                                                                                                 src="<?php echo $pari->selections[0]->equipe1->logo ? asset('img/logos/sports').'/'.$pari->selections[0]->equipe1->logo : ''; ?>"
+                                                                                                 alt=""/><?php echo $pari->selections[0]->equipe1->logo ? '':$pari->selections[0]->equipe1->name; ?></span>
+                <span data-toggle="tooltip" title="<?php echo $pari->selections[0]->equipe2->name; ?>"><img width="25px"
+                                                                                                 src="<?php echo $pari->selections[0]->equipe2->logo ? asset('img/logos/sports').'/'.$pari->selections[0]->equipe2->logo : ''; ?>"
+                                                                                                 alt=""/><?php echo $pari->selections[0]->equipe2->logo ? '':$pari->selections[0]->equipe2->name; ?></span>
+            </td>
+            <td><?php echo $pari->selections[0]->typePari->name; ?> - <?php echo $pari->selections[0]->choix_pari; ?></td>
+            <td class="fit tdcote"><?php echo $pari->cote; ?></td>
+            <td><?php echo $pari->tipster->name; ?></td>
+            <td>
+                <span data-toggle="tooltip" title="<?php echo $pari->compte->bookmaker->nom; ?>"><img width="60px"
+                                                                                           src="<?php echo asset('img/logos/bookmakers').'/'.$pari->compte->bookmaker->logo; ?>"
+                                                                                           alt=""/></span>
+            </td>
+            <td class="tdmise bold theme-font">
+                <span class="tdsubmise bold theme-font"><?php echo e($pari->mise_totale); ?></span><?php echo e($user->devise); ?>
+
+            </td>
+
+            <td>
+                <select name="resultatDashboardInput" class="form-control input-sm">
+                    <option value="">--Selectionnez--</option>
+                    <?php foreach($types_resultat as $type): ?>
+                        <option value=""><a href="javascript:;" class="btn btn-xs"><?php echo $type; ?></a></option>
+                    <?php endforeach; ?>
+                </select>
+            </td>
+            <td class="tdretour bold"><span class="subretour"></span><?php echo e($user->devise); ?></td>
+            <td>
+                <?php echo Form::open(array('route' => 'historique.store', 'class' => 'validerform' ,'role' => 'form', )); ?>
+
+                <?php echo Form::button('<i class="fa fa-check"></i>', array('type' => 'submit', 'class' => 'boutonvalider btn btn-sm green')); ?>
+
+                <?php echo Form::close(); ?>
+
+
+                <?php echo Form::open(array('route' => 'historique.destroy', 'class' => 'supprimerform','role' => 'form')); ?>
+
+                <?php echo Form::button('<i class="fa fa-times"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red')); ?>
+
+                <?php echo Form::close(); ?>
+
+            </td>
+        </tr>
+
+        <div class="<?php echo 'accordian-body collapse row'.$pari->numero_pari; ?>">
+            <?php foreach($pari->selections as $selection): ?>
+                <tr class="<?php echo 'collapse subrow '.'row'.$pari->numero_pari; ?>">
+                    <td colspan="17">
+                        <table class="table table-hover table-light">
+                            <td><?php echo $selection->date_match; ?></td>
+                            <td><?php echo $selection->sport->name; ?></td>
+                            <td><?php echo $selection->competition->name; ?></td>
+
+                            <td><?php echo $selection->equipe1->name; ?> - <?php echo $selection->equipe2->name; ?></td>
+                            <td><?php echo $selection->typePari->name; ?> - <?php echo $selection->choix_pari; ?></td>
+                            <td><?php echo $selection->cote; ?></td>
+                        </table>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </div>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+<?php echo $parislongterme->appends(Input::except('page'))->links(); ?>
+
+

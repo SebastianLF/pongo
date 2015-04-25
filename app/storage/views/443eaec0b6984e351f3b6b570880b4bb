@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.2
+Version: 3.2.0
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]>
+<html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8"/>
+    <title>BetBoard</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
+          type="text/css">
+    <?php echo HTML::style('metronic_v3.6.2/theme/assets/global/plugins/font-awesome/css/font-awesome.min.css'); ?>
+
+    <?php echo HTML::style('metronic_v3.6.2/theme/assets/global/plugins/uniform/css/uniform.default.css'); ?>
+
+    <?php echo HTML::style('metronic_v3.6.2/theme/assets/global/plugins/bootstrap/css/bootstrap.min.css'); ?>
+
+    <?php echo HTML::style('metronic_v3.6.2/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css'); ?>
+
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <?php echo HTML::style('metronic_v3.6.2/theme/assets/global/plugins/select2/select2.css'); ?>
+
+    <?php echo HTML::style('metronic_v3.6.2/theme/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css'); ?>
+
+    <?php echo HTML::style('metronic_v3.6.2/theme/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css'); ?>
+
+    <?php echo HTML::style('metronic_v3.6.2/theme/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css'); ?>
+
+    <!-- END PAGE LEVEL STYLES -->
+    <!-- BEGIN THEME STYLES -->
+    <?php echo HTML::style('metronic_v3.6.2/theme/assets/global/css/components-rounded.css'); ?>
+
+    <?php echo HTML::style('metronic_v3.6.2/theme/assets/global/css/plugins.css'); ?>
+
+    <?php echo HTML::style('metronic_v3.6.2/theme/assets/admin/layout3/css/layout.css'); ?>
+
+    <?php echo HTML::style('metronic_v3.6.2/theme/assets/admin/layout3/css/themes/default.css'); ?>
+
+    <?php echo HTML::style('metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css'); ?>
+
+    <?php echo HTML::style('css/twitter-typeahead.css'); ?>
+
+    <!-- END THEME STYLES -->
+    <link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<!-- DOC: Apply "page-header-menu-fixed" class to set the mega menu fixed  -->
+<!-- DOC: Apply "page-header-top-fixed" class to set the top menu fixed  -->
+<body class="page-header-fixed page-container-bg-solid page-sidebar-closed-hide-logo page-header-fixed-mobile page-footer-fixed1">
+<!-- BEGIN HEADER -->
+<div class="page-header">
+    <!-- BEGIN HEADER TOP -->
+    <div class="page-header-top">
+        <div class="container-fluid">
+            <!-- BEGIN LOGO -->
+            <div class="page-logo">
+                <a href="<?php echo url('dashboard'); ?>"><img
+                            src="<?php echo asset('metronic_v3.6.2/theme/assets/admin/layout3/img/logo-default.png'); ?>"
+                            alt="logo" class="logo-default"></a>
+            </div>
+            <!-- END LOGO -->
+            <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+            <a href="javascript:;" class="menu-toggler"></a>
+            <!-- END RESPONSIVE MENU TOGGLER -->
+            <!-- BEGIN TOP NAVIGATION MENU -->
+            <div class="top-menu">
+
+                <ul class="nav navbar-nav pull-right">
+
+
+
+
+                    <!-- BEGIN USER LOGIN DROPDOWN -->
+
+                    <!-- END USER LOGIN DROPDOWN -->
+                </ul>
+            </div>
+            <!-- END TOP NAVIGATION MENU -->
+        </div>
+    </div>
+    <!-- END HEADER TOP -->
+    <!-- BEGIN HEADER MENU -->
+    <div class="page-header-menu">
+        <div class="container-fluid">
+            <!-- BEGIN HEADER SEARCH BOX -->
+            <!-- <form class="search-form" action="extra_search.html" method="GET">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="query">
+                    <span class="input-group-btn">
+                    <a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
+                    </span>
+                </div>
+            </form> -->
+            <!-- END HEADER SEARCH BOX -->
+            <!-- BEGIN MEGA MENU -->
+            <!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
+            <!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the dropdown opening on mouse hover -->
+            <div class="hor-menu ">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="<?php echo url('dashboard'); ?>">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo url('config'); ?>">Configuration</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo url('stats'); ?>">Statistiques</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- END MEGA MENU -->
+        </div>
+    </div>
+    <!-- END HEADER MENU -->
+</div>
+<!-- END HEADER -->
+<!-- BEGIN PAGE CONTAINER -->
+<div class="page-container">
+    <!-- BEGIN PAGE HEAD -->
+    <div class="page-head">
+        <div class="container-fluid">
+            <!-- BEGIN PAGE TITLE -->
+            <div class="page-title">
+                <h1>Tableau de bord </h1>
+            </div>
+            <!-- END PAGE TITLE -->
+            <div class="row pull-right">
+                <div class="pull-right">
+                    <div class="font-grey-mint font-sm">
+                        Bankroll
+                    </div>
+                    <div class="uppercase font-hg theme-font">
+                        13,760 <span class="font-lg theme-font"><?php echo $user->devise; ?></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END PAGE HEAD -->
+    <!-- BEGIN PAGE CONTENT -->
+    <div class="page-content">
+        <div class="container-fluid">
+            <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+            <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                            <h4 class="modal-title">Modal title</h4>
+                        </div>
+                        <div class="modal-body">
+                            Widget settings form goes here
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn blue">Save changes</button>
+                            <button type="button" class="btn default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+            <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+            <!-- BEGIN PAGE BREADCRUMB -->
+            <ul class="page-breadcrumb breadcrumb">
+                <li>
+                    <a href="#">Home</a><i class="fa fa-circle"></i>
+                </li>
+                <li class="active">
+                    Dashboard
+                </li>
+            </ul>
+            <!-- END PAGE BREADCRUMB -->
+            <!-- BEGIN PAGE CONTENT INNER -->
+            <div class="row">
+
+                <div class="col-md-9">
+                    <div class="portlet light">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="icon-pin font-yellow-casablanca"></i>
+                                <span class="caption-subject font-yellow-casablanca bold uppercase">liste</span>
+                            </div>
+                            <div class="tools">
+                                <a href="javascript:;" class="collapse">
+                                </a>
+                                <a href="#portlet-config" data-toggle="modal" class="config">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+
+                            <div class="tabbable-line">
+                                <ul class="nav nav-tabs ">
+                                    <li id="onglet_paris_en_cours" class="active">
+                                        <a href="#tab_15_1" data-toggle="tab">
+                                            Paris classique en cours <span class="badge badge-danger"></span></a>
+                                    </li>
+
+                                    <li id="onglet_paris_long_terme">
+                                        <a href="#tab_15_2" data-toggle="tab">
+                                            Paris long terme en cours <span class="badge badge-default"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab_15_3" data-toggle="tab">
+                                            Paris ABCD en cours <span class="badge badge-default"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab_15_4" data-toggle="tab">
+                                            Historique </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active fade in" id="tab_15_1">
+
+
+                                    </div>
+                                    <div class="tab-pane fade" id="tab_15_2">
+
+                                    </div>
+                                    <div class="tab-pane fade" id="tab_15_3">
+                                        <p>
+                                            Howdy, I'm in Section 3.
+                                        </p>
+
+                                        <p>
+                                            Duis autem vel eum iriure dolor in hendrerit in vulputate. Ut wisi enim ad
+                                            minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+                                            ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
+                                            hendrerit in vulputate velit esse molestie consequat
+                                        </p>
+
+                                        <p>
+                                            <a class="btn yellow" href="ui_tabs_accordions_navs.html#tab_15_3"
+                                               target="_blank">
+                                                Activate this tab via URL </a>
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane" id="tab_15_4">
+                                        <p>
+                                            Howdy, I'm in Section 4.
+                                        </p>
+
+                                        <p>
+                                            Duis autem vel eum iriure dolor in hendrerit in vulputate. Ut wisi enim ad
+                                            minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+                                            ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
+                                            hendrerit in vulputate velit esse molestie consequat
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="portlet light">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="icon-paper-plane font-green-sharp"></i>
+                                <span class="caption-subject font-green-sharp bold uppercase">Ajout</span>
+                            </div>
+                            <div class="tools">
+                                <a href="javascript:;" class="collapse">
+                                </a>
+                                <a href="#portlet-config" data-toggle="modal" class="config">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="tabbable-custom nav-justified">
+                                <ul class="nav nav-tabs nav-justified">
+                                    <li >
+                                        <a href="#tab_1_1_1" data-toggle="tab">
+                                            Automatique </a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="#tab_1_1_2" data-toggle="tab">
+                                            Manuel </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane " id="tab_1_1_1">
+                                        <p>
+                                            I'm in Section 1.
+                                        </p>
+
+                                        <p>
+                                            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+                                            molestie consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                                            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis
+                                            autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+                                            consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit
+                                            esse molestie consequat.
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane active" id="tab_1_1_2">
+                                        <?php echo $__env->make('bet.manual_addbet', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>;
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-3">
+                    <div id="comptes_par_bookmakers">
+
+                    </div>
+                    <div class="portlet light">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-cogs font-yellow-crusta"></i>
+                                <span class="caption-subject font-yellow-crusta bold uppercase">Tipsters</span>
+                            </div>
+                            <div class="tools">
+                                <a href="javascript:;" class="collapse">
+                                </a>
+                                <a href="#portlet-config" data-toggle="modal" class="config">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="panel-group accordion" id="accordion3">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse"
+                                               data-parent="#accordion3" href="#collapse_4_1">
+                                                Avril </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse_4_1" class="panel-collapse in">
+                                        <div class="panel-body">
+                                            <p>
+                                                Duis autem vel eum iriure dolor in hendrerit in vulputate. Ut wisi enim
+                                                ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+                                                lobortis nisl ut.
+                                            </p>
+
+                                            <p>
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                                                terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+                                                skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a class="accordion-toggle accordion-toggle-styled collapsed"
+                                               data-toggle="collapse" data-parent="#accordion3" href="#collapse_4_2">
+                                                Mars </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse_4_2" class="panel-collapse collapse">
+                                        <div class="panel-body" style="height:200px; overflow-y:auto;">
+                                            <p>
+                                                Duis autem vel eum iriure dolor in hendrerit in vulputate. Ut wisi enim
+                                                ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+                                                lobortis nisl ut.
+                                            </p>
+
+                                            <p>
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                                                terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+                                                skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                                            </p>
+
+                                            <p>
+                                                Duis autem vel eum iriure dolor in hendrerit in vulputate. Ut wisi enim
+                                                ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+                                                lobortis nisl ut.
+                                            </p>
+
+                                            <p>
+                                                <a class="btn blue" href="ui_tabs_accordions_navs.html#collapse_3_2"
+                                                   target="_blank">
+                                                    Activate this section via URL </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a class="accordion-toggle accordion-toggle-styled collapsed"
+                                               data-toggle="collapse" data-parent="#accordion3" href="#collapse_4_3">
+                                                Fevrier </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse_4_3" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p>
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                                                terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+                                                skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                                                Brunch 3 wolf moon tempor.
+                                            </p>
+
+                                            <p>
+                                                Duis autem vel eum iriure dolor in hendrerit in vulputate. Ut wisi enim
+                                                ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+                                                lobortis nisl ut.
+                                            </p>
+
+                                            <p>
+                                                <a class="btn green" href="ui_tabs_accordions_navs.html#collapse_3_3"
+                                                   target="_blank">
+                                                    Activate this section via URL </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a class="accordion-toggle accordion-toggle-styled collapsed"
+                                               data-toggle="collapse" data-parent="#accordion3" href="#collapse_4_4">
+                                                Janvier </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse_4_4" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p>
+                                                Duis autem vel eum iriure dolor in hendrerit in vulputate. Ut wisi enim
+                                                ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+                                                lobortis nisl ut.
+                                            </p>
+
+                                            <p>
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+                                                terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+                                                skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                                                Brunch 3 wolf moon tempor.
+                                            </p>
+
+                                            <p>
+                                                Duis autem vel eum iriure dolor in hendrerit in vulputate. Ut wisi enim
+                                                ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+                                                lobortis nisl ut.
+                                            </p>
+
+                                            <p>
+                                                <a class="btn red" href="ui_tabs_accordions_navs.html#collapse_4_4"
+                                                   target="_blank">
+                                                    Activate this section via URL </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- END PAGE CONTENT INNER -->
+        </div>
+    </div>
+    <!-- END PAGE CONTENT -->
+</div>
+<!-- END PAGE CONTAINER -->
+<!-- BEGIN PRE-FOOTER -->
+<div class="page-prefooter">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12 footer-block">
+                <h2>About</h2>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam dolore.
+                </p>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs12 footer-block">
+                <h2>Subscribe Email</h2>
+
+                <div class="subscribe-form">
+                    <form action="javascript:;">
+                        <div class="input-group">
+                            <input type="text" placeholder="mail@email.com" class="form-control">
+							<span class="input-group-btn">
+							<button class="btn" type="submit">Submit</button>
+							</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 footer-block">
+                <h2>Follow Us On</h2>
+                <ul class="social-icons">
+                    <li>
+                        <a href="javascript:;" data-original-title="rss" class="rss"></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-original-title="facebook" class="facebook"></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-original-title="twitter" class="twitter"></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-original-title="googleplus" class="googleplus"></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-original-title="linkedin" class="linkedin"></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-original-title="youtube" class="youtube"></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-original-title="vimeo" class="vimeo"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 footer-block">
+                <h2>Contacts</h2>
+                <address class="margin-bottom-40">
+                    Phone: 800 123 3456<br>
+                    Email: <a href="mailto:info@metronic.com">info@metronic.com</a>
+                </address>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END PRE-FOOTER -->
+<!-- BEGIN FOOTER -->
+<div class="page-footer">
+    <div class="container-fluid">
+        2014 &copy; Metronic. All Rights Reserved.
+    </div>
+</div>
+<div class="scroll-to-top">
+    <i class="icon-arrow-up"></i>
+</div>
+<!-- END FOOTER -->
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="<?php echo asset('metronic_v3.6.2/theme/assets/global/plugins/respond.min.js'); ?>"></script>
+<script src="<?php echo asset('metronic_v3.6.2/theme/assets/global/plugins/excanvas.min.js'); ?>"></script>
+<![endif]-->
+<script src="<?php echo asset('metronic_v3.6.2/theme/assets/global/plugins/jquery.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('metronic_v3.6.2/theme/assets/global/plugins/jquery-migrate.min.js'); ?>"
+        type="text/javascript"></script>
+<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="<?php echo asset('metronic_v3.6.2/theme/assets/global/plugins/jquery-ui/jquery-ui.min.js'); ?>"
+        type="text/javascript"></script>
+<script src="<?php echo asset('metronic_v3.6.2/theme/assets/global/plugins/bootstrap/js/bootstrap.min.js'); ?>"
+        type="text/javascript"></script>
+<script src="<?php echo asset('metronic_v3.6.2/theme/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js'); ?>"
+        type="text/javascript"></script>
+<script src="<?php echo asset('metronic_v3.6.2/theme/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js'); ?>"
+        type="text/javascript"></script>
+<script src="<?php echo asset('metronic_v3.6.2/theme/assets/global/plugins/jquery.blockui.min.js'); ?>"
+        type="text/javascript"></script>
+<script src="<?php echo asset('metronic_v3.6.2/theme/assets/global/plugins/jquery.cokie.min.js'); ?>"
+        type="text/javascript"></script>
+<script src="<?php echo asset('metronic_v3.6.2/theme/assets/global/plugins/uniform/jquery.uniform.min.js'); ?>"
+        type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script type="text/javascript"
+        src="<?php echo asset('metronic_v3.6.2/theme/assets/global/plugins/select2/select2.min.js'); ?>"></script>
+<script type="text/javascript"
+        src="<?php echo asset('metronic_v3.6.2/theme/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js'); ?>"></script>
+<script type="text/javascript"
+        src="<?php echo asset('metronic_v3.6.2/theme/assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js'); ?>"></script>
+<script type="text/javascript"
+        src="<?php echo asset('metronic_v3.6.2/theme/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js'); ?>"></script>
+<script type="text/javascript"
+        src="<?php echo asset('metronic_v3.6.2/theme/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js'); ?>"></script>
+<script type="text/javascript"
+        src="<?php echo asset('metronic_v3.6.2/theme/assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js'); ?>"></script>
+<script src="<?php echo asset('js/plugin/typeahead.bundle.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('js/plugin/typeahead.jquery.min.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('js/plugin/bloodhound.min.js'); ?>" type="text/javascript"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+
+<script src="<?php echo asset('metronic_v3.6.2/theme/assets/global/scripts/metronic.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('metronic_v3.6.2/theme/assets/admin/layout3/scripts/layout.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('metronic_v3.6.2/theme/assets/admin/layout3/scripts/demo.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('metronic_v3.6.2/theme/assets/admin/pages/scripts/table-advanced.js'); ?>"></script>
+
+<script src="<?php echo asset('js/dashboard/dashboard.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('js/ajax/functions.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('js/loadParisEnCours.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('js/loadBookmakers.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('js/loadParisLongTerme.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('js/typeaheads.js'); ?>" type="text/javascript"></script>
+
+
+
+
+<script>
+
+
+    jQuery(document).ready(function () {
+
+        //pari manuel
+        showTipsters('#tipstersinputdashboard','#stakeindicatorinputdashboard','#followtypeinputdashboard');
+        showBooksAccounts('#bookinputdashboard', '#accountsinputdashboard');
+        conversionUnitesVersMontant();
+
+        // autre
+        loadBookmakersOnDashboard();
+        loadParisEnCours();
+        loadParisLongTerme();
+        Metronic.init(); // init metronic core components
+        Layout.init(); // init current layout
+        Demo.init(); // init demo features
+        TableAdvanced.init();
+
+    });
+
+
+</script>
+<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

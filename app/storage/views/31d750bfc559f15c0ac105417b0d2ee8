@@ -1,0 +1,51 @@
+<?php $__env->startSection('contenu'); ?>
+
+	<div class="col-md-4 col-sm-offset-5">
+		<img src="<?php echo asset('img/raizer.png'); ?>" alt=""/>
+	</div>
+
+    <div class="col-sm-offset-4 col-sm-4">
+    <div class="center">SEA BETS AND SUN</div>
+    <?php echo link_to('auth/inscription', 'Inscription !', array('class' => 'btn btn-warning ')); ?>
+
+		<br>
+		<?php if(Session::has('error')): ?>
+			<div class="alert alert-danger"><?php echo Session::get('error'); ?></div>
+		<?php endif; ?>		
+		<div class="panel panel-primary">	
+			<div class="panel-heading">Connectez-vous !</div>
+			<div class="panel-body"> 
+				<div class="col-sm-12">
+					<?php echo Form::open(array('url' => 'auth/login', 'method' => 'post', 'class' => 'form-horizontal panel')); ?>	
+						<small class="text-danger"><?php echo $errors->first('name'); ?></small>
+					  <div class="form-group <?php echo $errors->has('name') ? 'has-error' : ''; ?>">
+					  	<?php echo Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'Nom')); ?>
+
+					  </div>
+					  <small class="text-danger"><?php echo Session::get('pass'); ?></small>
+					  <div class="form-group <?php echo Session::has('pass') ? 'has-error' : ''; ?>">
+					  	<?php echo Form::password('password', array('class' => 'form-control', 'placeholder' => 'Mot de passe')); ?>
+
+					  </div>
+						<div class="checkbox">
+						  <?php echo Form::checkbox('souvenir'); ?>Se rappeler de moi
+						</div>
+						<?php echo Form::submit('Envoyer', array('class' => 'btn btn-primary pull-right')); ?>
+
+					<?php echo Form::close(); ?>
+
+				</div>
+			</div>
+		</div>
+		<a href="javascript:history.back()" class="btn btn-primary">
+			<span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
+		</a>
+		<?php echo link_to('password/remind', 'J\'ai oublié mon mot de passe !', array('class' => 'btn btn-warning pull-right')); ?>
+
+		
+	</div>
+
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('template', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

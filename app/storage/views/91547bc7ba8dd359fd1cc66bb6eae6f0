@@ -1,0 +1,88 @@
+<div class="panel panel-default addbookmakercontainer">
+				<div class="panel-heading">
+					<h3 class="panel-title">Bookmakers configuration</h3>
+				</div>
+				<div class="panel-body">
+					<button id="bookbutton" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span>ajouter un bookmaker</button>
+				    <table class="table">
+				    	<thead>
+				    		<tr>
+				    			<th>Bookmaker</th>
+				    			<th>n° ou nom compte</th>
+				    			<th>Bankroll Actuelle</th>
+				    			<th>Bankroll Investie</th>
+				    			<th>Bonus</th>
+				    			<th></th>
+				    		</tr>
+				    	</thead>
+				    	<tbody>
+				    		<tr>
+				    			<td><img src="img/Pinnaclesports_logo2.gif" width="150px"></td>
+				    			<td>U55</td>
+				    			<td>800</td>
+				    			<td>1000</td>
+				    			<td>100</td>
+				    			<td>
+									<button class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></button>
+									<button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+								</td>
+				    		</tr>
+				    		<tr>
+				    			<td><img src="img/Pinnaclesports_logo2.gif" width="150px"></td>
+				    			<td>U58</td>
+				    			<td>200</td>
+				    			<td>230</td>
+				    			<td>25</td>
+				    			<td>
+									<button class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></button>
+									<button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+								</td>
+				    		</tr>
+				    		<tr>
+				    			<td><img src="img/SBOBET_logo.png" width="150px"></td>
+				    			<td>geur</td>
+				    			<td>300</td>
+				    			<td>200</td>
+				    			<td>50</td>
+				    			<td>
+									<button class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></button>
+									<button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+								</td>
+				    		</tr>
+				    		<tr>
+				    			<td><img src="img/bet365_logo.png" width="150px"></td>
+				    			<td>pantoufle</td>
+				    			<td>70</td>
+				    			<td>40</td>
+				    			<td>-</td>
+				    			<td>
+									<button class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></button>
+									<button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+								</td>
+				    		</tr>
+				    		<tr>
+				    			<td><img src="img/LADBROKES_logo.jpg" width="150px"></td>
+				    			<td>lad485478</td>
+				    			<td>140</td>
+				    			<td>500</td>
+				    			<td>-</td>
+				    			<td>
+									<button class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></button>
+									<button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+								</td>
+				    		</tr>
+				    		<tr>
+				    			<td><img src="img/parionsweb_logo.png" width="150px"></td>
+				    			<td>lad485478</td>
+				    			<td>140</td>
+				    			<td>500</td>
+				    			<td>-</td>
+				    			<td>
+									<button class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></button>
+									<button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+								</td>
+				    		</tr>
+				    	</tbody>
+				    </table>
+				</div>
+			</div>

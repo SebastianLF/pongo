@@ -1,0 +1,111 @@
+<div class="panel panel-default ">
+				<div class="panel-heading">
+					<h3 class="panel-title">Tipster Config</h3>
+				</div>
+				<div class="panel-body">
+				 
+
+				    			
+				    			<div class="alert alert-warning alert-dismissible" role="alert">
+								  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+								  <strong>Important!</strong> Si vous choisissez le type de suivi blanc, les gains et pertes ne seront pas comptabilisés dans vos bankrolls. C'est le principe d'un suivi à blanc.
+								</div>
+								<div id="msgalert" class="collapse alert alert-success"><p class="text-center"><?php echo Session::get('message'); ?></p></div>
+								<div id="msgerrors" class="collapse alert alert-danger">
+									 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+									<p class="text-center"><?php echo $errors->first('nameinput'); ?></p>
+									<p class="text-center"><?php echo $errors->first('unitnumberinput'); ?></p>
+									<p class="text-center"><?php echo $errors->first('staketypeselect'); ?></p>
+									<p class="text-center"><?php echo $errors->first('followtypeselect'); ?></p>
+								</div>
+						    	<div class="panel panel-default">
+								    <div class="panel-heading">
+								      <h4 class="panel-title">
+								        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+								          <p>Cliquez ici pour ajouter un tipster <span class="caret"></span></p> 
+								        </a>
+								      </h4>
+								    </div>
+								    <div id="collapseOne" class="panel-collapse collapse ">
+								      <div class="panel-body">
+
+								      	<?php echo Form::open(array('route' => 'tipster.store', 'method' => 'post', 'id' => 'tipsterform-add', 'class' => 'form-horizontal', 'role' => 'form')); ?>
+
+									    
+
+									    <div class="namecontainer form-group">
+										    <label class="col-sm-2 control-label">nom :</label>
+										    
+										    <div class="col-sm-2">
+										      	<input id="nameinput" type="text" name="nameinput" class="form-control" value="<?php echo Input::old('nameinput');?>">
+										    </div>
+									    </div>
+									    <div class="stakeindicatorcontainer form-group">
+											<label class="col-sm-2 control-label">Indice :</label>
+											<div class="col-sm-2">
+												<select id="staketypeselect" name="staketypeselect" class="form-control"  >
+													<option selected="selected" value="<?php echo Input::old('staketypeselect');?>"></option >
+												    <option >3</option>
+												    <option>5</option>
+												    <option>10</option>
+												    <option>15</option>
+												    <option>100</option>
+												</select>
+											</div>
+										</div>
+										<div class="stakeamountcontainer form-group">
+											<label class="col-sm-2 control-label">1 unité =</label>
+											<div class="col-sm-2">
+										      	<input id="unitnumberinput" name="unitnumberinput" class="form-control"  placeholder="0.00" value="<?php echo Input::old('unitnumberinput');?>">
+										   	</div>
+									   	</div>
+
+									 	
+										<div class="followcontainer form-group">
+											<label class="col-sm-2 control-label">suivi :</label>
+										    <div class="col-sm-2">
+												<select id="followtypeselect" name="followtypeselect" class="form-control" >
+													<option selected="selected" value="<?php echo Input::old('followtypeselect');?>"><?php echo Input::old('followtypeselect');?></option >
+												    <option>Gratuit</option>
+												    <option>Payant</option>
+												    <option>Blanc</option>
+												</select>
+											</div>
+										</div>
+								  	<input id="tipsterforminput" value="Ajouter" type="submit" class="btn btn-success center-block"/>
+								<?php echo Form::close(); ?>
+
+								      </div>
+								    </div>
+								    
+								</div>
+									<div class="panel panel-default">
+									    <table class="table">
+								    		<thead>
+								    			<tr>
+								    				<th>Depuis</th>
+								    				<th>Nom</th>
+								    				<th>Indice</th>
+								    				<th>Unité</th>
+								    				<th>Suivi</th>
+								    				<th></th>
+								    				<th></th>
+								    			</tr>
+								    		</thead>
+								    		<tbody>
+								    			<?php foreach($tipsters as $tipster): ?>
+								    			<tr>
+								    				<td><?php echo $tipster->pivot->created_at; ?></td>
+								    				<td><?php echo $tipster->pivot->name; ?></td>
+								    				<td><?php echo $tipster->pivot->stakeindicator; ?></td>
+								    				<td><?php echo $tipster->pivot->stakeamount; ?></td>
+								    				<td><?php echo $tipster->pivot->followtype; ?></td>
+								    				<td><?php echo link_to_route('tipster.edit', 'Modifier', array($tipster->id), array('class' => 'btn btn-warning btn-block')); ?></td>
+								    				<td><?php echo link_to_route('tipster.destroy', 'Supprimer', array($tipster->id), array('class' => 'btn btn-danger btn-block')); ?></td>
+								    			</tr>
+								    			<?php endforeach; ?>
+								    		</tbody>
+								    	</table>
+							    	</div>
+							</div>
+			</div>

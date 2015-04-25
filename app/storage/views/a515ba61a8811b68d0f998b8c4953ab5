@@ -1,0 +1,25 @@
+<table class="table table-hover table-light">
+    <thead>
+    <tr>
+        <th>Date</th>
+        <th>bookmaker</th>
+        <th>compte</th>
+        <th>Type</th>
+        <th>Montant</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach($transactions as $transaction): ?>
+    <tr>
+        <td><?php echo $transaction->created_at; ?></td>
+        <td><img src="<?php echo isset($transaction->logo) ? asset('img/logos/bookmakers').'/'.$transaction->logo : ''; ?>" width="100px"></td>
+        <td><?php echo $transaction->nom_compte; ?></td>
+        <td><?php echo $transaction->type; ?></td>
+        <td class="bold theme-font"><?php echo $transaction->montant; ?><?php echo $user->devise; ?></td>
+        <td><?php echo $transaction->description ? $transaction->description : '-'; ?></td>
+    </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+<?php echo $transactions->links(); ?>

@@ -1,0 +1,157 @@
+<div class="panel panel-default ">
+				<div class="panel-heading">
+					<h3 class="panel-title">Tipster Config</h3>
+				</div>
+				<div class="panel-body">
+				    <div class="panel panel-default addtipstercontainer">
+				    	<div class="panel-body">
+						    	<button class="btn btn-default"><span class="glyphicon glyphicon-plus"></span>ajouter un tipster</button>
+						    	<form action="" id="tipsterform-add" class="form-horizontal" role="form">
+								  	<div class="form-group">
+									    <label class="col-sm-1 control-label">nom :</label>
+									    <div class="col-sm-2">
+									      	<input type="text" name="nameinput" class="form-control" id="namenewtipster" >
+									    </div>
+									    <div class="addstaketype">
+										    <label class="col-sm-2 control-label">Affichage Indice :</label>
+										    <div class="col-sm-1">
+											    <select id="staketypeselect" name="staketypeselect" class="form-control">
+											    	<option> </option>
+											    	<option>/3</option>
+											    	<option>/5</option>
+											    	<option>/10</option>
+											    	<option>/15</option>
+											    	<option>/100</option>
+											    </select>
+										  	 </div>
+										</div>
+										<div class="addunittype">
+										    <label class="col-sm-1 control-label">1 unité =</label>
+										    <div class="col-sm-1">
+									      		<input id="unitnumberinput" name="unitnumberinput" type="number" class="form-control" id="namenewtipster" placeholder="0.00">
+									    	</div>
+										    <div class="col-sm-1">
+										      	<select id="unittypeselect" name="unittypeselect" class="form-control">
+											    	<option>devise</option>
+											    	<option>%</option>
+											    </select>
+										    </div>
+										    <div class="col-sm-2">
+										      	<select id="unitsubtypeselect" name="unitsubtypeselect" class="form-control">
+										      		<option>bankroll actuelle totale</option>
+											    	<option>bankroll investie totale</option>
+											    	<option>somme fixe</option>
+											    </select>
+										    </div>
+										    <div class="col-sm-1">
+									      		<input id="fixedsubnumberinput" name="fixedsubnumberinput" type="number" class="form-control">
+									    	</div>
+										</div>
+								 	</div>
+
+								 	<div class="form-group subscriptiontype">
+								 		<div class="followtypecontainer">
+									 		<label class="col-sm-2 control-label">type de suivi :</label>
+										  	<div class="col-sm-2">
+											    <select id="followtypeselect" name="followtypeselect" class="form-control">
+											    	<option>à blanc</option>
+											    	<option>gratuit</option>
+											    	<option>payant</option>
+											    </select>
+									   		</div>
+								   		</div>
+								   		<div class="subscriptiontypecontainer">
+										  	<label  class="col-sm-2 control-label">type abonnement :</label>
+										  	<div class="col-sm-1">
+											    <select id="subtypeselect" name="subtypeselect" class="form-control">
+											    	<option>abonnement par mois</option>
+											    	<option>jours ou mois achetés</option>
+											    </select>
+									   		</div>
+								   		</div>
+
+								   		<div class="form-group subpermonthcontainer" id="gratuit">
+										  	<label class="col-sm-1 control-label">montant :</label>
+										    <div class="col-sm-1">
+										    	<input id="permonthamountinput" name="permonthamountinput" type="text" class="form-control">
+										    </div>
+										   
+										    <div class="renewinputcontainer">
+										    	<label class="col-sm-1 control-label">renouvelable </label>
+										    	<div class="btn-group col-sm-2">
+												  	<button type="button" class="btn btn-default">oui</button>
+												  	<button type="button" class="btn btn-default">non</button>
+												</div>
+										    </div>
+								  		</div>
+
+								  		<div class="form-group subpackcontainer">
+								  			
+								  			<div class="col-sm-1">
+										    	<input type="text" class="form-control">
+										    </div>
+										    <div class="col-sm-1">
+											    <select id="subnumberselect" name="subnumberselect" class="form-control">
+											    	<option>jour(s)</option>
+											    	<option>mois</option>
+											    </select>
+									   		</div>
+									   		<label class="col-sm-1 control-label">montant :</label>
+										    <div class="col-sm-1">
+										    	<input id="packamountinput" name="packamountinput" type="text" class="form-control">
+										    </div>
+								  		</div>
+								  	</div>
+								  	<div class="form-group subdatecontainer">
+								  		<div class="">
+									  		<label id="subdatelabel" class="col-sm-2 control-label">date prelevement :</label>
+											<div class="col-sm-2">
+											   	<input id="deductiondateinput" name="deductiondateinput" type="date" class="form-control">
+											</div>
+										</div>
+								  	</div>
+								  	<input type="submit" class="btn btn-success center-block"/>
+								</form>
+							</div>
+				    </div>
+
+				    <table class="table table-bordered ">
+						<thead>
+							<tr>
+								<th>Nom</th>
+								<th>IC</th>
+								<th>unité</th>
+								<th>prélèvement</th>
+								<th>renouvellable</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Rugby betting</td>
+								<td>/5</td>
+								<td>40€</td>
+								<td>01/01/2014</td>
+								<td>Oui</td>
+								<td>
+									<button class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></button>
+									<button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+								</td>
+								
+							</tr>
+							<tr>
+								<td>Moneyguarantee</td>
+								<td>/10</td>
+								<td>33€</td>
+								<td>01/01/2014</td>
+								<td>Oui</td>
+								<td>
+									<button class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></button>
+									<button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+								</td>
+								
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>

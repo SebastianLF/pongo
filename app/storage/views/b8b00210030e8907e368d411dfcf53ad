@@ -1,0 +1,38 @@
+<div id="tipsterEditButton" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <?php echo Form::open(array('route' => 'tipster.update', 'method' => 'put', 'id' => 'tipsterform-edit', 'role' =>
+            'form')); ?>
+
+                <div class="form-group">
+                    <label for="nameTipsterInput">Nom</label>
+                    <input type="text" class="form-control" id="nameTipsterInput" placeholder="Nom">
+                </div>
+                <div class="form-group">
+                    <label for="indiceTipsterSelect">Indice</label>
+                    <select name="indiceTipsterSelect" id="indiceTipsterSelect" class="form-control">
+                        <option value="3">3</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+            <div class="form-group">
+                <label for="mtTipsterInput">Montant par unité</label>
+                <input type="text" class="form-control" id="mtTipsterInput" placeholder="Montant: 22.00 ou 22">
+            </div>
+            <div class="form-group">
+                <label for="suiviTipsterSelect">Indice</label>
+                <select name="suiviTipsterSelect" id="suiviTipsterSelect" class="form-control">
+                    <option value="n">normal</option>
+                    <option value="b">à blanc</option>
+                </select>
+            </div>
+                <button class="btn btn-default btn-primary">Annuler</button>
+
+            <?php echo Form::submit('Modifier', ['class' => 'btn btn-success']); ?>
+
+            <?php echo Form::close(); ?>
+
+        </div>
+    </div>
+</div>

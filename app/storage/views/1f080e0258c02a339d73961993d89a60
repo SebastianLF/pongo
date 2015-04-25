@@ -1,0 +1,195 @@
+
+<table id="parisencourstable" class="table table-condensed " style="border-collapse:collapse;">
+    <thead>
+    <tr>
+        <th id="count" class="hidden "><?php echo $count_paris_encours; ?></th>
+        <th></th>
+        <th>N°</th>
+        <th>date ajout</th>
+        <th>type</th>
+        <th>Sport</th>
+        <th>Compet.</th>
+        <th>Rencontre</th>
+        <th>Pari <span class="glyphicon glyphicon-info-sign"></span></th>
+        <th>Cote</th>
+        <th>Tipster</th>
+        <th>Bookmaker</th>
+        <th>Mise</th>
+        <th>Status <span class="glyphicon glyphicon-info-sign"></span></th>
+        <th>Retour <span class="glyphicon glyphicon-info-sign"></span></th>
+        <th>Actionqsdqsd <span class="glyphicon glyphicon-info-sign"></span></th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach($parisencours as $pari): ?>
+        <div class="wrapperRow">
+            <a href="">
+                <tr data-toggle="collapse" data-target="<?php echo '.row'.$pari->numero_pari; ?>"
+                    class="mainrow accordion-toggle parisencours-accordeon">
+
+                    <td class="hidden id"><?php echo $pari->id; ?></td>
+
+                    <td class="subbetclick"><span data-toggle="collapse" data-target="<?php echo '.row'.$pari->numero_pari; ?>"
+                                                  class="glyphicon glyphicon-chevron-right"></span></td>
+                    <td><a href="javascript:;" class="primary-link">#<?php echo $pari->numero_pari; ?></a></td>
+                    <td><?php echo $pari->created_at; ?></td>
+                    <td>
+                        <span class="label label-sm label-success label-mini"><?php echo $pari->type_profil == 's' ? 'simple' : 'combiné'; ?></span>
+                    </td>
+                    <td>
+                <span data-toggle="tooltip"
+                      title="<?php echo isset($pari->selections[0]->sport) ? $pari->selections[0]->sport->name : 'aucun'; ?>">
+                    <?php if(isset($pari->selections[0]->sport)): ?>
+                        <img width="25px"
+                             src="<?php echo isset($pari->selections[0]->sport->logo) ? asset('img/logos/sports').'/'.$pari->selections[0]->sport->logo : ''; ?>"
+                             alt=""/><?php echo isset($pari->selections[0]->sport->logo) ? '' : $pari->selections[0]->sport->name; ?>
+
+                    <?php else: ?>
+                        <?php echo 'non spéc.'; ?>
+
+                    <?php endif; ?>
+                </span>
+                    </td>
+                    <td>
+                <span data-toggle="tooltip"
+                      title="<?php echo isset($pari->selections[0]->competition) ? $pari->selections[0]->competition->name : 'aucun'; ?>">
+                    <?php if(isset($pari->selections[0]->competition)): ?>
+                        <img width="30px"
+                             src="<?php echo isset($pari->selections[0]->competition->logo) ? asset('img/logos/sports').'/'.$pari->selections[0]->competition->logo : ''; ?>"
+                             alt=""/><?php echo e(isset($pari->selections[0]->competition->logo)? '' : $pari->selections[0]->competition->name); ?>
+
+                    <?php else: ?>
+                        <?php echo 'non spéc.'; ?>
+
+                    <?php endif; ?>
+                </span>
+                    </td>
+                    <td>
+                <span data-toggle="tooltip"
+                      title="<?php echo isset($pari->selections[0]->equipe1) ? $pari->selections[0]->equipe1->name : 'aucun'; ?>">
+                    <?php if(isset($pari->selections[0]->equipe1)): ?>
+                        <img width="30px"
+                             src="<?php echo isset($pari->selections[0]->equipe1->logo) ? asset('img/logos/sports').'/'.$pari->selections[0]->equipe1->logo : ''; ?>"
+                             alt=""/><?php echo isset($pari->selections[0]->equipe1->logo) ? '':$pari->selections[0]->equipe1->name; ?>
+
+                    <?php else: ?>
+                        <?php echo 'non spéc.'; ?>
+
+                    <?php endif; ?>
+                </span>
+                <span data-toggle="tooltip"
+                      title="<?php echo isset($pari->selections[0]->equipe2) ? $pari->selections[0]->equipe2->name  : 'aucun'; ?>">
+                    <?php if(isset($pari->selections[0]->equipe2)): ?>
+                        <img width="25px"
+                             src="<?php echo isset($pari->selections[0]->equipe2->logo) ? asset('img/logos/sports').'/'.$pari->selections[0]->equipe2->logo : ''; ?>"
+                             alt=""/><?php echo isset($pari->selections[0]->equipe2->logo) ? '':$pari->selections[0]->equipe2->name; ?>
+
+                    <?php endif; ?>
+                </span>
+                    </td>
+                    <td>
+                        <?php if(isset($pari->selections[0]->typePari)): ?>
+                            <?php echo $pari->selections[0]->typePari->name; ?> - <?php echo $pari->selections[0]->choix_pari; ?></td>
+                    <?php else: ?>
+                        <?php echo 'non spéc.'; ?>
+
+                    <?php endif; ?>
+                    <td class="fit tdcote"><?php echo $pari->cote; ?></td>
+                    <td><?php echo $pari->tipster->name; ?></td>
+                    <td>
+                <span data-toggle="tooltip"
+                      title="<?php echo isset($pari->compte->bookmaker->nom) ? $pari->compte->bookmaker->nom : 'à blanc'; ?>">
+                    <?php if(isset($pari->compte)): ?>
+                        <img width="60px"
+                             src="<?php echo isset($pari->compte->bookmaker->logo) ? asset('img/logos/bookmakers').'/'.$pari->compte->bookmaker->logo : ''; ?>"
+                             alt=""/><?php echo isset($pari->compte->bookmaker->logo) ? '' : $pari->compte->bookmaker->nom; ?>
+
+                    <?php else: ?>
+                        <span class="label label-sm label-success label-mini">à blanc</span>
+                    <?php endif; ?>
+                </span>
+                    </td>
+                    <td class="tdmise bold theme-font">
+                        <span class="tdsubmise bold theme-font"><?php echo e($pari->mise_totale); ?></span><?php echo e($user->devise); ?>
+
+                    </td>
+
+                    <td>
+                        <select name="resultatDashboardInput" class="form-control input-sm">
+                            <option value="0">--Selectionnez--</option>
+                            <?php foreach($types_resultat as $key => $type): ?>
+                                <option value="<?php echo $key; ?>"><a href="javascript:;" class="btn btn-xs"><?php echo $type; ?></a>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </td>
+                    <td class="tdretour bold"><span class="subretour"></span><?php echo e($user->devise); ?></td>
+                    <td>
+                        <?php echo Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris' ,'role' => 'form', )); ?>
+
+                        <?php echo Form::button('<i class="fa fa-check"></i>', array('type' => 'submit', 'class' => 'boutonvalider btn btn-sm green')); ?>
+
+                        <?php echo Form::close(); ?>
+
+
+                        <?php echo Form::open(array('route' => 'historique.destroy', 'class' => 'supprimerform form-bouton-paris','role' => 'form')); ?>
+
+                        <?php echo Form::button('<i class="fa fa-times"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red')); ?>
+
+                        <?php echo Form::close(); ?>
+
+                    </td>
+                </tr>
+                <tr class="subrow">
+                    <td colspan="17" class="childtable cancel-padding">
+                        <div class="<?php echo 'accordian-body collapse row'.$pari->numero_pari; ?>">
+                            <table class="table table-striped child-table table-bordered">
+                                <thead>
+
+                                <tr>
+                                    <th>Access Key</th>
+                                    <th>Secret Key</th>
+                                    <th>Status</th>
+                                    <th> Created</th>
+                                    <th> Expires</th>
+                                    <th>Actions</th>
+                                    <th>Score</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <?php foreach($pari->selections as $selection): ?>
+                                    <tr class="child-table-tr">
+                                        <td><?php echo isset($selection->date_match) ? $selection->date_match : 'non spéc.'; ?></td>
+                                        <td><?php echo isset($selection->sport) ? $selection->sport->name : 'non spéc.'; ?></td>
+                                        <td><?php echo isset($selection->competition) ? $selection->competition->name : 'non spéc.'; ?></td>
+                                        <td><?php echo isset($selection->equipe1) ? $selection->equipe1->name : 'non spéc.'; ?>
+
+                                            - <?php echo isset($selection->equipe2) ? $selection->equipe2->name : 'non spéc.'; ?></td>
+                                        <td><?php echo isset($selection->typePari) ? $selection->typePari->name : 'non spéc.'; ?>
+
+                                            - <?php echo isset($selection->choix_pari) ? $selection->choix_pari : 'aucun'; ?></td>
+                                        <td><?php echo $selection->cote; ?></td>
+                                        <td><input type="text" name="childrowsinput[]"
+                                                   class="form-control input-sm"/></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </td>
+
+
+
+                </tr>
+            </a>
+        </div>
+    <?php endforeach; ?>
+    </tbody>
+
+</table>
+
+<?php echo $parisencours->appends(Input::except('page'))->links(); ?>
+
+

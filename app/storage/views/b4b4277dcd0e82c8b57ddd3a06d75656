@@ -1,0 +1,54 @@
+
+<div class="panel panel-default">
+    <table id="tipsterstable" class="table table-condensed">
+        <thead>
+        <tr>
+            <th>Depuis</th>
+            <th>Nom</th>
+            <th>Indice</th>
+            <th>Montant par unité</th>
+            <th>Suivi</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach($tipsters as $tipster): ?>
+        <tr>
+            <td  class="idtipstertd hidden"><?php echo $tipster->id; ?></td>
+            <td><?php echo $tipster->created_at; ?></td>
+            <td><?php echo $tipster->name; ?></td>
+            <td><?php echo $tipster->indice_unite; ?></td>
+
+            <td>
+                <i data-toggle="popover" data-trigger="hover" title="Changements d'unités"  class="popoverunites glyphicon glyphicon-info-sign"></i>
+                <?php echo number_format($tipster->montant_par_unite, 2, '.', ',' ); ?>
+
+                <span><?php echo $user->devise; ?></span>
+            </td>
+            <td>
+                <span class="glyphicon glyphicon-info-sign"></span>
+                <?php if($tipster->followtype == 'n'): ?>
+                <?php echo 'normal'; ?>
+
+                <?php else: ?>
+                <?php echo 'à blanc'; ?>
+
+                <?php endif; ?>
+            </td>
+            <td>
+                <div class="action-tipster-btn ">
+                    <button type="button" class="tipsterEditButton btn btn-warning btn-xs" data-target="#tipsterEditModal" data-toggle="modal" data-id="<?php echo $tipster->id; ?>" data-name="<?php echo $tipster->name; ?>" data-indice="<?php echo $tipster->indice_unite; ?>" data-mt="<?php echo $tipster->montant_par_unite; ?>" data-suivi="<?php echo $tipster->followtype; ?>"><i class="fa fa-pencil-square-o fa-2x"></i></button>
+                    <button type="button" class="tipsterDeleteButton btn btn-danger btn-xs "><i class="fa fa-trash-o fa-2x"></i></button>
+                </div>
+            </td>
+
+        </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+
+
+</div>
+<?php echo $tipsters->appends(Input::except('page'))->links(); ?>
+
