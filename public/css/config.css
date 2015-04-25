@@ -1,0 +1,38 @@
+.subpermonthcontainer{
+	display: none;
+}
+
+.addbookmakercontainer td{
+	vertical-align: middle !important;
+}
+
+.addtransactioncontainer td{
+	vertical-align: middle !important;
+}
+
+#unitsubtypeselect{
+	display: none;
+}
+
+#fixedsubnumberinput{
+	display: none;
+}
+
+.subscriptiontypecontainer{
+	display: none;
+}
+
+.subpackcontainer{
+	display: none;
+}
+
+.subdatecontainer{
+	display: none;
+}
+
+.addtipstercontainer{
+	font-family:'Roboto Condensed',Arial,sans-serif;
+}
+.addtipstercontainer tr{
+	font-family:'Roboto Condensed',Arial,sans-serif;
+}

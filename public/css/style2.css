@@ -1,0 +1,602 @@
+
+@font-face {
+font-family: 'Lucida Grande';
+src: URL('fonts/LucidaGrande.ttf') format ('ttf');
+}
+
+a{
+	text-decoration: none !important;
+}
+
+li{
+	
+}
+
+label{
+	font-family: 'Roboto Condensed', serif;
+	text-transform: uppercase;
+}
+
+
+ul, li, p, div {
+	margin: 0 ;
+	padding: 0;
+}
+
+p{
+	
+}
+
+td{
+	font-family: 'Roboto Condensed', serif !important;
+	vertical-align: middle !important;
+}
+
+body{
+	background-color: rgba(41, 128, 185,0.7);
+}
+
+header{
+	background-color: white;
+}
+
+img{
+	margin: 10px 0px 10px 0px;
+}
+
+/* classe bootstrap surchargée */
+
+tr{
+	background-color: white;
+}
+
+input[type=date]{
+	line-height: normal;
+}
+
+.panel{
+	
+}
+
+.glyphicon{
+	margin-right: 5px ;
+}
+
+.glyphicon-trash{
+	margin-right: 0px ;
+}
+
+/* */
+
+.block-inline{
+	display: inline-block;
+}
+
+.tab-pane{
+	margin-bottom: 10px !important;
+}
+
+/* vignette bankroll */
+
+
+
+.rectanglered {
+	color: rgb( 255, 255, 255 );
+   font-family: 'Open Sans';
+  margin: 5px 0px 5px 5px;
+  background-color: rgb( 227, 104, 55 );
+  width: 250px;
+  height: 80px;
+  z-index: 29;
+}
+
+.rectanglemonth {
+	color: rgb( 255, 255, 255 );
+   font-family: 'Open Sans';
+  margin: 5px 0px 5px 0px;
+  background-color: rgb( 125, 85, 203 );
+  width: 100px;
+  height: 80px;
+  z-index: 29;
+}
+
+.rectangleprimary{
+	position: absolute;
+	padding: 20px 15px 10px 20px;
+	position: relative;
+	font-size: 11px;
+	width: 250px;
+  	height: 75px;
+}
+
+.subrectangle {
+	padding: 0px 20px 0px 20px;
+  background-color: rgb( 48, 141, 28 );
+  width: 250px;
+  height: 25px;
+  color: rgb( 255, 255, 255 );
+  line-height: 25px;
+  text-align: left;
+}
+
+.subrectanglered {
+	padding: 0px 20px 0px 20px;
+  background-color: rgb( 48, 141, 28 );
+  width: 250px;
+  height: 25px;
+  background-color: rgb( 203, 69, 18 );
+  line-height: 25px;
+  text-align: left;
+}
+
+.subrectanglemonth {
+	padding: 0px 20px 0px 20px;
+ 
+  width: 100px;
+  height: 25px;
+  background-color: rgb( 91, 53, 164 );
+  line-height: 25px;
+  text-align: left;
+}
+
+
+.titlelight {
+  
+  color: rgba( 255, 255, 255 , 0.8);
+}
+
+.bankrollamount{
+	color: rgb( 255, 255, 255 );
+	font-size: 20px;
+	font-weight: bold;
+}
+.subtexte{
+	font-size: 11px;
+	
+}
+
+.graphbankroll{
+	margin-left: 10px;
+	width: 80px;
+	
+}
+
+.graphbankrollcontainer{
+
+}
+
+
+.subgraph1 {
+  background-color: rgb( 255, 255, 255 );
+  opacity: 0.5;
+  width: 4px;
+  height: 10px;
+}
+
+.subgraph2 {
+  background-color: rgb( 255, 255, 255 );
+  opacity: 0.502;
+  width: 4px;
+  height: 30px;
+}
+
+.subgraph3 {
+  background-color: rgb( 255, 255, 255 );
+  opacity: 0.502;
+  width: 4px;
+  height: 25px;
+}
+
+.subgraph4 {
+  background-color: rgb( 255, 255, 255 );
+  opacity: 0.502;
+  width: 4px;
+  height: 20px;
+}
+
+.subgraph5 {
+  background-color: rgb( 255, 255, 255 );
+  opacity: 0.502;
+  width: 4px;
+  height: 40px;
+}
+
+.subgraph6 {
+  background-color: rgb( 255, 255, 255 );
+  opacity: 0.502;
+  width: 4px;
+  height: 15px;
+}
+
+.subgraph7 {
+  background-color: rgb( 255, 255, 255 );
+  opacity: 0.502;
+  width: 4px;
+  height: 10px;
+}
+
+.subgraph8 {
+  background-color: rgb( 255, 255, 255 );
+  opacity: 0.502;
+  width: 4px;
+  height: 30px;
+}
+
+.subgraph9 {
+  background-color: rgb( 255, 255, 255 );
+  opacity: 0.502;
+  width: 4px;
+  height: 25px;
+}
+
+.subgraph10 {
+  background-color: rgb( 255, 255, 255 );
+  opacity: 0.502;
+  width: 4px;
+  height: 20px;
+}
+
+.subgraph11 {
+  background-color: rgb( 255, 255, 255 );
+  opacity: 0.502;
+  width: 4px;
+  height: 35px;
+}
+
+.subgraph12 {
+  background-color: rgb( 255, 255, 255 );
+  opacity: 0.502;
+  width: 4px;
+  height: 15px;
+}
+
+
+/* autre*/
+
+.textaligncenter{
+	text-align: center;
+}
+
+.tal{
+	text-align: left;
+}
+
+.tar{
+	text-align: right;
+}
+
+nav span{
+	margin-right: 10px;
+}
+
+.champ{
+	margin-bottom: 10px;
+}
+
+.magl30{
+	margin-left: 30px;
+}
+
+.padding10{
+	padding: 10px;
+}
+
+.bordertab{
+	border-right: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+.bcgwhite{
+	background-color: white;
+}
+
+.strong{
+	font-weight: bold;
+}
+
+.bcggrey{
+background-color: #f5f5f5;
+box-shadow: inset 0 1px 3px rgba(0,0,0,.05),0 1px 0 rgba(255,255,255,.1);
+background-image: linear-gradient(to bottom,#e8e8e8 0,#f5f5f5 100%);
+}
+
+
+
+th{
+	background-color: #f5f5f5;
+}
+
+/*.panel-ajouterpari form{
+	border: none;
+	background-color: rgba(0,0,0,.15);
+	background-color: transparent;
+	list-style: none;
+	outline: 1px solid transparent;
+	margin-left: 10px;
+	display: inline-block;
+}
+
+.panel-ajouterpari .wrapbet{
+
+	background-color: rgba(52, 73, 94,1.0);
+}
+
+
+.panel-ajouterpari input[type='text']{
+	width: 150px;
+border: none;
+background-color: transparent;
+font-weight: 300;
+color: black;
+text-align: center;
+float: left;
+padding: 5px 10px;
+-webkit-transition: all .3s ease;
+-o-transition: all .3s ease;
+transition: all .3s ease;
+background-color: rgba(0,0,0,.05);
+}
+
+.panel-ajouterpari input[type='submit']{
+  height:30px;
+  width:50px;
+  padding:10px;
+  text-align:center;
+  background-color: rgba(0,0,0,.5);
+  border:0;
+  border-left:0;
+  color: white;
+
+  cursor:pointer;
+  padding:0;
+  vertical-align:bottom;
+  font:300 14px "Lato", "Arial", sans-serif;
+}
+*/
+
+/* panel ajouter un pari */
+
+.navajoutpari{
+	padding-top: 10px;
+}
+
+#ajouttipster{
+
+}
+
+.ajoutparitypewrap{
+	
+}
+
+#ajoutparitype{
+
+}
+
+.nombrepariscombineswrap{
+	display:none;
+}
+
+#nombrepariscombines{
+	
+}
+
+
+.formenajout{
+	margin-bottom: 10px;
+	
+}
+
+.wrapbetscontainer{
+	margin-top: 10px;
+	overflow: hidden;
+}
+
+.combinecontainer{
+	display: none;
+}
+
+.titlewrapbets{
+
+}
+
+.tablebet{
+	text-transform: uppercase;
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+	border-spacing: 3px;
+}
+
+
+.tablebet li{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+
+
+.wrapbet{
+	font-family:'Roboto Condensed',Arial,sans-serif;
+	background: #202020;
+	border-radius: 2px;
+	/*background-image: linear-gradient(to bottom, #161616 0%, #111111 100%);*/
+}
+
+.wrapbet li{
+	
+}
+
+.betheader{
+	height: 44px;
+	background-color: #262626;
+	font-size: 16px !important;
+	color: rgba(255,255,255,0.8);
+	border-bottom: 1px solid gray;
+ 	border-collapse: collapse;
+ 	font-weight: bold;
+}
+
+.betheader li{
+	border-bottom: 1px solid gray;
+ 	border-collapse: collapse;
+}
+
+.betheader li:first-child{
+	padding-left: 10px;
+}
+
+
+.betfooter{
+	font-size: 12px !important;
+	color: rgb(136, 136, 136);
+	font-weight: bold;
+}
+
+.betfooter li{
+	border-left: 1px solid gray;
+}
+
+.betfooter li:first-child{
+	border-left: 0px;
+}
+
+
+.wrapbet ul li:last-child{
+	
+}
+
+#changementtype{
+	font-family:'Roboto Condensed',Arial,sans-serif;
+	font-size: 22px;
+	text-align: center;
+}
+
+
+.encadre{
+	border:1px solid white;
+
+}
+
+.cumul{
+	text-transform: none;
+	padding: 5px;
+}
+
+.encours{
+		
+	background-color: #262626;
+}
+
+.titlewrapbets{
+	background-color: rgb(14, 14, 14);
+	color: #cbcbcb;
+	font-family:'Roboto Condensed',Arial,sans-serif;
+	font-weight: 700;
+	font-size: 11px;
+	margin-bottom: 2px;
+}
+
+.titlewrapbets li{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+
+.enajout{
+	color: #cbcbcb;
+	background-color: rgb(32, 32, 32);
+	font-family:'Roboto Condensed',Arial,sans-serif;
+	font-weight: normal;
+}
+
+.enajout:hover{
+	
+}
+
+.anajoutclair{
+	background-color: #d35400;
+}
+
+.gagne{
+	background-color: #27ae60;
+	font:  bold 11px 'Open Sans';
+	color: #FFFFFF;
+}
+
+
+
+.gagneclair{
+	color: rgb(100, 227, 24);
+}
+
+.perduclair{
+	background-color: #e74c3c;
+}
+
+.perdu{
+	background-color: #e74c3c;
+	font:  bold 11px 'Open Sans';
+	color: #FFFFFF;
+}
+
+.stakecolor{
+	color: rgb(219, 191, 0);
+}
+
+.oddcolor{
+	color: rgb(219, 191, 0);
+}
+
+.tipstercolor{
+	color: rgb(4, 126, 222);
+}
+
+.seriecolor{
+	color: rgb(219, 191, 0);
+}
+
+.selectioncolor{
+	color: rgb(219, 191, 0) !important;
+}
+
+.typecolor{
+
+	color: rgb(219, 191, 0) !important;
+}
+
+.bookmakercolor{
+	color: rgb(219, 191, 0) !important;
+}
+
+.titreinfos{
+	font-family:'Roboto Condensed',Arial,sans-serif;
+	font-size: 22px;
+	text-align: center;
+}
+
+
+/* bouton */
+
+.ajoutparibouton{
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#validationbouton{
+	margin-top: 10px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+/* bookmakers */
+
+.bankrollamountconfig{
+	font-size: 26px;
+	font-weight: bold;
+	color: black;
+	line-height: 12px;
+}

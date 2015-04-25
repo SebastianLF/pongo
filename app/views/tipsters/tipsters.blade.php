@@ -1,0 +1,38 @@
+@include('tipster_edit_modal')
+@include('tipster_add_modal')
+
+        <div class="portlet light">
+            <div class="portlet-title">
+                <div class="caption caption-md">
+                    <i class="fa fa-cogs font-green-sharp"></i>
+                    <span class="caption-subject theme-font bold uppercase">Tipsters</span>
+                    <span class="caption-helper">Configuration</span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="note note-success">
+                    <dl class="dl-horizontal">
+                        <dt>Suivi:</dt>
+                        <dd>Si vous choisissez le type de suivi <strong>à blanc</strong> pour un tipster, les gains
+                            et pertes ne seront pas comptabilisés dans vos bankrolls. Ce type de suivi convient
+                            lorsqu'on veut tester l'efficacité d'un nouveau tipster.<br> Vous avez la possibilité de changer le type de suivi a n'importequel moment.
+                        </dd>
+                        <dt>Indice maximum:</dt>
+                        <dd>Correspond a l'indice de confiance maximum donné par le tipster, généralement 10.
+                            Example: 10 pour 2/10, 5 pour 2/5.
+                        </dd>
+                        <dt>Montant par indice:</dt>
+                        <dd>Correspond au montant alloué pour 1 unité. Example: Pour un tipster avec un indice
+                            maximum de 10, si le montant par unité est 40€ alors 1/10 = 40€, 2/10 = 80€.<br>
+                            Vous avez la possibilité de changer le montant par indice a n'importequel moment.
+                        </dd>
+
+                    </dl>
+                </div>
+                <button href=""  class="btn bg-green-meadow" data-toggle="modal" data-target="#tipsterAddModal">Ajouter un tipster <span class="glyphicon glyphicon-user"></span></button>
+                <div id="tipsters-pagination">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
