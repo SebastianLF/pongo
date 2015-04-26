@@ -152,7 +152,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- END REGISTRATION FORM -->
 </div>
 <div class="copyright">
-    2014 © Metronic. Admin Dashboard Template.
+    2014 © Metronic Template. <br/> 2015 © Pongo - All Rights Reserved
 </div>
 <!-- END LOGIN -->
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
