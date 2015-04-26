@@ -10,8 +10,10 @@ Like: www.facebook.com/keenthemes
 Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
 License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
 -->
-<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
 <html lang="en">
 <!--<![endif]-->
@@ -39,43 +41,47 @@ License: You must have a valid license purchased only from themeforest(the above
     {{ Form::open(array('url' => 'auth/login', 'method' => 'post', 'class' => 'login-form')) }}
 
     <h3 class="form-title">Se connecter</h3>
-        <div class="alert alert-danger display-hide">
-            <button class="close" data-close="alert"></button>
-			<span>
-			Entrez un nom et un mot de passe. </span>
-        </div>
-        <div class="form-group">
-            <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-            <label class="control-label visible-ie8 visible-ie9">Nom</label>
-            <input class="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username"/>
-        </div>
-        <div class="form-group">
-            <label class="control-label visible-ie8 visible-ie9">Mot de passe</label>
-            <input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password"/>
-        </div>
-        <div class="form-actions">
-            <button type="submit" class="btn btn-success uppercase">Login</button>
-            <label class="rememberme check">
-                <input type="checkbox" name="remember" value="1"/>Se rappeler </label>
-            <a href="javascript:;" id="forget-password" class="forget-password">Mot de passe oublié?</a>
-        </div>
 
-        <div class="create-account">
-            <p>
-                <a href="javascript:;" id="register-btn" class="uppercase">Creer un compte</a>
-            </p>
-       </div>
+
+    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+    <small class="text-danger">{{ $errors->first('name') }}</small>
+    <label class="control-label visible-ie8 visible-ie9">Nom</label>
+    <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
+        {{ Form::text('name', null, array('class' => 'form-control form-control-solid placeholder-no-fix', 'placeholder' => 'Nom')) }}
+    </div>
+
+    <small class="text-danger">{{ Session::get('pass') }}</small>
+    <div class="form-group {{ Session::has('pass') ? 'has-error' : '' }}">
+        <label class="control-label visible-ie8 visible-ie9">Mot de passe</label>
+        {{ Form::password('password', array('class' => 'form-control form-control-solid placeholder-no-fix', 'placeholder' => 'Mot de passe')) }}
+    </div>
+    <div class="form-actions">
+        {{ Form::submit('Login', array('class' => 'btn btn-success uppercase')) }}
+        <!--<label class="rememberme check">
+            {{ Form::checkbox('souvenir') }}Se rappeler de moi
+        </label> -->
+        <a href="javascript:;" id="forget-password" class="forget-password">Mot de passe oublié?</a>
+    </div>
+
+    <div class="create-account">
+        <p>
+            <a href="javascript:;" id="register-btn" class="uppercase">Creer un compte</a>
+        </p>
+    </div>
     {{ Form::close() }}
 
     <!-- END LOGIN FORM -->
     <!-- BEGIN FORGOT PASSWORD FORM -->
     <form class="forget-form" action="index.html" method="post">
         <h3>Mot de passe oublié ?</h3>
+
         <p>
             Entrez votre email.
         </p>
+
         <div class="form-group">
-            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email"/>
+            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email"
+                   name="email"/>
         </div>
         <div class="form-actions">
             <button type="button" id="back-btn" class="btn btn-default">Retour</button>
@@ -86,9 +92,11 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- BEGIN REGISTRATION FORM -->
     <form class="register-form" action="index.html" method="post">
         <h3>Sign Up</h3>
+
         <p class="hint">
             Enter your personal details below:
         </p>
+
         <div class="form-group">
             <label class="control-label visible-ie8 visible-ie9">Full Name</label>
             <input class="form-control placeholder-no-fix" type="text" placeholder="Full Name" name="fullname"/>
@@ -109,17 +117,21 @@ License: You must have a valid license purchased only from themeforest(the above
         <p class="hint">
             Enter your account details below:
         </p>
+
         <div class="form-group">
             <label class="control-label visible-ie8 visible-ie9">Username</label>
-            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username"/>
+            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Username"
+                   name="username"/>
         </div>
         <div class="form-group">
             <label class="control-label visible-ie8 visible-ie9">Password</label>
-            <input class="form-control placeholder-no-fix" type="password" autocomplete="off" id="register_password" placeholder="Password" name="password"/>
+            <input class="form-control placeholder-no-fix" type="password" autocomplete="off" id="register_password"
+                   placeholder="Password" name="password"/>
         </div>
         <div class="form-group">
             <label class="control-label visible-ie8 visible-ie9">Re-type Your Password</label>
-            <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Re-type Your Password" name="rpassword"/>
+            <input class="form-control placeholder-no-fix" type="password" autocomplete="off"
+                   placeholder="Re-type Your Password" name="rpassword"/>
         </div>
         <div class="form-group margin-top-20 margin-bottom-20">
             <label class="check">
@@ -128,6 +140,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 & <a href="#">
                     Privacy Policy </a>
             </label>
+
             <div id="register_tnc_error">
             </div>
         </div>
@@ -168,7 +181,8 @@ License: You must have a valid license purchased only from themeforest(the above
         type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/jquery-validation/js/jquery.validate.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/jquery-validation/js/jquery.validate.min.js')}}"
+        type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="{{asset('metronic_v3.6.2/theme/assets/global/scripts/metronic.js')}}" type="text/javascript"></script>
@@ -177,10 +191,27 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="{{asset('metronic_v3.6.2/theme/assets/admin/pages/scripts/login.js')}}" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
+        jQuery('#register-btn').click(function () {
+            jQuery('.login-form').hide();
+            jQuery('.register-form').show();
+        });
+
+        jQuery('#register-back-btn').click(function () {
+            jQuery('.login-form').show();
+            jQuery('.register-form').hide();
+        });
+        jQuery('#forget-password').click(function () {
+            jQuery('.login-form').hide();
+            jQuery('.forget-form').show();
+        });
+
+        jQuery('#back-btn').click(function () {
+            jQuery('.login-form').show();
+            jQuery('.forget-form').hide();
+        });
         Metronic.init(); // init metronic core components
         Layout.init(); // init current layout
-        Login.init();
         Demo.init();
     });
 </script>
