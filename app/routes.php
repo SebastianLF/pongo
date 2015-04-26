@@ -47,6 +47,7 @@ Route::get('infosTipster', 'DashboardController@infosTipster');
 
 /* all */
  Route::get('autocomplete/sports','AjaxController@getAutocompleteSports');
- Route::get('sports','AjaxController@getAllSports');
- Route::get('countries','AjaxController@getAllCountries');
- Route::get('competitions','AjaxController@getAllCompetitions');
+ Route::get('sports','AjaxController@getSports');
+ Route::get('countries','AjaxController@getCountries');
+ Route::get('equipes','AjaxController@getEquipes');
+ Route::get('competitions','AjaxController@getCompetitions');

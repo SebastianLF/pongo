@@ -131,13 +131,14 @@
                                 <thead>
 
                                 <tr>
-                                    <th>Access Key</th>
-                                    <th>Secret Key</th>
-                                    <th>Status</th>
-                                    <th> Created</th>
-                                    <th> Expires</th>
-                                    <th>Actions</th>
-                                    <th>Score</th>
+                                    <th>date rencontre</th>
+                                    <th>sport</th>
+                                    <th>competition</th>
+                                    <th>equipe/joueur n°1</th>
+                                    <th>equipe/joueur n°2</th>
+                                    <th>pari</th>
+                                    <th>cote</th>
+                                    <th>score/autre</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -147,8 +148,8 @@
                                         <td>{{isset($selection->date_match) ? $selection->date_match : 'non spéc.'}}</td>
                                         <td>{{isset($selection->sport) ? $selection->sport->name : 'non spéc.'}}</td>
                                         <td>{{isset($selection->competition) ? $selection->competition->name : 'non spéc.'}}</td>
-                                        <td>{{isset($selection->equipe1) ? $selection->equipe1->name : 'non spéc.'}}
-                                            - {{isset($selection->equipe2) ? $selection->equipe2->name : 'non spéc.'}}</td>
+                                        <td>{{isset($selection->equipe1) ? $selection->equipe1->name : 'non spéc.'}}</td>
+                                        <td>{{isset($selection->equipe2) ? $selection->equipe2->name : 'non spéc.'}}</td>
                                         <td>{{isset($selection->typePari) ? $selection->typePari->name : 'non spéc.'}}
                                             - {{isset($selection->choix_pari) ? $selection->choix_pari : 'aucun'}}</td>
                                         <td>{{$selection->cote}}</td>

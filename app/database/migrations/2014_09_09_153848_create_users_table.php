@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration {
 			$table->string('password', 64);
 			$table->string('abonnement');
             $table->string('devise', 5)->default('non');
-            $table->string('timezone');
+            $table->string('timezone')->default('Europe/Paris');
             $table->string('langue');
             $table->string('type_cote');
             $table->decimal('profit_total', 12, 2)->default(0);; // jusqu'à 999 milliards

@@ -82,11 +82,6 @@ class CreateForeignKeysTable extends Migration {
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
         });
-        Schema::table('equipes', function(Blueprint $table) {
-            $table->foreign('competition_id')->references('id')->on('competitions')
-                ->onDelete('restrict')
-                ->onUpdate('restrict');
-        });
         Schema::table('competitions', function(Blueprint $table) {
             $table->foreign('country_id')->references('id')->on('countries')
                 ->onDelete('restrict')
@@ -161,9 +156,6 @@ class CreateForeignKeysTable extends Migration {
         });
         Schema::table('equipes', function(Blueprint $table) {
             $table->dropForeign('equipes_country_id_foreign');
-        });
-        Schema::table('equipes', function(Blueprint $table) {
-            $table->dropForeign('equipes_competition_id_foreign');
         });
 
         // competition

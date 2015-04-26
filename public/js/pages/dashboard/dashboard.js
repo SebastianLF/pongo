@@ -3,25 +3,25 @@ function showBooksAccounts(bookinput, accountinput) {
     var $books = $(bookinput);
     var $accounts = $(accountinput);
 
-        var list_html = '<option></option>';
-        $.ajax({
-            url: 'bookmakers',
-            data: 'book',
-            dataType: 'json',
-            success: function (json) {
-                $.each(json, function (index, value) {
-                    list_html += '<option value="' + value.id + '">' + value.nom + '</option>';
-                });
-                $books.html(list_html);
-            }
-        });
+    var list_html = '<option></option>';
+    $.ajax({
+        url: 'bookmakers',
+        data: 'book',
+        dataType: 'json',
+        success: function (json) {
+            $.each(json, function (index, value) {
+                list_html += '<option value="' + value.id + '">' + value.nom + '</option>';
+            });
+            $books.html(list_html);
+        }
+    });
 
     $books.on('change', function () {
         var val = $(bookinput + ' option:selected').val(); //
         var list_html;
-        if(val == ''){
+        if (val == '') {
             $accounts.html('');
-        }else{
+        } else {
             console.log(val);
             $.ajax({
                 url: 'accounts',
@@ -159,7 +159,6 @@ function conversionMontantVersUnites() {
     });
 }
 
-
 // pour les options.
 $('#manubetform-add #systemeABCD').click(function () {
     $('#methodeabcdcontainer').removeClass("hide");
@@ -168,17 +167,13 @@ $('#manubetform-add #systemeABCD').click(function () {
 $('#manubetform-add #parislongterme ').click(function () {
     $('#methodeabcdcontainer').addClass("hide");
     $('#letterinputdashboard').empty();
-    $('#serieinputdashboard').html('');
+    $('#serieinputdashboard').val(null).trigger("change");
 });
 $('#manubetform-add #aucun').click(function () {
     $('#methodeabcdcontainer').addClass("hide");
     $('#letterinputdashboard').empty();
-    $('#serieinputdashboard').html('');
-
-
-
+    $('#serieinputdashboard').val(null).trigger("change");
 });
-
 
 // suppression dun pari en cours par le bouton adequat.
 $('#wrapmanubetscontainer').on('click', '.supprlinebet', function () {
@@ -324,9 +319,9 @@ $("#serieinputdashboard").change(function () {
         success: function (data) {
             console.log(data);
             $('#letterinputdashboard').html('');
-            if(data == ''){
+            if (data == '') {
                 $('#letterinputdashboard').append('<option value="terminé">terminé</option>');
-            }else{
+            } else {
                 $.each(data, function (index, value) {
                     $('#letterinputdashboard').append('<option value="' + value + '">' + value + '</option>');
                 });
@@ -344,34 +339,8 @@ $('.sportinputdashboard').select2({
     allowClear: true,
     placeholder: "Choisir un sport",
     cache: true,
-
-    dropdownCssClass: 'bigdrop',
     ajax: {
         url: 'sports',
-        dataType: 'json',
-        data: function (params) {
-            return {
-                q: params.term // search term
-            };
-        },
-        processResults: function (data) {
-            // parse the results into the format expected by Select2.
-            // since we are using custom formatting functions we do not need to
-            // alter the remote JSON data
-            return {
-                results: data
-            };
-        }
-    },
-    templateResult: formatSport
-});
-$('.competitioninputdashboard').select2({
-    allowClear: true,
-    placeholder: "Choisir une competition",
-    cache: true,
-
-    ajax: {
-        url: 'competitions',
         dataType: 'json',
         data: function (params) {
             return {
@@ -389,14 +358,48 @@ $('.competitioninputdashboard').select2({
     }
     //templateResult: formatSport
 });
+
+$('.sportinputdashboard').change(function () {
+    $('.competitioninputdashboard').val(null).trigger("change");
+    $('.team1inputdashboard').val(null).trigger("change");
+    $('.team2inputdashboard').val(null).trigger("change");
+});
+$('.competitioninputdashboard').change(function () {
+    $('.team1inputdashboard').val(null).trigger("change");
+    $('.team2inputdashboard').val(null).trigger("change");
+});
+
+
+$('.competitioninputdashboard').select2({
+    allowClear: true,
+    placeholder: "Choisir une competition",
+    cache: true,
+    ajax: {
+        url: 'competitions',
+        dataType: 'json',
+        data: function (params) {
+            return {
+                sport_id: $('.sportinputdashboard').val(),
+                q: params.term // search term
+            };
+        },
+        processResults: function (data) {
+            // parse the results into the format expected by Select2.
+            // since we are using custom formatting functions we do not need to
+            // alter the remote JSON data
+            return {
+                results: data
+            };
+        }
+    }
+    //templateResult: formatLeague
+});
 function formatSport(data) {
     if (!data.id) {
         return data.text;
     }
-    console.log(data.logo);
-
     var $data = $(
-        '<span><img width="25px" class="" src="' + data.logo + '"/>' + data.text + '</span>'
+        '<span><img width="25px" class="" src=""/>' + data.text + '</span>'
     );
     return $data;
 }
@@ -404,13 +407,62 @@ function formatLeague(data) {
     if (!data.id) {
         return data.text;
     }
+    console.log(data.logo);
     var $data = $(
-        '<span><img src="img/logos/sports/' + data.text.toLowerCase() + '/' + data.text.toLowerCase() + '.jpg" width="25px" class="" /> ' + data.text + '</span>'
+        '<span><img width="25px" class="" src=""/>' + data.text + '</span>'
     );
     return $data;
 }
 
-$('.team1inputdashboard').select2();
-$('.team2inputdashboard').select2();
+$('.team1inputdashboard').select2({
+    allowClear: true,
+    placeholder: "Choisir une équipe",
+    cache: true,
+    ajax: {
+        url: 'equipes',
+        dataType: 'json',
+        data: function (params) {
+            return {
+                adversaire_id: $('.team2inputdashboard').val(),
+                competition_id: $('.competitioninputdashboard').val(),
+                q: params.term // search term
+            };
+        },
+        processResults: function (data) {
+            // parse the results into the format expected by Select2.
+            // since we are using custom formatting functions we do not need to
+            // alter the remote JSON data
+            return {
+                results: data
+            };
+        }
+    }
+    //templateResult: formatLeague
+});
+$('.team2inputdashboard').select2({
+    allowClear: true,
+    placeholder: "Choisir une équipe",
+    cache: true,
+    ajax: {
+        url: 'equipes',
+        dataType: 'json',
+        data: function (params) {
+            return {
+                adversaire_id: $('.team1inputdashboard').val(),
+                competition_id: $('.competitioninputdashboard').val(),
+                q: params.term // search term
+            };
+        },
+        processResults: function (data) {
+            // parse the results into the format expected by Select2.
+            // since we are using custom formatting functions we do not need to
+            // alter the remote JSON data
+            return {
+                results: data
+            };
+        }
+    }
+    //templateResult: formatLeague
+});
 $('.picknameinputdashboard').select2();
 $('.choiceinputdashboard').select2();

@@ -18,7 +18,6 @@ class CreateEquipesTable extends Migration {
             $table->string('logo');
             $table->integer('sport_id')->unsigned();
             $table->integer('country_id')->unsigned();
-            $table->integer('competition_id')->unsigned();
 		});
 	}
 

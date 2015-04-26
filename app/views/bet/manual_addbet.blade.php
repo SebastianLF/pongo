@@ -171,9 +171,9 @@
     <table id="tablemanubetlines" class="table table-condensed table-bordered">
         <tr>
             <th width="80px">DATE RENCONTRE</th>
-            <th width="120px">SPORT</th>
+            <th width="">SPORT</th>
 
-            <th width="120px">LEAGUE</th>
+            <th width="">LEAGUE</th>
             <th colspan="2" width="100px">RENCONTRE</th>
             <th>PARI</th>
             <th>CHOIX</th>
@@ -185,7 +185,7 @@
                        type="date">
             </td>
             <td>
-                <select name="sportinputdashboard[]" class="form-control sportinputdashboard ">
+                <select name="sportinputdashboard[]" class="form-control sportinputdashboard">
                     <option value=""></option>
                 </select>
             </td>
