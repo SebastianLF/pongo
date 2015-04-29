@@ -18,6 +18,7 @@
     <data-source source="LOCAL" name="MySQL - slfweb@slfweb.mysql.eu1.frbit.com" uuid="2226fdbd-0f31-48fa-8a3c-f51c98371bf0">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
+      <auto-commit>false</auto-commit>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://slfweb.mysql.eu1.frbit.com:3306/slfweb</jdbc-url>
       <driver-properties>

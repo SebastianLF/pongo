@@ -1,109 +1,6 @@
-/* pour afficher les books et compte associés en ajax*/
-function showBooksAccounts(bookinput, accountinput) {
-    var $books = $(bookinput);
-    var $accounts = $(accountinput);
-
-    var list_html = '<option></option>';
-    $.ajax({
-        url: 'bookmakers',
-        data: 'book',
-        dataType: 'json',
-        success: function (json) {
-            $.each(json, function (index, value) {
-                list_html += '<option value="' + value.id + '">' + value.nom + '</option>';
-            });
-            $books.html(list_html);
-        }
-    });
-
-    $books.on('change', function () {
-        var val = $(bookinput + ' option:selected').val(); //
-        var list_html;
-        if (val == '') {
-            $accounts.html('');
-        } else {
-            console.log(val);
-            $.ajax({
-                url: 'accounts',
-                data: {book_id: val},
-                dataType: 'json',
-                success: function (json) {
-                    $.each(json, function (index, value) {
-                        list_html += '<option value="' + value.pivot.id + '">' + value.pivot.nom_compte + '</option>';
-                    });
-                    $accounts.html(list_html);
-                }
-            });
-        }
-
-    });
-}
-
-
-/* pour afficher les tipsters et montant par unite et type de suivi*/
-function showTipsters(tipsterinput, indiceuniteinput, followtypeinput) {
-    var tipsters = $(tipsterinput);
-    var indiceunite = $(indiceuniteinput);
-    var followtype = $(followtypeinput);
-
-    $.ajax({
-        url: 'tipsters',
-        dataType: 'json',
-        success: function (json) {
-            if (json.length > 0) {
-                // nettoyage de la liste deroulante.
-                tipsters.empty();
-
-                // ajout des tipster dans la liste déroulante
-                $.each(json, function (index, value) {
-                    tipsters.append('<option value="' + value.id + '">' + value.name + '</option>');
-                });
-
-                // chargement des infos du premier tipster.
-                indiceunite.val(json[0].indice_unite);
-                $('#amountperunit').val(json[0].montant_par_unite);
-                if (json[0].followtype == 'n') {
-                    followtype.val('normal');
-                } else {
-                    followtype.val('à blanc');
-                    $('#bookmakerrow').hide();
-                }
-            }
-        }
-    });
-
-    tipsters.on('change', function () {
-        var valtipster = $(this).val();
-        indiceunite.empty();
-        $('#amountinputdashboard').val('');
-
-        // remettre a zero les select bookmaker et compte au changement de tipster.
-        $('#bookinputdashboard').val('');
-        $('#accountsinputdashboard').val('');
-        $.ajax({
-            url: 'infosTipster',
-            data: {tipsterid: valtipster},
-            dataType: 'json',
-            success: function (json) {
-                $('#stakeunitinputdashboard').val('');
-                // chargement des infos du tipster selectionné.
-                indiceunite.val(json.indice_unite);
-                if (json.followtype == 'n') {
-                    followtype.val('normal');
-                    $('#bookmakerrow').fadeIn();
-                } else {
-                    followtype.val('à blanc');
-                    $('#bookmakerrow').fadeOut();
-                }
-                $('#amountperunit').val(json.montant_par_unite);
-            },
-            error: function () {
-                console.log('la recuperation du tipster dans le formulaire manuel d ajout de paris n\'a pas fonctionné');
-            }
-        });
-
-    });
-}
+$("#bookinputdashboard").prop("disabled", true);
+$("#accountsinputdashboard").prop("disabled", true);
+$('#methodeabcdcontainer').addClass("hide");
 
 // suivant le type de mise choisi.
 function typestakechoice() {
@@ -240,42 +137,121 @@ $('#manubetform-add').submit(function (e) {
 
 });
 
+$('#tipstersinputdashboard').select2({
+    allowClear: true,
+    placeholder: "Choisir un tipster",
+    cache: true,
+    ajax: {
+        url: 'tipsters',
+        dataType: 'json',
+        data: function (params) {
+            return {
+                q: params.term // search term
+            };
+        },
+        processResults: function (data) {
+            return {
+                results: data
+            };
+        }
+    }
+});
 
-// récuperation des noms et lettres des paris abcd dans le formulaire d'ajout de pari.
-function getParisABCD() {
+$('#tipstersinputdashboard').change(function(){
+    var tipster_id  = $('#tipstersinputdashboard').val();
+    var followtype = $('#followtypeinputdashboard');
+    var montant_par_unite = $('#amountperunit');
 
-    /*$('#serieinputdashboard').click(function () {
-     $.ajax({
-     url: 'parisabcd',
-     dataType: 'json',
-     success: function (data) {
-     $.each(data, function (index, value) {
-     $('#serieinputdashboard').append('<option value="' + value.id + '">' + value.nom_abcd + '</option>');
-     });
-     },
-     error: function () {
-     console.log('probleme chargement paris abcd ');
-     }
-     });
-     });
-     $('#serieinputdashboard').change(function () {
-     var nom = $('#serieinputdashboard').text();
-     $.each({
-     url: 'lettreabcd',
-     data: nom,
-     dataType: 'json',
-     success: function (data) {
-     console.log(data);
-     $.each(data, function (index, value) {
-     $('#letterinputdashboard').append('<option value="' + value.id + '">' + value.lettreabcd + '</option>');
-     });
-     },
-     error: function () {
-     console.log('probleme chargement lettre abcd ');
-     }
-     });
-     });*/
-}
+    // remise a zero des champs liés.
+    $('#stakeunitinputdashboard').val('');
+    $('#amountconversion').val('0');
+    $('#amountinputdashboard').val('');
+    $('#flattounitconversion').val('0');
+    $.ajax({
+        url: 'infosTipster',
+        data: 'tipster_id='+tipster_id,
+        dataType: 'json',
+        success: function(data){
+            $('#bookinputdashboard').val(null).trigger("change");
+            $('#accountsinputdashboard').val(null).trigger("change");
+            followtype.val('');
+            if (data.followtype == 'n') {
+                followtype.val('normal');
+                $("#bookinputdashboard").prop("disabled", false);
+                $("#accountsinputdashboard").prop("disabled", false);
+            } else if(data.followtype == 'b'){
+                followtype.val('à blanc');
+                $("#bookinputdashboard").prop("disabled", true);
+                $("#accountsinputdashboard").prop("disabled", true);
+            }
+            montant_par_unite.val(data.montant_par_unite);
+        },
+        error: function(data){
+        }
+    });
+});
+
+$('#bookinputdashboard').select2({
+    allowClear: true,
+    placeholder: "Choisir un bookmaker",
+    cache: true,
+    ajax: {
+        url: 'bookmakers',
+        dataType: 'json',
+        data: function (params) {
+            return {
+                q: params.term // search term
+            };
+        },
+        processResults: function (data) {
+            // parse the results into the format expected by Select2.
+            // since we are using custom formatting functions we do not need to
+            // alter the remote JSON data
+            /* var newData = [];
+             $.each(data, function (index,value) {
+             newData.push({
+             id:value.id,  //id part present in data
+             text: value.text  //string to be displayed
+             });
+             });*/
+            return {
+                results: data
+            };
+        }
+    }
+});
+
+$('#accountsinputdashboard').select2({
+    allowClear: true,
+    placeholder: "Choisir un compte",
+    cache: true,
+    minimumResultsForSearch: Infinity,
+    ajax: {
+        url: 'accounts',
+        dataType: 'json',
+        data: function (params) {
+            return {
+                book_id: $('#bookinputdashboard').val(),
+                q: params.term // search term
+            };
+        },
+        processResults: function (data) {
+            // parse the results into the format expected by Select2.
+            // since we are using custom formatting functions we do not need to
+            // alter the remote JSON data
+            /* var newData = [];
+             $.each(data, function (index,value) {
+             newData.push({
+             id:value.id,  //id part present in data
+             text: value.text  //string to be displayed
+             });
+             });*/
+            return {
+                results: data
+            };
+        }
+    }
+});
 
 // chargements des paris abcd dans le select input.
 $('#serieinputdashboard').select2({
@@ -288,6 +264,37 @@ $('#serieinputdashboard').select2({
         dataType: 'json',
         data: function (params) {
             return {
+                q: params.term // search term
+            };
+        },
+        processResults: function (data) {
+            // parse the results into the format expected by Select2.
+            // since we are using custom formatting functions we do not need to
+            // alter the remote JSON data
+            /* var newData = [];
+             $.each(data, function (index,value) {
+             newData.push({
+             id:value.id,  //id part present in data
+             text: value.text  //string to be displayed
+             });
+             });*/
+            return {
+                results: data
+            };
+        }
+    }
+});
+$('#letterinputdashboard').select2({
+    allowClear: true,
+    placeholder: "Choisir une lettre",
+    cache: true,
+    minimumResultsForSearch: Infinity,
+    ajax: {
+        url: 'lettreabcd',
+        dataType: 'json',
+        data: function (params) {
+            return {
+                serie_nom: $('#serieinputdashboard').val(),
                 q: params.term // search term
             };
         },
@@ -326,8 +333,6 @@ $("#serieinputdashboard").change(function () {
                     $('#letterinputdashboard').append('<option value="' + value + '">' + value + '</option>');
                 });
             }
-
-
         },
         error: function () {
             console.log('probleme chargement lettre systeme abcd')
@@ -465,4 +470,4 @@ $('.team2inputdashboard').select2({
     //templateResult: formatLeague
 });
 $('.picknameinputdashboard').select2();
-$('.choiceinputdashboard').select2();
+

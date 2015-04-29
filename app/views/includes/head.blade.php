@@ -1,10 +1,13 @@
 <meta charset="utf-8"/>
-<title>BetBoard</title>
+<title>Pongo</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 <meta content="" name="description"/>
 <meta content="" name="author"/>
+
+<!--ZingChart Script-->
+<script src="http://cdn.zingchart.com/zingchart.min.js"></script>
 <!--Start of Zopim Live Chat Script-->
 <script type="text/javascript">
       window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
@@ -27,6 +30,8 @@
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN PAGE LEVEL STYLES -->
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/select2-4.0.0-rc.2/dist/css/select2.css') }}
+{{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/select2/select2.css') }}
+{{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/bootstrap-select/bootstrap-select.min.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css') }}

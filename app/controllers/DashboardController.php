@@ -49,8 +49,7 @@ class DashboardController extends BaseController {
 
 	public function showTipsters(){
 		if(Request::ajax()){
-			$tipstersform = $this->currentUser->tipsters;
-			return Response::json($tipstersform);
+			;
 		}
 	}
     
@@ -58,18 +57,6 @@ class DashboardController extends BaseController {
 		$currentbets = $this->currentUser->currentBets()->orderBy('combonum','desc')->get();
 		return $currentbets;
 	}
-
-
-
-	public function infosTipster(){
-		if(Request::ajax()){
-			$tipster = $this->currentUser->tipsters()->where('id','=',Input::get('tipsterid'))->first();
-			return Response::json($tipster);
-		}
-	}
-
-    public function showAllABCD(){
-    }
 
     public function showParisEnCours(){
 	    $parisencours = $this->currentUser->enCoursParis()->with('selections.equipe1','selections.equipe2','selections.competition','selections.sport','selections.typePari','tipster','compte.bookmaker')->where('pari_long_terme','0')->where('pari_abcd','0')->orderBy('numero_pari','desc')->paginate(5);

@@ -5,7 +5,6 @@
                 <tr class="uppercase">
                     <th colspan="">Nom</th>
                     <th>Suivi</th>
-                    <th>Indice</th>
                     <th>Montant par indice</th>
                     <th></th>
                 </tr>
@@ -23,7 +22,6 @@
                                 <span class="">{{ 'à blanc' }}</span>
                             @endif
                         </td>
-                        <td>{{$tipster->indice_unite}}</td>
                         <td class="">
                             <span class="bold theme-font">{{number_format($tipster->montant_par_unite, 2, '.', ',' )}}</span>
                             <span class="bold theme-font">{{$user->devise}}</span>

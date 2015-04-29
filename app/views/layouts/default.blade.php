@@ -41,54 +41,41 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 <!-- BEGIN CORE PLUGINS -->
 <!--[if lt IE 9]>
-<script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/respond.min.js')}}"></script>
-<script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/excanvas.min.js')}}"></script>
+<script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/respond.min.js')}}"></script>
+<script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/excanvas.min.js')}}"></script>
 <![endif]-->
-<script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/jquery.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/jquery-migrate.min.js')}}"
+<script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/jquery.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/jquery-migrate.min.js')}}"
         type="text/javascript"></script>
 <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-<script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/jquery-ui/jquery-ui.min.js')}}"
+<script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/jquery-ui/jquery-ui.min.js')}}"
         type="text/javascript"></script>
-<script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/bootstrap/js/bootstrap.min.js')}}"
+<script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/bootstrap/js/bootstrap.min.js')}}"
         type="text/javascript"></script>
-<script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js')}}"
+<script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js')}}"
         type="text/javascript"></script>
-<script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js')}}"
+<script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js')}}"
         type="text/javascript"></script>
-<script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/jquery.blockui.min.js')}}"
+<script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/jquery.blockui.min.js')}}"
         type="text/javascript"></script>
-<script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/jquery.cokie.min.js')}}"
+<script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/jquery.cokie.min.js')}}"
         type="text/javascript"></script>
-<script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/uniform/jquery.uniform.min.js')}}"
+<script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/uniform/jquery.uniform.min.js')}}"
         type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script type="text/javascript"
-        src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/select2-4.0.0-rc.2/dist/js/select2.full.min.js')}}"></script>
-<script type="text/javascript"
-        src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js')}}"></script>
-<script type="text/javascript"
-        src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js')}}"></script>
-<script type="text/javascript"
-        src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js')}}"></script>
-<script type="text/javascript"
-        src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js')}}"></script>
-<script type="text/javascript"
-        src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js')}}"></script>
-<script type="text/javascript"
-        src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/icheck/icheck.min.js')}}"></script>
-<script src="{{asset('js/plugin/typeahead.bundle.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('js/plugin/typeahead.jquery.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('js/plugin/bloodhound.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/plugin/select2.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/plugin/toastr.js')}}" type="text/javascript"></script>
+<script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js')}}" type="text/javascript"></script>
+<script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/bootstrap-select/bootstrap-select.min.js')}}" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="{{asset('metronic_v3.6.2/theme/assets/global/scripts/metronic.js')}}" type="text/javascript"></script>
-<script src="{{asset('metronic_v3.6.2/theme/assets/admin/layout3/scripts/layout.js')}}" type="text/javascript"></script>
-<script src="{{asset('metronic_v3.6.2/theme/assets/admin/layout3/scripts/demo.js')}}" type="text/javascript"></script>
-<script src="{{asset('metronic_v3.6.2/theme/assets/admin/pages/scripts/table-advanced.js')}}"></script>
-<script src="{{asset('metronic_v3.6.2/theme/assets/admin/pages/scripts/form-samples.js')}}"></script>
+<script src="{{asset('metronic_v3.8.1/theme/assets/global/scripts/metronic.js')}}" type="text/javascript"></script>
+<script src="{{asset('metronic_v3.8.1/theme/assets/admin/layout3/scripts/layout.js')}}" type="text/javascript"></script>
+<script src="{{asset('metronic_v3.8.1/theme/assets/admin/layout3/scripts/demo.js')}}" type="text/javascript"></script>
+<script src="{{asset('metronic_v3.8.1/theme/assets/admin/pages/scripts/table-advanced.js')}}"></script>
+<script src="{{asset('metronic_v3.8.1/theme/assets/admin/pages/scripts/form-samples.js')}}"></script>
+<script src="{{asset('metronic_v3.8.1/theme/assets/admin/pages/scripts/components-dropdowns.js')}}"></script>
 
 
 <script src="{{asset('js/pages/dashboard/dashboard.js')}}" type="text/javascript"></script>
@@ -115,6 +102,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="{{asset('js/pages/configuration/bookmakers/bookmakerAdd.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/configuration/bookmakers/bookmakerDelete.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/configuration/bookmakers/bookmakerUpdate.js')}}" type="text/javascript"></script>
+
+<script src="{{asset('js/pages/stats/stats.js')}}" type="text/javascript"></script>
 
 <script src="{{asset('js/pages/dashboard/paris/loadParisEnCours.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/dashboard/paris/parisEnCoursDelete.js')}}" type="text/javascript"></script>
@@ -143,12 +132,10 @@ License: You must have a valid license purchased only from themeforest(the above
         };
 
         //pari manuel
-        showTipsters('#tipstersinputdashboard', '#stakeindicatorinputdashboard', '#followtypeinputdashboard');
-        showBooksAccounts('#bookinputdashboard', '#accountsinputdashboard');
         typestakechoice();
         conversionUnitesVersMontant();
         conversionMontantVersUnites();
-        getParisABCD();
+
 
         //conversionUnitesVersMontant();
         //conversionMontantVersUnites();
@@ -181,9 +168,8 @@ License: You must have a valid license purchased only from themeforest(the above
         Metronic.init(); // init metronic core components
         Layout.init(); // init current layout
         Demo.init(); // init demo features
-        TableAdvanced.init();
         FormSamples.init();
-        UIBlockUI.init();
+        ComponentsDropdowns.init();
     });
 </script>
 <!-- END JAVASCRIPTS -->

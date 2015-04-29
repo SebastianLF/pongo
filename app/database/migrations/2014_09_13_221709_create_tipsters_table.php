@@ -18,7 +18,6 @@ class CreateTipstersTable extends Migration {
             $table->softDeletes();
 			$table->string('name', 50);
 			$table->decimal('montant_par_unite',8,2)->default('0.00'); // max: 999 999,99
-			$table->tinyInteger('indice_unite')->default('10'); // 0 à 255
             $table->string('followtype',2 ); // type de suivi
 			$table->integer('user_id')->unsigned();
 		});

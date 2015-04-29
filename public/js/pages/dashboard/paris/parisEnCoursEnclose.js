@@ -20,15 +20,13 @@ function parisEnCoursEnclose(tablename,formname,urlgiven) {
         parent.next().find('input[name="childrowsinput[]"]').each(function () {
             childrows.push($(this).val());
         });
+        console.log(childrows);
         if (retour.text().length > 0) {
-            var cote = parent.find(".tdcote").text();
-            var mise = parent.find(".tdmise .tdsubmise").text();
-            var retour_montant = retour.text();
             var ser = $(this).serialize();
             $.ajax({
                 url: url,
                 type: 'post',
-                data: ser + '&id=' + id + '&cote=' + cote + '&mise=' + mise + '&retour_montant=' + retour_montant + '&status=' + status + '&childrows=' + childrows,
+                data: ser + '&id=' + id + '&status=' + status + '&childrowsinput=' + childrows,
                 dataType: 'json',
                 success: function (data) {
                     loadParisEnCours();

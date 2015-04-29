@@ -1,7 +1,7 @@
-
-<table id="parisencourstable" class="table table-condensed " style="border-collapse:collapse;">
+<div class="table-scrollable table-scrollable-borderless">
+<table id="parisencourstable" class="table table-condensed table-hover table-light" style="border-collapse:collapse;">
     <thead>
-    <tr>
+    <tr class="uppercase">
         <th id="count" class="hidden ">{{$count_paris_encours}}</th>
         <th></th>
         <th>N°</th>
@@ -17,7 +17,7 @@
         <th>Mise</th>
         <th>Status <span class="glyphicon glyphicon-info-sign"></span></th>
         <th>Retour <span class="glyphicon glyphicon-info-sign"></span></th>
-        <th>Actionqsdqsd <span class="glyphicon glyphicon-info-sign"></span></th>
+        <th>Valid/Suppr Ticket <span class="glyphicon glyphicon-info-sign"></span></th>
     </tr>
     </thead>
     <tbody>
@@ -81,11 +81,9 @@
                 </span>
                     </td>
                     <td>
-                        @if(isset($pari->selections[0]->typePari))
-                            {{$pari->selections[0]->typePari->name}} - {{$pari->selections[0]->choix_pari}}</td>
-                    @else
-                        {{'non spéc.'}}
-                    @endif
+
+                    </td>
+
                     <td class="fit tdcote">{{$pari->cote}}</td>
                     <td>{{$pari->tipster->name}}</td>
                     <td>
@@ -136,9 +134,10 @@
                                     <th>competition</th>
                                     <th>equipe/joueur n°1</th>
                                     <th>equipe/joueur n°2</th>
-                                    <th>pari</th>
+
                                     <th>cote</th>
                                     <th>score/autre</th>
+                                    <th>validation pari</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -150,11 +149,18 @@
                                         <td>{{isset($selection->competition) ? $selection->competition->name : 'non spéc.'}}</td>
                                         <td>{{isset($selection->equipe1) ? $selection->equipe1->name : 'non spéc.'}}</td>
                                         <td>{{isset($selection->equipe2) ? $selection->equipe2->name : 'non spéc.'}}</td>
-                                        <td>{{isset($selection->typePari) ? $selection->typePari->name : 'non spéc.'}}
-                                            - {{isset($selection->choix_pari) ? $selection->choix_pari : 'aucun'}}</td>
                                         <td>{{$selection->cote}}</td>
                                         <td><input type="text" name="childrowsinput[]"
                                                    class="form-control input-sm"/></td>
+                                        <td>
+                                            <select name="resultatSelectionDashboardInput[]" class="form-control input-sm">
+                                                <option value="0">--Selectionnez--</option>
+                                                @foreach($types_resultat as $key => $type)
+                                                    <option value="{{$key}}"><a href="javascript:;" class="btn btn-xs">{{$type}}</a>
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -172,6 +178,6 @@
     </tbody>
 
 </table>
-
+</div>
 {{$parisencours->appends(Input::except('page'))->links()}}
 

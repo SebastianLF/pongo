@@ -2,6 +2,7 @@
  * Created by sebs on 19/04/2015.
  */
 
+
 function parisEnCoursCalculateStatus(tablename){
     // calcul du montant retour par rapport au resultat selectionné
     $( tablename+" "+"select[name='resultatDashboardInput']").change(function (e) {

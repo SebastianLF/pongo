@@ -63,7 +63,7 @@
 		{
 			switch ($type) {
 				case 'tipsters':
-					$tipsters = User::find($this->currentUserId)->tipsters()->with(array('termineParis'))->orderBy('created_at', 'desc')->paginate(5);
+					$tipsters = User::find($this->currentUser->id)->tipsters()->with(array('termineParis'))->orderBy('created_at', 'desc')->paginate(5);
 					Clockwork::info($tipsters);
 					$view = View::make('tipsters.listeTipsters', array('tipsters' => $tipsters ));
 					return $view;

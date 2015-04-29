@@ -61,18 +61,4 @@
 
 			}
 		}
-
-		public function getAutocompleteSports()
-		{
-			$term = Input::get('term');
-			$sports = Sport::where('name', 'LIKE', "%$term%")->get();
-			Clockwork::info($sports);
-			foreach ($sports as $sport) {
-				$sportsfinal[] = ["value" => $sport->name, "desc" => $sport->name];
-			}
-			Clockwork::info($sportsfinal);
-			return Response::json($sportsfinal);
-		}
-
-
 	}

@@ -26,7 +26,7 @@ Route::get('dashboard/ajax/{type}', 'DashboardController@itemTypeCheck')->where(
  Route::resource('encourspari', 'EnCoursParisController');
  Route::resource('historique', 'TermineParisController');
  Route::get('comptes','BookmakerController@showComptes');
- Route::get('bookmakers','BookmakerController@showMyBookmakers');
+ Route::get('bookmakers','BookmakerController@getMyBookmakers');
  Route::get('parisabcd','EnCoursParisController@getEnCoursABCD');
  Route::get('lettreabcd','EnCoursParisController@getlettreABCD');
 
@@ -36,11 +36,11 @@ Route::get('account', 'AccountController@showIndex');
 
 
 /* accounts : ajax request for select input in 'transaction' form(config page) and 'manual add bet' form(dashboard page) */
-Route::get('accounts', 'ConfigController@showAllaccounts');
+Route::get('accounts', 'BookmakerController@showMyAccounts');
 /* tipsters : ajax request for select input about showing id and name for all tipsters of the user auth, in the 'manual addbet' form */
-Route::get('tipsters', 'DashboardController@showTipsters');
+Route::get('tipsters', 'TipsterController@getMyTipsters');
 /* infosTipster : ajax request for select input about tipster infos in the 'manual addbet' form */
-Route::get('infosTipster', 'DashboardController@infosTipster');
+Route::get('infosTipster', 'TipsterController@infosTipster');
 
 /*  */
 

@@ -37,15 +37,15 @@ class TermineParisController extends BaseController {
 	{
 
 		$regles = array(
-			'retour_montant' => 'required|regex:/^\d+(\.\d{1,2})?$/'
+			'ticket-id' => 'required|exists:en_cours_paris,id,user_id,' . $this->currentUser->id,
 		);
 
 		$messages = array(
-			'retour_montant.regex' => 'probleme avec le montant calculé'
+
 		);
 
 		$validator = Validator::make(Input::all(), $regles);
-		$validator->each('childrows',['sometimes','alpha']);
+		$validator->each('childrowsinput',['sometimes','alpha']);
 
 		if($validator->fails()){
 			return Response::json(array(
