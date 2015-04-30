@@ -9,15 +9,17 @@
     </data-source>
     <data-source name="MySQL - slfweb@slfweb.mysql.eu1.frbit.com" uuid="2226fdbd-0f31-48fa-8a3c-f51c98371bf0">
       <secret-storage>master_key</secret-storage>
-      <first-sync>true</first-sync>
       <user-name>slfweb</user-name>
+      <schema-pattern>slfweb.*</schema-pattern>
+      <default-schemas>slfweb.*</default-schemas>
       <ssh-properties>
         <enabled>true</enabled>
         <proxy-host>ssh37.eu1.frbit.com</proxy-host>
         <proxy-port>22</proxy-port>
         <secret-storage>master_key</secret-storage>
         <user>u-slfweb</user>
-        <use-password>true</use-password>
+        <use-password>false</use-password>
+        <private-key-path>C:\Users\seb\.ssh\id_rsa</private-key-path>
       </ssh-properties>
     </data-source>
   </component>
