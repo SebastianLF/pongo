@@ -64,7 +64,6 @@
 			$validator->each('team1inputdashboard', ['sometimes', 'exists:equipes,id']);
 			$validator->each('team2inputdashboard', ['sometimes', 'exists:equipes,id']);
 			$validator->each('picknameinputdashboard', ['sometimes', 'exists:type_paris,id']);
-			$validator->each('choiceinputdashboard', ['sometimes', 'exists:competitions,id']);
 			$validator->each('oddinputdashboard', ['required', 'min:1', 'regex:/^\d+(\.\d{1,2})?$/']);
 
 			if ($validator->fails()) {

@@ -26,7 +26,7 @@ function parisEnCoursEnclose(tablename,formname,urlgiven) {
             $.ajax({
                 url: url,
                 type: 'post',
-                data: ser + '&id=' + id + '&status=' + status + '&childrowsinput=' + childrows,
+                data: ser + '&id=' + id + '&status=' + status + '&childrowsinput[]=' + childrows,
                 dataType: 'json',
                 success: function (data) {
                     loadParisEnCours();

@@ -4,7 +4,7 @@
         <!-- BEGIN LOGO -->
         <div class="page-logo">
             <a href="{{url('dashboard')}}"><img
-                        src="{{asset('img/raizer3.png')}}"
+                        src="{{asset('img/pongo.jpg')}}"
                         alt="logo" class="logo" height="60px"></a>
         </div>
         <!-- END LOGO -->

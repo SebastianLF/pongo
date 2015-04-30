@@ -21,7 +21,6 @@ class CreateTermineParisTable extends Migration {
 			$table->decimal('cote',8,2);
 			$table->decimal('mt_par_unite',8,2); // montant par unité
 			$table->decimal('nombre_unites',5,2); // le 1 de 1/10
-			$table->tinyInteger('indice_unites'); // le 10 de 1/10
 			$table->decimal('mise_totale', 8,2); // mise totale du pari
 			$table->decimal('unites_retour',8,2); //  unites misées + unites gagnées ou perdues
 			$table->decimal('unites_profit', 8,2);
@@ -30,11 +29,11 @@ class CreateTermineParisTable extends Migration {
 			$table->boolean('pari_long_terme')->default('0');
 			$table->boolean('pari_abcd')->default('0');
 			$table->string('nom_abcd')->default('0');
+			$table->string('lettre_abcd',2);
 			$table->tinyInteger('status'); // gagné , perdu , remboursé etc..
 			$table->integer('tipster_id')->unsigned();
 			$table->integer('user_id')->unsigned();
 			$table->integer('bookmaker_user_id')->nullable()->unsigned();
-			$table->integer('methode_abcd_id')->nullable()->unsigned();
 		});
 	}
 

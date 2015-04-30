@@ -18,6 +18,7 @@ class CreateSelectionsTable extends Migration {
 			$table->date('date_match'); // date de la rencontre
 			$table->decimal('cote',8,2);
 			$table->string('status'); // gagné , perdu , remboursé etc..
+			$table->string('infos_pari'); // score vainqueur etc..
 			$table->string('resultat_pari'); // le score final par exemple.
 			$table->integer('sport_id')->unsigned()->nullable();
 			$table->integer('country_id')->unsigned()->nullable();

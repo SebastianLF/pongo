@@ -5,8 +5,6 @@ class TermineParisController extends BaseController {
 	public function __construct(){
 		parent::__construct();
 		$this->beforeFilter('auth');
-		$this->userid = Auth::id();
-		$this->user = User::find($this->userid);
 	}
 	/**
 	 * Display a listing of the resource.
@@ -38,13 +36,16 @@ class TermineParisController extends BaseController {
 
 		$regles = array(
 			'ticket-id' => 'required|exists:en_cours_paris,id,user_id,' . $this->currentUser->id,
+			'status' => 'between:0,6'
 		);
 
 		$messages = array(
-
+			'ticket-id.required' => 'Un numero de ticket est obligatoire.',
+			'ticket-id.exists' => 'Ce ticket n\'existe dans votre compte.',
+			'status.between' => 'le status doit etre choisis dans la liste.'
 		);
 
-		$validator = Validator::make(Input::all(), $regles);
+		$validator = Validator::make(Input::all(), $regles, $messages);
 		$validator->each('childrowsinput',['sometimes','alpha']);
 
 		if($validator->fails()){
@@ -60,11 +61,12 @@ class TermineParisController extends BaseController {
 			$cote = $encoursparis->cote;
 			$nombre_unites = $encoursparis->nombre_unites;
 			$followtype = $encoursparis->followtype;
-			$retour = Input::get('retour_montant');
 			$retour_unites = null;
 			$retour_devise = null;
 			$profit_unites = null;
 			$profit_devise = null;
+			$nom_abcd = null;
+			$lettre_abcd = null;
 
 
 			/*
@@ -117,17 +119,14 @@ class TermineParisController extends BaseController {
 					break;
 			}
 
-
-
 			// creation du pari validé.
-			$termine_paris = new TermineParis(array(
+			$termine_pari = new TermineParis(array(
 				'followtype' => $encoursparis->followtype,
 				'type_profil' => $encoursparis->type_profil,
 				'numero_pari' => $encoursparis->numero_pari,
 				'cote' => $encoursparis->cote,
 				'mt_par_unite' => $encoursparis->mt_par_unite,
 				'nombre_unites' => $encoursparis->nombre_unites,
-				'indice_unites' => $encoursparis->indice_unites,
 				'mise_totale' => $encoursparis->mise_totale,
 				'unites_retour' => $retour_unites,
 				'unites_profit' => $profit_unites,
@@ -135,15 +134,28 @@ class TermineParisController extends BaseController {
 				'montant_profit' => $profit_devise,
 				'pari_long_terme' => $encoursparis->pari_long_terme,
 				'pari_abcd' => $encoursparis->pari_abcd,
+				'nom_abcd' =>  $encoursparis->nom_abcd,
+				'lettre_abcd' =>  $encoursparis->lettre_abcd,
 				'status' => $status,
 				'tipster_id' => $encoursparis->tipster_id,
 				'user_id' => $encoursparis->user_id,
 				'bookmaker_user_id' => $encoursparis->bookmaker_user_id,
-				'methode_abcd_id' => $encoursparis->methode_abcd_id,
 			));
 
 			// ajout du paris dans la table termine paris.
-			$this->user->termineParis()->save($termine_paris);
+			$termine_paris_ajoute = $this->currentUser->termineParis()->save($termine_pari);
+
+			// mise en global pour que la variable soit accessible dans la boucle ci-dessous.
+			$this->id = $termine_paris_ajoute->id;
+
+			// ajout de la clé etrangere termineparis dans la ou les selections correspondantes.
+			$selections = $encoursparis->selections()->get();
+			$selections->each(function($selection)
+			{
+				$selection->termine_pari_id = $this->id;
+				$selection->en_cours_pari_id = null;
+				$selection->save();
+			});
 
 			// suppression du pari en cours.
 			$encoursparis->delete();

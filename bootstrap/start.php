@@ -24,11 +24,18 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment(array(
+$env = $app->detectEnvironment(function(){
 
-	'local' => array('seb'),
-
-));
+	return in_array(
+		gethostname(),
+		[
+			'seb-PC',
+			'seb'
+		]
+	) ?
+		'local' :
+		'production';
+});
 
 /*
 |--------------------------------------------------------------------------
