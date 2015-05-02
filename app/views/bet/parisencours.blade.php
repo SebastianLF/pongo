@@ -7,16 +7,13 @@
         <th>N°</th>
         <th>date ajout</th>
         <th>type</th>
-        <th>Sport</th>
-        <th>Compet.</th>
-        <th>Rencontre</th>
+        <th colspan="3" align="center">Apercu</th>
         <th>Pari <span class="glyphicon glyphicon-info-sign"></span></th>
         <th>Cote</th>
         <th>Tipster</th>
         <th>Bookmaker</th>
         <th>Mise</th>
-        <th>Status <span class="glyphicon glyphicon-info-sign"></span></th>
-        <th>Retour <span class="glyphicon glyphicon-info-sign"></span></th>
+        <th>profits/pertes <span class="glyphicon glyphicon-info-sign"></span></th>
         <th>Valid/Suppr Ticket <span class="glyphicon glyphicon-info-sign"></span></th>
     </tr>
     </thead>
@@ -102,16 +99,8 @@
                         <span class="tdsubmise bold theme-font">{{{$pari->mise_totale}}}</span>{{{$user->devise}}}
                     </td>
 
-                    <td>
-                        <select name="resultatDashboardInput" class="form-control input-sm">
-                            <option value="0">--Selectionnez--</option>
-                            @foreach($types_resultat as $key => $type)
-                                <option value="{{$key}}"><a href="javascript:;" class="btn btn-xs">{{$type}}</a>
-                                </option>
-                            @endforeach
-                        </select>
-                    </td>
-                    <td class="tdretour bold"><span class="subretour"></span>{{{$user->devise}}}</td>
+
+                    <td class="tdretour bold"><span class="profit-retour"></span></td>
                     <td>
                         {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris' ,'role' => 'form', )) }}
                         {{ Form::button('<i class="fa fa-check"></i>', array('type' => 'submit', 'class' => 'boutonvalider btn btn-sm green')) }}
@@ -144,16 +133,17 @@
 
                                 @foreach($pari->selections as $selection)
                                     <tr class="child-table-tr">
+                                    <td class="hidden child-id">{{$selection->id}}</td>
                                         <td>{{isset($selection->date_match) ? $selection->date_match : 'non spéc.'}}</td>
                                         <td>{{isset($selection->sport) ? $selection->sport->name : 'non spéc.'}}</td>
                                         <td>{{isset($selection->competition) ? $selection->competition->name : 'non spéc.'}}</td>
                                         <td>{{isset($selection->equipe1) ? $selection->equipe1->name : 'non spéc.'}}</td>
                                         <td>{{isset($selection->equipe2) ? $selection->equipe2->name : 'non spéc.'}}</td>
-                                        <td>{{$selection->cote}}</td>
+                                        <td>{{$selection->cote}}{{empty($selection->cote_apres_status) ? '' : ' ('.($selection->cote_apres_status).')'}}</td>
                                         <td><input type="text" name="childrowsinput[]"
                                                    class="form-control input-sm"/></td>
-                                        <td>
-                                            <select name="resultatSelectionDashboardInput[]" class="form-control input-sm">
+                                        <td class="status-td">
+                                            <select name="resultatSelectionDashboardInput[]" data-value="{{$selection->status}}" class="form-control input-sm">
                                                 <option value="0">--Selectionnez--</option>
                                                 @foreach($types_resultat as $key => $type)
                                                     <option value="{{$key}}"><a href="javascript:;" class="btn btn-xs">{{$type}}</a>

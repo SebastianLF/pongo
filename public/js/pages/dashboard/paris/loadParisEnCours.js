@@ -8,6 +8,7 @@ function loadParisEnCours() {
             $('#tab_15_1').html(data);
             featuresParisEnCours();
             paginationParisEnCours();
+            afficherStatusChilds('#parisencourstable');
         },
         error: function (data) {
             $('#tab_15_1').html('<p>impossible de récuperer les paris</p>');

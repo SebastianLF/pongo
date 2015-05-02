@@ -4,7 +4,7 @@
         <!-- BEGIN LOGO -->
         <div class="page-logo">
             <a href="{{url('dashboard')}}"><img
-                        src="{{asset('img/pongo.jpg')}}"
+                        src="{{asset('img/pongo2.jpg')}}"
                         alt="logo" class="logo" height="60px"></a>
         </div>
         <!-- END LOGO -->

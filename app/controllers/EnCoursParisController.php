@@ -281,5 +281,24 @@
 			return Response::json($result);
 		}
 
+		public function updateSelection(){
+			$id = Input::get('id');
+			$status = Input::get('status');
+			$selection = $this->currentUser->selections()->where('selections.id', $id)->first(array('selections.id','selections.status'));
 
+			if(!$selection){
+				return Response::json(array(
+					'etat' => 0,
+					'message' => 'cette selection n\'existe pas.'
+				));
+			}else{
+				$selection->status = $status;
+				$selection->save();
+				return Response::json(array(
+					'etat' => 1,
+					'message' => 'Changements enregistrés',
+					'selection' => $selection
+				));
+			}
+		}
 	}

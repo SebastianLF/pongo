@@ -111,12 +111,6 @@ class TermineParisController extends BaseController {
 					$profit_devise = 0;
 					$profit_unites = 0;
 					break;
-				case 6:
-					$retour_devise = $mise;
-					$retour_unites = $nombre_unites;
-					$profit_devise = 0;
-					$profit_unites = 0;
-					break;
 			}
 
 			// creation du pari validé.

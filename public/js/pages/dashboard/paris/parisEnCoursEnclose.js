@@ -14,19 +14,25 @@ function parisEnCoursEnclose(tablename,formname,urlgiven) {
         var retour = parent.find('.tdretour span.subretour');
         var id = parent.find('.id').text();
         var status = parent.find("select[name='resultatDashboardInput'] option:selected").val();
-        //var childs = wrapper.find('.childrowsinput').val();
+        //var childs = wrapper.find('.childr owsinput').val();
         var childrows = new Array();
+        var childrowsstatus = new Array();
         var subrow = parent.next().find('.child-row input');
         parent.next().find('input[name="childrowsinput[]"]').each(function () {
             childrows.push($(this).val());
         });
+        parent.next().find('select[name="resultatSelectionDashboardInput[]"]').each(function () {
+            childrowsstatus.push($(this).val());
+        });
+
         console.log(childrows);
+        console.log(childrowsstatus);
         if (retour.text().length > 0) {
             var ser = $(this).serialize();
             $.ajax({
                 url: url,
                 type: 'post',
-                data: ser + '&id=' + id + '&status=' + status + '&childrowsinput[]=' + childrows,
+                data: ser + '&id=' + id + '&status=' + status + '&childrowsinput[]=' + childrows + '&childrowsstatus[]=' + childrowsstatus,
                 dataType: 'json',
                 success: function (data) {
                     loadParisEnCours();

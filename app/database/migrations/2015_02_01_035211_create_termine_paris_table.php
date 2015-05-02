@@ -19,6 +19,7 @@ class CreateTermineParisTable extends Migration {
 			$table->string('type_profil',2); // simple ou combiné
 			$table->integer('numero_pari'); // numero du pari
 			$table->decimal('cote',8,2);
+			$table->decimal('cote_apres_status');
 			$table->decimal('mt_par_unite',8,2); // montant par unité
 			$table->decimal('nombre_unites',5,2); // le 1 de 1/10
 			$table->decimal('mise_totale', 8,2); // mise totale du pari

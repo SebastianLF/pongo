@@ -156,15 +156,16 @@
         </div>
 
 
-        <div id="wrapmanubetscontainer">
-            <table id="tablemanubetlines" class="table table-condensed table-bordered">
+        <div id="wrapmanubetscontainer" class="table-scrollable ">
+            <table id="tablemanubetlines" class="table table-condensed table-hover table-light">
                 <tr>
-                    <th width="80px">DATE RENCONTRE</th>
+                    <th width="">DATE RENCONTRE</th>
                     <th width="">SPORT</th>
                     <th width="">LEAGUE</th>
                     <th colspan="2" width="100px">RENCONTRE</th>
                     <th>PARI</th>
-                    <th width="50px">COTE <span class="glyphicon glyphicon-asterisk"></span></th>
+                    <th width="">COTE <span class="glyphicon glyphicon-asterisk"></span></th>
+                    <th></th>
                 </tr>
                 <tr class="betline">
                     <td><div class="">

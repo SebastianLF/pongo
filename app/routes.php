@@ -12,9 +12,7 @@ Route::get('pagination/ajax/{type}', 'ConfigController@itemTypeCheck')->where('t
 Route::get('dashboard/ajax/{type}', 'DashboardController@itemTypeCheck')->where('type', 'parisencours|parislongterme');
 
  Route::controller('auth', 'AuthController');
-
  Route::controller('password', 'RemindersController');
-
  Route::get('recaps', 'DashboardController@showRecaps');
  Route::resource('abcdparis', 'ABCDParisController');
  Route::resource('mtmoistipster', 'MtMoisTipsterController');
@@ -42,10 +40,10 @@ Route::get('tipsters', 'TipsterController@getMyTipsters');
 /* infosTipster : ajax request for select input about tipster infos in the 'manual addbet' form */
 Route::get('infosTipster', 'TipsterController@infosTipster');
 
-/*  */
+/* selections */
+Route::post('selection', 'EnCoursParisController@updateSelection');
 
-
-/* all */
+/* formulaire d'ajout de pari */
  Route::get('autocomplete/sports','AjaxController@getAutocompleteSports');
  Route::get('sports','AjaxController@getSports');
  Route::get('countries','AjaxController@getCountries');
