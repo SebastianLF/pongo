@@ -284,7 +284,8 @@
 		public function updateSelection(){
 			$id = Input::get('id');
 			$status = Input::get('status');
-			$selection = $this->currentUser->selections()->where('selections.id', $id)->first(array('selections.id','selections.status'));
+			$info = Input::get('info');
+			$selection = $this->currentUser->selections()->where('selections.id', $id)->first(array('selections.id','selections.status','selections.infos_pari'));
 
 			if(!$selection){
 				return Response::json(array(
@@ -293,11 +294,11 @@
 				));
 			}else{
 				$selection->status = $status;
+				$selection->infos_pari = $info;
 				$selection->save();
 				return Response::json(array(
 					'etat' => 1,
 					'message' => 'Changements enregistrés',
-					'selection' => $selection
 				));
 			}
 		}

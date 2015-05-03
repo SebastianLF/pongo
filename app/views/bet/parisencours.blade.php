@@ -13,8 +13,8 @@
         <th>Tipster</th>
         <th>Bookmaker</th>
         <th>Mise</th>
-        <th>profits/pertes <span class="glyphicon glyphicon-info-sign"></span></th>
-        <th>Valid/Suppr Ticket <span class="glyphicon glyphicon-info-sign"></span></th>
+        <th>apercu profits <span class="glyphicon glyphicon-info-sign"></span></th>
+        <th>finaliser Ticket <span class="glyphicon glyphicon-info-sign"></span></th>
     </tr>
     </thead>
     <tbody>
@@ -100,14 +100,14 @@
                     </td>
 
 
-                    <td class="tdretour bold"><span class="profit-retour"></span></td>
+                    <td class="bold"><span class="profits"></span></td>
                     <td>
                         {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris' ,'role' => 'form', )) }}
-                        {{ Form::button('<i class="fa fa-check"></i>', array('type' => 'submit', 'class' => 'boutonvalider btn btn-sm green')) }}
+                        {{ Form::button('<i class="fa fa-check"></i>', array('type' => 'submit', 'class' => 'boutonvalider btn btn-sm green', 'disabled' => 'disabled')) }}
                         {{ Form::close() }}
 
                         {{ Form::open(array('route' => 'historique.destroy', 'class' => 'supprimerform form-bouton-paris','role' => 'form')) }}
-                        {{ Form::button('<i class="fa fa-times"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red')) }}
+                        {{ Form::button('<i class="fa fa-times"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red', )) }}
                         {{ Form::close() }}
                     </td>
                 </tr>
@@ -123,10 +123,9 @@
                                     <th>competition</th>
                                     <th>equipe/joueur n°1</th>
                                     <th>equipe/joueur n°2</th>
-
                                     <th>cote</th>
                                     <th>score/autre</th>
-                                    <th>validation pari</th>
+                                    <th>status</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -139,9 +138,9 @@
                                         <td>{{isset($selection->competition) ? $selection->competition->name : 'non spéc.'}}</td>
                                         <td>{{isset($selection->equipe1) ? $selection->equipe1->name : 'non spéc.'}}</td>
                                         <td>{{isset($selection->equipe2) ? $selection->equipe2->name : 'non spéc.'}}</td>
-                                        <td>{{$selection->cote}}{{empty($selection->cote_apres_status) ? '' : ' ('.($selection->cote_apres_status).')'}}</td>
+                                        <td><span class="cote-td">{{$selection->cote}}</span>{{empty($selection->cote_apres_status) ? '' : ' ('.($selection->cote_apres_status).')'}}</td>
                                         <td><input type="text" name="childrowsinput[]"
-                                                   class="form-control input-sm"/></td>
+                                                   class="form-control input-sm" value="{{empty($selection->infos_pari) ? '' : $selection->infos_pari}}"/></td>
                                         <td class="status-td">
                                             <select name="resultatSelectionDashboardInput[]" data-value="{{$selection->status}}" class="form-control input-sm">
                                                 <option value="0">--Selectionnez--</option>
