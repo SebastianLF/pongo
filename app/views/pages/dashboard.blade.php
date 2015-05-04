@@ -46,8 +46,7 @@
 
             <!-- BEGIN PAGE CONTENT INNER -->
             <div class="row">
-
-                <div class="col-md-9">
+                <div class="col-md-12">
                     <div class="portlet light">
                         <div class="portlet-title">
                             <div class="caption">
@@ -124,9 +123,10 @@
                                 </div>
                             </div>
 
-
                         </div>
                     </div>
+                </div>
+                <div class="col-md-9">
                     <div class="portlet light">
                         <div class="portlet-title">
                             <div class="caption">
@@ -162,33 +162,32 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
-
-                </div>
-                <div class="col-md-3">
-                    <div id="comptes_par_bookmakers">
-
-                    </div>
-                    <div id="recaps">
-                        <div class="portlet light">
-                            <div class="portlet-title">
-                                <div class="caption">
-                                    <i class="fa fa-cogs font-yellow-crusta"></i>
-                                    <span class="caption-subject font-yellow-crusta bold uppercase">Tipsters</span>
-                                </div>
-                            </div>
-                            <div class="portlet-body">
-
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
+            <div class="col-md-3">
+                <div id="comptes_par_bookmakers">
 
-            <!-- END PAGE CONTENT INNER -->
+                </div>
+                <div id="recaps">
+                    <div class="portlet light">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-cogs font-yellow-crusta"></i>
+                                <span class="caption-subject font-yellow-crusta bold uppercase">Tipsters</span>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
+
+        <!-- END PAGE CONTENT INNER -->
+    </div>
     </div>
 @stop

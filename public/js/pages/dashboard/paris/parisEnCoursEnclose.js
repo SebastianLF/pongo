@@ -13,8 +13,6 @@ function parisEnCoursEnclose(tablename,formname,urlgiven) {
         var wrapper = $(this).closest('.wrapperRow');
         var retour = parent.find('.tdretour span.subretour');
         var id = parent.find('.id').text();
-        var status = parent.find("select[name='resultatDashboardInput'] option:selected").val();
-        //var childs = wrapper.find('.childr owsinput').val();
         var childrows = new Array();
         var childrowsstatus = new Array();
         var subrow = parent.next().find('.child-row input');
@@ -32,7 +30,7 @@ function parisEnCoursEnclose(tablename,formname,urlgiven) {
             $.ajax({
                 url: url,
                 type: 'post',
-                data: ser + '&id=' + id + '&status=' + status + '&childrowsinput[]=' + childrows + '&childrowsstatus[]=' + childrowsstatus,
+                data: ser + '&ticket-id=' + id + '&childrowsinput[]=' + childrows + '&childrowsstatus[]=' + childrowsstatus,
                 dataType: 'json',
                 success: function (data) {
                     loadParisEnCours();

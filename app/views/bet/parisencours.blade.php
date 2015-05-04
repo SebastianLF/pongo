@@ -95,12 +95,10 @@
                     @endif
                 </span>
                     </td>
-                    <td class="tdmise bold theme-font">
-                        <span class="tdsubmise bold theme-font">{{{$pari->mise_totale}}}</span>{{{$user->devise}}}
+                    <td class="tdmise bold">
+                        <span class="tdsubmise bold ">{{{$pari->mise_totale}}} </span>{{{$user->devise}}}
                     </td>
-
-
-                    <td class="bold"><span class="profits"></span></td>
+                    <td class="bold"><span class="profits"></span><span class="devise"> {{{$user->devise}}}</span></td>
                     <td>
                         {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris' ,'role' => 'form', )) }}
                         {{ Form::button('<i class="fa fa-check"></i>', array('type' => 'submit', 'class' => 'boutonvalider btn btn-sm green', 'disabled' => 'disabled')) }}

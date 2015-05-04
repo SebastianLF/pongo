@@ -2,39 +2,63 @@
  * Created by sebs on 19/04/2015.
  */
 
-function calculProfits(grand_parent_var, profits_var, mise_var) {
+// calcul pour l affichage du profit du ticket.
+function calculProfits(grand_parent_var, profits_var, mise_var, devise_var) {
     var mise = mise_var;
     var result = mise;
     var grand_parent = grand_parent_var;
     var profits = profits_var;
+    var devise = devise_var;
+    var no_selection;
+    var perdu_selection;
+    var mise_pour_demi_perdu = mise;
     grand_parent.find(".child-table-tr").each(function () {
         var cote = $(this).find('.cote-td').text();
         var status = $(this).find('select[name="resultatSelectionDashboardInput[]"]').val();
         if(status == 0){
-            result = '';
+            no_selection = 1;
         }else if(status == 1) {
             result *= cote;
         }else if(status == 2) {
             result *= 0 ;
-
+            perdu_selection = 1;
         }else if(status == 3){
             result = result * [(cote-1)/2+1];
         }else if(status == 4){
-            result = result / 2;
+            mise_pour_demi_perdu = mise_pour_demi_perdu/2;
+            result = result * mise_pour_demi_perdu;
         }else if(status == 5){
-            result = Number(result + 0);
+            result = Number(result ) + 0;
         }
     });
-    if(($.inArray('2', status_array)!==-1) || ($.inArray('2', status_array) == -1 && $.inArray('0', status_array) ==-1)){
-        
+    if(no_selection && !perdu_selection){
+        result = '';
+    }else {
+        result -= mise;
+    }
+
+    if(result > 0){
+        profits.addClass('font-green');
+        devise.addClass('font-green');
+        profits.removeClass('font-red');
+        devise.removeClass('font-red');
+        profits.removeClass('font-gray');
+        devise.removeClass('font-gray');
+    }else if(result < 0){
+        profits.addClass('font-red');
+        devise.addClass('font-red');
+        profits.removeClass('font-green');
+        devise.removeClass('font-green');
+        profits.removeClass('font-gray');
+        devise.removeClass('font-gray');
     }else{
-        main_parent_valider.prop("disabled", true);
+        profits.addClass('font-gray');
+        devise.addClass('font-gray');
+        profits.removeClass('font-green');
+        devise.removeClass('font-green');
+        profits.removeClass('font-red');
+        devise.removeClass('font-red');
     }
-    if(result == ''){
-        result = 0;
-    }
-    result -= mise;
-    console.log(mise);
     profits.text(result);
 }
 
@@ -68,102 +92,10 @@ function parisEnCoursCalculateStatus(tablename) {
         var info = parent.find('input[name="childrowsinput[]"]').val();
         var mise = main_parent.find('.tdsubmise').text();
         var profits = main_parent.find('.profits');
+        var devise = main_parent.find('.devise');
 
         // chargements des fonctions.
         statusBoutonValider(grand_parent, main_parent_valider);
-        calculProfits(grand_parent, profits, mise);
+        calculProfits(grand_parent, profits, mise, devise);
     });
-
-
-        /*var result = mise;
-        grand_parent.find(".child-table-tr").each(function () {
-            var cote = $(this).find('.cote-td').text();
-            var status = $(this).find('select[name="resultatSelectionDashboardInput[]"]').val();
-            if(status == 0){
-
-            }else if(status == 1) {
-                result *= cote;
-            }else if(status == 2) {
-                result *= 0 ;
-
-            }else if(status == 3){
-                result = result * [(cote-1)/2+1];
-            }else if(status == 4){
-                result = result / 2;
-            }else if(status == 5){
-                result = Number(result + 0);
-            }
-        });
-        result -= mise;
-        profits.text(result);*/
-
-        /*$.ajax({
-            url: 'selection',
-            data: 'id=' + child_id + '&status=' + child_status + '&info=' + info,
-            method: 'post',
-            dataType: 'json',
-            success: function (data) {
-                if (data.etat == 1) {
-                    //console.log(grand_parent.find(".child-table-tr").length);
-
-
-                    toastr.success(data.message, 'Selection');
-                }
-                else {
-                    toastr.error(data.message, 'Selection');
-                }
-
-            },
-            error: function () {
-                console.log('erreur update selection');
-            }
-        });*/
-
-
-
-
-    // calcul du montant retour par rapport au resultat selectionné
-    //$( tablename+" "+"select[name='resultatSelectionDashboardInput']").change(function (e) {
-
-
-    /*switch (result = parent.find("select[name='resultatDashboardInput'] option:selected").val()) {
-     case "0":
-     tdsubretour.empty();
-     tdretour.css("color", "black");
-     break;
-     case "1":
-     var retour = mise * cote;
-     retour = (Math.round(retour * 100) / 100).toFixed(2);
-
-     tdretour.css("color", "green");
-     parent.find('.tdretour span.subretour').text(retour);
-     break;
-     case "2":
-     var retour = (Math.round(mise * 100) / 100).toFixed(2);
-     tdretour.css("color", "red");
-     parent.find('.tdretour span.subretour').text(retour);
-     break;
-     case "3":
-     var retour = Number((mise * cote - mise) / 2) + Number(mise);
-     retour = (Math.round(retour * 100) / 100).toFixed(2);
-     tdretour.css("color", "green");
-     parent.find('.tdretour span.subretour').text(retour);
-     break;
-     case "4":
-     var retour = parseFloat(mise / 2);
-     tdretour.css("color", "red");
-     parent.find('.tdretour span.subretour').text(retour);
-     break;
-     case "5":
-     tdretour.css("color", "black");
-     var retour = parseFloat(mise);
-     parent.find('.tdretour span.subretour').text(retour);
-     break;
-     case "6":
-     tdretour.css("color", "black");
-     var retour = parseFloat(mise);
-     parent.find('.tdretour span.subretour').text(retour);
-     break;
-     }*/
-
 }
