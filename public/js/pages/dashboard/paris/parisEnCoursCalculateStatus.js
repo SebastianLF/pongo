@@ -11,32 +11,35 @@ function calculProfits(grand_parent_var, profits_var, mise_var, devise_var) {
     var devise = devise_var;
     var no_selection;
     var perdu_selection;
-    var mise_pour_demi_perdu = mise;
+    var cotes = 1;
     grand_parent.find(".child-table-tr").each(function () {
-        var cote = $(this).find('.cote-td').text();
+        var cote = Number($(this).find('.cote-td').text());
+        console.log(cote);
+        cotes = cote * cotes;
         var status = $(this).find('select[name="resultatSelectionDashboardInput[]"]').val();
         if(status == 0){
             no_selection = 1;
         }else if(status == 1) {
-            result *= cote;
+            cotes *= cote;
         }else if(status == 2) {
-            result *= 0 ;
+            cotes *= 0 ;
             perdu_selection = 1;
         }else if(status == 3){
-            result = result * [(cote-1)/2+1];
+            cotes = cotes * [(cote-1)/2+1];
         }else if(status == 4){
-            mise_pour_demi_perdu = mise_pour_demi_perdu/2;
-            result = result * mise_pour_demi_perdu;
+            cotes = cotes * 0.5;
         }else if(status == 5){
-            result = Number(result ) + 0;
+            cotes += 0;
         }
+        console.log(cotes);
     });
+
     if(no_selection && !perdu_selection){
         result = '';
     }else {
+        result = cotes * mise;
         result -= mise;
     }
-
     if(result > 0){
         profits.addClass('font-green');
         devise.addClass('font-green');
@@ -69,7 +72,6 @@ function statusBoutonValider(gran_parent_var , main_parent_valider_var) {
     var status_array = new Array();
     grand_parent.find(".child-table-tr").each(function () {
         var status_en_cours = $(this).find('select[name="resultatSelectionDashboardInput[]"]').val();
-        console.log(status_en_cours);
         status_array.push(status_en_cours);
     });
     if(($.inArray('2', status_array)!==-1) || ($.inArray('2', status_array) == -1 && $.inArray('0', status_array) ==-1)){
