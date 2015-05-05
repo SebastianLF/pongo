@@ -20,7 +20,6 @@ class CreateSelectionsTable extends Migration {
 			$table->decimal('cote_apres_status');
 			$table->tinyInteger('status')->default(0); // gagné , perdu , remboursé etc..
 			$table->string('infos_pari'); // score vainqueur etc..
-			$table->string('resultat_pari'); // le score final par exemple.
 			$table->integer('sport_id')->unsigned()->nullable();
 			$table->integer('country_id')->unsigned()->nullable();
 			$table->integer('competition_id')->unsigned()->nullable();

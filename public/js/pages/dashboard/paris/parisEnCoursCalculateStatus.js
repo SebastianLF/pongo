@@ -15,7 +15,7 @@ function calculProfits(grand_parent_var, profits_var, mise_var, devise_var) {
     grand_parent.find(".child-table-tr").each(function () {
         var cote = Number($(this).find('.cote-td').text());
         console.log(cote);
-        cotes = cote * cotes;
+
         var status = $(this).find('select[name="resultatSelectionDashboardInput[]"]').val();
         if(status == 0){
             no_selection = 1;

@@ -25,7 +25,7 @@ function parisEnCoursEnclose(tablename,formname,urlgiven) {
 
         console.log(childrows);
         console.log(childrowsstatus);
-        if (retour.text().length > 0) {
+
             var ser = $(this).serialize();
             $.ajax({
                 url: url,
@@ -56,8 +56,6 @@ function parisEnCoursEnclose(tablename,formname,urlgiven) {
                     console.log('probleme lors de la validation d un pari en cours pour le rajout du mt mois tipster')
                 }
             });
-        } else {
-            alert('Vous devez préciser un status pour ce pari.');
-        }
+
     });
 }

@@ -39,18 +39,16 @@
 
 			$regles = array(
 				'ticket-id' => 'required|exists:en_cours_paris,id,user_id,' . $this->currentUser->id,
-				'status' => 'between:0,5'
 			);
 
 			$messages = array(
 				'ticket-id.required' => 'Un numero de ticket est obligatoire.',
 				'ticket-id.exists' => 'Ce ticket n\'existe dans votre compte.',
-				'status.between' => 'le status doit etre choisis dans la liste.'
 			);
 
 			$validator = Validator::make(Input::all(), $regles, $messages);
-			$validator->each('childrowsinput', ['alpha_num']);
-			$validator->each('childrowsstatus', ['between:0,6']);
+			$validator->each('childrowsinput', ['sometimes']);
+			$validator->each('childrowsstatus', ['between:1,5']);
 
 			if ($validator->fails()) {
 				return Response::json(array(
@@ -60,7 +58,6 @@
 			} else {
 				$id = Input::get('ticket-id');
 				$encoursparis = $this->currentUser->enCoursParis()->where('id', $id)->first();
-				$status = Input::get('status');
 				$mt_par_unite = $encoursparis->mt_par_unite;
 				$mise = $encoursparis->mise_totale;
 				$cote = $encoursparis->cote;
@@ -82,44 +79,35 @@
 					5 = remboursé,
 				*/
 
+				$cotes = 1;
+
 				// calcul suivant le status.
+				if($encoursparis->type_profil == 's'){
+					$status_s = $status_array[0];
+					$info_s  = $infos_array[0];
+				}else{
+
+				}
 				foreach ($status_array as $status) {
 					switch ($status) {
-						case 0:
-							$retour_devise = $mise / 2;
-							$retour_unites = $nombre_unites / 2;
-							$profit_devise = 0 - $retour_devise;
-							$profit_unites = 0 - $retour_unites;
-							break;
 						case 1:
-							$retour_devise = $mise * $cote;
-							$retour_unites = $retour_devise / $mt_par_unite;
-							$profit_devise = $retour_devise - $mise;
-							$profit_unites = $retour_unites - $nombre_unites;
+
 							break;
 						case 2:
 							$retour_devise = 0;
-							$retour_unites = 0;
 							$profit_devise = 0 - $mise;
-							$profit_unites = 0 - $nombre_unites;
 							break;
 						case 3:
 							$retour_devise = (($mise / 2) * $cote) + $mise / 2;
-							$retour_unites = (($nombre_unites / 2) * $cote) + $nombre_unites / 2;
 							$profit_devise = $retour_devise - $mise;
-							$profit_unites = $retour_unites - $nombre_unites;
 							break;
 						case 4:
 							$retour_devise = $mise / 2;
-							$retour_unites = $nombre_unites / 2;
 							$profit_devise = 0 - $retour_devise;
-							$profit_unites = 0 - $retour_unites;
 							break;
 						case 5:
 							$retour_devise = $mise;
-							$retour_unites = $nombre_unites;
 							$profit_devise = 0;
-							$profit_unites = 0;
 							break;
 					}
 				}
@@ -153,12 +141,16 @@
 				$this->id = $termine_paris_ajoute->id;
 
 				// ajout de la clé etrangere termineparis dans la ou les selections correspondantes.
+				$nb = $encoursparis->selections()->count();
+				Clockwork::info($nb);
 				$selections = $encoursparis->selections()->get();
-				$selections->each(function ($selection) {
-					$selection->termine_pari_id = $this->id;
-					$selection->en_cours_pari_id = null;
-					$selection->save();
-				});
+				for ($i = 0; $i < $nb; $i++) {
+					$selections[$i]->status = $status_array[$i];
+					$selections[$i]->infos_pari = $infos_array[$i];
+					$selections[$i]->termine_pari_id = $this->id;
+					$selections[$i]->en_cours_pari_id = null;
+					$selections[$i]->save();
+				}
 
 				// suppression du pari en cours.
 				$encoursparis->delete();
