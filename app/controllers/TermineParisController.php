@@ -71,6 +71,7 @@
 				$lettre_abcd = null;
 				$status_array = Input::get('childrowsstatus');
 				$infos_array = Input::get('childrowsinput');
+
 				/*
 					1 = gagné,
 					2 = perdu,
@@ -79,44 +80,73 @@
 					5 = remboursé,
 				*/
 
-				$cotes = 1;
-
-				// calcul suivant le status.
-				if($encoursparis->type_profil == 's'){
-					$status_s = $status_array[0];
-					$info_s  = $infos_array[0];
-				}else{
-
-				}
-				foreach ($status_array as $status) {
-					switch ($status) {
+				$status = null;
+				$cote_general = 1;
+				$nb = $encoursparis->selections()->count();
+				Clockwork::info($nb);
+				$selections = $encoursparis->selections()->get();
+				for ($i = 0; $i < $nb; $i++) {
+					$status_s = $status_array[$i];
+					$info_s = $infos_array[$i];
+					$mise = $selections[$i]->mise_totale;
+					$cote = $selections[$i]->cote;
+					$cote_selection = 1 ;
+					switch ($status_s) {
 						case 1:
-
+							$cote_general *= $cote;
+							$cote_selection = $cote_general;
 							break;
 						case 2:
-							$retour_devise = 0;
-							$profit_devise = 0 - $mise;
+							$cote_general *= 0 ;
+							$cote_selection = $cote_general;
 							break;
 						case 3:
-							$retour_devise = (($mise / 2) * $cote) + $mise / 2;
-							$profit_devise = $retour_devise - $mise;
+							$cote_general = $cote_general * [($cote-1)/2+1];
+							$cote_selection = $cote_general;
 							break;
 						case 4:
-							$retour_devise = $mise / 2;
-							$profit_devise = 0 - $retour_devise;
+							$cote_general = $cote * 0.5;
+							$cote_selection = $cote_general;
 							break;
 						case 5:
-							$retour_devise = $mise;
-							$profit_devise = 0;
+							$cote_general += 0;
+							$cote_selection = $cote_general;
 							break;
 					}
+					$selections[$i]->cote_apres_status = $cote_selection;
+					$selections[$i]->status = $status_s;
+					$selections[$i]->infos_pari = $info_s;
+					$selections[$i]->save();
+
+					// les calculs pour termine paris
+					$retour_devise = $mise * $cote_general;
+					$profit_devise = $retour_devise - $mise;
+					$retour_unites = $nombre_unites *$cote_general;
+					$profit_unites = $retour_unites - $nombre_unites;
+
+
+
+					if($encoursparis->type_profil == 's'){
+						$status = $selections[0]->status;
+					}else if($encoursparis->type_profil == 'c'){
+						if($profit_devise > 0){
+							$status = 1;
+						}else if($profit_devise == 0){
+							$status = 5;
+						}else if($profit_devise < 0){
+							$status = 2;
+						}
+					}
 				}
+
 				// creation du pari validé.
 				$termine_pari = new TermineParis(array(
 					'followtype' => $encoursparis->followtype,
 					'type_profil' => $encoursparis->type_profil,
 					'numero_pari' => $encoursparis->numero_pari,
 					'cote' => $encoursparis->cote,
+					'cote_apres_satus' => $cote_general,
+					'status' => $status,
 					'mt_par_unite' => $encoursparis->mt_par_unite,
 					'nombre_unites' => $encoursparis->nombre_unites,
 					'mise_totale' => $encoursparis->mise_totale,
@@ -128,7 +158,6 @@
 					'pari_abcd' => $encoursparis->pari_abcd,
 					'nom_abcd' => $encoursparis->nom_abcd,
 					'lettre_abcd' => $encoursparis->lettre_abcd,
-					'status' => $status,
 					'tipster_id' => $encoursparis->tipster_id,
 					'user_id' => $encoursparis->user_id,
 					'bookmaker_user_id' => $encoursparis->bookmaker_user_id,
@@ -138,18 +167,11 @@
 				$termine_paris_ajoute = $this->currentUser->termineParis()->save($termine_pari);
 
 				// mise en global pour que la variable soit accessible dans la boucle ci-dessous.
-				$this->id = $termine_paris_ajoute->id;
+				$id_termine = $termine_paris_ajoute->id;
 
-				// ajout de la clé etrangere termineparis dans la ou les selections correspondantes.
-				$nb = $encoursparis->selections()->count();
-				Clockwork::info($nb);
-				$selections = $encoursparis->selections()->get();
-				for ($i = 0; $i < $nb; $i++) {
-					$selections[$i]->status = $status_array[$i];
-					$selections[$i]->infos_pari = $infos_array[$i];
-					$selections[$i]->termine_pari_id = $this->id;
-					$selections[$i]->en_cours_pari_id = null;
-					$selections[$i]->save();
+				foreach($selections as $selection){
+					$selection->termine_pari_id = $id_termine;
+					$selection->en_cours_pari_id = null;
 				}
 
 				// suppression du pari en cours.
