@@ -21,8 +21,9 @@
                 <th>Tipster</th>
                 <th>Bookmaker</th>
                 <th>Mise</th>
-                <th>apercu profits <span class="glyphicon glyphicon-info-sign"></span></th>
-                <th>finaliser Ticket <span class="glyphicon glyphicon-info-sign"></span></th>
+                <th>status</th>
+                <th>profits</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -98,7 +99,7 @@
                     @if(isset($pari->compte))
                         <img width="60px"
                              src="{{isset($pari->compte->bookmaker->logo) ? asset('img/logos/bookmakers').'/'.$pari->compte->bookmaker->logo : ''}}"
-                             alt=""/>{{isset($pari->compte->bookmaker->logo) ? '' : $pari->compte->bookmaker->nom }}
+                             alt=""/>{{isset($pari->compte->bookmaker->logo) ? '' : $pari->compte->bookmaker->nom }}{{' ('.$pari->compte->nom_compte.')'}}
                     @else
                         <span class="label label-sm label-success label-mini">à blanc</span>
                     @endif
@@ -107,28 +108,48 @@
                             <td class="tdmise bold">
                                 <span class="tdsubmise bold ">{{{$pari->mise_totale}}} </span>{{{$user->devise}}}
                             </td>
+                            <td class="bold uppercase">
+                                @if($pari->type_profil == 's')
+                                @if($pari->status == 1)
+                                    <span class="font-green">{{'Gagné'}}</span>
+                                @elseif($pari->status == 2)
+                                    <span class="font-red">{{'Perdu'}}</span>
+                                @elseif($pari->status == 3)
+                                    <span class="font-green">{{'1/2 Gagné'}}</span>
+                                @elseif($pari->status == 4)
+                                    <span class="font-red">{{'1/2 Perdu'}}</span>
+                                @elseif($pari->status == 5)
+                                    <span class="font-blue">{{'Remboursé'}}</span>
+                                @endif
+                                    @else
+                                @endif
+                            </td>
                             <td class="bold">
                             <span class="profits">
-                                @if($pari->status == 1)
-                                     {{'Gagné'}}
-                                      @elseif($pari->status == 2)
-                                     {{'Perdu'}}
-                                     @elseif($pari->status == 3)
-                                     {{'1/2 Gagné'}}
-                                     @elseif($pari->status == 4)
-                                     {{'1/2 Perdu'}}
-                                     @elseif($pari->status == 5)
-                                     {{'Remboursé'}}
-                                      @endif
-                            </span>
-                            <span class="devise"> {{{$user->devise}}}</span></td>
-                            <td>
-                                {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris' ,'role' => 'form', )) }}
-                                {{ Form::button('<i class="fa fa-check"></i>', array('type' => 'submit', 'class' => 'boutonvalider btn btn-sm green', 'disabled' => 'disabled')) }}
-                                {{ Form::close() }}
 
+                                    @if($pari->status == 1)
+                                        <span class="font-green">{{{$pari->montant_profit}}}</span>
+                                        <span class="devise font-green"> {{{$user->devise}}}</span>
+                                    @elseif($pari->status == 2)
+                                        <span class="font-red">{{{$pari->montant_profit}}}</span>
+                                        <span class="devise font-red"> {{{$user->devise}}}</span>
+                                    @elseif($pari->status == 3)
+                                        <span class="font-green">{{{$pari->montant_profit}}}</span>
+                                        <span class="devise font-green"> {{{$user->devise}}}</span>
+                                    @elseif($pari->status == 4)
+                                        <span class="font-red">{{{$pari->montant_profit}}}</span>
+                                        <span class="devise font-red"> {{{$user->devise}}}</span>
+                                    @elseif($pari->status == 5)
+                                        <span class="font-blue">{{{$pari->montant_profit}}}</span>
+                                        <span class="devise font-blue"> {{{$user->devise}}}</span>
+                                    @endif
+
+                            </span>
+                            </td>
+
+                            <td>
                                 {{ Form::open(array('route' => 'historique.destroy', 'class' => 'supprimerform form-bouton-paris','role' => 'form')) }}
-                                {{ Form::button('<i class="fa fa-times"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red', )) }}
+                                {{ Form::button('<i class="glyphicon glyphicon-trash"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red', )) }}
                                 {{ Form::close() }}
                             </td>
                         </tr>
@@ -162,18 +183,18 @@
                                                     <span class="cote-td">{{$selection->cote}}</span>{{empty($selection->cote_apres_status) ? '' : ' ('.($selection->cote_apres_status).')'}}
                                                 </td>
                                                 <td>{{$selection->infos_pari}}</td>
-                                                <td class="status-td">
-                                                @if($selection->status == 1)
-                                                    {{'Gagné'}}
-                                                @elseif($selection->status == 2)
-                                                    {{'Perdu'}}
-                                                @elseif($selection->status == 3)
-                                                    {{'1/2 Gagné'}}
-                                                @elseif($selection->status == 4)
-                                                    {{'1/2 Perdu'}}
-                                                @elseif($selection->status == 5)
-                                                    {{'Remboursé'}}
-                                                @endif
+                                                <td class="status-td uppercase bold">
+                                                    @if($pari->status == 1)
+                                                        <span class="font-green">{{'Gagne'}}</span>
+                                                    @elseif($pari->status == 2)
+                                                        <span class="font-red">{{'Perdu'}}</span>
+                                                    @elseif($pari->status == 3)
+                                                        <span class="font-green">{{'1/2 Gagne'}}</span>
+                                                    @elseif($pari->status == 4)
+                                                        <span class="font-red">{{'1/2 Perdu'}}</span>
+                                                    @elseif($pari->status == 5)
+                                                        <span class="font-blue">{{'Rembourse'}}</span>
+                                                    @endif
                                                 </td>
                                             </tr>
                                         @endforeach

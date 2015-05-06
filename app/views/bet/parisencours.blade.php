@@ -21,8 +21,8 @@
         <th>Tipster</th>
         <th>Bookmaker</th>
         <th>Mise</th>
-        <th>apercu profits <span class="glyphicon glyphicon-info-sign"></span></th>
-        <th>finaliser Ticket <span class="glyphicon glyphicon-info-sign"></span></th>
+        <th>apercu profits</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>

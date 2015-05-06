@@ -88,7 +88,6 @@
 				for ($i = 0; $i < $nb; $i++) {
 					$status_s = $status_array[$i];
 					$info_s = $infos_array[$i];
-					$mise = $selections[$i]->mise_totale;
 					$cote = $selections[$i]->cote;
 					$cote_selection = 1 ;
 					switch ($status_s) {
@@ -180,7 +179,7 @@
 				if ($followtype == 'n') {
 					$book_id = $encoursparis->bookmaker_user_id;
 					$book = BookmakerUser::find($book_id);
-					$book->bankroll_actuelle += $profit_devise;
+					$book->bankroll_actuelle += $retour_devise;
 					$book->save();
 					Clockwork::info($book);
 				}

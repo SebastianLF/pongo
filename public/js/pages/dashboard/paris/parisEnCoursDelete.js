@@ -30,9 +30,15 @@ function parisEnCoursDelete(tablename,formname,urlgiven){
                     $.ajax({
                         url: url + id,
                         type: 'delete',
-                        success: function (json) {
+                        success: function (data) {
                             loadParisEnCoursWithPage('delete');
                             loadBookmakersOnDashboard();
+                            if (data.etat == 0) {
+                                toastr.error(data.msg, 'Suppression');
+                            } else {
+                                toastr.success(data.msg, 'Suppression');
+                                loadBookmakersOnDashboard();
+                            }
                         },
                         error: function () {
                             console.log("supprimer un pari en cours ne fonctionne pas");

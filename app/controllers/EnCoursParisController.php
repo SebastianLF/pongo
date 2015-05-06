@@ -248,8 +248,24 @@
 
 		public function destroy($id)
 		{
-			$var = EnCoursParis::find($id);
-			$var->delete();
+			$pari = EnCoursParis::find($id);
+			if($pari->followtype == 'n'){
+				$compte = $pari->compte()->first();
+				$compte->bankroll_actuelle += $pari->mise_totale;
+				$compte->save();
+				$pari->delete();
+				return Response::json(array(
+					'etat' => 1,
+					'msg' => 'Ticket Supprimé'
+				));
+			}else{
+				$pari->delete();
+				return Response::json(array(
+					'etat' => 1,
+					'msg' => 'Ticket Supprimé'
+				));
+			}
+
 		}
 
 		public function getEnCoursABCD()
@@ -281,7 +297,7 @@
 			return Response::json($result);
 		}
 
-		public function updateSelection(){
+		/*public function updateSelection(){
 			$id = Input::get('id');
 			$status = Input::get('status');
 			$info = Input::get('info');
@@ -301,5 +317,5 @@
 					'message' => 'Changements enregistrés',
 				));
 			}
-		}
+		}*/
 	}
