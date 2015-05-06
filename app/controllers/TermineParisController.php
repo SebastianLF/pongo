@@ -124,8 +124,6 @@
 					$retour_unites = $nombre_unites *$cote_general;
 					$profit_unites = $retour_unites - $nombre_unites;
 
-
-
 					if($encoursparis->type_profil == 's'){
 						$status = $selections[0]->status;
 					}else if($encoursparis->type_profil == 'c'){
@@ -145,7 +143,7 @@
 					'type_profil' => $encoursparis->type_profil,
 					'numero_pari' => $encoursparis->numero_pari,
 					'cote' => $encoursparis->cote,
-					'cote_apres_satus' => $cote_general,
+					'cote_apres_status' => $cote_general,
 					'status' => $status,
 					'mt_par_unite' => $encoursparis->mt_par_unite,
 					'nombre_unites' => $encoursparis->nombre_unites,
@@ -175,7 +173,7 @@
 				}
 
 				// suppression du pari en cours.
-				$encoursparis->delete();
+				
 
 				// mis a jour des bankrolls des bookmakers uniquement si le followtype est de type normal.
 				if ($followtype == 'n') {

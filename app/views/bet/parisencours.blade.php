@@ -1,3 +1,11 @@
+@if($count_paris_encours == '0')
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-4">
+            <span class="glyphicon glyphicon-arrow-down"></span> Ajouter un pari classique à l'aide du formulaire d'ajout ci-dessous
+        </div>
+    </div>
+@else
+
 <div class="table-scrollable table-scrollable-borderless">
 <table id="parisencourstable" class="table table-condensed table-hover table-light" style="border-collapse:collapse;">
     <thead>
@@ -168,3 +176,4 @@
 </div>
 {{$parisencours->appends(Input::except('page'))->links()}}
 
+@endif

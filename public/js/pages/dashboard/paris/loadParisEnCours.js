@@ -23,11 +23,9 @@ function loadParisTermine() {
         type: 'get',
         success: function (data) {
             $('#tab_15_4').html(data);
-            featuresParisEnCours();
-            paginationParisEnCours();
         },
         error: function (data) {
-            $('#tab_15_4').html('<p>impossible de récuperer les paris</p>');
+            $('#tab_15_4').html('<p>impossible de récuperer les paris terminés</p>');
         }
     });
 }

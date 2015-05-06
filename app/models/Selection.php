@@ -3,6 +3,10 @@
 class Selection extends Eloquent{
 	protected $table = 'selections';
 	protected $guarded = array('id');
+	public function getCreatedAtAttribute($date)
+	{
+		return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d/m/Y');
+	}
 
 	public function equipe1(){
 		return $this->belongsTo('Equipe','equipe1_id');

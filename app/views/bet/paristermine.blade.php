@@ -1,39 +1,48 @@
-<div class="table-scrollable table-scrollable-borderless">
-<table id="paristermine" class="table table-condensed table-hover table-light" style="border-collapse:collapse;">
-    <thead>
-    <tr class="uppercase">
-        <th id="count" class="hidden ">{{$count_paris_termine}}</th>
-        <th></th>
-        <th>N°</th>
-        <th>date ajout</th>
-        <th>type</th>
-        <th colspan="3" align="center">Apercu</th>
-        <th>Pari <span class="glyphicon glyphicon-info-sign"></span></th>
-        <th>Cote</th>
-        <th>Tipster</th>
-        <th>Bookmaker</th>
-        <th>Mise</th>
-        <th>apercu profits <span class="glyphicon glyphicon-info-sign"></span></th>
-        <th>finaliser Ticket <span class="glyphicon glyphicon-info-sign"></span></th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach($paristermine as $pari)
-        <div class="wrapperRow">
-            <a href="">
-                <tr data-toggle="collapse" data-target="{{'.row'.$pari->numero_pari}}"
-                    class="mainrow accordion-toggle parisencours-accordeon">
+@if($count_paris_termine == '0')
+    <div class="row">
+        <div class="col-lg-2 col-lg-offset-5">
+            Aucun résultat
+        </div>
+    </div>
+@else
+    <div class="table-scrollable table-scrollable-borderless">
+        <table id="paristermine" class="table table-condensed table-hover table-light"
+               style="border-collapse:collapse;">
+            <thead>
+            <tr class="uppercase">
+                <th id="count" class="hidden ">{{$count_paris_termine}}</th>
+                <th></th>
+                <th>N°</th>
+                <th>date ajout</th>
+                <th>type</th>
+                <th colspan="3" align="center">Apercu</th>
+                <th>Pari <span class="glyphicon glyphicon-info-sign"></span></th>
+                <th>Cote</th>
+                <th>Tipster</th>
+                <th>Bookmaker</th>
+                <th>Mise</th>
+                <th>apercu profits <span class="glyphicon glyphicon-info-sign"></span></th>
+                <th>finaliser Ticket <span class="glyphicon glyphicon-info-sign"></span></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($paristermine as $pari)
+                <div class="wrapperRow">
+                    <a href="">
+                        <tr data-toggle="collapse" data-target="{{'.row'.$pari->numero_pari}}"
+                            class="mainrow accordion-toggle parisencours-accordeon">
 
-                    <td class="hidden id">{{$pari->id}}</td>
+                            <td class="hidden id">{{$pari->id}}</td>
 
-                    <td class="subbetclick"><span data-toggle="collapse" data-target="{{'.row'.$pari->numero_pari}}"
-                                                  class="glyphicon glyphicon-chevron-right"></span></td>
-                    <td><a href="javascript:;" class="primary-link">#{{$pari->numero_pari}}</a></td>
-                    <td>{{$pari->created_at}}</td>
-                    <td>
-                        <span class="label label-sm label-success label-mini">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>
-                    </td>
-                    <td>
+                            <td class="subbetclick"><span data-toggle="collapse"
+                                                          data-target="{{'.row'.$pari->numero_pari}}"
+                                                          class="glyphicon glyphicon-chevron-right"></span></td>
+                            <td><a href="javascript:;" class="primary-link">#{{$pari->numero_pari}}</a></td>
+                            <td>{{$pari->created_at}}</td>
+                            <td>
+                                <span class="label label-sm label-success label-mini">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>
+                            </td>
+                            <td>
                 <span data-toggle="tooltip"
                       title="{{isset($pari->selections[0]->sport) ? $pari->selections[0]->sport->name : 'aucun'}}">
                     @if(isset($pari->selections[0]->sport))
@@ -44,8 +53,8 @@
                         {{'non spéc.'}}
                     @endif
                 </span>
-                    </td>
-                    <td>
+                            </td>
+                            <td>
                 <span data-toggle="tooltip"
                       title="{{isset($pari->selections[0]->competition) ? $pari->selections[0]->competition->name : 'aucun'}}">
                     @if(isset($pari->selections[0]->competition))
@@ -56,8 +65,8 @@
                         {{'non spéc.'}}
                     @endif
                 </span>
-                    </td>
-                    <td>
+                            </td>
+                            <td>
                 <span data-toggle="tooltip"
                       title="{{isset($pari->selections[0]->equipe1) ? $pari->selections[0]->equipe1->name : 'aucun'}}">
                     @if(isset($pari->selections[0]->equipe1))
@@ -76,14 +85,14 @@
                              alt=""/>{{isset($pari->selections[0]->equipe2->logo) ? '':$pari->selections[0]->equipe2->name}}
                     @endif
                 </span>
-                    </td>
-                    <td>
+                            </td>
+                            <td>
 
-                    </td>
+                            </td>
 
-                    <td class="fit tdcote">{{$pari->cote}}</td>
-                    <td>{{$pari->tipster->name}}</td>
-                    <td>
+                            <td class="fit tdcote">{{$pari->cote}}</td>
+                            <td>{{$pari->tipster->name}}</td>
+                            <td>
                 <span data-toggle="tooltip"
                       title="{{isset($pari->compte->bookmaker->nom) ? $pari->compte->bookmaker->nom : 'à blanc' }}">
                     @if(isset($pari->compte))
@@ -94,76 +103,84 @@
                         <span class="label label-sm label-success label-mini">à blanc</span>
                     @endif
                 </span>
-                    </td>
-                    <td class="tdmise bold">
-                        <span class="tdsubmise bold ">{{{$pari->mise_totale}}} </span>{{{$user->devise}}}
-                    </td>
-                    <td class="bold"><span class="profits"></span><span class="devise"> {{{$user->devise}}}</span></td>
-                    <td>
-                        {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris' ,'role' => 'form', )) }}
-                        {{ Form::button('<i class="fa fa-check"></i>', array('type' => 'submit', 'class' => 'boutonvalider btn btn-sm green', 'disabled' => 'disabled')) }}
-                        {{ Form::close() }}
+                            </td>
+                            <td class="tdmise bold">
+                                <span class="tdsubmise bold ">{{{$pari->mise_totale}}} </span>{{{$user->devise}}}
+                            </td>
+                            <td class="bold"><span class="profits"></span><span
+                                        class="devise"> {{{$user->devise}}}</span></td>
+                            <td>
+                                {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris' ,'role' => 'form', )) }}
+                                {{ Form::button('<i class="fa fa-check"></i>', array('type' => 'submit', 'class' => 'boutonvalider btn btn-sm green', 'disabled' => 'disabled')) }}
+                                {{ Form::close() }}
 
-                        {{ Form::open(array('route' => 'historique.destroy', 'class' => 'supprimerform form-bouton-paris','role' => 'form')) }}
-                        {{ Form::button('<i class="fa fa-times"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red', )) }}
-                        {{ Form::close() }}
-                    </td>
-                </tr>
-                <tr class="subrow">
-                    <td colspan="17" class="childtable cancel-padding">
-                        <div class="{{'accordian-body collapse row'.$pari->numero_pari}}">
-                            <table class="table table-striped child-table table-bordered">
-                                <thead>
-                                <tr>
-                                    <th>date rencontre</th>
-                                    <th>sport</th>
-                                    <th>competition</th>
-                                    <th>equipe/joueur n°1</th>
-                                    <th>equipe/joueur n°2</th>
-                                    <th>cote</th>
-                                    <th>score/autre</th>
-                                    <th>status</th>
-                                </tr>
-                                </thead>
-                                <tbody>
+                                {{ Form::open(array('route' => 'historique.destroy', 'class' => 'supprimerform form-bouton-paris','role' => 'form')) }}
+                                {{ Form::button('<i class="fa fa-times"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red', )) }}
+                                {{ Form::close() }}
+                            </td>
+                        </tr>
+                        <tr class="subrow">
+                            <td colspan="17" class="childtable cancel-padding">
+                                <div class="{{'accordian-body collapse row'.$pari->numero_pari}}">
+                                    <table class="table table-striped child-table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th>date rencontre</th>
+                                            <th>sport</th>
+                                            <th>competition</th>
+                                            <th>equipe/joueur n°1</th>
+                                            <th>equipe/joueur n°2</th>
+                                            <th>cote</th>
+                                            <th>score/autre</th>
+                                            <th>status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
 
-                                @foreach($pari->selections as $selection)
-                                    <tr class="child-table-tr">
-                                    <td class="hidden child-id">{{$selection->id}}</td>
-                                        <td>{{isset($selection->date_match) ? $selection->date_match : 'non spéc.'}}</td>
-                                        <td>{{isset($selection->sport) ? $selection->sport->name : 'non spéc.'}}</td>
-                                        <td>{{isset($selection->competition) ? $selection->competition->name : 'non spéc.'}}</td>
-                                        <td>{{isset($selection->equipe1) ? $selection->equipe1->name : 'non spéc.'}}</td>
-                                        <td>{{isset($selection->equipe2) ? $selection->equipe2->name : 'non spéc.'}}</td>
-                                        <td><span class="cote-td">{{$selection->cote}}</span>{{empty($selection->cote_apres_status) ? '' : ' ('.($selection->cote_apres_status).')'}}</td>
-                                        <td><input type="text" name="childrowsinput[]"
-                                                   class="form-control input-sm" value="{{empty($selection->infos_pari) ? '' : $selection->infos_pari}}"/></td>
-                                        <td class="status-td">
-                                            <select name="resultatSelectionDashboardInput[]" data-value="{{$selection->status}}" class="form-control input-sm">
-                                                <option value="0">--Selectionnez--</option>
-                                                @foreach($types_resultat as $key => $type)
-                                                    <option value="{{$key}}"><a href="javascript:;" class="btn btn-xs">{{$type}}</a>
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
+                                        @foreach($pari->selections as $selection)
+                                            <tr class="child-table-tr">
+                                                <td class="hidden child-id">{{$selection->id}}</td>
+                                                <td>{{isset($selection->date_match) ? $selection->date_match : 'non spéc.'}}</td>
+                                                <td>{{isset($selection->sport) ? $selection->sport->name : 'non spéc.'}}</td>
+                                                <td>{{isset($selection->competition) ? $selection->competition->name : 'non spéc.'}}</td>
+                                                <td>{{isset($selection->equipe1) ? $selection->equipe1->name : 'non spéc.'}}</td>
+                                                <td>{{isset($selection->equipe2) ? $selection->equipe2->name : 'non spéc.'}}</td>
+                                                <td>
+                                                    <span class="cote-td">{{$selection->cote}}</span>{{empty($selection->cote_apres_status) ? '' : ' ('.($selection->cote_apres_status).')'}}
+                                                </td>
+                                                <td><input type="text" name="childrowsinput[]"
+                                                           class="form-control input-sm"
+                                                           value="{{empty($selection->infos_pari) ? '' : $selection->infos_pari}}"/>
+                                                </td>
+                                                <td class="status-td">
+                                                    <select name="resultatSelectionDashboardInput[]"
+                                                            data-value="{{$selection->status}}"
+                                                            class="form-control input-sm">
+                                                        <option value="0">--Selectionnez--</option>
+                                                        @foreach($types_resultat as $key => $type)
+                                                            <option value="{{$key}}"><a href="javascript:;"
+                                                                                        class="btn btn-xs">{{$type}}</a>
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
 
-                        </div>
-                    </td>
+                                </div>
+                            </td>
 
 
+                        </tr>
+                    </a>
+                </div>
+            @endforeach
+            </tbody>
 
-                </tr>
-            </a>
-        </div>
-    @endforeach
-    </tbody>
+        </table>
+    </div>
+    {{$paristermine->appends(Input::except('page'))->links()}}
 
-</table>
-</div>
-{{$paristermine->appends(Input::except('page'))->links()}}
-
+@endif

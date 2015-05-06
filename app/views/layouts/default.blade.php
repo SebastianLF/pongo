@@ -161,6 +161,7 @@ License: You must have a valid license purchased only from themeforest(the above
         loadBookmakersOnDashboard();
         loadParisEnCours();
         loadParisLongTerme();
+        loadParisTermine();
 
         // formulaire d'ajout de pari
 
