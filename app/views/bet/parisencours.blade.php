@@ -1,7 +1,7 @@
 @if($count_paris_encours == '0')
     <div class="row">
         <div class="col-lg-4 col-lg-offset-4">
-            <span class="glyphicon glyphicon-arrow-down"></span> Ajouter un pari classique à l'aide du formulaire d'ajout ci-dessous
+            <span class="glyphicon glyphicon-plus-sign"></span> Ajouter un pari classique à l'aide du formulaire d'ajout ci-dessous <span class="glyphicon glyphicon-hand-down"></span>
         </div>
     </div>
 @else

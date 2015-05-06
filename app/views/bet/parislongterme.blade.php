@@ -1,7 +1,7 @@
 @if($count_paris_longterme == '0')
     <div class="row">
         <div class="col-lg-4 col-lg-offset-4">
-            <span class="glyphicon glyphicon-arrow-down"></span> Ajouter un pari long terme à l'aide du formulaire d'ajout ci-dessous
+            <span class="glyphicon glyphicon-plus-sign"></span> Ajouter un pari long terme à l'aide du formulaire d'ajout ci-dessous <span class="glyphicon glyphicon-arrow-down"></span>
         </div>
     </div>
 @else

@@ -1,6 +1,6 @@
 @if($count_paris_termine == '0')
     <div class="row">
-        <div class="col-lg-2 col-lg-offset-5">
+        <div class="col-sm-2 col-sm-offset-5">
             Aucun résultat
         </div>
     </div>
@@ -107,8 +107,21 @@
                             <td class="tdmise bold">
                                 <span class="tdsubmise bold ">{{{$pari->mise_totale}}} </span>{{{$user->devise}}}
                             </td>
-                            <td class="bold"><span class="profits"></span><span
-                                        class="devise"> {{{$user->devise}}}</span></td>
+                            <td class="bold">
+                            <span class="profits">
+                                @if($pari->status == 1)
+                                     {{'Gagné'}}
+                                      @elseif($pari->status == 2)
+                                     {{'Perdu'}}
+                                     @elseif($pari->status == 3)
+                                     {{'1/2 Gagné'}}
+                                     @elseif($pari->status == 4)
+                                     {{'1/2 Perdu'}}
+                                     @elseif($pari->status == 5)
+                                     {{'Remboursé'}}
+                                      @endif
+                            </span>
+                            <span class="devise"> {{{$user->devise}}}</span></td>
                             <td>
                                 {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris' ,'role' => 'form', )) }}
                                 {{ Form::button('<i class="fa fa-check"></i>', array('type' => 'submit', 'class' => 'boutonvalider btn btn-sm green', 'disabled' => 'disabled')) }}
@@ -148,21 +161,19 @@
                                                 <td>
                                                     <span class="cote-td">{{$selection->cote}}</span>{{empty($selection->cote_apres_status) ? '' : ' ('.($selection->cote_apres_status).')'}}
                                                 </td>
-                                                <td><input type="text" name="childrowsinput[]"
-                                                           class="form-control input-sm"
-                                                           value="{{empty($selection->infos_pari) ? '' : $selection->infos_pari}}"/>
-                                                </td>
+                                                <td>{{$selection->infos_pari}}</td>
                                                 <td class="status-td">
-                                                    <select name="resultatSelectionDashboardInput[]"
-                                                            data-value="{{$selection->status}}"
-                                                            class="form-control input-sm">
-                                                        <option value="0">--Selectionnez--</option>
-                                                        @foreach($types_resultat as $key => $type)
-                                                            <option value="{{$key}}"><a href="javascript:;"
-                                                                                        class="btn btn-xs">{{$type}}</a>
-                                                            </option>
-                                                        @endforeach
-                                                    </select>
+                                                @if($selection->status == 1)
+                                                    {{'Gagné'}}
+                                                @elseif($selection->status == 2)
+                                                    {{'Perdu'}}
+                                                @elseif($selection->status == 3)
+                                                    {{'1/2 Gagné'}}
+                                                @elseif($selection->status == 4)
+                                                    {{'1/2 Perdu'}}
+                                                @elseif($selection->status == 5)
+                                                    {{'Remboursé'}}
+                                                @endif
                                                 </td>
                                             </tr>
                                         @endforeach

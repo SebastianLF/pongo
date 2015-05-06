@@ -16,7 +16,7 @@ class TermineParis extends Eloquent {
 	}
 
 	public function selections(){
-		return $this->hasMany('Selection','en_cours_pari_id');
+		return $this->hasMany('Selection','termine_pari_id');
 	}
 
 	public function compte(){

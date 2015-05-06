@@ -121,7 +121,7 @@
 					// les calculs pour termine paris
 					$retour_devise = $mise * $cote_general;
 					$profit_devise = $retour_devise - $mise;
-					$retour_unites = $nombre_unites *$cote_general;
+					$retour_unites = $nombre_unites * $cote_general;
 					$profit_unites = $retour_unites - $nombre_unites;
 
 					if($encoursparis->type_profil == 's'){
@@ -169,11 +169,12 @@
 
 				foreach($selections as $selection){
 					$selection->termine_pari_id = $id_termine;
-					$selection->en_cours_pari_id = null;
+					$selection->en_cours_pari_id = NULL;
+					$selection->save();
 				}
 
 				// suppression du pari en cours.
-				
+				$encoursparis->delete();
 
 				// mis a jour des bankrolls des bookmakers uniquement si le followtype est de type normal.
 				if ($followtype == 'n') {
