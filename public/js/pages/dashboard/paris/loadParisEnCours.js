@@ -14,6 +14,24 @@ function loadParisEnCours() {
         }
     });
 }
+
+function loadParisTermine() {
+    var onglet = $('#onglet_paris_long_terme span');
+    $.ajax({
+        url: 'dashboard/ajax/paristermine',
+        data: {page: 1},
+        type: 'get',
+        success: function (data) {
+            $('#tab_15_4').html(data);
+            featuresParisEnCours();
+            paginationParisEnCours();
+        },
+        error: function (data) {
+            $('#tab_15_4').html('<p>impossible de récuperer les paris</p>');
+        }
+    });
+}
+
 function featuresParisEnCours(){
     // activation des tooltip.
     $('[data-toggle="tooltip"]').tooltip();

@@ -1,8 +1,8 @@
 <div class="table-scrollable table-scrollable-borderless">
-<table id="$parislongterme" class="table table-condensed table-hover table-light" style="border-collapse:collapse;">
+<table id="paristermine" class="table table-condensed table-hover table-light" style="border-collapse:collapse;">
     <thead>
     <tr class="uppercase">
-        <th id="count" class="hidden ">{{$count_paris_longterme}}</th>
+        <th id="count" class="hidden ">{{$count_paris_termine}}</th>
         <th></th>
         <th>N°</th>
         <th>date ajout</th>
@@ -18,7 +18,7 @@
     </tr>
     </thead>
     <tbody>
-    @foreach($parislongterme as $pari)
+    @foreach($paristermine as $pari)
         <div class="wrapperRow">
             <a href="">
                 <tr data-toggle="collapse" data-target="{{'.row'.$pari->numero_pari}}"
@@ -114,7 +114,6 @@
                         <div class="{{'accordian-body collapse row'.$pari->numero_pari}}">
                             <table class="table table-striped child-table table-bordered">
                                 <thead>
-
                                 <tr>
                                     <th>date rencontre</th>
                                     <th>sport</th>
@@ -152,14 +151,19 @@
                                 @endforeach
                                 </tbody>
                             </table>
+
                         </div>
                     </td>
+
+
+
                 </tr>
             </a>
         </div>
     @endforeach
     </tbody>
+
 </table>
 </div>
-{{$parislongterme->appends(Input::except('page'))->links()}}
+{{$paristermine->appends(Input::except('page'))->links()}}
 

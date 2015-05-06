@@ -64,7 +64,7 @@ class DashboardController extends BaseController {
     }
 
     public function showParisLongTerme(){
-        $parislongterme = $this->currentUser->enCoursParis()->with('selections.equipe1','selections.equipe2','selections.competition','selections.sport','selections.typePari','tipster','compte.bookmaker')->where('pari_long_terme','1')->where('pari_abcd','0')->paginate(5);
+        $parislongterme = $this->currentUser->enCoursParis()->with('selections.equipe1','selections.equipe2','selections.competition','selections.sport','selections.typePari','tipster','compte.bookmaker')->where('pari_long_terme','1')->paginate(5);
         return $parislongterme;
     }
 
@@ -85,7 +85,6 @@ class DashboardController extends BaseController {
                 return $view;
 
                 break;
-
             case 'parislongterme':
                 $parisLongTerme = $this->showParisLongTerme();
                 $countParisLongTerme = $parisLongTerme->getTotal();
@@ -93,7 +92,13 @@ class DashboardController extends BaseController {
                 return $view;
 
                 break;
+	        case 'paristermine':
+		        $parisTermine = $this->currentUser->termineParis()->paginate(5);
+		        $countParisTermine = $parisTermine->getTotal();
+		        $view = View::make('bet.paristermine', array( 'paristermine' => $parisTermine,'types_resultat' => $this->types_resultat, 'count_paris_termine' => $countParisTermine ));
+		        return $view;
 
+		        break;
             default:
                 throw new Exception('Invalid type(parisencours|parislongterme) passed');
         }
