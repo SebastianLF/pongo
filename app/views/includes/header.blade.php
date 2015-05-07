@@ -13,6 +13,10 @@
         <!-- END RESPONSIVE MENU TOGGLER -->
         <!-- BEGIN TOP NAVIGATION MENU -->
         <div class="top-menu">
+            <div id="spinner" class="">
+              <div class="ball"></div>
+              <p class="bold uppercase">Chargement...</p>
+            </div>
             <ul class="nav navbar-nav pull-right">
                 <li class="header-date">
                    <span class="fa fa-calendar"></span> {{$dt->timezone($user->timezone)->formatLocalized('%A %d %B %Y')}}

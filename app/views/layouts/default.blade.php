@@ -25,7 +25,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN BODY -->
 <!-- DOC: Apply "page-header-menu-fixed" class to set the mega menu fixed  -->
 <!-- DOC: Apply "page-header-top-fixed" class to set the top menu fixed  -->
-<body class="page-header-fixed page-container-bg-solid page-sidebar-closed-hide-logo page-header-fixed-mobile page-footer-fixed1">
+<body class="page-header-fixed page-container-bg-solid page-sidebar-closed-hide-logo page-header-fixed-mobile page-footer-fixed1 page-header-top-fixed">
 
 <div class="page-header">
     @include('includes.header')
@@ -113,7 +113,11 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="{{asset('js/plugin/sweet-alert.min.js')}}" type="text/javascript"></script>
 <script>
     jQuery(document).ready(function () {
-
+        $(document).ajaxStart(function () {
+                $('#spinner').fadeIn();
+            }).ajaxStop(function () {
+                $('#spinner').fadeOut();
+            });
 
         // toastr plugin configuration
         toastr.options = {
