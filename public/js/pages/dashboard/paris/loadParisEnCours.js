@@ -23,6 +23,10 @@ function loadParisTermine() {
         type: 'get',
         success: function (data) {
             $('#tab_15_4').html(data);
+            parisTermineDelete();
+            $("#paristerminetable .boutonsupprimer").click(function (e) {
+                e.stopPropagation();
+            });
         },
         error: function (data) {
             $('#tab_15_4').html('<p>impossible de récuperer les paris terminés</p>');

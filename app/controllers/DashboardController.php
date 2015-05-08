@@ -93,8 +93,8 @@ class DashboardController extends BaseController {
 
                 break;
 	        case 'paristermine':
-		        $parisTermine = $this->currentUser->termineParis()->with('selections.equipe1','selections.equipe2','selections.competition','selections.sport','selections.typePari','tipster','compte.bookmaker')->paginate(5);
-		        $countParisTermine = $parisTermine->getTotal();
+		        $parisTermine = $this->currentUser->termineParis()->with('selections.equipe1','selections.equipe2','selections.competition','selections.sport','selections.typePari','tipster','compte.bookmaker')->get();
+		        $countParisTermine = $parisTermine->count();
 		        $view = View::make('bet.paristermine', array( 'paristermine' => $parisTermine,'types_resultat' => $this->types_resultat, 'count_paris_termine' => $countParisTermine ));
 		        return $view;
 

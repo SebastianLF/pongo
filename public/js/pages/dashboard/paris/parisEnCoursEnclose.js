@@ -38,6 +38,7 @@ function parisEnCoursEnclose(tablename,formname,urlgiven) {
                         toastr.error(data.msg, 'Validation');
                     } else {
                         toastr.success(data.msg, 'Validation');
+                        loadParisTermine();
                         loadBookmakersOnDashboard();
                     }
                 },

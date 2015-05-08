@@ -93,23 +93,25 @@
 					switch ($status_s) {
 						case 1:
 							$cote_general *= $cote;
-							$cote_selection = $cote_general;
+							$cote_selection = $cote;
 							break;
 						case 2:
 							$cote_general *= 0 ;
-							$cote_selection = $cote_general;
+							$cote_selection = 0;
 							break;
 						case 3:
 							$cote_general = $cote_general * [($cote-1)/2+1];
-							$cote_selection = $cote_general;
+							$cote_selection = [($cote-1)/2+1];
 							break;
 						case 4:
-							$cote_general = $cote * 0.5;
-							$cote_selection = $cote_general;
+							$cote_general = $cote_general * 0.5;
+							$cote_selection = 0.5;
+							Clockwork::info($cote_general);
+							Clockwork::info($cote_selection);
 							break;
 						case 5:
 							$cote_general += 0;
-							$cote_selection = $cote_general;
+							$cote_selection = 1;
 							break;
 					}
 					$selections[$i]->cote_apres_status = $cote_selection;
@@ -122,6 +124,8 @@
 					$profit_devise = $retour_devise - $mise;
 					$retour_unites = $nombre_unites * $cote_general;
 					$profit_unites = $retour_unites - $nombre_unites;
+					Clockwork::info($retour_devise);
+					Clockwork::info($profit_devise);
 
 					if($encoursparis->type_profil == 's'){
 						$status = $selections[0]->status;
@@ -234,7 +238,25 @@
 		 */
 		public function destroy($id)
 		{
-
+			Clockwork::info($id);
+			$pari = $this->currentUser->termineParis()->where('id',$id)->first();
+			Clockwork::info($pari);
+			if($pari->followtype == 'n'){
+				$compte = $pari->compte()->first();
+				$compte->bankroll_actuelle += $pari->profit_devise;
+				$compte->save();
+				$pari->delete();
+				return Response::json(array(
+					'etat' => 1,
+					'msg' => 'Pari Supprimé'
+				));
+			}else{
+				$pari->delete();
+				return Response::json(array(
+					'etat' => 1,
+					'msg' => 'Pari Supprimé'
+				));
+			}
 		}
 
 	}

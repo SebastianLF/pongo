@@ -6,7 +6,7 @@
     </div>
 @else
     <div class="table-scrollable table-scrollable-borderless">
-        <table id="paristermine" class="table table-condensed table-hover table-light"
+        <table id="paristerminetable" class="table table-condensed table-hover table-light"
                style="border-collapse:collapse;">
             <thead>
             <tr class="uppercase">
@@ -213,6 +213,4 @@
 
         </table>
     </div>
-    {{$paristermine->appends(Input::except('page'))->links()}}
-
 @endif

@@ -35,6 +35,16 @@ class CreateTermineParisTable extends Migration {
 			$table->integer('tipster_id')->unsigned();
 			$table->integer('user_id')->unsigned();
 			$table->integer('bookmaker_user_id')->nullable()->unsigned();
+			$table->foreign('tipster_id')->references('id')->on('tipsters')
+				->onDelete('restrict')
+				->onUpdate('restrict');
+			$table->foreign('bookmaker_user_id')->references('id')->on('bookmaker_user')
+				->onDelete('restrict')
+				->onUpdate('restrict');
+			$table->foreign('user_id')->references('id')->on('users')
+				->onDelete('restrict')
+				->onUpdate('restrict');
+
 		});
 	}
 

@@ -2,26 +2,22 @@
  * Created by sebs on 19/04/2015.
  */
 
-function parisTermineDeleteDelete(tablename,formname,urlgiven){
-    var table = $(tablename);
-    var form = $(formname);
-    var url = urlgiven;
+function parisTermineDelete(){
+    var tablename = '#paristerminetable';
+    var formname = '.supprimerform';
+    var url = 'historique';
     $(tablename+' '+formname).submit(function (e) {
         e.preventDefault();
         var parent = $(this).closest('.mainrow');
         var id = parent.find('.id').text();
-        var retour = parent.find('.tdretour span.subretour');
-        var cote = parent.find(".tdcote").text();
-        var mise = parent.find(".tdmise .tdsubmise").text();
-        var ser = $(this).serialize();
         swal({
-                title: "Are you sure?",
-                text: "You will not be able to recover this imaginary file!",
-                type: "warning",
+                title: "Etes-vous sur?",
+                text: "Vous allez définitivement supprimer ce pari.",
+                type: "Attention",
                 showCancelButton: true,
                 confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Yes, delete it!",
-                cancelButtonText: "No, cancel plx!",
+                confirmButtonText: "Oui, le supprimer!",
+                cancelButtonText: "Non, ne pas le supprimer!",
                 closeOnConfirm: true,
                 closeOnCancel: true
             },
@@ -31,7 +27,7 @@ function parisTermineDeleteDelete(tablename,formname,urlgiven){
                         url: url + id,
                         type: 'delete',
                         success: function (data) {
-                            loadParisEnCoursWithPage('delete');
+                            loadParisTermine();
                             loadBookmakersOnDashboard();
                             if (data.etat == 0) {
                                 toastr.error(data.msg, 'Suppression');
