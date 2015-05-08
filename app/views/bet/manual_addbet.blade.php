@@ -69,7 +69,7 @@
                     <div class="input-group-addon">{{$user->devise}}</div>
                     <input id="amountconversion" name="amountconversion" class="form-control"
                            type="text"
-                           value="0" readonly/></input>
+                           value="0" readonly/>
                 </div>
             </div>
             <div class="col-md-2 typestakeflat">
@@ -168,9 +168,11 @@
                     <th></th>
                 </tr>
                 <tr class="betline">
-                    <td><div class="">
-                        <input name="datematchinputdashboard[]" class="form-control datematchinputdashboard input-sm"
-                               type="date">
+                    <td>
+                        <div class="">
+                            <input name="datematchinputdashboard[]"
+                                   class="form-control datematchinputdashboard input-sm"
+                                   type="date">
                         </div>
                     </td>
                     <td>
@@ -224,6 +226,5 @@
             </table>
             <button type="submit" class="form-control btn btn-success" value="">Valider</button>
             <p class="text-danger center-block " id="changementtype"><strong></strong></p>
-
         </div>
 {{ Form::close() }}

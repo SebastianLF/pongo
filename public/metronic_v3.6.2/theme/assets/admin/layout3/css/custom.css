@@ -74,6 +74,18 @@ select{
 	width: 400px; /* Whatever exact width you are looking for (not bound by preset bootstrap widths) */
 }
 
+.form-actions-automatic-bet{
+    padding : 5px !important;
+}
+
+.note-automatic-bet{
+    margin : 5px !important;
+}
+
+.form-automatic{
+    background-color: #e9edef;
+}
+
 #spinner {
     display: none;
     width: 100px;

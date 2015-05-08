@@ -110,6 +110,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="{{asset('js/pages/dashboard/paris/parisEnCoursEnclose.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/dashboard/paris/parisEnCoursCalculateStatus.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/dashboard/paris/parisTermineDelete.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/pages/dashboard/paris/automaticBetForm.js')}}" type="text/javascript"></script>
+
 
 <script src="{{asset('js/plugin/sweet-alert.min.js')}}" type="text/javascript"></script>
 <script>

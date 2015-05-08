@@ -119,23 +119,23 @@
                         <div class="portlet-body">
                             <div class="tabbable-custom nav-justified">
                                 <ul class="nav nav-tabs nav-justified">
-                                    <li class="">
+                                    <li class="active">
                                         <a href="#tab_1_1_1" data-toggle="tab">
                                             Automatique <span class="badge badge-default">bientot</span></a>
                                     </li>
-                                    <li class="active">
+                                    <li class="">
                                         <a href="#tab_1_1_2" data-toggle="tab">
                                             Manuel </a>
                                     </li>
 
                                 </ul>
                                 <div class="tab-content">
-                                    <div class="tab-pane" id="tab_1_1_1">
+                                    <div class="tab-pane active" id="tab_1_1_1">
                                         @include('bet.automatic_addbet');
                                         <iframe src="{{'http://betbrain.com/?portalId=1326&userSessionId='.Session::getId()}}" height="600"width="100%" frameborder="0">Odds service provided in co-operation with <a href="http://www.betbrain.com"
                                                                                                                                                                                     target="_blank"><b>BetBrain.com</b></a></iframe>
                                     </div>
-                                    <div class="tab-pane active" id="tab_1_1_2">
+                                    <div class="tab-pane " id="tab_1_1_2">
                                         @include('bet.manual_addbet');
                                     </div>
                                 </div>
