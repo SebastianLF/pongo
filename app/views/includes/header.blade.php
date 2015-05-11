@@ -2,7 +2,7 @@
 <div class="page-header-top">
     <div class="container-fluid">
         <!-- BEGIN LOGO -->
-        <div class="page-logo">
+        <div class="page-logo hidden-xs col-xs-pull-4">
             <a href="{{url('dashboard')}}"><img
                         src="{{asset('img/pongo2.jpg')}}"
                         alt="logo" class="logo" height="60px"></a>
@@ -13,7 +13,7 @@
         <!-- END RESPONSIVE MENU TOGGLER -->
         <!-- BEGIN TOP NAVIGATION MENU -->
         <div class="top-menu">
-            <div id="spinner" class="">
+            <div id="spinner" class="hidden-xs">
               <div class="ball"></div>
               <p class="bold uppercase">Chargement...</p>
             </div>
@@ -30,7 +30,7 @@
                 <li class="dropdown dropdown-user dropdown-dark">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                         <img alt="" class="img-circle" src="img/ec.jpg">
-                        <span class="username username-hide-mobile name">{{$user->name}}</span>
+                        <span class="username name">{{$user->name}}</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default">
                         <li>

@@ -206,10 +206,25 @@
                 <th>
                     market
                 </th>
+                <th>
+                    odd
+                </th>
+                <th>
+
+                </th>
             </tr>
             </thead>
             <tbody>
-
+                <tr>
+                    <td><input type="text" readonly/></td>
+                    <td><input type="text" readonly/></td>
+                    <td><input type="text" readonly/></td>
+                    <td><input type="text" readonly/></td>
+                    <td><input type="text" readonly/></td>
+                    <td><input type="text" readonly/></td>
+                    <td><input type="text" readonly/></td>
+                    <td><button class="boutonsupprimer btn btn-sm red"><i class="glyphicon glyphicon-trash"></i></button></td>
+                </tr>
 
             </tbody>
         </table>

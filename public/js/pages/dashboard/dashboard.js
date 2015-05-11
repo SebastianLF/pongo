@@ -20,18 +20,17 @@ function typestakechoice() {
 }
 
 function conversionUnitesVersMontant() {
-    $('#stakeunitinputdashboard').keyup(function () {
-        montant_par_unite = $('#amountperunit').val();
-        indicateur_unite = parseFloat($('#stakeindicatorinputdashboard').val());
-        unites = parseFloat($('#stakeunitinputdashboard').val());
-        if (unites > indicateur_unite) {
-            $('#stakeunitinputdashboard').val(indicateur_unite);
-        } else if (unites < 0) {
-            $('#stakeunitinputdashboard').val('0');
+    var form = $('#automaticform-add');
+    form.find('#stakeunitinputdashboard').keyup(function () {
+        var montant_par_unite = form.find('#amountperunit').val();
+        var unites = Number(form.find('#stakeunitinputdashboard').val());
+        if (unites < 0) {
+            form.find('#stakeunitinputdashboard').val('0');
         }
         unites = $(this).val();
-        var res = parseFloat(montant_par_unite) * parseFloat(unites);
-        var final = isNaN(res) ? $('#amountconversion').val('0') : $('#amountconversion').val(res);
+        var res = Number(montant_par_unite) * Number(unites);
+
+        var final = isNaN(res) ? form.find('#amountconversion').val('0') : form.find('#amountconversion').val(res);
     });
 }
 
@@ -89,7 +88,6 @@ $('#manubetform-add').submit(function (e) {
     var data = $(this).serialize();
     var linesnum = $('#tablemanubetlines').find('.betline').length;
     if (linesnum == '') {
-
         swal({
             title: "Erreur!",
             text: "Remplissez au moins une selection pour pouvoir valider le ticket!",
