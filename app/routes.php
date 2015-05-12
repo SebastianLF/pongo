@@ -6,6 +6,7 @@ Route::get('home','HomeController@showWelcome');
  Route::controller('config', 'ConfigController');
  Route::get('stats', 'StatsController@index');
  Route::get('dashboard', 'DashboardController@showDashboard');
+ Route::post('dashboard', 'DashboardController@getBetInformations');
 
 // pour la recuperation du listing, en ajax, selon le type dans le lien, pour tipster,bookmaker ou transaction.
 Route::get('pagination/ajax/{type}', 'ConfigController@itemTypeCheck')->where('type', 'tipsters|bookmakers|transactions');
