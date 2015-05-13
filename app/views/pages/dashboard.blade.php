@@ -137,8 +137,7 @@
                                                                                                                                                                                     target="_blank"><b>BetBrain.com</b></a></iframe>
                                     </div>
                                     <div class="tab-pane " id="tab_1_1_2">
-                                        {{var_dump(Session::all())}}
-                                        {{var_dump($_POST)}}
+                                        {{var_dump(Input::all())}}
                                         @include('bet.manual_addbet');
                                     </div>
                                 </div>

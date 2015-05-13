@@ -116,8 +116,6 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="{{asset('js/plugin/sweet-alert.min.js')}}" type="text/javascript"></script>
 <script>
     jQuery(document).ready(function () {
-        var $_POST = "<?php $_POST; ?>";
-        console.log($_POST);
 
         // afficher un loader lors des chargements ajax.
         $(document).ajaxStart(function () {
