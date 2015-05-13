@@ -117,6 +117,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <script>
     jQuery(document).ready(function () {
 
+
+
         // afficher un loader lors des chargements ajax.
         $(document).ajaxStart(function () {
                 $('#spinner').fadeIn();
