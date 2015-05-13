@@ -1,6 +1,5 @@
 
 
-
 $("#bookinputdashboard").prop("disabled", true);
 $("#accountsinputdashboard").prop("disabled", true);
 $('#methodeabcdcontainer').addClass("hide");
