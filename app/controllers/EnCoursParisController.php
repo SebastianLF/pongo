@@ -283,18 +283,28 @@
 		public function getlettreABCD()
 		{
 			$nom = Input::get('serie_nom');
-			$lettreabcd = $this->currentUser->enCoursParis()->where('nom_abcd', $nom)->get(array('lettre_abcd AS id' ,'lettre_abcd AS text'));
-			$liste_reponse = array();
-			foreach ($lettreabcd as $one) {
-				array_push($liste_reponse, $one->lettre_abcd);
+			Clockwork::info($nom);
+			Clockwork::info(empty($nom));
+			$result = [];
+			if(!empty($nom)){
+				$lettreabcd = $this->currentUser->enCoursParis()->where('nom_abcd', $nom)->get(array('lettre_abcd'));
+				$liste_reponse = array();
+				foreach ($lettreabcd as $one) {
+					array_push($liste_reponse, $one->lettre_abcd);
+				}
+				$liste = array('A', 'B', 'C', 'D');
+				$result = array_diff($liste, $liste_reponse);
+				Clockwork::info($lettreabcd);
+				Clockwork::info($liste_reponse);
+				Clockwork::info($liste);
+				Clockwork::info($result);
+				return Response::json($result);
+			}else{
+				Clockwork::info($result);
+				return Response::json($result);
+
 			}
-			$liste = array('A', 'B', 'C', 'D');
-			$result = array_diff($liste, $liste_reponse);
-			Clockwork::info($lettreabcd);
-			Clockwork::info($liste_reponse);
-			Clockwork::info($liste);
-			Clockwork::info($result);
-			return Response::json($result);
+
 		}
 
 		/*public function updateSelection(){

@@ -131,6 +131,7 @@
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="tab_1_1_1">
+                                        {{var_dump(Session::all())}}
                                         @include('bet.automatic_addbet');
                                         <iframe src="{{'http://stage.betbrain.com/?portalId=1312&userSessionId='.Session::getId()}}" height="600"width="100%" frameborder="0">Odds service provided in co-operation with <a href="http://www.betbrain.com"
                                                                                                                                                                                     target="_blank"><b>BetBrain.com</b></a></iframe>

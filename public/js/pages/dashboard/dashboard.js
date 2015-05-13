@@ -1,3 +1,6 @@
+
+
+
 $("#bookinputdashboard").prop("disabled", true);
 $("#accountsinputdashboard").prop("disabled", true);
 $('#methodeabcdcontainer').addClass("hide");
@@ -155,8 +158,8 @@ $('#tipstersinputdashboard').select2({
     }
 });
 
-$('#tipstersinputdashboard').change(function(){
-    var tipster_id  = $('#tipstersinputdashboard').val();
+$('#tipstersinputdashboard').change(function () {
+    var tipster_id = $('#tipstersinputdashboard').val();
     var followtype = $('#followtypeinputdashboard');
     var montant_par_unite = $('#amountperunit');
 
@@ -167,9 +170,9 @@ $('#tipstersinputdashboard').change(function(){
     $('#flattounitconversion').val('0');
     $.ajax({
         url: 'infosTipster',
-        data: 'tipster_id='+tipster_id,
+        data: 'tipster_id=' + tipster_id,
         dataType: 'json',
-        success: function(data){
+        success: function (data) {
             $('#bookinputdashboard').val(null).trigger("change");
             $('#accountsinputdashboard').val(null).trigger("change");
             followtype.val('');
@@ -177,14 +180,14 @@ $('#tipstersinputdashboard').change(function(){
                 followtype.val('normal');
                 $("#bookinputdashboard").prop("disabled", false);
                 $("#accountsinputdashboard").prop("disabled", false);
-            } else if(data.followtype == 'b'){
+            } else if (data.followtype == 'b') {
                 followtype.val('à blanc');
                 $("#bookinputdashboard").prop("disabled", true);
                 $("#accountsinputdashboard").prop("disabled", true);
             }
             montant_par_unite.val(data.montant_par_unite);
         },
-        error: function(data){
+        error: function (data) {
         }
     });
 });
@@ -297,18 +300,19 @@ $('#letterinputdashboard').select2({
             };
         },
         processResults: function (data) {
+            console.log(data);
             // parse the results into the format expected by Select2.
             // since we are using custom formatting functions we do not need to
             // alter the remote JSON data
-            /* var newData = [];
-             $.each(data, function (index,value) {
-             newData.push({
-             id:value.id,  //id part present in data
-             text: value.text  //string to be displayed
-             });
-             });*/
+            var newData = [];
+            $.each(data, function (index, value) {
+                newData.push({
+                    id: value,  //id part present in data
+                    text: value  //string to be displayed
+                });
+            });
             return {
-                results: data
+                results: newData
             };
         }
     }
@@ -317,20 +321,21 @@ $("#serieinputdashboard").change(function () {
     var nom = $("#serieinputdashboard option:selected").text();
     nom = encodeURIComponent(nom);
     console.log(nom);
+    $("#letterinputdashboard").val(null).trigger("change");
     $.ajax({
         url: "lettreabcd",
         data: 'serie_nom=' + nom,
         dataType: 'json',
         success: function (data) {
-            console.log(data);
-            $('#letterinputdashboard').html('');
-            if (data == '') {
-                $('#letterinputdashboard').append('<option value="terminé">terminé</option>');
-            } else {
-                $.each(data, function (index, value) {
-                    $('#letterinputdashboard').append('<option value="' + value + '">' + value + '</option>');
-                });
-            }
+            /* $('#letterinputdashboard').html('');
+             if (data == '') {
+             $('#letterinputdashboard').append('<option value="terminé">terminé</option>');
+             } else {
+             $.each(data, function (index, value) {
+             console.log(value);
+             $('#letterinputdashboard').push({ id: value, text: value });
+             });
+             }*/
         },
         error: function () {
             console.log('probleme chargement lettre systeme abcd')
