@@ -23,7 +23,7 @@
                 </div>
                 <input id="followtypeinputdashboard" name="followtypeinputdashboard"
                        class="form-control input-sm"
-                       type="text"
+                       type="text" placeholder="Selectionnez un tipster !"
                        readonly/>
             </div>
             <div class="col-md-2">
@@ -32,7 +32,7 @@
                 </div>
                 <div class="input-group">
                     <div class="input-group-addon">€</div>
-                    <input id="amountperunit" name="amountperunit" class="form-control input-sm" type="text"
+                    <input id="amountperunit" name="amountperunit" class="form-control input-sm" type="text" placeholder="Selectionnez un tipster !"
                            readonly/></input>
                 </div>
             </div>

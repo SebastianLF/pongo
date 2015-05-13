@@ -38,16 +38,16 @@ function conversionUnitesVersMontant() {
 
 function conversionMontantVersUnites() {
     $('#amountinputdashboard').keyup(function () {
-        montant_par_unite = $('#amountperunit').val();
-        indicateur_unite = $('#stakeindicatorinputdashboard').val();
-        amount_max = montant_par_unite * indicateur_unite;
+        var montant_par_unite = $('#amountperunit').val();
+        var indicateur_unite = $('#stakeindicatorinputdashboard').val();
+        var amount_max = montant_par_unite * indicateur_unite;
         if ($('#amountinputdashboard').val() > amount_max) {
             $('#amountinputdashboard').val(amount_max);
         } else if ($('#amountinputdashboard').val() < 0) {
             $('#amountinputdashboard').val('0');
         }
         montant_par_unite = $('#amountperunit').val();
-        montant = $(this).val();
+        var montant = $(this).val();
         var res = parseFloat(montant) / parseFloat(montant_par_unite);
         if (isNaN(res)) {
             $('#flattounitconversion').val('0');
@@ -137,7 +137,7 @@ $('#manubetform-add').submit(function (e) {
 
 });
 
-$('#tipstersinputdashboard').select2({
+$('.tipstersinputdashboard').select2({
     allowClear: true,
     placeholder: "Choisir un tipster",
     cache: true,

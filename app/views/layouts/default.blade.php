@@ -111,12 +111,15 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="{{asset('js/pages/dashboard/paris/parisEnCoursCalculateStatus.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/dashboard/paris/parisTermineDelete.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/dashboard/paris/automaticBetForm.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/pages/dashboard/paris/manualBetForm.js')}}" type="text/javascript"></script>
 
 
 <script src="{{asset('js/plugin/sweet-alert.min.js')}}" type="text/javascript"></script>
 <script>
     jQuery(document).ready(function () {
 
+    var ok = $('#automatic-panel').serialize();
+    console.log(ok);
         // afficher un loader lors des chargements ajax.
         $(document).ajaxStart(function () {
                 $('#spinner').fadeIn();
@@ -173,7 +176,7 @@ License: You must have a valid license purchased only from themeforest(the above
         loadParisTermine();
 
         // formulaire d'ajout de pari
-
+        manualBetForm();
 
         Metronic.init(); // init metronic core components
         Layout.init(); // init current layout
