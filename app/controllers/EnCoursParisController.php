@@ -110,7 +110,7 @@
 					$mise_totale = $tipster->montant_par_unite * $nombre_unites;
 				} else if (Input::get('typestakeinputdashboard') == 'f') {
 					$mise_totale = Input::get('amountinputdashboard');
-					$nombre_unites = round($mise_totale / $tipster->$montant_par_unite, 2);
+					$nombre_unites = round($mise_totale / $tipster->montant_par_unite, 2);
 				}
 
 				//gestion des options ( paris long terme , systeme abcd )
@@ -221,6 +221,7 @@
 					$compte_to_deduct->bankroll_actuelle -= $mise_totale;
 					$compte_to_deduct->save();
 				}
+
 
 				return Response::json(array(
 					'etat' => 1,

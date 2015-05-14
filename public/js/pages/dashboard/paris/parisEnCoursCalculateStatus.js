@@ -11,6 +11,7 @@ function calculProfits(grand_parent_var, profits_var, mise_var, devise_var) {
     var devise = devise_var;
     var no_selection;
     var perdu_selection;
+    var afficher_devise = false;
     var cotes = 1;
     grand_parent.find(".child-table-tr").each(function () {
         var cote = Number($(this).find('.cote-td').text());
@@ -31,14 +32,16 @@ function calculProfits(grand_parent_var, profits_var, mise_var, devise_var) {
         }else if(status == 5){
             cotes += 0;
         }
-        console.log(cotes);
     });
 
     if(no_selection && !perdu_selection){
-        result = '';
+        result = 'Selectionnez un status';
+        afficher_devise = false;
     }else {
+        afficher_devise = true;
         result = cotes * mise;
         result -= mise;
+        result = Number(Math.round(result * 100) / 100);
     }
     if(result > 0){
         profits.addClass('font-green');
@@ -62,7 +65,15 @@ function calculProfits(grand_parent_var, profits_var, mise_var, devise_var) {
         profits.removeClass('font-red');
         devise.removeClass('font-red');
     }
+    if(afficher_devise){
+        devise.removeClass('hide');
+        console.log('pas hide');
+    }else{
+        devise.addClass('hide');
+        console.log('hide');
+    }
     profits.text(result);
+
 }
 
 // pour desactiver ou activer le bouton valider.

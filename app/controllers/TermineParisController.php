@@ -188,6 +188,10 @@
 					Clockwork::info($book);
 				}
 
+				//deduction dans montant mois tipster.
+				$tipster = $this->currentUser->find($encoursparis->tipster_id);
+				$tipster->recap()-> ;
+
 				Clockwork::info($encoursparis);
 				return Response::json(array(
 					'etat' => 1,

@@ -104,9 +104,9 @@
                 </span>
                     </td>
                     <td class="tdmise bold">
-                        <span class="tdsubmise bold ">{{{$pari->mise_totale}}} </span>{{{$user->devise}}}
+                        <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{' '.$user->devise}}}
                     </td>
-                    <td class="bold"><span class="profits"></span><span class="devise"> {{{$user->devise}}}</span></td>
+                    <td class="bold"><span class="profits">Selectionnez un status</span><span class="devise hide">{{{' '.$user->devise}}}</span></td>
                     <td>
                         {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris' ,'role' => 'form', )) }}
                         {{ Form::button('<i class="fa fa-check"></i>', array('type' => 'submit', 'class' => 'boutonvalider btn btn-sm green', 'disabled' => 'disabled')) }}

@@ -29,7 +29,7 @@
                                      alt=""/> <span class="theme-font ">solde: <span
                                             class="theme-font bold">{{$bookmaker['comptes']->sum('bankroll_actuelle')}} {{$user->devise}}</span></span>
                                 <span class="glyphicon glyphicon-circle-arrow-up font-green-sharp"></span>
-                                <span class="pull-right mr theme-font"> {{$paris_en_attente ? 'paris: '.$paris_en_attente.' en attente' : ''}}</span>
+                                <span class="pull-right mr theme-font"> {{$paris_en_attente ? '<span class="badge badge-danger">'.$paris_en_attente.'</span>' : ''}}</span>
                             </a>
                         </h4>
                     </div>

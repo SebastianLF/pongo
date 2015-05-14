@@ -206,7 +206,6 @@
 			$bookmakers = Bookmaker::has('comptes')->with(array('comptes' => function ($query) {
 				$query->where('user_id', '=', $this->currentUserId);
 			}))->with('comptes.enCoursParis')->get();
-			Clockwork::info($bookmakers);
 			$view = View::make('dashboard.bookmakers', array('bookmakers' => $bookmakers));
 			return $view;
 		}
