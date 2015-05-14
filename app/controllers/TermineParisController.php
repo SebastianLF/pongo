@@ -193,7 +193,7 @@
 				$recap =$tipster->whereHas('recap', function ($q) {
 					$q->where('content', 'like', 'foo%');
 
-				})->get();
+				})->first();
 				if($recap){
 
 				}
