@@ -89,19 +89,19 @@
 					$status_s = $status_array[$i];
 					$info_s = $infos_array[$i];
 					$cote = $selections[$i]->cote;
-					$cote_selection = 1 ;
+					$cote_selection = 1;
 					switch ($status_s) {
 						case 1:
 							$cote_general *= $cote;
 							$cote_selection = $cote;
 							break;
 						case 2:
-							$cote_general *= 0 ;
+							$cote_general *= 0;
 							$cote_selection = 0;
 							break;
 						case 3:
-							$cote_general = $cote_general * [($cote-1)/2+1];
-							$cote_selection = [($cote-1)/2+1];
+							$cote_general = $cote_general * [($cote - 1) / 2 + 1];
+							$cote_selection = [($cote - 1) / 2 + 1];
 							break;
 						case 4:
 							$cote_general = $cote_general * 0.5;
@@ -127,14 +127,14 @@
 					Clockwork::info($retour_devise);
 					Clockwork::info($profit_devise);
 
-					if($encoursparis->type_profil == 's'){
+					if ($encoursparis->type_profil == 's') {
 						$status = $selections[0]->status;
-					}else if($encoursparis->type_profil == 'c'){
-						if($profit_devise > 0){
+					} else if ($encoursparis->type_profil == 'c') {
+						if ($profit_devise > 0) {
 							$status = 1;
-						}else if($profit_devise == 0){
+						} else if ($profit_devise == 0) {
 							$status = 5;
-						}else if($profit_devise < 0){
+						} else if ($profit_devise < 0) {
 							$status = 2;
 						}
 					}
@@ -170,7 +170,7 @@
 				// mise en global pour que la variable soit accessible dans la boucle ci-dessous.
 				$id_termine = $termine_paris_ajoute->id;
 
-				foreach($selections as $selection){
+				foreach ($selections as $selection) {
 					$selection->termine_pari_id = $id_termine;
 					$selection->en_cours_pari_id = NULL;
 					$selection->save();
@@ -190,7 +190,13 @@
 
 				//deduction dans montant mois tipster.
 				$tipster = $this->currentUser->find($encoursparis->tipster_id);
-				$tipster->recap()-> ;
+				$recap =$tipster->whereHas('recap', function ($q) {
+					$q->where('content', 'like', 'foo%');
+
+				})->get();
+				if($recap){
+
+				}
 
 				Clockwork::info($encoursparis);
 				return Response::json(array(
@@ -243,9 +249,9 @@
 		public function destroy($id)
 		{
 			Clockwork::info($id);
-			$pari = $this->currentUser->termineParis()->where('id',$id)->first();
+			$pari = $this->currentUser->termineParis()->where('id', $id)->first();
 			Clockwork::info($pari);
-			if($pari->followtype == 'n'){
+			if ($pari->followtype == 'n') {
 				$compte = $pari->compte()->first();
 				$compte->bankroll_actuelle += $pari->profit_devise;
 				$compte->save();
@@ -254,7 +260,7 @@
 					'etat' => 1,
 					'msg' => 'Pari Supprimé'
 				));
-			}else{
+			} else {
 				$pari->delete();
 				return Response::json(array(
 					'etat' => 1,
