@@ -12,17 +12,20 @@ class UserGestion implements UserGestionInterface {
 	{
 		$user->name = Input::get('name');
 		$user->email = Input::get('email');		
-		$user->admin = Input::get('admin') ? 1 : 0;
+		$user->abonnement = 'free';
+		$user->devise = 'Non';
+		$user->timezone = 'Europe/Paris';
+		$user->langue = 'fr';
+		$user->type_cote = 'euro';
+		$user->compteur_pari = 0;
 		$user->save();
         $id = $user->id;
 
         //creation du tipster par defaut
-        $tipster = Tipster::create(array(
-            'name' => $user->name, // le nom du tipster sera le meme nom que le pseudo de l'utilisateur
-            'montant_par_unite' => '0.00',
-            'indice_unite' => '10',
+        $tipster = new Tipster(array(
+            'name' => 'Mes paris', // le nom du tipster sera le meme nom que le pseudo de l'utilisateur
+            'montant_par_unite' => 10,
             'followtype' => 'n', // on considere que le followtype demarre en normal
-            'user_id' => $id
         ));
         $user->tipsters()->save($tipster);
 

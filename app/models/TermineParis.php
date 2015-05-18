@@ -6,10 +6,10 @@ class TermineParis extends Eloquent {
 	public static $rules = array();
 	protected $table = 'termine_paris';
 
-	public function getCreatedAtAttribute($date)
+	/*public function getCreatedAtAttribute($date)
 	{
 		return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d/m/Y');
-	}
+	}*/
 
 	public function user(){
 		return $this->belongsTo('User');

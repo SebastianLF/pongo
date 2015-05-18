@@ -39,8 +39,8 @@ class AuthController extends BaseController {
 				'name' => Input::get('name'),
 				'password' => Input::get('password')
 			);
-			if(Auth::attempt($user, Input::get('souvenir'))) {
-				return Redirect::intended('dashboard');
+			if(Auth::attempt($user)) {
+				return Redirect::to('dashboard');
 			}
 		    return Redirect::to('auth/login')
 		    ->with('pass', 'Le mot de passe n\'est pas correct !')
@@ -50,7 +50,7 @@ class AuthController extends BaseController {
 
 	public function getInscription(){
 
-		return View::make('inscription');
+		return View::make('pages.inscription');
 
 	}
 
@@ -68,7 +68,7 @@ class AuthController extends BaseController {
 	}
 
 	public function getInscriptionok(){
-		return View::Make('inscription_ok');
+		return View::make('pages/inscriptionok');
 	}
 
 	public function getLogout()

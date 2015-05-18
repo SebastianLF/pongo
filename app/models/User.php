@@ -13,6 +13,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	protected $table = 'users';
 	protected $hidden = array('password', 'remember_token');
+	protected $guarded = array('id');
 
 	/* Afficher l'historique*/
 	public function histories(){

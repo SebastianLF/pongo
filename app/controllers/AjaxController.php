@@ -6,8 +6,6 @@
 		{
 			parent::__construct();
 			$this->beforeFilter('auth');
-			$this->userid = Auth::user()->id;
-			$this->user = User::find($this->userid);
 		}
 
 		/**
@@ -61,4 +59,7 @@
 
 			}
 		}
+
+
+
 	}

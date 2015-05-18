@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="fr-FR">
 	<head>
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<h2>Password Reset</h2>
+		<h2>Réinitialisation du mot de passe</h2>
 
 		<div>
-			To reset your password, complete this form: {{ URL::to('password/reset', array($token)) }}.<br/>
-			This link will expire in {{ Config::get('auth.reminder.expire', 60) }} minutes.
+			Pour réinitialiser votre mot de passe, veuillez cliquer sur ce lien: {{ URL::to('password/reset', array($token)) }}.<br/>
+			Le lien expire dans {{ Config::get('auth.reminder.expire', 60) }} minutes.
 		</div>
 	</body>
 </html>

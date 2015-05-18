@@ -79,30 +79,25 @@
                                         </div>
                                     </div>
 
-            </div>
-            <div class="form-actions">
-                <div class="row">
-                    <div class="col-md-offset-3 col-md-9">
-                        <button type="submit" class="btn green disabled"><i class="fa fa-check"></i> Valider les changements
-                        </button>
-                        <button type="button" class="btn default disabled">Annuler</button>
+                                </div>
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="col-md-offset-3 col-md-9">
+                                            <button type="submit" class="btn green disabled"><i class="fa fa-check"></i>
+                                                Valider les changements
+                                            </button>
+                                            <button type="button" class="btn default disabled">Annuler</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- END FORM-->
+
+
+                        </div>
                     </div>
                 </div>
             </div>
-            </form>
-            <!-- END FORM-->
-
-
-
         </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-
     </div>
 @stop

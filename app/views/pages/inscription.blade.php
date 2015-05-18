@@ -37,34 +37,41 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- END LOGO -->
 <!-- BEGIN LOGIN -->
 <div class="content">
-    <!-- BEGIN LOGIN FORM -->
-    {{ Form::open(array('url' => 'auth/login', 'method' => 'post', 'class' => '')) }}
-    <h3 class="form-title">Se connecter</h3>
-    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-    <small class="text-danger">{{ $errors->first('name') }}</small>
-    <label class="control-label visible-ie8 visible-ie9">Nom</label>
-    <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-        {{ Form::text('name', null, array('class' => 'form-control form-control-solid placeholder-no-fix', 'placeholder' => 'Nom')) }}
-    </div>
+    {{ Form::open(array('url' => 'auth/inscription', 'method' => 'post', 'class' => '')) }}
+        <h3>S'inscrire</h3>
 
-    <small class="text-danger">{{ Session::get('pass') }}</small>
-    <div class="form-group {{ Session::has('pass') ? 'has-error' : '' }}">
-        <label class="control-label visible-ie8 visible-ie9">Mot de passe</label>
-        {{ Form::password('password', array('class' => 'form-control form-control-solid placeholder-no-fix', 'placeholder' => 'Mot de passe')) }}
-    </div>
-
-    <div class="form-actions">
-        {{ Form::submit('GO !', array('class' => 'btn btn-success uppercase')) }}
-        <a href="{{url('password/remind')}}" id="forget-password" class="forget-password">Mot de passe oublié?</a>
-    </div>
-
-    <div class="create-account">
-        <p>
-            <a href="{{url('auth/inscription')}}" id="register-btn" class="uppercase">Creer un compte</a>
+        <p class="hint">
+            Entrez vos informations personnelles:
         </p>
-    </div>
+        <div class="form-group">
+            <small class="text-danger">{{ $errors->first('name') }}</small>
+            <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+            <label class="control-label visible-ie8 visible-ie9">Nom</label>
+            <input class="form-control placeholder-no-fix" type="text" placeholder="Nom" name="name"/>
+        </div>
+        <div class="form-group">
+            <small class="text-danger">{{ $errors->first('email') }}</small>
+            <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+            <label class="control-label visible-ie8 visible-ie9">Email</label>
+            <input class="form-control placeholder-no-fix" type="text" placeholder="E-mail" name="email"/>
+        </div>
+        <div class="form-group">
+            <small class="text-danger">{{ $errors->first('password') }}</small>
+            <label class="control-label visible-ie8 visible-ie9">Mot de passe</label>
+            <input class="form-control placeholder-no-fix" type="password" placeholder="Mot de passe" name="password"/>
+        </div>
+        <div class="form-group">
+            <small class="text-danger">{{ $errors->first('password_confirmation') }}</small>
+            <label class="control-label visible-ie8 visible-ie9">Confirmation mot de passe</label>
+            <input class="form-control placeholder-no-fix" type="password" placeholder="Confirmation du mot de passe" name="password_confirmation"/>
+        </div>
+
+        <div class="form-actions">
+            <button type="button" id="register-back-btn" class="btn btn-default"><a href="{{url('auth/login')}}">Back</a></button>
+            <button type="submit" id="register-submit-btn" class="btn btn-success uppercase pull-right">Submit</button>
+        </div>
     {{ Form::close() }}
-    <!-- END LOGIN FORM -->
+    <!-- END REGISTRATION FORM -->
 </div>
 <div class="copyright">
     2014 © Metronic Design Template. Pongo - All Rights Reserved

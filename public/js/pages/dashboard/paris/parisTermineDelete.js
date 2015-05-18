@@ -27,12 +27,12 @@ function parisTermineDelete(){
                         url: url + id,
                         type: 'delete',
                         success: function (data) {
-                            loadBookmakersOnDashboard();
                             if (data.etat == 0) {
                                 toastr.error(data.msg, 'Suppression');
                             } else {
                                 toastr.success(data.msg, 'Suppression');
                                 loadBookmakersOnDashboard();
+                                loadRecapsOnDashboard();
                             }
                         },
                         error: function () {

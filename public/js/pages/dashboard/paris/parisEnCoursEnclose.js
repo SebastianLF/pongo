@@ -22,10 +22,6 @@ function parisEnCoursEnclose(tablename,formname,urlgiven) {
         parent.next().find('select[name="resultatSelectionDashboardInput[]"]').each(function () {
             childrowsstatus.push($(this).val());
         });
-
-        console.log(childrows);
-        console.log(childrowsstatus);
-
             var ser = $(this).serialize();
             $.ajax({
                 url: url,
@@ -33,13 +29,15 @@ function parisEnCoursEnclose(tablename,formname,urlgiven) {
                 data: ser + '&ticket-id=' + id + '&childrowsinput[]=' + childrows + '&childrowsstatus[]=' + childrowsstatus,
                 dataType: 'json',
                 success: function (data) {
-                    loadParisEnCours();
+
                     if (data.etat == 0) {
                         toastr.error(data.msg, 'Validation');
                     } else {
                         toastr.success(data.msg, 'Validation');
+                        loadParisEnCours();
                         loadParisTermine();
                         loadBookmakersOnDashboard();
+                        loadRecapsOnDashboard();
                     }
                 },
                 error: function () {

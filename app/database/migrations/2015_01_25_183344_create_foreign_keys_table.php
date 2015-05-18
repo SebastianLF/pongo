@@ -19,12 +19,6 @@ class CreateForeignKeysTable extends Migration {
         });
 
 
-        Schema::table('mt_mois_tipster', function(Blueprint $table) {
-            $table->foreign('tipster_id')->references('id')->on('tipsters')
-                ->onDelete('restrict')
-                ->onUpdate('restrict');
-        });
-
         Schema::table('followtype_logs', function(Blueprint $table) {
             $table->foreign('tipster_id')->references('id')->on('tipsters')
                 ->onDelete('cascade')
@@ -105,11 +99,6 @@ class CreateForeignKeysTable extends Migration {
         // tipsters
         Schema::table('tipsters', function(Blueprint $table) {
             $table->dropForeign('tipsters_user_id_foreign');
-        });
-
-        // mt_mois_tipster
-        Schema::table('mt_mois_tipster', function(Blueprint $table) {
-            $table->dropForeign('mt_mois_tipster_tipster_id_foreign');
         });
 
         // followtype_logs

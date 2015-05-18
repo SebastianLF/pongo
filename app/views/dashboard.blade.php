@@ -1,10 +1,7 @@
-@if ($user->devise == 'non')
-    @include('modal_welcome')
-@endif
 @extends('template')
 
-
 @section('contenu')
+
 	<div class="avatar">
 
 					</div>

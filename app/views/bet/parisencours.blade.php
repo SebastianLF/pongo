@@ -37,7 +37,7 @@
                     <td class="subbetclick"><span data-toggle="collapse" data-target="{{'.row'.$pari->numero_pari}}"
                                                   class="glyphicon glyphicon-chevron-right"></span></td>
                     <td><a href="javascript:;" class="primary-link">#{{$pari->numero_pari}}</a></td>
-                    <td>{{$pari->created_at}}</td>
+                    <td>{{$pari->created_at->format('d/m/Y')}}</td>
                     <td>
                         <span class="label label-sm label-success label-mini">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>
                     </td>

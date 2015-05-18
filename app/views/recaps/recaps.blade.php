@@ -14,55 +14,69 @@
     <div class="portlet-body">
         <?php $annee = 3000 ?>
         <?php $mois = 30 ?>
-        <div class="panel-group accordion" id="accordion3">
-        @foreach($recaps as $recap)
-            @if($annee == $recap->annee)
-                @if($mois != $recap->mois)
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse"
-                                   data-parent="#accordion3" href="#collapse_4_1">
-                                    {{$recap->mois}}
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapse_4_1" class="panel-collapse in">
-                            <div class="panel-body">
-                            <ul>
-                                <li>{{$recap->tipster_id}}</li>
-
-                            </ul>
-
-                            </div>
-                        </div>
-                    </div>
-                @endif
+        <?php $i = 0 ?>
+        <?php $iterate = true; ?>
+        <div class="panel-group accordion" id="accordion2">
+        @while($i < $count)
+            <?php $iterate = true; ?>
+            @if($annee != $recaps[$i]['year'])
+                <p class="theme-font bold">{{{$recaps[$i]['year']}}}</p>
+                        <?php $annee = $recaps[$i]['year'] ?>
+                        <?php $mois = 30 ?>
             @else
-                {{$recap->annee}}
-                <?php $annee = $recap->annee ?>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse"
-                                   data-parent="#accordion3" href="#collapse_4_1">
-                                    {{$recap->mois}}
-                                </a>
-                            </h4>
-                        </div>
-                        <?php $mois = $recap->mois ?>
-                        <div id="collapse_4_1" class="panel-collapse in">
-                            <div class="panel-body">
-                                <ul>
-                                    <li>{{$recap->tipster_id}} {{$recap->montant_profit}}</li>
-                                </ul>
+            @endif
+                        <div class="panel panel-default">
+                        @if($mois != $recaps[$i]['month'])
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse"
+                                       data-parent="#accordion2" href="{{'#collapse_'.$annee.'_'.$recaps[$i]['month']}}">
+                                                @if($recaps[$i]['month'] == 1)
+                                                 {{'Janvier'}}
+                                                @elseif($recaps[$i]['month'] == 2)
+                                                {{'Fevrier'}}
+                                                @elseif($recaps[$i]['month'] == 3)
+                                                {{'Mars'}}
+                                                @elseif($recaps[$i]['month'] == 4)
+                                                {{'Avril'}}
+                                                @elseif($recaps[$i]['month'] == 5)
+                                                {{'Mai'}}
+                                                @elseif($recaps[$i]['month'] == 6)
+                                                {{'Juin'}}
+                                                @elseif($recaps[$i]['month'] == 7)
+                                                {{'Juillet'}}
+                                                @elseif($recaps[$i]['month'] == 8)
+                                                {{'Aout'}}
+                                                @elseif($recaps[$i]['month'] == 9)
+                                                {{'Septembre'}}
+                                                @elseif($recaps[$i]['month'] == 10)
+                                                {{'Octobre'}}
+                                                @elseif($recaps[$i]['month'] == 11)
+                                                {{'Novembre'}}
+                                                @elseif($recaps[$i]['month'] == 12)
+                                                {{'Decembre'}}
+                                                @endif
+                                    </a>
+                                </h4>
+                            </div>
+                            <?php $mois = $recaps[$i]['month'] ?>
+                        @else
+                        @endif
+                            <div id="{{'collapse_'.$annee.'_'.$mois}}" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        @while($annee == $recaps[$i]['year'] && $mois == $recaps[$i]['month'])
+                                        <li>{{$recaps[$i]['tipster']['name']}}</li>
+                                            <?php $i++; ?>
+                                        @if($i == $count)
+                                            <?php break; ?>
+                                        @endif
+                                        @endwhile
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-            @endif
-
-        @endforeach
+        @endwhile
         </div>
     </div>
 </div>

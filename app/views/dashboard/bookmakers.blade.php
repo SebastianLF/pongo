@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="portlet-body">
-
+        @if(!empty($bookmakers))
         <div class="panel-group accordion" id="accordion3">
             <div class="panel panel-default">
                 @foreach($bookmakers as $bookmaker)
@@ -47,8 +47,9 @@
                     </div>
                 @endforeach
             </div>
-
         </div>
-    </div>
+        @else
 
+        @endif
+    </div>
 </div>

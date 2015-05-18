@@ -100,7 +100,7 @@
 							$cote_selection = 0;
 							break;
 						case 3:
-							$cote_general = $cote_general * [($cote - 1) / 2 + 1];
+							$cote_general = $cote_general * (($cote - 1) / 2 + 1);
 							$cote_selection = [($cote - 1) / 2 + 1];
 							break;
 						case 4:
@@ -188,16 +188,6 @@
 					Clockwork::info($book);
 				}
 
-				//deduction dans montant mois tipster.
-				$tipster = $this->currentUser->find($encoursparis->tipster_id);
-				$recap =$tipster->whereHas('recap', function ($q) {
-					$q->where('content', 'like', 'foo%');
-
-				})->first();
-				if($recap){
-
-				}
-
 				Clockwork::info($encoursparis);
 				return Response::json(array(
 					'etat' => 1,
@@ -248,9 +238,7 @@
 		 */
 		public function destroy($id)
 		{
-			Clockwork::info($id);
 			$pari = $this->currentUser->termineParis()->where('id', $id)->first();
-			Clockwork::info($pari);
 			if ($pari->followtype == 'n') {
 				$compte = $pari->compte()->first();
 				$compte->bankroll_actuelle += $pari->profit_devise;
@@ -267,6 +255,10 @@
 					'msg' => 'Pari Supprimé'
 				));
 			}
+		}
+
+		public function recaps(){
+
 		}
 
 	}

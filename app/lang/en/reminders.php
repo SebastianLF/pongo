@@ -21,14 +21,8 @@ return array(
 
 	"sent" => "Password reminder sent!",
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 	"reset" => "Password has been reset!",
 
->>>>>>> cd03af2f24a617d60cd96be6c69bca7d39396796
-=======
-	"reset" => "Password has been reset!",
 
->>>>>>> cd03af2f24a617d60cd96be6c69bca7d39396796
+
 );

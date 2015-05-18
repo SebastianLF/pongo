@@ -30,7 +30,8 @@ Route::get('dashboard/ajax/{type}', 'DashboardController@itemTypeCheck')->where(
  Route::get('bookmakers','BookmakerController@getMyBookmakers');
  Route::get('parisabcd','EnCoursParisController@getEnCoursABCD');
  Route::get('lettreabcd','EnCoursParisController@getlettreABCD');
-
+Route::get('devise', 'DashboardController@getDevise');
+Route::post('devise', 'DashboardController@postDevise');
 
 Route::get('account', 'AccountController@showIndex');
 

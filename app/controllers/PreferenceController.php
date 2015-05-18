@@ -16,8 +16,7 @@ class PreferenceController extends BaseController {
 	 */
 	public function index()
 	{
-		$dt = Carbon::now();
-        return View::make('pages.preferences' ,array('user' => $this->user, 'dt' => $dt));
+        return View::make('pages.preferences');
 	}
 
 	/**

@@ -17,30 +17,45 @@
 
 		public function showDashboard()
 		{
+			$devisearray = '';
 			// premiere connexion au compte
-			if ($this->currentUser->devise == 'non') {
-				$devisearray = Devise::all();
-			} else {
-				$devisearray = '';
+			if ($this->currentUser->devise == 'Non') {
+				$devisearray = $this->getDevise();
 			}
-
 			// donnees lors du chargement de la page dashboard
-			$dt = Carbon::now();
 			return View::make('pages/dashboard', array(
-					'dt' => $dt,
 					//$devisearray ne sert que pour la boite modal affichée pour la premiere connexion
-					'devisearray' => isset($devisearray) ? $devisearray : '',
+					'devisearray' => $devisearray ,
 				)
 			);
 		}
 
-		public function postDevise()
-		{
+		public function getDevise(){
+			$devises = Devise::orderBy('initiales')->get(array('id','initiales as text'));
+			return $devises;
+		}
 
-			$devise = Devise::find(Input::get('devise_select_input'));
-			$this->currentUser->devise = $devise->sigle;
-			$this->currentUser->save();
-			return Redirect::to('dashboard');
+
+		public function postDevise(){
+
+			$rules = array(
+				'devise' => 'required|exists:devises,id'
+			);
+
+			$validator = Validator::make(Input::all(), $rules);
+
+			if($validator->passes()){
+				$devise_id = Input::get('devise');
+				$sigle = Devise::find($devise_id)->sigle;
+				$this->currentUser->devise = $sigle;
+				$this->currentUser->save();
+				return Redirect::to('dashboard');
+
+			}else{
+				return Redirect::back()->withErrors($validator);
+			}
+
+
 		}
 
 
@@ -77,10 +92,10 @@
 
 		public function showRecaps()
 		{
-			$recaps = $this->currentUser->recaps()->with('tipster')->orderBy('annee', 'desc')->orderBy('mois', 'desc')->orderBy('tipster_id', 'desc')->orderBy('followtype', 'desc')->get();
-			//$view = View::make('recaps.recaps', array( 'user' => $this->user, 'recaps' => $recaps ));
-			Clockwork::info($recaps);
-			return Response::json($recaps);
+			$recaps = $this->currentUser->termineParis()->select(DB::raw('YEAR(created_at) year, MONTH(created_at) month, tipster_id, followtype'))->with('tipster')->groupBy('year')->groupBy('month')->groupBy('tipster_id')->groupBy('followtype')->orderBy('year', 'desc')->orderBy('month', 'desc')->orderBy('followtype', 'desc')->get();
+			$count = $recaps->count();
+			$view = View::make('recaps.recaps', array('recaps' => $recaps->toArray(), 'count' => $count ));
+			return $view;
 		}
 
 		public function itemTypeCheck($type)
@@ -102,7 +117,7 @@
 
 					break;
 				case 'paristermine':
-					$parisTermine = $this->currentUser->termineParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport', 'selections.typePari', 'tipster', 'compte.bookmaker')->get();
+					$parisTermine = $this->currentUser->termineParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport', 'selections.typePari', 'tipster', 'compte.bookmaker')->orderBy('created_at','DESC')->get();
 					$countParisTermine = $parisTermine->count();
 					$view = View::make('bet.paristermine', array('paristermine' => $parisTermine, 'types_resultat' => $this->types_resultat, 'count_paris_termine' => $countParisTermine));
 					return $view;
