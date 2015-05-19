@@ -135,6 +135,7 @@
                                     </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab_1_1_1">
+                                            {{var_dump(Session::all())}}
                                             {{file_put_contents('log_index.txt', json_encode($_POST) . "\n" , FILE_APPEND | LOCK_EX)}}
                                             {{file_put_contents('log_index.txt', json_encode($_GET) . "\n" , FILE_APPEND | LOCK_EX)}}
                                             @include('bet.automatic_addbet');

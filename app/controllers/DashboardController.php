@@ -138,6 +138,6 @@
 		function getBetInformations()
 		{
 			$bookmaker = $_POST["bookmaker"];
-			return Response::json($bookmaker);
+			return Redirect::to('dashboard')->with('bookmaker_coupon', $bookmaker);
 		}
 	}
