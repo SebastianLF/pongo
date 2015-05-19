@@ -40,6 +40,7 @@
                     <td>{{$pari->created_at}}</td>
                     <td>
                         <span class="label label-sm label-success label-mini">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>
+                        <span class="label label-sm label-warning label-mini">{{$pari->pari_long_terme ? 'long terme' : '' }}</span>
                     </td>
                     <td>
                 <span data-toggle="tooltip"

@@ -16,27 +16,46 @@
             <div class="row">
 
                 <div class="col-lg-12">
-                    <div class="portlet light">
+                    <div class="portlet light ">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-cogs"></i>informations
+                                <i class="icon-equalizer font-blue-hoki"></i>
+                                <span class="caption-subject font-blue-hoki bold uppercase">Compte</span>
+                                <span class="caption-helper">Infos perso</span>
                             </div>
                         </div>
-                        <div class="portlet-body">
+                        <div class="portlet-body form">
+                            <!-- BEGIN FORM-->
+                            {{Form::open(array('route' => 'profile.store', 'class' => 'form-horizontal form-bordered'))}}
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Nom</label>
+                                        <div class="col-md-4">
+                                            {{Form::text('name', $user->name ,array('class' => 'form-control'))}}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Mot de passe</label>
+                                        <div class="col-md-4">
+                                            <input type="password"  class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Confirmation mot de passe</label>
+                                        <div class="col-md-4">
+                                            <input type="password"  class="form-control">
 
-                            {{Form::open(array('route' => 'profile.store', 'class' => 'col-md-offset-5'))}}
-                            <div class="row">
-                                {{Form::label('name', 'Nom de compte', array('class' => ''))}}
-                                {{Form::text('name', $user->name ,array('class' => 'form-control'))}}
-                            </div>
-                            <div class="row">
-                                {{Form::label('email', 'Email', array('class' => ''))}}
-                                {{Form::text('email',  $user->email ,array('class' => 'form-control'))}}
-                            </div>
-                            <div class="row">
-                                <a href="">Changer le mot de passe</a>
-                            </div>
+                                        </div>
+                                    </div>
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="col-md-offset-3 col-md-9">
+                                            <button type="submit" class="btn green"><i class="fa fa-check"></i>Enregistrer</button>
+                                        </div>
+                                    </div>
+                                </div>
                             {{Form::close()}}
+                                    <!-- END FORM-->
                         </div>
                     </div>
                 </div>

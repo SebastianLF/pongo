@@ -105,7 +105,10 @@ License: You must have a valid license purchased only from themeforest(the above
 
 <script src="{{asset('js/pages/stats/stats.js')}}" type="text/javascript"></script>
 
+<script src="{{asset('js/pages/dashboard/loadRecaps.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/dashboard/paris/loadParisEnCours.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/pages/dashboard/paris/loadParisLongTerme.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/pages/dashboard/paris/loadParisABCD.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/dashboard/paris/parisEnCoursDelete.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/dashboard/paris/parisEnCoursEnclose.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/dashboard/paris/parisEnCoursCalculateStatus.js')}}" type="text/javascript"></script>
@@ -113,6 +116,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="{{asset('js/pages/dashboard/paris/automaticBetForm.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/dashboard/paris/manualBetForm.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/dashboard/modal_welcome.js')}}" type="text/javascript"></script>
+loadRecaps.js
 
 <script src="{{asset('js/plugin/sweet-alert.min.js')}}" type="text/javascript"></script>
 <script>
@@ -170,6 +174,7 @@ License: You must have a valid license purchased only from themeforest(the above
         loadTransactions();
         loadParisEnCours();
         loadParisLongTerme();
+        loadParisABCD();
         loadParisTermine();
 
         // dashboard

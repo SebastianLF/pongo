@@ -5,10 +5,6 @@ class ProfileController extends BaseController {
 	{
 		parent::__construct();
 		$this->beforeFilter('auth');
-		$this->userid = Auth::user()->id;
-		$this->user = User::find($this->userid);
-		$this->timezone = Auth::user()->timezone;
-		$this->dt = Carbon::now();
 	}
 	/**
 	 * Display a listing of the resource.
@@ -17,7 +13,7 @@ class ProfileController extends BaseController {
 	 */
 	public function index()
 	{
-        return View::make('pages.profile', array('user' => $this->user, 'timezone' => $this->timezone, 'dt' => $this->dt));
+        return View::make('pages.profile', array());
 	}
 
 	/**
@@ -70,7 +66,7 @@ class ProfileController extends BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		// ici
 	}
 
 	/**

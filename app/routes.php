@@ -12,7 +12,7 @@ Route::post('dashboard', 'DashboardController@getBetInformations');
 
 // pour la recuperation du listing, en ajax, selon le type dans le lien, pour tipster,bookmaker ou transaction.
 Route::get('pagination/ajax/{type}', 'ConfigController@itemTypeCheck')->where('type', 'tipsters|bookmakers|transactions');
-Route::get('dashboard/ajax/{type}', 'DashboardController@itemTypeCheck')->where('type', 'parisencours|parislongterme|paristermine');
+Route::get('dashboard/ajax/{type}', 'DashboardController@itemTypeCheck')->where('type', 'parisencours|parislongterme|parisabcd|paristermine');
 
  Route::controller('auth', 'AuthController');
  Route::controller('password', 'RemindersController');
@@ -34,6 +34,7 @@ Route::get('devise', 'DashboardController@getDevise');
 Route::post('devise', 'DashboardController@postDevise');
 
 Route::get('account', 'AccountController@showIndex');
+Route::post('coupon', 'DashboardController@getBetInformations');
 
 
 /* accounts : ajax request for select input in 'transaction' form(config page) and 'manual add bet' form(dashboard page) */

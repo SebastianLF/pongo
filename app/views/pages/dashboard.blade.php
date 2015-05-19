@@ -73,7 +73,6 @@
                                             <a href="#tab_15_1" data-toggle="tab">
                                                 Paris classique en cours <span class="badge badge-danger"></span></a>
                                         </li>
-
                                         <li id="onglet_paris_long_terme">
                                             <a href="#tab_15_2" data-toggle="tab">
                                                 Paris long terme en cours <span class="badge badge-default"></span></a>
