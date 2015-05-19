@@ -137,7 +137,7 @@
 
 		function getBetInformations()
 		{
-			$bookmaker = $_POST["bookmaker"];
+			$bookmaker = Input::get('bookmaker');
 			echo $bookmaker;
 		}
 	}
