@@ -51,9 +51,8 @@ var chartPie1 = {
 
 zingchart.render({
     id: 'chartPie1',
-
     height: 400,
-    width: 600,
+    width: '100%',
     data: chartPie1
 });
 
@@ -68,4 +67,34 @@ zingchart.render({
     height: 400,
     width: '100%',
     data: chartData2
+});
+zingchart.render({
+    id: 'tipsterPie1',
+    height: 400,
+    width: '100%',
+    data: chartPie1
+});
+
+// tipsters
+$('#tipster_stats').select2({
+    allowClear: true,
+    placeholder: "Choisir un tipster",
+    cache: true,
+    ajax: {
+        url: 'tipsters',
+        dataType: 'json',
+        data: function (params) {
+            return {
+                q: params.term // search term
+            };
+        },
+        processResults: function (data) {
+            // parse the results into the format expected by Select2.
+            // since we are using custom formatting functions we do not need to
+            // alter the remote JSON data
+            return {
+                results: data
+            };
+        }
+    }
 });

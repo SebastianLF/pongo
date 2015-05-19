@@ -1,5 +1,4 @@
 <?php
-	/* controller corresponding to dashboard page */
 
 	use Carbon\Carbon;
 
@@ -138,6 +137,7 @@
 
 		function getBetInformations()
 		{
-			Clockwork::info(Input::all());
+			$bookmaker = $_POST["bookmaker"];
+			return Response::json($bookmaker);
 		}
 	}

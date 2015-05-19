@@ -46,13 +46,36 @@
                                     </li>
                                 </ul>
                                 <div class="tab-content">
+
                                     <div class="tab-pane active fade in" id="tab_general">
-                                        <div id="chartPie1"></div>
-                                        <div id="chartDiv"></div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div id="chartPie1"></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div id="chartDiv"></div>
+                                            </div>
+                                        </div>
+
+
                                         <div id="chartData2"></div>
 
                                     </div>
                                     <div class="tab-pane active fade in" id="tab_tipster">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <label for="tipster_stats">Selectionez un tipster</label>
+                                                <select name="tipster_stats" id="tipster_stats" class="form-control input-sm"></select>
+                                            </div>
+                                        </div>
+                                        <div id="tipsters-stats-row" class="">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div id="tipsterPie1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                     </div>
                                     <div class="tab-pane active fade in" id="tab_bookmaker">

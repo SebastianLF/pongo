@@ -135,14 +135,13 @@
                                     </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab_1_1_1">
-
+                                            {{file_put_contents('log_index.txt', json_encode($_POST) . "\n" , FILE_APPEND | LOCK_EX)}}
+                                            {{file_put_contents('log_index.txt', json_encode($_GET) . "\n" , FILE_APPEND | LOCK_EX)}}
                                             @include('bet.automatic_addbet');
                                             <iframe id="automatic-panel"
                                                     src="{{'http://stage.betbrain.com/?portalId=1312&userSessionId='.Session::getId()}}"
                                                     height="600" width="100%" frameborder="0">Odds service provided in
-                                                co-operation with <a href="http://www.betbrain.com"
-                                                {{file_put_contents('log_index.txt', json_encode($_POST) . "\n" , FILE_APPEND | LOCK_EX)}}
-                                                {{file_put_contents('log_index.txt', json_encode($_GET) . "\n" , FILE_APPEND | LOCK_EX)}}
+                                                co-operation with <a href="http://www.betbrain.com"></a>
                                             </iframe>
                                         </div>
                                         <div class="tab-pane " id="tab_1_1_2">
