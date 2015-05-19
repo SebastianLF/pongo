@@ -17,6 +17,5 @@
 			$this->afterFilter(function () {
 				Event::fire('clockwork.controller.end');
 			});
-			//$this->beforeFilter('csrf', array('on' => array('post','put',)));
 		}
 	}
