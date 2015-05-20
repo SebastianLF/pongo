@@ -71,15 +71,15 @@
                                     <ul class="nav nav-tabs ">
                                         <li id="onglet_paris_en_cours" class="active">
                                             <a href="#tab_15_1" data-toggle="tab">
-                                                Paris classique en cours <span class="badge badge-danger"></span></a>
+                                                Ticket classique en cours <span class="badge badge-danger"></span></a>
                                         </li>
                                         <li id="onglet_paris_long_terme">
                                             <a href="#tab_15_2" data-toggle="tab">
-                                                Paris long terme en cours <span class="badge badge-default"></span></a>
+                                                Ticket long terme en cours <span class="badge badge-default"></span></a>
                                         </li>
                                         <li id="onglet_paris_systeme_ABCD">
                                             <a href="#tab_15_3" data-toggle="tab">
-                                                Paris ABCD en cours <span class="badge badge-default"></span></a>
+                                                Ticket ABCD en cours <span class="badge badge-default"></span></a>
                                         </li>
                                         <li id="onglet_paris_termine">
                                             <a href="#tab_15_4" data-toggle="tab">
@@ -135,18 +135,25 @@
                                     </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab_1_1_1">
-                                            {{var_dump(Session::all())}}
-                                            {{var_dump(Session::getId())}}
-                                            {{file_put_contents('log_index.txt', json_encode($_POST) . "\n" , FILE_APPEND | LOCK_EX)}}
-                                            {{file_put_contents('log_index.txt', json_encode($_GET) . "\n" , FILE_APPEND | LOCK_EX)}}
+
                                             @include('bet.automatic_addbet');
-                                            <iframe id="automatic-panel"
-                                                    src="{{'http://stage.betbrain.com/?portalId=1312&userSessionId='.Session::getId()}}"
-                                                    height="600" width="100%" frameborder="0">Odds service provided in
-                                                co-operation with <a href="http://www.betbrain.com"></a>
-                                                {{file_put_contents('log_index.txt', json_encode($_POST) . "\n" , FILE_APPEND | LOCK_EX)}}
-                                                {{file_put_contents('log_index.txt', json_encode($_GET) . "\n" , FILE_APPEND | LOCK_EX)}}
-                                            </iframe>
+                                            <div class="portlet box blue-hoki">
+                                                <div class="portlet-title">
+                                                    <div class="caption">
+                                                        <i class="fa fa-gift"></i>Rechercher un pari ( ajouter une selection à l'aide du panneau ci-dessous )
+                                                    </div>
+                                                </div>
+                                                <div class="portlet-body">
+                                                    {{var_dump(Session::all())}}
+                                                    <iframe id="automatic-panel"
+                                                            src="{{'http://stage.betbrain.com/?portalId=1312&userSessionId='.Session::getId()}}"
+                                                            height="600" width="100%" frameborder="0">Odds service provided in
+                                                        co-operation with <a href="http://www.betbrain.com"></a>
+                                                        {{file_put_contents('log_index.txt', json_encode($_POST) . "\n" , FILE_APPEND | LOCK_EX)}}
+                                                        {{file_put_contents('log_index.txt', json_encode($_GET) . "\n" , FILE_APPEND | LOCK_EX)}}
+                                                    </iframe></div>
+                                            </div>
+
                                         </div>
                                         <div class="tab-pane " id="tab_1_1_2">
                                             @include('bet.manual_addbet');

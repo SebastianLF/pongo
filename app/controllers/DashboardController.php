@@ -135,9 +135,10 @@
 			}
 		}
 
+
 		function getBetInformations()
 		{
-			$bookmaker = Input::get('bookmaker');
-			echo $bookmaker;
+			$infos = Input::get('all');
+			Session::put('infos', $infos);
 		}
 	}

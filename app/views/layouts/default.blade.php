@@ -84,24 +84,19 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="{{asset('js/getPaginationSelectedPage.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/paginationOnclick.js')}}"></script>
 
-<script src="{{asset('js/loadParisLongTerme.js')}}" type="text/javascript"></script>
-
 <script src="{{asset('js/pages/configuration/transactions/loadTransactions.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/configuration/transactions/transactionAdd.js')}}" type="text/javascript"></script>
-<script src="{{asset('js/loadRecaps.js')}}" type="text/javascript"></script>
-
-<script src="{{asset('js/pages/getBookmakersForSelection.js')}}" type="text/javascript"></script>
-
 <script src="{{asset('js/pages/configuration/tipsters/loadTipsters.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/configuration/tipsters/tipsterAdd.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/configuration/tipsters/tipsterUpdate.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/configuration/tipsters/tipsterEdit.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/configuration/tipsters/tipsterDelete.js')}}" type="text/javascript"></script>
-
 <script src="{{asset('js/pages/configuration/bookmakers/loadBookmakers.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/configuration/bookmakers/bookmakerAdd.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/configuration/bookmakers/bookmakerDelete.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/configuration/bookmakers/bookmakerUpdate.js')}}" type="text/javascript"></script>
+
+<script src="{{asset('js/pages/getBookmakersForSelection.js')}}" type="text/javascript"></script>
 
 <script src="{{asset('js/pages/stats/stats.js')}}" type="text/javascript"></script>
 
@@ -115,6 +110,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="{{asset('js/pages/dashboard/paris/parisTermineDelete.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/dashboard/paris/automaticBetForm.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/dashboard/paris/manualBetForm.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/pages/dashboard/paris/generalBetForm.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/dashboard/modal_welcome.js')}}" type="text/javascript"></script>
 
 
@@ -182,7 +178,8 @@ License: You must have a valid license purchased only from themeforest(the above
         loadBookmakersOnDashboard();
 
         // formulaire d'ajout de pari
-        manualBetForm();
+        generalBetForm('#automaticform-add');
+        generalBetForm('#manubetform-add');
 
         Metronic.init(); // init metronic core components
         Layout.init(); // init current layout
