@@ -144,7 +144,8 @@
 		}
 
 		function refreshSelections(){
-
+			error_log(print_r($_POST, true));
+			error_log(print_r($_SERVER, true));
 			$posts = $_POST;
 			$inputs = Request::all();
 			$view = View::make('bet.auto_form_selections', array('inputs' => $inputs, 'posts' => $posts));
