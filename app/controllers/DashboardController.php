@@ -10,7 +10,7 @@
 		public function __construct()
 		{
 			parent::__construct();
-			$this->beforeFilter('auth', ['except' => 'getBetInformations']);
+			$this->beforeFilter('auth', ['except' => 'getBetInformations','refreshSelections']);
 
 		}
 
@@ -145,8 +145,9 @@
 
 		function refreshSelections(){
 
-			$inputs = Input::all();
-			$view = View::make('bet.auto_form_selections', array('inputs' => $inputs));
+			$posts = $_POST;
+			$inputs = Request::all();
+			$view = View::make('bet.auto_form_selections', array('inputs' => $inputs, 'posts' => $posts));
 			return $view;
 		}
 	}

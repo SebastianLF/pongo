@@ -223,27 +223,30 @@
                         </div>
                     </div>
                 </div>
+                <div id="automatic-selections">
+
+                </div>
+                <div class="form-actions form-actions-automatic-bet">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-offset-5 col-md-9">
+                                <button type="submit" class="btn green-meadow"><i class="fa fa-plus"></i> VALIDER LE TICKET</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
 
         </div>
-        <div id="automatic-selections">
 
-        </div>
+
 
         <!-- END Portlet PORTLET-->
     </div>
 </div>
 
 <div class="portlet-body form form-automatic">
-    <div class="form-actions form-actions-automatic-bet">
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-md-offset-5 col-md-9">
-                    <button type="submit" class="btn green-meadow"><i class="fa fa-plus"></i> VALIDER LE TICKET</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </div>
 {{ Form::close() }}

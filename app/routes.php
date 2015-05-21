@@ -33,12 +33,12 @@ Route::get('devise', 'DashboardController@getDevise');
 Route::post('devise', 'DashboardController@postDevise');
 
 Route::get('account', 'AccountController@showIndex');
- Route::any('coupon', function()
+ /*Route::any('coupon', function()
  {
   $inputs = Input::all();
   Session::put('parameters', $inputs);
- });
-//Route::get('coupon', 'DashboardController@refreshSelections');
+ });*/
+Route::get('coupon', 'DashboardController@refreshSelections');
 //Route::get('selections', 'DashboardController@refreshSelections');
 
 

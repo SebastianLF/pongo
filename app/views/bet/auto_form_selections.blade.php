@@ -1,4 +1,5 @@
 {{var_dump($inputs)}}
+{{var_dump($posts)}}
 <div class="portlet box green-meadow">
     <div class="portlet-title">
         <div class="caption">
@@ -6,7 +7,7 @@
         </div>
     </div>
     <div class="portlet-body form form-automatic">
-        <div class="table-scrollable">
+        <div class="table-responsive">
             <table class="table table-bordered table-striped">
                 <thead>
                 <tr>
@@ -16,33 +17,11 @@
                     <th>
                         sport_id
                     </th>
-                    <th>
-                        league_id
-                    </th>
-                    <th>
-                        home_team
-                    </th>
-                    <th>
-                        away_team
-                    </th>
-                    <th>
-                        market
-                    </th>
-                    <th>
-                        odd
-                    </th>
-                    <th>
-
-                    </th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td><input type="text" readonly/></td>
-                    <td><input type="text" readonly/></td>
-                    <td><input type="text" readonly/></td>
-                    <td><input type="text" readonly/></td>
-                    <td><input type="text" readonly/></td>
                     <td><input type="text" readonly/></td>
                     <td><input type="text" readonly/></td>
                     <td>
