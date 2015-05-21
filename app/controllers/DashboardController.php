@@ -138,7 +138,6 @@
 
 		function getBetInformations()
 		{
-			$infos = Input::get('all');
-			Session::put('infos', $infos);
+			var_dump($_POST);
 		}
 	}
