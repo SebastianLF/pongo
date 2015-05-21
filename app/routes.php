@@ -33,7 +33,7 @@ Route::get('devise', 'DashboardController@getDevise');
 Route::post('devise', 'DashboardController@postDevise');
 
 Route::get('account', 'AccountController@showIndex');
-Route::get('coupon/{params}', 'DashboardController@refreshSelections');
+Route::get('coupon', 'DashboardController@refreshSelections');
 //Route::get('selections', 'DashboardController@refreshSelections');
 
 
