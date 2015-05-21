@@ -33,8 +33,8 @@ Route::get('devise', 'DashboardController@getDevise');
 Route::post('devise', 'DashboardController@postDevise');
 
 Route::get('account', 'AccountController@showIndex');
-Route::get('coupon', 'DashboardController@getBetInformations');
-Route::get('selections', 'DashboardController@refreshSelections');
+Route::get('coupon/{params}', 'DashboardController@refreshSelections');
+//Route::get('selections', 'DashboardController@refreshSelections');
 
 
 /* accounts : ajax request for select input in 'transaction' form(config page) and 'manual add bet' form(dashboard page) */

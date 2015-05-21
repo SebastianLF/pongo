@@ -2,7 +2,7 @@ setInterval(refresh_selections, (10 * 1000));
 
 function refresh_selections() {
     $.ajax({
-        url: 'selections',
+        url: 'coupon',
         success: function (data) {
             $('#automatic-selections').html(data);
         },
