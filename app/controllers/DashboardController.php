@@ -138,6 +138,14 @@
 
 		function getBetInformations()
 		{
-			var_dump($_POST);
+			$inputs = Input::all();
+			Session::put('inputs', $inputs);
+			Redirect::action('DashboardController@refreshSelections', array('inputs' => $inputs));
+		}
+
+		function refreshSelections(){
+			$inputs = Input::get('inputs');
+			$view = View::make('bet.auto_form_selections', array('inputs' => $inputs));
+			return $view;
 		}
 	}
