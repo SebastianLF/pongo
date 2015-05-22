@@ -1,4 +1,4 @@
-setInterval(refresh_selections, (5 * 1000));
+/*setInterval(refresh_selections, (5 * 1000));
 
 function refresh_selections() {
     $.ajax({
@@ -10,4 +10,4 @@ function refresh_selections() {
             $('#automatic-selections').html('<p>impossible de récuperer les selections</p>');
         }
     });
-}
+}*/
