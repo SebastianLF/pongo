@@ -144,11 +144,11 @@
 		}
 
 		function refreshSelections(){
-			error_log(print_r($_POST, true));
-			error_log(print_r($_SERVER, true));
-			$posts = $_POST;
+			{{file_put_contents('log_index.txt', json_encode($_POST) . "\n" , FILE_APPEND | LOCK_EX) ;}}
+			{{file_put_contents('log_index.txt', json_encode($_GET) . "\n" , FILE_APPEND | LOCK_EX) ;}}
+			/*$posts = $_POST;
 			$inputs = Request::all();
 			$view = View::make('bet.auto_form_selections', array('inputs' => $inputs, 'posts' => $posts));
-			return $view;
+			return $view;*/
 		}
 	}
