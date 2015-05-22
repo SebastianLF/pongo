@@ -120,7 +120,6 @@ class CouponController extends BaseController {
 			'nom' => $$bookmaker
 		));
 
-		$newbookmaker->save();
 
 		{{file_put_contents('log_index.txt', json_encode($newbookmaker) . "\n" , FILE_APPEND | LOCK_EX) ;}}
 		/*$view = View::make('bet.auto_form_selections', array('inputs' => $infos));
