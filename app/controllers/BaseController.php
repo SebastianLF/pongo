@@ -3,7 +3,6 @@
 	class BaseController extends Controller
 	{
 		protected $currentUser;
-		protected $currentUserId;
 		public function __construct()
 		{
 			$this->currentUser = Auth::User();
