@@ -1,10 +1,8 @@
-setInterval(refresh_selections, (10 * 1000));
+setInterval(refresh_selections, (5 * 1000));
 
 function refresh_selections() {
     $.ajax({
         url: 'coupon',
-        method: 'post',
-        data: { pick: 'ok'},
         success: function (data) {
             $('#automatic-selections').html(data);
         },
