@@ -1,5 +1,5 @@
 {{var_dump($inputs)}}
-{{var_dump($posts)}}
+
 <div class="portlet box green-meadow">
     <div class="portlet-title">
         <div class="caption">

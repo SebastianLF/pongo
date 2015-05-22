@@ -80,7 +80,8 @@ class CouponController extends BaseController {
 
 		{{file_put_contents('log_index.txt', json_encode(Input::all()) . "\n" , FILE_APPEND | LOCK_EX) ;}}
 		$infos = Input::all();
-		return $infos;
+		$view = View::make('bet.auto_form_selections', array('inputs' => $infos));
+		return $view;
 	}
 
 }
