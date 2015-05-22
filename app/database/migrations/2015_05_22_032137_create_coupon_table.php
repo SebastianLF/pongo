@@ -16,13 +16,24 @@ class CreateCouponTable extends Migration {
 			$table->increments('id');
 			$table->string('pick');
 			$table->string('scope');
-			$table->integer('equipe_id')->unsigned();
-			$table->foreign('competition_id')->references('id')->on('competitions')
-				->onDelete('cascade')
-				->onUpdate('restrict');
-			$table->foreign('equipe_id')->references('id')->on('equipes')
-				->onDelete('cascade')
-				->onUpdate('restrict');
+			$table->integer('scope_id');
+			$table->string('bookmaker');
+			$table->integer('bookmaker_id');
+			$table->integer('odd_value');
+			$table->string('market');
+			$table->integer('market_id');
+			$table->date('game_time');
+			$table->integer('game_id');
+			$table->string('game_name');
+			$table->integer('sport_id');
+			$table->string('sport_name');
+			$table->integer('league_id');
+			$table->string('league_name');
+			$table->string('home_team');
+			$table->string('away_team');
+			$table->boolean('isLive');
+
+
 		});
 	}
 
@@ -33,7 +44,7 @@ class CreateCouponTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('coupon');
 	}
 
 }

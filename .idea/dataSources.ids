@@ -317,6 +317,7 @@
       <foreign-key name="bookmaker_user_user_id_foreign" columns="user_id" ref-table="users" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="bookmaker_user_bookmaker_id_foreign" columns="bookmaker_id" ref-table="bookmakers" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="en_cours_paris_bookmaker_user_id_foreign" table="en_cours_paris" schema="" catalog="slfweb" columns="bookmaker_user_id"/>
+      <exported-key name="termine_paris_bookmaker_user_id_foreign" table="termine_paris" schema="" catalog="slfweb" columns="bookmaker_user_id"/>
       <exported-key name="transactions_bookmaker_user_id_foreign" table="transactions" schema="" catalog="slfweb" columns="bookmaker_user_id"/>
       <index name="bookmaker_user_bookmaker_id_foreign" unique="false" columns="bookmaker_id"/>
       <index name="bookmaker_user_user_id_foreign" unique="false" columns="user_id"/>
@@ -362,6 +363,13 @@
       <exported-key name="competitions_country_id_foreign" table="competitions" schema="" catalog="slfweb" columns="country_id"/>
       <exported-key name="equipes_country_id_foreign" table="equipes" schema="" catalog="slfweb" columns="country_id"/>
       <exported-key name="selections_country_id_foreign" table="selections" schema="" catalog="slfweb" columns="country_id"/>
+    </table>
+    <table name="coupon" schema="" catalog="slfweb" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="pick" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="scope" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="equipe_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="devises" schema="" catalog="slfweb" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -446,8 +454,6 @@
       <column name="mt_investi" sqlType="DECIMAL" precision="12" scale="2" nullable="false" jdbcType="3" def="MC4wMA=="/>
       <column name="tipster_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="mt_mois_tipster_tipster_id_foreign" columns="tipster_id" ref-table="tipsters" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <index name="mt_mois_tipster_tipster_id_foreign" unique="false" columns="tipster_id"/>
     </table>
     <table name="mt_unite_logs" schema="" catalog="slfweb" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -461,6 +467,13 @@
       <foreign-key name="mt_unite_logs_tipster_id_foreign" columns="tipster_id" ref-table="tipsters" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
       <index name="mt_unite_logs_tipster_id_foreign" unique="false" columns="tipster_id"/>
     </table>
+    <table name="password_reminders" schema="" catalog="slfweb" type="TABLE">
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="token" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <index name="password_reminders_email_index" unique="false" columns="email"/>
+      <index name="password_reminders_token_index" unique="false" columns="token"/>
+    </table>
     <table name="selections" schema="" catalog="slfweb" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
@@ -470,6 +483,7 @@
       <column name="cote_apres_status" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
       <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
       <column name="infos_pari" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="live" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
       <column name="sport_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="country_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="competition_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
@@ -530,7 +544,13 @@
       <column name="user_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="bookmaker_user_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="termine_paris_user_id_foreign" columns="user_id" ref-table="users" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="termine_paris_bookmaker_user_id_foreign" columns="bookmaker_user_id" ref-table="bookmaker_user" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="termine_paris_tipster_id_foreign" columns="tipster_id" ref-table="tipsters" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="selections_termine_pari_id_foreign" table="selections" schema="" catalog="slfweb" columns="termine_pari_id"/>
+      <index name="termine_paris_bookmaker_user_id_foreign" unique="false" columns="bookmaker_user_id"/>
+      <index name="termine_paris_tipster_id_foreign" unique="false" columns="tipster_id"/>
+      <index name="termine_paris_user_id_foreign" unique="false" columns="user_id"/>
     </table>
     <table name="tipsters" schema="" catalog="slfweb" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -545,8 +565,8 @@
       <foreign-key name="tipsters_user_id_foreign" columns="user_id" ref-table="users" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="en_cours_paris_tipster_id_foreign" table="en_cours_paris" schema="" catalog="slfweb" columns="tipster_id"/>
       <exported-key name="followtype_logs_tipster_id_foreign" table="followtype_logs" schema="" catalog="slfweb" columns="tipster_id"/>
-      <exported-key name="mt_mois_tipster_tipster_id_foreign" table="mt_mois_tipster" schema="" catalog="slfweb" columns="tipster_id"/>
       <exported-key name="mt_unite_logs_tipster_id_foreign" table="mt_unite_logs" schema="" catalog="slfweb" columns="tipster_id"/>
+      <exported-key name="termine_paris_tipster_id_foreign" table="termine_paris" schema="" catalog="slfweb" columns="tipster_id"/>
       <index name="tipsters_user_id_foreign" unique="false" columns="user_id"/>
     </table>
     <table name="transactions" schema="" catalog="slfweb" type="TABLE">
@@ -581,18 +601,18 @@
       <column name="name" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
       <column name="email" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
       <column name="password" sqlType="VARCHAR" precision="64" scale="0" nullable="false" jdbcType="12"/>
-      <column name="abonnement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="abonnement" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="J2ZyZWUn"/>
       <column name="devise" sqlType="VARCHAR" precision="5" scale="0" nullable="false" jdbcType="12" def="J25vbic="/>
       <column name="timezone" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="J0V1cm9wZS9QYXJpcyc="/>
       <column name="langue" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="type_cote" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="profit_total" sqlType="DECIMAL" precision="12" scale="2" nullable="false" jdbcType="3" def="MC4wMA=="/>
       <column name="compteur_pari" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="remember_token" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
       <column name="admin" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
       <primary-key name="PRIMARY" columns="id"/>
       <exported-key name="bookmaker_user_user_id_foreign" table="bookmaker_user" schema="" catalog="slfweb" columns="user_id"/>
       <exported-key name="en_cours_paris_user_id_foreign" table="en_cours_paris" schema="" catalog="slfweb" columns="user_id"/>
+      <exported-key name="termine_paris_user_id_foreign" table="termine_paris" schema="" catalog="slfweb" columns="user_id"/>
       <exported-key name="tipsters_user_id_foreign" table="tipsters" schema="" catalog="slfweb" columns="user_id"/>
       <index name="users_email_unique" unique="true" columns="email"/>
       <index name="users_name_unique" unique="true" columns="name"/>
