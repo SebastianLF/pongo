@@ -35,7 +35,8 @@
 	Route::get('account', 'AccountController@showIndex');
 
 
-	 Route::post('coupon', 'CouponController@getSelections');
+	 Route::post('coupon', 'CouponController@postSelections');
+	 Route::get('coupon', 'CouponController@getSelections');
 //Route::get('selections', 'DashboardController@refreshSelections');
 
 

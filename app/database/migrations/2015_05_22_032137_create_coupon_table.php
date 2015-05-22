@@ -14,6 +14,7 @@ class CreateCouponTable extends Migration {
 	{
 		Schema::create('coupon', function(Blueprint $table) {
 			$table->increments('id');
+
 			$table->string('pick');
 			$table->string('scope');
 			$table->integer('scope_id');
@@ -32,8 +33,6 @@ class CreateCouponTable extends Migration {
 			$table->string('home_team');
 			$table->string('away_team');
 			$table->boolean('isLive');
-
-
 		});
 	}
 

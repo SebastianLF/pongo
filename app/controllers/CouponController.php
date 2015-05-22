@@ -76,7 +76,7 @@ class CouponController extends BaseController {
 
 	}
 
-	public function getSelections(){
+	public function postSelections(){
 		$pick = Input::get('pick');
 		$scope = Input::get('scope');
 		$scope_id = Input::get('scope_id');
@@ -118,10 +118,14 @@ class CouponController extends BaseController {
 		));
 
 		$coupon->save();
-		Clockwork::info($coupon);
+
 		{{file_put_contents('log_index.txt', json_encode(Input::all()) . "\n" , FILE_APPEND | LOCK_EX) ;}}
 		/*$view = View::make('bet.auto_form_selections', array('inputs' => $infos));
 		return $view;*/
+	}
+
+	public function getSelections(){
+
 	}
 
 }
