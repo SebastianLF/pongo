@@ -116,7 +116,9 @@ class CouponController extends BaseController {
 			'isLive' => $isLive
 		));
 
-		{{file_put_contents('log_index.txt', json_encode($coupon) . "\n" , FILE_APPEND | LOCK_EX) ;}}
+		$info = $coupon->save();
+
+		{{file_put_contents('log_index.txt', json_encode($info) . "\n" , FILE_APPEND | LOCK_EX) ;}}
 		/*$view = View::make('bet.auto_form_selections', array('inputs' => $infos));
 		return $view;*/
 	}
