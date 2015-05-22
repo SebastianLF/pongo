@@ -14,7 +14,6 @@ class CreateCouponTable extends Migration {
 	{
 		Schema::create('coupon', function(Blueprint $table) {
 			$table->increments('id');
-
 			$table->string('pick');
 			$table->string('scope');
 			$table->integer('scope_id');
