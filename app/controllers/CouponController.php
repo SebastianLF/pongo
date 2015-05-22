@@ -118,11 +118,10 @@ class CouponController extends BaseController {
 		));
 
 		$coupon->save();
-
+		Clockwork::info($coupon);
 		{{file_put_contents('log_index.txt', json_encode(Input::all()) . "\n" , FILE_APPEND | LOCK_EX) ;}}
-		$infos = Input::all();
-		$view = View::make('bet.auto_form_selections', array('inputs' => $infos));
-		return $view;
+		/*$view = View::make('bet.auto_form_selections', array('inputs' => $infos));
+		return $view;*/
 	}
 
 }
