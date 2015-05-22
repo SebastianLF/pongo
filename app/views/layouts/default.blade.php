@@ -124,7 +124,6 @@ License: You must have a valid license purchased only from themeforest(the above
             }).ajaxStop(function () {
                 $('#spinner').fadeOut();
             });
-
         $.ajax({
             url:'http://slfweb.eu1.frbit.net/coupon',
             type:'post',
