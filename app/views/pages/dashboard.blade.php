@@ -135,6 +135,7 @@
                                     </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab_1_1_1">
+                                            {{var_dump(Session::get('selections'))}}
                                             @include('bet.automatic_addbet');
                                             <div class="portlet box blue-hoki">
                                                 <div class="portlet-title">
