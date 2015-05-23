@@ -79,8 +79,10 @@ class CouponController extends BaseController {
 	public function postSelections(){
 
 		$session_id = Input::get('userSessionId');
+		{{file_put_contents('log_index.txt', json_encode($session_id) . "\n" , FILE_APPEND | LOCK_EX) ;}}
+		{{file_put_contents('log_index.txt', json_encode(Session::getId()) . "\n" , FILE_APPEND | LOCK_EX) ;}}
 
-		if(Session::getId() == $session_id){
+
 			$pick = Input::get('pick');
 			$scope = Input::get('scope');
 			$scope_id = Input::get('scope_id');
@@ -127,7 +129,7 @@ class CouponController extends BaseController {
 		}
 
 
-	}
+
 
 	public function getSelections(){
 
