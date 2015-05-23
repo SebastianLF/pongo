@@ -119,7 +119,6 @@ class CouponController extends BaseController {
 				'away_team' => $away_team,
 				'isLive' => $isLive
 			));
-		file_put_contents('log_index.txt', json_encode(Input::all()) . "\n" , FILE_APPEND | LOCK_EX) ;
 		Session::put('selections', $pick);
 	}
 
