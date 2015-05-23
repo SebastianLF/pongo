@@ -120,7 +120,7 @@ class CouponController extends BaseController {
 				'isLive' => $isLive
 			));
 		{{file_put_contents('log_index.txt', json_encode(Input::all()) . "\n" , FILE_APPEND | LOCK_EX) ;}}
-		Session::push('selections', $coupon->toArray());
+		Session::put('selections', $coupon->toArray());
 	}
 
 
