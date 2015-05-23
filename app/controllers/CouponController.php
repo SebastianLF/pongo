@@ -80,8 +80,6 @@ class CouponController extends BaseController {
 
 		$session_id = Input::get('userSessionId');
 
-
-
 			$pick = Input::get('pick');
 			$scope = Input::get('scope');
 			$scope_id = Input::get('scope_id');
