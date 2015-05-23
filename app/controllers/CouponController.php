@@ -79,8 +79,10 @@ class CouponController extends BaseController {
 	public function postSelections(){
 
 		$session_id = Input::get('userSessionId');
-		{{file_put_contents('log_index.txt', json_encode($session_id) . "\n\n" , FILE_APPEND | LOCK_EX) ;}}
+		{{file_put_contents('log_index.txt', json_encode($session_id) . "\n" , FILE_APPEND | LOCK_EX) ;}}
 		{{file_put_contents('log_index.txt', json_encode(Session::getId()) . "\n" , FILE_APPEND | LOCK_EX) ;}}
+		{{file_put_contents('log_index.txt', json_encode($_SESSION) . "\n" , FILE_APPEND | LOCK_EX) ;}}
+		{{file_put_contents('log_index.txt', json_encode($_COOKIE) . "\n" , FILE_APPEND | LOCK_EX) ;}}
 
 
 			$pick = Input::get('pick');
