@@ -89,7 +89,7 @@ class CouponController extends BaseController {
 		$game_id = Input::get('game_id');
 		$game_name = Input::get('game_name');
 		$sport_id = Input::get('sport_id');
-		$sport_name = Input::get('sport_name');
+		$sport_name = Input::get('sport_Name');
 		$league_id = Input::get('league_id');
 		$league_name = Input::get('league_name');
 		$home_team = Input::get('home_team');
@@ -116,7 +116,7 @@ class CouponController extends BaseController {
 			'isLive' => $isLive
 		));
 
-		{{file_put_contents('log_index.txt', json_encode(var_dump($coupon)) . "\n" , FILE_APPEND | LOCK_EX) ;}}
+		{{file_put_contents('log_index.txt', json_encode($coupon) . "\n" , FILE_APPEND | LOCK_EX) ;}}
 		/*$view = View::make('bet.auto_form_selections', array('inputs' => $infos));
 		return $view;*/
 	}
