@@ -2,6 +2,10 @@
 
 class CouponController extends BaseController {
 
+	public function __construct()
+	{
+		parent::__construct();
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -96,6 +100,7 @@ class CouponController extends BaseController {
 			$home_team = Input::get('home_team');
 			$away_team = Input::get('away_team');
 			$isLive = Input::get('isLive');
+			$user_id = $this->currentUser;
 
 			$coupon = new Coupon(array(
 				'pick' => $pick,
