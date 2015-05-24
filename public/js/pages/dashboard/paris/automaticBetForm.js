@@ -13,4 +13,19 @@ $('#selection-refresh').click(function (e) {
     });
 });
 
+$.ajax({
+    url: 'coupon',
+    type: 'post',
+    data: {
+        param1 : 'param1',
+        param2 : 'param2'
+    },
+    success: function (data) {
+    },
+    error: function (data) {
+        $('#automatic-selections').html('<p>impossible de récuperer les selections</p>');
+    }
+});
+
+
 

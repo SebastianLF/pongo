@@ -77,7 +77,7 @@ class CouponController extends BaseController {
 	}
 
 	public function postSelections(){
-		$session_id = Input::get('userSessionId');
+		/*$session_id = Input::get('userSessionId');
 			$pick = Input::get('pick');
 			$scope = Input::get('scope');
 			$scope_id = Input::get('scope_id');
@@ -95,7 +95,7 @@ class CouponController extends BaseController {
 			$league_name = Input::get('league_name');
 			$home_team = Input::get('home_team');
 			$away_team = Input::get('away_team');
-			$isLive = Input::get('isLive');
+			$isLive = Input::get('isLive');*/
 
 			/*$coupon = new Coupon(array(
 				'pick' => $pick,
@@ -119,7 +119,7 @@ class CouponController extends BaseController {
 			));
 
 		$coupon->save();*/
-		Session::set('test', 'ok');
+		Session::put('test', 'ok');
 		file_put_contents('log_index.txt', json_encode(Input::all()) . "\n" , FILE_APPEND | LOCK_EX);
 		file_put_contents('log_index.txt', json_encode(Input::get('pick')). "\n" , FILE_APPEND | LOCK_EX);
 	}
