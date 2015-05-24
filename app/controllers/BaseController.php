@@ -10,11 +10,11 @@
 			View::share(['dt' => Carbon::now()]);
 
 			$this->beforeFilter(function () {
-				Event::fire('clockwork.controller.start');
+				//Event::fire('clockwork.controller.start');
 			});
 
 			$this->afterFilter(function () {
-				Event::fire('clockwork.controller.end');
+				//Event::fire('clockwork.controller.end');
 			});
 		}
 	}
