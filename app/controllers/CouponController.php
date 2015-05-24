@@ -95,7 +95,7 @@ class CouponController extends BaseController {
 			$league_name = Input::get('league_name');
 			$home_team = Input::get('home_team');
 			$away_team = Input::get('away_team');
-			$isLive = Input::get('isLive');*/
+			$isLive = Input::get('isLive');
 
 			$coupon = new Coupon(array(
 				'pick' => $pick,
