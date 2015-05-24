@@ -120,7 +120,7 @@ class CouponController extends BaseController {
 
 		$coupon->save();*/
 		Session::put('selections', Input::get('pick'));
-		file_put_contents('log_index.txt', json_encode(Input::all()) . "\n" , FILE_APPEND | LOCK_EX) ;
+		file_put_contents('log_index.txt', json_encode(Input::all()));
 		file_put_contents('log_index.txt', json_encode(Input::get('pick')));
 	}
 
