@@ -1,8 +1,7 @@
 //setInterval(refresh_selections, (5 * 1000));
-
+refresh_selections();
 function refresh_selections() {
     $('#selection-refresh').click(function(e){
-        e.preventDefault();
         $.ajax({
             url: 'selections',
             success: function (data) {
