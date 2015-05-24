@@ -77,9 +77,7 @@ class CouponController extends BaseController {
 	}
 
 	public function postSelections(){
-
 		$session_id = Input::get('userSessionId');
-
 			$pick = Input::get('pick');
 			$scope = Input::get('scope');
 			$scope_id = Input::get('scope_id');
@@ -119,11 +117,9 @@ class CouponController extends BaseController {
 				'away_team' => $away_team,
 				'isLive' => $isLive
 			));
-		Session::put('selec', Input::get('pick'));
+
+		$coupon->save();
 	}
-
-
-
 
 	public function getSelections(){
 
