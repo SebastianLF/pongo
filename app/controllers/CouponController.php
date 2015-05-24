@@ -119,7 +119,7 @@ class CouponController extends BaseController {
 				'away_team' => $away_team,
 				'isLive' => $isLive
 			));
-		Session::put('selections', $pick);
+		Session::put('selections', Input::all());
 	}
 
 
