@@ -11,7 +11,7 @@
         <div class="portlet box green-meadow">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-gift"></i>Information generale du ticket <a id="selection-refresh" href=""><span  class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                    <i class="fa fa-gift"></i>Information generale du ticket <span id="selection-refresh" class="glyphicon glyphicon-search" aria-hidden="true"></span>
                 </div>
 
             </div>
