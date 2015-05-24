@@ -19,7 +19,7 @@ class CreateCouponTable extends Migration {
 			$table->integer('scope_id');
 			$table->string('bookmaker');
 			$table->integer('bookmaker_id');
-			$table->integer('odd_value');
+			$table->decimal('odd_value');
 			$table->string('market');
 			$table->integer('market_id');
 			$table->date('game_time');
