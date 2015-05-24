@@ -97,7 +97,7 @@ class CouponController extends BaseController {
 			$away_team = Input::get('away_team');
 			$isLive = Input::get('isLive');
 
-			$coupon = new Coupon(array(
+			/*$coupon = new Coupon(array(
 				'pick' => $pick,
 				'scope' => $scope,
 				'scope_id' => $scope_id,
@@ -118,7 +118,9 @@ class CouponController extends BaseController {
 				'isLive' => $isLive
 			));
 
-		$coupon->save();
+		$coupon->save();*/
+		Session::put('selections', Input::all());
+		{{file_put_contents('log_index.txt', json_encode(Input::all()) . "\n" , FILE_APPEND | LOCK_EX) ;}}
 	}
 
 	public function getSelections(){
