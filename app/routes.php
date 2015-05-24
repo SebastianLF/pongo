@@ -36,7 +36,7 @@
 
 
 	 Route::post('coupon', 'CouponController@postSelections');
-	 Route::get('coupon_retour', 'CouponController@getSelections');
+	 Route::get('selections', 'CouponController@getSelections');
 //Route::get('selections', 'DashboardController@refreshSelections');
 
 

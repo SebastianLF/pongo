@@ -1,5 +1,3 @@
-{{var_dump($inputs)}}
-
 <div class="portlet box green-meadow">
     <div class="portlet-title">
         <div class="caption">

@@ -126,7 +126,7 @@ class CouponController extends BaseController {
 	}
 
 	public function getSelections(){
-
+		return Session::all();
 	}
 
 }
