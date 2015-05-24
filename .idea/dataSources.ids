@@ -371,7 +371,7 @@
       <column name="scope_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="bookmaker" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="bookmaker_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="odd_value" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="odd_value" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
       <column name="market" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="market_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="game_time" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
