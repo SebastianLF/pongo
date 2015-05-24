@@ -13,7 +13,7 @@ $('#selection-refresh').click(function (e) {
     });
 });
 
-$.ajax({
+/*$.ajax({
     url: 'coupon',
     type: 'post',
     data: {
@@ -25,7 +25,7 @@ $.ajax({
     error: function (data) {
         $('#automatic-selections').html('<p>impossible de récuperer les selections</p>');
     }
-});
+});*/
 
 
 
