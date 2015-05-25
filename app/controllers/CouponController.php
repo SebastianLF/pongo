@@ -121,12 +121,13 @@ class CouponController extends BaseController {
 				'home_team' => $home_team,
 				'away_team' => $away_team,
 				'isLive' => $isLive,
-				'user_id' => $user_id
+
 			));
 
 		$coupon->save();
 		file_put_contents('log_index.txt', json_encode(Input::all()) . "\n" , FILE_APPEND | LOCK_EX);
 		file_put_contents('log_index.txt', json_encode($coupon) . "\n\n" , FILE_APPEND | LOCK_EX);
+		file_put_contents('log_index.txt', json_encode($user_id) . "\n\n" , FILE_APPEND | LOCK_EX);
 
 		return 1;
 	}
