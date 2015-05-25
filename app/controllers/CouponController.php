@@ -100,7 +100,7 @@ class CouponController extends BaseController {
 			$home_team = Input::get('home_team');
 			$away_team = Input::get('away_team');
 			$isLive = Input::get('isLive');
-			$user_id = $this->currentUser;
+			$user_id = $this->currentUser->id;
 
 			$coupon = new Coupon(array(
 				'pick' => $pick,
@@ -126,6 +126,7 @@ class CouponController extends BaseController {
 		$coupon->save();
 		file_put_contents('log_index.txt', json_encode(Input::all()) . "\n" , FILE_APPEND | LOCK_EX);
 		file_put_contents('log_index.txt', json_encode($coupon) . "\n\n" , FILE_APPEND | LOCK_EX);
+
 		return 1;
 	}
 

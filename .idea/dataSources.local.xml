@@ -19,9 +19,8 @@
         <secret-storage>master_key</secret-storage>
         <user>u-slfweb</user>
         <use-password>false</use-password>
-        <private-key-path>C:\Users\seb\.ssh\id_rsa</private-key-path>
+        <private-key-path>C:\Users\sebs\.ssh\id_rsa</private-key-path>
       </ssh-properties>
     </data-source>
   </component>
 </project>
-
