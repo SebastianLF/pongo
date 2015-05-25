@@ -100,7 +100,6 @@ class CouponController extends BaseController {
 			$home_team = Input::get('home_team');
 			$away_team = Input::get('away_team');
 			$isLive = Input::get('isLive');
-			$user_id = $this->currentUser->id;
 
 			$coupon = new Coupon(array(
 				'pick' => $pick,
