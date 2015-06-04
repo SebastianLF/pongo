@@ -21,10 +21,11 @@ class CreateSelectionsTable extends Migration {
 			$table->tinyInteger('status')->default(0); // gagné , perdu , remboursé etc..
 			$table->string('infos_pari'); // score vainqueur etc..
 			$table->boolean('live')->default(0);
+			$table->integer('market_id')->unsigned()->nullable();
+			$table->integer('scope_id')->unsigned()->nullable();
 			$table->integer('sport_id')->unsigned()->nullable();
 			$table->integer('country_id')->unsigned()->nullable();
 			$table->integer('competition_id')->unsigned()->nullable();
-			$table->integer('type_pari_id')->unsigned()->nullable();
 			$table->integer('equipe1_id')->unsigned()->nullable();
 			$table->integer('equipe2_id')->unsigned()->nullable();
 			$table->integer('en_cours_pari_id')->unsigned()->nullable();
@@ -36,9 +37,6 @@ class CreateSelectionsTable extends Migration {
 				->onDelete('restrict')
 				->onUpdate('restrict');
 			$table->foreign('competition_id')->references('id')->on('competitions')
-				->onDelete('restrict')
-				->onUpdate('restrict');
-			$table->foreign('type_pari_id')->references('id')->on('type_paris')
 				->onDelete('restrict')
 				->onUpdate('restrict');
 			$table->foreign('equipe1_id')->references('id')->on('equipes')

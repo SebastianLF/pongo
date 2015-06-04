@@ -329,4 +329,32 @@
 				));
 			}
 		}*/
+
+		public function automatic_store(){
+			$selections_coupon = Coupon::where('user_id', $this->currentUser->id)->get();
+			
+				$regles = array(
+
+				);
+				$validator = Validator::make(Input::all(), $regles, $messages);
+				$validator->each('automatic-selection-cote', ['required', 'regex:/^\d+(\.\d{1,2})?$/']);
+				if ($validator->fails()) {
+					$array = $validator->getMessageBag()->toArray();
+					return Response::json(array(
+						'etat' => 0,
+						'msg' => $array,
+					));
+				}else{
+					foreach ($selections_coupon as $selection_coupon){
+						$selection = new Selection(array(
+							'date_match' => new Carbon($selection_coupon->game_time),
+							'cote' => $selection->odd_value,
+								
+						));
+					}
+				}
+				
+		}
+			
+		
 	}
