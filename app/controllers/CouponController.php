@@ -89,7 +89,7 @@ class CouponController extends BaseController {
 			$bookmaker = Input::get('bookmaker');
 			$bookmaker_id = Input::get('bookmaker_id');
 			$odd_value = Input::get('odd_value');
-			$odd_doubleParam = (Input::get('odd_doubleParam') == "-999.888") ? null : Input::get('odd_doubleParam');
+			$odd_doubleParam = Input::get('odd_doubleParam');
 			$odd_doubleParam2 = Input::get('odd_doubleParam2');
 			$odd_doubleParam3 = Input::get('odd_doubleParam3');
 			$odd_participantParameter = Input::get('odd_participantParameter');
@@ -122,7 +122,7 @@ class CouponController extends BaseController {
 				'bookmaker' => $bookmaker,
 				'bookmaker_id' => $bookmaker_id,
 				'odd_value' => $odd_value,
-				'odd_doubleParam' => $odd_doubleParam,
+				'odd_doubleParam' => $odd_doubleParam == '-999.888' ? null : $odd_doubleParam,
 				'odd_doubleParam2' => $odd_doubleParam2,
 				'odd_doubleParam3' => $odd_doubleParam3,
 				'odd_participantParameter' => $odd_participantParameter,
