@@ -122,6 +122,7 @@ class CouponController extends BaseController {
 				'home_team' => $home_team,
 				'away_team' => $away_team,
 				'isLive' => $isLive,
+				'user_id' => $session_id
 			));
 		$coupon->save();
 
