@@ -61,15 +61,12 @@ class CreateSelectionsTable extends Migration {
 	 */
 	public function down()
 	{
-
 		Schema::table('selections', function(Blueprint $table) {
 			$table->dropForeign('selections_sport_id_foreign');
 			$table->dropForeign('selections_country_id_foreign');
 			$table->dropForeign('selections_competition_id_foreign');
-			$table->dropForeign('selections_type_pari_id_foreign');
 			$table->dropForeign('selections_equipe1_id_foreign');
 			$table->dropForeign('selections_equipe2_id_foreign');
-			$table->dropForeign('selections_en_cours_pari_id_foreign');
 		});
 		Schema::drop('selections');
 	}
