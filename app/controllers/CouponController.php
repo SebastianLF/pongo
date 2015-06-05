@@ -89,7 +89,7 @@ class CouponController extends BaseController {
 			$bookmaker = Input::get('bookmaker');
 			$bookmaker_id = Input::get('bookmaker_id');
 			$odd_value = Input::get('odd_value');
-			$odd_doubleParam = Input::get('odd_doubleParam');
+			$odd_doubleParam = Input::get('odd_doubleParam') == '-999.888' ? null : Input::get('odd_doubleParam');
 			$odd_doubleParam2 = Input::get('odd_doubleParam2');
 			$odd_doubleParam3 = Input::get('odd_doubleParam3');
 			$odd_participantParameter = Input::get('odd_participantParameter');
@@ -151,7 +151,6 @@ class CouponController extends BaseController {
 
 		file_put_contents('log_index.txt', json_encode(Input::all()) . "\n" , FILE_APPEND | LOCK_EX);
 		file_put_contents('log_index.txt', json_encode($coupon) . "\n\n" , FILE_APPEND | LOCK_EX);
-		file_put_contents('log_index.txt', json_encode(Auth::user()) . "\n\n" , FILE_APPEND | LOCK_EX);
 
 		return 1;
 	}
