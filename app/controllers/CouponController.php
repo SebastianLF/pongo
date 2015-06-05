@@ -83,13 +83,22 @@ class CouponController extends BaseController {
 
 	public function postSelections(){
 
-			$session_id = Input::get('userSessionId');
 			$pick = Input::get('pick');
 			$scope = Input::get('scope');
 			$scope_id = Input::get('scope_id');
 			$bookmaker = Input::get('bookmaker');
 			$bookmaker_id = Input::get('bookmaker_id');
 			$odd_value = Input::get('odd_value');
+			$odd_doubleParam = Input::get('odd_doubleParam');
+			$odd_doubleParam2 = Input::get('odd_doubleParam2');
+			$odd_doubleParam3 = Input::get('odd_doubleParam3');
+			$odd_participantParameter = Input::get('odd_participantParameter');
+			$odd_participantParameter2 = Input::get('odd_participantParameter2');
+			$odd_participantParameter3 = Input::get('odd_participantParameter3');
+			$odd_participantParameterName = Input::get('odd_participantParameterName');
+			$odd_participantParameterName2 = Input::get('odd_participantParameterName2');
+			$odd_participantParameterName3 = Input::get('odd_participantParameterName3');
+			$odd_groupParam = Input::get('odd_groupParam');
 			$market = Input::get('market');
 			$market_id = Input::get('market_id');
 			$game_time = Input::get('game_time');
@@ -101,15 +110,28 @@ class CouponController extends BaseController {
 			$league_name = Input::get('league_name');
 			$home_team = Input::get('home_team');
 			$away_team = Input::get('away_team');
+			$score = Input::get('score');
 			$isLive = Input::get('isLive');
+			$session_id = Input::get('userSessionId');
 
-			$coupon = new Coupon(array(
+
+		$coupon = new Coupon(array(
 				'pick' => $pick,
 				'scope' => $scope,
 				'scope_id' => $scope_id,
 				'bookmaker' => $bookmaker,
 				'bookmaker_id' => $bookmaker_id,
 				'odd_value' => $odd_value,
+				'odd_doubleParam' => $odd_doubleParam,
+				'odd_doubleParam2' => $odd_doubleParam2,
+				'odd_doubleParam3' => $odd_doubleParam3,
+				'odd_participantParameter' => $odd_participantParameter,
+				'odd_participantParameter2' => $odd_participantParameter2,
+				'odd_participantParameter3' => $odd_participantParameter3,
+				'odd_participantParameterName' => $odd_participantParameterName,
+				'odd_participantParameterName2' => $odd_participantParameterName2,
+				'odd_participantParameterName3' => $odd_participantParameterName3,
+				'odd_groupParam' => $odd_groupParam,
 				'market' => $market,
 				'market_id' => $market_id,
 				'game_time' => $game_time,
@@ -121,6 +143,7 @@ class CouponController extends BaseController {
 				'league_name' => $league_name,
 				'home_team' => $home_team,
 				'away_team' => $away_team,
+				'score' => $score,
 				'isLive' => $isLive,
 				'session_id' => $session_id
 			));
