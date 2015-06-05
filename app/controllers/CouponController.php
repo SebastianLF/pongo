@@ -122,7 +122,7 @@ class CouponController extends BaseController {
 				'bookmaker' => $bookmaker,
 				'bookmaker_id' => $bookmaker_id,
 				'odd_value' => $odd_value,
-				'odd_doubleParam' => $odd_doubleParam == '-999.888' ? null : $odd_doubleParam,
+				'odd_doubleParam' => $odd_doubleParam,
 				'odd_doubleParam2' => $odd_doubleParam2,
 				'odd_doubleParam3' => $odd_doubleParam3,
 				'odd_participantParameter' => $odd_participantParameter,
