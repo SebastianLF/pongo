@@ -14,6 +14,7 @@
         <tbody>
         @foreach($selections as $selection)
         <tr>
+            <td class="selection_id">{{$selection->id}}</td>
             <td>{{$selection->game_time}}</td>
             <td>{{$selection->game_name}}</td>
             <td>

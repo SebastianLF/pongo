@@ -13,6 +13,22 @@ $('#selection-refresh').click(function (e) {
     });
 });
 
+$('#automatic-selections').on('click', 'boutonsupprimer', function(){
+    var parent = $(this).parents('tr');
+    var id = parent.find(".selection_id").text();
+    $.ajax({
+        url: 'selections',
+        data: 'coupon/'+id,
+        method:'delete',
+        success: function (data) {
+            $('#automatic-selections').html(data);
+        },
+        error: function (data) {
+            $('#automatic-selections').html('<p>impossible de supprimer les selections</p>');
+        }
+    });
+});
+
 /*$.ajax({
     url: 'coupon',
     type: 'post',

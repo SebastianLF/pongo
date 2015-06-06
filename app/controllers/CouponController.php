@@ -77,7 +77,7 @@ class CouponController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		$coupon = Coupon::where('user_id',$this->currentUser->id)->where('id',$id)->first();
+		$coupon = Coupon::where('session_id', Session::getId())->where('id',$id)->first();
 		$coupon->delete();
 	}
 
