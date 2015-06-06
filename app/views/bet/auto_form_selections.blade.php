@@ -2,6 +2,7 @@
     <table class="table table-bordered table-striped">
         <thead>
         <tr>
+            <th></th>
             <th>
                 game_time
             </th>
