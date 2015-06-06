@@ -3,6 +3,7 @@ $('#selection-refresh').click(function (e) {
     e.preventDefault();
     refreshSelectionsAuto();
 });
+
 function refreshSelectionsAuto() {
     $.ajax({
         url: 'selections',
