@@ -14,8 +14,8 @@
         <tbody>
         @foreach($selections as $selection)
         <tr>
-            <td><input type="text" readonly/>{{$selection->game_time}}</td>
-            <td><input type="text" readonly/>{{$selection->game_name}}</td>
+            <td>{{$selection->game_time}}</td>
+            <td>{{$selection->game_name}}</td>
             <td>
                 <button class="boutonsupprimer btn btn-sm red"><i class="glyphicon glyphicon-trash"></i>
                 </button>
