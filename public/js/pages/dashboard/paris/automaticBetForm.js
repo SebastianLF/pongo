@@ -13,7 +13,8 @@ $('#selection-refresh').click(function (e) {
     });
 });
 
-$('#automatic-selections').on('click', 'boutonsupprimer', function(){
+$('#automatic-selections').on('click', 'boutonsupprimer', function(e){
+    e.preventDefault();
     var parent = $(this).parents('tr');
     var id = parent.find(".selection_id").text();
     $.ajax({
