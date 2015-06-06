@@ -155,7 +155,7 @@ class CouponController extends BaseController {
 	}
 
 	public function getSelections(){
-		$selections_coupon = Coupon::where('session_id', Session::getId());
+		$selections_coupon = Coupon::where('session_id', Session::getId())->get();
 		return View::make('bet/auto_form_selections', array(
 			'selections' => $selections_coupon
 		));
