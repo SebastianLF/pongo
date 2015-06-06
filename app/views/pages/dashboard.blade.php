@@ -4,7 +4,7 @@
 @section('content')
     @if ($user->devise == 'Non')
         @include('modal_welcome')
-        @endif
+    @endif
 
                 <!-- BEGIN PAGE HEAD -->
         <div class="page-head">
@@ -146,12 +146,7 @@
                                                 </div>
                                                 <div class="portlet-body">
 
-                                                    <iframe id="automatic-panel"
-                                                            src="{{'http://stage.betbrain.com/?portalId=1312&userSessionId='.Session::getId()}}"
-                                                            height="600" width="100%" frameborder="0">Odds service provided in
-                                                        co-operation with <a href="http://www.betbrain.com"></a>
-
-                                                    </iframe></div>
+                                                   </div>
                                             </div>
 
                                         </div>
@@ -178,4 +173,9 @@
             <!-- END PAGE CONTENT INNER -->
         </div>
         </div>
+@stop
+
+@section('scripts')
+    @parent
+    @include('includes.subview.dashboard_scripts')
 @stop

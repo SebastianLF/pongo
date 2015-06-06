@@ -19,12 +19,12 @@
 			$transactions = $this->showTransactions();
 			$dt = Carbon::now();
 			return View::make('pages/config', array(
-					'allbookmakers' => $allbookmakers,
-					'bookmakers' => $bookmakers,
-					'transactions' => $transactions,
-					'dt' => $dt,
-				)
-			);
+				'allbookmakers' => $allbookmakers,
+				'bookmakers' => $bookmakers,
+				'transactions' => $transactions,
+				'dt' => $dt,
+			)
+		);
 		}
 
 		public function showBookmakers()
@@ -40,7 +40,7 @@
 				->join('bookmaker_user', 'transactions.bookmaker_user_id', '=', 'bookmaker_user.id')
 				->join('users', 'bookmaker_user.user_id', '=', 'users.id')
 				->join('bookmakers', 'bookmaker_user.bookmaker_id', '=', 'bookmakers.id')
-				->where('users.id', '=', $this->currentUserId)
+				->where('users.id', '=', $this->currentUser->id)
 				->orderBy('transactions.created_at', 'desc')
 				->select('transactions.created_at', 'bookmakers.logo', 'bookmakers.nom' , 'bookmaker_user.nom_compte', 'transactions.type', 'transactions.montant', 'transactions.description')
 				->paginate(8);

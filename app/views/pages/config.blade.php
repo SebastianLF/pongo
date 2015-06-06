@@ -23,3 +23,8 @@
     </div>
 
 @stop
+
+@section('scripts')
+    @parent
+    @include('includes.subview.config_scripts')
+@stop
