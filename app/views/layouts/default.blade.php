@@ -180,6 +180,8 @@ License: You must have a valid license purchased only from themeforest(the above
         // formulaire d'ajout de pari
         generalBetForm('#automaticform-add');
         generalBetForm('#manubetform-add');
+        refreshSelectionsAuto();
+        supprimerSelectionAuto();
 
         Metronic.init(); // init metronic core components
         Layout.init(); // init current layout
