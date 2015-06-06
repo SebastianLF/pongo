@@ -114,7 +114,6 @@ class CouponController extends BaseController {
 			$isLive = Input::get('isLive');
 			$session_id = Input::get('userSessionId');
 
-
 		$coupon = new Coupon(array(
 				'pick' => $pick,
 				'scope' => $scope,
@@ -156,12 +155,10 @@ class CouponController extends BaseController {
 	}
 
 	public function getSelections(){
-		$selections_coupon = Coupon::where('user_id', $this->currentUser->id)->get();
-		/*return Response::json(array(
-			'selections' =>
-			));*/
-
-		echo Auth::user();
+		$selections_coupon = Coupon::where('session_id', Session::getId());
+		return View::make('bet/auto_form_selections', array(
+			'selections' => $selections_coupon
+		));
 	}
 
 }

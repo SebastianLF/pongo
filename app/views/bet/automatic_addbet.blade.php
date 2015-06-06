@@ -11,7 +11,8 @@
         <div class="portlet box green-meadow">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-gift"></i>Information generale du ticket <a id="selection-refresh" href=""><span class="glyphicon glyphicon-refresh"></span></a>
+                    <i class="fa fa-gift"></i>Information generale du ticket <a id="selection-refresh" href=""><span
+                                class="glyphicon glyphicon-refresh"></span></a>
                 </div>
 
             </div>
@@ -38,7 +39,8 @@
 
                                 <div class="col-md-9">
                                     <input type="text" id="followtypeinputdashboard" name="followtypeinputdashboard"
-                                           class="form-control input-sm" placeholder="Selectionnez un tipster !" readonly>
+                                           class="form-control input-sm" placeholder="Selectionnez un tipster !"
+                                           readonly>
                                 </div>
                             </div>
                         </div>
@@ -223,14 +225,29 @@
                         </div>
                     </div>
                 </div>
-                <div id="automatic-selections">
 
+                <div class="portlet box green-meadow">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-gift"></i>Les selections choisies pour ce ticket <span
+                                    class="pull-right glyphicon glyphicon-refresh glyphicon-spin"></span>
+                        </div>
+                    </div>
+                    <div class="portlet-body form form-automatic">
+                        <div id="automatic-selections">
+
+                        </div>
+                    </div>
                 </div>
+
+
                 <div class="form-actions form-actions-automatic-bet">
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-offset-5 col-md-9">
-                                <button type="submit" class="btn green-meadow"><i class="fa fa-plus"></i> VALIDER LE TICKET</button>
+                                <button type="submit" class="btn green-meadow"><i class="fa fa-plus"></i> VALIDER LE
+                                    TICKET
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -239,7 +256,6 @@
 
 
         </div>
-
 
 
         <!-- END Portlet PORTLET-->
