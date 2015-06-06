@@ -146,7 +146,12 @@
                                                 </div>
                                                 <div class="portlet-body">
 
-                                                   </div>
+                                                    <iframe id="automatic-panel"
+                                                            src="{{'http://stage.betbrain.com/?portalId=1312&userSessionId='.Session::getId()}}"
+                                                            height="600" width="100%" frameborder="0">Odds service provided in
+                                                        co-operation with <a href="http://www.betbrain.com"></a>
+
+                                                    </iframe></div>
                                             </div>
 
                                         </div>
