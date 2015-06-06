@@ -8,7 +8,7 @@
             <th>
                 sport_id
             </th>
-            <th></th>
+            <th>{{$selections}}</th>
         </tr>
         </thead>
         <tbody>
