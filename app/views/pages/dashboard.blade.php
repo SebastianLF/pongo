@@ -1,10 +1,9 @@
-
 @extends('layouts.default')
 
 @section('content')
     @if ($user->devise == 'Non')
         @include('modal_welcome')
-    @endif
+        @endif
 
                 <!-- BEGIN PAGE HEAD -->
         <div class="page-head">
@@ -135,23 +134,24 @@
                                     </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab_1_1_1">
-                                                {{Session::getId()}}
+                                            {{Session::getId()}}
                                             {{var_dump(Session::all())}}
                                             @include('bet.automatic_addbet');
                                             <div class="portlet box blue-hoki">
                                                 <div class="portlet-title">
                                                     <div class="caption">
-                                                        <i class="fa fa-gift"></i>Rechercher un pari ( ajouter une selection à l'aide du panneau ci-dessous )
+                                                        <i class="fa fa-gift"></i>Rechercher un pari ( ajouter une
+                                                        selection à l'aide du panneau ci-dessous )
                                                     </div>
                                                 </div>
                                                 <div class="portlet-body">
-
                                                     <iframe id="automatic-panel"
                                                             src="{{'http://stage.betbrain.com/?portalId=1312&userSessionId='.Session::getId()}}"
-                                                            height="600" width="100%" frameborder="0">Odds service provided in
+                                                            height="600" width="100%" frameborder="0">Odds service
+                                                        provided in
                                                         co-operation with <a href="http://www.betbrain.com"></a>
-
-                                                    </iframe></div>
+                                                    </iframe>
+                                                </div>
                                             </div>
 
                                         </div>
@@ -176,7 +176,6 @@
             </div>
 
             <!-- END PAGE CONTENT INNER -->
-        </div>
         </div>
 @stop
 
