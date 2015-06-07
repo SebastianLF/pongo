@@ -16,8 +16,8 @@
         @foreach($selections as $selection)
         <tr>
             <td class="selection_id">{{$selection->id}}</td>
-            <td>{{$selection->game_time}}</td>
-            <td>{{$selection->game_name}}</td>
+            <td>{{$selection->game_time}} - {{$selection->sport_name}} - {{$selection->league_name}} - {{$selection->game_name}}</td>
+            <td></td>
             <td>
                 <button class="boutonsupprimer btn btn-sm red"><i class="glyphicon glyphicon-trash"></i>
                 </button>
