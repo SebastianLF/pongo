@@ -3,7 +3,6 @@
         <thead>
         <tr>
             <th class="hidden"></th>
-            <th>type</th>
             <th>
                 infos selection
             </th>
