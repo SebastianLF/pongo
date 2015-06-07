@@ -2,15 +2,7 @@
     <table class="table">
         <thead>
         <tr>
-            <th class="hidden"></th>
-            <th colspan="4">
-                infos selection
-            </th>
-            <th colspan="3">
-                infos pari
-            </th>
 
-            <th>cote</th>
         </tr>
         </thead>
         <tbody>
@@ -18,10 +10,12 @@
         <tr>
             <td class="selection_id hidden">{{$selection->id}}</td>
 
-            <td>{{$selection->game_time}}</td>
+            <td><span class="bold">Date:</span>{{' '.$selection->game_time}}<br/><span class="bold">Evenement:</span>{{' '.$selection->sport_name.' - '}}{{$selection->league_name}}
+                <br/><span class="bold">Match:</span>{{' '.$selection->game_name}}
+            </td>
             <td>{{$selection->sport_name}}</td>
-            <td>{{$selection->league_name}}</td>
-            <td>{{$selection->game_name}}</td>
+            <td></td>
+            <td></td>
             <td><span class="bold">Pari:</span>{{' '.$selection->market}}{{' ('.$selection->scope.') '}}<br/><span class="bold">Choix:</span>{{' '.$selection->pick}}</td>
             <td>{{$selection->isLive ? $selection->isLive : ''}}</td>
             <td>{{$selection->odd_value}}</td>
