@@ -134,8 +134,6 @@
                                     </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab_1_1_1">
-                                            {{Session::getId()}}
-                                            {{var_dump(Session::all())}}
                                             @include('bet.automatic_addbet');
                                             <div class="portlet box blue-hoki">
                                                 <div class="portlet-title">
