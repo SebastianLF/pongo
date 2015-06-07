@@ -2,7 +2,7 @@
     <table class="table table-bordered table-striped">
         <thead>
         <tr>
-            <th></th>
+            <th class="hidden"></th>
             <th>type</th>
             <th>
                 infos selection
