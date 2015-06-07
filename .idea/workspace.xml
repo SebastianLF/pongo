@@ -103,7 +103,7 @@
         <entry file="file://$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.4180328" vertical-offset="0" max-vertical-offset="610">
-              <caret line="15" column="235" selection-start-line="15" selection-start-column="235" selection-end-line="15" selection-end-column="235" />
+              <caret line="15" column="276" selection-start-line="15" selection-start-column="276" selection-end-line="15" selection-end-column="276" />
               <folding />
             </state>
           </provider>
@@ -502,7 +502,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="104" y="16" width="1394" height="809" extended-state="1" />
+    <frame x="104" y="16" width="1394" height="809" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -942,14 +942,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.884615" vertical-offset="1910" max-vertical-offset="2890">
-          <caret line="129" column="45" selection-start-line="129" selection-start-column="17" selection-end-line="129" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bet/automatic_addbet.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.115385" vertical-offset="102" max-vertical-offset="4709">
@@ -960,10 +952,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.884615" vertical-offset="1910" max-vertical-offset="2890">
+          <caret line="129" column="45" selection-start-line="129" selection-start-column="17" selection-end-line="129" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4180328" vertical-offset="0" max-vertical-offset="610">
-          <caret line="15" column="235" selection-start-line="15" selection-start-column="235" selection-end-line="15" selection-end-column="235" />
+          <caret line="15" column="276" selection-start-line="15" selection-start-column="276" selection-end-line="15" selection-end-column="276" />
           <folding />
         </state>
       </provider>
