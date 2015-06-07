@@ -45,8 +45,8 @@
         // formulaire d'ajout de pari
         generalBetForm('#automaticform-add');
         generalBetForm('#manubetform-add');
-        /*refreshSelectionsAuto();
-        supprimerSelectionAuto();*/
+        refreshSelectionsAuto();
+        supprimerSelectionAuto();
 
 
     });

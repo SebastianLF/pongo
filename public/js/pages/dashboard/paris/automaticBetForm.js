@@ -1,5 +1,5 @@
 //setInterval(refresh_selections, (5 * 1000));
-/*$('#selection-refresh').click(function (e) {
+$('#selection-refresh').click(function (e) {
     e.preventDefault();
     refreshSelectionsAuto();
 });
@@ -34,8 +34,7 @@ function supprimerSelectionAuto() {
             }
         });
     });
-}*/
-
+}
 
 /*$.ajax({
  url: 'coupon',
