@@ -6,7 +6,7 @@
 {{ Form::open(array('method' => 'post', 'id' => 'automaticform-add', 'class' => 'form-horizontal', 'role' => 'form')
             ) }}
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6">
         <!-- BEGIN Portlet PORTLET-->
         <div class="portlet box green-meadow">
             <div class="portlet-title">
@@ -226,19 +226,7 @@
                     </div>
                 </div>
 
-                <div class="portlet box green-meadow">
-                    <div class="portlet-title">
-                        <div class="caption">
-                            <i class="fa fa-gift"></i>Les selections choisies pour ce ticket <span
-                                    class="pull-right glyphicon glyphicon-refresh glyphicon-spin"></span>
-                        </div>
-                    </div>
-                    <div class="portlet-body form form-automatic">
-                        <div id="automatic-selections">
 
-                        </div>
-                    </div>
-                </div>
 
 
                 <div class="form-actions form-actions-automatic-bet">
@@ -259,6 +247,21 @@
 
 
         <!-- END Portlet PORTLET-->
+    </div>
+    <div class="col-md-6">
+        <div class="portlet box green-meadow">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i>Les selections choisies pour ce ticket <span
+                            class="pull-right glyphicon glyphicon-refresh glyphicon-spin"></span>
+                </div>
+            </div>
+            <div class="portlet-body form form-automatic">
+                <div id="automatic-selections">
+
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
