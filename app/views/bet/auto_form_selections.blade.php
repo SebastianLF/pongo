@@ -14,10 +14,7 @@
                 <br/><span class="bold">Match:</span>{{' '.$selection->game_name}}
             </td>
             <td>{{$selection->sport_name}}</td>
-            <td></td>
-            <td></td>
             <td><span class="bold">Pari:</span>{{' '.$selection->market}}{{' ('.$selection->scope.') '}}<br/><span class="bold">Choix:</span>{{' '.$selection->pick}}</td>
-            <td>{{$selection->isLive ? $selection->isLive : ''}}</td>
             <td>{{$selection->odd_value}}</td>
             <td>
                 <button class="boutonsupprimer btn btn-sm red"><i class="glyphicon glyphicon-trash"></i>
