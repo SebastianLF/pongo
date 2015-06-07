@@ -1,12 +1,12 @@
 <div class="table-responsive">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered ">
         <thead>
         <tr>
             <th class="hidden"></th>
             <th colspan="4">
                 infos selection
             </th>
-            <th>
+            <th colspan="3">
                 infos pari
             </th>
 
