@@ -13,7 +13,6 @@
             <td><span class="bold">Date:</span>{{' '.$selection->game_time}}<br/><span class="bold">Evenement:</span>{{' '.$selection->sport_name.' - '}}{{$selection->league_name}}
                 <br/><span class="bold">Match:</span>{{' '.$selection->game_name}}
             </td>
-            <td>{{$selection->sport_name}}</td>
             <td><span class="bold">Pari:</span>{{' '.$selection->market}}{{' ('.$selection->scope.') '}}<br/><span class="bold">Choix:</span>{{' '.$selection->pick}}</td>
             <td>{{$selection->odd_value}}</td>
             <td>
