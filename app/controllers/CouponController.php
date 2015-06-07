@@ -77,8 +77,8 @@ class CouponController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		$coupon = Coupon::where('session_id', Session::getId())->where('id',$id)->first();
-		$coupon->delete();
+		/*$coupon = Coupon::where('session_id', Session::getId())->where('id',$id)->first();
+		$coupon->delete();*/
 	}
 
 	public function postSelections(){
@@ -155,10 +155,10 @@ class CouponController extends BaseController {
 	}
 
 	public function getSelections(){
-		$selections_coupon = Coupon::where('session_id', Session::getId())->get();
+		/*$selections_coupon = Coupon::where('session_id', Session::getId())->get();
 		return View::make('bet/auto_form_selections', array(
 			'selections' => $selections_coupon
-		));
+		));*/
 	}
 
 }
