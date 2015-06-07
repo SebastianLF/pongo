@@ -34,7 +34,7 @@
 	Route::post('devise', 'DashboardController@postDevise');
 
 	Route::get('account', 'AccountController@showIndex');
-	 //Route::post('coupon', 'CouponController@postSelections');
+	 Route::post('coupon', 'CouponController@postSelections');
 	 Route::get('selections', 'CouponController@getSelections');
 	 //Route::post('coupon', array('before' => 'session_check', 'uses' => 'CouponController@postSelections'));
 //Route::get('selections', 'DashboardController@refreshSelections');
