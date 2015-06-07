@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <table class="table table-bordered ">
+    <table class="table">
         <thead>
         <tr>
             <th class="hidden"></th>
@@ -22,7 +22,7 @@
             <td>{{$selection->sport_name}}</td>
             <td>{{$selection->league_name}}</td>
             <td>{{$selection->game_name}}</td>
-            <td><span class="bold">Pari:</span>{{$selection->market}}{{' ('.$selection->scope.') | '}}<span class="bold">Choix:</span>{{' '.$selection->pick}}</td>
+            <td><span class="bold">Pari:</span>{{' '.$selection->market}}{{' ('.$selection->scope.')    '}}<span class="bold">Choix:</span>{{' '.$selection->pick}}</td>
             <td>{{$selection->isLive ? $selection->isLive : ''}}</td>
             <td>{{$selection->odd_value}}</td>
             <td>
