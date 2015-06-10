@@ -127,6 +127,8 @@
 				$affichage_num = 1;
 			} elseif ($market_id == '48') {
 				$affichage_num = 2;
+			} elseif ($market_id == '46') {
+				$affichage_num = 1;
 			} elseif ($market_id == '47') {
 				$affichage_num = 2;
 			} elseif ($market_id == '8') {
