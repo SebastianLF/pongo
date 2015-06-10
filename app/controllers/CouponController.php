@@ -1,87 +1,90 @@
 <?php
 
-class CouponController extends BaseController {
-
-	public function __construct()
+	class CouponController extends BaseController
 	{
-		parent::__construct();
-	}
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-        return View::make('coupons.index');
-	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-        return View::make('coupons.create');
-	}
+		public function __construct()
+		{
+			parent::__construct();
+		}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
+		/**
+		 * Display a listing of the resource.
+		 *
+		 * @return Response
+		 */
+		public function index()
+		{
+			return View::make('coupons.index');
+		}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-        return View::make('coupons.show');
-	}
+		/**
+		 * Show the form for creating a new resource.
+		 *
+		 * @return Response
+		 */
+		public function create()
+		{
+			return View::make('coupons.create');
+		}
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-        return View::make('coupons.edit');
-	}
+		/**
+		 * Store a newly created resource in storage.
+		 *
+		 * @return Response
+		 */
+		public function store()
+		{
+			//
+		}
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
+		/**
+		 * Display the specified resource.
+		 *
+		 * @param  int $id
+		 * @return Response
+		 */
+		public function show($id)
+		{
+			return View::make('coupons.show');
+		}
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		$coupon = Coupon::where('session_id', Session::getId())->where('id',$id)->first();
-		$coupon->delete();
-	}
+		/**
+		 * Show the form for editing the specified resource.
+		 *
+		 * @param  int $id
+		 * @return Response
+		 */
+		public function edit($id)
+		{
+			return View::make('coupons.edit');
+		}
 
-	public function postSelections(){
+		/**
+		 * Update the specified resource in storage.
+		 *
+		 * @param  int $id
+		 * @return Response
+		 */
+		public function update($id)
+		{
+			//
+		}
+
+		/**
+		 * Remove the specified resource from storage.
+		 *
+		 * @param  int $id
+		 * @return Response
+		 */
+		public function destroy($id)
+		{
+			$coupon = Coupon::where('session_id', Session::getId())->where('id', $id)->first();
+			$coupon->delete();
+		}
+
+		public function postSelections()
+		{
 
 			$pick = Input::get('pick');
 			$scope = Input::get('scope');
@@ -119,11 +122,45 @@ class CouponController extends BaseController {
 			// 2 , 'pick doubleparam'
 			// 3 , 'pick, parametername1 doubleparam
 			// 4 , 'pick, doubleparam1 - doubleparam2 minutes'
-		$affichage_num = '';
-		if($market_id == '43'){$affichage_num = 1;}elseif($market_id == '48'){$affichage_num = 2;}elseif($market_id == '47'){$affichage_num = 2;}elseif($market_id == '8'){if($pick == $odd_doubleParam){$affichage_num = 2;}else{$affichage_num = 3;}}elseif($market_id == '158'){$affichage_num = 1;}elseif($market_id == '145'){$affichage_num = 1;}elseif($market_id == '150'){$affichage_num = 1;}elseif($market_id == '112'){$affichage_num = 1;}elseif($market_id == '24'){$affichage_num = 1;}elseif($market_id == '12'){$affichage_num = 1;}elseif($market_id == '140'){$affichage_num = 1;}elseif($market_id == '94'){$affichage_num = 4;}
+			$affichage_num = '';
+			if ($market_id == '43') {
+				$affichage_num = 1;
+			} elseif ($market_id == '48') {
+				$affichage_num = 2;
+			} elseif ($market_id == '47') {
+				$affichage_num = 2;
+			} elseif ($market_id == '8') {
+				if ($pick == $odd_doubleParam) {
+					$affichage_num = 2;
+				} else {
+					$affichage_num = 3;
+				}
+			} elseif ($market_id == '158') {
+				$affichage_num = 1;
+			} elseif ($market_id == '145') {
+				$affichage_num = 1;
+			} elseif ($market_id == '79') {
+				$affichage_num = 1;
+			} elseif ($market_id == '150') {
+				$affichage_num = 1;
+			} elseif ($market_id == '151') {
+				$affichage_num = 1;
+			} elseif ($market_id == '118') {
+				$affichage_num = 2;
+			} elseif ($market_id == '112') {
+				$affichage_num = 1;
+			} elseif ($market_id == '24') {
+				$affichage_num = 1;
+			} elseif ($market_id == '12') {
+				$affichage_num = 1;
+			} elseif ($market_id == '140') {
+				$affichage_num = 1;
+			} elseif ($market_id == '94') {
+				$affichage_num = 4;
+			}
 
 
-		$coupon = new Coupon(array(
+			$coupon = new Coupon(array(
 				'pick' => $pick,
 				'scope' => $scope,
 				'scope_id' => $scope_id,
@@ -156,19 +193,20 @@ class CouponController extends BaseController {
 				'session_id' => $session_id,
 				'affichage' => $affichage_num
 			));
-		$coupon->save();
+			$coupon->save();
 
-		file_put_contents('log_index.txt', json_encode(Input::all()) . "\n" , FILE_APPEND | LOCK_EX);
-		file_put_contents('log_index.txt', json_encode($coupon) . "\n\n" , FILE_APPEND | LOCK_EX);
+			file_put_contents('log_index.txt', json_encode(Input::all()) . "\n", FILE_APPEND | LOCK_EX);
+			file_put_contents('log_index.txt', json_encode($coupon) . "\n\n", FILE_APPEND | LOCK_EX);
 
-		return 1;
+			return 1;
+		}
+
+		public function getSelections()
+		{
+			$selections_coupon = Coupon::where('session_id', Session::getId())->get();
+			return View::make('bet/auto_form_selections', array(
+				'selections' => $selections_coupon
+			));
+		}
+
 	}
-
-	public function getSelections(){
-		$selections_coupon = Coupon::where('session_id', Session::getId())->get();
-		return View::make('bet/auto_form_selections', array(
-			'selections' => $selections_coupon
-		));
-	}
-
-}
