@@ -33,7 +33,7 @@ class CreateCouponTable extends Migration {
 			$table->double('odd_groupParam');
 			$table->string('market');
 			$table->integer('market_id');
-			$table->date('game_time');
+			$table->dateTime('game_time');
 			$table->integer('game_id');
 			$table->string('game_name');
 			$table->integer('sport_id');
@@ -45,6 +45,7 @@ class CreateCouponTable extends Migration {
 			$table->string('score');
 			$table->boolean('isLive');
 			$table->string('session_id');
+			$table->smallInteger('affichage');
 		});
 	}
 

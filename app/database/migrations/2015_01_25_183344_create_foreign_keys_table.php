@@ -140,7 +140,7 @@ class CreateForeignKeysTable extends Migration {
 
 
         // equipes
-       Schema::table('equipes', function(Blueprint $table) {
+        Schema::table('equipes', function(Blueprint $table) {
             $table->dropForeign('equipes_sport_id_foreign');
         });
         Schema::table('equipes', function(Blueprint $table) {

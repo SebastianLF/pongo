@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateCompetitionEquipeTable extends Migration {
+class CreateSportMarketTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,16 @@ class CreateCompetitionEquipeTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('competition_equipe', function(Blueprint $table) {
+		Schema::create('sport_market', function(Blueprint $table) {
 			$table->increments('id');
-			$table->integer('competition_id')->unsigned();
 			$table->unsignedInteger('sport_id');
-			$table->foreign('competition_id')->references('id')->on('competitions')
-				->onDelete('cascade')
-				->onUpdate('restrict');
+			$table->unsignedInteger('market_id');
+			$table->timestamps();
 			$table->foreign('sport_id')->references('id')->on('sports')
-				->onDelete('cascade')
+				->onDelete('restrict')
+				->onUpdate('restrict');
+			$table->foreign('market_id')->references('id')->on('markets')
+				->onDelete('restrict')
 				->onUpdate('restrict');
 		});
 	}
@@ -33,7 +34,8 @@ class CreateCompetitionEquipeTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('competition_equipe');
+
+		Schema::drop('sport_market');
 	}
 
 }

@@ -114,6 +114,13 @@ class CouponController extends BaseController {
 			$isLive = Input::get('isLive');
 			$session_id = Input::get('userSessionId');
 
+			// affectation du numero d'affichage selon le type de pari.
+			// 1 , 'pick'
+			// 2 , 'pick doubleparam'
+			// 3 , 'pick, parametername1 doubleparam
+		if($market_id == '43'){$affichage_num = 1;}elseif($market_id == '48'){$affichage_num = 2;}elseif($market_id == '47'){$affichage_num = 2;}elseif($market_id == '8'){$affichage_num = 1;}
+			$affichage_num =
+
 		$coupon = new Coupon(array(
 				'pick' => $pick,
 				'scope' => $scope,
@@ -144,7 +151,8 @@ class CouponController extends BaseController {
 				'away_team' => $away_team,
 				'score' => $score,
 				'isLive' => $isLive,
-				'session_id' => $session_id
+				'session_id' => $session_id,
+				'affichage' => $affichage_num
 			));
 		$coupon->save();
 

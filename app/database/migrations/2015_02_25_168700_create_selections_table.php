@@ -21,9 +21,9 @@ class CreateSelectionsTable extends Migration {
 			$table->tinyInteger('status')->default(0); // gagné , perdu , remboursé etc..
 			$table->string('infos_pari'); // score vainqueur etc..
 			$table->boolean('live')->default(0);
-			$table->integer('market_id')->unsigned()->nullable();
-			$table->integer('scope_id')->unsigned()->nullable();
-			$table->integer('sport_id')->unsigned()->nullable();
+			$table->integer('market_id')->nullable();
+			$table->integer('scope_id')->nullable();
+			$table->unsignedInteger('sport_id')->nullable();
 			$table->integer('country_id')->unsigned()->nullable();
 			$table->integer('competition_id')->unsigned()->nullable();
 			$table->integer('equipe1_id')->unsigned()->nullable();
@@ -61,13 +61,7 @@ class CreateSelectionsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('selections', function(Blueprint $table) {
-			$table->dropForeign('selections_sport_id_foreign');
-			$table->dropForeign('selections_country_id_foreign');
-			$table->dropForeign('selections_competition_id_foreign');
-			$table->dropForeign('selections_equipe1_id_foreign');
-			$table->dropForeign('selections_equipe2_id_foreign');
-		});
+
 		Schema::drop('selections');
 	}
 
