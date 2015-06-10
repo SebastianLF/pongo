@@ -122,7 +122,7 @@
 			// 2 , 'pick doubleparam'
 			// 3 , 'pick, parametername1 doubleparam1
 			// 4 , 'pick, doubleparam1-doubleparam2 minutes'
-			// 5 , 'parametername1 doubleparam1'
+			// 5 , 'parametername1 doubleparam1' avec '+'
 			$affichage_num = '';
 			if ($market_id == '43') {
 				$affichage_num = 1;
@@ -160,6 +160,8 @@
 				$affichage_num = 1;
 			} elseif ($market_id == '94') {
 				$affichage_num = 4;
+			} elseif ($market_id == '39') {
+				$affichage_num = 5;
 			}
 
 
@@ -198,7 +200,6 @@
 			));
 			$coupon->save();
 
-			file_put_contents('log_index.txt', json_encode(Input::all()) . "\n", FILE_APPEND | LOCK_EX);
 			file_put_contents('log_index.txt', json_encode($coupon) . "\n\n", FILE_APPEND | LOCK_EX);
 
 			return 1;
