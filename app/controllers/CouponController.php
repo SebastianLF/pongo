@@ -120,8 +120,9 @@
 			// affectation du numero d'affichage selon le type de pari.
 			// 1 , 'pick'
 			// 2 , 'pick doubleparam'
-			// 3 , 'pick, parametername1 doubleparam
-			// 4 , 'pick, doubleparam1 - doubleparam2 minutes'
+			// 3 , 'pick, parametername1 doubleparam1
+			// 4 , 'pick, doubleparam1-doubleparam2 minutes'
+			// 5 , 'parametername1 doubleparam1'
 			$affichage_num = '';
 			if ($market_id == '43') {
 				$affichage_num = 1;
