@@ -13,7 +13,16 @@
             <td><span class="bold">Date:</span>{{' '.$selection->game_time}}<br/><span class="bold">Evenement:</span>{{' '.$selection->sport_name.' - '}}{{$selection->league_name}}
                 <br/><span class="bold">Match:</span>{{' '.$selection->game_name}}
             </td>
-            <td><span class="bold">Bookmaker:</span>{{' '.$selection->bookmaker}}<br/><span class="bold">Pari:</span>{{' '.$selection->market}}{{' ('.$selection->scope.') '}}<br/><span class="bold">Choix:</span>{{' '.$selection->pick}}{{' '.$selection->odd_doubleParam}}{{' '.$selection->odd_participantParameterName}}</td>
+            <td><span class="bold">Bookmaker:</span>{{' '.$selection->bookmaker}}<br/><span class="bold">Pari:</span>{{' '.$selection->market}}{{' ('.$selection->scope.') '}}<br/>
+                <span class="bold">Choix:</span>
+                @if($selection->affichage == "1")
+                    {{' '.$selection->pick}}
+                    @elseif($selection->affichage == "2")
+                    {{' '.$selection->pick}}{{' '.$selection->odd_doubleParam}}
+                    @elseif($selection->affichage == "3")
+                        {{' '.$selection->pick}}{{' '.$selection->odd_participantParameterName}}{{' '.$selection->odd_doubleParam}}
+                @endif
+            </td>
             <td><span class="bold">Cote: </span><input type="text" value="{{$selection->odd_value}}"/></td>
             <td>
                 <button class="boutonsupprimer btn btn-sm red"><i class="glyphicon glyphicon-trash"></i>
