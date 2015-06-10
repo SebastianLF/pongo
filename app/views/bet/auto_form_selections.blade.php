@@ -20,7 +20,12 @@
                     @elseif($selection->affichage == "2")
                     {{' '.$selection->pick}}{{' '.$selection->odd_doubleParam}}
                     @elseif($selection->affichage == "3")
-                        {{' '.$selection->pick}}{{', '.$selection->odd_participantParameterName}}@if($selection->odd_doubleParam > 0){{' +'.$selection->odd_doubleParam}}@endif
+                        {{' '.$selection->pick}}{{', '.$selection->odd_participantParameterName}}
+                        @if($selection->odd_doubleParam > 0)
+                            {{{' +'.$selection->odd_doubleParam}}}
+                        @else
+                            {{{' '.$selection->odd_doubleParam}}}
+                        @endif
                 @endif
             </td>
             <td><span class="bold">Cote: </span><input type="text" value="{{$selection->odd_value}}"/></td>
