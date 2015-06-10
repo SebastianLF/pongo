@@ -118,8 +118,9 @@ class CouponController extends BaseController {
 			// 1 , 'pick'
 			// 2 , 'pick doubleparam'
 			// 3 , 'pick, parametername1 doubleparam
+			// 4 , 'pick, doubleparam1 - doubleparam2 minutes'
 		$affichage_num = '';
-		if($market_id == '43'){$affichage_num = 1;}elseif($market_id == '48'){$affichage_num = 2;}elseif($market_id == '47'){$affichage_num = 2;}elseif($market_id == '8'){if($pick == $odd_doubleParam){$affichage_num = 2;}else{$affichage_num = 3;}}
+		if($market_id == '43'){$affichage_num = 1;}elseif($market_id == '48'){$affichage_num = 2;}elseif($market_id == '47'){$affichage_num = 2;}elseif($market_id == '8'){if($pick == $odd_doubleParam){$affichage_num = 2;}else{$affichage_num = 3;}}elseif($market_id == '158'){$affichage_num = 1;}elseif($market_id == '145'){$affichage_num = 1;}elseif($market_id == '150'){$affichage_num = 1;}elseif($market_id == '112'){$affichage_num = 1;}elseif($market_id == '24'){$affichage_num = 1;}elseif($market_id == '12'){$affichage_num = 1;}elseif($market_id == '140'){$affichage_num = 1;}elseif($market_id == '94'){$affichage_num = 4;}
 
 
 		$coupon = new Coupon(array(

@@ -18,7 +18,12 @@
                 @if($selection->affichage == "1")
                     {{' '.$selection->pick}}
                     @elseif($selection->affichage == "2")
-                    {{' '.$selection->pick}}{{' '.$selection->odd_doubleParam}}
+                    {{' '.$selection->pick}}
+                        @if($selection->odd_doubleParam > 0)
+                            {{{' +'.$selection->odd_doubleParam}}}
+                        @else
+                            {{{' '.$selection->odd_doubleParam}}}
+                        @endif
                     @elseif($selection->affichage == "3")
                         {{' '.$selection->pick}}{{', '.$selection->odd_participantParameterName}}
                         @if($selection->odd_doubleParam > 0)

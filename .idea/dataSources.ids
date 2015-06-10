@@ -386,7 +386,7 @@
       <column name="odd_groupParam" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
       <column name="market" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="market_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="game_time" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="game_time" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
       <column name="game_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="game_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="sport_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
@@ -398,6 +398,7 @@
       <column name="score" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="isLive" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
       <column name="session_id" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="affichage" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="devises" schema="" catalog="slfweb" type="TABLE">
