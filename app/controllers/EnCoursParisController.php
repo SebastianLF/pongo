@@ -344,19 +344,40 @@
 					'etat' => 0,
 					'msg' => 'Aucune selection ajoutée. Veuillez cliquer sur une cote dans le panneau ci-dessous pour ajouter une selection.',
 				));
-			}else{
+			} else {
+
 				// verifier que le bookmaker soit le meme pour toutes les selections.
 				$bookmaker_temp = $selections_coupon->first()->bookmaker;
+				$bookmakers_differents = false;
+				$bookmaker = '';
 				foreach ($selections_coupon as $selection_coupon) {
 					$bookmaker = $selection_coupon->bookmaker;
-					if($bookmaker_temp != $bookmaker){
+					if ($bookmaker_temp != $bookmaker) {
+						$bookmakers_differents = true; // booléen necessaire pour l'etape suivant.
 						return Response::json(array(
 							'etat' => 0,
-							'msg' => 'Le bookmaker doit etre le meme pour toutes les selections',
+							'msg' => 'Le bookmaker doit etre le meme pour toutes les selections.',
 						));
 					}else{
-						$this->currentUser->comptes()->bookmaker()->where('bookmakers.nom')->get();
+						$bookmakers_differents = false;
 					}
+				}
+				if(!$bookmakers_differents){
+
+					// vérification si il existe au moins un compte bookmaker correspondant au bookmaker des selections.
+					Clockwork::info($bookmaker);
+					$comptes = $this->currentUser->comptes()->whereHas('bookmaker', function ($query) use($bookmaker){
+						$query->where('nom', $bookmaker);
+					})->where('deleted_at', NULL)->get();
+					Clockwork::info($comptes);
+					$bookmakers_count = $comptes->count();
+					if ($bookmakers_count == 0) {
+						return Response::json(array(
+							'etat' => 0,
+							'msg' => "Aucun compte n\'a été crée pour ce bookmaker, rendez vous sur la page configuration pour le créer.",
+						));
+					}
+
 				}
 
 				$regles = array();
@@ -369,6 +390,7 @@
 						'msg' => $array,
 					));
 				} else {
+					// mise en base de données, les verifs ont toutes été faites plus haut.
 					foreach ($selections_coupon as $selection_coupon) {
 						$selection = new Selection(array(
 							'date_match' => new Carbon($selection_coupon->game_time),
@@ -378,6 +400,7 @@
 					return Response::json(array(
 						'etat' => 1,
 						'msg' => 'Ticket ajouté',
+						'comptes' => isset($comptes) ? $comptes : ''
 					));
 				}
 			}

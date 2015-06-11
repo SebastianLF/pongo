@@ -10,7 +10,11 @@
         <div class="portlet box green-meadow">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-gift"></i>Les selections choisies pour ce ticket <span
+                    <i class="fa fa-gift"></i>Les selections choisies pour ce ticket
+                </div>
+                <div class="actions">
+
+                    <a id="selection-refresh" class="bold uppercase" href=""><span class="glyphicon glyphicon-refresh"></span>Rafraichir</a> | <span
                             class="pull-right glyphicon glyphicon-refresh glyphicon-spin"></span>
                 </div>
             </div>
@@ -26,9 +30,9 @@
         <div class="portlet box green-meadow">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-gift"></i>Information generale du ticket <a id="selection-refresh" href=""><span
-                                class="glyphicon glyphicon-refresh"></span></a>
+                    <i class="fa fa-gift"></i>Informations générales du ticket
                 </div>
+
 
             </div>
 
@@ -167,44 +171,13 @@
                         <!--/span-->
                         <div class="col-md-8">
                             <div class="form-group">
-                                <label class="control-label col-md-3">Catégorie:</label>
-
                                 <div class="col-md-9">
-                                    <div class="radio-list">
-                                        <label class="radio-inline">
-                                            <div class="radio"><span><input type="radio" name="RadioOptions" id="aucun"
-                                                                            value="aucun" checked="checked"></span>
-                                            </div>
-                                            Aucun </label>
-                                        <label class="radio-inline">
-                                            <div class="radio"><span class="checked"><input type="radio"
-                                                                                            name="RadioOptions"
-                                                                                            id="parilive"
-                                                                                            value="parilive"></span>
-                                            </div>
-                                            en direct </label>
-                                        <label class="radio-inline">
-                                            <div class="radio"><span class="checked"><input type="radio"
-                                                                                            name="RadioOptions"
-                                                                                            id="parislongterme"
-                                                                                            value="parislongterme"></span>
-                                            </div>
-                                            long terme </label>
-                                        <label class="radio-inline">
-                                            <div class="radio"><span class="checked"><input type="radio"
-                                                                                            name="RadioOptions"
-                                                                                            id="systemeABCD"
-                                                                                            value="systemeABCD"></span>
-                                            </div>
-                                            système ABCD </label>
-                                        <label class="radio-inline">
-                                            <div class="radio"><span class="checked"><input type="radio"
-                                                                                            name="RadioOptions"
-                                                                                            id="parigratuit"
-                                                                                            value="parigratuit"></span>
-                                            </div>
-                                            gratuit </label>
-                                    </div>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" id="ticketABCD" value="ticketABCD">Pari ABCD
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" id="ticketGratuit" value="ticketGratuit">Pari gratuit
+                                    </label>
                                 </div>
                             </div>
                         </div>
