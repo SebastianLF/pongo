@@ -242,8 +242,6 @@
                 </div>
 
 
-
-
                 <div class="form-actions form-actions-automatic-bet">
                     <div class="col-md-12">
                         <div class="row">

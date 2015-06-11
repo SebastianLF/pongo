@@ -44,17 +44,5 @@ function parisEnCoursEnclose(tablename,formname,urlgiven) {
                     console.log("valider un pari en cours ne fonctionne pas");
                 }
             });
-            $.ajax({
-                url: 'mtmoistipster',
-                type: 'post',
-                data: id,
-                dataType: 'json',
-                success: function () {
-                },
-                error: function () {
-                    console.log('probleme lors de la validation d un pari en cours pour le rajout du mt mois tipster')
-                }
-            });
-
     });
 }

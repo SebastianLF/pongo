@@ -250,7 +250,7 @@
 		public function destroy($id)
 		{
 			$pari = EnCoursParis::find($id);
-			if($pari->followtype == 'n'){
+			if ($pari->followtype == 'n') {
 				$compte = $pari->compte()->first();
 				$compte->bankroll_actuelle += $pari->mise_totale;
 				$compte->save();
@@ -259,7 +259,7 @@
 					'etat' => 1,
 					'msg' => 'Ticket Supprimé'
 				));
-			}else{
+			} else {
 				$pari->delete();
 				return Response::json(array(
 					'etat' => 1,
@@ -287,7 +287,7 @@
 			Clockwork::info($nom);
 			Clockwork::info(empty($nom));
 			$result = [];
-			if(!empty($nom)){
+			if (!empty($nom)) {
 				$lettreabcd = $this->currentUser->enCoursParis()->where('nom_abcd', $nom)->get(array('lettre_abcd'));
 				$liste_reponse = array();
 				foreach ($lettreabcd as $one) {
@@ -300,7 +300,7 @@
 				Clockwork::info($liste);
 				Clockwork::info($result);
 				return Response::json($result);
-			}else{
+			} else {
 				Clockwork::info($result);
 				return Response::json($result);
 
@@ -330,31 +330,29 @@
 			}
 		}*/
 
-		public function automatic_store(){
-			$selections_coupon = Coupon::where('user_id', $this->currentUser->id)->get();
-			
-				$regles = array(
+		public function automatic_store()
+		{
+			$selections_coupon = Coupon::where('session_id', Session::getId())->get();
 
-				);
-				$validator = Validator::make(Input::all(), $regles, $messages);
-				$validator->each('automatic-selection-cote', ['required', 'regex:/^\d+(\.\d{1,2})?$/']);
-				if ($validator->fails()) {
-					$array = $validator->getMessageBag()->toArray();
-					return Response::json(array(
-						'etat' => 0,
-						'msg' => $array,
+			$regles = array();
+			$validator = Validator::make(Input::all(), $regles);
+			$validator->each('automatic-selection-cote', ['required', 'regex:/^\d+(\.\d{1,2})?$/']);
+			if ($validator->fails()) {
+				$array = $validator->getMessageBag()->toArray();
+				return Response::json(array(
+					'etat' => 0,
+					'msg' => $array,
+				));
+			} else {
+				foreach ($selections_coupon as $selection_coupon) {
+					$selection = new Selection(array(
+						'date_match' => new Carbon($selection_coupon->game_time),
+						'cote' => $selection_coupon->odd_value,
 					));
-				}else{
-					foreach ($selections_coupon as $selection_coupon){
-						$selection = new Selection(array(
-							'date_match' => new Carbon($selection_coupon->game_time),
-							'cote' => $selection->odd_value,
-								
-						));
-					}
 				}
-				
+			}
+
 		}
-			
-		
+
+
 	}

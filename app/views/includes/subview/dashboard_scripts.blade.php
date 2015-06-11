@@ -43,11 +43,7 @@
         loadBookmakersOnDashboard();
 
         // formulaire d'ajout de pari
-        generalBetForm('#automaticform-add');
-        generalBetForm('#manubetform-add');
-        refreshSelectionsAuto();
-        supprimerSelectionAuto();
-
-
+        automaticBetForm();
+        //generalBetForm('#manubetform-add');
     });
 </script>

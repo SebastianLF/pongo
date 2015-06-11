@@ -7,7 +7,7 @@
         </thead>
         <tbody>
         @foreach($selections as $selection)
-            <tr>
+            <tr class="betline">
                 <td class="selection_id hidden">{{$selection->id}}</td>
 
                 <td><span class="bold">Date:</span>{{' '.$selection->game_time}}<br/><span

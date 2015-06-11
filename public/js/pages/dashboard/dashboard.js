@@ -131,11 +131,10 @@ $('#manubetform-add').submit(function (e) {
                 console.log('erreur ajout de pari');
             }
         });
-
     }
-
-
 });
+
+
 
 $('.tipstersinputdashboard').select2({
     allowClear: true,
