@@ -33,7 +33,7 @@ function automaticBetForm() {
                             }
                         } else if (json.etat == 1) {
                             toastr.success(json.msg, 'Pari');
-                            loadParisEnCoursWithPage('add');
+                            loadParisEnCours();
                             loadBookmakersOnDashboard();
                         }
                     },

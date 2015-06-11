@@ -350,6 +350,10 @@
 						'cote' => $selection_coupon->odd_value,
 					));
 				}
+				return Response::json(array(
+					'etat' => 1,
+					'msg' => 'Ticket ajouté',
+				));
 			}
 
 		}
