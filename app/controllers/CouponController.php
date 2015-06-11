@@ -162,6 +162,8 @@
 				$affichage_num = 4;
 			} elseif ($market_id == '39') {
 				$affichage_num = 5;
+			} elseif ($market_id == '9') {
+				$affichage_num = 1;
 			}
 
 

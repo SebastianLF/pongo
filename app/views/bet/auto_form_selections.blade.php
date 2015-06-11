@@ -44,7 +44,7 @@
                         @endif
                     @endif
                 </td>
-                <td><span class="bold">Cote: </span><input type="text" value="{{$selection->odd_value}}"/></td>
+                <td><span class="bold">Cote: </span><input name="automatic-selection-cote[]" type="text" value="{{$selection->odd_value}}"/></td>
                 <td>
                     <button class="boutonsupprimer btn btn-sm red"><i class="glyphicon glyphicon-trash"></i>
                     </button>
