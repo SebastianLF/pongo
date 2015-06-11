@@ -332,29 +332,56 @@
 
 		public function automatic_store()
 		{
+			// récuperation des selections choisies.
 			$selections_coupon = Coupon::where('session_id', Session::getId())->get();
 
-			$regles = array();
-			$validator = Validator::make(Input::all(), $regles);
-			$validator->each('automatic-selection-cote', ['required', 'regex:/^\d+(\.\d{1,2})?$/']);
-			if ($validator->fails()) {
-				$array = $validator->getMessageBag()->toArray();
+			// nombre de selections.
+			$lines = $selections_coupon->count();
+
+			// verification cote serveur de présence d'une selection, au moins.
+			if ($lines <= 0) {
 				return Response::json(array(
 					'etat' => 0,
-					'msg' => $array,
+					'msg' => 'Aucune selection ajoutée. Veuillez cliquer sur une cote dans le panneau ci-dessous pour ajouter une selection.',
 				));
-			} else {
+			}else{
+				// verifier que le bookmaker soit le meme pour toutes les selections.
+				$bookmaker_temp = $selections_coupon->first()->bookmaker;
 				foreach ($selections_coupon as $selection_coupon) {
-					$selection = new Selection(array(
-						'date_match' => new Carbon($selection_coupon->game_time),
-						'cote' => $selection_coupon->odd_value,
+					$bookmaker = $selection_coupon->bookmaker;
+					if($bookmaker_temp != $bookmaker){
+						return Response::json(array(
+							'etat' => 0,
+							'msg' => 'Le bookmaker doit etre le meme pour toutes les selections',
+						));
+					}else{
+						$this->currentUser->comptes()->bookmaker()->where('bookmakers.nom')->get();
+					}
+				}
+
+				$regles = array();
+				$validator = Validator::make(Input::all(), $regles);
+				$validator->each('automatic-selection-cote', ['required', 'regex:/^\d+(\.\d{1,2})?$/']);
+				if ($validator->fails()) {
+					$array = $validator->getMessageBag()->toArray();
+					return Response::json(array(
+						'etat' => 0,
+						'msg' => $array,
+					));
+				} else {
+					foreach ($selections_coupon as $selection_coupon) {
+						$selection = new Selection(array(
+							'date_match' => new Carbon($selection_coupon->game_time),
+							'cote' => $selection_coupon->odd_value,
+						));
+					}
+					return Response::json(array(
+						'etat' => 1,
+						'msg' => 'Ticket ajouté',
 					));
 				}
-				return Response::json(array(
-					'etat' => 1,
-					'msg' => 'Ticket ajouté',
-				));
 			}
+
 
 		}
 

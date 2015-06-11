@@ -27,10 +27,15 @@ function automaticBetForm() {
 
                         var keyname;
                         if (json.etat == 0) {
-                            for (key in json.msg) {
-                                keyname = key;
-                                toastr.error(json.msg[keyname], 'Erreur:');
+                            if($.isArray(json.msg)){
+                                for (key in json.msg) {
+                                    keyname = key;
+                                    toastr.error(json.msg[keyname], 'Erreur:');
+                                }
+                            }else{
+                                toastr.error(json.msg, 'Erreur:');
                             }
+
                         } else if (json.etat == 1) {
                             toastr.success(json.msg, 'Pari');
                             loadParisEnCours();
@@ -66,7 +71,6 @@ function automaticBetForm() {
             e.preventDefault();
             var parent = $(this).parents('tr');
             var id = parent.find(".selection_id").text();
-            alert(id);
             $.ajax({
                 url: 'coupon/' + id,
                 method: 'delete',
