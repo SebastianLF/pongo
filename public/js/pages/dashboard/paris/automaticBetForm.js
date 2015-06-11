@@ -48,11 +48,9 @@ function automaticBetForm() {
 
     // rafrachais les selections automatiquement toutes les 10 sec.
     function refreshSelectionsAuto() {
-        alert('oho');
         $.ajax({
             url: 'selections',
             success: function (data) {
-                alert(data);
                 $('#automatic-selections').html(data);
                 supprimerSelectionAuto();
             },
@@ -65,7 +63,6 @@ function automaticBetForm() {
     // supprime la selection.
     function supprimerSelectionAuto() {
         $('#automatic-selections .boutonsupprimer').click(function (e) {
-            alert('ok');
             e.preventDefault();
             var parent = $(this).parents('tr');
             var id = parent.find(".selection_id").text();
