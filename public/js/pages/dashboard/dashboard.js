@@ -1,8 +1,6 @@
 
 
-$("#bookinputdashboard").prop("disabled", true);
-$("#accountsinputdashboard").prop("disabled", true);
-$('#methodeabcdcontainer').addClass("hide");
+
 
 // suivant le type de mise choisi.
 function typestakechoice() {
@@ -190,7 +188,7 @@ $('#tipstersinputdashboard').change(function () {
     });
 });
 
-$('#bookinputdashboard').select2({
+$('.bookinputdashboard').select2({
     allowClear: true,
     placeholder: "Choisir un bookmaker",
     cache: true,

@@ -30,6 +30,7 @@
 	Route::post('coupon', 'CouponController@postSelections');
 	Route::get('comptes', 'BookmakerController@showComptes');
 	Route::get('bookmakers', 'BookmakerController@getMyBookmakers');
+	Route::get('allbookmakers', 'BookmakerController@showAllBookmakers');
 	Route::get('parisabcd', 'EnCoursParisController@getEnCoursABCD');
 	Route::get('lettreabcd', 'EnCoursParisController@getlettreABCD');
 	Route::get('devise', 'DashboardController@getDevise');

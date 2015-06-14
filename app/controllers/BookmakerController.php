@@ -190,7 +190,7 @@
 
 		public function showAllBookmakers()
 		{
-			$bookmakers = Bookmaker::all();
+			$bookmakers = Bookmaker::all(array('bookmakers.id', 'bookmakers.nom AS text'));
 			return Response::json($bookmakers);
 		}
 

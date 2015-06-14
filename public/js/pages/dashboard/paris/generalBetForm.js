@@ -10,7 +10,7 @@ function generalBetForm(form_string) {
 
     // gestion radio boutons
     $(form_string+' .methodeabcdcontainer').addClass("hide");
-    $(form_string+' #systemeABCD').click(function () {
+    $(form_string+' #ticketABCD').click(function () {
         $(form_string+' .methodeabcdcontainer').removeClass("hide");
     });
     $(form_string+' #parislongterme ').click(function () {
@@ -65,23 +65,23 @@ function generalBetForm(form_string) {
             data: 'tipster_id=' + tipster_id,
             dataType: 'json',
             success: function (data) {
-                form.find('#bookinputdashboard').val(null).trigger("change");
+                form.find('.bookinputdashboard').val(null).trigger("change");
                 form.find('#accountsinputdashboard').val(null).trigger("change");
                 followtype.val('');
                 if (data.followtype == 'n') {
                     followtype.val('normal');
-                    form.find("#bookinputdashboard").prop("disabled", false);
+                    form.find(".bookinputdashboard").prop("disabled", false);
                     form.find("#accountsinputdashboard").prop("disabled", false);
                 } else if (data.followtype == 'b') {
                     followtype.val('à blanc');
-                    form.find('#bookinputdashboard').val(null).trigger("change");
+                    form.find('.bookinputdashboard').val(null).trigger("change");
                     form.find('#accountsinputdashboard').val(null).trigger("change");
-                    form.find('#bookinputdashboard').prop('disabled', true);
+                    form.find('.bookinputdashboard').prop('disabled', true);
                     form.find('#accountsinputdashboard').prop('disabled', true);
                 }else{
-                    form.find('#bookinputdashboard').val(null).trigger("change");
+                    form.find('.bookinputdashboard').val(null).trigger("change");
                     form.find('#accountsinputdashboard').val(null).trigger("change");
-                    form.find('#bookinputdashboard').prop('disabled', true);
+                    form.find('.bookinputdashboard').prop('disabled', true);
                     form.find('#accountsinputdashboard').prop('disabled', true);
                 }
                 var mt = Number(data.montant_par_unite);
@@ -92,7 +92,7 @@ function generalBetForm(form_string) {
         });
     });
 
-    form.find('#bookinputdashboard').select2({
+    form.find('.bookinputdashboard').select2({
         allowClear: true,
         placeholder: "Choisir un bookmaker",
         cache: true,
@@ -132,7 +132,7 @@ function generalBetForm(form_string) {
             dataType: 'json',
             data: function (params) {
                 return {
-                    book_id: $(form_string + ' #bookinputdashboard').val(),
+                    book_id: $(form_string + ' .bookinputdashboard').val(),
                     q: params.term // search term
                 };
             },
@@ -219,6 +219,23 @@ function generalBetForm(form_string) {
         }
     });
 
+    // suivant le type de mise choisi.
+    function typestakechoice() {
+        var select = form.find('select[name=typestakeinputdashboard]');
+        form.find('.typestakeflat').hide();
+        select.on('change', function () {
+            if ($(this).val() == 'f') {
+                $form.find('.typestakeunites').hide();
+                form.find('#stakeunitinputdashboard').val('');
+                form.find('.typestakeflat').show();
+            } else {
+                form.find('.typestakeunites').show();
+                form.find('.typestakeflat').hide();
+                form.find('#amountinputdashboard').val('');
+            }
+        });
+    }
+
     form.find("#serieinputdashboard").change(function () {
         var nom = $(form_string + "#serieinputdashboard option:selected").text();
         nom = encodeURIComponent(nom);
@@ -241,5 +258,8 @@ function generalBetForm(form_string) {
         isNaN(res_final) || res_final < 0 || montant_par_unite == '' ? $(form_string + ' #flattounitconversion').val('0') : $(form_string + ' #flattounitconversion').val(res_final);
     });
 
-
+    typestakechoice();
+    $(".bookinputdashboard").prop("disabled", true);
+    $("#accountsinputdashboard").prop("disabled", true);
+    $('#methodeabcdcontainer').addClass("hide");
 }

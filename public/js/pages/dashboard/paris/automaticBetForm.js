@@ -1,10 +1,12 @@
 //setInterval(refresh_selections, (5 * 1000));
 function automaticBetForm() {
 
-    function ajouterTicket(){
-        $('#automaticform-add').submit(function (e) {
+    var form = $('#automaticform-add');
+    var form_string = '#automaticform-add';
+
+    function ajouterTicket() {
+        form.submit(function (e) {
             e.preventDefault();
-            var form = $('#automaticform-add');
             var data = $(this).serialize();
             var linesnum = form.find('.betline').length;
             if (linesnum == '') {
@@ -27,12 +29,13 @@ function automaticBetForm() {
 
                         var keyname;
                         if (json.etat == 0) {
-                            if($.isArray(json.msg)){
+                            if ($.isArray(json.msg)) {
                                 for (key in json.msg) {
+                                    alert(key);
                                     keyname = key;
                                     toastr.error(json.msg[keyname], 'Erreur:');
                                 }
-                            }else{
+                            } else {
                                 toastr.error(json.msg, 'Erreur:');
                             }
 
@@ -50,24 +53,57 @@ function automaticBetForm() {
         });
     }
 
-
-    // rafrachais les selections automatiquement toutes les 10 sec.
-    function refreshSelectionsAuto() {
+    // fonction de rafraichissement.
+    function refreshSelections() {
         $.ajax({
             url: 'selections',
             success: function (data) {
-                $('#automatic-selections').html(data);
-                supprimerSelectionAuto();
+        console.log(data);
+                form.find('#automatic-selections').html(data.vue);
+                $.ajax({
+                    url: 'allbookmakers',
+                    dataType: 'json'
+                }).done(function(data2){
+                    form.find('.bookinputdashboard').select2({
+                        allowClear: true,
+                        placeholder: "Choisir un bookmaker",
+                        minimumResultsForSearch: Infinity,
+                        cache: true,
+                        data: data2
+                    });
+
+                    if(data.etat == 0){
+                        if(data.bookmaker_id.length == 0){
+                            data.msg.push("Aucun compte n\'a été crée pour ce bookmaker, rendez vous dans la page configuration pour le créer.");
+                            form.find('.bookinputdashboard').val(null).trigger("change");
+                        }else{
+                            form.find('.bookinputdashboard').val(data.bookmaker_id).trigger("change");
+                        }
+                    }
+                });
+                if (data.etat == 0){
+                    swal({
+                        title: "Erreur!",
+                        text: data.msg,
+                        type: "warning",
+                        confirmButtonText: "OK"
+                    });
+                }
             },
             error: function (data) {
-                $('#automatic-selections').html('<p>impossible de récuperer les selections</p>');
+                form.find('#automatic-selections').html('<p>impossible de récuperer les selections</p>');
             }
         });
     }
 
+    // rafrachais les selections automatiquement toutes les 10 sec.
+    function refreshSelectionsAuto() {
+
+    }
+
     // supprime la selection.
     function supprimerSelectionAuto() {
-        $('#automatic-selections .boutonsupprimer').click(function (e) {
+        form.find('#automatic-selections .boutonsupprimer').click(function (e) {
             e.preventDefault();
             var parent = $(this).parents('tr');
             var id = parent.find(".selection_id").text();
@@ -75,7 +111,7 @@ function automaticBetForm() {
                 url: 'coupon/' + id,
                 method: 'delete',
                 success: function (data) {
-                    refreshSelectionsAuto();
+                    refreshSelections();
                 },
                 error: function (data) {
                 }
@@ -83,23 +119,19 @@ function automaticBetForm() {
         });
     }
 
-    // rafraichis les selections.
-    $('#selection-refresh').click(function (e) {
-        e.preventDefault();
-        refreshSelectionsAuto();
-    });
-
-
-
-    // gestion du formulaire concernant uniquement la partie personnalisée pour le formulaire automatique.
+    // rafraichis les selections.*/
+    function refreshSelectionsClick() {
+        form.find('#selection-refresh').click(function (e) {
+            e.preventDefault();
+            refreshSelections();
+        });
+    }
 
 
     // initialisation
-        refreshSelectionsAuto();
-        supprimerSelectionAuto();
-        // gestion du formulaire concernant uniquement la partie générale.
-        generalBetForm('#automaticform-add');
-        ajouterTicket();
+    refreshSelectionsClick();
+    refreshSelections();
+    ajouterTicket();
 }
 
 

@@ -1,8 +1,4 @@
-<script src="{{asset('js/pages/dashboard/dashboard.js')}}" type="text/javascript"></script>
-
-
 <script src="{{asset('js/pages/stats/stats.js')}}" type="text/javascript"></script>
-
 <script src="{{asset('js/pages/dashboard/loadRecaps.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/dashboard/paris/loadParisEnCours.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/dashboard/paris/loadParisLongTerme.js')}}" type="text/javascript"></script>
@@ -21,14 +17,6 @@
 <script src="{{asset('js/plugin/sweet-alert.min.js')}}" type="text/javascript"></script>
 <script>
     jQuery(document).ready(function () {
-
-        //pari manuel
-        typestakechoice();
-        conversionUnitesVersMontant();
-        conversionMontantVersUnites();
-
-        //conversionUnitesVersMontant();
-        //conversionMontantVersUnites();
 
         //paris
         parisEnCoursDelete();
