@@ -166,7 +166,6 @@
 				$affichage_num = 1;
 			}
 
-
 			$coupon = new Coupon(array(
 				'pick' => $pick,
 				'scope' => $scope,

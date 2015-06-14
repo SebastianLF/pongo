@@ -58,7 +58,6 @@ function automaticBetForm() {
         $.ajax({
             url: 'selections',
             success: function (data) {
-        console.log(data);
                 form.find('#automatic-selections').html(data.vue);
                 $.ajax({
                     url: 'allbookmakers',
@@ -102,7 +101,7 @@ function automaticBetForm() {
     }
 
     // supprime la selection.
-    function supprimerSelectionAuto() {
+    function supprimerSelection() {
         form.find('#automatic-selections .boutonsupprimer').click(function (e) {
             e.preventDefault();
             var parent = $(this).parents('tr');
@@ -130,7 +129,8 @@ function automaticBetForm() {
 
     // initialisation
     refreshSelectionsClick();
-    refreshSelections();
+    refreshSelections()
+    supprimerSelection();
     ajouterTicket();
 }
 
