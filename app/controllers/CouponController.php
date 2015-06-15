@@ -261,11 +261,11 @@
 					$game_id_temp = $selection_coupon->game_id;
 				}
 			}
-
+			$bookmaker_id = isset($bookmaker_select) ? $bookmaker_select->id : '';
 			// return
 			return Response::json(array(
 				'vue' => $view->render(),
-				'bookmaker_id' => $bookmaker_id = isset($bookmaker_select) ? $bookmaker_select->id : '',
+				'bookmaker_id' => $bookmaker_id ,
 				'msg' => $array_msg,
 				'count' => $count
 			));
