@@ -70,32 +70,13 @@
       <file leaf-file-name="automatic_addbet.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/bet/automatic_addbet.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.076923" vertical-offset="279" max-vertical-offset="1224">
-              <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+            <state vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="884">
+              <caret line="257" column="23" selection-start-line="257" selection-start-column="23" selection-end-line="257" selection-end-column="23" />
               <folding>
-                <element signature="e#2100#17961#0#HTML" expanded="false" />
-                <marker date="1434366488318" expanded="true" signature="200:315" placeholder="..." />
+                <element signature="e#814#2055#0#HTML" expanded="false" />
+                <element signature="e#2084#17945#0#HTML" expanded="false" />
+                <marker date="1434368204811" expanded="true" signature="200:315" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auto_form_selections.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5451505" vertical-offset="456" max-vertical-offset="1054">
-              <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookmakerController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/BookmakerController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.6538463" vertical-offset="3091" max-vertical-offset="3842">
-              <caret line="192" column="68" selection-start-line="192" selection-start-column="68" selection-end-line="192" selection-end-column="68" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -103,8 +84,8 @@
       <file leaf-file-name="dashboard.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="8126">
-              <caret line="91" column="29" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1632" max-vertical-offset="8126">
+              <caret line="129" column="12" selection-start-line="129" selection-start-column="12" selection-end-line="129" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -113,29 +94,22 @@
       <file leaf-file-name="EnCoursParisController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.538462" vertical-offset="6304" max-vertical-offset="7276">
-              <caret line="390" column="0" selection-start-line="390" selection-start-column="0" selection-end-line="390" selection-end-column="0" />
+            <state vertical-scroll-proportion="-11.884615" vertical-offset="6253" max-vertical-offset="7276">
+              <caret line="386" column="40" selection-start-line="386" selection-start-column="40" selection-end-line="386" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="automaticBetForm.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="automaticBetForm.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/automaticBetForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4374" max-vertical-offset="5712">
-              <caret line="314" column="63" selection-start-line="314" selection-start-column="63" selection-end-line="314" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="generalBetForm.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/generalBetForm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1989" max-vertical-offset="4607">
-              <caret line="133" column="24" selection-start-line="133" selection-start-column="24" selection-end-line="133" selection-end-column="24" />
-              <folding />
+            <state vertical-scroll-proportion="-0.0048076925" vertical-offset="1057" max-vertical-offset="4726">
+              <caret line="62" column="24" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+              <folding>
+                <element signature="e#5709#6248#0" expanded="false" />
+                <element signature="e#6315#8850#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -143,8 +117,8 @@
       <file leaf-file-name="CouponController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.269231" vertical-offset="3448" max-vertical-offset="5134">
-              <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
+            <state vertical-scroll-proportion="-8.615385" vertical-offset="3907" max-vertical-offset="4760">
+              <caret line="243" column="24" selection-start-line="243" selection-start-column="24" selection-end-line="243" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -228,10 +202,10 @@
         <option value="$PROJECT_DIR$/app/controllers/EnCoursParisController.php" />
         <option value="$PROJECT_DIR$/app/models/Bookmaker.php" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/generalBetForm.js" />
+        <option value="$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/bet/automatic_addbet.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/CouponController.php" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/automaticBetForm.js" />
-        <option value="$PROJECT_DIR$/app/views/bet/automatic_addbet.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php" />
       </list>
     </option>
   </component>
@@ -590,7 +564,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="34" y="15" width="1347" height="797" extended-state="1" />
+    <frame x="34" y="15" width="1347" height="797" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -967,62 +941,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/dashboard.js">
+    <entry file="file://$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="8126">
-          <caret line="91" column="29" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/generalBetForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2040" max-vertical-offset="4607">
-          <caret line="133" column="24" selection-start-line="133" selection-start-column="24" selection-end-line="133" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.269231" vertical-offset="3448" max-vertical-offset="5134">
-          <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.538462" vertical-offset="6304" max-vertical-offset="7276">
-          <caret line="390" column="0" selection-start-line="390" selection-start-column="0" selection-end-line="390" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/automaticBetForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4374" max-vertical-offset="5712">
-          <caret line="314" column="63" selection-start-line="314" selection-start-column="63" selection-end-line="314" selection-end-column="63" />
+        <state vertical-scroll-proportion="0.5451505" vertical-offset="456" max-vertical-offset="1054">
+          <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bet/automatic_addbet.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.076923" vertical-offset="279" max-vertical-offset="1224">
-          <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+        <state vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="884">
+          <caret line="257" column="23" selection-start-line="257" selection-start-column="23" selection-end-line="257" selection-end-column="23" />
           <folding>
-            <element signature="e#2100#17961#0#HTML" expanded="false" />
-            <marker date="1434366488318" expanded="true" signature="200:315" placeholder="..." />
+            <element signature="e#814#2055#0#HTML" expanded="false" />
+            <element signature="e#2084#17945#0#HTML" expanded="false" />
+            <marker date="1434368204811" expanded="true" signature="200:315" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5451505" vertical-offset="456" max-vertical-offset="1054">
-          <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1632" max-vertical-offset="8126">
+          <caret line="129" column="12" selection-start-line="129" selection-start-column="12" selection-end-line="129" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/generalBetForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.6233974" vertical-offset="0" max-vertical-offset="4607">
+          <caret line="133" column="24" selection-start-line="133" selection-start-column="24" selection-end-line="133" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.884615" vertical-offset="6253" max-vertical-offset="7276">
+          <caret line="386" column="40" selection-start-line="386" selection-start-column="40" selection-end-line="386" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.615385" vertical-offset="3907" max-vertical-offset="4760">
+          <caret line="243" column="24" selection-start-line="243" selection-start-column="24" selection-end-line="243" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/automaticBetForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0048076925" vertical-offset="1057" max-vertical-offset="4726">
+          <caret line="62" column="24" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+          <folding>
+            <element signature="e#5709#6248#0" expanded="false" />
+            <element signature="e#6315#8850#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

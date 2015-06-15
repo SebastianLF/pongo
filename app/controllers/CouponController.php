@@ -216,14 +216,18 @@
 				'count' => $count
 			));
 
-			// gestion en cas d'erreur de game id ou/et de bookmaker differents.
+			$array_msg = array();
+			$bookmaker_select = '';
+
+			// gestion des ereurs.
 			if($count > 0){
 				$bookmaker_temp = $selections_coupon->first()->bookmaker;
 				$bookmaker_select = Bookmaker::where('nom', $bookmaker_temp)->first();
+				/*$bookmaker_comptes = $comptes_count = $this->currentUser->comptes()->whereHas('bookmaker', function ($query) use($bookmaker_temp){
+					$query->where('nom', $bookmaker_temp);
+				})->where('deleted_at', NULL)->count();*/
 
-				$array_msg = array();
 				if(!$bookmaker_select){
-					//array_push($array_msg, "Aucun compte n\'a été crée pour ce bookmaker, rendez vous dans la page configuration pour le créer.");
 
 					// creation d'un nouveau bookmaker dans la base de données si aucun bookmaker n'a ete trouvé.
 					$new_bookmaker = new Bookmaker(array(
@@ -233,16 +237,13 @@
 					$bookmaker_select = $new_bookmaker;
 				}
 
-				// affectation du bookmaker dans le select de choix de bookmaker.
-				/*$comptes_count = $this->currentUser->comptes()->whereHas('bookmaker', function ($query) use($bookmaker_temp){
-					$query->where('nom', $bookmaker_temp);
-				})->where('deleted_at', NULL)->count();*/
+				/*if(!$bookmaker_comptes){
+					array_push($array_msg, 'Aucun compte n\'a été crée pour ce bookmaker, rendez vous dans la page configuration pour le créer');
+				}*/
 
 				// inits
 				$game_id_temp = -1;
 				$bookmaker = '';
-				$erreur_game_id = false;
-				$erreur_bookmaker = false;
 
 				foreach ($selections_coupon as $selection_coupon) {
 					$bookmaker = $selection_coupon->bookmaker;
@@ -250,47 +251,24 @@
 
 					// verification des game id soit differents si il y a plusieurs selections.
 					if($game_id_temp == $game_id){
-						$erreur_game_id = true;
+						array_push($array_msg, 'Il n\'est pas possible de selectionner deux fois le meme pari');
 					}
 
 					// verification des bookmakers soit le meme si il y a plusieurs selections.
 					if ($bookmaker_temp != $bookmaker) {
-						$erreur_bookmaker = true;
+						array_push($array_msg, 'Le bookmaker doit etre le meme pour toutes les selections');
 					}
 					$game_id_temp = $selection_coupon->game_id;
-				}
-				$bookmaker_id = isset($bookmaker_select->id) ? $bookmaker_select->id : '';
-
-				// affichage des erreurs dans le meme alert.
-				if($erreur_bookmaker && $erreur_game_id){
-					array_push($array_msg, 'Il n\'est pas possible de selectionner deux fois le meme pari');
-					array_push($array_msg, 'Le bookmaker doit etre le meme pour toutes les selections.');
-
-					return Response::json(array(
-						'vue' => $view->render(),
-						'etat' => 0,
-						'bookmaker_id' => $bookmaker_id,
-						'msg' => $array_msg,
-					));
-				}else if($erreur_bookmaker && !$erreur_game_id){
-					return Response::json(array(
-						'vue' => $view->render(),
-						'etat' => 0,
-						'bookmaker_id' => $bookmaker_id,
-						'msg' => 'Le bookmaker doit etre le meme pour toutes les selections.',
-					));
-				}else if(!$erreur_bookmaker && $erreur_game_id){
-					return Response::json(array(
-						'vue' => $view->render(),
-						'etat' => 0,
-						'bookmaker_id' => $bookmaker_id,
-						'msg' => 'Il n\'est pas possible de selectionner deux fois le meme pari.',
-					));
 				}
 			}
 
 			// return
-			return Response::json(array('vue' => $view->render(), 'etat' => 1));
+			return Response::json(array(
+				'vue' => $view->render(),
+				'bookmaker_id' => isset($bookmaker_select) ? $bookmaker_select->id : '',
+				'msg' => $array_msg,
+				'count' => $count
+			));
 		}
 
 	}

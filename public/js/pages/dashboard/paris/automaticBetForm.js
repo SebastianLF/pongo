@@ -55,34 +55,33 @@ function automaticBetForm() {
 
     // fonction de rafraichissement.
     function refreshSelections() {
+        var suivi = form.find('#followtypeinputdashboard').val();
         $.ajax({
             url: 'selections',
-            success: function (data) {
+            success: function (data){
                 form.find('#automatic-selections').html(data.vue);
                 $.ajax({
                     url: 'allbookmakers',
-                    dataType: 'json'
-                }).done(function(data2){
-                    form.find('.bookinputdashboard').select2({
-                        allowClear: true,
-                        placeholder: "Choisir un bookmaker",
-                        minimumResultsForSearch: Infinity,
-                        cache: true,
-                        data: data2
-                    });
+                    dataType: 'json',
+                    success: function (data2) {
+                        form.find('.bookinputdashboard').select2({
+                            minimumResultsForSearch: Infinity,
+                            cache: true,
+                            data: data2
+                        });
 
-                    if(data.etat == 0){
-                        if(data.bookmaker_id.length == 0){
-                            data.msg.push("Aucun compte n\'a été crée pour ce bookmaker, rendez vous dans la page configuration pour le créer.");
-                            //form.find('.bookinputdashboard').val(null).trigger("change");
+                        if(suivi == 'à blanc'){
+                            form.find('.bookinputdashboard').val("").trigger("change");
+                            form.find('#accountsinputdashboard').val("").trigger("change");
                         }else{
+                            form.find('.bookinputdashboard').prop('disabled', false);
+                            form.find('#accountsinputdashboard').prop('disabled', false);
+                            form.find('.bookinputdashboard').val(data.bookmaker_id).trigger("change");
                         }
-                    }else{
-
+                        gestionTipsters(data.bookmaker_id);
                     }
-                    form.find('.bookinputdashboard').val(data.bookmaker_id).trigger("change");
                 });
-                if (data.etat == 0){
+                if (data.msg.length > 0){
                     swal({
                         title: "Erreur!",
                         text: data.msg,
@@ -145,68 +144,73 @@ function automaticBetForm() {
         });
     }
 
-    form.find('#tipstersinputdashboard').select2({
-        allowClear: true,
-        placeholder: "Choisir un tipster",
-        cache: true,
-        ajax: {
-            url: 'tipsters',
-            dataType: 'json',
-            data: function (params) {
-                return {
-                    q: params.term // search term
-                };
-            },
-            processResults: function (data) {
-                return {
-                    results: data
-                };
-            }
-        }
-    });
-
-    form.find('#tipstersinputdashboard').change(function () {
-        var tipster_id = $(form_string + ' #tipstersinputdashboard').val();
-        var followtype = $(form_string + ' #followtypeinputdashboard');
-        var montant_par_unite = $(form_string + ' #amountperunit');
-
-        // remise a zero des champs liés.
-        $(form_string + ' #stakeunitinputdashboard').val('');
-        $(form_string + ' #amountperunit').val('');
-        $(form_string + ' #amountconversion').val('0');
-        $(form_string + ' #amountinputdashboard').val('');
-        $(form_string + ' #flattounitconversion').val('0');
-        $.ajax({
-            url: 'infosTipster',
-            data: 'tipster_id=' + tipster_id,
-            dataType: 'json',
-            success: function (data) {
-                form.find('.bookinputdashboard').val(null).trigger("change");
-                form.find('#accountsinputdashboard').val(null).trigger("change");
-                followtype.val('');
-                if (data.followtype == 'n') {
-                    followtype.val('normal');
-                    form.find(".bookinputdashboard").prop("disabled", false);
-                    form.find("#accountsinputdashboard").prop("disabled", false);
-                } else if (data.followtype == 'b') {
-                    followtype.val('à blanc');
-                    form.find('.bookinputdashboard').val(null).trigger("change");
-                    form.find('#accountsinputdashboard').val(null).trigger("change");
-                    form.find('.bookinputdashboard').prop('disabled', true);
-                    form.find('#accountsinputdashboard').prop('disabled', true);
-                }else{
-                    form.find('.bookinputdashboard').val(null).trigger("change");
-                    form.find('#accountsinputdashboard').val(null).trigger("change");
-                    form.find('.bookinputdashboard').prop('disabled', true);
-                    form.find('#accountsinputdashboard').prop('disabled', true);
+    function gestionTipsters(bookmaker_id){
+        form.find('#tipstersinputdashboard').select2({
+            allowClear: true,
+            placeholder: "Choisir un tipster",
+            cache: true,
+            ajax: {
+                url: 'tipsters',
+                dataType: 'json',
+                data: function (params) {
+                    return {
+                        q: params.term // search term
+                    };
+                },
+                processResults: function (data) {
+                    return {
+                        results: data
+                    };
                 }
-                var mt = Number(data.montant_par_unite);
-                isNaN(mt) ?  montant_par_unite.val('') : montant_par_unite.val(mt);
-            },
-            error: function (data) {
             }
         });
-    });
+        form.find('#tipstersinputdashboard').change(function () {
+            var tipster_id = $(form_string + ' #tipstersinputdashboard').val();
+            var followtype = $(form_string + ' #followtypeinputdashboard');
+            var montant_par_unite = $(form_string + ' #amountperunit');
+
+            // remise a zero des champs liés.
+            $(form_string + ' #stakeunitinputdashboard').val('');
+            $(form_string + ' #amountperunit').val('');
+            $(form_string + ' #amountconversion').val('0');
+            $(form_string + ' #amountinputdashboard').val('');
+            $(form_string + ' #flattounitconversion').val('0');
+            $.ajax({
+                url: 'infosTipster',
+                data: 'tipster_id=' + tipster_id,
+                dataType: 'json',
+                success: function (data) {
+                    form.find('.bookinputdashboard').val(null).trigger("change");
+                    form.find('#accountsinputdashboard').val(null).trigger("change");
+                    followtype.val('');
+                    if (data.followtype == 'n') {
+                        followtype.val('normal');
+                        form.find(".bookinputdashboard").prop("disabled", false);
+                        form.find("#accountsinputdashboard").prop("disabled", false);
+                        form.find('.bookinputdashboard').val(bookmaker_id).trigger("change");
+                        form.find('#accountsinputdashboard').val(null).trigger("change");
+                    } else if (data.followtype == 'b') {
+                        followtype.val('à blanc');
+                        form.find('.bookinputdashboard').val(null).trigger("change");
+                        form.find('#accountsinputdashboard').val(null).trigger("change");
+                        form.find('.bookinputdashboard').prop('disabled', true);
+                        form.find('#accountsinputdashboard').prop('disabled', true);
+                    }else{
+                        form.find(".bookinputdashboard").prop("disabled", false);
+                        form.find("#accountsinputdashboard").prop("disabled", false);
+                        form.find('.bookinputdashboard').val(bookmaker_id).trigger("change");
+                        form.find('#accountsinputdashboard').val(null).trigger("change");
+
+                    }
+                    var mt = Number(data.montant_par_unite);
+                    isNaN(mt) ?  montant_par_unite.val('') : montant_par_unite.val(mt);
+                },
+                error: function (data) {
+                }
+            });
+        });
+    }
+
 
     form.find('#accountsinputdashboard').select2({
         allowClear: true,

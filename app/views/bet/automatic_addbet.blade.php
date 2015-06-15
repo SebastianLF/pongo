@@ -18,7 +18,7 @@
                 <form action="javascript:;" class="form-horizontal">
                     <div class="form-body">
                         <div class="row">
-                            <div class="col-md-offset-1 col-md-5">
+                            <div class="col-md-7">
                                 <div class="portlet light bordered">
                                     <div class="portlet-title">
                                         <div class="caption">
