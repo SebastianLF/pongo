@@ -311,6 +311,8 @@ function automaticBetForm() {
     });
 
     form.find('.methodeabcdcontainer').addClass("hide");
+    form.find('.bookmakercontainer').addClass("hide");
+
 
     form.find('#ticketABCD').on('click', function(){
         if ( $(this).is(':checked') ) {

@@ -6,7 +6,7 @@
 {{ Form::open(array('method' => 'post', 'id' => 'automaticform-add', 'class' => 'form-horizontal', 'role' => 'form')
             ) }}
 
-<div class="row">
+<div class="row ">
     <div class="col-md-12">
         <div class="portlet box green-meadow">
             <div class="portlet-title">
@@ -14,12 +14,12 @@
                     <i class="fa fa-gift"></i>Ticket
                 </div>
             </div>
-            <div class="portlet-body form">
+            <div class="portlet-body form " >
                 <form action="javascript:;" class="form-horizontal">
                     <div class="form-body">
-                        <div class="row">
+                        <div class="row " style="padding:10px;">
                             <div class="col-md-7">
-                                <div class="portlet light bordered">
+                                <div class="portlet light bordered ">
                                     <div class="portlet-title">
                                         <div class="caption">
                                             <i class="fa fa-gift"></i>Les selections choisies pour ce ticket
@@ -48,7 +48,7 @@
                                     </div>
 
                                     <div class="portlet-body form form-automatic">
-                                        <div class="form-body">
+                                        <div class="form-body" style="padding:5px;">
                                             <div class="">
                                                 <div class="col-md-3">
                                                     <div class="form-group">
@@ -161,7 +161,7 @@
                                                 </div>
                                             </div>
                                             <div class="bookmakerrow ">
-                                                <div class="col-md-4">
+                                                <div class="col-md-4 bookmakercontainer">
                                                     <div class="form-group">
                                                         <div class="">
                                                             <label class="bold">Bookmaker</label>

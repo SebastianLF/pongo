@@ -261,7 +261,7 @@
 					$game_id_temp = $selection_coupon->game_id;
 				}
 			}
-			
+
 			// return
 			return Response::json(array(
 				'vue' => $view->render(),
