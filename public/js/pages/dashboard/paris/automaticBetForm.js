@@ -60,6 +60,7 @@ function automaticBetForm() {
             url: 'selections',
             success: function (data){
                 form.find('#automatic-selections').html(data.vue);
+                supprimerSelection();
                 $.ajax({
                     url: 'allbookmakers',
                     dataType: 'json',
@@ -103,7 +104,7 @@ function automaticBetForm() {
 
     // supprime la selection.
     function supprimerSelection(){
-        form.find('#automatic-selections .boutonsupprimer').click(function (e) {
+        form.find('#automatic-selections .boutonsupprimer').on('click', function (e) {
             e.preventDefault();
             alert("ok");
             var parent = $(this).parents('tr');
