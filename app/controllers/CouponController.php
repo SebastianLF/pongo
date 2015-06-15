@@ -212,7 +212,8 @@
 			$count = $selections_coupon->count();
 
 			$view = View::make('bet/auto_form_selections', array(
-				'selections' => $selections_coupon
+				'selections' => $selections_coupon,
+				'count' => $count
 			));
 
 			// gestion en cas d'erreur de game id ou/et de bookmaker differents.
