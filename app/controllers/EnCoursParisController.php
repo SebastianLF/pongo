@@ -342,7 +342,7 @@
 			if ($count <= 0) {
 				return Response::json(array(
 					'etat' => 0,
-					'msg' => 'Aucune selection ajoutée. Veuillez cliquer sur une cote dans le panneau ci-dessous pour ajouter une selection.',
+					'msg' => 'Aucune selection.',
 				));
 			}else{
 
@@ -395,8 +395,8 @@
 					'stakeunitinputdashboard' => 'required_if:typestakeinputdashboard,u|integer|min:1',
 					'amountinputdashboard' => array('required_if:typestakeinputdashboard,f', 'numeric', 'regex:/^\d+(\.\d{1,2})?$/'),
 					'accountsinputdashboard' => 'required_if:followtypeinputdashboard,normal|exists:bookmaker_user,id,user_id,' . $this->currentUser->id,
-					'ticketABCD' => 'required|in:ticketABCD,parislongterme,aucun',
-					'ticketGratuit' => 'required|in:ticketABCD,parislongterme,aucun',
+					'ticketABCD' => 'required|in:0,1',
+					'ticketGratuit' => 'required|in:0,1',
 					'serieinputdashboard' => 'required_if:ticketABCD,1',
 					'letterinputdashboard' => 'required_if:ticketABCD,1|in:A,B,C,D',
 				);
@@ -412,7 +412,11 @@
 					'tipstersinputdashboard.exists' => 'Ce tipster n\'existe pas dans votre liste.',
 					'accountsinputdashboard.required_if' => 'Vous devez choisir un compte de bookmaker quand le suivi est de type normal. Si vous n\'avez pas de compte de bookmaker, veuillez en créer un, dans la page configuration',
 					'accountsinputdashboard.exists' => 'Ce compte bookmaker n\'existe pas dans votre liste.',
+					'serieinputdashboard.required_if' => 'Un n° ou nom de serie est nécéssaire',
+					'letterinputdashboard.required_if' => 'Une lettre (ABCD) est nécéssaire',
+					'letterinputdashboard.in' => 'la lettre ne correspond pas',
 				);
+
 				$validator = Validator::make(Input::all(), $regles, $messages);
 				$validator->each('automatic-selection-cote', ['required', 'regex:/^\d+(\.\d{1,2})?$/']);
 				if ($validator->fails()) {
@@ -422,13 +426,20 @@
 						'msg' => $array,
 					));
 				} else {
+
 					// mise en base de données, les verifs ont toutes été faites plus haut.
 					foreach ($selections_coupon as $selection_coupon) {
+						$market = Market::find($selection_coupon->market_id);
+						Clockwork::info($market);
 						$selection = new Selection(array(
 							'date_match' => new Carbon($selection_coupon->game_time),
 							'cote' => $selection_coupon->odd_value,
 						));
 					}
+
+
+
+
 					return Response::json(array(
 						'etat' => 1,
 						'msg' => 'Ticket ajouté',
