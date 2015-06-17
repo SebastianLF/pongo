@@ -99,8 +99,7 @@
                                                             <select name="typestakeinputdashboard"
                                                                     id="typestakeinputdashboard"
                                                                     class="form-control input-sm">
-                                                                <option value="u">en unités</option>
-                                                                <option value="f">manuel</option>
+
                                                             </select>
                                                         </div>
                                                     </div>

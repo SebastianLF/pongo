@@ -336,10 +336,10 @@
 			$selections_coupon = Coupon::where('session_id', Session::getId())->get();
 
 			// nombre de selections.
-			$lines = $selections_coupon->count();
+			$count = $selections_coupon->count();
 
 			// verification cote serveur de présence d'une selection, au moins.
-			if ($lines <= 0) {
+			if ($count <= 0) {
 				return Response::json(array(
 					'etat' => 0,
 					'msg' => 'Aucune selection ajoutée. Veuillez cliquer sur une cote dans le panneau ci-dessous pour ajouter une selection.',
@@ -385,13 +385,35 @@
 					if ($bookmakers_count == 0) {
 						return Response::json(array(
 							'etat' => 0,
-							'msg' => "Aucun compte n\'a été crée pour ce bookmaker, rendez vous dans la page configuration pour le créer.",
+							'msg' => 'Aucun compte n\'a été crée pour ce bookmaker, rendez vous dans la page configuration pour le créer.',
 						));
 					}
 				}
-
-				$regles = array();
-				$validator = Validator::make(Input::all(), $regles);
+				$regles = array(
+					'tipstersinputdashboard' => 'required|exists:tipsters,id,user_id,' . $this->currentUser->id,
+					'typestakeinputdashboard' => 'required|in:u,f',
+					'stakeunitinputdashboard' => 'required_if:typestakeinputdashboard,u|integer|min:1',
+					'amountinputdashboard' => array('required_if:typestakeinputdashboard,f', 'numeric', 'regex:/^\d+(\.\d{1,2})?$/'),
+					'accountsinputdashboard' => 'required_if:followtypeinputdashboard,normal|exists:bookmaker_user,id,user_id,' . $this->currentUser->id,
+					'ticketABCD' => 'required|in:ticketABCD,parislongterme,aucun',
+					'ticketGratuit' => 'required|in:ticketABCD,parislongterme,aucun',
+					'serieinputdashboard' => 'required_if:ticketABCD,1',
+					'letterinputdashboard' => 'required_if:ticketABCD,1|in:A,B,C,D',
+				);
+				$messages = array(
+					'typestakeinputdashboard.in' => 'ce type de mise n\'existe pas.',
+					'stakeunitinputdashboard.required_if' => 'Vous devez mettre une mise (en unités).',
+					'stakeunitinputdashboard.integer' => 'la mise en unités doit etre un nombre entier.',
+					'stakeunitinputdashboard.min' => 'mise en unités minimun : 1',
+					'amountinputdashboard.required_if' => 'Vous devez mettre une mise (en devise).',
+					'amountinputdashboard.numeric' => 'La mise (en devise) doit etre un nombre.',
+					'amountinputdashboard.regex' => 'la mise doit etre un nombre entier positif ou decimal positif(avec 2 chiffres apres la virgule maximum).',
+					'tipstersinputdashboard.required' => 'Choisissez un tipster, si il n\'y a pas de tipster dans la liste, veuillez en créer un dans la page configuration',
+					'tipstersinputdashboard.exists' => 'Ce tipster n\'existe pas dans votre liste.',
+					'accountsinputdashboard.required_if' => 'Vous devez choisir un compte de bookmaker quand le suivi est de type normal. Si vous n\'avez pas de compte de bookmaker, veuillez en créer un, dans la page configuration',
+					'accountsinputdashboard.exists' => 'Ce compte bookmaker n\'existe pas dans votre liste.',
+				);
+				$validator = Validator::make(Input::all(), $regles, $messages);
 				$validator->each('automatic-selection-cote', ['required', 'regex:/^\d+(\.\d{1,2})?$/']);
 				if ($validator->fails()) {
 					$array = $validator->getMessageBag()->toArray();
@@ -410,7 +432,6 @@
 					return Response::json(array(
 						'etat' => 1,
 						'msg' => 'Ticket ajouté',
-						'comptes' => isset($comptes) ? $comptes : ''
 					));
 				}
 			}

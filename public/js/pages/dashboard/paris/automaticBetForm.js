@@ -18,12 +18,15 @@ function automaticBetForm() {
                 });
             } else if (linesnum >= 1) {
                 //serialize doesnt retrieve .text() of an input
-                var tipstername = form.find("#tipstersinputdashboard option:selected").text();
-                var bookname = form.find("#bookinputdashboard option:selected").text();
+                var ticketABCD;
+                var ticketGratuit;
+                if (form.find("#ticketABCD").is(":checked")) {ticketABCD = 1;}else{ticketABCD = 0;}
+                if (form.find("#ticketGratuit").is(":checked")) {ticketGratuit = 1;}else{ticketGratuit = 0;}
+
                 $.ajax({
                     url: 'encourspari/auto',
                     type: 'post',
-                    data: data + '&linesnum=' + linesnum + '&tipstername=' + tipstername + '&bookname=' + bookname,
+                    data: data + '&linesnum=' + linesnum + '&ticketABCD=' + ticketABCD + '&ticketGratuit=' + ticketGratuit,
                     dataType: 'json',
                     success: function (json) {
 
@@ -212,6 +215,14 @@ function automaticBetForm() {
         });
     }
 
+    var type_stake = [{ id: 'u', text: 'en unités' }, { id: 'f', text: 'en devise' }];
+
+    form.find('#typestakeinputdashboard').select2({
+        minimumResultsForSearch: Infinity,
+        cache: true,
+        data: type_stake
+    });
+
 
     form.find('#accountsinputdashboard').select2({
         allowClear: true,
@@ -310,16 +321,21 @@ function automaticBetForm() {
         }
     });
 
+    form.find('#serieinputdashboard').prop('disabled', true);
+    form.find('#letterinputdashboard').prop('disabled', true);
     form.find('.methodeabcdcontainer').addClass("hide");
     form.find('.bookmakercontainer').addClass("hide");
-
 
     form.find('#ticketABCD').on('click', function(){
         if ( $(this).is(':checked') ) {
             form.find('.methodeabcdcontainer').removeClass("hide");
+            form.find('#serieinputdashboard').prop('disabled', false);
+            form.find('#letterinputdashboard').prop('disabled', false);
         }
         else {
             form.find('.methodeabcdcontainer').addClass("hide");
+            form.find('#serieinputdashboard').prop('disabled', true);
+            form.find('#letterinputdashboard').prop('disabled', true);
         }
     });
 
