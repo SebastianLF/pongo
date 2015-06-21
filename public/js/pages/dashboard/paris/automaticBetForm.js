@@ -43,6 +43,8 @@ function automaticBetForm() {
                             }
 
                         } else if (json.etat == 1) {
+                            resetAutomaticForm();
+                            refreshSelections();
                             toastr.success(json.msg, 'Pari');
                             loadParisEnCours();
                             loadBookmakersOnDashboard();
@@ -102,7 +104,8 @@ function automaticBetForm() {
 
     // rafrachais les selections automatiquement toutes les 10 sec.
     function refreshSelectionsAuto() {
-
+        form.find('.bookinputdashboard').val("").trigger("change");
+        form.find('#accountsinputdashboard').val("").trigger("change");
     }
 
     // supprime la selection.
@@ -215,6 +218,13 @@ function automaticBetForm() {
         });
     }
 
+    function resetAutomaticForm(){
+        form.find('#stakeunitinputdashboard').val(null).trigger("change");
+        form.find('#amountinputdashboard').val(null).trigger("change");
+        form.find('#accountsinputdashboard').val(null).trigger("change");
+        form.find('input:checkbox').prop('checked', false);
+    }
+
     var type_stake = [{ id: 'u', text: 'en unités' }, { id: 'f', text: 'en devise' }];
 
     form.find('#typestakeinputdashboard').select2({
@@ -319,6 +329,22 @@ function automaticBetForm() {
                 };
             }
         }
+    });
+
+    form.find('#stakeunitinputdashboard').keyup(function () {
+        var montant_par_unite = $(form_string + ' #amountperunit').val();
+        var unites = Number($(form_string + ' #stakeunitinputdashboard').val());
+        var res = Number(montant_par_unite) * Number(unites);
+        var res_final = Math.round(res * 100) / 100;
+        isNaN(res_final) || res_final < 0 ? $(form_string + '#amountconversion').val('0') : $(form_string + ' #amountconversion').val(res_final);
+    });
+
+    form.find('#amountinputdashboard').keyup(function () {
+        var montant_par_unite = $(form_string + ' #amountperunit').val();
+        var montant = $(form_string + ' #amountinputdashboard').val();
+        var res = Number(montant) / Number(montant_par_unite);
+        var res_final = Math.round(res * 100) / 100;
+        isNaN(res_final) || res_final < 0 || montant_par_unite == '' ? $(form_string + ' #flattounitconversion').val('0') : $(form_string + ' #flattounitconversion').val(res_final);
     });
 
     form.find('#serieinputdashboard').prop('disabled', true);

@@ -338,13 +338,15 @@
 			// nombre de selections.
 			$count = $selections_coupon->count();
 
+
+
 			// verification cote serveur de présence d'une selection, au moins.
 			if ($count <= 0) {
 				return Response::json(array(
 					'etat' => 0,
 					'msg' => 'Aucune selection.',
 				));
-			}else{
+			} else {
 
 				// verifier que le bookmaker soit le meme pour toutes les selections.
 				$bookmaker_temp = $selections_coupon->first()->bookmaker;
@@ -357,10 +359,10 @@
 					$game_id = $selection_coupon->game_id;
 
 					// verification que le game id soit differents si il y a plusieurs selections.
-					if($game_id_temp == $game_id){
+					if ($game_id_temp == $game_id) {
 						return Response::json(array(
 							'etat' => 0,
-							'msg' => 'Il n\'est pas possible de selectionner deux fois le meme pari.' ,
+							'msg' => 'Il n\'est pas possible de selectionner deux fois le meme pari.',
 						));
 					}
 					if ($bookmaker_temp != $bookmaker) {
@@ -369,15 +371,15 @@
 							'etat' => 0,
 							'msg' => 'Le bookmaker doit etre le meme pour toutes les selections.',
 						));
-					}else{
+					} else {
 						$bookmakers_differents = false;
 					}
 					$game_id_temp = $selection_coupon->game_id;
 				}
-				if(!$bookmakers_differents){
+				if (!$bookmakers_differents) {
 
 					// vérification si il existe au moins un compte bookmaker correspondant au bookmaker des selections.
-					$comptes = $this->currentUser->comptes()->whereHas('bookmaker', function ($query) use($bookmaker){
+					$comptes = $this->currentUser->comptes()->whereHas('bookmaker', function ($query) use ($bookmaker) {
 						$query->where('nom', $bookmaker);
 					})->where('deleted_at', NULL)->get();
 
@@ -399,6 +401,8 @@
 					'ticketGratuit' => 'required|in:0,1',
 					'serieinputdashboard' => 'required_if:ticketABCD,1',
 					'letterinputdashboard' => 'required_if:ticketABCD,1|in:A,B,C,D',
+
+					'followtypeinputdashboard' => 'required|in:normal,à blanc',
 				);
 				$messages = array(
 					'typestakeinputdashboard.in' => 'ce type de mise n\'existe pas.',
@@ -426,18 +430,144 @@
 						'msg' => $array,
 					));
 				} else {
-
 					// mise en base de données, les verifs ont toutes été faites plus haut.
+
+					// type de suivi
+					$suivi = Input::get('followtypeinputdashboard');
+					if($suivi == 'normal'){
+						$suivi = 'n';
+					}else{
+						$suivi = 'b';
+					}
+
+					// tipster
+					$tipster = $this->currentUser->tipsters(Input::get('tipstersinputdashboard'))->first();
+
+					// type stake
+					$type_stake = Input::get('typestakeinputdashboard');
+
+					// numero de pari par utilisateur + incrementation de celui-ci.
+					$this->currentUser->compteur_pari += 1;
+					$this->currentUser->save();
+					$numero_pari = $this->currentUser->compteur_pari;
+
+					// mise en unités.
+					$mise_unites = 0;
+					$mise_devise = 0;
+					if($type_stake == 'u'){
+						$mise_unites = Input::get('stakeunitinputdashboard');
+						$mise_devise = round($mise_unites * $tipster->montant_par_unite, 2);
+					}elseif($type_stake == 'f'){
+						$mise_devise = Input::get('amountinputdashboard');
+						$mise_unites = round($mise_devise / $tipster->montant_par_unite, 2);
+					}
+
+					// creation de pari.
+					$encourparis = new EnCoursParis(array(
+						'followtype' => $suivi,
+						'type_profil' => $count > 1 ? 'c' : 's',
+						'numero_pari' => $numero_pari,
+						'mt_par_unite' => $tipster->montant_par_unite,
+						'nombre_unites' => $mise_unites,
+						'mise_totale' => $mise_devise,
+						'pari_gratuit' => Input::get('ticketGratuit'),
+						'pari_abcd' => Input::get('ticketABCD'),
+						'nom_abcd' => Input::get('serieinputdashboard'),
+						'lettre_abcd' => Input::get('letterinputdashboard'),
+						'tipster_id' => $tipster->id,
+						'user_id' => $this->currentUser->id,
+						'bookmaker_user_id' => $suivi == 'n' ? Input::get('accountsinputdashboard') : null
+					));
+					Clockwork::info($encourparis);
+
+					$encourparis->save();
+
+					$cotes = 1;
+					$odds_iterator = 0;
+					$odds_array = Input::get('automatic-selection-cote');
+					$count_long_terme = 0;
+					$count_live = 0;
+
 					foreach ($selections_coupon as $selection_coupon) {
-						$market = Market::find($selection_coupon->market_id);
-						Clockwork::info($market);
+						// sport = id de betbrain
+						// market  = id de betbrain
+						// scope  = id de betbrain
+						// competition  = id de pongo
+						// equipe1  = id de pongo
+						// equipe2  = id de pongo
+
+						// donnée a connaitre pour l en cours pari.
+						$count_live = $selection_coupon->odd_isLive == null ? $count_live+0 : $count_live+1;
+						$count_long_terme = $count_long_terme+0;
+
+						// creation
+						$sport = Sport::firstOrNew(array('id' => $selection_coupon->sport_id, 'name' => $selection_coupon->sport_name));
+						$sport->save();
+						$market = Market::firstOrNew(array('id' => $selection_coupon->market_id, 'name' => $selection_coupon->market));
+						$market->save();
+						$scope = Scope::firstOrNew(array('id' => $selection_coupon->scope_id, 'name' => $selection_coupon->scope));
+						$scope->save();
+						$competition = Competition::firstOrNew(array('name' => $selection_coupon->league_name, 'sport_id' => $sport->id));
+						$competition->save();
+
+
+						if($selection_coupon->home_team != null && $selection_coupon->home_team != null){
+							$equipe1 = Equipe::firstOrNew(array('name' => $selection_coupon->home_team, 'sport_id' => $sport->id)); // home team
+							$equipe1->save();
+							$equipe2 = Equipe::firstOrNew(array('name' => $selection_coupon->away_team, 'sport_id' => $sport->id)); // away team
+							$equipe2->save();
+							$competition_equipe1 = CompetitionEquipe::firstOrNew(array('competition_id' => $competition->id, 'equipe_id' => $equipe1->id));
+							$competition_equipe1->save();
+							$competition_equipe2 = CompetitionEquipe::firstOrNew(array('competition_id' => $competition->id, 'equipe_id' => $equipe2->id));
+							$competition_equipe2->save();
+						}
+
 						$selection = new Selection(array(
 							'date_match' => new Carbon($selection_coupon->game_time),
-							'cote' => $selection_coupon->odd_value,
+							'cote' => $odds_array[$odds_iterator],
+							'pick' => $selection_coupon->pick,
+							'game_id' => $selection_coupon->game_id,
+							'game_name' => $selection_coupon->game_name,
+							'odd_doubleParam' => $selection_coupon->odd_doubleParam == -999.888 ? null : $selection_coupon->odd_doubleParam,
+							'odd_doubleParam2' => $selection_coupon->odd_doubleParam2 == -999.888 ? null : $selection_coupon->odd_doubleParam2,
+							'odd_doubleParam3' => $selection_coupon->odd_doubleParam3 == -999.888 ? null : $selection_coupon->odd_doubleParam3,
+							'odd_participantParameterName' => $selection_coupon->odd_participantParameterName,
+							'odd_participantParameterName2' => $selection_coupon->odd_participantParameterName2,
+							'odd_participantParameterName3' => $selection_coupon->odd_participantParameterName3,
+							'odd_groupParam' => $selection_coupon->odd_groupParam == -999.888 ? null : $selection_coupon->odd_groupParam,
+							'live' => $selection_coupon->odd_isLive == null ? 0 : 1,
+							'pari_long_terme' => 0,
+							'score' => $selection_coupon->score,
+							'market_id' => $market->id,
+							'scope_id' => $scope->id,
+							'sport_id' => $sport->id,
+							'en_cours_pari_id' => $encourparis->id
 						));
+
+						Clockwork::info($selection);
+
+						$selection->save();
+						$cotes *= $odds_array[$odds_iterator];
 					}
 
 
+					// mis a jour de la cote general.
+					$encourparis->cote = $cotes;
+					$encourparis->pari_long_terme = $count_long_terme > 0 ? 1 : 0;
+					$encourparis->pari_live = $count_live > 0 ? 1 : 0;
+					$encourparis->save();
+
+					// supression des coupons.
+					foreach($selections_coupon as $selection_coupon){
+						$selection_coupon->delete();
+					}
+
+					// deduction du montant dans le bookmaker correspondant uniquement si le suivi est de type normal.
+					if ($suivi == 'n') {
+						$compte_to_deduct = $this->currentUser->comptes()->where('id', Input::get('accountsinputdashboard'))->first();
+						$compte_to_deduct->bankroll_actuelle -= $mise_devise;
+						$compte_to_deduct->save();
+					}
 
 
 					return Response::json(array(

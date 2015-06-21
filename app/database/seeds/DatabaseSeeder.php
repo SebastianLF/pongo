@@ -21,9 +21,9 @@ class DatabaseSeeder extends Seeder {
 		$this->call('CompetitionTableSeeder');
 		$this->call('EquipeTableSeeder');
 		$this->call('EnCoursParisTableSeeder');
-		$this->call('TypeParisTableSeeder');
 		$this->call('SelectionTableSeeder');
 
+		$this->call('CouponTableTableSeeder');
 	}
 
 }

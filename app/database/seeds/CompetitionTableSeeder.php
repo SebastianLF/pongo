@@ -7,7 +7,7 @@ class CompetitionTableSeeder extends Seeder {
 		// Uncomment the below to wipe the table clean before populating
 		//DB::table('competitions')->truncate();
 
-		$competition = array(
+		/*$competition = array(
 			array(
 				'name' => 'atletico',
 				'logo' => 'football/espagne/Compétitions/normal/67.png',
@@ -23,7 +23,7 @@ class CompetitionTableSeeder extends Seeder {
 		);
 
 		// Uncomment the below to run the seeder
-		DB::table('competitions')->insert($competition);
+		DB::table('competitions')->insert($competition);*/
 	}
 
 }

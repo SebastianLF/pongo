@@ -334,12 +334,12 @@
     <table name="competition_equipe" schema="" catalog="slfweb" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="competition_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="equipe_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="sport_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="competition_equipe_equipe_id_foreign" columns="equipe_id" ref-table="equipes" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="competition_equipe_sport_id_foreign" columns="sport_id" ref-table="sports" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
       <foreign-key name="competition_equipe_competition_id_foreign" columns="competition_id" ref-table="competitions" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
       <index name="competition_equipe_competition_id_foreign" unique="false" columns="competition_id"/>
-      <index name="competition_equipe_equipe_id_foreign" unique="false" columns="equipe_id"/>
+      <index name="competition_equipe_sport_id_foreign" unique="false" columns="sport_id"/>
     </table>
     <table name="competitions" schema="" catalog="slfweb" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -450,7 +450,6 @@
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="equipes_country_id_foreign" columns="country_id" ref-table="countries" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="equipes_sport_id_foreign" columns="sport_id" ref-table="sports" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="competition_equipe_equipe_id_foreign" table="competition_equipe" schema="" catalog="slfweb" columns="equipe_id"/>
       <exported-key name="selections_equipe1_id_foreign" table="selections" schema="" catalog="slfweb" columns="equipe1_id"/>
       <exported-key name="selections_equipe2_id_foreign" table="selections" schema="" catalog="slfweb" columns="equipe2_id"/>
       <index name="equipes_country_id_foreign" unique="false" columns="country_id"/>
@@ -466,6 +465,12 @@
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="followtype_logs_tipster_id_foreign" columns="tipster_id" ref-table="tipsters" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
       <index name="followtype_logs_tipster_id_foreign" unique="false" columns="tipster_id"/>
+    </table>
+    <table name="markets" schema="" catalog="slfweb" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="sport_market_market_id_foreign" table="sport_market" schema="" catalog="slfweb" columns="market_id"/>
     </table>
     <table name="migrations" schema="" catalog="slfweb" type="TABLE">
       <column name="migration" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
@@ -504,6 +509,12 @@
       <index name="password_reminders_email_index" unique="false" columns="email"/>
       <index name="password_reminders_token_index" unique="false" columns="token"/>
     </table>
+    <table name="scopes" schema="" catalog="slfweb" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="sport_scope_scope_id_foreign" table="sport_scope" schema="" catalog="slfweb" columns="scope_id"/>
+    </table>
     <table name="selections" schema="" catalog="slfweb" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
@@ -514,8 +525,8 @@
       <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
       <column name="infos_pari" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="live" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
-      <column name="market_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="scope_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="market_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="scope_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="sport_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="country_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="competition_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
@@ -539,14 +550,41 @@
       <index name="selections_sport_id_foreign" unique="false" columns="sport_id"/>
       <index name="selections_termine_pari_id_foreign" unique="false" columns="termine_pari_id"/>
     </table>
+    <table name="sport_market" schema="" catalog="slfweb" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="sport_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="market_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="sport_market_market_id_foreign" columns="market_id" ref-table="markets" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="sport_market_sport_id_foreign" columns="sport_id" ref-table="sports" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="sport_market_market_id_foreign" unique="false" columns="market_id"/>
+      <index name="sport_market_sport_id_foreign" unique="false" columns="sport_id"/>
+    </table>
+    <table name="sport_scope" schema="" catalog="slfweb" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="sport_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="scope_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="sport_scope_scope_id_foreign" columns="scope_id" ref-table="scopes" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="sport_scope_sport_id_foreign" columns="sport_id" ref-table="sports" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="sport_scope_scope_id_foreign" unique="false" columns="scope_id"/>
+      <index name="sport_scope_sport_id_foreign" unique="false" columns="sport_id"/>
+    </table>
     <table name="sports" schema="" catalog="slfweb" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
       <column name="logo" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="competition_equipe_sport_id_foreign" table="competition_equipe" schema="" catalog="slfweb" columns="sport_id"/>
       <exported-key name="competitions_sport_id_foreign" table="competitions" schema="" catalog="slfweb" columns="sport_id"/>
       <exported-key name="equipes_sport_id_foreign" table="equipes" schema="" catalog="slfweb" columns="sport_id"/>
       <exported-key name="selections_sport_id_foreign" table="selections" schema="" catalog="slfweb" columns="sport_id"/>
+      <exported-key name="sport_market_sport_id_foreign" table="sport_market" schema="" catalog="slfweb" columns="sport_id"/>
+      <exported-key name="sport_scope_sport_id_foreign" table="sport_scope" schema="" catalog="slfweb" columns="sport_id"/>
     </table>
     <table name="termine_paris" schema="" catalog="slfweb" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>

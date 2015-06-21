@@ -1,7 +1,7 @@
 <?php
 
-class Market extends Eloquent {
+class Scope extends Eloquent {
 	protected $fillable = array('id','name');
-	protected $table = 'markets';
+	protected $table = 'scopes';
 	public static $rules = array();
 }

@@ -23,14 +23,12 @@ class CreateEnCoursParisTable extends Migration {
             $table->decimal('mt_par_unite',8,2); // montant par unité
             $table->decimal('nombre_unites',5,2);
             $table->decimal('mise_totale', 8,2); // mise totale du pari
-            $table->decimal('unites_retour',8,2); //  unites misées + unites gagnées ou perdues
-            $table->decimal('unites_profit', 8,2);
-            $table->decimal('montant_retour',8,2); // montant misé + montant gagne ou perdu
-            $table->decimal('montant_profit', 8,2);
             $table->boolean('pari_long_terme')->default('0');
+            $table->boolean('pari_gratuit')->default('0');
+            $table->boolean('pari_live')->default('0');
             $table->boolean('pari_abcd')->default('0');
-            $table->string('nom_abcd');
-            $table->string('lettre_abcd',2);
+            $table->string('nom_abcd')->nullable();
+            $table->string('lettre_abcd',2)->nullable();
             $table->tinyInteger('status'); // gagné , perdu , remboursé etc..
             $table->integer('tipster_id')->unsigned();
             $table->integer('user_id')->unsigned();

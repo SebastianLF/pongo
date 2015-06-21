@@ -1,6 +1,6 @@
 <?php
 
 class Coupon extends Eloquent {
-	protected $guarded = array('id');
+	protected $guarded = array();
 	protected $table = 'coupon';
 }

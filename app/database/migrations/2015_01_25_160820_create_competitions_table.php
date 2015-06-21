@@ -14,10 +14,11 @@ class CreateCompetitionsTable extends Migration {
 	{
 		Schema::create('competitions', function(Blueprint $table) {
 			$table->increments('id');
-			$table->string('name', 100);
+			$table->string('name');
             $table->string('logo');
-            $table->integer('sport_id')->unsigned();
-            $table->integer('country_id')->unsigned();
+            $table->unsignedInteger('sport_id');
+            $table->integer('country_id')->unsigned()->nullable();
+			$table->timestamps();
 		});
 	}
 

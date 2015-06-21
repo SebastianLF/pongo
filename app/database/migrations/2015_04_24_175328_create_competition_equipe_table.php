@@ -15,11 +15,12 @@ class CreateCompetitionEquipeTable extends Migration {
 		Schema::create('competition_equipe', function(Blueprint $table) {
 			$table->increments('id');
 			$table->integer('competition_id')->unsigned();
-			$table->unsignedInteger('sport_id');
+			$table->integer('equipe_id')->unsigned();
+			$table->timestamps();
 			$table->foreign('competition_id')->references('id')->on('competitions')
 				->onDelete('cascade')
 				->onUpdate('restrict');
-			$table->foreign('sport_id')->references('id')->on('sports')
+			$table->foreign('equipe_id')->references('id')->on('equipes')
 				->onDelete('cascade')
 				->onUpdate('restrict');
 		});

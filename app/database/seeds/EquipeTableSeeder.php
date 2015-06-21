@@ -7,7 +7,7 @@ class EquipeTableSeeder extends Seeder {
 		// Uncomment the below to wipe the table clean before populating
 		//DB::table('equipes')->truncate();
 
-		$equipe = array(
+		/*$equipe = array(
 			array(
 				'name' => 'atletico',
 				'logo' => 'football/espagne/Clubs/normal/1661.png',
@@ -20,10 +20,10 @@ class EquipeTableSeeder extends Seeder {
 				'sport_id' => '1',
 				'country_id' => '2',
 			),
-		);
+		);*/
 
 		// Uncomment the below to run the seeder
-		DB::table('equipes')->insert($equipe);
+		//DB::table('equipes')->insert($equipe);
 	}
 
 }

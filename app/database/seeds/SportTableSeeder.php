@@ -7,7 +7,7 @@ class SportTableSeeder extends Seeder {
 		// Uncomment the below to wipe the table clean before populating
 		//DB::table('sports')->truncate();
 
-		$sport = array(
+		/*$sport = array(
 			array(
 				'name' => 'football',
 				'logo' => 'img/logos/sports/football/football.jpg',
@@ -44,10 +44,10 @@ class SportTableSeeder extends Seeder {
 				'name' => 'football américain',
 				'logo' => 'img/logos/sports/football/footballus.jpg',
 			),
-		);
+		);*/
 
 		// Uncomment the below to run the seeder
-		DB::table('sports')->insert($sport);
+		//DB::table('sports')->insert($sport);
 	}
 
 }
