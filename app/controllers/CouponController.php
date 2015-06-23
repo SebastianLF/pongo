@@ -111,10 +111,10 @@
 			$sport_name = Input::get('sport_Name');
 			$league_id = Input::get('league_id');
 			$league_name = Input::get('league_name');
-			$home_team = Input::get('home_team') ? Input::get('home_team') : null;
+			/*$home_team = Input::get('home_team') ? Input::get('home_team') : null;
 			$away_team = Input::get('away_team') ? Input::get('away_team') : null;
 			$score = Input::get('score') ? Input::get('score') : null;
-			$isLive = Input::get('isLive') ? Input::get('isLive') : null;
+			$isLive = Input::get('isLive') ? Input::get('isLive') : null;*/
 			$session_id = Input::get('userSessionId');
 
 			// affectation du numero d'affichage selon le type de pari.
@@ -192,10 +192,10 @@
 				'sport_name' => $sport_name,
 				'league_id' => $league_id,
 				'league_name' => $league_name,
-				'home_team' => $home_team,
+				/*'home_team' => $home_team,
 				'away_team' => $away_team,
 				'score' => $score,
-				'isLive' => $isLive,
+				'isLive' => $isLive,*/
 				'session_id' => $session_id,
 				'affichage' => $affichage_num
 			));
