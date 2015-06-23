@@ -41,7 +41,7 @@
                         <br/><span class="bold">Match:</span>{{' '.$selection->game_name}}
                     </td>
                     <td><span class="bold">Bookmaker:</span>{{' '.$selection->bookmaker}}<br/><span
-                                class="bold">Pari:</span>{{' '.$selection->market.' '}}{{$selection->score ? '('.$selection->score.')' : ''}}{{' ('.$selection->scope.') '}}<br/>
+                                class="bold">Pari:</span>{{' '.$selection->market.' '}}{{isset($selection->score) ? '('.$selection->score.')' : ''}}{{' ('.$selection->scope.') '}}<br/>
                         <span class="bold">Choix:</span>
                         @if($selection->affichage == "1")
                             {{' '.$selection->pick}}

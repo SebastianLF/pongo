@@ -103,6 +103,7 @@
 			switch ($type) {
 				case 'parisencours':
 					$parisEnCours = $this->showParisEnCours();
+					Clockwork::info($parisEnCours);
 					$countParisEnCours = $parisEnCours->getTotal();
 					$view = View::make('bet.parisencours', array('parisencours' => $parisEnCours, 'types_resultat' => $this->types_resultat, 'count_paris_encours' => $countParisEnCours));
 					return $view;

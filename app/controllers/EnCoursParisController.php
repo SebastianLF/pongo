@@ -541,6 +541,9 @@
 							'market_id' => $market->id,
 							'scope_id' => $scope->id,
 							'sport_id' => $sport->id,
+							'competition_id' => $competition->id,
+							'equipe1_id' => isset($equipe1) ? $equipe1->id : null,
+							'equipe2_id' => isset($equipe2) ? $equipe2->id : null,
 							'en_cours_pari_id' => $encourparis->id
 						));
 
