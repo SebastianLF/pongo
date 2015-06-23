@@ -519,7 +519,7 @@
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
-      <column name="date_match" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="date_match" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
       <column name="cote" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
       <column name="cote_apres_status" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
       <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
@@ -535,13 +535,13 @@
       <column name="en_cours_pari_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="termine_pari_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="selections_termine_pari_id_foreign" columns="termine_pari_id" ref-table="termine_paris" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
       <foreign-key name="selections_competition_id_foreign" columns="competition_id" ref-table="competitions" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="selections_country_id_foreign" columns="country_id" ref-table="countries" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="selections_en_cours_pari_id_foreign" columns="en_cours_pari_id" ref-table="en_cours_paris" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
       <foreign-key name="selections_equipe1_id_foreign" columns="equipe1_id" ref-table="equipes" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="selections_equipe2_id_foreign" columns="equipe2_id" ref-table="equipes" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="selections_sport_id_foreign" columns="sport_id" ref-table="sports" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="selections_termine_pari_id_foreign" columns="termine_pari_id" ref-table="termine_paris" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
       <index name="selections_competition_id_foreign" unique="false" columns="competition_id"/>
       <index name="selections_country_id_foreign" unique="false" columns="country_id"/>
       <index name="selections_en_cours_pari_id_foreign" unique="false" columns="en_cours_pari_id"/>

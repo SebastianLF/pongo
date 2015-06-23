@@ -15,7 +15,7 @@ class CreateSelectionsTable extends Migration {
 		Schema::create('selections', function(Blueprint $table) {
 			$table->increments('id');
 			$table->timestamps();
-			$table->date('date_match'); // date de la rencontre
+			$table->dateTime('date_match'); // date de la rencontre
 			$table->decimal('cote',8,2);
 			$table->decimal('cote_apres_status');
 			$table->tinyInteger('status')->default(0); // gagné , perdu , remboursé etc..
