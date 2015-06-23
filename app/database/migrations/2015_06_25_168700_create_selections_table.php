@@ -32,6 +32,7 @@ class CreateSelectionsTable extends Migration {
 			$table->boolean('live')->default(0);
 			$table->boolean('pari_long_terme')->default('0');
 			$table->string('score');
+			$table->smallInteger('affichage');
 			$table->unsignedInteger('market_id')->nullable();
 			$table->unsignedInteger('scope_id')->nullable();
 			$table->unsignedInteger('sport_id')->nullable();

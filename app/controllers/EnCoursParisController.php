@@ -462,7 +462,10 @@
 						$mise_unites = round($mise_devise / $tipster->montant_par_unite, 2);
 					}
 
-					// creation de pari.
+
+					// market id correspondant a des paris long terme.
+
+					// creation du pari.
 					$encourparis = new EnCoursParis(array(
 						'followtype' => $suivi,
 						'type_profil' => $count > 1 ? 'c' : 's',
@@ -538,6 +541,7 @@
 							'live' => $selection_coupon->odd_isLive == null ? 0 : 1,
 							'pari_long_terme' => 0,
 							'score' => $selection_coupon->score,
+							'affichage' => $selection_coupon->affichage,
 							'market_id' => $market->id,
 							'scope_id' => $scope->id,
 							'sport_id' => $sport->id,
