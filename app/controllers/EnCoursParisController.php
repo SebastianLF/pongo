@@ -127,7 +127,6 @@
 					$lettre_abcd = Input::get('letterinputdashboard');
 				}
 
-
 				// creation du nouveau pari
 				$en_cours_pari = New EnCoursParis(array(
 					'followtype' => $tipster->followtype,
@@ -399,6 +398,7 @@
 					'accountsinputdashboard' => 'required_if:followtypeinputdashboard,normal|exists:bookmaker_user,id,user_id,' . $this->currentUser->id,
 					'ticketABCD' => 'required|in:0,1',
 					'ticketGratuit' => 'required|in:0,1',
+					'ticketLongTerme' => 'required|in:0,1',
 					'serieinputdashboard' => 'required_if:ticketABCD,1',
 					'letterinputdashboard' => 'required_if:ticketABCD,1|in:A,B,C,D',
 
@@ -462,7 +462,6 @@
 						$mise_unites = round($mise_devise / $tipster->montant_par_unite, 2);
 					}
 
-
 					// market id correspondant a des paris long terme.
 
 					// creation du pari.
@@ -473,7 +472,9 @@
 						'mt_par_unite' => $tipster->montant_par_unite,
 						'nombre_unites' => $mise_unites,
 						'mise_totale' => $mise_devise,
+						'pari_long_terme' => Input::get('ticketLongTerme'),
 						'pari_gratuit' => Input::get('ticketGratuit'),
+						'pari_live' => Input::get('ticketGratuit'),
 						'pari_abcd' => Input::get('ticketABCD'),
 						'nom_abcd' => Input::get('serieinputdashboard'),
 						'lettre_abcd' => Input::get('letterinputdashboard'),
@@ -488,7 +489,6 @@
 					$cotes = 1;
 					$odds_iterator = 0;
 					$odds_array = Input::get('automatic-selection-cote');
-					$count_long_terme = 0;
 					$count_live = 0;
 
 					foreach ($selections_coupon as $selection_coupon) {
@@ -500,8 +500,7 @@
 						// equipe2  = id de pongo
 
 						// donnée a connaitre pour l en cours pari.
-						$count_live = $selection_coupon->odd_isLive == null ? $count_live+0 : $count_live+1;
-						$count_long_terme = $count_long_terme+0;
+						$count_live = $selection_coupon->isLive == null ? $count_live+0 : $count_live+1;
 
 						// creation
 						$sport = Sport::firstOrNew(array('id' => $selection_coupon->sport_id, 'name' => $selection_coupon->sport_name));
@@ -510,13 +509,22 @@
 						$market->save();
 						$scope = Scope::firstOrNew(array('id' => $selection_coupon->scope_id, 'name' => $selection_coupon->scope));
 						$scope->save();
-						$competition = Competition::firstOrNew(array('name' => $selection_coupon->league_name, 'sport_id' => $sport->id));
+						$competition_country = Country::firstOrNew(array('name' => $selection_coupon->event_country_name));
+						$competition_country->save();
+						$competition = Competition::firstOrNew(array('name' => $selection_coupon->league_name, 'sport_id' => $sport->id, 'country_id' => $competition_country->id));
 						$competition->save();
 
-
-						if($selection_coupon->home_team != null && $selection_coupon->home_team != null){
+						if($selection_coupon->isMatch){
+							$equipe1_country = Country::firstOrNew(array('name' => $selection_coupon->home_team_country_name));
+							$equipe1_country->save();
+							$equipe2_country = Country::firstOrNew(array('name' => $selection_coupon->away_team_country_name));
+							$equipe2_country->save();
+							$competition_de_equipe1 = Competition::firstOrNew(array('name' => $selection_coupon->league_name, 'sport_id' => $sport->id, 'country_id' => $equipe1_country->id));
+							$competition_de_equipe1->save();
 							$equipe1 = Equipe::firstOrNew(array('name' => $selection_coupon->home_team, 'sport_id' => $sport->id)); // home team
 							$equipe1->save();
+							$competition_de_equipe2 = Competition::firstOrNew(array('name' => $selection_coupon->league_name, 'sport_id' => $sport->id, 'country_id' => $equipe2_country->id));
+							$competition_de_equipe2->save();
 							$equipe2 = Equipe::firstOrNew(array('name' => $selection_coupon->away_team, 'sport_id' => $sport->id)); // away team
 							$equipe2->save();
 							$competition_equipe1 = CompetitionEquipe::firstOrNew(array('competition_id' => $competition->id, 'equipe_id' => $equipe1->id));
@@ -539,7 +547,6 @@
 							'odd_participantParameterName3' => $selection_coupon->odd_participantParameterName3,
 							'odd_groupParam' => $selection_coupon->odd_groupParam == -999.888 ? null : $selection_coupon->odd_groupParam,
 							'live' => $selection_coupon->odd_isLive == null ? 0 : 1,
-							'pari_long_terme' => 0,
 							'score' => $selection_coupon->score,
 							'affichage' => $selection_coupon->affichage,
 							'market_id' => $market->id,
@@ -560,7 +567,6 @@
 
 					// mis a jour de la cote general.
 					$encourparis->cote = $cotes;
-					$encourparis->pari_long_terme = $count_long_terme > 0 ? 1 : 0;
 					$encourparis->pari_live = $count_live > 0 ? 1 : 0;
 					$encourparis->save();
 
@@ -575,7 +581,6 @@
 						$compte_to_deduct->bankroll_actuelle -= $mise_devise;
 						$compte_to_deduct->save();
 					}
-
 
 					return Response::json(array(
 						'etat' => 1,

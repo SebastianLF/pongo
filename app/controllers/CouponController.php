@@ -111,10 +111,14 @@
 			$sport_name = Input::get('sport_Name');
 			$league_id = Input::get('league_id');
 			$league_name = Input::get('league_name');
-			/*$home_team = Input::get('home_team') ? Input::get('home_team') : null;
-			$away_team = Input::get('away_team') ? Input::get('away_team') : null;
-			$score = Input::get('score') ? Input::get('score') : null;
-			$isLive = Input::get('isLive') ? Input::get('isLive') : null;*/
+			$event_country_name = Input::get('event_country_name');
+			$isMatch = Input::get('isMatch');
+			$home_team = $isMatch ? Input::get('home_team') : null;
+			$home_team_country_name = $isMatch ? Input::get('home_team_country_name') : null;
+			$away_team = $isMatch ? Input::get('away_team') : null;
+			$away_team_country_name = $isMatch ? Input::get('away_team_country_name') : null;
+			$score = $isMatch ? Input::get('score') : null;
+			$isLive = $isMatch ? Input::get('isLive') : null;
 			$session_id = Input::get('userSessionId');
 
 			// affectation du numero d'affichage selon le type de pari.
@@ -192,10 +196,14 @@
 				'sport_name' => $sport_name,
 				'league_id' => $league_id,
 				'league_name' => $league_name,
-				/*'home_team' => $home_team,
+				'event_country_name' => $event_country_name,
+				'home_team' => $home_team,
+				'home_team_country_name' => $home_team_country_name,
 				'away_team' => $away_team,
+				'away_team_country_name' => $away_team_country_name,
 				'score' => $score,
-				'isLive' => $isLive,*/
+				'isLive' => $isLive,
+				'isMatch' => $isMatch,
 				'session_id' => $session_id,
 				'affichage' => $affichage_num
 			));
@@ -245,6 +253,8 @@
 				// inits
 				$game_id_temp = -1;
 				$bookmaker = '';
+				$game_error_count = 0;
+				$bookmaker_error_count = 0;
 
 				foreach ($selections_coupon as $selection_coupon) {
 					$bookmaker = $selection_coupon->bookmaker;
@@ -252,14 +262,23 @@
 
 					// verification des game id soit differents si il y a plusieurs selections.
 					if($game_id_temp == $game_id){
-						array_push($array_msg, 'Il n\'est pas possible de selectionner deux fois le meme pari');
+						$game_error_count += 1;
 					}
 
 					// verification des bookmakers soit le meme si il y a plusieurs selections.
 					if ($bookmaker_temp != $bookmaker) {
-						array_push($array_msg, 'Le bookmaker doit etre le meme pour toutes les selections');
+						$bookmaker_error_count += 1;
 					}
 					$game_id_temp = $selection_coupon->game_id;
+				}
+				if($game_error_count > 0){
+					array_push($array_msg, 'Il n\'est pas possible de selectionner deux fois le meme pari');
+				}
+				if($bookmaker_error_count > 0){
+					array_push($array_msg, 'Le bookmaker doit etre le meme pour toutes les selections');
+				}
+				if($bookmaker_error_count > 0 || $game_error_count > 0){
+					array_push($array_msg, 'Veuillez supprimer les selections concernées');
 				}
 			}
 

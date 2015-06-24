@@ -20,13 +20,15 @@ function automaticBetForm() {
                 //serialize doesnt retrieve .text() of an input
                 var ticketABCD;
                 var ticketGratuit;
+                var ticketLongTerme;
                 if (form.find("#ticketABCD").is(":checked")) {ticketABCD = 1;}else{ticketABCD = 0;}
                 if (form.find("#ticketGratuit").is(":checked")) {ticketGratuit = 1;}else{ticketGratuit = 0;}
+                if (form.find("#ticketLongTerme").is(":checked")) {ticketLongTerme = 1;}else{ticketLongTerme = 0;}
 
                 $.ajax({
                     url: 'encourspari/auto',
                     type: 'post',
-                    data: data + '&linesnum=' + linesnum + '&ticketABCD=' + ticketABCD + '&ticketGratuit=' + ticketGratuit,
+                    data: data + '&linesnum=' + linesnum + '&ticketABCD=' + ticketABCD + '&ticketGratuit=' + ticketGratuit + '&ticketLongTerme=' + ticketLongTerme,
                     dataType: 'json',
                     success: function (json) {
 

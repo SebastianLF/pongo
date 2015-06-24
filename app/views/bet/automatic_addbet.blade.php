@@ -14,7 +14,7 @@
                     <i class="fa fa-gift"></i>Ticket
                 </div>
             </div>
-            <div class="portlet-body form " >
+            <div class="portlet-body form ">
                 <form action="javascript:;" class="form-horizontal">
                     <div class="form-body">
                         <div class="row " style="padding:10px;">
@@ -200,44 +200,46 @@
                                                                 <input type="checkbox" id="ticketABCD"
                                                                        value="ticketABCD">Pari ABCD
                                                             </label>
-
                                                             <label class="checkbox-inline">
                                                                 <input type="checkbox" id="ticketGratuit"
                                                                        value="ticketGratuit">Pari gratuit
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" id="ticketLongTerme"
+                                                                       value="ticketLongTerme">Pari long terme
                                                             </label>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!--/span-->
                                             </div>
-                                            <div class="">
-                                                <div class="methodeabcdcontainer ">
-                                                    <div class="col-md-5  col-md-offset-1">
-                                                        <div class="form-group">
-                                                            <div class="">
-                                                                <label class="bold">N° série ou nom</label>
-                                                            </div>
-                                                            <div class="">
-                                                                <select name="serieinputdashboard"
-                                                                        id="serieinputdashboard"
-                                                                        class="form-control input-sm">
-                                                                    <option></option>
-                                                                </select>
-                                                            </div>
+
+                                            <div class="methodeabcdcontainer ">
+                                                <div class="col-md-5  col-md-offset-1">
+                                                    <div class="form-group">
+                                                        <div class="">
+                                                            <label class="bold">N° série ou nom</label>
+                                                        </div>
+                                                        <div class="">
+                                                            <select name="serieinputdashboard"
+                                                                    id="serieinputdashboard"
+                                                                    class="form-control input-sm">
+                                                                <option></option>
+                                                            </select>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4 col-md-offset-1">
-                                                        <div class="form-group">
-                                                            <div class="">
-                                                                <label class="bold">Lettre</label>
-                                                            </div>
-                                                            <div class="">
-                                                                <select id="letterinputdashboard"
-                                                                        name="letterinputdashboard"
-                                                                        class="form-control input-sm">
-                                                                    <option></option>
-                                                                </select>
-                                                            </div>
+                                                </div>
+                                                <div class="col-md-4 col-md-offset-1">
+                                                    <div class="form-group">
+                                                        <div class="">
+                                                            <label class="bold">Lettre</label>
+                                                        </div>
+                                                        <div class="">
+                                                            <select id="letterinputdashboard"
+                                                                    name="letterinputdashboard"
+                                                                    class="form-control input-sm">
+                                                                <option></option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>
