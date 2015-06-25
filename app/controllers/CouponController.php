@@ -126,7 +126,7 @@
 				$away_team = null;
 				$away_team_country_name = null;
 				$score = null;
-				$isLive = null;
+				$isLive = false;
 			}
 			$session_id = Input::get('userSessionId');
 
@@ -206,13 +206,13 @@
 				'league_id' => $league_id,
 				'league_name' => $league_name,
 				'event_country_name' => $event_country_name,
-				/*'home_team' => $home_team,
+				'home_team' => $home_team,
 				'home_team_country_name' => $home_team_country_name,
 				'away_team' => $away_team,
 				'away_team_country_name' => $away_team_country_name,
 				'score' => $score,
-				'isLive' => $isLive == true ? 1 : 0,
-				'isMatch' => $isMatch == true ? 1 : 0,*/
+				'isLive' => $isLive == 'true' ? 1 : 0,
+				'isMatch' => $isMatch == 'true' ? 1 : 0,
 				'session_id' => $session_id,
 				'affichage' => $affichage_num
 			));
