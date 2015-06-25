@@ -334,19 +334,23 @@
     <table name="competition_equipe" schema="" catalog="slfweb" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="competition_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="sport_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="equipe_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="competition_equipe_sport_id_foreign" columns="sport_id" ref-table="sports" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="competition_equipe_equipe_id_foreign" columns="equipe_id" ref-table="equipes" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
       <foreign-key name="competition_equipe_competition_id_foreign" columns="competition_id" ref-table="competitions" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
       <index name="competition_equipe_competition_id_foreign" unique="false" columns="competition_id"/>
-      <index name="competition_equipe_sport_id_foreign" unique="false" columns="sport_id"/>
+      <index name="competition_equipe_equipe_id_foreign" unique="false" columns="equipe_id"/>
     </table>
     <table name="competitions" schema="" catalog="slfweb" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="name" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="logo" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="sport_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="country_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="country_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="competitions_sport_id_foreign" columns="sport_id" ref-table="sports" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="competitions_country_id_foreign" columns="country_id" ref-table="countries" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
@@ -359,10 +363,11 @@
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
       <column name="logo" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
       <exported-key name="competitions_country_id_foreign" table="competitions" schema="" catalog="slfweb" columns="country_id"/>
       <exported-key name="equipes_country_id_foreign" table="equipes" schema="" catalog="slfweb" columns="country_id"/>
-      <exported-key name="selections_country_id_foreign" table="selections" schema="" catalog="slfweb" columns="country_id"/>
     </table>
     <table name="coupon" schema="" catalog="slfweb" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -393,10 +398,14 @@
       <column name="sport_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="league_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="league_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="event_country_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="home_team" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="home_team_country_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="away_team" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="away_team_country_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="score" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="isLive" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="isMatch" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
       <column name="session_id" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="affichage" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5"/>
       <primary-key name="PRIMARY" columns="id"/>
@@ -420,14 +429,12 @@
       <column name="mt_par_unite" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
       <column name="nombre_unites" sqlType="DECIMAL" precision="5" scale="2" nullable="false" jdbcType="3"/>
       <column name="mise_totale" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
-      <column name="unites_retour" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
-      <column name="unites_profit" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
-      <column name="montant_retour" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
-      <column name="montant_profit" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
       <column name="pari_long_terme" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="pari_gratuit" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="pari_live" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
       <column name="pari_abcd" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
-      <column name="nom_abcd" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="lettre_abcd" sqlType="VARCHAR" precision="2" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nom_abcd" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lettre_abcd" sqlType="VARCHAR" precision="2" scale="0" nullable="true" jdbcType="12"/>
       <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
       <column name="tipster_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="user_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
@@ -446,10 +453,13 @@
       <column name="name" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
       <column name="logo" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="sport_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="country_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="country_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="equipes_country_id_foreign" columns="country_id" ref-table="countries" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="equipes_sport_id_foreign" columns="sport_id" ref-table="sports" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="competition_equipe_equipe_id_foreign" table="competition_equipe" schema="" catalog="slfweb" columns="equipe_id"/>
       <exported-key name="selections_equipe1_id_foreign" table="selections" schema="" catalog="slfweb" columns="equipe1_id"/>
       <exported-key name="selections_equipe2_id_foreign" table="selections" schema="" catalog="slfweb" columns="equipe2_id"/>
       <index name="equipes_country_id_foreign" unique="false" columns="country_id"/>
@@ -469,7 +479,10 @@
     <table name="markets" schema="" catalog="slfweb" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="selections_market_id_foreign" table="selections" schema="" catalog="slfweb" columns="market_id"/>
       <exported-key name="sport_market_market_id_foreign" table="sport_market" schema="" catalog="slfweb" columns="market_id"/>
     </table>
     <table name="migrations" schema="" catalog="slfweb" type="TABLE">
@@ -512,41 +525,56 @@
     <table name="scopes" schema="" catalog="slfweb" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="selections_scope_id_foreign" table="selections" schema="" catalog="slfweb" columns="scope_id"/>
       <exported-key name="sport_scope_scope_id_foreign" table="sport_scope" schema="" catalog="slfweb" columns="scope_id"/>
     </table>
     <table name="selections" schema="" catalog="slfweb" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
-      <column name="date_match" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="date_match" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
       <column name="cote" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
       <column name="cote_apres_status" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
       <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
-      <column name="infos_pari" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="pick" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="game_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="game_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="odd_doubleParam" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
+      <column name="odd_doubleParam2" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
+      <column name="odd_doubleParam3" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
+      <column name="odd_participantParameterName" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="odd_participantParameterName2" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="odd_participantParameterName3" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="odd_groupParam" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
       <column name="live" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
-      <column name="market_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="scope_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="score" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="affichage" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5"/>
+      <column name="market_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="scope_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="sport_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="country_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="competition_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="equipe1_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="equipe2_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="en_cours_pari_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="termine_pari_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="selections_termine_pari_id_foreign" columns="termine_pari_id" ref-table="termine_paris" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
       <foreign-key name="selections_competition_id_foreign" columns="competition_id" ref-table="competitions" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="selections_country_id_foreign" columns="country_id" ref-table="countries" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="selections_en_cours_pari_id_foreign" columns="en_cours_pari_id" ref-table="en_cours_paris" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
       <foreign-key name="selections_equipe1_id_foreign" columns="equipe1_id" ref-table="equipes" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="selections_equipe2_id_foreign" columns="equipe2_id" ref-table="equipes" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="selections_market_id_foreign" columns="market_id" ref-table="markets" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="selections_scope_id_foreign" columns="scope_id" ref-table="scopes" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="selections_sport_id_foreign" columns="sport_id" ref-table="sports" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="selections_termine_pari_id_foreign" columns="termine_pari_id" ref-table="termine_paris" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
       <index name="selections_competition_id_foreign" unique="false" columns="competition_id"/>
-      <index name="selections_country_id_foreign" unique="false" columns="country_id"/>
       <index name="selections_en_cours_pari_id_foreign" unique="false" columns="en_cours_pari_id"/>
       <index name="selections_equipe1_id_foreign" unique="false" columns="equipe1_id"/>
       <index name="selections_equipe2_id_foreign" unique="false" columns="equipe2_id"/>
+      <index name="selections_market_id_foreign" unique="false" columns="market_id"/>
+      <index name="selections_scope_id_foreign" unique="false" columns="scope_id"/>
       <index name="selections_sport_id_foreign" unique="false" columns="sport_id"/>
       <index name="selections_termine_pari_id_foreign" unique="false" columns="termine_pari_id"/>
     </table>
@@ -578,8 +606,10 @@
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
       <column name="logo" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="categorie" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <exported-key name="competition_equipe_sport_id_foreign" table="competition_equipe" schema="" catalog="slfweb" columns="sport_id"/>
       <exported-key name="competitions_sport_id_foreign" table="competitions" schema="" catalog="slfweb" columns="sport_id"/>
       <exported-key name="equipes_sport_id_foreign" table="equipes" schema="" catalog="slfweb" columns="sport_id"/>
       <exported-key name="selections_sport_id_foreign" table="selections" schema="" catalog="slfweb" columns="sport_id"/>

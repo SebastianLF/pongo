@@ -41,11 +41,11 @@ class CreateCouponTable extends Migration {
 			$table->integer('league_id');
 			$table->string('league_name');
 			$table->string('event_country_name');
-			$table->string('home_team');
-			$table->string('home_team_country_name');
-			$table->string('away_team');
-			$table->string('away_team_country_name');
-			$table->string('score');
+			$table->string('home_team')->nullable();
+			$table->string('home_team_country_name')->nullable();
+			$table->string('away_team')->nullable();
+			$table->string('away_team_country_name')->nullable();
+			$table->string('score')->nullable();
 			$table->boolean('isLive');
 			$table->boolean('isMatch'); // si true, sport co et sinon sport individuel.
 			$table->string('session_id');

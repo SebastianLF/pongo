@@ -29,8 +29,8 @@ class CreateSelectionsTable extends Migration {
 			$table->string('odd_participantParameterName2');
 			$table->string('odd_participantParameterName3');
 			$table->double('odd_groupParam')->nullable();
-			$table->boolean('live')->default(0);
-			$table->string('score');
+			$table->boolean('live');
+			$table->string('score')->nullable();
 			$table->smallInteger('affichage');
 			$table->unsignedInteger('market_id')->nullable();
 			$table->unsignedInteger('scope_id')->nullable();
