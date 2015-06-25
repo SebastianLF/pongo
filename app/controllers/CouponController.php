@@ -113,7 +113,7 @@
 			$league_name = Input::get('league_name');
 			$isMatch = Input::get('isMatch');
 			$event_country_name = Input::get('event_country_name');
-			if($isMatch){
+			if($isMatch == 'true'){
 				$home_team = Input::get('home_team');
 				$home_team_country_name = Input::get('home_team_country_name');
 				$away_team = Input::get('away_team');
@@ -126,7 +126,7 @@
 				$away_team = null;
 				$away_team_country_name = null;
 				$score = null;
-				$isLive = false;
+				$isLive = 'false';
 			}
 			$session_id = Input::get('userSessionId');
 
