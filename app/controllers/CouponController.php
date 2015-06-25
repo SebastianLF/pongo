@@ -196,14 +196,14 @@
 				'sport_name' => $sport_name,
 				'league_id' => $league_id,
 				'league_name' => $league_name,
-				'event_country_name' => $event_country_name,
+				/*'event_country_name' => $event_country_name,
 				'home_team' => $home_team,
 				'home_team_country_name' => $home_team_country_name,
 				'away_team' => $away_team,
 				'away_team_country_name' => $away_team_country_name,
 				'score' => $score,
 				'isLive' => $isLive,
-				'isMatch' => $isMatch,
+				'isMatch' => $isMatch,*/
 				'session_id' => $session_id,
 				'affichage' => $affichage_num
 			));
