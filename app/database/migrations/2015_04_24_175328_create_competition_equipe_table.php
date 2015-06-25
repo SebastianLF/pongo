@@ -17,6 +17,7 @@ class CreateCompetitionEquipeTable extends Migration {
 			$table->integer('competition_id')->unsigned();
 			$table->integer('equipe_id')->unsigned();
 			$table->timestamps();
+			$table->softDeletes();
 			$table->foreign('competition_id')->references('id')->on('competitions')
 				->onDelete('cascade')
 				->onUpdate('restrict');

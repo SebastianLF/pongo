@@ -19,6 +19,7 @@ class CreateCompetitionsTable extends Migration {
             $table->unsignedInteger('sport_id');
             $table->integer('country_id')->unsigned()->nullable();
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 
