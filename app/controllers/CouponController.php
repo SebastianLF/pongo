@@ -212,7 +212,7 @@
 				'away_team_country_name' => $away_team_country_name,
 				'score' => $score,
 				'isLive' => $isLive,
-				'isMatch' => $isMatch,
+				'isMatch' => $isMatch ? 1 : 0,
 				'session_id' => $session_id,
 				'affichage' => $affichage_num
 			));
