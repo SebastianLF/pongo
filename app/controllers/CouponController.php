@@ -207,12 +207,12 @@
 				'league_name' => $league_name,
 				'event_country_name' => $event_country_name,
 				'home_team' => $home_team,
-				/*'home_team_country_name' => $home_team_country_name,
+				'home_team_country_name' => $home_team_country_name,
 				'away_team' => $away_team,
 				'away_team_country_name' => $away_team_country_name,
 				'score' => $score,
 				'isLive' => $isLive == 'true' ? 1 : 0,
-				'isMatch' => $isMatch == 'true' ? 1 : 0,*/
+				'isMatch' => $isMatch == 'true' ? 1 : 0,
 				'affichage' => $affichage_num
 			));
 			$coupon->save();
