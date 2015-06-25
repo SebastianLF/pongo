@@ -121,11 +121,11 @@
 				$score = Input::get('score');
 				$isLive = Input::get('isLive');
 			}else{
-				$home_team = null;
-				$home_team_country_name = null;
-				$away_team = null;
-				$away_team_country_name = null;
-				$score = null;
+				$home_team = 'null';
+				$home_team_country_name = 'null';
+				$away_team = 'null';
+				$away_team_country_name = 'null';
+				$score = 'null';
 				$isLive = 'false';
 			}
 			$session_id = Input::get('userSessionId');
@@ -206,8 +206,8 @@
 				'league_id' => $league_id,
 				'league_name' => $league_name,
 				'event_country_name' => $event_country_name,
-				/*'home_team' => isset($home_team) ? $home_team : 'null',
-				'home_team_country_name' => $home_team_country_name,
+				'home_team' => $home_team,
+				/*'home_team_country_name' => $home_team_country_name,
 				'away_team' => $away_team,
 				'away_team_country_name' => $away_team_country_name,
 				'score' => $score,
