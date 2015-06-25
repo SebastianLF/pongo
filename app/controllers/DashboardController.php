@@ -73,7 +73,7 @@
 
 		public function showParisEnCours()
 		{
-			$parisencours = $this->currentUser->enCoursParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport', 'tipster', 'compte.bookmaker')->where('pari_abcd', '0')->orderBy('numero_pari', 'desc')->paginate(8);
+			$parisencours = $this->currentUser->enCoursParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport', 'selections.market', 'tipster', 'compte.bookmaker')->where('pari_abcd', '0')->orderBy('numero_pari', 'desc')->paginate(8);
 			return $parisencours;
 		}
 

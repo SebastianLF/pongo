@@ -32,5 +32,8 @@ class Selection extends Eloquent{
 		return $this->belongsTo('Paritype','type_pari_id');
 	}
 
+	public function market(){
+		return $this->belongsTo('Market');
+	}
 
 }

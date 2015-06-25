@@ -25,7 +25,8 @@
                     <th>Tipster</th>
                     <th>Bookmaker</th>
                     <th>Mise</th>
-                    <th>apercu profits</th>
+                    <th>Status</th>
+                    <th>profits/pertes</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -47,9 +48,13 @@
                                     </span>
                                 </td>
 
-                                <td><span>{{$pari->selections->first()->game_name}}</span>
-                                </td>
-                                <td></td>
+                                <td><span>{{$pari->selections->first()->game_name}}</span></td>
+                                <!-- 1 , 'pick'
+                                // 2 , 'pick doubleparam'
+                                // 3 , 'pick, parametername1 doubleparam1
+                                // 4 , 'pick, doubleparam1-doubleparam2 minutes'
+                                // 5 , 'parametername1 doubleparam1' avec '+' -->
+                                <td> {{$pari->selections->first()->market->name}}{{' - '}}{{$pari->selections->first()->pick}}</td>
                                 <td class="fit tdcote">{{$pari->cote}}</td>
                                 <td>{{$pari->tipster->name}}</td>
                                 <td><span data-toggle="tooltip" title="{{isset($pari->compte->bookmaker->nom) ? $pari->compte->bookmaker->nom : 'à blanc' }}">
@@ -62,6 +67,7 @@
                                 </td>
                                 <td class="tdmise bold"><span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{' '.$user->devise}}}</td>
                                 <td class="bold"><span class="profits">Selectionnez un status</span><span class="devise hide">{{{' '.$user->devise}}}</span></td>
+                                <td class="bold"></td>
                                 <td>
                                     {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris' ,'role' => 'form', )) }}
                                     {{ Form::button('<i class="fa fa-check"></i>', array('type' => 'submit', 'class' => 'boutonvalider btn btn-sm green', 'disabled' => 'disabled')) }}
