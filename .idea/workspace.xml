@@ -113,8 +113,8 @@
       <file leaf-file-name="CouponController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5598756" vertical-offset="3193" max-vertical-offset="5253">
-              <caret line="209" column="18" selection-start-line="209" selection-start-column="18" selection-end-line="209" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.40124416" vertical-offset="3193" max-vertical-offset="5253">
+              <caret line="203" column="40" selection-start-line="203" selection-start-column="40" selection-end-line="203" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -745,13 +745,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_09_13_221709_create_tipsters_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46646342" vertical-offset="0" max-vertical-offset="697">
-          <caret line="19" column="46" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Equipe.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22921348" vertical-offset="0" max-vertical-offset="445">
@@ -1110,6 +1103,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="dbDummy://dbtable:/850d43e8/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..devises">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
     <entry file="dbDummy://dbtable:/850d43e8/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..coupon">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
@@ -1123,8 +1127,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5598756" vertical-offset="3193" max-vertical-offset="5253">
-          <caret line="209" column="18" selection-start-line="209" selection-start-column="18" selection-end-line="209" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.40124416" vertical-offset="3193" max-vertical-offset="5253">
+          <caret line="203" column="40" selection-start-line="203" selection-start-column="40" selection-end-line="203" selection-end-column="40" />
           <folding />
         </state>
       </provider>
