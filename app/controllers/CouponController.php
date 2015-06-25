@@ -113,12 +113,21 @@
 			$league_name = Input::get('league_name');
 			$event_country_name = Input::get('event_country_name');
 			$isMatch = Input::get('isMatch');
-			$home_team = $isMatch ? Input::get('home_team') : null;
-			$home_team_country_name = $isMatch ? Input::get('home_team_country_name') : null;
-			$away_team = $isMatch ? Input::get('away_team') : null;
-			$away_team_country_name = $isMatch ? Input::get('away_team_country_name') : null;
-			$score = $isMatch ? Input::get('score') : null;
-			$isLive = $isMatch ? Input::get('isLive') : null;
+			if($isMatch){
+				$home_team = Input::get('home_team');
+				$home_team_country_name = Input::get('home_team_country_name');
+				$away_team = Input::get('away_team');
+				$away_team_country_name = Input::get('away_team_country_name');
+				$score = Input::get('score');
+				$isLive = Input::get('isLive');
+			}else{
+				$home_team = null;
+				$home_team_country_name = null;
+				$away_team = null;
+				$away_team_country_name = null;
+				$score = null;
+				$isLive = null;
+			}
 			$session_id = Input::get('userSessionId');
 
 			// affectation du numero d'affichage selon le type de pari.
@@ -197,19 +206,18 @@
 				'league_id' => $league_id,
 				'league_name' => $league_name,
 				'event_country_name' => $event_country_name,
-				/*'home_team' => $home_team,
+				'home_team' => $home_team,
 				'home_team_country_name' => $home_team_country_name,
 				'away_team' => $away_team,
 				'away_team_country_name' => $away_team_country_name,
 				'score' => $score,
 				'isLive' => $isLive,
-				'isMatch' => $isMatch,*/
+				'isMatch' => $isMatch,
 				'session_id' => $session_id,
 				'affichage' => $affichage_num
 			));
 			$coupon->save();
 			file_put_contents('log_index.txt', json_encode($coupon) . "\n\n", FILE_APPEND | LOCK_EX);
-			file_put_contents('log_index.txt', json_encode($home_team) . "\n\n", FILE_APPEND | LOCK_EX);
 			file_put_contents('log_index.txt', json_encode(Input::all()) . "\n\n", FILE_APPEND | LOCK_EX);
 
 			return 1;
