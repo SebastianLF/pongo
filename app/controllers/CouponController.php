@@ -111,7 +111,7 @@
 			$sport_name = Input::get('sport_Name');
 			$league_id = Input::get('league_id');
 			$league_name = Input::get('league_name');
-			$isMatch = Input::get('isMatch');
+			//$isMatch = Input::get('isMatch');
 			//$event_country_name = Input::get('event_country_name');
 			$session_id = Input::get('userSessionId');
 
@@ -197,7 +197,7 @@
 				'away_team_country_name' => $away_team_country_name,
 				'score' => $score,
 				'isLive' => $isLive,*/
-				'isMatch' => $isMatch,
+				//'isMatch' => $isMatch,
 				'session_id' => $session_id,
 				'affichage' => $affichage_num
 			));
