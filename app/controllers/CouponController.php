@@ -111,8 +111,8 @@
 			$sport_name = Input::get('sport_Name');
 			$league_id = Input::get('league_id');
 			$league_name = Input::get('league_name');
-			$event_country_name = Input::get('event_country_name');
 			$isMatch = Input::get('isMatch');
+			//$event_country_name = Input::get('event_country_name');
 			if($isMatch){
 				$home_team = Input::get('home_team');
 				$home_team_country_name = Input::get('home_team_country_name');
