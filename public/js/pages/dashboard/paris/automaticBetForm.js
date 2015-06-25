@@ -114,7 +114,6 @@ function automaticBetForm() {
     function supprimerSelection(){
         form.find('#automatic-selections .boutonsupprimer').on('click', function (e) {
             e.preventDefault();
-            alert("ok");
             var parent = $(this).parents('tr');
             var id = parent.find(".selection_id").text();
             $.ajax({
