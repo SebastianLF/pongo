@@ -206,13 +206,13 @@
 				'league_id' => $league_id,
 				'league_name' => $league_name,
 				'event_country_name' => $event_country_name,
-				'home_team' => $home_team,
+				/*'home_team' => $home_team,
 				'home_team_country_name' => $home_team_country_name,
 				'away_team' => $away_team,
 				'away_team_country_name' => $away_team_country_name,
 				'score' => $score,
 				'isLive' => $isLive == true ? 1 : 0,
-				'isMatch' => $isMatch == true ? 1 : 0,
+				'isMatch' => $isMatch == true ? 1 : 0,*/
 				'session_id' => $session_id,
 				'affichage' => $affichage_num
 			));
@@ -220,6 +220,7 @@
 			file_put_contents('log_index.txt', json_encode($coupon) . "\n\n", FILE_APPEND | LOCK_EX);
 			file_put_contents('log_index.txt', json_encode(Input::all()) . "\n\n", FILE_APPEND | LOCK_EX);
 			file_put_contents('log_index.txt', json_encode($isLive) . "\n\n", FILE_APPEND | LOCK_EX);
+			file_put_contents('log_index.txt', json_encode($isMatch) . "\n\n", FILE_APPEND | LOCK_EX);
 
 			return 1;
 		}
