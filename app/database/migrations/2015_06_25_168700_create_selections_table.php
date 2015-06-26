@@ -30,6 +30,7 @@ class CreateSelectionsTable extends Migration {
 			$table->string('odd_participantParameterName3');
 			$table->double('odd_groupParam')->nullable();
 			$table->boolean('live');
+			$table->boolean('isMatch');
 			$table->string('score')->nullable();
 			$table->smallInteger('affichage');
 			$table->unsignedInteger('market_id')->nullable();

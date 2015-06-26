@@ -56,7 +56,7 @@
                                 // 4 , 'pick, doubleparam1-doubleparam2 minutes'
                                 // 5 , 'parametername1 doubleparam1' avec '+'
                                 // 6 , 'pick Top doubleparam1' -->
-                                <td> @if()
+                                <td> @if($pari->selections->first()->isMatch)
                                         {{' Top '}}{{$pari->selections->first()->odd_doubleParam1}}{{', '}}{{$pari->selections->first()->pick}}
                                     @endif
                                 </td>
