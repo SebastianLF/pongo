@@ -38,7 +38,10 @@
 
                     <td><span class="bold">Date:</span>{{' '.$selection->game_time}}<br/><span
                                 class="bold">Evenement:</span>{{' '.$selection->sport_name.' - '}}{{$selection->league_name}}
-                        <br/><span class="bold">Match:</span>{{' '.$selection->game_name}}
+                        <br/>
+                        @if($selection->isMatch)
+                        <span class="bold">Match:</span>{{' '.$selection->game_name}}
+                        @endif
                     </td>
                     <td><span class="bold">Bookmaker:</span>{{' '.$selection->bookmaker}}<br/><span
                                 class="bold">Pari:</span>{{' '.$selection->market.' '}}{{$selection->score =! 'null' ? '('.$selection->score.')' : ''}}{{' ('.$selection->scope.') '}}<br/>
@@ -69,7 +72,7 @@
                                 {{{' '.$selection->odd_doubleParam}}}
                             @endif
                         @elseif($selection->affichage == "6")
-                            {{' '.$selection->pick}}{{', Top '.$selection->odd_doubleParam}}{{'-'.$selection->odd_doubleParam}}
+                            {{' '.$selection->pick}}{{', Top '.$selection->odd_doubleParam}}
                         @endif
 
 
