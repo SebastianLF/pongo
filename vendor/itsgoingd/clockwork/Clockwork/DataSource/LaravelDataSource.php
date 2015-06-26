@@ -101,17 +101,12 @@ class LaravelDataSource extends DataSource
 			$timeline->endEvent('boot');
 		});
 
-		$this->app->shutdown(function() use($timeline)
-		{
-			$timeline->endEvent('run');
-		});
-
-		$this->app->before(function() use($timeline)
+		$this->app['router']->before(function() use($timeline)
 		{
 			$timeline->startEvent('dispatch', 'Router dispatch.');
 		});
 
-		$this->app->after(function() use($timeline)
+		$this->app['router']->after(function() use($timeline)
 		{
 			$timeline->endEvent('dispatch');
 		});
@@ -127,9 +122,9 @@ class LaravelDataSource extends DataSource
 
 		$log = $this->log;
 
-		$this->app['events']->listen('illuminate.log', function($level, $message) use($log)
+		$this->app['events']->listen('illuminate.log', function($level, $message, $context) use($log)
 		{
-			$log->log($level, $message);
+			$log->log($level, $message, $context);
 		});
 
 		$views = $this->views;

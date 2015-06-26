@@ -4,48 +4,50 @@ Clockwork
 **[Clockwork](http://github.com/itsgoingd/clockwork-chrome) is a Chrome extension for PHP development**, extending Developer Tools with a new panel providing all kinds of information useful for debugging and profiling your PHP applications, including information about request, headers, get and post data, cookies, session data, database queries, routes, visualisation of application runtime and more.
 
 **Not a Chrome user?** Check out [embeddable web app version of Clockwork](http://github.com/itsgoingd/clockwork-web), supporting many modern browsers along Chrome with out of the box support for Laravel and Slim.
+There are also a third-party [Firebug extension](https://github.com/sidorovich/clockwork-firebug) and a [CLI client app](https://github.com/ptrofimov/clockwork-cli) available.
 
 **This repository contains server-side component of Clockwork** that gathers all the data, stores them in JSON format and serves them for displaying in Chrome Developer Tools extension.
 
 ## Installation
 
-This extension provides out of the box support for Laravel 4, Slim 2 and CodeIgniter 2.1 frameworks, you can add support for any other or custom framework via an extensible API.
+This extension provides out of the box support for Laravel, Slim 2 and CodeIgniter 2.1 frameworks, you can add support for any other or custom framework via an extensible API.
 
 To install latest version simply add it to your `composer.json`:
 
 ```javascript
-"itsgoingd/clockwork": "1.*"
+"itsgoingd/clockwork": "~1.7"
 ```
 
-### Laravel 4
+### Laravel
 
 Once Clockwork is installed, you need to register Laravel service provider, in your `app/config/app.php`:
 
 ```php
 'providers' => array(
 	...
-    'Clockwork\Support\Laravel\ClockworkServiceProvider'
+	'Clockwork\Support\Laravel\ClockworkServiceProvider'
 )
+```
+
+When using Laravel 5, you need to add Clockwork middleware, in your `app/Http/Kernel.php`:
+
+```php
+protected $middleware = [
+	'Clockwork\Support\Laravel\ClockworkMiddleware',
+	...
+]
 ```
 
 By default, Clockwork will only be available in debug mode, you can change this and other settings in the configuration file. Use the following Artisan command to publish the configuration file into your config directory:
 
 ```
-$ php artisan config:publish itsgoingd/clockwork --path vendor/itsgoingd/clockwork/Clockwork/Support/Laravel/config/
+$ php artisan vendor:publish --provider='Clockwork\Support\Laravel\ClockworkServiceProvider'
 ```
 
-To add your controller's runtime to timeline, add following to your base controller's constructor:
+For Laravel 4 you can do the same with this command:
 
-```php
-$this->beforeFilter(function()
-{
-	Event::fire('clockwork.controller.start');
-});
-
-$this->afterFilter(function()
-{
-	Event::fire('clockwork.controller.end');
-});
+```
+$ php artisan config:publish itsgoingd/clockwork --path vendor/itsgoingd/clockwork/Clockwork/Support/Laravel/config/
 ```
 
 Clockwork also comes with a facade, which provides an easy way to add records to the Clockwork log and events to the timeline. You can register the facade in your `app/config/app.php`:
@@ -107,16 +109,16 @@ Finally, you need to set up the Clockwork hooks by adding following to your `app
 Clockwork\Support\CodeIgniter\Register::registerHooks($hook);
 ```
 
-To use Clockwork within your controllers/models/etc. you will need to extend your `CI_Controller` class. (If you haven't done so already) Create a new file at `application/core/MY_Controller.php`. 
+To use Clockwork within your controllers/models/etc. you will need to extend your `CI_Controller` class. (If you haven't done so already) Create a new file at `application/core/MY_Controller.php`.
 
 ```php
 class MY_Controller extends CI_Controller
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $GLOBALS['EXT']->_call_hook('pre_controller_constructor');
-     } 
+	public function __construct()
+	{
+		parent::__construct();
+		$GLOBALS['EXT']->_call_hook('pre_controller_constructor');
+	 }
 }
 ```
 
@@ -140,6 +142,8 @@ If you would like to see or are working on a support for yet unsupported framewo
 
 - [clockwork-cli](https://github.com/ptrofimov/clockwork-cli) - Command-line interface to Clockwork by [ptrofimov](https://github.com/ptrofimov)
 - [guzzle-clockwork](https://github.com/hannesvdvreken/guzzle-clockwork) - Plugin for logging Guzzle requests to Clockwork by [hannesvdvreken](https://github.com/hannesvdvreken)
+- [silverstripe-clockwork](https://github.com/markguinn/silverstripe-clockwork) - Integration for SilverStripe CMS/framework by [markguinn](https://github.com/markguinn)
+- [clockwork-firebug](https://github.com/sidorovich/clockwork-firebug) - Extension for Firebug (like for Chrome) by [Pavel Sidorovich](https://github.com/sidorovich)
 
 ## Licence
 
