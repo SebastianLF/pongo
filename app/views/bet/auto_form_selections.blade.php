@@ -68,7 +68,11 @@
                             @else
                                 {{{' '.$selection->odd_doubleParam}}}
                             @endif
+                        @elseif($selection->affichage == "6")
+                            {{' '.$selection->pick}}{{', Top '.$selection->odd_doubleParam}}{{'-'.$selection->odd_doubleParam}}
                         @endif
+
+
                     </td>
                     <td><span class="bold">Cote: </span><input name="automatic-selection-cote[]" type="text"
                                                                value="{{$selection->odd_value}}"/></td>
