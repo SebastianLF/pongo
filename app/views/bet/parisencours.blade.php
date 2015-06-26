@@ -54,8 +54,12 @@
                                 // 2 , 'pick doubleparam'
                                 // 3 , 'pick, parametername1 doubleparam1
                                 // 4 , 'pick, doubleparam1-doubleparam2 minutes'
-                                // 5 , 'parametername1 doubleparam1' avec '+' -->
-                                <td> {{$pari->selections->first()->market->name}}{{' - '}}{{$pari->selections->first()->pick}}</td>
+                                // 5 , 'parametername1 doubleparam1' avec '+'
+                                // 6 , 'pick Top doubleparam1' -->
+                                <td> @if()
+                                        {{' Top '}}{{$pari->selections->first()->odd_doubleParam1}}{{', '}}{{$pari->selections->first()->pick}}
+                                    @endif
+                                </td>
                                 <td class="fit tdcote">{{$pari->cote}}</td>
                                 <td>{{$pari->tipster->name}}</td>
                                 <td><span data-toggle="tooltip" title="{{isset($pari->compte->bookmaker->nom) ? $pari->compte->bookmaker->nom : 'à blanc' }}">
