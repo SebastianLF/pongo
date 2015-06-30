@@ -24,30 +24,7 @@
         <!-- BEGIN PAGE CONTENT -->
         <div class="page-content">
             <div class="container-fluid">
-                <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-                <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                     aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                <h4 class="modal-title">Modal title</h4>
-                            </div>
-                            <div class="modal-body">
-                                Widget settings form goes here
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn blue">Save changes</button>
-                                <button type="button" class="btn default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                        <!-- /.modal-content -->
-                    </div>
-                    <!-- /.modal-dialog -->
-                </div>
-                <!-- /.modal -->
-                <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-
+                @include('cashout_modal')
                 <!-- BEGIN PAGE CONTENT INNER -->
                 <div class="row">
                     <div class="col-md-12">
@@ -70,15 +47,15 @@
                                     <ul class="nav nav-tabs ">
                                         <li id="onglet_paris_en_cours" class="active">
                                             <a href="#tab_15_1" data-toggle="tab">
-                                                Ticket classique en cours <span class="badge badge-danger"></span></a>
+                                                Tickets classique en cours <span class="badge badge-danger"></span></a>
                                         </li>
                                         <li id="onglet_paris_long_terme">
                                             <a href="#tab_15_2" data-toggle="tab">
-                                                Ticket long terme en cours <span class="badge badge-default"></span></a>
+                                                Tickets long terme en cours <span class="badge badge-default"></span></a>
                                         </li>
                                         <li id="onglet_paris_systeme_ABCD">
                                             <a href="#tab_15_3" data-toggle="tab">
-                                                Ticket ABCD en cours <span class="badge badge-default"></span></a>
+                                                Tickets ABCD en cours <span class="badge badge-default"></span></a>
                                         </li>
                                         <li id="onglet_paris_termine">
                                             <a href="#tab_15_4" data-toggle="tab">
@@ -176,5 +153,6 @@
 
 @section('scripts')
     @parent
-    @include('includes.subview.dashboard_scripts')
+    <script src="{{asset('build/js/dashboard.js')}}" type="text/javascript"></script>
+
 @stop

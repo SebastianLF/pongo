@@ -78,6 +78,7 @@
 					3 = 1/2 gagné,
 					4 = 1/2 perdu,
 					5 = remboursé,
+					6 = cash out,
 				*/
 
 				$status = null;

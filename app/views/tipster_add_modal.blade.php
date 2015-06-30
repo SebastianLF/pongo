@@ -14,7 +14,8 @@
                         <dt>Suivi:</dt>
                         <dd>Si vous choisissez le type de suivi <strong>à blanc</strong> pour un tipster, les gains
                             et pertes ne seront pas comptabilisés dans vos bankrolls. Ce type de suivi convient
-                            lorsqu'on veut tester l'efficacité d'un nouveau tipster.<br> Vous avez la possibilité de changer le type de suivi a n'importequel moment.
+                            lorsqu'on veut tester l'efficacité d'un nouveau tipster.<br> Vous avez la possibilité de
+                            changer le type de suivi a n'importequel moment.
                         </dd>
                         <dt>Indice:</dt>
                         <dd>Correspond a l'indice de confiance maximum donné par le tipster, généralement 10.
@@ -33,40 +34,35 @@
                         <div class="col-md-12">
 
 
-                                        <div id="name_tipster_container" class="form-group has-feedback">
-                                            <label class="" for="name_tipster">Nom </label>
-                                            <input id="name_tipster" name="name_tipster" type="text"
-                                                   class="form-control">
-                                        </div>
+                            <div id="name_tipster_container" class="form-group has-feedback">
+                                <label class="" for="name_tipster">Nom </label>
+                                <input id="name_tipster" name="name_tipster" type="text"
+                                       class="form-control">
+                            </div>
 
-                                        <div id="suivi_tipster_container" class="form-group has-feedback">
-                                            <label for="suivi_tipster">Type de suivi </label>
-                                            <select id="suivi_tipster" name="suivi_tipster" class="form-control">
-                                                <option value="n" selected="selected">normal</option>
-                                                <option value="b">à blanc</option>
-                                            </select>
-                                        </div>
+                            <div id="suivi_tipster_container" class="form-group has-feedback">
+                                <label for="suivi_tipster">Type de suivi </label>
+                                <select id="suivi_tipster" name="suivi_tipster" class="form-control">
+                                    <option value="n" selected="selected">normal</option>
+                                    <option value="b">à blanc</option>
+                                </select>
+                            </div>
 
-                                        <div id="indice_tipster_container" class="form-group has-feedback">
-                                            <label class="" for="indice_tipster">Indice maximum </label>
-                                            <select id="indice_tipster" name="indice_tipster" class="form-control">
-                                                <option value="" selected="selected"></option>
-                                                <option value="3">3</option>
-                                                <option value="5">5</option>
-                                                <option value="10">10</option>
-                                            </select>
-                                        </div>
+                            <div id="indice_tipster_container" class="form-group has-feedback">
+                                <label class="" for="indice_tipster">Indice maximum </label>
+                                <select id="indice_tipster" name="indice_tipster" class="form-control">
+                                    <option value="" selected="selected"></option>
+                                    <option value="3">3</option>
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
 
-                                        <div id="amount_tipster_container" class="form-group has-feedback">
-                                            <label class="" for="amount_tipster">Montant par indice </label>
-                                            <input id="amount_tipster" name="amount_tipster" type="text"
-                                                   class="form-control"
-                                                   >
-                                        </div>
-
-
-
-
+                            <div id="amount_tipster_container" class="form-group has-feedback">
+                                <label class="" for="amount_tipster">Montant par indice </label>
+                                <input id="amount_tipster" name="amount_tipster" type="text"
+                                       class="form-control">
+                            </div>
                         </div>
                     </div>
                 </div>

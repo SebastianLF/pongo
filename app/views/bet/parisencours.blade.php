@@ -17,7 +17,7 @@
                     <th>N°</th>
                     <th>date ajout</th>
                     <th>type</th>
-                    <th>categories</th>
+                    <th>sous types</th>
                     <th colspan="" align="center">Evenement</th>
                     <th>Rencontre</th>
                     <th>Pari <span class="glyphicon glyphicon-info-sign"></span></th>
@@ -25,6 +25,7 @@
                     <th>Tipster</th>
                     <th>Bookmaker</th>
                     <th>Mise</th>
+                    <th>score/vainqueur/autre</th>
                     <th>Status</th>
                     <th>profits/pertes</th>
                     <th></th>
@@ -48,7 +49,12 @@
                                     </span>
                                 </td>
 
-                                <td><span>{{$pari->selections->first()->game_name}}</span></td>
+                                <td><span>@if($pari->selections->first()->isMatch)
+                                                {{$pari->selections->first()->game_name}}
+                                              @else
+                                              {{'N/A'}}
+                                        @endif
+                                    </span></td>
                                 <!--
                                 // 1 , 'pick'
                                 // 2 , 'pick doubleparam'
@@ -56,8 +62,22 @@
                                 // 4 , 'pick, doubleparam1-doubleparam2 minutes'
                                 // 5 , 'parametername1 doubleparam1' avec '+'
                                 // 6 , 'pick Top doubleparam1' -->
-                                <td> @if($pari->selections->first()->isMatch)
-                                        {{' Top '}}{{$pari->selections->first()->odd_doubleParam1}}{{', '}}{{$pari->selections->first()->pick}}
+                                <td> @if($pari->selections->first()->affichage == 1)
+                                        {{$pari->selections->first()->pick}}
+                                     @elseif($pari->selections->first()->affichage == 2)
+                                        {{$pari->selections->first()->pick}}{{' '}}{{$pari->selections->first()->odd_doubleParam}}
+                                     @elseif($pari->selections->first()->affichage == 3)
+                                        {{$pari->selections->first()->pick}}{{', '}}{{$pari->selections->first()->odd_participantParameterName}}{{' '}}{{$pari->selections->first()->odd_doubleParam}}
+                                     @elseif($pari->selections->first()->affichage == 4)
+                                        {{$pari->selections->first()->pick}}{{', '}}{{$pari->selections->first()->odd_doubleParam}}{{'-'}}{{$pari->selections->first()->odd_doubleParam2}}{{' minutes'}}
+                                     @elseif($pari->selections->first()->affichage == 5)
+                                         @if($pari->selections->first()->odd_doubleParam > 0)
+                                        {{', '}}{{$pari->selections->first()->odd_participantParameterName}}{{' +'}}{{$pari->selections->first()->odd_doubleParam}}
+                                         @else
+                                            {{', '}}{{$pari->selections->first()->odd_participantParameterName}}{{' '}}{{$pari->selections->first()->odd_doubleParam}}
+                                         @endif
+                                     @elseif($pari->selections->first()->affichage == 6)
+                                        {{$pari->selections->first()->pick}}{{', '}}{{' Top '}}{{$pari->selections->first()->odd_doubleParam1}}
                                     @endif
                                 </td>
                                 <td class="fit tdcote">{{$pari->cote}}</td>
@@ -71,16 +91,32 @@
                                     </span>
                                 </td>
                                 <td class="tdmise bold"><span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{' '.$user->devise}}}</td>
+                                <td><input type="text" name="childrowsinput[]"
+                                           class="form-control input-sm"
+                                           value="" placeholder="3-0 ou Vainqueur Mayweather ou autre"/></td>
+                                <td><select name="resultatSelectionDashboardInput[]"
+                                            data-value=""
+                                            class="form-control input-sm">
+                                        <option value="0">--Selectionnez--</option>
+                                        @foreach($types_resultat as $key => $type)
+                                            <option value="{{$key}}"><a href="javascript:;"
+                                                                        class="btn btn-xs">{{$type}}</a>
+                                            </option>
+                                        @endforeach
+                                    </select></td>
                                 <td class="bold"><span class="profits">Selectionnez un status</span><span class="devise hide">{{{' '.$user->devise}}}</span></td>
-                                <td class="bold"></td>
+
                                 <td>
-                                    {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris' ,'role' => 'form', )) }}
+                                    {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris', 'role' => 'form', 'data-toggle' => 'tooltip', 'data-original-title' => 'Confirmer')) }}
                                     {{ Form::button('<i class="fa fa-check"></i>', array('type' => 'submit', 'class' => 'boutonvalider btn btn-sm green', 'disabled' => 'disabled')) }}
                                     {{ Form::close() }}
 
-                                    {{ Form::open(array('route' => 'historique.destroy', 'class' => 'supprimerform form-bouton-paris','role' => 'form')) }}
-                                    {{ Form::button('<i class="fa fa-times"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red', )) }}
+                                    {{ Form::open(array('route' => 'historique.destroy', 'class' => 'supprimerform form-bouton-paris','role' => 'form', 'data-toggle' => 'tooltip', 'data-original-title' => 'Supprimer')) }}
+                                    {{ Form::button('<i class="fa fa-trash-o"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red', )) }}
                                     {{ Form::close() }}
+                                    @if($pari->followtype == 'n')
+                                    {{ Form::button('<i class="fa fa-briefcase"></i>', array('type' => 'submit', 'class' => 'btn btn-sm grey-gallery form-bouton-paris', 'data-toggle' => 'modal', 'data-target' => '#cashoutModal', 'data-hover' => 'tooltip', 'data-id' => $pari->id, 'title' => 'Cash Out')) }}
+                                    @endif
                                 </td>
                             </tr>
                         </a>

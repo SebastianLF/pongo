@@ -7,7 +7,6 @@
             {{ Form::open(array('route' => 'tipster.update', 'method' => 'post', 'id' => 'tipsterform-edit', 'role' =>
                 'form')) }}
             <div class="modal-body">
-
                 <input type="hidden" id="idTipsterEditInput" name="idTipsterEditInput">
                 <div class="form-group">
                     <label for="nameTipsterEditInput">Nom</label>
@@ -36,9 +35,6 @@
                     <small class="text-danger" id="mtTipsterEditSmall"></small>
                     <input type="text" class="form-control" id="mtTipsterEditInput" name="mtTipsterEditInput" placeholder="">
                 </div>
-
-
-
             </div>
             <div class="modal-footer">
                 <button type="button" data-toggle="modal" data-target="#tipsterEditModal" class="btn btn-default">Annuler</button>

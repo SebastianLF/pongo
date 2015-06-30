@@ -26,5 +26,5 @@
 
 @section('scripts')
     @parent
-    @include('includes.subview.config_scripts')
+    <script src="{{asset('build/js/config.js')}}" type="text/javascript"></script>
 @stop

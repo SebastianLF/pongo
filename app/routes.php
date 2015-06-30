@@ -27,6 +27,7 @@
 	Route::resource('historique', 'TermineParisController');
 	Route::resource('coupon', 'CouponController');
 	Route::post('encourspari/auto', 'EnCoursParisController@automatic_store');
+	Route::post('cashout', 'EnCoursParisController@cashOut');
 	Route::post('coupon', 'CouponController@postSelections');
 	Route::get('comptes', 'BookmakerController@showComptes');
 	Route::get('bookmakers', 'BookmakerController@getMyBookmakers');

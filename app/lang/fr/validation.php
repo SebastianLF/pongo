@@ -73,6 +73,8 @@ return [
     "timezone"             => "Le champ :attribute doit être un fuseau horaire valide.",
     "unique"               => "La valeur du champ :attribute est déjà utilisée.",
     "url"                  => "Le format de l'URL de :attribute n'est pas valide.",
+    "european_odd" => "les cotes doivent etre du type 1.50",
+    "cashout" => "le montant doit etre un nombre décimal supérieur à 0",
 
     /*
     |--------------------------------------------------------------------------

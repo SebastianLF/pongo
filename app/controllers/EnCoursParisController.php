@@ -338,7 +338,6 @@
 			$count = $selections_coupon->count();
 
 
-
 			// verification cote serveur de présence d'une selection, au moins.
 			if ($count <= 0) {
 				return Response::json(array(
@@ -422,7 +421,7 @@
 				);
 
 				$validator = Validator::make(Input::all(), $regles, $messages);
-				$validator->each('automatic-selection-cote', ['required', 'regex:/^\d+(\.\d{1,2})?$/']);
+				$validator->each('automatic-selection-cote', ['required', 'european_odd']);
 				if ($validator->fails()) {
 					$array = $validator->getMessageBag()->toArray();
 					return Response::json(array(
@@ -434,9 +433,9 @@
 
 					// type de suivi
 					$suivi = Input::get('followtypeinputdashboard');
-					if($suivi == 'normal'){
+					if ($suivi == 'normal') {
 						$suivi = 'n';
-					}else{
+					} else {
 						$suivi = 'b';
 					}
 
@@ -454,10 +453,10 @@
 					// mise en unités.
 					$mise_unites = 0;
 					$mise_devise = 0;
-					if($type_stake == 'u'){
+					if ($type_stake == 'u') {
 						$mise_unites = Input::get('stakeunitinputdashboard');
 						$mise_devise = round($mise_unites * $tipster->montant_par_unite, 2);
-					}elseif($type_stake == 'f'){
+					} elseif ($type_stake == 'f') {
 						$mise_devise = Input::get('amountinputdashboard');
 						$mise_unites = round($mise_devise / $tipster->montant_par_unite, 2);
 					}
@@ -500,7 +499,7 @@
 						// equipe2  = id de pongo
 
 						// donnée a connaitre pour l en cours pari.
-						$count_live = $selection_coupon->isLive == null ? $count_live+0 : $count_live+1;
+						$count_live = $selection_coupon->isLive == null ? $count_live + 0 : $count_live + 1;
 
 						// creation
 						$sport = Sport::firstOrNew(array('id' => $selection_coupon->sport_id, 'name' => $selection_coupon->sport_name));
@@ -514,7 +513,7 @@
 						$competition = Competition::firstOrNew(array('name' => $selection_coupon->league_name, 'sport_id' => $sport->id, 'country_id' => $competition_country->id));
 						$competition->save();
 
-						if($selection_coupon->isMatch){
+						if ($selection_coupon->isMatch) {
 							$equipe1_country = Country::firstOrNew(array('name' => $selection_coupon->home_team_country_name));
 							$equipe1_country->save();
 							$equipe2_country = Country::firstOrNew(array('name' => $selection_coupon->away_team_country_name));
@@ -572,7 +571,7 @@
 					$encourparis->save();
 
 					// supression des coupons.
-					foreach($selections_coupon as $selection_coupon){
+					foreach ($selections_coupon as $selection_coupon) {
 						$selection_coupon->delete();
 					}
 
@@ -589,9 +588,94 @@
 					));
 				}
 			}
-
-
 		}
 
+		public function cashOut()
+		{
+			$regles = array(
+				'cashout-select' => 'required|in:c,p',
+				'classic-cash-out' => 'required_if:cashout-select,c|cashout',
+				'partial-cash-out' => 'required_if:cashout-select,p|cashout',
+			);
+			$messages = array(
+				'cashout-select.in' => 'Ce type de cashout n\'existe pas.',
+				'cashout-select.required' => 'Un type de cashout est nécessaire.',
+				'classic-cash-out.required_if' => 'Vous devez spécifier un montant quand le type de suivi est "classic cash out".',
+				'partial-cash-out.required_if' => 'Vous devez spécifier un montant quand le type de suivi est "partial cash out".',
+			);
+			$validator = Validator::make(Input::all(), $regles, $messages);
+
+			if($validator->fails()){
+				$errors = $validator->getMessageBag()->toArray();
+				return Response::json(array(
+					'etat' => 0,
+					'msg' => $errors,
+				));
+			}else{
+				$encourspari_id = Input::get('id');
+				$cashout_type = Input::get('cashout-select');
+				$montant = Input::get('classic-cash-out');
+				$encourspari = $this->currentUser->enCoursParis()->where('id', $encourspari_id)->firstOrFail();
+				if ($cashout_type == 'c') {
+
+					$retour_unites = round($montant / $encourspari->mt_par_unite,2);
+					$profit_unites = round($retour_unites - $encourspari->nombre_unites,2);
+					$retour_devise = $montant;
+					$profit_devise = round($montant - $encourspari->mise_totale,2);
+
+					// creation du pari validé.
+					$termine_pari = new TermineParis(array(
+						'followtype' => $encourspari->followtype,
+						'type_profil' => $encourspari->type_profil,
+						'numero_pari' => $encourspari->numero_pari,
+						'cote' => $encourspari->cote,
+						'cote_apres_status' => $encourspari->cote,
+						'status' => 6,
+						'mt_par_unite' => $encourspari->mt_par_unite,
+						'nombre_unites' => $encourspari->nombre_unites,
+						'mise_totale' => $encourspari->mise_totale,
+						'unites_retour' => $retour_unites,
+						'unites_profit' => $profit_unites,
+						'montant_retour' => $retour_devise,
+						'montant_profit' => $profit_devise,
+						'pari_long_terme' => $encourspari->pari_long_terme,
+						'pari_abcd' => $encourspari->pari_abcd,
+						'nom_abcd' => $encourspari->nom_abcd,
+						'lettre_abcd' => $encourspari->lettre_abcd,
+						'tipster_id' => $encourspari->tipster_id,
+						'user_id' => $encourspari->user_id,
+						'bookmaker_user_id' => $encourspari->bookmaker_user_id,
+					));
+
+					// ajout du paris dans la table termine paris.
+					$termine_paris_ajoute = $this->currentUser->termineParis()->save($termine_pari);
+
+					if ($encourspari->followtype == 'n') {
+						$book = $encourspari->compte->where('id', $encourspari->bookmaker_user_id)->firstOrFail();
+						$book->bankroll_actuelle += $retour_devise;
+						$book->save();
+						Clockwork::info($book);
+					}
+
+					$selections = $encourspari->selections()->get();
+					foreach ($selections as $selection) {
+						$selection->termine_pari_id = $termine_paris_ajoute->id;
+						$selection->en_cours_pari_id = NULL;
+						$selection->save();
+					}
+
+					// suppression du pari en cours.
+					$encourspari->delete();
+
+					return Response::json(array(
+						'etat' => 1,
+						'msg' => 'pari validé',
+					));
+
+				} elseif ($cashout_type == 'p') {
+
+				}
+			}
+		}
 
 	}

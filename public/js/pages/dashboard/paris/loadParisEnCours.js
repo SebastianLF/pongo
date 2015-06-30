@@ -8,6 +8,7 @@ function loadParisEnCours() {
             $('#tab_15_1').html(data);
             featuresParisEnCours();
             paginationParisEnCours();
+            cashOut();
         },
         error: function (data) {
             $('#tab_15_1').html('<p>impossible de récuperer les paris</p>');
@@ -34,16 +35,18 @@ function loadParisTermine() {
     });
 }
 
-function featuresParisEnCours(){
+function featuresParisEnCours() {
     // activation des tooltip.
     $('[data-toggle="tooltip"]').tooltip();
+    $("[data-hover='tooltip']").tooltip();
+
+
 
     // afficher le count dans le bon endroit.
     var count = $('#parisencourstable #count').text();
-    if(count == '0'){
+    if (count == '0') {
         $('#onglet_paris_en_cours span').text('');
-    }else
-    {
+    } else {
         $('#onglet_paris_en_cours span').text(count);
     }
 
@@ -60,18 +63,18 @@ function featuresParisEnCours(){
     });
 
     parisEnCoursCalculateStatus('#parisencourstable');
-    parisEnCoursEnclose('#parisencourstable','.validerform','historique');
-    parisEnCoursDelete('#parisencourstable','.supprimerform','encourspari/');
+    parisEnCoursEnclose('#parisencourstable', '.validerform', 'historique');
+    parisEnCoursDelete('#parisencourstable', '.supprimerform', 'encourspari/');
 }
 
 // lors du clique sur un numero de pagination.
-function paginationParisEnCours(){
+function paginationParisEnCours() {
     $('#tab_15_1').on('click', '.pagination a', function (e) {
         e.preventDefault();
         var pg = getPaginationSelectedPage($(this).attr('href'));
         $.ajax({
             url: 'dashboard/ajax/parisencours',
-            data: { page: pg },
+            data: {page: pg},
             success: function (data) {
                 $('#tab_15_1').html(data);
                 featuresParisEnCours();
@@ -89,17 +92,17 @@ function loadParisEnCoursWithPage(condition) {
     var pg = $('#tab_15_1').find('.active').find('span').text();
 
     // quand il ne reste qu'un seul pari sur une page et quil est suprimé, ca passe diectement a la page precedente.
-    if(condition == 'delete' && taille == 1){
-        pg = pg-1;
+    if (condition == 'delete' && taille == 1) {
+        pg = pg - 1;
     }
 
     // quand pg est egale a rien on affiche la premiere page.
     if (!pg) {
         loadParisEnCours();
-    }else{
+    } else {
         $.ajax({
             url: 'dashboard/ajax/parisencours',
-            data: { page: pg },
+            data: {page: pg},
             type: 'get',
             success: function (data) {
                 $('#tab_15_1').html(data);
@@ -107,4 +110,55 @@ function loadParisEnCoursWithPage(condition) {
             }
         });
     }
+}
+
+function cashOut(){
+
+    // passage de parametres vers le modal.
+    $('#cashoutModal').on('show.bs.modal', function(e) {
+
+        //get data-id attribute of the clicked element
+        var pari_id = $(e.relatedTarget).data('id');
+
+        //populate the textbox
+        $(e.currentTarget).find('input[name="pari-id"]').val(pari_id);
+    });
+
+    // cash out modal
+    var cashout_form = $('#cashout-update');
+    var cashout_array = [{ id: 'c', text: 'classic cash out' }, { id: 'p', text: 'partial cash out' }];
+    cashout_form.find('#cashout-select').select2({
+        minimumResultsForSearch: Infinity,
+        cache: true,
+        data: cashout_array
+    }).change(function(){
+        cashout_form.find('.classic-cash-out-group').toggleClass('hide');
+        cashout_form.find('.partial-cash-out-group').toggleClass('hide');
+    });
+
+    // envoi du form.
+    cashout_form.submit(function(e){
+        e.preventDefault();
+        var inputs = cashout_form.serialize();
+        $.ajax({
+            url : 'cashout',
+            type : 'post',
+            data : inputs,
+            dataType : 'json',
+            success: function(data){
+                if(data.etat){
+                    toastr.success(data.msg, 'Pari');
+                }else{
+                    for (key in data.msg) {
+                        keyname = key;
+                        toastr.error(data.msg[keyname], 'Erreur:');
+                    }
+                }
+            },
+            error: function(){
+
+            }
+        });
+    });
+
 }

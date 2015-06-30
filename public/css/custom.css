@@ -1,0 +1,220 @@
+/* here you can put your own css to customize and override the theme */
+
+/***
+Rounded Portlets
+***/
+/*
+.portlet {
+	border-radius: 4px !important;
+}
+
+.portlet .portlet-title {
+	border-radius: 4px 4px 0px 0px !important;
+}
+
+.portlet .portlet-body,
+.portlet .portlet-body .form-actions  {
+	border-radius: 0px 0px 4px 4px !important;
+}
+*/
+
+.hiddenRow {
+    padding: 0 !important;
+	display: inline-block;
+
+}
+
+input{
+	padding: 5px !important;
+}
+
+select{
+	padding: 5px !important;
+}
+
+.form-bouton-paris{
+	display: inline-block !important;
+}
+
+.name{
+	color: #65A0D0 !important;
+	font-weight: 600;
+}
+
+.child-row{
+	display: inline-block;
+}
+
+.inline-block{
+	display: inline-block !important;
+}
+
+.logo{
+	margin-top: 5px;
+}
+
+.header-date{
+	line-height: 50px;
+}
+
+.color-white {
+	color: white !important;
+}
+
+.cancel-padding{
+	padding :0 !important
+}
+
+.child-table{
+ margin: 0px !important;
+}
+
+.login-container {
+	margin: 0 auto;
+	width: 400px; /* Whatever exact width you are looking for (not bound by preset bootstrap widths) */
+}
+
+.form-actions-automatic-bet{
+    padding : 5px !important;
+}
+
+.note-automatic-bet{
+    margin : 5px !important;
+}
+
+.form-automatic{
+    background-color: #e9edef;
+}
+
+#spinner {
+    display: none;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+}
+#spinner .ball {
+    width: 20px;
+    height: 20px;
+    background-color: #333333;
+    border-radius: 50%;
+    display: inline-block;
+    -webkit-animation: motion 3s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+    animation: motion 3s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+
+@-webkit-keyframes motion {
+    0% {
+        -webkit-transform: translateX(0) scale(1);
+        transform: translateX(0) scale(1);
+    }
+    25% {
+        -webkit-transform: translateX(-50px) scale(0.3);
+        transform: translateX(-50px) scale(0.3);
+    }
+    50% {
+        -webkit-transform: translateX(0) scale(1);
+        transform: translateX(0) scale(1);
+    }
+    75% {
+        -webkit-transform: translateX(50px) scale(0.3);
+        transform: translateX(50px) scale(0.3);
+    }
+    100% {
+        -webkit-transform: translateX(0) scale(1);
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes motion {
+    0% {
+        -webkit-transform: translateX(0) scale(1);
+        transform: translateX(0) scale(1);
+    }
+    25% {
+        -webkit-transform: translateX(-50px) scale(0.3);
+        transform: translateX(-50px) scale(0.3);
+    }
+    50% {
+        -webkit-transform: translateX(0) scale(1);
+        transform: translateX(0) scale(1);
+    }
+    75% {
+        -webkit-transform: translateX(50px) scale(0.3);
+        transform: translateX(50px) scale(0.3);
+    }
+    100% {
+        -webkit-transform: translateX(0) scale(1);
+        transform: translateX(0) scale(1);
+    }
+}
+
+.fa-spin-custom, .glyphicon-spin {
+    -webkit-animation: spin 1000ms infinite linear;
+    animation: spin 1000ms infinite linear;
+}
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+
+/* css pour les panels de pricing */
+@import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
+
+.panel-pricing {
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+}
+.panel-pricing:hover {
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+}
+.panel-pricing .panel-heading {
+    padding: 20px 10px;
+}
+.panel-pricing .panel-heading .fa {
+    margin-top: 10px;
+    font-size: 58px;
+}
+.panel-pricing .list-group-item {
+    color: #777777;
+    border-bottom: 1px solid rgba(250, 250, 250, 0.5);
+}
+.panel-pricing .list-group-item:last-child {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.panel-pricing .list-group-item:first-child {
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+.panel-pricing .panel-body {
+    background-color: #f0f0f0;
+    font-size: 40px;
+    color: #777777;
+    padding: 20px;
+    margin: 0px;
+}
+

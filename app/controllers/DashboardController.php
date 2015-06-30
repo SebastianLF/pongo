@@ -5,7 +5,7 @@
 	class DashboardController extends BaseController
 	{
 
-		protected $types_resultat = [1 => 'Gagné', 2 => 'Perdu', 3 => '1/2 Gagné', 4 => '1/2 Perdu', 5 => 'Remboursé', 6 => 'Cash out'];
+		protected $types_resultat = [1 => 'Gagné', 2 => 'Perdu', 3 => '1/2 Gagné', 4 => '1/2 Perdu', 5 => 'Remboursé'];
 
 		public function __construct()
 		{
