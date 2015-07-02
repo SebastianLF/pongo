@@ -13,18 +13,13 @@
                     <dl class="dl-horizontal">
                         <dt>Suivi:</dt>
                         <dd>Si vous choisissez le type de suivi <strong>à blanc</strong> pour un tipster, les gains
-                            et pertes ne seront pas comptabilisés dans vos bankrolls. Ce type de suivi convient
+                            et pertes ne seront pas comptabilisés dans vos bankrolls des bookmakers. Ce type de suivi convient
                             lorsqu'on veut tester l'efficacité d'un nouveau tipster.<br> Vous avez la possibilité de
-                            changer le type de suivi a n'importequel moment.
-                        </dd>
-                        <dt>Indice:</dt>
-                        <dd>Correspond a l'indice de confiance maximum donné par le tipster, généralement 10.
-                            Example: 10 pour 2/10, 5 pour 2/5.
+                            changer le type de suivi a n'importequel moment. Si vous changez de type de suivi dans le meme mois, le tipster aura deux profils avec ses pertes et/ou profits respectifs. 
                         </dd>
                         <dt>Montant par unité:</dt>
-                        <dd>Correspond au montant alloué pour 1 unité. Example: Pour un tipster avec un indice
-                            maximum de 10, si le montant par unité est 40€ alors 1/10 = 40€, 2/10 = 80€.<br>
-                            Vous avez la possibilité de changer le montant par indice a n'importequel moment.
+                        <dd>Correspond au montant alloué pour 1 unité. Example: Si le montant par unité est 40€ alors 1 unité = 40€, 2 unités = 80€.<br>
+                            Vous avez la possibilité de modifier le montant par unité à n'importequel moment.
                         </dd>
 
                     </dl>
@@ -32,7 +27,6 @@
                 <div class="scroller" style="height:300px" data-always-visible="1" data-rail-visible1="1">
                     <div class="row">
                         <div class="col-md-12">
-
 
                             <div id="name_tipster_container" class="form-group has-feedback">
                                 <label class="" for="name_tipster">Nom </label>
@@ -48,18 +42,8 @@
                                 </select>
                             </div>
 
-                            <div id="indice_tipster_container" class="form-group has-feedback">
-                                <label class="" for="indice_tipster">Indice maximum </label>
-                                <select id="indice_tipster" name="indice_tipster" class="form-control">
-                                    <option value="" selected="selected"></option>
-                                    <option value="3">3</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                </select>
-                            </div>
-
                             <div id="amount_tipster_container" class="form-group has-feedback">
-                                <label class="" for="amount_tipster">Montant par indice </label>
+                                <label class="" for="amount_tipster">Montant par unité </label>
                                 <input id="amount_tipster" name="amount_tipster" type="text"
                                        class="form-control">
                             </div>

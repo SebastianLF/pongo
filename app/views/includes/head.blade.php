@@ -26,7 +26,7 @@
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css') }}
 
 {{ HTML::style('css/toastr.css') }}
-{{ HTML::style('css/sweet-alert.css') }}
+{{ HTML::style('css/sweetalert.css') }}
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN PAGE LEVEL STYLES -->
 {{ HTML::style('css/select2.css') }}

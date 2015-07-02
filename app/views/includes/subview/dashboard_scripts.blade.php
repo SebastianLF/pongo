@@ -1,4 +1,3 @@
-<script src="{{asset('js/pages/stats/stats.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/dashboard/loadRecaps.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/dashboard/paris/loadParisEnCours.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/dashboard/paris/loadParisLongTerme.js')}}" type="text/javascript"></script>
@@ -12,9 +11,6 @@
 <script src="{{asset('js/pages/dashboard/paris/manualBetForm.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/dashboard/paris/generalBetForm.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/dashboard/modal_welcome.js')}}" type="text/javascript"></script>
-
-
-<script src="{{asset('js/plugin/sweet-alert.min.js')}}" type="text/javascript"></script>
 <script>
     jQuery(document).ready(function () {
 

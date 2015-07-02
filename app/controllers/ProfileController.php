@@ -5,6 +5,7 @@ class ProfileController extends BaseController {
 	{
 		parent::__construct();
 		$this->beforeFilter('auth');
+		$this->beforeFilter('csrf', array('only' => 'store'));
 	}
 	/**
 	 * Display a listing of the resource.
@@ -23,7 +24,7 @@ class ProfileController extends BaseController {
 	 */
 	public function create()
 	{
-
+		return View::make('');
 	}
 
 	/**
@@ -33,7 +34,34 @@ class ProfileController extends BaseController {
 	 */
 	public function store()
 	{
-		//
+		$rules = array(
+			'actuel_mdp' => 'required|checkHashedPass:'.$this->currentUser->password,
+			'nouveau_mdp' => 'required|min:6|max:20',
+			'confirmation_mdp' => 'required|min:6|same:nouveau_mdp',
+			);
+		$messages = array(
+			'actuel_mdp.required' => 'Le mot de passe actuel est obligatoire.',
+			'actuel_mdp.checkHashedPass' => 'Mot de passe actuel incorrecte.',
+			'nouveau_mdp.required' => 'Un nouveau mot de passe est obligatoire.',
+			'nouveau_mdp.min' => 'Le nouveau mot de passe doit contenir au moins 6 caractères.',
+			'nouveau_mdp.max' => 'Le nouveau mot de passe doit contenir au maximum 20 caractères.',
+			'confirmation_mdp.required' => 'Le mot de passe de confirmation est obligatoire.',
+			'confirmation_mdp.min' => 'Le mot de passe de confirmation doit contenir au moins 6 caractères.',
+			'confirmation_mdp.max' => 'Le mot de passe de confirmation doit contenir au maximum 20 caractères.',
+			'confirmation_mdp.same' => 'Le nouveau mot de passe et le mot de passe de confirmation doivent être identiques.',
+			);
+
+		$validator = Validator::make(Input::all(), $rules, $messages);
+		if($validator->fails()){
+			return Redirect::to('profile')->withErrors($validator)->withInput(Input::except('nouveau_mdp', 'confirmation_mdp'));
+		}
+
+		$this->currentUser->password = Hash::make(Input::get('nouveau_mdp'));
+		$this->currentUser->save();
+
+		Session::flash('mdp_updated', 'Mot de passe mis à jour avec succès!'); 
+
+		return Redirect::to('profile');
 	}
 
 	/**
@@ -66,7 +94,7 @@ class ProfileController extends BaseController {
 	 */
 	public function update($id)
 	{
-		// ici
+		
 	}
 
 	/**

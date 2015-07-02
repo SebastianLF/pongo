@@ -24,41 +24,25 @@
                         </div>
                         <div class="portlet-body form">
                             <!-- BEGIN FORM-->
-                            <form action="index.html" class="form-horizontal form-row-seperated">
+                            {{Form::open(array('route' => array('preferences.update', $user->id), 'class' => 'form-horizontal form-bordered' ))}}
                                 <div class="form-body">
 
                                     <div class="form-group">
                                         <label class="control-label col-md-3">Langue</label>
 
                                         <div class="col-md-4">
-                                            <select class="bs-select form-control" disabled="" style="display: none;">
-                                                <option></option>
+                                            <select class="bs-select form-control" disabled>
+                                                <option value="fr">Francais</option>
                                             </select>
-
-                                            <div class="btn-group bootstrap-select bs-select form-control">
-                                                <button type="button"
-                                                        class="btn dropdown-toggle selectpicker disabled btn-default"
-                                                        data-toggle="dropdown" tabindex="-1" title="Mustard"><span
-                                                            class="filter-option pull-left">Francais</span>&nbsp;<span
-                                                            class="caret"></span></button>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3">Type de cote</label>
+                                        <label class="control-label col-md-3">Affichage cote</label>
 
                                         <div class="col-md-4">
                                             <select class="bs-select form-control" disabled="" style="display: none;">
-                                                <option></option>
+                                                <option value="dec">Décimal</option>
                                             </select>
-
-                                            <div class="btn-group bootstrap-select bs-select form-control">
-                                                <button type="button"
-                                                        class="btn dropdown-toggle selectpicker disabled btn-default"
-                                                        data-toggle="dropdown" tabindex="-1" title="Mustard"><span
-                                                            class="filter-option pull-left">europeenne</span>&nbsp;<span
-                                                            class="caret"></span></button>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -66,7 +50,7 @@
 
                                         <div class="col-md-4">
                                             <select class="bs-select form-control" disabled="" style="display: none;">
-                                                <option>Francais</option>
+                                                <option value="UTC+2">UTC+2</option>
                                             </select>
 
                                             <div class="btn-group bootstrap-select bs-select form-control">
@@ -84,13 +68,12 @@
                                     <div class="row">
                                         <div class="col-md-offset-3 col-md-9">
                                             <button type="submit" class="btn green disabled"><i class="fa fa-check"></i>
-                                                Valider les changements
+                                                Enregistrer
                                             </button>
-                                            <button type="button" class="btn default disabled">Annuler</button>
                                         </div>
                                     </div>
                                 </div>
-                            </form>
+                            {{Form::close()}}
                             <!-- END FORM-->
 
 

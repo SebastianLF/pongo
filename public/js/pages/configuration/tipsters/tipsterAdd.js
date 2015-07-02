@@ -26,11 +26,6 @@ function tipsterAdd() {
                     } else {
                         $('#name_tipster_container').removeClass('has-error');
                     }
-                    if (json.errors.indice_tipster) {
-                        $('#indice_tipster_container').addClass('has-error');
-                    } else {
-                        $('#indice_tipster_container').removeClass('has-error');
-                    }
                     if (json.errors.amount_tipster) {
                         $('#amount_tipster_container').addClass('has-error');
                     } else {

@@ -180,16 +180,16 @@
         },
         {
             "name": "caouecs/laravel4-lang",
-            "version": "2.0.7",
+            "version": "2.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/caouecs/Laravel-lang.git",
-                "reference": "7ae8b86bbbaf1ffe5458fe985bcf376a4ec255fd"
+                "reference": "34eb6b0e8d06fa9623f11d8ea8921f8bc4712bd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/caouecs/Laravel-lang/zipball/7ae8b86bbbaf1ffe5458fe985bcf376a4ec255fd",
-                "reference": "7ae8b86bbbaf1ffe5458fe985bcf376a4ec255fd",
+                "url": "https://api.github.com/repos/caouecs/Laravel-lang/zipball/34eb6b0e8d06fa9623f11d8ea8921f8bc4712bd4",
+                "reference": "34eb6b0e8d06fa9623f11d8ea8921f8bc4712bd4",
                 "shasum": ""
             },
             "suggest": {
@@ -213,7 +213,7 @@
                 "laravel",
                 "lpm"
             ],
-            "time": "2015-05-25 09:50:10"
+            "time": "2015-06-28 19:11:25"
         },
         {
             "name": "cartalyst/sentry",
@@ -923,16 +923,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "1.1.6",
+            "version": "1.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "37b5e653c99cbb9113108d7dc59a0ddc306acc46"
+                "reference": "72538eeb70bbfb11964412a3d098d109efd012f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/37b5e653c99cbb9113108d7dc59a0ddc306acc46",
-                "reference": "37b5e653c99cbb9113108d7dc59a0ddc306acc46",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/72538eeb70bbfb11964412a3d098d109efd012f7",
+                "reference": "72538eeb70bbfb11964412a3d098d109efd012f7",
                 "shasum": ""
             },
             "require": {
@@ -977,7 +977,7 @@
                 "whoops",
                 "zf2"
             ],
-            "time": "2015-05-29 15:12:07"
+            "time": "2015-06-29 05:42:04"
         },
         {
             "name": "ircmaxell/password-compat",

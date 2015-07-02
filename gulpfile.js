@@ -26,16 +26,13 @@ gulp.task('config-js', function() {
 });
 
 gulp.task('dashboard-js', function() {
-    return gulp.src(['public/js/pages/dashboard/**/*.js'])
+    return gulp.src(['public/js/pages/dashboard/*.js', 'public/js/pages/dashboard/paris/*.js'])
         .pipe(concat('dashboard.js'))
-        .pipe(uglify())
         .pipe(gulp.dest('public/build/js'));
 });
 
-gulp.task('default', function(){
-    gulp.run('css');
-
-    gulp.watch('css/*.css', function(){
-        gulp.run('css');
+gulp.task('default', ["dashboard-js"], function(){
+    gulp.watch(['public/js/pages/dashboard/paris', 'public/js/pages/dashboard/'], function(){
+        gulp.run('dashboard-js');
     });
 });

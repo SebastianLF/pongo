@@ -1,1 +1,1382 @@
-function typestakechoice(){var t=$("select[name=typestakeinputdashboard]");$(".typestakeflat").hide(),t.on("change",function(){"f"==$(this).val()?($(".typestakeunites").hide(),$("#stakeunitinputdashboard").val(""),$(".typestakeflat").show()):($(".typestakeunites").show(),$(".typestakeflat").hide(),$("#amountinputdashboard").val(""))})}function conversionUnitesVersMontant(){var t=$("#automaticform-add");t.find("#stakeunitinputdashboard").keyup(function(){var a=t.find("#amountperunit").val(),e=Number(t.find("#stakeunitinputdashboard").val());0>e&&t.find("#stakeunitinputdashboard").val("0"),e=$(this).val();{var n=Number(a)*Number(e);t.find("#amountconversion").val(isNaN(n)?"0":n)}})}function conversionMontantVersUnites(){$("#amountinputdashboard").keyup(function(){var t=$("#amountperunit").val(),a=$("#stakeindicatorinputdashboard").val(),e=t*a;$("#amountinputdashboard").val()>e?$("#amountinputdashboard").val(e):$("#amountinputdashboard").val()<0&&$("#amountinputdashboard").val("0"),t=$("#amountperunit").val();var n=$(this).val(),o=parseFloat(n)/parseFloat(t);$("#flattounitconversion").val(isNaN(o)?"0":o.toFixed(2))})}function formatSport(t){if(!t.id)return t.text;var a=$('<span><img width="25px" class="" src=""/>'+t.text+"</span>");return a}function formatLeague(t){if(!t.id)return t.text;console.log(t.logo);var a=$('<span><img width="25px" class="" src=""/>'+t.text+"</span>");return a}function loadBookmakersOnDashboard(){$.ajax({url:"comptes",type:"get",success:function(t){$("#comptes_par_bookmakers").html(t)},error:function(t){console.log("la récuperation des comptes bookmakers vers le dashboard n'a pas fonctionné")}})}function loadRecapsOnDashboard(){$.ajax({url:"recaps",type:"get",success:function(t){$('[data-toggle="collapse"]').collapse(),$("#recaps").html(t)},error:function(){}})}function automaticBetForm(){function t(){i.submit(function(t){t.preventDefault();var e=$(this).serialize(),n=i.find(".betline").length;if(""==n)swal({title:"Erreur!",text:"Ajoutez au moins une selection pour pouvoir valider le ticket!",type:"warning",confirmButtonText:"OK"});else if(n>=1){var o,r,d;o=i.find("#ticketABCD").is(":checked")?1:0,r=i.find("#ticketGratuit").is(":checked")?1:0,d=i.find("#ticketLongTerme").is(":checked")?1:0,$.ajax({url:"encourspari/auto",type:"post",data:e+"&linesnum="+n+"&ticketABCD="+o+"&ticketGratuit="+r+"&ticketLongTerme="+d,dataType:"json",success:function(t){var e;if(0==t.etat)if($.isArray(t.msg))for(key in t.msg)alert(key),e=key,toastr.error(t.msg[e],"Erreur:");else toastr.error(t.msg,"Erreur:");else 1==t.etat&&(s(),a(),toastr.success(t.msg,"Pari"),loadParisEnCours(),loadBookmakersOnDashboard())},error:function(t){console.log("erreur ajout de pari")}})}})}function a(){var t=i.find("#followtypeinputdashboard").val();$.ajax({url:"selections",success:function(a){i.find("#automatic-selections").html(a.vue),e(),$.ajax({url:"allbookmakers",dataType:"json",success:function(e){i.find(".bookinputdashboard").select2({minimumResultsForSearch:1/0,cache:!0,data:e}),"à blanc"==t?(i.find(".bookinputdashboard").val("").trigger("change"),i.find("#accountsinputdashboard").val("").trigger("change")):(i.find(".bookinputdashboard").prop("disabled",!1),i.find("#accountsinputdashboard").prop("disabled",!1),i.find(".bookinputdashboard").val(a.bookmaker_id).trigger("change")),r(a.bookmaker_id)}}),a.msg.length>0&&swal({title:"Erreur!",text:a.msg,type:"warning",confirmButtonText:"OK"})},error:function(t){i.find("#automatic-selections").html("<p>impossible de récuperer les selections</p>")}})}function e(){i.find("#automatic-selections .boutonsupprimer").on("click",function(t){t.preventDefault();var e=$(this).parents("tr"),n=e.find(".selection_id").text();$.ajax({url:"coupon/"+n,method:"delete",success:function(t){a()},error:function(t){}})})}function n(){i.find("#selection-refresh").click(function(t){t.preventDefault(),a()})}function o(){var t=i.find("select[name=typestakeinputdashboard]");i.find(".typestakeflat").hide(),t.on("change",function(){"f"==$(this).val()?(i.find(".typestakeunites").hide(),i.find("#stakeunitinputdashboard").val(""),i.find(".typestakeflat").show()):(i.find(".typestakeunites").show(),i.find(".typestakeflat").hide(),i.find("#amountinputdashboard").val(""))})}function r(t){i.find("#tipstersinputdashboard").select2({allowClear:!0,placeholder:"Choisir un tipster",cache:!0,ajax:{url:"tipsters",dataType:"json",data:function(t){return{q:t.term}},processResults:function(t){return{results:t}}}}),i.find("#tipstersinputdashboard").change(function(){var a=$(d+" #tipstersinputdashboard").val(),e=$(d+" #followtypeinputdashboard"),n=$(d+" #amountperunit");$(d+" #stakeunitinputdashboard").val(""),$(d+" #amountperunit").val(""),$(d+" #amountconversion").val("0"),$(d+" #amountinputdashboard").val(""),$(d+" #flattounitconversion").val("0"),$.ajax({url:"infosTipster",data:"tipster_id="+a,dataType:"json",success:function(a){i.find(".bookinputdashboard").val(null).trigger("change"),i.find("#accountsinputdashboard").val(null).trigger("change"),e.val(""),"n"==a.followtype?(e.val("normal"),i.find(".bookinputdashboard").prop("disabled",!1),i.find("#accountsinputdashboard").prop("disabled",!1),i.find(".bookinputdashboard").val(t).trigger("change"),i.find("#accountsinputdashboard").val(null).trigger("change")):"b"==a.followtype?(e.val("à blanc"),i.find(".bookinputdashboard").val(null).trigger("change"),i.find("#accountsinputdashboard").val(null).trigger("change"),i.find(".bookinputdashboard").prop("disabled",!0),i.find("#accountsinputdashboard").prop("disabled",!0)):(i.find(".bookinputdashboard").prop("disabled",!1),i.find("#accountsinputdashboard").prop("disabled",!1),i.find(".bookinputdashboard").val(t).trigger("change"),i.find("#accountsinputdashboard").val(null).trigger("change"));var o=Number(a.montant_par_unite);n.val(isNaN(o)?"":o)},error:function(t){}})})}function s(){i.find("#stakeunitinputdashboard").val(null).trigger("change"),i.find("#amountinputdashboard").val(null).trigger("change"),i.find("#accountsinputdashboard").val(null).trigger("change"),i.find("input:checkbox").prop("checked",!1)}var i=$("#automaticform-add"),d="#automaticform-add",u=[{id:"u",text:"en unités"},{id:"f",text:"en devise"}];i.find("#typestakeinputdashboard").select2({minimumResultsForSearch:1/0,cache:!0,data:u}),i.find("#accountsinputdashboard").select2({allowClear:!0,placeholder:"Choisir un compte",cache:!0,minimumResultsForSearch:1/0,ajax:{url:"accounts",dataType:"json",data:function(t){return{book_id:$(d+" .bookinputdashboard").val(),q:t.term}},processResults:function(t){return{results:t}}}}),i.find("#serieinputdashboard").select2({allowClear:!0,placeholder:"Choisir une serie",tags:!0,cache:!0,ajax:{url:"parisabcd",dataType:"json",data:function(t){return{q:t.term}},processResults:function(t){return{results:t}}}}),i.find("#letterinputdashboard").select2({allowClear:!0,placeholder:"Choisir une lettre",cache:!0,minimumResultsForSearch:1/0,ajax:{url:"lettreabcd",dataType:"json",data:function(t){return{serie_nom:$(d+" #serieinputdashboard").val(),q:t.term}},processResults:function(t){console.log(t);var a=[];return $.each(t,function(t,e){a.push({id:e,text:e})}),{results:a}}}}),i.find("#stakeunitinputdashboard").keyup(function(){var t=$(d+" #amountperunit").val(),a=Number($(d+" #stakeunitinputdashboard").val()),e=Number(t)*Number(a),n=Math.round(100*e)/100;isNaN(n)||0>n?$(d+"#amountconversion").val("0"):$(d+" #amountconversion").val(n)}),i.find("#amountinputdashboard").keyup(function(){var t=$(d+" #amountperunit").val(),a=$(d+" #amountinputdashboard").val(),e=Number(a)/Number(t),n=Math.round(100*e)/100;$(d+" #flattounitconversion").val(isNaN(n)||0>n||""==t?"0":n)}),i.find("#serieinputdashboard").prop("disabled",!0),i.find("#letterinputdashboard").prop("disabled",!0),i.find(".methodeabcdcontainer").addClass("hide"),i.find(".bookmakercontainer").addClass("hide"),i.find("#ticketABCD").on("click",function(){$(this).is(":checked")?(i.find(".methodeabcdcontainer").removeClass("hide"),i.find("#serieinputdashboard").prop("disabled",!1),i.find("#letterinputdashboard").prop("disabled",!1)):(i.find(".methodeabcdcontainer").addClass("hide"),i.find("#serieinputdashboard").prop("disabled",!0),i.find("#letterinputdashboard").prop("disabled",!0))}),n(),a(),t(),o()}function generalBetForm(t){function a(){var t=e.find("select[name=typestakeinputdashboard]");e.find(".typestakeflat").hide(),t.on("change",function(){"f"==$(this).val()?($form.find(".typestakeunites").hide(),e.find("#stakeunitinputdashboard").val(""),e.find(".typestakeflat").show()):(e.find(".typestakeunites").show(),e.find(".typestakeflat").hide(),e.find("#amountinputdashboard").val(""))})}var e=$(t),t=t;$(t+" .methodeabcdcontainer").addClass("hide"),$(t+" #ticketABCD").click(function(){$(t+" .methodeabcdcontainer").removeClass("hide")}),$(t+" #parislongterme ").click(function(){$(t+" .methodeabcdcontainer").addClass("hide"),$(t+" #letterinputdashboard").empty(),$(t+" #serieinputdashboard").val(null).trigger("change")}),$(t+" #aucun").click(function(){$(t+" .methodeabcdcontainer").addClass("hide"),$(t+" #letterinputdashboard").empty(),$(t+" #serieinputdashboard").val(null).trigger("change")}),$(t+" #parigratuit").click(function(){$(t+" .methodeabcdcontainer").addClass("hide"),$(t+" #letterinputdashboard").empty(),$(t+" #serieinputdashboard").val(null).trigger("change")}),e.find("#tipstersinputdashboard").select2({allowClear:!0,placeholder:"Choisir un tipster",cache:!0,ajax:{url:"tipsters",dataType:"json",data:function(t){return{q:t.term}},processResults:function(t){return{results:t}}}}),e.find("#tipstersinputdashboard").change(function(){var a=$(t+" #tipstersinputdashboard").val(),n=$(t+" #followtypeinputdashboard"),o=$(t+" #amountperunit");$(t+" #stakeunitinputdashboard").val(""),$(t+" #amountperunit").val(""),$(t+" #amountconversion").val("0"),$(t+" #amountinputdashboard").val(""),$(t+" #flattounitconversion").val("0"),$.ajax({url:"infosTipster",data:"tipster_id="+a,dataType:"json",success:function(t){e.find(".bookinputdashboard").val(null).trigger("change"),e.find("#accountsinputdashboard").val(null).trigger("change"),n.val(""),"n"==t.followtype?(n.val("normal"),e.find(".bookinputdashboard").prop("disabled",!1),e.find("#accountsinputdashboard").prop("disabled",!1)):"b"==t.followtype?(n.val("à blanc"),e.find(".bookinputdashboard").val(null).trigger("change"),e.find("#accountsinputdashboard").val(null).trigger("change"),e.find(".bookinputdashboard").prop("disabled",!0),e.find("#accountsinputdashboard").prop("disabled",!0)):(e.find(".bookinputdashboard").val(null).trigger("change"),e.find("#accountsinputdashboard").val(null).trigger("change"),e.find(".bookinputdashboard").prop("disabled",!0),e.find("#accountsinputdashboard").prop("disabled",!0));var a=Number(t.montant_par_unite);o.val(isNaN(a)?"":a)},error:function(t){}})}),e.find(".bookinputdashboard").select2({allowClear:!0,placeholder:"Choisir un bookmaker",cache:!0,ajax:{url:"bookmakers",dataType:"json",data:function(t){return{q:t.term}},processResults:function(t){return{results:t}}}}),e.find("#accountsinputdashboard").select2({allowClear:!0,placeholder:"Choisir un compte",cache:!0,minimumResultsForSearch:1/0,ajax:{url:"accounts",dataType:"json",data:function(a){return{book_id:$(t+" .bookinputdashboard").val(),q:a.term}},processResults:function(t){return{results:t}}}}),e.find("#serieinputdashboard").select2({allowClear:!0,placeholder:"Choisir une serie",tags:!0,cache:!0,ajax:{url:"parisabcd",dataType:"json",data:function(t){return{q:t.term}},processResults:function(t){return{results:t}}}}),e.find("#letterinputdashboard").select2({allowClear:!0,placeholder:"Choisir une lettre",cache:!0,minimumResultsForSearch:1/0,ajax:{url:"lettreabcd",dataType:"json",data:function(a){return{serie_nom:$(t+" #serieinputdashboard").val(),q:a.term}},processResults:function(t){console.log(t);var a=[];return $.each(t,function(t,e){a.push({id:e,text:e})}),{results:a}}}}),e.find("#serieinputdashboard").change(function(){var a=$(t+"#serieinputdashboard option:selected").text();a=encodeURIComponent(a),e.find("#letterinputdashboard").val(null).trigger("change")}),e.find("#stakeunitinputdashboard").keyup(function(){var a=$(t+" #amountperunit").val(),e=Number($(t+" #stakeunitinputdashboard").val()),n=Number(a)*Number(e),o=Math.round(100*n)/100;isNaN(o)||0>o?$(t+"#amountconversion").val("0"):$(t+" #amountconversion").val(o)}),e.find("#amountinputdashboard").keyup(function(){var a=$(t+" #amountperunit").val(),e=$(t+" #amountinputdashboard").val(),n=Number(e)/Number(a),o=Math.round(100*n)/100;$(t+" #flattounitconversion").val(isNaN(o)||0>o||""==a?"0":o)}),a(),$(".bookinputdashboard").prop("disabled",!0),$("#accountsinputdashboard").prop("disabled",!0),$("#methodeabcdcontainer").addClass("hide")}function loadParisABCD(){$.ajax({url:"dashboard/ajax/parisabcd",data:{page:1},type:"get",success:function(t){$("#tab_15_3").html(t)},error:function(t){$("#tab_15_3").html("<p>impossible de récuperer les paris ABCD</p>")}})}function loadParisEnCours(){$("#onglet_paris_en_cours span");$.ajax({url:"dashboard/ajax/parisencours",data:{page:1},type:"get",success:function(t){$("#tab_15_1").html(t),featuresParisEnCours(),paginationParisEnCours(),cashOut()},error:function(t){$("#tab_15_1").html("<p>impossible de récuperer les paris</p>")}})}function loadParisTermine(){$("#onglet_paris_long_terme span");$.ajax({url:"dashboard/ajax/paristermine",data:{page:1},type:"get",success:function(t){$("#tab_15_4").html(t),parisTermineDelete(),$("#paristerminetable .boutonsupprimer").click(function(t){t.stopPropagation()})},error:function(t){$("#tab_15_4").html("<p>impossible de récuperer les paris terminés</p>")}})}function featuresParisEnCours(){$('[data-toggle="tooltip"]').tooltip(),$("[data-hover='tooltip']").tooltip();var t=$("#parisencourstable #count").text();$("#onglet_paris_en_cours span").text("0"==t?"":t),$("#parisencourstable .boutonvalider").click(function(t){t.stopPropagation()}),$("#parisencourstable .boutonsupprimer").click(function(t){t.stopPropagation()}),$("select[name='resultatDashboardInput']").click(function(t){t.stopPropagation()}),parisEnCoursCalculateStatus("#parisencourstable"),parisEnCoursEnclose("#parisencourstable",".validerform","historique"),parisEnCoursDelete("#parisencourstable",".supprimerform","encourspari/")}function paginationParisEnCours(){$("#tab_15_1").on("click",".pagination a",function(t){t.preventDefault();var a=getPaginationSelectedPage($(this).attr("href"));$.ajax({url:"dashboard/ajax/parisencours",data:{page:a},success:function(t){$("#tab_15_1").html(t),featuresParisEnCours()},error:function(t){console.log("erreur: pagination par click")}})})}function loadParisEnCoursWithPage(t){var a=$("#parisencourstable .id").length,e=$("#tab_15_1").find(".active").find("span").text();"delete"==t&&1==a&&(e-=1),e?$.ajax({url:"dashboard/ajax/parisencours",data:{page:e},type:"get",success:function(t){$("#tab_15_1").html(t),featuresParisEnCours()}}):loadParisEnCours()}function cashOut(){$("#cashoutModal").on("show.bs.modal",function(t){var a=$(t.relatedTarget).data("id");$(t.currentTarget).find('input[name="pari-id"]').val(a)});var t=$("#cashout-update"),a=[{id:"c",text:"classic cash out"},{id:"p",text:"partial cash out"}];t.find("#cashout-select").select2({minimumResultsForSearch:1/0,cache:!0,data:a}).change(function(){t.find(".classic-cash-out-group").toggleClass("hide"),t.find(".partial-cash-out-group").toggleClass("hide")}),t.submit(function(a){a.preventDefault();var e=t.serialize();$.ajax({url:"cashout",type:"post",data:e,dataType:"json",success:function(t){if(t.etat)toastr.success(t.msg,"Pari");else for(key in t.msg)keyname=key,toastr.error(t.msg[keyname],"Erreur:")},error:function(){}})})}function loadParisLongTerme(){$.ajax({url:"dashboard/ajax/parislongterme",data:{page:"1"},type:"get",success:function(t){$("#tab_15_2").html(t),$('[data-toggle="tooltip"]').tooltip(),$("#onglet_paris_long_terme span").text($("#parislongtermetable #count").text());{var a=($("#parislongtermetable"),$("#parislongtermetable .boutonvalider")),e=$("#parislongtermetable .boutonsupprimer"),n=$("#parislongtermetable .validerform"),o=$("#parislongtermetable .supprimerform"),r=$("#parislongtermetable select[name='resultatDashboardInput']");$("#parislongtermetable select[name='resultatDashboardInput'] option:selected")}$('[data-toggle="tooltip"]').tooltip(),a.click(function(t){t.stopPropagation()}),e.click(function(t){t.stopPropagation()}),r.click(function(t){t.stopPropagation()}),r.change(function(t){var a=$(this).closest(".mainrow"),e=a.find(".tdcote").text(),n=a.find(".tdmise .tdsubmise").text(),o=a.find(".tdretour span.subretour"),r=a.find(".tdretour");switch(result=a.find("select[name='resultatDashboardInput'] option:selected").text()){case"--Selectionnez--":o.empty(),r.css("color","black");break;case"Gagné":var s=parseFloat(n*e);r.css("color","green"),a.find(".tdretour span.subretour").text(s);break;case"Perdu":var s=parseFloat(n);r.css("color","red"),a.find(".tdretour span.subretour").text(s);break;case"1/2 Gagné":var s=parseFloat((n*e-n)/2)+parseFloat(n);r.css("color","green"),a.find(".tdretour span.subretour").text(s);break;case"1/2 Perdu":var s=parseFloat(n/2);r.css("color","red"),a.find(".tdretour span.subretour").text(s);break;case"Remboursé":r.css("color","black");var s=parseFloat(n);a.find(".tdretour span.subretour").text(s);break;case"Annulé":r.css("color","black");var s=parseFloat(n);a.find(".tdretour span.subretour").text(s)}}),n.submit(function(t){t.preventDefault();var a=$(this).closest(".mainrow"),e=a.find(".tdretour span.subretour");if(e.text().length>0){var n=a.find(".tdcote").text(),o=a.find(".tdmise .tdsubmise").text(),r=$(this).serialize();$.ajax({url:"historique",type:"post",data:r+"&cote="+n+"&mise="+o+"&retour="+e,success:function(t){loadParisLongTerme()},error:function(){console.log("valider un pari long terme ne fonctionne pas")}})}else alert("Vous devez préciser un status pour ce pari.")}),o.submit(function(t){t.preventDefault();{var a=$(this).closest(".mainrow"),e=a.find(".id").text();a.find(".tdretour span.subretour"),a.find(".tdcote").text(),a.find(".tdmise .tdsubmise").text(),$(this).serialize()}confirm("Etes vous sur?")&&$.ajax({url:"historique/"+e,type:"delete",success:function(t){loadParisLongTerme()},error:function(){console.log("supprimer un pari long terme ne fonctionne pas")}})})},error:function(t){console.log("le chargement des paris long terme n'a pas fonctionné")}})}function calculProfits(t,a,e,n){var o,r,s=e,i=s,d=t,u=a,l=n,c=!1,p=1;d.find(".child-table-tr").each(function(){var t=Number($(this).find(".cote-td").text());console.log(t);var a=$(this).find('select[name="resultatSelectionDashboardInput[]"]').val();0==a?o=1:1==a?p*=t:2==a?(p*=0,r=1):3==a?p*=[(t-1)/2+1]:4==a?p=.5*p:5==a&&(p+=0)}),o&&!r?(i="Selectionnez un status",c=!1):(c=!0,i=p*s,i-=s,i=Number(Math.round(100*i)/100)),i>0?(u.addClass("font-green"),l.addClass("font-green"),u.removeClass("font-red"),l.removeClass("font-red"),u.removeClass("font-gray"),l.removeClass("font-gray")):0>i?(u.addClass("font-red"),l.addClass("font-red"),u.removeClass("font-green"),l.removeClass("font-green"),u.removeClass("font-gray"),l.removeClass("font-gray")):(u.addClass("font-gray"),l.addClass("font-gray"),u.removeClass("font-green"),l.removeClass("font-green"),u.removeClass("font-red"),l.removeClass("font-red")),c?(l.removeClass("hide"),console.log("pas hide")):(l.addClass("hide"),console.log("hide")),u.text(i)}function statusBoutonValider(t,a){var e=t,n=a,o=new Array;e.find(".child-table-tr").each(function(){var t=$(this).find('select[name="resultatSelectionDashboardInput[]"]').val();o.push(t)}),-1!==$.inArray("2",o)||-1==$.inArray("2",o)&&-1==$.inArray("0",o)?n.prop("disabled",!1):n.prop("disabled",!0)}function parisEnCoursCalculateStatus(t){$(t+" select[name='resultatSelectionDashboardInput[]']").change(function(){var t=$(this).closest(".subrow"),a=t.prev(),e=a.find(".boutonvalider"),n=$(this).closest(".child-table-tr"),o=(n.find(".child-id").text(),n.find('input[name="childrowsinput[]"]').val(),a.find(".tdsubmise").text()),r=a.find(".profits"),s=a.find(".devise");statusBoutonValider(t,e),calculProfits(t,r,o,s)})}function parisEnCoursDelete(t,a,e){var n=($(t),$(a),e);$(t+" "+a).submit(function(t){t.preventDefault();{var a=$(this).closest(".mainrow"),e=a.find(".id").text();a.find(".tdretour span.subretour"),a.find(".tdcote").text(),a.find(".tdmise .tdsubmise").text(),$(this).serialize()}swal({title:"Are you sure?",text:"You will not be able to recover this imaginary file!",type:"warning",showCancelButton:!0,confirmButtonColor:"#DD6B55",confirmButtonText:"Yes, delete it!",cancelButtonText:"No, cancel plx!",closeOnConfirm:!0,closeOnCancel:!0},function(t){t&&$.ajax({url:n+e,type:"delete",success:function(t){loadParisEnCoursWithPage("delete"),loadBookmakersOnDashboard(),0==t.etat?toastr.error(t.msg,"Suppression"):(toastr.success(t.msg,"Suppression"),loadBookmakersOnDashboard())},error:function(){console.log("supprimer un pari en cours ne fonctionne pas")}})})})}function parisEnCoursEnclose(t,a,e){var n=($(t),$(a),e);$(t+" "+a).submit(function(t){t.preventDefault();{var a=$(this).closest(".mainrow"),e=($(this).closest(".wrapperRow"),a.find(".tdretour span.subretour"),a.find(".id").text()),o=new Array,r=new Array;a.next().find(".child-row input")}a.next().find('input[name="childrowsinput[]"]').each(function(){o.push($(this).val())}),a.next().find('select[name="resultatSelectionDashboardInput[]"]').each(function(){r.push($(this).val())});var s=$(this).serialize();$.ajax({url:n,type:"post",data:s+"&ticket-id="+e+"&childrowsinput[]="+o+"&childrowsstatus[]="+r,dataType:"json",success:function(t){0==t.etat?toastr.error(t.msg,"Validation"):(toastr.success(t.msg,"Validation"),loadParisEnCours(),loadParisTermine(),loadBookmakersOnDashboard(),loadRecapsOnDashboard())},error:function(){console.log("valider un pari en cours ne fonctionne pas")}})})}function parisTermineDelete(){var t="#paristerminetable",a=".supprimerform",e="historique";$(t+" "+a).submit(function(t){t.preventDefault();var a=$(this).closest(".mainrow"),n=a.find(".id").text();swal({title:"Etes-vous sur?",text:"Vous allez définitivement supprimer ce pari.",type:"Attention",showCancelButton:!0,confirmButtonColor:"#DD6B55",confirmButtonText:"Oui, le supprimer!",cancelButtonText:"Non, ne pas le supprimer!",closeOnConfirm:!0,closeOnCancel:!0},function(t){t&&$.ajax({url:e+n,type:"delete",success:function(t){0==t.etat?toastr.error(t.msg,"Suppression"):(toastr.success(t.msg,"Suppression"),loadBookmakersOnDashboard(),loadRecapsOnDashboard())},error:function(){console.log("supprimer un pari en cours ne fonctionne pas")}})})})}$("#manubetform-add #systemeABCD").click(function(){$("#methodeabcdcontainer").removeClass("hide")}),$("#manubetform-add #parislongterme ").click(function(){$("#methodeabcdcontainer").addClass("hide"),$("#letterinputdashboard").empty(),$("#serieinputdashboard").val(null).trigger("change")}),$("#manubetform-add #aucun").click(function(){$("#methodeabcdcontainer").addClass("hide"),$("#letterinputdashboard").empty(),$("#serieinputdashboard").val(null).trigger("change")}),$("#wrapmanubetscontainer").on("click",".supprlinebet",function(){$(this).closest(".betline").remove()}),$("#addlinebet").click(function(){var t='<tr class="betline"><td><input id="" name="datematchinputdashboard[]" class="form-control datematchinputdashboard" type="date"></td><td><div class="input-group"><input id="" name="sportinputdashboard[]" class="form-control sportinputdashboard"><div class="input-group-btn "><button id="" type="button" class="sportsselect btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button></div></div></td><td><select id="countryinputdashboard" name="countryinputdashboard[]" class="form-control"><option></option><option>france</option><option>espagne</option></select></td><td><select id="competitioninputdashboard" name="competitioninputdashboard[]" class="form-control"><option></option><option>Liga</option><option>premiere league</option></select></td><td width="120"><div class="input-group"><input name="team1inputdashboard[]" type="text" class="form-control" placeholder="equipe 1"><div class="input-group-btn"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button><ul class="dropdown-menu dropdown-menu-right" role="menu"></ul></div></div></td><td width="120"><div class="input-group"><input name="team2inputdashboard[]" type="text" class="form-control" placeholder="equipe 2"><div class="input-group-btn"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button><ul class="dropdown-menu dropdown-menu-right" role="menu"></ul></div></div></td><td><input id="picknameinputdashboard" name="picknameinputdashboard[]" class="form-control" placeholder="ex: OVER 2.5"></td><td><input id="choiceinputdashboard" name="choiceinputdashboard[]" class="form-control" placeholder="ex: 1,X ou 2"></td><td><input id="oddinputdashboard" name="oddinputdashboard[]" class="form-control" placeholder="ex: 1.83"></td><td><button type="button" class="btn btn-danger supprlinebet"><span class="glyphicon glyphicon-trash"></span></button></td></tr>';$("#addbetbuttontr").before(t)}),$("#manubetform-add").submit(function(t){t.preventDefault();var a=$(this).serialize(),e=$("#tablemanubetlines").find(".betline").length;if(""==e)swal({title:"Erreur!",text:"Remplissez au moins une selection pour pouvoir valider le ticket!",type:"warning",confirmButtonText:"Cool"});else if(e>=1){var n=$("#tipstersinputdashboard option:selected").text(),o=$("#bookinputdashboard option:selected").text();$.ajax({url:"encourspari",type:"post",data:a+"&linesnum="+e+"&tipstername="+n+"&bookname="+o,dataType:"json",success:function(t){var a;if(0==t.etat)for(key in t.msg)a=key,toastr.error(t.msg[a],"Erreur:");else 1==t.etat&&(toastr.success(t.msg,"Pari"),loadParisEnCoursWithPage("add"),loadBookmakersOnDashboard())},error:function(t){console.log("erreur ajout de pari")}})}}),$(".tipstersinputdashboard").select2({allowClear:!0,placeholder:"Choisir un tipster",cache:!0,ajax:{url:"tipsters",dataType:"json",data:function(t){return{q:t.term}},processResults:function(t){return{results:t}}}}),$("#tipstersinputdashboard").change(function(){var t=$("#tipstersinputdashboard").val(),a=$("#followtypeinputdashboard"),e=$("#amountperunit");$("#stakeunitinputdashboard").val(""),$("#amountconversion").val("0"),$("#amountinputdashboard").val(""),$("#flattounitconversion").val("0"),$.ajax({url:"infosTipster",data:"tipster_id="+t,dataType:"json",success:function(t){$("#bookinputdashboard").val(null).trigger("change"),$("#accountsinputdashboard").val(null).trigger("change"),a.val(""),"n"==t.followtype?(a.val("normal"),$("#bookinputdashboard").prop("disabled",!1),$("#accountsinputdashboard").prop("disabled",!1)):"b"==t.followtype&&(a.val("à blanc"),$("#bookinputdashboard").prop("disabled",!0),$("#accountsinputdashboard").prop("disabled",!0)),e.val(t.montant_par_unite)},error:function(t){}})}),$(".bookinputdashboard").select2({allowClear:!0,placeholder:"Choisir un bookmaker",cache:!0,ajax:{url:"bookmakers",dataType:"json",data:function(t){return{q:t.term}},processResults:function(t){return{results:t}}}}),$("#accountsinputdashboard").select2({allowClear:!0,placeholder:"Choisir un compte",cache:!0,minimumResultsForSearch:1/0,ajax:{url:"accounts",dataType:"json",data:function(t){return{book_id:$("#bookinputdashboard").val(),q:t.term}},processResults:function(t){return{results:t}}}}),$("#serieinputdashboard").select2({allowClear:!0,placeholder:"Choisir une serie",tags:!0,cache:!0,ajax:{url:"parisabcd",dataType:"json",data:function(t){return{q:t.term}},processResults:function(t){return{results:t}}}}),$("#letterinputdashboard").select2({allowClear:!0,placeholder:"Choisir une lettre",cache:!0,minimumResultsForSearch:1/0,ajax:{url:"lettreabcd",dataType:"json",data:function(t){return{serie_nom:$("#serieinputdashboard").val(),q:t.term}},processResults:function(t){console.log(t);var a=[];return $.each(t,function(t,e){a.push({id:e,text:e})}),{results:a}}}}),$("#serieinputdashboard").change(function(){var t=$("#serieinputdashboard option:selected").text();t=encodeURIComponent(t),console.log(t),$("#letterinputdashboard").val(null).trigger("change"),$.ajax({url:"lettreabcd",data:"serie_nom="+t,dataType:"json",success:function(t){},error:function(){console.log("probleme chargement lettre systeme abcd")}})}),$(".sportinputdashboard").select2({allowClear:!0,placeholder:"Choisir un sport",cache:!0,ajax:{url:"sports",dataType:"json",data:function(t){return{q:t.term}},processResults:function(t){return{results:t}}}}),$(".sportinputdashboard").change(function(){$(".competitioninputdashboard").val(null).trigger("change"),$(".team1inputdashboard").val(null).trigger("change"),$(".team2inputdashboard").val(null).trigger("change")}),$(".competitioninputdashboard").change(function(){$(".team1inputdashboard").val(null).trigger("change"),$(".team2inputdashboard").val(null).trigger("change")}),$(".competitioninputdashboard").select2({allowClear:!0,placeholder:"Choisir une competition",cache:!0,ajax:{url:"competitions",dataType:"json",data:function(t){return{sport_id:$(".sportinputdashboard").val(),q:t.term}},processResults:function(t){return{results:t}}}}),$(".team1inputdashboard").select2({allowClear:!0,placeholder:"Choisir une équipe",cache:!0,ajax:{url:"equipes",dataType:"json",data:function(t){return{adversaire_id:$(".team2inputdashboard").val(),competition_id:$(".competitioninputdashboard").val(),q:t.term}},processResults:function(t){return{results:t}}}}),$(".team2inputdashboard").select2({allowClear:!0,placeholder:"Choisir une équipe",cache:!0,ajax:{url:"equipes",dataType:"json",data:function(t){return{adversaire_id:$(".team1inputdashboard").val(),competition_id:$(".competitioninputdashboard").val(),q:t.term}},processResults:function(t){return{results:t}}}}),$(".picknameinputdashboard").select2(),parisEnCoursDelete(),getBookmakersForSelection(),loadParisEnCours(),loadParisLongTerme(),loadParisABCD(),loadParisTermine(),loadRecapsOnDashboard(),loadBookmakersOnDashboard(),automaticBetForm(),$("#WelcomeModal").modal({keyboard:!1,backdrop:"static"});
+
+function loadBookmakersOnDashboard() {
+    $.ajax({
+        url: 'comptes',
+        type:'get',
+        success: function (data) {
+            $('#comptes_par_bookmakers').html(data);
+        },
+        error: function (data){
+            console.log('la récuperation des comptes bookmakers vers le dashboard n\'a pas fonctionné');
+        }
+    });
+}
+// charge sans vue.
+
+function loadRecapsOnDashboard() {
+    $.ajax({
+        url: 'recaps',
+        type: 'get',
+        success: function (data) {
+            $('[data-toggle="collapse"]').collapse();
+            $('#recaps').html(data);
+        },
+        error: function () {
+        }
+    });
+}
+
+/**
+ * Created by sebs on 30/06/2015.
+ */
+
+    //paris
+    parisEnCoursDelete();
+    getBookmakersForSelection();
+    loadParisEnCours();
+    loadParisLongTerme();
+    loadParisABCD();
+    loadParisTermine();
+
+    // dashboard
+    loadRecapsOnDashboard();
+    loadBookmakersOnDashboard();
+
+    // formulaire d'ajout de pari
+    automaticBetForm();
+    //generalBetForm('#manubetform-add');
+
+$('#WelcomeModal').modal(
+    {
+        keyboard: false,
+        backdrop: 'static'
+    }
+);
+
+function automaticBetForm() {
+
+    var form = $('#automaticform-add');
+    var form_string = '#automaticform-add';
+
+    function ajouterTicket() {
+        form.submit(function (e) {
+            e.preventDefault();
+            var data = $(this).serialize();
+            var linesnum = form.find('.betline').length;
+            if (linesnum == '') {
+                swal({
+                    title: "Erreur!",
+                    text: "Ajoutez au moins une selection pour pouvoir valider le ticket!",
+                    type: "warning",
+                    confirmButtonText: "OK"
+                });
+            } else if (linesnum >= 1) {
+                //serialize doesnt retrieve .text() of an input
+                var ticketABCD;
+                var ticketGratuit;
+                var ticketLongTerme;
+                if (form.find("#ticketABCD").is(":checked")) {ticketABCD = 1;}else{ticketABCD = 0;}
+                if (form.find("#ticketGratuit").is(":checked")) {ticketGratuit = 1;}else{ticketGratuit = 0;}
+                if (form.find("#ticketLongTerme").is(":checked")) {ticketLongTerme = 1;}else{ticketLongTerme = 0;}
+
+                $.ajax({
+                    url: 'encourspari/auto',
+                    type: 'post',
+                    data: data + '&linesnum=' + linesnum + '&ticketABCD=' + ticketABCD + '&ticketGratuit=' + ticketGratuit + '&ticketLongTerme=' + ticketLongTerme,
+                    dataType: 'json',
+                    success: function (json) {
+
+                        var keyname;
+                        if (json.etat == 0) {
+                            if ($.isArray(json.msg)) {
+                                for (key in json.msg) {
+                                    alert(key);
+                                    keyname = key;
+                                    toastr.error(json.msg[keyname], 'Erreur:');
+                                }
+                            } else {
+                                toastr.error(json.msg, 'Erreur:');
+                            }
+
+                        } else if (json.etat == 1) {
+                            resetAutomaticForm();
+                            refreshSelections();
+                            toastr.success(json.msg, 'Pari');
+                            loadParisEnCours();
+                            loadBookmakersOnDashboard();
+                        }
+                    },
+                    error: function (json) {
+                        console.log('erreur ajout de pari');
+                    }
+                });
+            }
+        });
+    }
+
+    // fonction de rafraichissement.
+    function refreshSelections() {
+        var suivi = form.find('#followtypeinputdashboard').val();
+        $.ajax({
+            url: 'selections',
+            success: function (data){
+                form.find('#automatic-selections').html(data.vue);
+                supprimerSelection();
+                $.ajax({
+                    url: 'allbookmakers',
+                    dataType: 'json',
+                    success: function (data2) {
+                        form.find('.bookinputdashboard').select2({
+                            minimumResultsForSearch: Infinity,
+                            cache: true,
+                            data: data2
+                        });
+
+                        if(suivi == 'à blanc'){
+                            form.find('.bookinputdashboard').val("").trigger("change");
+                            form.find('#accountsinputdashboard').val("").trigger("change");
+                        }else{
+                            form.find('.bookinputdashboard').prop('disabled', false);
+                            form.find('#accountsinputdashboard').prop('disabled', false);
+                            form.find('.bookinputdashboard').val(data.bookmaker_id).trigger("change");
+                        }
+                        gestionTipsters(data.bookmaker_id);
+                    }
+                });
+                if (data.msg.length > 0){
+                    swal({
+                        title: "Erreur!",
+                        text: data.msg,
+                        type: "warning",
+                        confirmButtonText: "OK"
+                    });
+                }
+            },
+            error: function (data) {
+                form.find('#automatic-selections').html('<p>impossible de récuperer les selections</p>');
+            }
+        });
+    }
+
+    // rafrachais les selections automatiquement toutes les 10 sec.
+    function refreshSelectionsAuto() {
+        form.find('.bookinputdashboard').val("").trigger("change");
+        form.find('#accountsinputdashboard').val("").trigger("change");
+    }
+
+    // supprime la selection.
+    function supprimerSelection(){
+        form.find('#automatic-selections .boutonsupprimer').on('click', function (e) {
+            e.preventDefault();
+            var parent = $(this).parents('tr');
+            var id = parent.find(".selection_id").text();
+            $.ajax({
+                url: 'coupon/' + id,
+                method: 'delete',
+                success: function (data) {
+                    refreshSelections();
+                },
+                error: function (data) {
+                }
+            });
+        });
+    }
+
+    // rafraichis les selections.*/
+    function refreshSelectionsClick() {
+        form.find('#selection-refresh').click(function (e) {
+            e.preventDefault();
+            refreshSelections();
+        });
+    }
+
+    function typestakechoice() {
+        var select = form.find('select[name=typestakeinputdashboard]');
+        form.find('.typestakeflat').hide();
+        select.on('change', function () {
+            if ($(this).val() == 'f') {
+                form.find('.typestakeunites').hide();
+                form.find('#stakeunitinputdashboard').val('');
+                form.find('.typestakeflat').show();
+            } else {
+                form.find('.typestakeunites').show();
+                form.find('.typestakeflat').hide();
+                form.find('#amountinputdashboard').val('');
+            }
+        });
+    }
+
+    function gestionTipsters(bookmaker_id){
+        form.find('#tipstersinputdashboard').select2({
+            allowClear: true,
+            placeholder: "Choisir un tipster",
+            cache: true,
+            ajax: {
+                url: 'tipsters',
+                dataType: 'json',
+                data: function (params) {
+                    return {
+                        q: params.term // search term
+                    };
+                },
+                processResults: function (data) {
+                    return {
+                        results: data
+                    };
+                }
+            }
+        });
+        form.find('#tipstersinputdashboard').change(function () {
+            var tipster_id = $(form_string + ' #tipstersinputdashboard').val();
+            var followtype = $(form_string + ' #followtypeinputdashboard');
+            var montant_par_unite = $(form_string + ' #amountperunit');
+
+            // remise a zero des champs liés.
+            $(form_string + ' #stakeunitinputdashboard').val('');
+            $(form_string + ' #amountperunit').val('');
+            $(form_string + ' #amountconversion').val('0');
+            $(form_string + ' #amountinputdashboard').val('');
+            $(form_string + ' #flattounitconversion').val('0');
+            $.ajax({
+                url: 'infosTipster',
+                data: 'tipster_id=' + tipster_id,
+                dataType: 'json',
+                success: function (data) {
+                    form.find('.bookinputdashboard').val(null).trigger("change");
+                    form.find('#accountsinputdashboard').val(null).trigger("change");
+                    followtype.val('');
+                    if (data.followtype == 'n') {
+                        followtype.val('normal');
+                        form.find(".bookinputdashboard").prop("disabled", false);
+                        form.find("#accountsinputdashboard").prop("disabled", false);
+                        form.find('.bookinputdashboard').val(bookmaker_id).trigger("change");
+                        form.find('#accountsinputdashboard').val(null).trigger("change");
+                    } else if (data.followtype == 'b') {
+                        followtype.val('à blanc');
+                        form.find('.bookinputdashboard').val(null).trigger("change");
+                        form.find('#accountsinputdashboard').val(null).trigger("change");
+                        form.find('.bookinputdashboard').prop('disabled', true);
+                        form.find('#accountsinputdashboard').prop('disabled', true);
+                    }else{
+                        form.find(".bookinputdashboard").prop("disabled", false);
+                        form.find("#accountsinputdashboard").prop("disabled", false);
+                        form.find('.bookinputdashboard').val(bookmaker_id).trigger("change");
+                        form.find('#accountsinputdashboard').val(null).trigger("change");
+
+                    }
+                    var mt = Number(data.montant_par_unite);
+                    isNaN(mt) ?  montant_par_unite.val('') : montant_par_unite.val(mt);
+                },
+                error: function (data) {
+                }
+            });
+        });
+    }
+
+    function resetAutomaticForm(){
+        form.find('#stakeunitinputdashboard').val(null).trigger("change");
+        form.find('#amountinputdashboard').val(null).trigger("change");
+        form.find('#accountsinputdashboard').val(null).trigger("change");
+        form.find('input:checkbox').prop('checked', false);
+    }
+
+    var type_stake = [{ id: 'u', text: 'en unités' }, { id: 'f', text: 'en devise' }];
+
+    form.find('#typestakeinputdashboard').select2({
+        minimumResultsForSearch: Infinity,
+        cache: true,
+        data: type_stake
+    });
+
+
+    form.find('#accountsinputdashboard').select2({
+        allowClear: true,
+        placeholder: "Choisir un compte",
+        cache: true,
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: 'accounts',
+            dataType: 'json',
+            data: function (params) {
+                return {
+                    book_id: $(form_string + ' .bookinputdashboard').val(),
+                    q: params.term // search term
+                };
+            },
+            processResults: function (data) {
+                // parse the results into the format expected by Select2.
+                // since we are using custom formatting functions we do not need to
+                // alter the remote JSON data
+                /* var newData = [];
+                 $.each(data, function (index,value) {
+                 newData.push({
+                 id:value.id,  //id part present in data
+                 text: value.text  //string to be displayed
+                 });
+                 });*/
+                return {
+                    results: data
+                };
+            }
+        }
+    });
+
+    // chargements des paris abcd dans le select input.
+    form.find('#serieinputdashboard').select2({
+        allowClear: true,
+        placeholder: "Choisir une serie",
+        tags: true,
+        cache: true,
+        ajax: {
+            url: 'parisabcd',
+            dataType: 'json',
+            data: function (params) {
+                return {
+                    q: params.term // search term
+                };
+            },
+            processResults: function (data) {
+                // parse the results into the format expected by Select2.
+                // since we are using custom formatting functions we do not need to
+                // alter the remote JSON data
+                /* var newData = [];
+                 $.each(data, function (index,value) {
+                 newData.push({
+                 id:value.id,  //id part present in data
+                 text: value.text  //string to be displayed
+                 });
+                 });*/
+                return {
+                    results: data
+                };
+            }
+        }
+    });
+
+    form.find('#letterinputdashboard').select2({
+        allowClear: true,
+        placeholder: "Choisir une lettre",
+        cache: true,
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: 'lettreabcd',
+            dataType: 'json',
+            data: function (params) {
+                return {
+                    serie_nom: $(form_string + ' #serieinputdashboard').val(),
+                    q: params.term // search term
+                };
+            },
+            processResults: function (data) {
+                console.log(data);
+                // parse the results into the format expected by Select2.
+                // since we are using custom formatting functions we do not need to
+                // alter the remote JSON data
+                var newData = [];
+                $.each(data, function (index, value) {
+                    newData.push({
+                        id: value,  //id part present in data
+                        text: value  //string to be displayed
+                    });
+                });
+                return {
+                    results: newData
+                };
+            }
+        }
+    });
+
+    form.find('#stakeunitinputdashboard').keyup(function () {
+        var montant_par_unite = $(form_string + ' #amountperunit').val();
+        var unites = Number($(form_string + ' #stakeunitinputdashboard').val());
+        var res = Number(montant_par_unite) * Number(unites);
+        var res_final = Math.round(res * 100) / 100;
+        isNaN(res_final) || res_final < 0 ? $(form_string + '#amountconversion').val('0') : $(form_string + ' #amountconversion').val(res_final);
+    });
+
+    form.find('#amountinputdashboard').keyup(function () {
+        var montant_par_unite = $(form_string + ' #amountperunit').val();
+        var montant = $(form_string + ' #amountinputdashboard').val();
+        var res = Number(montant) / Number(montant_par_unite);
+        var res_final = Math.round(res * 100) / 100;
+        isNaN(res_final) || res_final < 0 || montant_par_unite == '' ? $(form_string + ' #flattounitconversion').val('0') : $(form_string + ' #flattounitconversion').val(res_final);
+    });
+
+    form.find('#serieinputdashboard').prop('disabled', true);
+    form.find('#letterinputdashboard').prop('disabled', true);
+    form.find('.methodeabcdcontainer').addClass("hide");
+    form.find('.bookmakercontainer').addClass("hide");
+
+    form.find('#ticketABCD').on('click', function(){
+        if ( $(this).is(':checked') ) {
+            form.find('.methodeabcdcontainer').removeClass("hide");
+            form.find('#serieinputdashboard').prop('disabled', false);
+            form.find('#letterinputdashboard').prop('disabled', false);
+        }
+        else {
+            form.find('.methodeabcdcontainer').addClass("hide");
+            form.find('#serieinputdashboard').prop('disabled', true);
+            form.find('#letterinputdashboard').prop('disabled', true);
+        }
+    });
+
+    // initialisation
+    //$(".bookinputdashboard").prop("disabled", true);
+    //$("#accountsinputdashboard").prop("disabled", true);
+    refreshSelectionsClick();
+    refreshSelections();
+    ajouterTicket();
+    typestakechoice();
+}
+
+
+
+
+
+/**
+ * Created by sebs on 08/05/2015.
+ */
+
+function generalBetForm(form_string) {
+
+    // gestion formulaire
+    var form = $(form_string);
+    var form_string = form_string;
+
+    // gestion radio boutons
+    $(form_string+' .methodeabcdcontainer').addClass("hide");
+    $(form_string+' #ticketABCD').click(function () {
+        $(form_string+' .methodeabcdcontainer').removeClass("hide");
+    });
+    $(form_string+' #parislongterme ').click(function () {
+        $(form_string+' .methodeabcdcontainer').addClass("hide");
+        $(form_string+' #letterinputdashboard').empty();
+        $(form_string+' #serieinputdashboard').val(null).trigger("change");
+    });
+    $(form_string+' #aucun').click(function () {
+        $(form_string+' .methodeabcdcontainer').addClass("hide");
+        $(form_string+' #letterinputdashboard').empty();
+        $(form_string+' #serieinputdashboard').val(null).trigger("change");
+    });
+    $(form_string+' #parigratuit').click(function () {
+        $(form_string+' .methodeabcdcontainer').addClass("hide");
+        $(form_string+' #letterinputdashboard').empty();
+        $(form_string+' #serieinputdashboard').val(null).trigger("change");
+    });
+
+    form.find('#tipstersinputdashboard').select2({
+        allowClear: true,
+        placeholder: "Choisir un tipster",
+        cache: true,
+        ajax: {
+            url: 'tipsters',
+            dataType: 'json',
+            data: function (params) {
+                return {
+                    q: params.term // search term
+                };
+            },
+            processResults: function (data) {
+                return {
+                    results: data
+                };
+            }
+        }
+    });
+
+    form.find('#tipstersinputdashboard').change(function () {
+        var tipster_id = $(form_string + ' #tipstersinputdashboard').val();
+        var followtype = $(form_string + ' #followtypeinputdashboard');
+        var montant_par_unite = $(form_string + ' #amountperunit');
+
+        // remise a zero des champs liés.
+        $(form_string + ' #stakeunitinputdashboard').val('');
+        $(form_string + ' #amountperunit').val('');
+        $(form_string + ' #amountconversion').val('0');
+        $(form_string + ' #amountinputdashboard').val('');
+        $(form_string + ' #flattounitconversion').val('0');
+        $.ajax({
+            url: 'infosTipster',
+            data: 'tipster_id=' + tipster_id,
+            dataType: 'json',
+            success: function (data) {
+                form.find('.bookinputdashboard').val(null).trigger("change");
+                form.find('#accountsinputdashboard').val(null).trigger("change");
+                followtype.val('');
+                if (data.followtype == 'n') {
+                    followtype.val('normal');
+                    form.find(".bookinputdashboard").prop("disabled", false);
+                    form.find("#accountsinputdashboard").prop("disabled", false);
+                } else if (data.followtype == 'b') {
+                    followtype.val('à blanc');
+                    form.find('.bookinputdashboard').val(null).trigger("change");
+                    form.find('#accountsinputdashboard').val(null).trigger("change");
+                    form.find('.bookinputdashboard').prop('disabled', true);
+                    form.find('#accountsinputdashboard').prop('disabled', true);
+                }else{
+                    form.find('.bookinputdashboard').val(null).trigger("change");
+                    form.find('#accountsinputdashboard').val(null).trigger("change");
+                    form.find('.bookinputdashboard').prop('disabled', true);
+                    form.find('#accountsinputdashboard').prop('disabled', true);
+                }
+                var mt = Number(data.montant_par_unite);
+                isNaN(mt) ?  montant_par_unite.val('') : montant_par_unite.val(mt);
+            },
+            error: function (data) {
+            }
+        });
+    });
+
+    form.find('.bookinputdashboard').select2({
+        allowClear: true,
+        placeholder: "Choisir un bookmaker",
+        cache: true,
+        ajax: {
+            url: 'bookmakers',
+            dataType: 'json',
+            data: function (params) {
+                return {
+                    q: params.term // search term
+                };
+            },
+            processResults: function (data) {
+                // parse the results into the format expected by Select2.
+                // since we are using custom formatting functions we do not need to
+                // alter the remote JSON data
+                /* var newData = [];
+                 $.each(data, function (index,value) {
+                 newData.push({
+                 id:value.id,  //id part present in data
+                 text: value.text  //string to be displayed
+                 });
+                 });*/
+                return {
+                    results: data
+                };
+            }
+        }
+    });
+
+    form.find('#accountsinputdashboard').select2({
+        allowClear: true,
+        placeholder: "Choisir un compte",
+        cache: true,
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: 'accounts',
+            dataType: 'json',
+            data: function (params) {
+                return {
+                    book_id: $(form_string + ' .bookinputdashboard').val(),
+                    q: params.term // search term
+                };
+            },
+            processResults: function (data) {
+                // parse the results into the format expected by Select2.
+                // since we are using custom formatting functions we do not need to
+                // alter the remote JSON data
+                /* var newData = [];
+                 $.each(data, function (index,value) {
+                 newData.push({
+                 id:value.id,  //id part present in data
+                 text: value.text  //string to be displayed
+                 });
+                 });*/
+                return {
+                    results: data
+                };
+            }
+        }
+    });
+
+    // chargements des paris abcd dans le select input.
+    form.find('#serieinputdashboard').select2({
+        allowClear: true,
+        placeholder: "Choisir une serie",
+        tags: true,
+        cache: true,
+        ajax: {
+            url: 'parisabcd',
+            dataType: 'json',
+            data: function (params) {
+                return {
+                    q: params.term // search term
+                };
+            },
+            processResults: function (data) {
+                // parse the results into the format expected by Select2.
+                // since we are using custom formatting functions we do not need to
+                // alter the remote JSON data
+                /* var newData = [];
+                 $.each(data, function (index,value) {
+                 newData.push({
+                 id:value.id,  //id part present in data
+                 text: value.text  //string to be displayed
+                 });
+                 });*/
+                return {
+                    results: data
+                };
+            }
+        }
+    });
+
+    form.find('#letterinputdashboard').select2({
+        allowClear: true,
+        placeholder: "Choisir une lettre",
+        cache: true,
+        minimumResultsForSearch: Infinity,
+        ajax: {
+            url: 'lettreabcd',
+            dataType: 'json',
+            data: function (params) {
+                return {
+                    serie_nom: $(form_string + ' #serieinputdashboard').val(),
+                    q: params.term // search term
+                };
+            },
+            processResults: function (data) {
+                console.log(data);
+                // parse the results into the format expected by Select2.
+                // since we are using custom formatting functions we do not need to
+                // alter the remote JSON data
+                var newData = [];
+                $.each(data, function (index, value) {
+                    newData.push({
+                        id: value,  //id part present in data
+                        text: value  //string to be displayed
+                    });
+                });
+                return {
+                    results: newData
+                };
+            }
+        }
+    });
+
+    // suivant le type de mise choisi.
+    function typestakechoice() {
+        var select = form.find('select[name=typestakeinputdashboard]');
+        form.find('.typestakeflat').hide();
+        select.on('change', function () {
+            if ($(this).val() == 'f') {
+                $form.find('.typestakeunites').hide();
+                form.find('#stakeunitinputdashboard').val('');
+                form.find('.typestakeflat').show();
+            } else {
+                form.find('.typestakeunites').show();
+                form.find('.typestakeflat').hide();
+                form.find('#amountinputdashboard').val('');
+            }
+        });
+    }
+
+    form.find("#serieinputdashboard").change(function () {
+        var nom = $(form_string + "#serieinputdashboard option:selected").text();
+        nom = encodeURIComponent(nom);
+        form.find("#letterinputdashboard").val(null).trigger("change");
+    });
+
+    form.find('#stakeunitinputdashboard').keyup(function () {
+        var montant_par_unite = $(form_string + ' #amountperunit').val();
+        var unites = Number($(form_string + ' #stakeunitinputdashboard').val());
+        var res = Number(montant_par_unite) * Number(unites);
+        var res_final = Math.round(res * 100) / 100;
+        isNaN(res_final) || res_final < 0 ? $(form_string + '#amountconversion').val('0') : $(form_string + ' #amountconversion').val(res_final);
+    });
+
+    form.find('#amountinputdashboard').keyup(function () {
+        var montant_par_unite = $(form_string + ' #amountperunit').val();
+        var montant = $(form_string + ' #amountinputdashboard').val();
+        var res = Number(montant) / Number(montant_par_unite);
+        var res_final = Math.round(res * 100) / 100;
+        isNaN(res_final) || res_final < 0 || montant_par_unite == '' ? $(form_string + ' #flattounitconversion').val('0') : $(form_string + ' #flattounitconversion').val(res_final);
+    });
+
+    typestakechoice();
+    $(".bookinputdashboard").prop("disabled", true);
+    $("#accountsinputdashboard").prop("disabled", true);
+    $('#methodeabcdcontainer').addClass("hide");
+}
+
+function loadParisABCD() {
+    $.ajax({
+        url: 'dashboard/ajax/parisabcd',
+        data: {page: 1},
+        type: 'get',
+        success: function (data) {
+            $('#tab_15_3').html(data);
+        },
+        error: function (data) {
+            $('#tab_15_3').html('<p>impossible de récuperer les paris ABCD</p>');
+        }
+    });
+}
+
+function loadParisEnCours() {
+    var onglet = $('#onglet_paris_en_cours span');
+    $.ajax({
+        url: 'dashboard/ajax/parisencours',
+        data: {page: 1},
+        type: 'get',
+        success: function (data) {
+            $('#tab_15_1').html(data);
+            featuresParisEnCours();
+            paginationParisEnCours();
+            cashOut();
+        },
+        error: function (data) {
+            $('#tab_15_1').html('<p>impossible de récuperer les paris</p>');
+        }
+    });
+}
+
+function loadParisTermine() {
+    var onglet = $('#onglet_paris_long_terme span');
+    $.ajax({
+        url: 'dashboard/ajax/paristermine',
+        data: {page: 1},
+        type: 'get',
+        success: function (data) {
+            $('#tab_15_4').html(data);
+            parisTermineDelete();
+            $("#paristerminetable .boutonsupprimer").click(function (e) {
+                e.stopPropagation();
+            });
+        },
+        error: function (data) {
+            $('#tab_15_4').html('<p>impossible de récuperer les paris terminés</p>');
+        }
+    });
+}
+
+function featuresParisEnCours() {
+    // activation des tooltip.
+    $('[data-toggle="tooltip"]').tooltip();
+    $("[data-hover='tooltip']").tooltip();
+
+
+
+    // afficher le count dans le bon endroit.
+    var count = $('#parisencourstable #count').text();
+    if (count == '0') {
+        $('#onglet_paris_en_cours span').text('');
+    } else {
+        $('#onglet_paris_en_cours span').text(count);
+    }
+
+
+    // stopper la propagation quand on click sur le choix du resultat.
+    $("#parisencourstable .boutonvalider").click(function (e) {
+        e.stopPropagation();
+    });
+    $("#parisencourstable .boutonsupprimer").click(function (e) {
+        e.stopPropagation();
+    });
+    $("select[name='resultatDashboardInput']").click(function (e) {
+        e.stopPropagation();
+    });
+
+    parisEnCoursCalculateStatus('#parisencourstable');
+    parisEnCoursEnclose('#parisencourstable', '.validerform', 'historique');
+    parisEnCoursDelete('#parisencourstable', '.supprimerform', 'encourspari/');
+}
+
+// lors du clique sur un numero de pagination.
+function paginationParisEnCours() {
+    $('#tab_15_1').on('click', '.pagination a', function (e) {
+        e.preventDefault();
+        var pg = getPaginationSelectedPage($(this).attr('href'));
+        $.ajax({
+            url: 'dashboard/ajax/parisencours',
+            data: {page: pg},
+            success: function (data) {
+                $('#tab_15_1').html(data);
+                featuresParisEnCours();
+            },
+            error: function (data) {
+                console.log('erreur: pagination par click');
+            }
+        });
+    });
+}
+
+// quelle pagination charger, lorsque l'on ajoute ou supprimer un pari.
+function loadParisEnCoursWithPage(condition) {
+    var taille = $('#parisencourstable .id').length;
+    var pg = $('#tab_15_1').find('.active').find('span').text();
+
+    // quand il ne reste qu'un seul pari sur une page et quil est suprimé, ca passe diectement a la page precedente.
+    if (condition == 'delete' && taille == 1) {
+        pg = pg - 1;
+    }
+
+    // quand pg est egale a rien on affiche la premiere page.
+    if (!pg) {
+        loadParisEnCours();
+    } else {
+        $.ajax({
+            url: 'dashboard/ajax/parisencours',
+            data: {page: pg},
+            type: 'get',
+            success: function (data) {
+                $('#tab_15_1').html(data);
+                featuresParisEnCours();
+            }
+        });
+    }
+}
+
+function cashOut(){
+
+    // passage de parametres vers le modal.
+    $('#cashoutModal').on('show.bs.modal', function(e) {
+
+        //get data-id attribute of the clicked element
+        var pari_id = $(e.relatedTarget).data('id');
+
+        //populate the textbox
+        $(e.currentTarget).find('input[name="pari-id"]').val(pari_id);
+    });
+
+    // cash out modal
+    var cashout_form = $('#cashout-update');
+    var cashout_array = [{ id: 'c', text: 'classic cash out' }];
+    cashout_form.find('#cashout-select').select2({
+        minimumResultsForSearch: Infinity,
+        cache: true,
+        data: cashout_array
+    }).change(function(){
+        cashout_form.find('.classic-cash-out-group').toggleClass('hide');
+        //cashout_form.find('.partial-cash-out-group').toggleClass('hide');
+    });
+
+    // envoi du form.
+    cashout_form.submit(function(e){
+        e.preventDefault();
+        var inputs = cashout_form.serialize();
+        $.ajax({
+            url : 'cashout',
+            type : 'post',
+            data : inputs,
+            dataType : 'json',
+            success: function(data){
+                if(data.etat){
+                    toastr.success(data.msg, 'Pari');
+                }else{
+                    for (key in data.msg) {
+                        keyname = key;
+                        toastr.error(data.msg[keyname], 'Erreur:');
+                    }
+                }
+            },
+            error: function(){
+
+            }
+        });
+    });
+
+}
+
+function loadParisLongTerme() {
+
+    $.ajax({
+        url: 'dashboard/ajax/parislongterme',
+        data: {page: '1'},
+        type: 'get',
+        success: function (msg) {
+
+            // chargement des paris long terme dans la div.
+            $('#tab_15_2').html(msg);
+
+            // activation des tooltip.
+            $('[data-toggle="tooltip"]').tooltip();
+
+            // afficher le count dans le bon endroit.
+            $('#onglet_paris_long_terme span').text($('#parislongtermetable #count').text());
+
+            // mise en variable des differentes balises.
+            var table = $("#parislongtermetable");
+            var boutonvalider = $("#parislongtermetable .boutonvalider");
+            var bouton_supprimer = $("#parislongtermetable .boutonsupprimer");
+            var form_valider = $("#parislongtermetable .validerform");
+            var form_supprimer = $("#parislongtermetable .supprimerform");
+            var resultat = $("#parislongtermetable select[name='resultatDashboardInput']");
+            var resultat_select = $("#parislongtermetable select[name='resultatDashboardInput'] option:selected");
+
+            // active les tooltip.
+            $('[data-toggle="tooltip"]').tooltip();
+
+            // stopper la propagation quand on click sur le bouton valider.
+            boutonvalider.click(function (e) {
+                e.stopPropagation();
+            });
+
+            // stopper la propagation quand on click sur le bouton supprimer.
+            bouton_supprimer.click(function (e) {
+                e.stopPropagation();
+            });
+
+            // stopper la propagation quand on click sur le choix du resultat.
+            resultat.click(function (e) {
+                e.stopPropagation();
+            });
+
+            // calcul du montant retour par rapport au resultat selectionné
+            resultat.change(function (e) {
+                var parent = $(this).closest('.mainrow');
+                var cote = parent.find(".tdcote").text();
+                var mise = parent.find(".tdmise .tdsubmise").text();
+                var tdsubretour = parent.find('.tdretour span.subretour');
+                var tdretour = parent.find('.tdretour');
+
+                switch (result = parent.find("select[name='resultatDashboardInput'] option:selected").text()) {
+                    case '--Selectionnez--':
+                        tdsubretour.empty();
+                        tdretour.css("color", "black");
+                        break;
+                    case "Gagné":
+                        var retour = parseFloat(mise * cote);
+                        tdretour.css("color", "green");
+                        parent.find('.tdretour span.subretour').text(retour);
+                        break;
+                    case "Perdu":
+                        var retour = parseFloat(mise);
+                        tdretour.css("color", "red");
+                        parent.find('.tdretour span.subretour').text(retour);
+                        break;
+                    case "1/2 Gagné":
+                        var retour = parseFloat((mise * cote - mise) / 2) + parseFloat(mise);
+                        tdretour.css("color", "green");
+                        parent.find('.tdretour span.subretour').text(retour);
+                        break;
+                    case "1/2 Perdu":
+                        var retour = parseFloat(mise / 2);
+                        tdretour.css("color", "red");
+                        parent.find('.tdretour span.subretour').text(retour);
+                        break;
+                    case "Remboursé":
+                        tdretour.css("color", "black");
+                        var retour = parseFloat(mise);
+                        parent.find('.tdretour span.subretour').text(retour);
+                        break;
+                    case "Annulé":
+                        tdretour.css("color", "black");
+                        var retour = parseFloat(mise);
+                        parent.find('.tdretour span.subretour').text(retour);
+                        break;
+                }
+            });
+
+            // click sur le bouton valider du paris long terme ,
+            // qui va le transferer vers historique et recharger les paris long terme.
+            form_valider.submit(function (e) {
+                e.preventDefault();
+                var parent = $(this).closest('.mainrow');
+                var retour = parent.find('.tdretour span.subretour');
+                if (retour.text().length > 0) {
+                    var cote = parent.find(".tdcote").text();
+                    var mise = parent.find(".tdmise .tdsubmise").text();
+                    var ser = $(this).serialize();
+                    $.ajax({
+                        url: 'historique',
+                        type: 'post',
+                        data: ser + '&cote=' + cote + '&mise=' + mise + '&retour=' + retour,
+                        success: function (json) {
+                            loadParisLongTerme();
+                        },
+                        error: function () {
+                            console.log("valider un pari long terme ne fonctionne pas");
+                        }
+                    });
+                } else {
+                    alert('Vous devez préciser un status pour ce pari.');
+                }
+            });
+
+            // click sur le bouton supprimer qui va supprimer le pari et recharger les paris long terme.
+            form_supprimer.submit(function (e) {
+                e.preventDefault();
+                var parent = $(this).closest('.mainrow');
+                var id = parent.find('.id').text();
+                var retour = parent.find('.tdretour span.subretour');
+                var cote = parent.find(".tdcote").text();
+                var mise = parent.find(".tdmise .tdsubmise").text();
+                var ser = $(this).serialize();
+                if(confirm("Etes vous sur?")){
+                    $.ajax({
+                        url: 'historique/' + id,
+                        type: 'delete',
+                        success: function (json) {
+                            loadParisLongTerme();
+                        },
+                        error: function () {
+                            console.log("supprimer un pari long terme ne fonctionne pas");
+                        }
+                    });
+                }
+            });
+        },
+        error: function (data) {
+            console.log("le chargement des paris long terme n\'a pas fonctionné");
+
+        }
+    });
+}
+
+
+
+/**
+ * Created by sebs on 19/04/2015.
+ */
+
+// calcul pour l affichage du profit du ticket.
+function calculProfits(type, status, grand_parent_var, profits_var, mise_var, devise_var) {
+    var mise = mise_var;
+    var result = mise;
+    var grand_parent = grand_parent_var;
+    var profits = profits_var;
+    var devise = devise_var;
+    var no_selection;
+    var perdu_selection;
+    var afficher_devise = false;
+    var status_en_attente = false;
+    var cotes = 1;
+    if(type == 'simple'){
+        //console.log('type= '+type+' status= '+status+' mainrow= '+grand_parent+' profits='+profits+' mise= '+mise+' devise= '+devise);
+        var cote = Number(grand_parent.find('.tdcote').text());
+        if(status == 0){
+            no_selection = 1;
+        }else if(status == 1) {
+            cotes *= cote;
+        }else if(status == 2) {
+            cotes *= 0 ;
+            perdu_selection = 1;
+        }else if(status == 3){
+            cotes = cotes * [(cote-1)/2+1];
+        }else if(status == 4){
+            cotes = cotes * 0.5;
+        }else if(status == 5){
+            cotes += 0;
+        }
+
+        if(no_selection && !perdu_selection){
+        result = '';
+        afficher_devise = false;
+        status_en_attente = true;
+        }else{
+            afficher_devise = true;
+            result = cotes * mise;
+            result -= mise;
+            result = Number(Math.round(result * 100) / 100);
+        }
+        if(result > 0){
+            profits.addClass('font-green');
+            devise.addClass('font-green');
+            profits.removeClass('font-red');
+            devise.removeClass('font-red');
+            profits.removeClass('font-gray');
+            devise.removeClass('font-gray');
+        }else if(result < 0){
+            profits.addClass('font-red');
+            devise.addClass('font-red');
+            profits.removeClass('font-green');
+            devise.removeClass('font-green');
+            profits.removeClass('font-gray');
+            devise.removeClass('font-gray');
+        }else{
+            profits.addClass('font-gray');
+            devise.addClass('font-gray');
+            profits.removeClass('font-green');
+            devise.removeClass('font-green');
+            profits.removeClass('font-red');
+            devise.removeClass('font-red');
+        }
+        if(afficher_devise){
+            devise.removeClass('hide');
+        }else{
+            devise.addClass('hide');
+        }
+        status_en_attente ? profits.html(result) : profits.text(result);
+    }else{
+        grand_parent.find(".child-table-tr").each(function () {
+        var cote = Number($(this).find('.cote-td').text());
+        var status = $(this).find('select[name="resultatSelectionDashboardInput[]"]').val();
+        if(status == 0){
+            no_selection = 1;
+        }else if(status == 1) {
+            cotes *= cote;
+        }else if(status == 2) {
+            cotes *= 0 ;
+            perdu_selection = 1;
+        }else if(status == 3){
+            cotes = cotes * [(cote-1)/2+1];
+        }else if(status == 4){
+            cotes = cotes * 0.5;
+        }else if(status == 5){
+            cotes += 0;
+        }
+    });
+
+    if(no_selection && !perdu_selection){
+        result = '';
+        afficher_devise = false;
+    }else {
+        afficher_devise = true;
+        result = cotes * mise;
+        result -= mise;
+        result = Number(Math.round(result * 100) / 100);
+    }
+    if(result > 0){
+        profits.addClass('font-green');
+        devise.addClass('font-green');
+        profits.removeClass('font-red');
+        devise.removeClass('font-red');
+        profits.removeClass('font-gray');
+        devise.removeClass('font-gray');
+    }else if(result < 0){
+        profits.addClass('font-red');
+        devise.addClass('font-red');
+        profits.removeClass('font-green');
+        devise.removeClass('font-green');
+        profits.removeClass('font-gray');
+        devise.removeClass('font-gray');
+    }else{
+        profits.addClass('font-gray');
+        devise.addClass('font-gray');
+        profits.removeClass('font-green');
+        devise.removeClass('font-green');
+        profits.removeClass('font-red');
+        devise.removeClass('font-red');
+    }
+
+    if(afficher_devise){
+        devise.removeClass('hide');
+    }else{
+        devise.addClass('hide');
+    }
+    profits.text(result);
+    }
+ 
+
+}
+
+// pour desactiver ou activer le bouton valider.
+function statusBoutonValider(type, gran_parent_var , main_parent_valider_var) {
+    var grand_parent = gran_parent_var;
+    var main_parent_valider =  main_parent_valider_var;
+    var status_array = new Array();
+    if(type == 'simple'){
+        status_en_cours = grand_parent.find('select[name="resultatSelectionDashboardInput[]"]').val();
+        console.log(status_en_cours);
+        if(status_en_cours == '0'){
+            main_parent_valider.prop("disabled", true);
+        }else{
+            main_parent_valider.prop("disabled", false);
+        }
+    }else{
+        grand_parent.find(".child-table-tr").each(function () {
+            var status_en_cours = $(this).find('select[name="resultatSelectionDashboardInput[]"]').val();
+            status_array.push(status_en_cours);
+        });
+        if(($.inArray('2', status_array)!==-1) || ($.inArray('2', status_array) == -1 && $.inArray('0', status_array) ==-1)){
+            main_parent_valider.prop("disabled", false);
+        }else{
+            main_parent_valider.prop("disabled", true);
+        }
+    }
+}
+
+// fonction générale pour definir le status du ticket. Il regroupe toutes les autres fonctions.
+function parisEnCoursCalculateStatus(tablename) {
+    $(tablename+" select[name='resultatSelectionDashboardInput[]']").change(function () {
+
+        var table = $(tablename);
+        var mainrow = $(this).closest('.mainrow');
+        var type = mainrow.find('.type').text();
+        console.log(type);
+
+        // pour le cas d'un pari simple.
+        if(type == 'simple'){
+            var cote = mainrow.find('.tdcote').text(); 
+            var mise = mainrow.find('.tdsubmise').text(); 
+            var profits = mainrow.find('.profits');
+            var devise = mainrow.find('.devise');
+            var status = $(this).val();
+            var main_parent_valider = mainrow.find('.boutonvalider');
+            // chargements des fonctions.
+            //console.log('type= '+type+' status= '+status+' mainrow= '+mainrow+' profits='+profits+' mise= '+mise+' devise= '+devise);
+            
+            statusBoutonValider(type, mainrow, main_parent_valider);
+            calculProfits(type, status, mainrow, profits, mise, devise);
+        }
+        else{
+            // declaration des variables.
+        var grand_parent = $(this).closest('.subrow');
+        var main_parent = grand_parent.prev();
+        var main_parent_valider = main_parent.find('.boutonvalider');
+        var parent = $(this).closest('.child-table-tr');
+        var child_id = parent.find(".child-id").text();
+        var info = parent.find('input[name="childrowsinput[]"]').val();
+        var mise = main_parent.find('.tdsubmise').text();
+        var profits = main_parent.find('.profits');
+        var devise = main_parent.find('.devise');
+            // chargements des fonctions.
+            statusBoutonValider(type, grand_parent, main_parent_valider);
+            calculProfits(type, grand_parent, profits, mise, devise);
+        }
+    });
+}
+
+/**
+ * Created by sebs on 19/04/2015.
+ */
+
+function parisEnCoursDelete(tablename,formname,urlgiven){
+    var table = $(tablename);
+    var form = $(formname);
+    var url = urlgiven;
+    $(tablename+' '+formname).submit(function (e) {
+        e.preventDefault();
+        var parent = $(this).closest('.mainrow');
+        var id = parent.find('.id').text();
+        var retour = parent.find('.tdretour span.subretour');
+        var cote = parent.find(".tdcote").text();
+        var mise = parent.find(".tdmise .tdsubmise").text();
+        var ser = $(this).serialize();
+        swal({
+                title: "Are you sure?",
+                text: "You will not be able to recover this imaginary file!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "No, cancel plx!",
+                closeOnConfirm: true,
+                closeOnCancel: true
+            },
+            function (isConfirm) {
+                if (isConfirm) {
+                    $.ajax({
+                        url: url + id,
+                        type: 'delete',
+                        success: function (data) {
+                            loadParisEnCoursWithPage('delete');
+                            loadBookmakersOnDashboard();
+                            if (data.etat == 0) {
+                                toastr.error(data.msg, 'Suppression');
+                            } else {
+                                toastr.success(data.msg, 'Suppression');
+                                loadBookmakersOnDashboard();
+                            }
+                        },
+                        error: function () {
+                            console.log("supprimer un pari en cours ne fonctionne pas");
+                        }
+                    });
+                }
+            });
+    });
+}
+/**
+ * Created by sebs on 19/04/2015.
+ */
+
+function parisEnCoursEnclose(tablename,formname,urlgiven) {
+    var table = $(tablename);
+    var form = $(formname);
+    var url = urlgiven;
+// click sur le bouton valider du paris en cours , qui va le transferer vers historique(termineParis)
+    $(tablename+' '+formname).submit(function (e) {
+        e.preventDefault();
+        var parent = $(this).closest('.mainrow');
+        var wrapper = $(this).closest('.wrapperRow');
+        var retour = parent.find('.tdretour span.subretour');
+        var id = parent.find('.id').text();
+        var childrows = new Array();
+        var childrowsstatus = new Array();
+        var subrow = parent.next().find('.child-row input');
+        var type = parent.find('.type').text();
+        
+        if(type == 'simple'){
+            var status_val = parent.find('select[name="resultatSelectionDashboardInput[]"]').val();
+            var info_val = parent.find('input[name="childrowsinput[]"]').val();
+            childrows.push(info_val);
+            childrowsstatus.push(status_val);
+        }else{
+            parent.next().find('input[name="childrowsinput[]"]').each(function () {
+                childrows.push($(this).val());
+            });
+            parent.next().find('select[name="resultatSelectionDashboardInput[]"]').each(function () {
+                childrowsstatus.push($(this).val());
+            });
+        }
+            var ser = $(this).serialize();
+            $.ajax({
+                url: url,
+                type: 'post',
+                data: ser + '&ticket-id=' + id + '&childrowsinput[]=' + childrows + '&childrowsstatus[]=' + childrowsstatus,
+                dataType: 'json',
+                success: function (data) {
+
+                    if (data.etat == 0) {
+                        toastr.error(data.msg, 'Validation');
+                    } else {
+                        toastr.success(data.msg, 'Validation');
+                        loadParisEnCours();
+                        loadParisTermine();
+                        loadBookmakersOnDashboard();
+                        loadRecapsOnDashboard();
+                    }
+                },
+                error: function () {
+                    console.log("valider un pari en cours ne fonctionne pas");
+                }
+            });
+    });
+}
+/**
+ * Created by sebs on 19/04/2015.
+ */
+
+function parisTermineDelete(){
+    var tablename = '#paristerminetable';
+    var formname = '.supprimerform';
+    var url = 'historique';
+    $(tablename+' '+formname).submit(function (e) {
+        e.preventDefault();
+        var parent = $(this).closest('.mainrow');
+        var id = parent.find('.id').text();
+        swal({
+                title: "Etes-vous sur?",
+                text: "Vous allez définitivement supprimer ce pari.",
+                type: "Attention",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Oui, le supprimer!",
+                cancelButtonText: "Non, ne pas le supprimer!",
+                closeOnConfirm: true,
+                closeOnCancel: true
+            },
+            function (isConfirm) {
+                if (isConfirm) {
+                    $.ajax({
+                        url: url + id,
+                        type: 'delete',
+                        success: function (data) {
+                            if (data.etat == 0) {
+                                toastr.error(data.msg, 'Suppression');
+                            } else {
+                                toastr.success(data.msg, 'Suppression');
+                                loadBookmakersOnDashboard();
+                                loadRecapsOnDashboard();
+                            }
+                        },
+                        error: function () {
+                            console.log("supprimer un pari en cours ne fonctionne pas");
+                        }
+                    });
+                }
+            });
+    });
+}

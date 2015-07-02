@@ -5,9 +5,8 @@ class PreferenceController extends BaseController {
 	{
 		parent::__construct();
 		$this->beforeFilter('auth');
-		$this->userid = Auth::user()->id;
-		$this->user = User::find($this->userid);
-		$this->timezone = Auth::user()->timezone;
+		$this->beforeFilter('csrf', array('only' => 'store'));
+
 	}
 	/**
 	 * Display a listing of the resource.

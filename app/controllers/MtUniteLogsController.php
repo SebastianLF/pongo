@@ -1,6 +1,6 @@
 <?php
 
-class MtUniteLogs extends BaseController {
+class MtUniteLogsController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.

@@ -1,4 +1,3 @@
-//setInterval(refresh_selections, (5 * 1000));
 function automaticBetForm() {
 
     var form = $('#automaticform-add');

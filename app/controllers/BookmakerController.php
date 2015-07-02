@@ -7,7 +7,7 @@
 		public function __construct()
 		{
 			parent::__construct();
-			$this->beforeFilter('auth');
+			$this->beforeFilter('auth', array('only' => array('store', 'edit', 'update', 'destroy')));
 
 		}
 
@@ -52,7 +52,7 @@
 
 			$regles = array(
 				'booknameselect' => 'required|exists:bookmakers,id',
-				'accountnameinput' => 'required|unique:bookmaker_user,nom_compte,null,id,bookmaker_id,' . $bookmaker->id . ',user_id,' . $this->currentUserId,
+				'accountnameinput' => 'required|unique:bookmaker_user,nom_compte,null,id,bookmaker_id,' . $bookmaker->id . ',user_id,' . $this->currentUser->id,
 				'bankrollamountinput' => 'required|regex:/^\d+(\.\d{1,2})?$/',
 			);
 			$messages = array(
@@ -204,9 +204,12 @@
 		public function showComptes()
 		{
 			$bookmakers = Bookmaker::whereHas('comptes', function ($query) {
-				$query->where('user_id', '=', $this->currentUser->id);
-			})->with(array('comptes'))->with('comptes.enCoursParis')->get();
+				$query->where('user_id', $this->currentUser->id);
+			})->with(array('comptes' => function ($query) {
+				$query->where('bookmaker_user.user_id', $this->currentUser->id);
+			}))->get();
 			$view = View::make('dashboard.bookmakers', array('bookmakers' => $bookmakers));
+			//Clockwork::info($bookmakers);
 			return $view;
 		}
 

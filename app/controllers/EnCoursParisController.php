@@ -616,7 +616,7 @@
 				$cashout_type = Input::get('cashout-select');
 				$montant = Input::get('classic-cash-out');
 				$encourspari = $this->currentUser->enCoursParis()->where('id', $encourspari_id)->firstOrFail();
-				if ($cashout_type == 'c') {
+				if ($cashout_type == 'c'){
 
 					$retour_unites = round($montant / $encourspari->mt_par_unite,2);
 					$profit_unites = round($retour_unites - $encourspari->nombre_unites,2);
@@ -650,13 +650,16 @@
 					// ajout du paris dans la table termine paris.
 					$termine_paris_ajoute = $this->currentUser->termineParis()->save($termine_pari);
 
+					// uniquemenent si le type de suivi est normal.
 					if ($encourspari->followtype == 'n') {
 						$book = $encourspari->compte->where('id', $encourspari->bookmaker_user_id)->firstOrFail();
+						
+						// verification si le bookmaker a une bankroll suffisante en cas de perte.
 						$book->bankroll_actuelle += $retour_devise;
 						$book->save();
-						Clockwork::info($book);
 					}
 
+					// lier à a l'id du pari terminé et delier le pari en cours.
 					$selections = $encourspari->selections()->get();
 					foreach ($selections as $selection) {
 						$selection->termine_pari_id = $termine_paris_ajoute->id;

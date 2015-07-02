@@ -7,6 +7,7 @@
 		{
 			parent::__construct();
 			$this->beforeFilter('auth');
+			$this->beforeFilter('csrf', array('only' => array('store', 'update', 'destroy')));
 		}
 
 
@@ -42,7 +43,6 @@
 			$regles = array(
 				'name_tipster' => 'required|max:30|unique:tipsters,name,NULL,id,user_id,' . $this->currentUser->id . ',deleted_at,NULL',
 				'suivi_tipster' => 'required|in:n,b',
-				'indice_tipster' => 'required|in:3,5,10',
 				'amount_tipster' => 'required|regex:/^\d+(\.\d{1,2})?$/',
 			);
 			$messages = array(
@@ -51,9 +51,7 @@
 				'name_tipster.unique' => 'Ce nom existe deja',
 				'suivi_tipster.required' => "Un type de suvi est nécéssaire",
 				'suivi_tipster.alpha' => "le type de suivi ne doit comporter que des lettres",
-				'indice_tipster.required' => 'Vous devez entrer un indice.',
-				'indice_tipster.in' => 'Entrez un indice valide',
-				'amount_tipster.required' => 'Vous devez entrer un montant par indice.',
+				'amount_tipster.required' => 'Vous devez entrer un montant par unité.',
 				'amount_tipster.regex' => "l'unité de mise doit etre un nombre. Si vous rentrez un nombre decimal, remplacez la virgule par un point ex: 45.78",
 
 			);
@@ -65,7 +63,6 @@
 				));
 			} else {
 				$name = Input::get('name_tipster');
-				$stakeindicator = Input::get('indice_tipster');
 				$stakeamount = Input::get('amount_tipster');
 				$followtype = Input::get('suivi_tipster');
 
@@ -73,7 +70,6 @@
 					fillable ou guarded dans le modele*/
 				$tipster = new Tipster(array(
 					'name' => $name,
-					'indice_unite' => $stakeindicator,
 					'montant_par_unite' => $stakeamount,
 					'followtype' => $followtype,
 				));
@@ -134,7 +130,6 @@
 
 			$regles = array(
 				'nameTipsterEditInput' => 'required|max:30|unique:tipsters,name,' . $id . ',id,user_id,' . $this->currentUser->id . ',deleted_at,NULL',
-				'indiceTipsterEditSelect' => 'required|in:3,5,10',
 				'mtTipsterEditInput' => 'required|regex:/^\d+(\.\d{1,2})?$/',
 				'suiviTipsterEditSelect' => 'required|in:n,b',
 			);
@@ -142,8 +137,6 @@
 				'nameTipsterEditInput.required' => 'Un nom est nécéssaire',
 				'nameTipsterEditInput.max' => 'Nom trop long, 30 caracteres maximum',
 				'nameTipsterEditInput.unique' => 'Ce nom existe deja',
-				'indiceTipsterEditSelect.required' => 'Un indice de confiance est nécéssaire',
-				'indiceTipsterEditSelect.in' => 'L\'indice doit etre de 3,5 ou 10',
 				'mtTipsterEditInput.required' => 'Une unité de mise est nécéssaire',
 				'mtTipsterEditInput.regex' => "le montant par unité doit etre de type 0.00 ou 0",
 				'suiviTipsterEditSelect.required' => "Un type de suvi est nécéssaire",
@@ -158,7 +151,6 @@
 			} else {
 				// récuperation des entrées
 				$name = Input::get('nameTipsterEditInput');
-				$stakeindicator = Input::get('indiceTipsterEditSelect');
 				$stakeamount = Input::get('mtTipsterEditInput');
 				$followtype = Input::get('suiviTipsterEditSelect');
 
@@ -190,7 +182,7 @@
 
 
 				// mis a jour du tipster apres toutes les gestions effectuées.
-				Tipster::where('id', '=', $id)->update(array('name' => $name, 'indice_unite' => $stakeindicator, 'montant_par_unite' => $stakeamount, 'followtype' => $followtype));
+				Tipster::where('id', '=', $id)->update(array('name' => $name, 'montant_par_unite' => $stakeamount, 'followtype' => $followtype));
 
 				return Response::json(array(
 					'success' => true,

@@ -18,10 +18,29 @@ Rounded Portlets
 }
 */
 
+table{
+    font-size: 12px !important;
+}
+
+.glyphicon-plus-sign{
+    font-size: 1.2em !important;
+}
+
+.fontsize15{
+    font-size: 15px;
+}
+
+.table td,th {
+   text-align: center !important;   
+}
+
 .hiddenRow {
     padding: 0 !important;
 	display: inline-block;
+}
 
+.blue{
+    color: #65A0D0 !important;
 }
 
 input{

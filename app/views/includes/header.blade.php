@@ -19,7 +19,7 @@
             </div>
             <ul class="nav navbar-nav pull-right">
                 <li class="header-date">
-                   <span class="fa fa-calendar"></span> {{$dt->timezone($user->timezone)->formatLocalized('%A %d %B %Y')}}
+                   <span class="fa fa-calendar"></span> {{$dt->timezone($user->timezone)->formatLocalized('%d %B %Y - %H:%M')}}
                 </li>
                 <!-- BEGIN TODO DROPDOWN -->
                 <li class="droddown dropdown-separator">

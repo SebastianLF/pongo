@@ -22,15 +22,6 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="indiceTipsterEditSelect">Indice maximum</label>
-                    <small class="text-danger" id="indiceTipsterEditSmall"></small>
-                    <select name="indiceTipsterEditSelect" id="indiceTipsterEditSelect" class="form-control">
-                        <option value="3">3</option>
-                        <option value="5">5</option>
-                        <option value="10" selected="selected">10</option>
-                    </select>
-                </div>
-                <div class="form-group">
                     <label for="mtTipsterEditInput">Montant par indice</label>
                     <small class="text-danger" id="mtTipsterEditSmall"></small>
                     <input type="text" class="form-control" id="mtTipsterEditInput" name="mtTipsterEditInput" placeholder="">

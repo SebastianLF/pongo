@@ -1,5 +1,7 @@
 <?php
 
+	use Carbon\Carbon;
+
 	class BaseController extends Controller
 	{
 		protected $currentUser;
@@ -7,7 +9,9 @@
 		{
 			$this->currentUser = Auth::User();
 			View::share(['user' => $this->currentUser]);
+			setlocale(LC_TIME, 'French');
 			View::share(['dt' => Carbon::now()]);
+
 
 			$this->beforeFilter(function () {
 				Event::fire('clockwork.controller.start');
