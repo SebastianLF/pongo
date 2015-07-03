@@ -1,5 +1,6 @@
 <?php
 	use Carbon\Carbon;
+	use Excel;
 
 	class EnCoursParisController extends BaseController
 	{
@@ -591,23 +592,23 @@
 			);
 			$validator = Validator::make(Input::all(), $regles, $messages);
 
-			if($validator->fails()){
+			if ($validator->fails()) {
 				$errors = $validator->getMessageBag()->toArray();
 				return Response::json(array(
 					'etat' => 0,
 					'msg' => $errors,
 				));
-			}else{
+			} else {
 				$encourspari_id = Input::get('id');
 				$cashout_type = Input::get('cashout-select');
 				$montant = Input::get('classic-cash-out');
 				$encourspari = $this->currentUser->enCoursParis()->where('id', $encourspari_id)->firstOrFail();
-				if ($cashout_type == 'c'){
+				if ($cashout_type == 'c') {
 
-					$retour_unites = round($montant / $encourspari->mt_par_unite,2);
-					$profit_unites = round($retour_unites - $encourspari->nombre_unites,2);
+					$retour_unites = round($montant / $encourspari->mt_par_unite, 2);
+					$profit_unites = round($retour_unites - $encourspari->nombre_unites, 2);
 					$retour_devise = $montant;
-					$profit_devise = round($montant - $encourspari->mise_totale,2);
+					$profit_devise = round($montant - $encourspari->mise_totale, 2);
 
 					// creation du pari validé.
 					$termine_pari = new TermineParis(array(
@@ -639,7 +640,7 @@
 					// uniquemenent si le type de suivi est normal.
 					if ($encourspari->followtype == 'n') {
 						$book = $encourspari->compte->where('id', $encourspari->bookmaker_user_id)->firstOrFail();
-						
+
 						// verification si le bookmaker a une bankroll suffisante en cas de perte.
 						$book->bankroll_actuelle += $retour_devise;
 						$book->save();

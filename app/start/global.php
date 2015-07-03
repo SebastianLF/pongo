@@ -86,19 +86,17 @@
 	});
 
 	Validator::extend('cashout', function ($attribute, $value, $parameters) {
-		if (preg_match("/^\d+(\.\d{1,2})?$/", $value) && $value > 0){
+		if (preg_match("/^\d+(\.\d{1,2})?$/", $value) && $value > 0) {
 			return true;
 		}
 		return false;
 	});
 
-	Validator::extend('checkHashedPass', function($attribute, $value, $parameters)
-	{
-	    if(Hash::check( $value , $parameters[0] ) )
-	    {
-	        return true;
-	    }
-    return false;
+	Validator::extend('checkHashedPass', function ($attribute, $value, $parameters) {
+		if (Hash::check($value, $parameters[0])) {
+			return true;
+		}
+		return false;
 	});
 
 	/*
