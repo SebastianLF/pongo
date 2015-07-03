@@ -157,7 +157,7 @@
                 </span></td>
                                     <td class="fit tdcote">{{$pari->cote}}</td>
                                     <td class="tdmise bold">
-                                        <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{' '.$user->devise}}}
+                                        <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{$user->devise.' '}}}{{'('.+$pari->nombre_unites.'u)'}}
                                     </td>
                                     <td>
                                         <span class="label label-sm label-success label-mini type">{{'combiné'}}</span>
