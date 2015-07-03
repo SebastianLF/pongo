@@ -348,21 +348,13 @@
 
 				// verifier que le bookmaker soit le meme pour toutes les selections.
 				$bookmaker_temp = $selections_coupon->first()->bookmaker;
-				$game_id_temp = -1;
+
 				$bookmaker = '';
 				$bookmakers_differents = false;
 
 				foreach ($selections_coupon as $selection_coupon) {
 					$bookmaker = $selection_coupon->bookmaker;
-					$game_id = $selection_coupon->game_id;
 
-					// verification que le game id soit differents si il y a plusieurs selections.
-					if ($game_id_temp == $game_id) {
-						return Response::json(array(
-							'etat' => 0,
-							'msg' => 'Il n\'est pas possible de selectionner deux fois le meme pari.',
-						));
-					}
 					if ($bookmaker_temp != $bookmaker) {
 						$bookmakers_differents = true; // booléen necessaire pour l'etape suivant.
 						return Response::json(array(
@@ -372,7 +364,6 @@
 					} else {
 						$bookmakers_differents = false;
 					}
-					$game_id_temp = $selection_coupon->game_id;
 				}
 				if (!$bookmakers_differents) {
 
