@@ -75,7 +75,7 @@
                             @else
                                 {{{' '.$selection->odd_doubleParam}}}
                             @endif
-                        @elseif($selection->affichage == 3)
+                        @elseif($selection->affichage == "8")
                             {{$selection->odd_participantParameterName}}{{' '}}{{$selection->pick}}{{' '}}{{$selection->odd_doubleParam}}
                         @endif
 
