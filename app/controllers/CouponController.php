@@ -147,7 +147,7 @@
 			} elseif ($market_id == '46') {
 				$affichage_num = 1;
 			} elseif ($market_id == '47') {
-				$affichage_num = 2;
+				$affichage_num = 7;
 			} elseif ($market_id == '8') {
 				if ($pick == $odd_doubleParam) {
 					$affichage_num = 2;
