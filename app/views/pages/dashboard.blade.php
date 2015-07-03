@@ -121,7 +121,7 @@
                                                 </div>
                                                 <div class="portlet-body">
                                                     <!--<iframe id="automatic-panel" src="{{'http://stage.betbrain.com/?portalId=1326&userSessionId='.Session::getId()}}" [3] height="1090" width="100%" frameborder="0">Odds service provided in co-operation with <a href="http://www.betbrain.com" [4] -->
-                                                    <iframe src="http://betbrain.com/?portalId=1326&userSessionId=" [3] height="1090"width="100%" frameborder="0">Odds service provided in co-operation with <a href="http://www.betbrain.com" [4] target="_blank"><b>BetBrain.com</b></a></iframe>
+                                                    <iframe src="http://betbrain.com/?portalId=1318&userSessionId=" [3] height="1090"width="100%" frameborder="0">Odds service provided in co-operation with <a href="http://www.betbrain.com" [4] target="_blank"><b>BetBrain.com</b></a></iframe>
                                                 </div>
                                             </div>
 
