@@ -17,6 +17,7 @@
                     <th>N°</th>
                     <th>type</th>
                     <th>Evenement</th>
+                    <th>Rencontre</th>
                     <th>Pari <span class="glyphicon glyphicon-info-sign"></span></th>
                     <th>Tipster</th>
                     <th>Book</th>
@@ -44,9 +45,13 @@
                                 <td width="20%">{{$pari->selections->first()->date_match.' -'}}
                                         {{$pari->selections->first()->sport->name}}{{', '}}{{$pari->selections->first()->competition->name}}
                                     
-                                    @if($pari->selections->first()->isMatch == '0')
-                                                {{', '}}<strong>{{$pari->selections->first()->game_name}}</strong>
-                                              @else
+
+                                </td>
+                                <td>
+                                        @if($pari->selections->first()->isMatch == '0')
+                                                <strong>{{$pari->selections->first()->game_name}}</strong>
+                                        @else
+                                            {{'N/A'}}
                                         @endif
                                 </td>
 
