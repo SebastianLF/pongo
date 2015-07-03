@@ -78,6 +78,13 @@
 		return false;
 	});
 
+	Validator::extend('unites', function ($attribute, $value, $parameters) {
+		if (preg_match("/^\d+(\.\d{1,2})?$/", $value) && ctype_digit($value) ) {
+			return true;
+		}
+		return false;
+	});
+
 	Validator::extend('cashout', function ($attribute, $value, $parameters) {
 		if (preg_match("/^\d+(\.\d{1,2})?$/", $value) && $value > 0){
 			return true;

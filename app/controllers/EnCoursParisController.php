@@ -383,7 +383,7 @@
 				$regles = array(
 					'tipstersinputdashboard' => 'required|exists:tipsters,id,user_id,' . $this->currentUser->id,
 					'typestakeinputdashboard' => 'required|in:u,f',
-					'stakeunitinputdashboard' => 'required_if:typestakeinputdashboard,u|integer|min:1',
+					'stakeunitinputdashboard' => 'required_if:typestakeinputdashboard,u|unites',
 					'amountinputdashboard' => array('required_if:typestakeinputdashboard,f', 'numeric', 'regex:/^\d+(\.\d{1,2})?$/'),
 					'accountsinputdashboard' => 'required_if:followtypeinputdashboard,normal|exists:bookmaker_user,id,user_id,' . $this->currentUser->id,
 					'ticketABCD' => 'required|in:0,1',
