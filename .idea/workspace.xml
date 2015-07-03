@@ -6,7 +6,7 @@
     <bookmark url="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js" line="11" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="test avec php storm">
+    <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -75,13 +75,13 @@
           <file leaf-file-name="parisencours.blade.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.6373293" vertical-offset="375" max-vertical-offset="4365">
-                  <caret line="53" column="50" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
+                <state vertical-scroll-proportion="0.2276176" vertical-offset="510" max-vertical-offset="4365">
+                  <caret line="44" column="43" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
                   <folding>
-                    <marker date="1435961356432" expanded="true" signature="9682:9932" placeholder="..." />
-                    <marker date="1435961356432" expanded="true" signature="9723:9931" placeholder="..." />
-                    <marker date="1435961356432" expanded="true" signature="14178:14428" placeholder="..." />
-                    <marker date="1435961356432" expanded="true" signature="14219:14427" placeholder="..." />
+                    <marker date="1435961452228" expanded="true" signature="9676:9926" placeholder="..." />
+                    <marker date="1435961452228" expanded="true" signature="9717:9925" placeholder="..." />
+                    <marker date="1435961452228" expanded="true" signature="14172:14422" placeholder="..." />
+                    <marker date="1435961452228" expanded="true" signature="14213:14421" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -578,7 +578,13 @@
       <option name="project" value="LOCAL" />
       <updated>1435961138469</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="test avec php storm">
+      <created>1435961367445</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1435961367445</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1050,13 +1056,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6373293" vertical-offset="375" max-vertical-offset="4365">
-          <caret line="53" column="50" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.2276176" vertical-offset="510" max-vertical-offset="4365">
+          <caret line="44" column="43" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
           <folding>
-            <marker date="1435961356432" expanded="true" signature="9682:9932" placeholder="..." />
-            <marker date="1435961356432" expanded="true" signature="9723:9931" placeholder="..." />
-            <marker date="1435961356432" expanded="true" signature="14178:14428" placeholder="..." />
-            <marker date="1435961356432" expanded="true" signature="14219:14427" placeholder="..." />
+            <marker date="1435961452228" expanded="true" signature="9676:9926" placeholder="..." />
+            <marker date="1435961452228" expanded="true" signature="9717:9925" placeholder="..." />
+            <marker date="1435961452228" expanded="true" signature="14172:14422" placeholder="..." />
+            <marker date="1435961452228" expanded="true" signature="14213:14421" placeholder="..." />
           </folding>
         </state>
       </provider>

@@ -42,7 +42,7 @@
                                 <td><a href="javascript:;" class="primary-link">#{{$pari->numero_pari}}</a></td>
                                 
                                 <td><span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span></td>
-                                <td width="20%">{{$pari->selections->first()->date_match.' -'}}
+                                <td width="">{{$pari->selections->first()->date_match.' -'}}
                                         {{$pari->selections->first()->sport->name}}{{', '}}{{$pari->selections->first()->competition->name}}
                                     
 
@@ -64,7 +64,7 @@
                                 // 6 , 'pick Top doubleparam1'
                                 // 7 , 'pick (optional + )doubleparam'
                                 // 8 , 'parametername1 pick doubleparam1'-->
-                                <td class="blue" width="15%">
+                                <td class="blue" width="">
                                      {{$pari->selections->first()->market->name.(' : ')}}       
                                  @if($pari->selections->first()->affichage == 1)
                                         {{$pari->selections->first()->pick}}
