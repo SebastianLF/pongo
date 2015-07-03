@@ -2,6 +2,6 @@
 <project version="4">
   <component name="LaravelPluginSettings">
     <option name="pluginEnabled" value="true" />
+    <option name="useAutoPopup" value="true" />
   </component>
 </project>
-

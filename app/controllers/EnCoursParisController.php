@@ -32,8 +32,10 @@
 			});
 		}
 
+
 		public function store()
 		{
+
 			//validation
 			$regles = array(
 				'typestakeinputdashboard' => 'required|in:u,f',
