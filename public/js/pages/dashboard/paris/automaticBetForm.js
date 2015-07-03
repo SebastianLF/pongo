@@ -120,6 +120,8 @@ function automaticBetForm() {
                 method: 'delete',
                 success: function (data) {
                     refreshSelections();
+                    form.find('.bookinputdashboard').val(null).trigger("change");
+                    form.find('select[name="accountsinputdashboard"]').val(null).trigger('change');
                 },
                 error: function (data) {
                 }
