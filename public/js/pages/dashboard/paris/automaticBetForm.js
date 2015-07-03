@@ -30,7 +30,7 @@ function automaticBetForm() {
                     data: data + '&linesnum=' + linesnum + '&ticketABCD=' + ticketABCD + '&ticketGratuit=' + ticketGratuit + '&ticketLongTerme=' + ticketLongTerme,
                     dataType: 'json',
                     success: function (json) {
-
+                        alert(json);
                         var keyname;
                         if (json.etat == 0) {
                             if ($.isArray(json.msg)) {
