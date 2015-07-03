@@ -96,7 +96,7 @@
         <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.4504717" vertical-offset="6354" max-vertical-offset="11577">
-              <caret line="385" column="94" selection-start-line="385" selection-start-column="94" selection-end-line="385" selection-end-column="94" />
+              <caret line="385" column="96" selection-start-line="385" selection-start-column="96" selection-end-line="385" selection-end-column="96" />
               <folding />
             </state>
           </provider>
@@ -414,7 +414,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="545" y="269" width="1429" height="623" extended-state="0" />
+    <frame x="545" y="269" width="1429" height="623" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -857,7 +857,7 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4504717" vertical-offset="6354" max-vertical-offset="11577">
-          <caret line="385" column="94" selection-start-line="385" selection-start-column="94" selection-end-line="385" selection-end-column="94" />
+          <caret line="385" column="96" selection-start-line="385" selection-start-column="96" selection-end-line="385" selection-end-column="96" />
           <folding />
         </state>
       </provider>
