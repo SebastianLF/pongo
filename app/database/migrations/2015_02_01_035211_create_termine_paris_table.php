@@ -29,9 +29,13 @@ class CreateTermineParisTable extends Migration {
 			$table->decimal('montant_retour',8,2); // montant misé + montant gagne ou perdu
 			$table->decimal('montant_profit', 8,2);
 			$table->boolean('pari_long_terme')->default('0');
+			$table->boolean('pari_gratuit')->default('0');
+            $table->boolean('pari_live')->default('0');
+            $table->boolean('cashouted')->default('0');
 			$table->boolean('pari_abcd')->default('0');
 			$table->string('nom_abcd')->default('0');
 			$table->string('lettre_abcd',2);
+			$table->tinyInteger('status'); // gagné , perdu , remboursé etc..
 			$table->integer('tipster_id')->unsigned();
 			$table->integer('user_id')->unsigned();
 			$table->integer('bookmaker_user_id')->nullable()->unsigned();

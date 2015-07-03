@@ -70,7 +70,6 @@
 				$nom_abcd = null;
 				$lettre_abcd = null;
 				$status_array = Input::get('childrowsstatus');
-				$infos_array = Input::get('childrowsinput');
 
 				/*
 					1 = gagné,
@@ -78,7 +77,6 @@
 					3 = 1/2 gagné,
 					4 = 1/2 perdu,
 					5 = remboursé,
-					6 = cash out,
 				*/
 
 				$status = null;
@@ -117,7 +115,6 @@
 					}
 					$selections[$i]->cote_apres_status = $cote_selection;
 					$selections[$i]->status = $status_s;
-					$selections[$i]->infos_pari = $info_s;
 					$selections[$i]->save();
 
 					// les calculs pour termine paris

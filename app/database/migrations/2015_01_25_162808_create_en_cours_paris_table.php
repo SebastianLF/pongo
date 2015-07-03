@@ -26,6 +26,7 @@ class CreateEnCoursParisTable extends Migration {
             $table->boolean('pari_long_terme')->default('0');
             $table->boolean('pari_gratuit')->default('0');
             $table->boolean('pari_live')->default('0');
+            $table->boolean('cashouted')->default('0');
             $table->boolean('pari_abcd')->default('0');
             $table->string('nom_abcd')->nullable();
             $table->string('lettre_abcd',2)->nullable();
