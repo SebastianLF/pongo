@@ -164,7 +164,7 @@
                                     </td>
                                     <td><span class="label label-sm label-success label-mini type">{{'combiné'}}</span></td>
 
-                                    <td class="bold"><span class="profits"></span><span
+                                    <td class="bold fontsize15"><span class="profits"></span><span
                                                 class="devise hide">{{{' '.$user->devise}}}</span></td>
                                     <td>
                                         {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris' ,'role' => 'form', )) }}
@@ -174,6 +174,9 @@
                                         {{ Form::open(array('route' => 'historique.destroy', 'class' => 'supprimerform form-bouton-paris','role' => 'form')) }}
                                         {{ Form::button('<i class="fa fa-times"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red', )) }}
                                         {{ Form::close() }}
+                                        @if($pari->followtype == 'n')
+                                        {{ Form::button('<i class="fa fa-briefcase"></i>', array('type' => 'submit', 'class' => 'btn btn-sm grey-gallery form-bouton-paris', 'data-toggle' => 'modal', 'data-target' => '#cashoutModal', 'data-hover' => 'tooltip', 'data-id' => $pari->id, 'title' => 'Cash Out')) }}
+                                        @endif
                                     </td>
                                 </tr>
                                 <tr class="subrow">

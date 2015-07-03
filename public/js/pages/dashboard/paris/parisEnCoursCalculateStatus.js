@@ -14,6 +14,7 @@ function calculProfits(type, status, grand_parent_var, profits_var, mise_var, de
     var afficher_devise = false;
     var status_en_attente = false;
     var cotes = 1;
+    console.log(profits);
     if(type == 'simple'){
         //console.log('type= '+type+' status= '+status+' mainrow= '+grand_parent+' profits='+profits+' mise= '+mise+' devise= '+devise);
         var cote = Number(grand_parent.find('.tdcote').text());
@@ -69,36 +70,43 @@ function calculProfits(type, status, grand_parent_var, profits_var, mise_var, de
         }else{
             devise.addClass('hide');
         }
-        status_en_attente ? profits.html(result) : profits.text(result);
-    }else{
-        grand_parent.find(".child-table-tr").each(function () {
-        var cote = Number($(this).find('.cote-td').text());
-        var status = $(this).find('select[name="resultatSelectionDashboardInput[]"]').val();
-        if(status == 0){
-            no_selection = 1;
-        }else if(status == 1) {
-            cotes *= cote;
-        }else if(status == 2) {
-            cotes *= 0 ;
-            perdu_selection = 1;
-        }else if(status == 3){
-            cotes = cotes * [(cote-1)/2+1];
-        }else if(status == 4){
-            cotes = cotes * 0.5;
-        }else if(status == 5){
-            cotes += 0;
+        if(result > 0){
+            status_en_attente ? profits.html('+'+result) : profits.text('+'+result);
+        }else{
+            status_en_attente ? profits.html(result) : profits.text(result);
         }
-    });
+    }else{
+        console.log('type= '+type+' status= '+status+' mainrow= '+grand_parent+' profits='+profits+' mise= '+mise+' devise= '+devise);
+
+        grand_parent.find(".child-table-tr").each(function () {
+            var cote = Number($(this).find('.cote-td').text());
+            var status = $(this).find('select[name="resultatSelectionDashboardInput[]"]').val();
+            if(status == 0){
+                no_selection = 1;
+            }else if(status == 1) {
+                cotes *= cote;
+            }else if(status == 2) {
+                cotes *= 0 ;
+                perdu_selection = 1;
+            }else if(status == 3){
+                cotes = cotes * [(cote-1)/2+1];
+            }else if(status == 4){
+                cotes = cotes * 0.5;
+            }else if(status == 5){
+                cotes += 0;
+            }
+        });
 
     if(no_selection && !perdu_selection){
         result = '';
         afficher_devise = false;
-    }else {
+    }else{
         afficher_devise = true;
         result = cotes * mise;
         result -= mise;
         result = Number(Math.round(result * 100) / 100);
     }
+
     if(result > 0){
         profits.addClass('font-green');
         devise.addClass('font-green');
@@ -122,12 +130,16 @@ function calculProfits(type, status, grand_parent_var, profits_var, mise_var, de
         devise.removeClass('font-red');
     }
 
-    if(afficher_devise){
+     if(afficher_devise){
         devise.removeClass('hide');
     }else{
         devise.addClass('hide');
     }
-    profits.text(result);
+    if(result > 0){
+        profits.text('+'+result);
+    }else{
+        profits.text(result);   
+    }
     }
  
 
@@ -165,20 +177,30 @@ function parisEnCoursCalculateStatus(tablename) {
 
         var table = $(tablename);
         var mainrow = $(this).closest('.mainrow');
-        var type = mainrow.find('.type').text();
+        var status = $(this).val();
+        
+        // connaitre le type de suivi suivant le type de pari.
+        var hasSubrow = $(this).parents().hasClass('subrow');
+            var type;
+        if(!hasSubrow){
+            type = 'simple';
+        }else{
+            type = 'combine';
+        }
+        console.log(hasSubrow);
         console.log(type);
-
         // pour le cas d'un pari simple.
         if(type == 'simple'){
+            var type = mainrow.find('.type').text();
             var cote = mainrow.find('.tdcote').text(); 
             var mise = mainrow.find('.tdsubmise').text(); 
             var profits = mainrow.find('.profits');
             var devise = mainrow.find('.devise');
-            var status = $(this).val();
+            
             var main_parent_valider = mainrow.find('.boutonvalider');
+            
             // chargements des fonctions.
             //console.log('type= '+type+' status= '+status+' mainrow= '+mainrow+' profits='+profits+' mise= '+mise+' devise= '+devise);
-            
             statusBoutonValider(type, mainrow, main_parent_valider);
             calculProfits(type, status, mainrow, profits, mise, devise);
         }
@@ -186,6 +208,7 @@ function parisEnCoursCalculateStatus(tablename) {
             // declaration des variables.
         var grand_parent = $(this).closest('.subrow');
         var main_parent = grand_parent.prev();
+        var type = main_parent.find('.mainrow').text();
         var main_parent_valider = main_parent.find('.boutonvalider');
         var parent = $(this).closest('.child-table-tr');
         var child_id = parent.find(".child-id").text();
@@ -193,9 +216,10 @@ function parisEnCoursCalculateStatus(tablename) {
         var mise = main_parent.find('.tdsubmise').text();
         var profits = main_parent.find('.profits');
         var devise = main_parent.find('.devise');
+            
             // chargements des fonctions.
             statusBoutonValider(type, grand_parent, main_parent_valider);
-            calculProfits(type, grand_parent, profits, mise, devise);
+            calculProfits(type, '', grand_parent, profits, mise, devise);
         }
     });
 }
