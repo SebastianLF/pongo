@@ -75,6 +75,8 @@
                             @else
                                 {{{' '.$selection->odd_doubleParam}}}
                             @endif
+                        @elseif($pari->selections->first()->affichage == 3)
+                            {{$selection->odd_participantParameterName}}{{' '}}{{$selection->pick}}{{' '}}{{$selection->odd_doubleParam}}
                         @endif
 
                     </td>

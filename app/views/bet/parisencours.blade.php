@@ -57,7 +57,8 @@
                                 // 4 , 'pick, doubleparam1-doubleparam2 minutes'
                                 // 5 , 'parametername1 doubleparam1' avec '+'
                                 // 6 , 'pick Top doubleparam1'
-                                // 7 , 'pick (optional + )doubleparam'-->
+                                // 7 , 'pick (optional + )doubleparam'
+                                // 8 , 'parametername1 pick doubleparam1'-->
                                 <td class="blue" width="15%">
                                      {{$pari->selections->first()->market->name.(' : ')}}       
                                  @if($pari->selections->first()->affichage == 1)
@@ -83,6 +84,8 @@
                                         @else
                                             {{{' '.$pari->selections->first()->odd_doubleParam}}}
                                         @endif
+                                     @elseif($pari->selections->first()->affichage == 3)
+                                            {{$pari->selections->first()->odd_participantParameterName}}{{' '}}{{$pari->selections->first()->pick}}{{' '}}{{$pari->selections->first()->odd_doubleParam}}
                                 @endif
                                 </td>
                                 

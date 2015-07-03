@@ -158,6 +158,8 @@
 				$affichage_num = 1;
 			} elseif ($market_id == '145') {
 				$affichage_num = 1;
+			} elseif ($market_id == '77') {
+				$affichage_num = 8;
 			} elseif ($market_id == '79') {
 				$affichage_num = 1;
 			} elseif ($market_id == '150') {
