@@ -79,7 +79,7 @@
 	});
 
 	Validator::extend('unites', function ($attribute, $value, $parameters) {
-		if (preg_match("/^\d+(\.\d{1,2})?$/", $value) && ctype_digit($value) ) {
+		if (preg_match("/^\d+(\.\d{1,2})?$/", $value) && ctype_digit($value) && $value > 0) {
 			return true;
 		}
 		return false;

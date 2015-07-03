@@ -86,7 +86,6 @@
 				$selections = $encoursparis->selections()->get();
 				for ($i = 0; $i < $nb; $i++) {
 					$status_s = $status_array[$i];
-					$info_s = $infos_array[$i];
 					$cote = $selections[$i]->cote;
 					$cote_selection = 1;
 					switch ($status_s) {

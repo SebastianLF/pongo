@@ -384,31 +384,26 @@
 					'tipstersinputdashboard' => 'required|exists:tipsters,id,user_id,' . $this->currentUser->id,
 					'typestakeinputdashboard' => 'required|in:u,f',
 					'stakeunitinputdashboard' => 'required_if:typestakeinputdashboard,u|unites',
-					'amountinputdashboard' => array('required_if:typestakeinputdashboard,f', 'numeric', 'regex:/^\d+(\.\d{1,2})?$/'),
+					'amountinputdashboard' => 'required_if:typestakeinputdashboard,f|decimal>0',
 					'accountsinputdashboard' => 'required_if:followtypeinputdashboard,normal|exists:bookmaker_user,id,user_id,' . $this->currentUser->id,
 					'ticketABCD' => 'required|in:0,1',
 					'ticketGratuit' => 'required|in:0,1',
 					'ticketLongTerme' => 'required|in:0,1',
 					'serieinputdashboard' => 'required_if:ticketABCD,1',
 					'letterinputdashboard' => 'required_if:ticketABCD,1|in:A,B,C,D',
-
 					'followtypeinputdashboard' => 'required|in:normal,à blanc',
 				);
 				$messages = array(
 					'typestakeinputdashboard.in' => 'ce type de mise n\'existe pas.',
 					'stakeunitinputdashboard.required_if' => 'Vous devez mettre une mise (en unités).',
-					'stakeunitinputdashboard.integer' => 'la mise en unités doit etre un nombre entier.',
-					'stakeunitinputdashboard.min' => 'mise en unités minimun : 1',
 					'amountinputdashboard.required_if' => 'Vous devez mettre une mise (en devise).',
-					'amountinputdashboard.numeric' => 'La mise (en devise) doit etre un nombre.',
-					'amountinputdashboard.regex' => 'la mise doit etre un nombre entier positif ou decimal positif(avec 2 chiffres apres la virgule maximum).',
 					'tipstersinputdashboard.required' => 'Choisissez un tipster, si il n\'y a pas de tipster dans la liste, veuillez en créer un dans la page configuration',
 					'tipstersinputdashboard.exists' => 'Ce tipster n\'existe pas dans votre liste.',
 					'accountsinputdashboard.required_if' => 'Vous devez choisir un compte de bookmaker quand le suivi est de type normal. Si vous n\'avez pas de compte de bookmaker, veuillez en créer un, dans la page configuration',
 					'accountsinputdashboard.exists' => 'Ce compte bookmaker n\'existe pas dans votre liste.',
 					'serieinputdashboard.required_if' => 'Un n° ou nom de serie est nécéssaire',
 					'letterinputdashboard.required_if' => 'Une lettre (ABCD) est nécéssaire',
-					'letterinputdashboard.in' => 'la lettre ne correspond pas',
+					'letterinputdashboard.in' => 'la lettre pour l\'option abcd ne correspond pas',
 				);
 
 				$validator = Validator::make(Input::all(), $regles, $messages);
