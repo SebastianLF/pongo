@@ -499,8 +499,7 @@
 						$market->save();
 						$scope = Scope::find($selection_coupon->scope_id);
 						if(is_null($scope)){
-							$scope = new Scope(array('id' => $selection_coupon->scope, 'name' => $selection_coupon->name));
-							$scope->save();
+							$scope = Scope::create(array('id' => $selection_coupon->scope, 'name' => $selection_coupon->name));
 						}
 						$competition_country = Country::firstOrNew(array('name' => $selection_coupon->event_country_name));
 						$competition_country->save();
