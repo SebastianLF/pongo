@@ -46,7 +46,7 @@
                                         {{$pari->selections->first()->sport->name}}{{', '}}{{$pari->selections->first()->competition->name}}
                                 </td>
                                 <td>
-                                        @if($pari->selections->first()->isMatch == '1')
+                                        @if($pari->selections->first()->isMatch)
                                             {{' ('.$pari->selections->first()->date_match.') -'}}
                                             {{$pari->selections->first()->game_name}}
                                         @else

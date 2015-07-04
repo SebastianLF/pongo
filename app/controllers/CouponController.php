@@ -125,7 +125,7 @@
 				$home_team_country_name = 'null';
 				$away_team = 'null';
 				$away_team_country_name = 'null';
-				$score = 'null';
+				$score = null;
 				$isLive = 'false';
 			}
 			$session_id = Input::get('userSessionId');
