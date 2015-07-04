@@ -7,11 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2015_02_01_035211_create_termine_paris_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2015_02_01_035211_create_termine_paris_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/BaseController.php" afterPath="$PROJECT_DIR$/app/controllers/BaseController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Scope.php" afterPath="$PROJECT_DIR$/app/models/Scope.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/EnCoursParisController.php" afterPath="$PROJECT_DIR$/app/controllers/EnCoursParisController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="betsmanage.iws" />
@@ -86,8 +82,8 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="slfweb.scopes" pinned="false" current-in-tab="true">
-            <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..scopes">
+          <file leaf-file-name="slfweb.en_cours_paris" pinned="false" current-in-tab="true">
+            <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..en_cours_paris">
               <provider editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
                   <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -103,11 +99,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="EnCoursParisController.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="EnCoursParisController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-3.9565217" vertical-offset="4574" max-vertical-offset="10245">
-                  <caret line="311" column="0" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.49822694" vertical-offset="7294" max-vertical-offset="10260">
+                  <caret line="505" column="34" selection-start-line="505" selection-start-column="34" selection-end-line="505" selection-end-column="34" />
                   <folding>
                     <element signature="e#7#25#0#PHP" expanded="true" />
                   </folding>
@@ -119,20 +115,10 @@
             <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_01_25_162808_create_en_cours_paris_table.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="-17.608696" vertical-offset="45" max-vertical-offset="855">
-                  <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+                  <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
                   <folding>
                     <element signature="e#7#52#0#PHP" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Scope.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/models/Scope.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.12998267" vertical-offset="0" max-vertical-offset="577">
-                  <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="33" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -148,16 +134,6 @@
                     <marker date="1436026101858" expanded="true" signature="14259:14509" placeholder="..." />
                     <marker date="1436026101858" expanded="true" signature="14300:14508" placeholder="..." />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="BaseController.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/controllers/BaseController.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-13.043478" vertical-offset="0" max-vertical-offset="420">
-                  <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -220,10 +196,10 @@
         <option value="$PROJECT_DIR$/app/database/migrations/2015_06_25_168700_create_selections_table.php" />
         <option value="$PROJECT_DIR$/app/controllers/CouponController.php" />
         <option value="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/EnCoursParisController.php" />
         <option value="$PROJECT_DIR$/app/controllers/BaseController.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2015_02_01_035211_create_termine_paris_table.php" />
         <option value="$PROJECT_DIR$/app/models/Scope.php" />
+        <option value="$PROJECT_DIR$/app/controllers/EnCoursParisController.php" />
       </list>
     </option>
   </component>
@@ -705,7 +681,13 @@
       <option name="project" value="LOCAL" />
       <updated>1436026241452</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="test avec php storm">
+      <created>1436028626827</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1436028626827</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1053,17 +1035,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..en_cours_paris">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..coupon">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
@@ -1075,82 +1046,11 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/BaseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.043478" vertical-offset="0" max-vertical-offset="420">
-          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4219858" vertical-offset="1847" max-vertical-offset="4725">
           <caret line="139" column="32" selection-start-line="139" selection-start-column="32" selection-end-line="139" selection-end-column="32" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.26087" vertical-offset="225" max-vertical-offset="4350">
-          <caret line="43" column="213" selection-start-line="43" selection-start-column="213" selection-end-line="43" selection-end-column="213" />
-          <folding>
-            <marker date="1436026101858" expanded="true" signature="9763:10013" placeholder="..." />
-            <marker date="1436026101858" expanded="true" signature="9804:10012" placeholder="..." />
-            <marker date="1436026101858" expanded="true" signature="14259:14509" placeholder="..." />
-            <marker date="1436026101858" expanded="true" signature="14300:14508" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9565217" vertical-offset="4574" max-vertical-offset="10245">
-          <caret line="311" column="0" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#25#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_02_01_035211_create_termine_paris_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.043478" vertical-offset="270" max-vertical-offset="1050">
-          <caret line="39" column="40" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..scopes">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..selections">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="795">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_01_25_162808_create_en_cours_paris_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.608696" vertical-offset="45" max-vertical-offset="855">
-          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-          <folding>
-            <element signature="e#7#52#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1212,9 +1112,91 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Scope.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12998267" vertical-offset="0" max-vertical-offset="577">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.18197574" vertical-offset="0" max-vertical-offset="577">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51993066" vertical-offset="0" max-vertical-offset="577">
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.26087" vertical-offset="225" max-vertical-offset="4350">
+          <caret line="43" column="213" selection-start-line="43" selection-start-column="213" selection-end-line="43" selection-end-column="213" />
+          <folding>
+            <marker date="1436026101858" expanded="true" signature="9763:10013" placeholder="..." />
+            <marker date="1436026101858" expanded="true" signature="9804:10012" placeholder="..." />
+            <marker date="1436026101858" expanded="true" signature="14259:14509" placeholder="..." />
+            <marker date="1436026101858" expanded="true" signature="14300:14508" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_01_25_162808_create_en_cours_paris_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.608696" vertical-offset="45" max-vertical-offset="855">
+          <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
+          <folding>
+            <element signature="e#7#52#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..scopes">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..selections">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="795">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_02_01_035211_create_termine_paris_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.043478" vertical-offset="270" max-vertical-offset="1050">
+          <caret line="39" column="40" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..en_cours_paris">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49822694" vertical-offset="7294" max-vertical-offset="10260">
+          <caret line="505" column="34" selection-start-line="505" selection-start-column="34" selection-end-line="505" selection-end-column="34" />
+          <folding>
+            <element signature="e#7#25#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
