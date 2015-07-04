@@ -75,13 +75,13 @@
           <file leaf-file-name="parisencours.blade.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.4661017" vertical-offset="345" max-vertical-offset="4350">
-                  <caret line="45" column="37" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
+                <state vertical-scroll-proportion="0.40254238" vertical-offset="435" max-vertical-offset="4350">
+                  <caret line="48" column="75" selection-start-line="48" selection-start-column="75" selection-end-line="48" selection-end-column="75" />
                   <folding>
-                    <marker date="1436020923670" expanded="true" signature="9565:9815" placeholder="..." />
-                    <marker date="1436020923670" expanded="true" signature="9606:9814" placeholder="..." />
-                    <marker date="1436020923670" expanded="true" signature="14061:14311" placeholder="..." />
-                    <marker date="1436020923670" expanded="true" signature="14102:14310" placeholder="..." />
+                    <marker date="1436021072811" expanded="true" signature="9668:9918" placeholder="..." />
+                    <marker date="1436021072811" expanded="true" signature="9709:9917" placeholder="..." />
+                    <marker date="1436021072811" expanded="true" signature="14164:14414" placeholder="..." />
+                    <marker date="1436021072811" expanded="true" signature="14205:14413" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -156,8 +156,8 @@
           <file leaf-file-name="EnCoursParisController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.529661" vertical-offset="7200" max-vertical-offset="10245">
-                  <caret line="505" column="46" selection-start-line="505" selection-start-column="46" selection-end-line="505" selection-end-column="46" />
+                <state vertical-scroll-proportion="0.5720339" vertical-offset="7200" max-vertical-offset="10245">
+                  <caret line="507" column="0" selection-start-line="507" selection-start-column="0" selection-end-line="507" selection-end-column="0" />
                   <folding>
                     <element signature="e#7#25#0#PHP" expanded="true" />
                   </folding>
@@ -668,7 +668,13 @@
       <option name="project" value="LOCAL" />
       <updated>1436020848929</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="test avec php storm">
+      <created>1436020958531</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1436020958531</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1154,13 +1160,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4661017" vertical-offset="345" max-vertical-offset="4350">
-          <caret line="45" column="37" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.40254238" vertical-offset="435" max-vertical-offset="4350">
+          <caret line="48" column="75" selection-start-line="48" selection-start-column="75" selection-end-line="48" selection-end-column="75" />
           <folding>
-            <marker date="1436020923670" expanded="true" signature="9565:9815" placeholder="..." />
-            <marker date="1436020923670" expanded="true" signature="9606:9814" placeholder="..." />
-            <marker date="1436020923670" expanded="true" signature="14061:14311" placeholder="..." />
-            <marker date="1436020923670" expanded="true" signature="14102:14310" placeholder="..." />
+            <marker date="1436021072811" expanded="true" signature="9668:9918" placeholder="..." />
+            <marker date="1436021072811" expanded="true" signature="9709:9917" placeholder="..." />
+            <marker date="1436021072811" expanded="true" signature="14164:14414" placeholder="..." />
+            <marker date="1436021072811" expanded="true" signature="14205:14413" placeholder="..." />
           </folding>
         </state>
       </provider>
