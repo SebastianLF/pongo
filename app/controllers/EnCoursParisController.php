@@ -498,7 +498,10 @@
 						$market = Market::firstOrNew(array('id' => $selection_coupon->market_id, 'name' => $selection_coupon->market));
 						$market->save();
 						$scope = Scope::find($selection_coupon->scope_id);
-						Clockwork::info($scope);
+						if(is_null($scope)){
+							$scope = new Scope(array('id' => $selection_coupon->scope, 'name' => $selection_coupon->name));
+							$scope->save();
+						}
 						$competition_country = Country::firstOrNew(array('name' => $selection_coupon->event_country_name));
 						$competition_country->save();
 						$competition = Competition::firstOrNew(array('name' => $selection_coupon->league_name, 'sport_id' => $sport->id, 'country_id' => $competition_country->id));
