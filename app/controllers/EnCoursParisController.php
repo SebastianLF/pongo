@@ -497,10 +497,7 @@
 						// id ajouté manuellement.
 						$market = Market::firstOrNew(array('id' => $selection_coupon->market_id, 'name' => $selection_coupon->market));
 						$market->save();
-						$scope = Scope::firstOrNew(array('id' => $selection_coupon->scope_id));
-						Clockwork::info($scope);
-						$scope->name = $selection_coupon->scope;
-						$scope->save();
+						$scope = Scope::find($selection_coupon->scope_id);
 						Clockwork::info($scope);
 						$competition_country = Country::firstOrNew(array('name' => $selection_coupon->event_country_name));
 						$competition_country->save();
