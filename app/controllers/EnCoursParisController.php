@@ -1,6 +1,6 @@
 <?php
 	use Carbon\Carbon;
-	use Excel;
+	use Maatwebsite\Excel\Facades\Excel;
 
 	class EnCoursParisController extends BaseController
 	{
