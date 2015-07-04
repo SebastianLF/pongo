@@ -25,9 +25,9 @@ class CreateSelectionsTable extends Migration {
 			$table->double('odd_doubleParam')->nullable();
 			$table->double('odd_doubleParam2')->nullable();
 			$table->double('odd_doubleParam3')->nullable();
-			$table->string('odd_participantParameterName');
-			$table->string('odd_participantParameterName2');
-			$table->string('odd_participantParameterName3');
+			$table->string('odd_participantParameterName')->nullable();
+			$table->string('odd_participantParameterName2')->nullable();
+			$table->string('odd_participantParameterName3')->nullable();
 			$table->double('odd_groupParam')->nullable();
 			$table->boolean('isLive');
 			$table->boolean('isMatch');
