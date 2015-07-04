@@ -501,6 +501,7 @@
 						Clockwork::info($scope);
 						$scope->name = $selection_coupon->scope;
 						$scope->save();
+						Clockwork::info($scope);
 						$competition_country = Country::firstOrNew(array('name' => $selection_coupon->event_country_name));
 						$competition_country->save();
 						$competition = Competition::firstOrNew(array('name' => $selection_coupon->league_name, 'sport_id' => $sport->id, 'country_id' => $competition_country->id));

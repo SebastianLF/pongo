@@ -110,7 +110,7 @@
           <file leaf-file-name="EnCoursParisController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-27.391304" vertical-offset="0" max-vertical-offset="10245">
+                <state vertical-scroll-proportion="-27.391304" vertical-offset="0" max-vertical-offset="10260">
                   <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
                   <folding>
                     <element signature="e#7#25#0#PHP" expanded="true" />
@@ -159,8 +159,8 @@
           <file leaf-file-name="EnCoursParisController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.75524473" vertical-offset="6960" max-vertical-offset="10245">
-                  <caret line="500" column="48" selection-start-line="500" selection-start-column="48" selection-end-line="500" selection-end-column="48" />
+                <state vertical-scroll-proportion="0.8181818" vertical-offset="6960" max-vertical-offset="10260">
+                  <caret line="503" column="48" selection-start-line="503" selection-start-column="48" selection-end-line="503" selection-end-column="48" />
                   <folding>
                     <element signature="e#7#25#0#PHP" expanded="true" />
                   </folding>
@@ -625,7 +625,13 @@
       <option name="project" value="LOCAL" />
       <updated>1436002022692</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="test avec php storm">
+      <created>1436013948475</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1436013948475</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1098,8 +1104,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75524473" vertical-offset="6960" max-vertical-offset="10245">
-          <caret line="500" column="48" selection-start-line="500" selection-start-column="48" selection-end-line="500" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.8181818" vertical-offset="6960" max-vertical-offset="10260">
+          <caret line="503" column="48" selection-start-line="503" selection-start-column="48" selection-end-line="503" selection-end-column="48" />
           <folding>
             <element signature="e#7#25#0#PHP" expanded="true" />
           </folding>
