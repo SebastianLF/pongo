@@ -29,7 +29,7 @@ class CreateSelectionsTable extends Migration {
 			$table->string('odd_participantParameterName2');
 			$table->string('odd_participantParameterName3');
 			$table->double('odd_groupParam')->nullable();
-			$table->boolean('live');
+			$table->boolean('isLive');
 			$table->boolean('isMatch');
 			$table->string('score')->nullable();
 			$table->smallInteger('affichage');
