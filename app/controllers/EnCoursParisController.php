@@ -497,7 +497,7 @@
 						// id ajouté manuellement.
 						$market = Market::firstOrNew(array('id' => $selection_coupon->market_id, 'name' => $selection_coupon->market));
 						$market->save();
-						$scope = Scope::find($selection_coupon->scope_id);
+						$scope = Scope::find(intval($selection_coupon->scope_id));
 						Clockwork::info($scope);
 						if(is_null($scope)){
 							$scope = new Scope(); $scope->id = $selection_coupon->scope_id; $scope->name = $selection_coupon->scope; $scope->save();
