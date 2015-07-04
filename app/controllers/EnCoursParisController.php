@@ -493,9 +493,12 @@
 						// creation
 						$sport = Sport::firstOrNew(array('id' => $selection_coupon->sport_id, 'name' => $selection_coupon->sport_name));
 						$sport->save();
+
+						// id ajouté manuellement.
 						$market = Market::firstOrNew(array('id' => $selection_coupon->market_id, 'name' => $selection_coupon->market));
 						$market->save();
-						$scope = Scope::firstOrNew(array('id' => $selection_coupon->scope_id, 'name' => $selection_coupon->scope));
+						$scope = Scope::firstOrNew(array('id' => $selection_coupon->scope_id));
+						$scope->name = $selection_coupon->scope;
 						$scope->save();
 						$competition_country = Country::firstOrNew(array('name' => $selection_coupon->event_country_name));
 						$competition_country->save();
