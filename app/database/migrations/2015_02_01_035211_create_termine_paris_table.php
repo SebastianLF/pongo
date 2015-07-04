@@ -33,8 +33,8 @@ class CreateTermineParisTable extends Migration {
             $table->boolean('pari_live')->default('0');
             $table->boolean('cashouted')->default('0');
 			$table->boolean('pari_abcd')->default('0');
-			$table->string('nom_abcd')->default('0');
-			$table->string('lettre_abcd',2);
+			$table->string('nom_abcd')->nullable();
+			$table->string('lettre_abcd',2)->nullable();
 			$table->integer('tipster_id')->unsigned();
 			$table->integer('user_id')->unsigned();
 			$table->integer('bookmaker_user_id')->nullable()->unsigned();
