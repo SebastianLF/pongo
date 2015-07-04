@@ -42,7 +42,7 @@
                                 <td><a href="javascript:;" class="primary-link">#{{$pari->numero_pari}}</a></td>
                                 
                                 <td><span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span></td>
-                                <td width="">{{$pari->selections->first()->date_match.' -'}}
+                                <td width="">
                                         {{$pari->selections->first()->sport->name}}{{', '}}{{$pari->selections->first()->competition->name}}
                                     
 
