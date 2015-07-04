@@ -43,7 +43,7 @@
                                 
                                 <td><span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span></td>
                                 <td width="">
-                                        {{', '}}{{$pari->selections->first()->competition->name}}
+
                                 </td>
                                 <td>
                                         @if($pari->selections->first()->isMatch == '1')
