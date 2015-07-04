@@ -75,13 +75,13 @@
           <file leaf-file-name="parisencours.blade.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5508475" vertical-offset="300" max-vertical-offset="4350">
-                  <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.4661017" vertical-offset="345" max-vertical-offset="4350">
+                  <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
                   <folding>
-                    <marker date="1436020685412" expanded="true" signature="9668:9918" placeholder="..." />
-                    <marker date="1436020685412" expanded="true" signature="9709:9917" placeholder="..." />
-                    <marker date="1436020685412" expanded="true" signature="14164:14414" placeholder="..." />
-                    <marker date="1436020685412" expanded="true" signature="14205:14413" placeholder="..." />
+                    <marker date="1436020839179" expanded="true" signature="9625:9875" placeholder="..." />
+                    <marker date="1436020839179" expanded="true" signature="9666:9874" placeholder="..." />
+                    <marker date="1436020839179" expanded="true" signature="14121:14371" placeholder="..." />
+                    <marker date="1436020839179" expanded="true" signature="14162:14370" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -656,7 +656,13 @@
       <option name="project" value="LOCAL" />
       <updated>1436019478645</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="test avec php storm">
+      <created>1436020709886</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1436020709886</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1142,13 +1148,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5508475" vertical-offset="300" max-vertical-offset="4350">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.4661017" vertical-offset="345" max-vertical-offset="4350">
+          <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
           <folding>
-            <marker date="1436020685412" expanded="true" signature="9668:9918" placeholder="..." />
-            <marker date="1436020685412" expanded="true" signature="9709:9917" placeholder="..." />
-            <marker date="1436020685412" expanded="true" signature="14164:14414" placeholder="..." />
-            <marker date="1436020685412" expanded="true" signature="14205:14413" placeholder="..." />
+            <marker date="1436020839179" expanded="true" signature="9625:9875" placeholder="..." />
+            <marker date="1436020839179" expanded="true" signature="9666:9874" placeholder="..." />
+            <marker date="1436020839179" expanded="true" signature="14121:14371" placeholder="..." />
+            <marker date="1436020839179" expanded="true" signature="14162:14370" placeholder="..." />
           </folding>
         </state>
       </provider>
