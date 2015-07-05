@@ -18,27 +18,10 @@ Rounded Portlets
 }
 */
 
-/*table{
-    font-size: 12px !important;
-}
+/*
 
 .glyphicon-plus-sign{
     font-size: 1.2em !important;
-}
-
-
-
-
-
-
-
-.hiddenRow {
-    padding: 0 !important;
-	display: inline-block;
-}
-
-.blue{
-    color: #65A0D0 !important;
 }
 
 input{
@@ -48,8 +31,6 @@ input{
 select{
 	padding: 5px !important;
 }
-
-
 
 .name{
 	color: #65A0D0 !important;
@@ -68,8 +49,6 @@ select{
 	margin-top: 5px;
 }
 
-
-
 .color-white {
 	color: white !important;
 }
@@ -81,6 +60,19 @@ select{
 .child-table{
  margin: 0px !important;
 }*/
+
+table{
+    font-size: 12px !important;
+}
+
+.hiddenRow {
+    padding: 0 !important;
+    display: inline-block;
+}
+
+.blue{
+    color: #65A0D0 !important;
+}
 
 .header-date{
     line-height: 50px;

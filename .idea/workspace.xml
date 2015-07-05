@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css" line="57" />
+    <bookmark url="file://$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css" line="38" />
     <bookmark url="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
     <bookmark url="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js" line="11" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css" afterPath="$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="betsmanage.iws" />
@@ -105,13 +106,13 @@
       <file leaf-file-name="parisencours.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.869565" vertical-offset="450" max-vertical-offset="4350">
-              <caret line="39" column="72" selection-start-line="39" selection-start-column="72" selection-end-line="39" selection-end-column="72" />
+            <state vertical-scroll-proportion="1.9565217" vertical-offset="450" max-vertical-offset="4350">
+              <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
               <folding>
-                <marker date="1436104828335" expanded="true" signature="9871:10121" placeholder="..." />
-                <marker date="1436104828335" expanded="true" signature="9912:10120" placeholder="..." />
-                <marker date="1436104828335" expanded="true" signature="14367:14617" placeholder="..." />
-                <marker date="1436104828335" expanded="true" signature="14408:14616" placeholder="..." />
+                <marker date="1436107363051" expanded="true" signature="9869:10119" placeholder="..." />
+                <marker date="1436107363051" expanded="true" signature="9910:10118" placeholder="..." />
+                <marker date="1436107363051" expanded="true" signature="14365:14615" placeholder="..." />
+                <marker date="1436107363051" expanded="true" signature="14406:14614" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -120,8 +121,8 @@
       <file leaf-file-name="custom.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5400982" vertical-offset="810" max-vertical-offset="3900">
-              <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.5155483" vertical-offset="660" max-vertical-offset="3780">
+              <caret line="65" column="1" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -844,7 +845,13 @@
       <option name="project" value="LOCAL" />
       <updated>1436106618354</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="test avec php storm">
+      <created>1436106883988</created>
+      <option name="number" value="00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1436106883988</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1348,21 +1355,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.869565" vertical-offset="450" max-vertical-offset="4350">
-          <caret line="39" column="72" selection-start-line="39" selection-start-column="72" selection-end-line="39" selection-end-column="72" />
+        <state vertical-scroll-proportion="1.9565217" vertical-offset="450" max-vertical-offset="4350">
+          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
           <folding>
-            <marker date="1436104828335" expanded="true" signature="9871:10121" placeholder="..." />
-            <marker date="1436104828335" expanded="true" signature="9912:10120" placeholder="..." />
-            <marker date="1436104828335" expanded="true" signature="14367:14617" placeholder="..." />
-            <marker date="1436104828335" expanded="true" signature="14408:14616" placeholder="..." />
+            <marker date="1436107363051" expanded="true" signature="9869:10119" placeholder="..." />
+            <marker date="1436107363051" expanded="true" signature="9910:10118" placeholder="..." />
+            <marker date="1436107363051" expanded="true" signature="14365:14615" placeholder="..." />
+            <marker date="1436107363051" expanded="true" signature="14406:14614" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5400982" vertical-offset="810" max-vertical-offset="3900">
-          <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.5155483" vertical-offset="660" max-vertical-offset="3780">
+          <caret line="65" column="1" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
           <folding />
         </state>
       </provider>

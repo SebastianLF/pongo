@@ -25,7 +25,7 @@
                     <th>Mise</th>
                     <th>Resultat</th>
                     <th>Status</th>
-                    <th>profits/pertes</th>
+                    <th>bén./per.</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -107,20 +107,20 @@
                                 </td>
                                 <td class="fit tdcote">{{$pari->cote}}</td>
                                 <td class="tdmise  bold"><span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{$user->devise}}} {{'('.+$pari->nombre_unites.'u)'}}</td>
-                                <td width="120px"><input type="text" name="childrowsinput[]"
+                                <td width="90px"><input type="text" name="childrowsinput[]"
                                            class="form-control input-sm"
                                            value="" placeholder="Résultat"/></td>
-                                <td width="140px"><select name="resultatSelectionDashboardInput[]"
+                                <td width="110px"><select name="resultatSelectionDashboardInput[]"
                                             data-value=""
                                             class="form-control input-sm">
-                                        <option value="0"></option>
+                                        <option value="0">-Choisir-</option>
                                         @foreach($types_resultat as $key => $type)
                                             <option value="{{$key}}"><a href="javascript:;"
                                                                         class="btn btn-xs">{{$type}}</a>
                                             </option>
                                         @endforeach
                                     </select></td>
-                                <td class="bold fontsize15" width="100px"><span class="profits"></span><span class="devise hide">{{{' '.$user->devise}}}</span></td>
+                                <td class="bold fontsize15" width=""><span class="profits"></span><span class="devise hide">{{{' '.$user->devise}}}</span></td>
 
                                 <td width="150px">
                                     {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris', 'role' => 'form', 'data-toggle' => 'tooltip', 'data-original-title' => 'Confirmer')) }}
