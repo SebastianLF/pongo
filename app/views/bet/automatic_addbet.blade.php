@@ -39,7 +39,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-5 col-xs-12 col-sm-12">
+                            <div class="col-md-5 col-xs-1   2 col-sm-12">
                                 <div class="portlet light bordered">
                                     <div class="portlet-title">
                                         <div class="caption">

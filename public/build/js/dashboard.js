@@ -773,13 +773,10 @@ function manualBetForm() {
 
 
     function assignerEtatEnDebut(){
-        $(".bookinputdashboard").prop("disabled", true);
-        $("#accountsinputdashboard").prop("disabled", true);
-        $('#methodeabcdcontainer').addClass("hide");
     }
 
-    function gestionRadioBoutons(){
-        // gestion radio boutons
+    function gestionCheckboxs(){
+        // gestion checkboxs
         $(form_string+' .methodeabcdcontainer').addClass("hide");
         $(form_string+' #ticketABCD').click(function () {
             $(form_string+' .methodeabcdcontainer').removeClass("hide");
@@ -891,12 +888,6 @@ function manualBetForm() {
             }
         });
 
-        form.find("#serieinputdashboard").change(function () {
-            var nom = $(form_string + "#serieinputdashboard option:selected").text();
-            nom = encodeURIComponent(nom);
-            form.find("#letterinputdashboard").val(null).trigger("change");
-        });
-
         form.find('#stakeunitinputdashboard').keyup(function () {
             var montant_par_unite = $(form_string + ' #amountperunit').val();
             var unites = Number($(form_string + ' #stakeunitinputdashboard').val());
@@ -916,142 +907,168 @@ function manualBetForm() {
 
 
 
-    form.find('.bookinputdashboard').select2({
-        allowClear: true,
-        placeholder: "Choisir un bookmaker",
-        cache: true,
-        ajax: {
-            url: 'bookmakers',
-            dataType: 'json',
-            data: function (params) {
-                return {
-                    q: params.term // search term
-                };
-            },
-            processResults: function (data) {
-                // parse the results into the format expected by Select2.
-                // since we are using custom formatting functions we do not need to
-                // alter the remote JSON data
-                /* var newData = [];
-                 $.each(data, function (index,value) {
-                 newData.push({
-                 id:value.id,  //id part present in data
-                 text: value.text  //string to be displayed
-                 });
-                 });*/
-                return {
-                    results: data
-                };
+    function gestionBookmakers(){
+        form.find('.bookinputdashboard').select2({
+            allowClear: true,
+            placeholder: "Choisir un bookmaker",
+            cache: true,
+            ajax: {
+                url: 'bookmakers',
+                dataType: 'json',
+                data: function (params) {
+                    return {
+                        q: params.term // search term
+                    };
+                },
+                processResults: function (data) {
+                    // parse the results into the format expected by Select2.
+                    // since we are using custom formatting functions we do not need to
+                    // alter the remote JSON data
+                    /* var newData = [];
+                     $.each(data, function (index,value) {
+                     newData.push({
+                     id:value.id,  //id part present in data
+                     text: value.text  //string to be displayed
+                     });
+                     });*/
+                    return {
+                        results: data
+                    };
+                }
             }
-        }
-    });
+        });
 
-    form.find('#accountsinputdashboard').select2({
-        allowClear: true,
-        placeholder: "Choisir un compte",
-        cache: true,
-        minimumResultsForSearch: Infinity,
-        ajax: {
-            url: 'accounts',
-            dataType: 'json',
-            data: function (params) {
-                return {
-                    book_id: $(form_string + ' .bookinputdashboard').val(),
-                    q: params.term // search term
-                };
-            },
-            processResults: function (data) {
-                // parse the results into the format expected by Select2.
-                // since we are using custom formatting functions we do not need to
-                // alter the remote JSON data
-                /* var newData = [];
-                 $.each(data, function (index,value) {
-                 newData.push({
-                 id:value.id,  //id part present in data
-                 text: value.text  //string to be displayed
-                 });
-                 });*/
-                return {
-                    results: data
-                };
+        form.find('#accountsinputdashboard').select2({
+            allowClear: true,
+            placeholder: "Choisir un compte",
+            cache: true,
+            minimumResultsForSearch: Infinity,
+            ajax: {
+                url: 'accounts',
+                dataType: 'json',
+                data: function (params) {
+                    return {
+                        book_id: $(form_string + ' .bookinputdashboard').val(),
+                        q: params.term // search term
+                    };
+                },
+                processResults: function (data) {
+                    // parse the results into the format expected by Select2.
+                    // since we are using custom formatting functions we do not need to
+                    // alter the remote JSON data
+                    /* var newData = [];
+                     $.each(data, function (index,value) {
+                     newData.push({
+                     id:value.id,  //id part present in data
+                     text: value.text  //string to be displayed
+                     });
+                     });*/
+                    return {
+                        results: data
+                    };
+                }
             }
-        }
-    });
+        });
+    }
 
-    // chargements des paris abcd dans le select input.
-    form.find('#serieinputdashboard').select2({
-        allowClear: true,
-        placeholder: "Choisir une serie",
-        tags: true,
-        cache: true,
-        ajax: {
-            url: 'parisabcd',
-            dataType: 'json',
-            data: function (params) {
-                return {
-                    q: params.term // search term
-                };
-            },
-            processResults: function (data) {
-                // parse the results into the format expected by Select2.
-                // since we are using custom formatting functions we do not need to
-                // alter the remote JSON data
-                /* var newData = [];
-                 $.each(data, function (index,value) {
-                 newData.push({
-                 id:value.id,  //id part present in data
-                 text: value.text  //string to be displayed
-                 });
-                 });*/
-                return {
-                    results: data
-                };
+
+    function gestionABCD(){
+        // checkboxs
+        form.find('#ticketABCD').on('click', function(){
+            if ( $(this).is(':checked') ) {
+                form.find('#methodeabcdcontainer').removeClass("hide");
+                form.find('#serieinputdashboard').prop('disabled', false);
+                form.find('#letterinputdashboard').prop('disabled', false);
             }
-        }
-    });
+            else {
+                form.find('#methodeabcdcontainer').addClass("hide");
+                form.find('#serieinputdashboard').prop('disabled', true);
+                form.find('#letterinputdashboard').prop('disabled', true);
+            }
+        });
 
-    form.find('#letterinputdashboard').select2({
-        allowClear: true,
-        placeholder: "Choisir une lettre",
-        cache: true,
-        minimumResultsForSearch: Infinity,
-        ajax: {
-            url: 'lettreabcd',
-            dataType: 'json',
-            data: function (params) {
-                return {
-                    serie_nom: $(form_string + ' #serieinputdashboard').val(),
-                    q: params.term // search term
-                };
-            },
-            processResults: function (data) {
-                console.log(data);
-                // parse the results into the format expected by Select2.
-                // since we are using custom formatting functions we do not need to
-                // alter the remote JSON data
-                var newData = [];
-                $.each(data, function (index, value) {
-                    newData.push({
-                        id: value,  //id part present in data
-                        text: value  //string to be displayed
+        // chargements des paris abcd dans le select input.
+        form.find('#serieinputdashboard').select2({
+            allowClear: true,
+            placeholder: "Choisir une serie",
+            tags: true,
+            cache: true,
+            ajax: {
+                url: 'parisabcd',
+                dataType: 'json',
+                data: function (params) {
+                    return {
+                        q: params.term // search term
+                    };
+                },
+                processResults: function (data) {
+                    // parse the results into the format expected by Select2.
+                    // since we are using custom formatting functions we do not need to
+                    // alter the remote JSON data
+                    /* var newData = [];
+                     $.each(data, function (index,value) {
+                     newData.push({
+                     id:value.id,  //id part present in data
+                     text: value.text  //string to be displayed
+                     });
+                     });*/
+                    return {
+                        results: data
+                    };
+                }
+            }
+        });
+
+        form.find('#letterinputdashboard').select2({
+            allowClear: true,
+            placeholder: "Choisir une lettre",
+            cache: true,
+            minimumResultsForSearch: Infinity,
+            ajax: {
+                url: 'lettreabcd',
+                dataType: 'json',
+                data: function (params) {
+                    return {
+                        serie_nom: $(form_string + ' #serieinputdashboard').val(),
+                        q: params.term // search term
+                    };
+                },
+                processResults: function (data) {
+                    console.log(data);
+                    // parse the results into the format expected by Select2.
+                    // since we are using custom formatting functions we do not need to
+                    // alter the remote JSON data
+                    var newData = [];
+                    $.each(data, function (index, value) {
+                        newData.push({
+                            id: value,  //id part present in data
+                            text: value  //string to be displayed
+                        });
                     });
-                });
-                return {
-                    results: newData
-                };
+                    return {
+                        results: newData
+                    };
+                }
             }
-        }
-    });
+        });
+
+        form.find("#serieinputdashboard").change(function () {
+            var nom = $(form_string + "#serieinputdashboard option:selected").text();
+            nom = encodeURIComponent(nom);
+            form.find("#letterinputdashboard").val(null).trigger("change");
+        });
+    }
+
 
 
 
     // inits
     assignerEtatEnDebut();
 
-    gestionRadioBoutons();
     gestionTipsters();
     gestionTypeMise();
-
+    gestionBookmakers();
+    gestionABCD();
 }
 
 /**

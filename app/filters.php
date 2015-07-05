@@ -12,14 +12,14 @@
 	*/
 
 	App::before(function ($request) {
-		//
+
 	});
 
 
-	App::after(function ($request, $response) {
+	/*App::after(function ($request, $response) {
 		$response->headers->set('Access-Control-Allow-Origin', '*');
 		return $response;
-	});
+	});*/
 
 	/*
 	|--------------------------------------------------------------------------
@@ -84,3 +84,5 @@
 	Route::filter('ajax', function () {
 		if (!Request::ajax()) App::abort(404);
 	});
+
+

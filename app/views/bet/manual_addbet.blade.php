@@ -32,7 +32,8 @@
                 </div>
                 <div class="input-group">
                     <div class="input-group-addon">€</div>
-                    <input id="amountperunit" name="amountperunit" class="form-control input-sm" type="text" placeholder="Selectionnez un tipster !"
+                    <input id="amountperunit" name="amountperunit" class="form-control input-sm" type="text"
+                           placeholder="Selectionnez un tipster !"
                            readonly/></input>
                 </div>
             </div>
@@ -100,7 +101,7 @@
                 <div class="">
                     <label class="bold">Bookmaker</label>
                 </div>
-                <select id="bookinputdashboard" name="bookinputdashboard" class="form-control">
+                <select name="bookinputdashboard" class="bookinputdashboard form-control">
                     <option></option>
                 </select>
             </div>
@@ -114,115 +115,129 @@
             </div>
         </div>
         <div class="form-group">
-            <div class="">
-                <label id="">Options</label>
-            </div>
-            <label class="radio-inline">
-                <input type="radio" name="RadioOptions" id="aucun" value="aucun" checked="checked">aucun
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="RadioOptions" id="parislongterme" value="parislongterme">pari long
-                terme
-            </label>
-            <label class="radio-inline">
-                <input type="radio" name="RadioOptions" id="systemeABCD" value="systemeABCD">systeme abcd
-            </label>
-        </div>
-        <div id="methodeabcdcontainer" class="form-group">
-            <div class="col-md-2">
+            <div class="col-md-12">
                 <div class="">
-                    <label>n° série ou nom</label>
+                    <label class="bold" id="">Options</label>
                 </div>
-                <select name="serieinputdashboard" id="serieinputdashboard" class="form-control input-sm">
-                </select>
-            </div>
-            <div class="col-md-2">
-                <div class="">
-                    <label>lettre:</label>
+                <div class="col-md-12">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="ticketABCD"
+                               value="ticketABCD">Pari ABCD
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="ticketGratuit"
+                               value="ticketGratuit">Pari gratuit
+                    </label>
                 </div>
-                <select id="letterinputdashboard" name="letterinputdashboard" class="form-control input-sm">
-                </select>
             </div>
         </div>
     </div>
-    <form>
-        <div class="form-body">
+    <div id="methodeabcdcontainer" class="form-group hide">
 
+        <div class="col-md-2">
+            <div class="">
+                <label>n° série ou nom</label>
+            </div>
+            <select name="serieinputdashboard" id="serieinputdashboard" class="form-control input-sm">
+            </select>
         </div>
-        <div class="row ">
-
+        <div class="col-md-2">
+            <div class="">
+                <label>lettre:</label>
+            </div>
+            <select id="letterinputdashboard" name="letterinputdashboard" class="form-control input-sm">
+            </select>
         </div>
+    </div>
+</div>
+<div class="form-body">
+
+</div>
+<div class="row ">
+
+</div>
 
 
-        <div id="wrapmanubetscontainer" class="table-scrollable ">
-            <table id="tablemanubetlines" class="table table-condensed table-hover table-light">
-                <tr>
-                    <th width="">DATE RENCONTRE</th>
-                    <th width="">SPORT</th>
-                    <th width="">LEAGUE</th>
-                    <th colspan="2" width="100px">RENCONTRE</th>
-                    <th>PARI</th>
-                    <th width="">COTE <span class="glyphicon glyphicon-asterisk"></span></th>
-                    <th></th>
-                </tr>
-                <tr class="betline">
-                    <td>
-                        <div class="">
-                            <input name="datematchinputdashboard[]"
-                                   class="form-control datematchinputdashboard input-sm"
-                                   type="date">
-                        </div>
-                    </td>
-                    <td>
-                        <select name="sportinputdashboard[]" class="form-control sportinputdashboard">
-                            <option value=""></option>
-                        </select>
-                    </td>
+<div id="wrapmanubetscontainer" class="table-scrollable ">
+    <table id="tablemanubetlines" class="table table-condensed">
+        <tr>
+            <th width="">DATE RENCONTRE</th>
+            <th width="">SPORT</th>
+            <th width="">LEAGUE</th>
+            <th colspan="2" width="100px">RENCONTRE</th>
+            <th>PARI</th>
+            <th width="">COTE <span class="glyphicon glyphicon-asterisk"></span></th>
+            <th>OPTIONS</th>
+            <th></th>
+        </tr>
+        <tr class="betline">
+            <td>
+                <div class="">
+                    <input name="datematchinputdashboard[]"
+                           class="form-control datematchinputdashboard input-sm"
+                           type="date">
+                </div>
+            </td>
+            <td>
+                <select name="sportinputdashboard[]" class="form-control sportinputdashboard">
+                    <option value=""></option>
+                </select>
+            </td>
 
-                    <td>
-                        <select name="competitioninputdashboard[]" class="form-control competitioninputdashboard">
-                            <option value=""></option>
-                        </select>
-                    </td>
-                    <!--<td>
-                        <input id="matchnameinputdashboard" name="matchnameinputdashboard[]" class="form-control" placeholder="ex: Madrid vs Barcelona">
-                    </td> -->
-                    <!--
-                    <input type="text" id="equipe1input[]" class="form-control" />
-                    -->
-                    <td width="120">
-                        <select name="team1inputdashboard[]" class="form-control team1inputdashboard">
-                            <option value=""></option>
-                        </select>
-                    </td>
-                    <td width="120">
-                        <select name="team2inputdashboard[]" class="form-control team2inputdashboard">
-                            <option value=""></option>
-                        </select>
-                    </td>
-                    <td>
-                        <select name="picknameinputdashboard[]" class="form-control picknameinputdashboard"
-                                placeholder="ex: OVER 2.5">
-                            <option value=""></option>
-                        </select>
-                    </td>
-                    <td>
-                        <input name="oddinputdashboard[]" class="form-control input-sm" placeholder="ex: 1.83">
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-danger supprlinebet"><span
-                                    class="glyphicon glyphicon-trash"></span></button>
-                    </td>
-                </tr>
-                <tr id="addbetbuttontr">
-                    <td>
-                        <button id="addlinebet" type="button" class="btn btn-default"><span
-                                    class="glyphicon glyphicon-plus"></span>ajouter une ligne
-                        </button>
-                    </td>
-                </tr>
-            </table>
-            <button type="submit" class="form-control btn btn-success" value="">Valider</button>
-            <p class="text-danger center-block " id="changementtype"><strong></strong></p>
-        </div>
+            <td>
+                <select name="competitioninputdashboard[]" class="form-control competitioninputdashboard">
+                    <option value=""></option>
+                </select>
+            </td>
+            <!--<td>
+                <input id="matchnameinputdashboard" name="matchnameinputdashboard[]" class="form-control" placeholder="ex: Madrid vs Barcelona">
+            </td> -->
+            <!--
+            <input type="text" id="equipe1input[]" class="form-control" />
+            -->
+            <td width="120">
+                <select name="team1inputdashboard[]" class="form-control team1inputdashboard">
+                    <option value=""></option>
+                </select>
+            </td>
+            <td width="120">
+                <select name="team2inputdashboard[]" class="form-control team2inputdashboard">
+                    <option value=""></option>
+                </select>
+            </td>
+            <td>
+                <select name="picknameinputdashboard[]" class="form-control picknameinputdashboard"
+                        placeholder="ex: OVER 2.5">
+                    <option value=""></option>
+                </select>
+            </td>
+            <td>
+                <input name="oddinputdashboard[]" class="form-control input-sm" placeholder="ex: 1.83">
+            </td>
+            <td width="230px">
+                <label class="checkbox-inline uppercase">
+                    <input type="checkbox" name="selectionsLive[]"
+                           value="live">live
+                </label>
+                <label class="checkbox-inline uppercase">
+                    <input type="checkbox" name="selectionsLongterme[]"
+                           value="ticketLongTerme">long terme
+                </label>
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger supprlinebet"><span
+                            class="glyphicon glyphicon-trash"></span></button>
+            </td>
+        </tr>
+        <tr id="addbetbuttontr">
+            <td>
+                <button id="addlinebet" type="button" class="btn btn-default"><span
+                            class="glyphicon glyphicon-plus"></span>ajouter une ligne
+                </button>
+            </td>
+        </tr>
+    </table>
+    <button type="submit" class="form-control btn btn-success" value="">Valider</button>
+    <p class="text-danger center-block " id="changementtype"><strong></strong></p>
+</div>
 {{ Form::close() }}
