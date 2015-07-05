@@ -30,9 +30,7 @@ Rounded Portlets
 
 
 
-.table td,th {
-   text-align: center !important;   
-}
+
 
 .hiddenRow {
     padding: 0 !important;
@@ -70,9 +68,7 @@ select{
 	margin-top: 5px;
 }
 
-.header-date{
-	line-height: 50px;
-}
+
 
 .color-white {
 	color: white !important;
@@ -85,6 +81,14 @@ select{
 .child-table{
  margin: 0px !important;
 }*/
+
+.header-date{
+    line-height: 50px;
+}
+
+.table td,th {
+    text-align: center !important;
+}
 
 .fontsize15{
     font-size: 15px;
