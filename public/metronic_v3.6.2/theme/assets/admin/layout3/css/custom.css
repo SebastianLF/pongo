@@ -18,7 +18,7 @@ Rounded Portlets
 }
 */
 
-table{
+/*table{
     font-size: 12px !important;
 }
 
@@ -88,6 +88,10 @@ select{
 
 .child-table{
  margin: 0px !important;
+}*/
+
+.bcg-red{
+    background-color: #F3565D !important;
 }
 
 .login-container {
@@ -105,6 +109,7 @@ select{
 
 .form-automatic{
     background-color: #e9edef;
+    margin-left: 10px !important;
 }
 
 #spinner {
