@@ -28,9 +28,7 @@ Rounded Portlets
 
 
 
-.fontsize15{
-    font-size: 15px;
-}
+
 
 .table td,th {
    text-align: center !important;   
@@ -87,6 +85,10 @@ select{
 .child-table{
  margin: 0px !important;
 }*/
+
+.fontsize15{
+    font-size: 15px;
+}
 
 .form-bouton-paris{
     display: inline-block !important;
