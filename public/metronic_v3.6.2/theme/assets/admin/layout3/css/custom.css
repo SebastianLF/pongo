@@ -53,9 +53,7 @@ select{
 	padding: 5px !important;
 }
 
-.form-bouton-paris{
-	display: inline-block !important;
-}
+
 
 .name{
 	color: #65A0D0 !important;
@@ -89,6 +87,10 @@ select{
 .child-table{
  margin: 0px !important;
 }*/
+
+.form-bouton-paris{
+    display: inline-block !important;
+}
 
 .bcg-red{
     background-color: #F3565D !important;
