@@ -16,4 +16,4 @@
 
     // formulaire d'ajout de pari
     automaticBetForm();
-    //generalBetForm('#manubetform-add');
+    manualBetForm();

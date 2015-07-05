@@ -99,18 +99,18 @@
                             <div class="portlet-body">
                                 <div class="tabbable-custom nav-justified">
                                     <ul class="nav nav-tabs nav-justified">
-                                        <li class="active">
+                                        <li class="">
                                             <a href="#tab_1_1_1" data-toggle="tab">
                                                 Automatique <span class="badge badge-default">bientot</span></a>
                                         </li>
-                                        <li class="">
+                                        <li class="active">
                                             <a href="#tab_1_1_2" data-toggle="tab">
                                                 Manuel </a>
                                         </li>
 
                                     </ul>
                                     <div class="tab-content">
-                                        <div class="tab-pane active" id="tab_1_1_1">
+                                        <div class="tab-pane " id="tab_1_1_1">
                                             @include('bet.automatic_addbet');
                                             <div class="portlet box blue-hoki">
                                                 <div class="portlet-title">
@@ -126,7 +126,7 @@
                                             </div>
 
                                         </div>
-                                        <div class="tab-pane " id="tab_1_1_2">
+                                        <div class="tab-pane active" id="tab_1_1_2">
                                             @include('bet.manual_addbet');
                                         </div>
                                     </div>
