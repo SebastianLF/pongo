@@ -4,7 +4,7 @@
             <h4 class="list-group-item-heading">1) Ajouter une selection (pari) à l'aide du panneau ci-dessous.</h4>
 
             <p class="list-group-item-text">
-                Vous avez plusieurs façons d'ajouter une selection, soit par
+                Vous avez 3 façons d'ajouter une selection, soit par le champ de recherche tout en haut du panneau, soit par le menu deroulant juste en dessous du champ de recherche, soit par le menu 'liste des evenements'sur la gauche.
             </p>
         </div>
         <div class="list-group-item">
