@@ -39,6 +39,18 @@
 			}
 		}
 
+		public function getMarkets()
+		{
+			$q = Input::get('q');
+			$sport_id = Input::get('sport_id');
+			Clockwork::info($sport_id);
+			if(!is_null($sport_id)){
+				$sport = Sport::find($sport_id);
+				$markets = isset($sport) ? $sport->markets()->select('markets.id', 'name AS text')->where('name', 'LIKE', '%' . $q . '%')->get() : '';
+				return Response::json($markets);
+			}
+		}
+
 		public function getEquipes()
 		{
 			$q = Input::get('q');

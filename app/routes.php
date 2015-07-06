@@ -60,3 +60,4 @@
 	Route::get('countries', 'AjaxController@getCountries');
 	Route::get('equipes', 'AjaxController@getEquipes');
 	Route::get('competitions', 'AjaxController@getCompetitions');
+	Route::get('markets', 'AjaxController@getMarkets');

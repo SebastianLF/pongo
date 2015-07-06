@@ -173,6 +173,7 @@ function manualBetForm() {
             }
         });
 
+
         form.find('#accountsinputdashboard').select2({
             allowClear: true,
             placeholder: "Choisir un compte",
@@ -295,6 +296,73 @@ function manualBetForm() {
     }
 
 
+    function gestionSelectionsSport(){
+        form.find(".sportinputdashboard").select2({
+            allowClear: true,
+            placeholder: "Choisir un sport",
+            cache: true,
+            ajax: {
+                url: 'sports',
+                dataType: 'json',
+                data: function (params) {
+                    return {
+                        q: params.term
+                    };
+                },
+                processResults: function (data) {
+                    return {
+                        results: data
+                    };
+                }
+            }
+        });
+    }
+
+    function gestionSelectionsCompet(){
+        form.find(".competitioninputdashboard").select2({
+            allowClear: true,
+            placeholder: "Choisir une competition",
+            cache: true,
+            ajax: {
+                url: 'competitions',
+                dataType: 'json',
+                data: function (params) {
+                    return {
+                        q: params.term
+                    };
+                },
+                processResults: function (data) {
+                    return {
+                        results: data
+                    };
+                }
+            }
+        });
+    }
+
+    function gestionSelectionsMarket(){
+        form.find(".marketinputdashboard").select2({
+            allowClear: true,
+            placeholder: "Choisir un type de pari",
+            cache: true,
+            ajax: {
+                url: 'markets',
+                dataType: 'json',
+                data: function (params) {
+                    return {
+                        sport_id: $('.sportinputdashboard').val(),
+                        q: params.term
+                    };
+                },
+                processResults: function (data) {
+                    return {
+                        results: data
+                    };
+                }
+            }
+        });
+    }
+
 
 
     // inits
@@ -304,4 +372,7 @@ function manualBetForm() {
     gestionTypeMise();
     gestionBookmakers();
     gestionABCD();
+    gestionSelectionsSport();
+    gestionSelectionsCompet();
+    gestionSelectionsMarket();
 }

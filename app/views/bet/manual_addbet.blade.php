@@ -154,6 +154,9 @@
                 <th width="">DATE RENCONTRE</th>
                 <th width="">SPORT</th>
                 <th width="">LEAGUE</th>
+                <th>TYPE PARI</th>
+                <th>CHOIX N°1</th>
+                <th>CHOIX N°2</th>
                 <th colspan="2" width="100px">RENCONTRE</th>
                 <th>PARI</th>
                 <th width="">COTE <span class="glyphicon glyphicon-asterisk"></span></th>
@@ -176,6 +179,21 @@
 
                 <td>
                     <select name="competitioninputdashboard[]" class="form-control competitioninputdashboard">
+                        <option value=""></option>
+                    </select>
+                </td>
+                <td>
+                    <select name="marketinputdashboard[]" class="form-control marketinputdashboard">
+                        <option value=""></option>
+                    </select>
+                </td>
+                <td>
+                    <select name="pick[]" class="form-control pick">
+                        <option value=""></option>
+                    </select>
+                </td>
+                <td>
+                    <select name="pick2[]" class="form-control pick2">
                         <option value=""></option>
                     </select>
                 </td>

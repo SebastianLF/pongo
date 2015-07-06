@@ -495,7 +495,7 @@
 						$sport->save();
 
 						// id ajouté manuellement.
-						$market = Market::firstOrNew(array('id' => $selection_coupon->market_id, 'name' => $selection_coupon->market));
+						$market = Market::firstOrNew(array('id' => $selection_coupon->market_id, 'name' => $selection_coupon->market, 'isMatch' => $selection_coupon->isMatch));
 						$market->save();
 						$scope = Scope::find(intval($selection_coupon->scope_id));
 						Clockwork::info($scope);
