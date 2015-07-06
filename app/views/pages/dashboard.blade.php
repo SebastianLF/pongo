@@ -34,12 +34,6 @@
                                     <i class="icon-pin font-yellow-casablanca"></i>
                                     <span class="caption-subject font-yellow-casablanca bold uppercase">liste</span>
                                 </div>
-                                <div class="tools">
-                                    <a href="javascript:;" class="collapse">
-                                    </a>
-                                    <a href="#portlet-config" data-toggle="modal" class="config">
-                                    </a>
-                                </div>
                             </div>
                             <div class="portlet-body">
 
@@ -89,12 +83,6 @@
                                 <div class="caption">
                                     <i class="icon-paper-plane font-green-sharp"></i>
                                     <span class="caption-subject font-green-sharp bold uppercase">Ajout</span>
-                                </div>
-                                <div class="tools">
-                                    <a href="javascript:;" class="collapse">
-                                    </a>
-                                    <a href="#portlet-config" data-toggle="modal" class="config">
-                                    </a>
                                 </div>
                             </div>
                             <div class="portlet-body">
