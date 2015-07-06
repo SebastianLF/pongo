@@ -22,7 +22,7 @@
                                 <div class="portlet light bordered ">
                                     <div class="portlet-title">
                                         <div class="caption">
-                                            <i class="fa fa-gift"></i>Les selections choisies pour ce ticket
+                                            <i class="fa fa-gift"></i>Panier
                                         </div>
                                         <div class="actions">
 

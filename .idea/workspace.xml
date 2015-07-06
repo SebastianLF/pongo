@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/automatic_addbet.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/automatic_addbet.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="betsmanage.iws" />
@@ -47,6 +47,18 @@
     <splitter split-orientation="horizontal" split-proportion="0.4688347">
       <split-first>
         <leaf>
+          <file leaf-file-name="automatic_addbet.blade.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/bet/automatic_addbet.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.29252437" vertical-offset="90" max-vertical-offset="4230">
+                  <caret line="24" column="76" selection-start-line="24" selection-start-column="76" selection-end-line="24" selection-end-column="76" />
+                  <folding>
+                    <marker date="1436185234577" expanded="true" signature="200:315" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="config.blade.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/pages/config.blade.php">
               <provider selected="true" editor-type-id="text-editor">
@@ -57,10 +69,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="auto_form_selections.blade.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="auto_form_selections.blade.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.26002166" vertical-offset="0" max-vertical-offset="1425">
+                <state vertical-scroll-proportion="-10.434783" vertical-offset="0" max-vertical-offset="1425">
                   <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
                   <folding />
                 </state>
@@ -81,24 +93,14 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="manual_addbet.blade.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="manual_addbet.blade.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/bet/manual_addbet.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-26.73913" vertical-offset="0" max-vertical-offset="3510">
+                <state vertical-scroll-proportion="-2.1365113" vertical-offset="2587" max-vertical-offset="3510">
                   <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
                   <folding>
                     <marker date="1436182505829" expanded="true" signature="240:372" placeholder="..." />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.65872157" vertical-offset="1357" max-vertical-offset="2280">
-                  <caret line="131" column="30" selection-start-line="131" selection-start-column="30" selection-end-line="131" selection-end-column="30" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -179,7 +181,6 @@
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/main.js" />
         <option value="$PROJECT_DIR$/app/views/includes/subview/dashboard_scripts.blade.php" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/automaticBetForm.js" />
-        <option value="$PROJECT_DIR$/app/views/bet/automatic_addbet.blade.php" />
         <option value="$PROJECT_DIR$/app/filters.php" />
         <option value="$PROJECT_DIR$/app/controllers/BaseController.php" />
         <option value="$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css" />
@@ -188,6 +189,7 @@
         <option value="$PROJECT_DIR$/app/views/dashboard/bookmakers.blade.php" />
         <option value="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/bet/automatic_addbet.blade.php" />
       </list>
     </option>
   </component>
@@ -859,7 +861,13 @@
       <option name="project" value="LOCAL" />
       <updated>1436184504413</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="test avec php storm">
+      <created>1436185007829</created>
+      <option name="number" value="00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1436185007829</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -942,7 +950,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="4230">
           <caret line="34" column="59" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
           <folding>
-            <marker date="1436124713861" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436185234577" expanded="true" signature="200:315" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1257,16 +1265,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bet/automatic_addbet.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47128928" vertical-offset="90" max-vertical-offset="4230">
-          <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
-          <folding>
-            <marker date="1436124713861" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pages/config.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="959">
@@ -1277,7 +1275,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bet/manual_addbet.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.73913" vertical-offset="0" max-vertical-offset="3510">
+        <state vertical-scroll-proportion="-2.1365113" vertical-offset="2587" max-vertical-offset="3510">
           <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
           <folding>
             <marker date="1436182505829" expanded="true" signature="240:372" placeholder="..." />
@@ -1287,17 +1285,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65872157" vertical-offset="1357" max-vertical-offset="2280">
-          <caret line="131" column="30" selection-start-line="131" selection-start-column="30" selection-end-line="131" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.36619717" vertical-offset="1357" max-vertical-offset="2280">
+          <caret line="113" column="46" selection-start-line="113" selection-start-column="46" selection-end-line="113" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26002166" vertical-offset="0" max-vertical-offset="1425">
+        <state vertical-scroll-proportion="-10.434783" vertical-offset="0" max-vertical-offset="1425">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/bet/automatic_addbet.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29252437" vertical-offset="90" max-vertical-offset="4230">
+          <caret line="24" column="76" selection-start-line="24" selection-start-column="76" selection-end-line="24" selection-end-column="76" />
+          <folding>
+            <marker date="1436185234577" expanded="true" signature="200:315" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
