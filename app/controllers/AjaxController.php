@@ -46,7 +46,7 @@
 			Clockwork::info($sport_id);
 			if(!is_null($sport_id)){
 				$sport = Sport::find($sport_id);
-				$markets = isset($sport) ? $sport->markets()->select('markets.id', 'name AS text')->where('name', 'LIKE', '%' . $q . '%')->get() : '';
+				$markets = isset($sport) ? $sport->markets()->select('markets.id', 'markets.name AS text')->where('name', 'LIKE', '%' . $q . '%')->get() : '';
 				return Response::json($markets);
 			}
 		}
