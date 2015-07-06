@@ -23,7 +23,7 @@
                                      src="{{asset('img/logos/bookmakers').'/'.$bookmaker->logo}}"
                                      alt=""/> <span
                                             class="theme-font">{{$bookmaker['comptes']->sum('bankroll_actuelle')}} {{$user->devise}}</span></span>
-                                {{$paris_en_attente ? '<span class="badge badge-danger bcg-red" data-toggle="tooltip" data-original-title="Nombre de tickets actuels associés: '.$paris_en_attente.'">'.$paris_en_attente.'</span>' : ''}}
+                                {{$paris_en_attente ? '<span class="badge badge-danger bcg-red" data-toggle="tooltip" data-original-title="Nombre de tickets en cours associés: '.$paris_en_attente.'">'.$paris_en_attente.'</span>' : ''}}
                             </a>
                         </div>
                     </div>

@@ -142,8 +142,6 @@ function manualBetForm() {
         });
     }
 
-
-
     function gestionBookmakers(){
         form.find('.bookinputdashboard').select2({
             allowClear: true,

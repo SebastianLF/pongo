@@ -51,7 +51,8 @@
                                         </li>
                                         <li id="onglet_paris_long_terme">
                                             <a href="#tab_15_2" data-toggle="tab">
-                                                Tickets long terme en cours <span class="badge badge-default"></span></a>
+                                                Tickets long terme en cours <span
+                                                        class="badge badge-default"></span></a>
                                         </li>
                                         <li id="onglet_paris_systeme_ABCD">
                                             <a href="#tab_15_3" data-toggle="tab">
@@ -120,8 +121,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="portlet-body">
-                                                    <!--<iframe id="automatic-panel" src="{{'http://stage.betbrain.com/?portalId=1326&userSessionId='.Session::getId()}}" [3] height="1090" width="100%" frameborder="0">Odds service provided in co-operation with <a href="http://www.betbrain.com" [4] -->
-                                                    <iframe src={{"http://betbrain.com/?portalId=1326&userSessionId=".Session::getId()}} [3] height="1090"width="100%" frameborder="0">Odds service provided in co-operation with <a href="http://www.betbrain.com" [4] target="_blank"><b>BetBrain.com</b></a></iframe>
+                                                    <iframe src={{"http://stage.betbrain.com/?portalId=1326&userSessionId=".Session::getId()}} [3]
+                                                            height="1090" width="100%" frameborder="0">Odds service
+                                                        provided in co-operation with <a href="http://www.betbrain.com"
+                                                                                         [4] target="_blank"><b>BetBrain.com</b></a>
+                                                    </iframe>
                                                 </div>
                                             </div>
 
@@ -134,22 +138,20 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div id="comptes_par_bookmakers">
+                    <div class="col-md-3">
+                        <div id="comptes_par_bookmakers">
+
+                        </div>
+                        <div id="recaps">
+
+                        </div>
 
                     </div>
-                    <div id="recaps">
-
-                    </div>
-
                 </div>
+                <!-- END PAGE CONTENT INNER -->
             </div>
-
-            <!-- END PAGE CONTENT INNER -->
         </div>
 @stop
-
 @section('scripts')
     @parent
     <script src="{{asset('build/js/dashboard.js')}}" type="text/javascript"></script>
