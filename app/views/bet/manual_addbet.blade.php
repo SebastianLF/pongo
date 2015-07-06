@@ -156,9 +156,13 @@
                 <th width="">LEAGUE</th>
                 <th>TYPE PARI</th>
                 <th>CHOIX N°1</th>
-                <th>CHOIX N°2</th>
+                <th class="hide">CHOIX N°2</th>
+                <th class="hide">CHOIX N°2</th>
+                <th class="hide">CHOIX N°2</th>
+                <th class="hide">CHOIX N°2</th>
+                <th class="hide">CHOIX N°2</th>
+                <th class="hide">CHOIX N°2</th>
                 <th colspan="2" width="100px">RENCONTRE</th>
-                <th>PARI</th>
                 <th width="">COTE <span class="glyphicon glyphicon-asterisk"></span></th>
                 <th>OPTIONS</th>
                 <th></th>
@@ -193,7 +197,31 @@
                     </select>
                 </td>
                 <td>
-                    <select name="pick2[]" class="form-control pick2">
+                    <select name="oddParam1[]" class="form-control oddParam1 ">
+                        <option value=""></option>
+                    </select>
+                </td>
+                <td>
+                    <select name="oddParam2[]" class="form-control oddParam2 hide">
+                        <option value=""></option>
+                    </select>
+                </td>
+                <td>
+                    <select name="oddParam3[]" class="form-control oddParam3 hide">
+                        <option value=""></option>
+                    </select>
+                <td>
+                    <select name="parametreName1[]" class="form-control parametreName1 hide">
+                        <option value=""></option>
+                    </select>
+                </td>
+                <td>
+                    <select name="parametreName2[]" class="form-control parametreName2 hide">
+                        <option value=""></option>
+                    </select>
+                </td>
+                <td>
+                    <select name="parametreName3[]" class="form-control parametreName3 hide">
                         <option value=""></option>
                     </select>
                 </td>
@@ -204,12 +232,6 @@
                 </td>
                 <td width="120">
                     <select name="team2inputdashboard[]" class="form-control team2inputdashboard">
-                        <option value=""></option>
-                    </select>
-                </td>
-                <td>
-                    <select name="picknameinputdashboard[]" class="form-control picknameinputdashboard"
-                            placeholder="ex: OVER 2.5">
                         <option value=""></option>
                     </select>
                 </td>

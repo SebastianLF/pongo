@@ -1800,6 +1800,7 @@ return array(
     'Slim\\Slim' => $vendorDir . '/slim/slim/Slim/Slim.php',
     'Slim\\View' => $vendorDir . '/slim/slim/Slim/View.php',
     'Sport' => $baseDir . '/app/models/Sport.php',
+    'SportMarket' => $baseDir . '/app/models/SportMarket.php',
     'SportTableSeeder' => $baseDir . '/app/database/seeds/SportTableSeeder.php',
     'Stack\\Builder' => $vendorDir . '/stack/builder/src/Stack/Builder.php',
     'Stack\\StackedHttpKernel' => $vendorDir . '/stack/builder/src/Stack/StackedHttpKernel.php',

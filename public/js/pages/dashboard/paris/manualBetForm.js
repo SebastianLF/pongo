@@ -361,6 +361,53 @@ function manualBetForm() {
                 }
             }
         });
+
+        form.find(".marketinputdashboard").on('select2:selecting',function(){
+            $(this).closest('betline').find('.team1inputdashboard').prop("disabled", true);
+        });
+
+    }
+
+    function gestionSelectionsEquipes(){
+        form.find(".team1inputdashboard").select2({
+            allowClear: true,
+            placeholder: "Choisir une quipe",
+            cache: true,
+            ajax: {
+                url: 'equipes',
+                dataType: 'json',
+                data: function (params) {
+                    return {
+                        q: params.term
+                    };
+                },
+                processResults: function (data) {
+                    return {
+                        results: data
+                    };
+                }
+            }
+        });
+
+        form.find(".team2inputdashboard").select2({
+            allowClear: true,
+            placeholder: "Choisir une équipe",
+            cache: true,
+            ajax: {
+                url: 'equipes',
+                dataType: 'json',
+                data: function (params) {
+                    return {
+                        q: params.term
+                    };
+                },
+                processResults: function (data) {
+                    return {
+                        results: data
+                    };
+                }
+            }
+        });
     }
 
 
@@ -375,4 +422,5 @@ function manualBetForm() {
     gestionSelectionsSport();
     gestionSelectionsCompet();
     gestionSelectionsMarket();
+    gestionSelectionsEquipes();
 }

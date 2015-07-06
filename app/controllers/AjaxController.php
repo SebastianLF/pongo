@@ -54,10 +54,11 @@
 		public function getEquipes()
 		{
 			$q = Input::get('q');
-			$adversaire_id = Input::get('adversaire_id');
+			return Response::json('');
+			/*$adversaire_id = Input::get('adversaire_id');
 			$competition_id = Input::get('competition_id');
 			$competition = Competition::find($competition_id);
-			if (empty($competition_id)) {
+			if (isset($competition_id)) {
 				$equipes = '';
 				return Response::json($equipes);
 			} else {
@@ -69,7 +70,7 @@
 					return Response::json($equipes);
 				}
 
-			}
+			}*/
 		}
 
 
