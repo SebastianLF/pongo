@@ -1,10 +1,10 @@
 @if($count == 0)
     <div class="list-group">
         <div class="list-group-item">
-            <h4 class="list-group-item-heading">1) List group item heading</h4>
+            <h4 class="list-group-item-heading">1) Ajouter une selection (pari) à l'aide du panneau ci-dessous.</h4>
 
             <p class="list-group-item-text">
-                Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+                Vous avez plusieurs façons d'ajouter une selection, soit par
             </p>
         </div>
         <div class="list-group-item">
