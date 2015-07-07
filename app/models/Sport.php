@@ -9,4 +9,8 @@ class Sport extends Eloquent {
         return $this->belongsToMany('Market', 'sport_market', 'sport_id', 'market_id');
     }
 
+    public function scopes(){
+        return $this->belongsToMany('Scope', 'sport_scope', 'sport_id', 'scope_id');
+    }
+
 }

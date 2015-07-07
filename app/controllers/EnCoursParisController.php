@@ -36,200 +36,7 @@
 		public function store()
 		{
 
-			//validation
-			$regles = array(
-				'typestakeinputdashboard' => 'required|in:u,f',
-				'stakeunitinputdashboard' => 'required_if:typestakeinputdashboard,u|integer|min:1',
-				'amountinputdashboard' => array('required_if:typestakeinputdashboard,f', 'numeric', 'regex:/^\d+(\.\d{1,2})?$/'),
-				'tipstersinputdashboard' => 'required|exists:tipsters,id,user_id,' . $this->currentUser->id,
-				'accountsinputdashboard' => 'required_if:followtypeinputdashboard,normal|exists:bookmaker_user,id,user_id,' . $this->currentUser->id,
-				'RadioOptions' => 'required|in:systemeABCD,parislongterme,aucun',
-				'serieinputdashboard' => 'required_if:RadioOptions,systemeABCD',
-				'letterinputdashboard' => 'required_if:RadioOptions,systemeABCD|in:A,B,C,D',
-			);
-			$messages = array(
-				'typestakeinputdashboard.in' => 'ce type de mise n\'existe pas.',
-				'stakeunitinputdashboard.required_if' => 'Vous devez mettre une mise (en unités).',
-				'stakeunitinputdashboard.integer' => 'la mise en unités doit etre un nombre entier.',
-				'stakeunitinputdashboard.min' => 'mise en unités minimun : 1',
-				'amountinputdashboard.required_if' => 'Vous devez mettre une mise (en devise).',
-				'amountinputdashboard.numeric' => 'La mise (en devise) doit etre un nombre.',
-				'amountinputdashboard.regex' => 'la mise doit etre un nombre entier positif ou decimal positif(avec 2 chiffres apres la virgule maximum).',
-				'tipstersinputdashboard.required' => 'Choisissez un tipster, si il n\'y a pas de tipster dans la liste, veuillez en créer un dans la page configuration',
-				'tipstersinputdashboard.exists' => 'Ce tipster n\'existe pas dans votre liste.',
-				'accountsinputdashboard.required_if' => 'Vous devez choisir un compte de bookmaker quand le suivi est de type normal. Si vous n\'avez pas de compte de bookmaker, veuillez en créer un, dans la page configuration',
-				'accountsinputdashboard.exists' => 'Ce compte bookmaker n\'existe pas dans votre liste.',
-			);
-			$validator = Validator::make(Input::all(), $regles, $messages);
-			$validator->each('datematchinputdashboard', ['sometimes', 'date']);
-			$validator->each('sportinputdashboard', ['sometimes', 'exists:sports,id']);
-			$validator->each('competitioninputdashboard', ['sometimes', 'exists:competitions,id']);
-			$validator->each('team1inputdashboard', ['sometimes', 'exists:equipes,id']);
-			$validator->each('team2inputdashboard', ['sometimes', 'exists:equipes,id']);
-			$validator->each('picknameinputdashboard', ['sometimes', 'exists:type_paris,id']);
-			$validator->each('oddinputdashboard', ['required', 'min:1', 'regex:/^\d+(\.\d{1,2})?$/']);
 
-			if ($validator->fails()) {
-				//$array = array_merge($validator->getMessageBag()->toArray(),$validator_selections->getMessageBag()->toArray());
-				$array = $validator->getMessageBag()->toArray();
-				Clockwork::info($array);
-				return Response::json(array(
-					'etat' => 0,
-					'msg' => $array,
-				));
-			} else {
-				// mise en variables.
-				$tipster_id = Input::get('tipstersinputdashboard');
-				$tipster = Tipster::find($tipster_id);
-				$compte_id = Input::get('accountsinputdashboard');
-				$compte = $this->currentUser->comptes()->where('id', $compte_id)->first();
-
-				// ajout de la date du jour pour la date de creation du pari.
-				$date_ajout = Carbon::now();
-
-				// numero de pari par utilisateur + incrementation de celui-ci.
-				$this->currentUser->compteur_pari += 1;
-				$this->currentUser->save();
-				$numero_pari = $this->currentUser->compteur_pari;
-
-				// calcul de la cote generale avec le type de cote 1.00 .
-				$cotes = Input::get('oddinputdashboard');
-				$cote_general = 1;
-				foreach ($cotes as $cote) {
-					$cote_general *= $cote;
-				}
-
-				// simple = 1 , combiné = superieur à 1
-				$type_profil = Input::get('linesnum');
-				if ($type_profil > 1) {
-					$type_profil = 'c';
-				} else if ($type_profil == 1) {
-					$type_profil = 's';
-				}
-
-				// u = unités , f = flat
-				if (Input::get('typestakeinputdashboard') == 'u') {
-					$nombre_unites = Input::get('stakeunitinputdashboard');
-					$mise_totale = $tipster->montant_par_unite * $nombre_unites;
-				} else if (Input::get('typestakeinputdashboard') == 'f') {
-					$mise_totale = Input::get('amountinputdashboard');
-					$nombre_unites = round($mise_totale / $tipster->montant_par_unite, 2);
-				}
-
-				//gestion des options ( paris long terme , systeme abcd )
-				$option = Input::get('RadioOptions');
-				$nom_abcd = '';
-				$lettre_abcd = '';
-				$pari_long_terme = 0;
-				$pari_abcd = 0;
-				if ($option == 'parislongterme') {
-					$pari_long_terme = 1;
-				} else if ($option == 'systemeABCD') {
-					$pari_abcd = 1;
-					$nom_abcd = Input::get('serieinputdashboard');
-					$lettre_abcd = Input::get('letterinputdashboard');
-				}
-
-				// creation du nouveau pari
-				$en_cours_pari = New EnCoursParis(array(
-					'followtype' => $tipster->followtype,
-					'type_profil' => $type_profil,
-					'numero_pari' => $numero_pari,
-					'mt_par_unite' => $tipster->montant_par_unite,
-					'nombre_unites' => $nombre_unites,
-					'mise_totale' => $mise_totale,
-					'cote' => $cote_general,
-					'pari_long_terme' => $pari_long_terme,
-					'pari_abcd' => $pari_abcd,
-					'nom_abcd' => $nom_abcd,
-					'lettre_abcd' => $lettre_abcd,
-					'tipster_id' => $tipster_id,
-					'bookmaker_user_id' => $compte_id != NULL ? $compte_id : NULL
-				));
-				Clockwork::info($en_cours_pari);
-
-				// ajout du nouveau pari.
-				$pari = $this->currentUser->enCoursParis()->save($en_cours_pari);
-
-				// processus pour ceer les selecions.
-				for ($i = 0; $i < Input::get('linesnum'); $i++) {
-
-					if (Input::get('datematchinputdashboard') != '') {
-						$datematch = Input::get('datematchinputdashboard');
-					} else {
-						$datematch = null;
-					}
-					$cote = Input::get('oddinputdashboard');
-					$cote_final = $cote[$i];
-
-
-					$sport = Input::get('sportinputdashboard');
-					if (Input::get('sportinputdashboard') != '') {
-						$sport = Sport::where('name', strtolower($sport[$i]))->first();
-					} else {
-						$sport = NULL;
-					}
-					$pays = Input::get('countryinputdashboard');
-					if (Input::get('countryinputdashboard') != '') {
-						$pays = Country::where('name', strtolower($pays[$i]))->first();
-					} else {
-						$pays = NULL;
-					}
-					$competition = Input::get('competitioninputdashboard');
-					if (Input::get('competitioninputdashboard') != '') {
-						$competition = Competition::where('name', strtolower($competition[$i]))->first();
-					} else {
-						$competition = NULL;
-					}
-					$type_pari = Input::get('picknameinputdashboard');
-					if (Input::get('picknameinputdashboard') != '') {
-						$type_pari = Paritype::where('name', strtolower($type_pari[$i]))->first();
-					} else {
-						$type_pari = NULL;
-					}
-					$equipe1 = Input::get('team1inputdashboard');
-					if (Input::get('team1inputdashboard') != '') {
-						$equipe1 = Equipe::where('name', strtolower($equipe1[$i]))->first();
-					} else {
-						$equipe1 = NULL;
-					}
-					$equipe2 = Input::get('team2inputdashboard');
-					if (Input::get('team1inputdashboard') != '') {
-						$equipe2 = Equipe::where('name', strtolower($equipe2[$i]))->first();
-					} else {
-						$equipe2 = NULL;
-					}
-
-					// creaion des selections.
-					$selection = New Selection(array(
-						'date_match' => $datematch[$i],
-						'cote' => $cote_final,
-						'sport_id' => $sport,
-						'country_id' => $pays,
-						'competition_id' => $competition,
-						'type_pari_id' => $type_pari,
-						'equipe1_id' => $equipe1,
-						'equipe2_id' => $equipe2,
-					));
-					Clockwork::info($selection);
-
-					// ajout des selections.
-					$pari->selections()->save($selection);
-				}
-
-				// deduction du montant dans le bookmaker correspondant uniquement si le suivi est de type normal.
-				if ($compte_id != NULL) {
-					$compte_to_deduct = $this->currentUser->comptes()->where('id', $compte_id)->firstOrfail();
-					$compte_to_deduct->bankroll_actuelle -= $mise_totale;
-					$compte_to_deduct->save();
-				}
-
-
-				return Response::json(array(
-					'etat' => 1,
-					'msg' => 'pari ajouté avec succes'
-				));
-			}
 
 
 		}
@@ -487,22 +294,27 @@
 						// equipe1  = id de pongo
 						// equipe2  = id de pongo
 
-						// donnée a connaitre pour l en cours pari.
+						// compteur, si superieur a 0 l'en cours pari est live.
 						$count_live = $selection_coupon->isLive == null ? $count_live + 0 : $count_live + 1;
 
-						// creation
+						// (on attribue l'id)
 						$sport = Sport::firstOrNew(array('id' => $selection_coupon->sport_id, 'name' => $selection_coupon->sport_name));
 						$sport->save();
 
-						// id ajouté manuellement.
+						// (on attribue l'id)
 						$market = Market::firstOrNew(array('id' => $selection_coupon->market_id, 'name' => $selection_coupon->market, 'isMatch' => $selection_coupon->isMatch));
 						$market->save();
 
+						// creation pour le formulaire manuel.
 						$sport_market = SportMarket::firstOrNew(array('sport_id' => $sport->id, 'market_id' => $market->id));
 						$sport_market->save();
 
+						// id ajouté manuellement.
 						$scope = Scope::find(intval($selection_coupon->scope_id));
-						Clockwork::info($scope);
+
+						// creation pour le formulaire manuel. ( !! sport_scope !! )
+						$sport->scopes()->attach($scope->id);
+
 						if(is_null($scope)){
 							$scope = new Scope(); $scope->id = $selection_coupon->scope_id; $scope->name = $selection_coupon->scope; $scope->save();
 						}
@@ -549,6 +361,7 @@
 							'score' => $selection_coupon->score,
 							'affichage' => $selection_coupon->affichage,
 							'market_id' => $market->id,
+							'market_id' => $market->id,
 							'scope_id' => $scope->id,
 							'sport_id' => $sport->id,
 							'competition_id' => $competition->id,
@@ -557,6 +370,14 @@
 							'en_cours_pari_id' => $encourparis->id
 						));
 
+						$market->odd_doubleParam = $selection->odd_doubleParam ? 1 : 0;
+						$market->odd_doubleParam2 = $selection->odd_doubleParam2 ? 1 : 0;
+						$market->odd_doubleParam3 = $selection->odd_doubleParam3 ? 1 : 0;
+						$market->odd_participantParameterName = $selection->odd_participantParameterName ? 1 : 0;
+						$market->odd_participantParameterName2 = $selection->odd_participantParameterName2 ? 1 : 0;
+						$market->odd_participantParameterName3 = $selection->odd_participantParameterName3 ? 1 : 0;
+						$market->odd_groupParam = $selection->odd_groupParam ? 1 : 0;
+						$market->save();
 						Clockwork::info($selection);
 
 						$selection->save();
@@ -677,6 +498,208 @@
 				} elseif ($cashout_type == 'p') {
 
 				}
+			}
+		}
+
+
+		// formulaire d'ajout manuel
+		public function manual_store(){
+
+			$regles = array(
+				'tipstersinputdashboard' => 'required|exists:tipsters,id,user_id,' . $this->currentUser->id,
+				'typestakeinputdashboard' => 'required|in:u,f',
+				'stakeunitinputdashboard' => 'required_if:typestakeinputdashboard,u|unites',
+				'amountinputdashboard' => 'required_if:typestakeinputdashboard,f|decimal>0',
+				'accountsinputdashboard' => 'required_if:followtypeinputdashboard,normal|exists:bookmaker_user,id,user_id,' . $this->currentUser->id,
+				'ticketABCD' => 'required|in:0,1',
+				'ticketGratuit' => 'required|in:0,1',
+				'ticketLongTerme' => 'required|in:0,1',
+				'serieinputdashboard' => 'required_if:ticketABCD,1',
+				'letterinputdashboard' => 'required_if:ticketABCD,1|in:A,B,C,D',
+				'followtypeinputdashboard' => 'required|in:normal,à blanc',
+			);
+			$messages = array(
+
+			);
+
+			$validator = Validator::make(Input::all(), $regles, $messages);
+			$validator->each('datematchinputdashboard', ['required', 'date']);
+			$validator->each('sportinputdashboard', ['required', 'exists:sports,id']);
+			$validator->each('competitioninputdashboard', ['required', 'exists:competitions,id']);
+			$validator->each('marketinputdashboard', ['required', 'exists:markets,id']);
+			$validator->each('pick', ['required', 'max:20']);
+			$validator->each('oddParam1', ['sometimes']);
+			$validator->each('oddParam2', ['sometimes']);
+			$validator->each('oddParam3', ['sometimes']);
+			$validator->each('parametreName1', ['sometimes']);
+			$validator->each('parametreName2', ['sometimes']);
+			$validator->each('parametreName3', ['sometimes']);
+			$validator->each('team1inputdashboard', ['sometimes', 'exists:equipes,id']);
+			$validator->each('team2inputdashboard', ['sometimes', 'exists:equipes,id']);
+			$validator->each('oddinputdashboard', ['required', 'european_odd']);
+			$validator->each('selectionsLive', ['sometimes', 'in:0,1']);
+			$validator->each('selectionsLongterme', ['sometimes', 'in:0,1']);
+
+			if ($validator->fails()) {
+				//$array = array_merge($validator->getMessageBag()->toArray(),$validator_selections->getMessageBag()->toArray());
+				$array = $validator->getMessageBag()->toArray();
+				Clockwork::info($array);
+				return Response::json(array(
+					'etat' => 0,
+					'msg' => $array,
+				));
+			} else {
+				// mise en variables.
+				$tipster_id = Input::get('tipstersinputdashboard');
+				$tipster = Tipster::find($tipster_id);
+				$compte_id = Input::get('accountsinputdashboard');
+				$compte = $this->currentUser->comptes()->where('id', $compte_id)->first();
+
+				// ajout de la date du jour pour la date de creation du pari.
+				$date_ajout = Carbon::now();
+
+				// numero de pari par utilisateur + incrementation de celui-ci.
+				$this->currentUser->compteur_pari += 1;
+				$this->currentUser->save();
+				$numero_pari = $this->currentUser->compteur_pari;
+
+				// calcul de la cote generale avec le type de cote 1.00 .
+				$cotes = Input::get('oddinputdashboard');
+				$cote_general = 1;
+				foreach ($cotes as $cote) {
+					$cote_general *= $cote;
+				}
+
+				// simple = 1 , combiné = superieur à 1
+				$type_profil = Input::get('linesnum');
+				if ($type_profil > 1) {
+					$type_profil = 'c';
+				} else if ($type_profil == 1) {
+					$type_profil = 's';
+				}
+
+				// u = unités , f = flat
+				if (Input::get('typestakeinputdashboard') == 'u') {
+					$nombre_unites = Input::get('stakeunitinputdashboard');
+					$mise_totale = $tipster->montant_par_unite * $nombre_unites;
+				} else if (Input::get('typestakeinputdashboard') == 'f') {
+					$mise_totale = Input::get('amountinputdashboard');
+					$nombre_unites = round($mise_totale / $tipster->montant_par_unite, 2);
+				}
+
+				//gestion des options ( paris long terme , systeme abcd )
+				$option = Input::get('RadioOptions');
+				$nom_abcd = '';
+				$lettre_abcd = '';
+				$pari_long_terme = 0;
+				$pari_abcd = 0;
+				if ($option == 'parislongterme') {
+					$pari_long_terme = 1;
+				} else if ($option == 'systemeABCD') {
+					$pari_abcd = 1;
+					$nom_abcd = Input::get('serieinputdashboard');
+					$lettre_abcd = Input::get('letterinputdashboard');
+				}
+
+				// creation du nouveau pari
+				$en_cours_pari = New EnCoursParis(array(
+					'followtype' => $tipster->followtype,
+					'type_profil' => $type_profil,
+					'numero_pari' => $numero_pari,
+					'mt_par_unite' => $tipster->montant_par_unite,
+					'nombre_unites' => $nombre_unites,
+					'mise_totale' => $mise_totale,
+					'cote' => $cote_general,
+					'pari_long_terme' => $pari_long_terme,
+					'pari_abcd' => $pari_abcd,
+					'nom_abcd' => $nom_abcd,
+					'lettre_abcd' => $lettre_abcd,
+					'tipster_id' => $tipster_id,
+					'bookmaker_user_id' => $compte_id != NULL ? $compte_id : NULL
+				));
+				Clockwork::info($en_cours_pari);
+
+				// ajout du nouveau pari.
+				$pari = $this->currentUser->enCoursParis()->save($en_cours_pari);
+
+				// processus pour ceer les selecions.
+				for ($i = 0; $i < Input::get('linesnum'); $i++) {
+
+					if (Input::get('datematchinputdashboard') != '') {
+						$datematch = Input::get('datematchinputdashboard');
+					} else {
+						$datematch = null;
+					}
+					$cote = Input::get('oddinputdashboard');
+					$cote_final = $cote[$i];
+
+
+					$sport = Input::get('sportinputdashboard');
+					if (Input::get('sportinputdashboard') != '') {
+						$sport = Sport::where('name', strtolower($sport[$i]))->first();
+					} else {
+						$sport = NULL;
+					}
+					$pays = Input::get('countryinputdashboard');
+					if (Input::get('countryinputdashboard') != '') {
+						$pays = Country::where('name', strtolower($pays[$i]))->first();
+					} else {
+						$pays = NULL;
+					}
+					$competition = Input::get('competitioninputdashboard');
+					if (Input::get('competitioninputdashboard') != '') {
+						$competition = Competition::where('name', strtolower($competition[$i]))->first();
+					} else {
+						$competition = NULL;
+					}
+					$type_pari = Input::get('picknameinputdashboard');
+					if (Input::get('picknameinputdashboard') != '') {
+						$type_pari = Paritype::where('name', strtolower($type_pari[$i]))->first();
+					} else {
+						$type_pari = NULL;
+					}
+					$equipe1 = Input::get('team1inputdashboard');
+					if (Input::get('team1inputdashboard') != '') {
+						$equipe1 = Equipe::where('name', strtolower($equipe1[$i]))->first();
+					} else {
+						$equipe1 = NULL;
+					}
+					$equipe2 = Input::get('team2inputdashboard');
+					if (Input::get('team1inputdashboard') != '') {
+						$equipe2 = Equipe::where('name', strtolower($equipe2[$i]))->first();
+					} else {
+						$equipe2 = NULL;
+					}
+
+					// creaion des selections.
+					$selection = New Selection(array(
+						'date_match' => $datematch[$i],
+						'cote' => $cote_final,
+						'sport_id' => $sport,
+						'country_id' => $pays,
+						'competition_id' => $competition,
+						'type_pari_id' => $type_pari,
+						'equipe1_id' => $equipe1,
+						'equipe2_id' => $equipe2,
+					));
+					Clockwork::info($selection);
+
+					// ajout des selections.
+					$pari->selections()->save($selection);
+				}
+
+				// deduction du montant dans le bookmaker correspondant uniquement si le suivi est de type normal.
+				if ($compte_id != NULL) {
+					$compte_to_deduct = $this->currentUser->comptes()->where('id', $compte_id)->firstOrfail();
+					$compte_to_deduct->bankroll_actuelle -= $mise_totale;
+					$compte_to_deduct->save();
+				}
+
+
+				return Response::json(array(
+					'etat' => 1,
+					'msg' => 'pari ajouté avec succes'
+				));
 			}
 		}
 

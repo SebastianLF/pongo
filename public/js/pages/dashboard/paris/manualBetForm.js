@@ -9,34 +9,34 @@ function manualBetForm() {
     var form_string = '#manubetform-add';
 
 
-    function assignerEtatEnDebut(){
+    function assignerEtatEnDebut() {
     }
 
-    function gestionCheckboxs(){
+    function gestionCheckboxs() {
         // gestion checkboxs
-        $(form_string+' .methodeabcdcontainer').addClass("hide");
-        $(form_string+' #ticketABCD').click(function () {
-            $(form_string+' .methodeabcdcontainer').removeClass("hide");
+        $(form_string + ' .methodeabcdcontainer').addClass("hide");
+        $(form_string + ' #ticketABCD').click(function () {
+            $(form_string + ' .methodeabcdcontainer').removeClass("hide");
         });
-        $(form_string+' #parislongterme ').click(function () {
-            $(form_string+' .methodeabcdcontainer').addClass("hide");
-            $(form_string+' #letterinputdashboard').empty();
-            $(form_string+' #serieinputdashboard').val(null).trigger("change");
+        $(form_string + ' #parislongterme ').click(function () {
+            $(form_string + ' .methodeabcdcontainer').addClass("hide");
+            $(form_string + ' #letterinputdashboard').empty();
+            $(form_string + ' #serieinputdashboard').val(null).trigger("change");
         });
-        $(form_string+' #aucun').click(function () {
-            $(form_string+' .methodeabcdcontainer').addClass("hide");
-            $(form_string+' #letterinputdashboard').empty();
-            $(form_string+' #serieinputdashboard').val(null).trigger("change");
+        $(form_string + ' #aucun').click(function () {
+            $(form_string + ' .methodeabcdcontainer').addClass("hide");
+            $(form_string + ' #letterinputdashboard').empty();
+            $(form_string + ' #serieinputdashboard').val(null).trigger("change");
         });
-        $(form_string+' #parigratuit').click(function () {
-            $(form_string+' .methodeabcdcontainer').addClass("hide");
-            $(form_string+' #letterinputdashboard').empty();
-            $(form_string+' #serieinputdashboard').val(null).trigger("change");
+        $(form_string + ' #parigratuit').click(function () {
+            $(form_string + ' .methodeabcdcontainer').addClass("hide");
+            $(form_string + ' #letterinputdashboard').empty();
+            $(form_string + ' #serieinputdashboard').val(null).trigger("change");
         });
     }
 
     // gestion des champs concernant les tipsters.
-    function gestionTipsters(){
+    function gestionTipsters() {
         form.find('#tipstersinputdashboard').select2({
             allowClear: true,
             placeholder: "Choisir un tipster",
@@ -86,14 +86,14 @@ function manualBetForm() {
                         form.find('#accountsinputdashboard').val(null).trigger("change");
                         form.find('.bookinputdashboard').prop('disabled', true);
                         form.find('#accountsinputdashboard').prop('disabled', true);
-                    }else{
+                    } else {
                         form.find('.bookinputdashboard').val(null).trigger("change");
                         form.find('#accountsinputdashboard').val(null).trigger("change");
                         form.find('.bookinputdashboard').prop('disabled', true);
                         form.find('#accountsinputdashboard').prop('disabled', true);
                     }
                     var mt = Number(data.montant_par_unite);
-                    isNaN(mt) ?  montant_par_unite.val('') : montant_par_unite.val(mt);
+                    isNaN(mt) ? montant_par_unite.val('') : montant_par_unite.val(mt);
                 },
                 error: function (data) {
                 }
@@ -102,8 +102,8 @@ function manualBetForm() {
     }
 
     // suivant le type de mise choisi.
-    function gestionTypeMise(){
-        var type_stake = [{ id: 'u', text: 'en unités' }, { id: 'f', text: 'en devise' }];
+    function gestionTypeMise() {
+        var type_stake = [{id: 'u', text: 'en unités'}, {id: 'f', text: 'en devise'}];
 
         form.find('#typestakeinputdashboard').select2({
             minimumResultsForSearch: Infinity,
@@ -142,7 +142,7 @@ function manualBetForm() {
         });
     }
 
-    function gestionBookmakers(){
+    function gestionBookmakers() {
         form.find('.bookinputdashboard').select2({
             allowClear: true,
             placeholder: "Choisir un bookmaker",
@@ -208,10 +208,10 @@ function manualBetForm() {
     }
 
 
-    function gestionABCD(){
+    function gestionABCD() {
         // checkboxs
-        form.find('#ticketABCD').on('click', function(){
-            if ( $(this).is(':checked') ) {
+        form.find('#ticketABCD').on('click', function () {
+            if ($(this).is(':checked')) {
                 form.find('#methodeabcdcontainer').removeClass("hide");
                 form.find('#serieinputdashboard').prop('disabled', false);
                 form.find('#letterinputdashboard').prop('disabled', false);
@@ -296,7 +296,7 @@ function manualBetForm() {
     }
 
 
-    function gestionSelectionsSport(){
+    function gestionSelectionsSport() {
         form.find(".sportinputdashboard").select2({
             allowClear: true,
             placeholder: "Choisir un sport",
@@ -318,57 +318,85 @@ function manualBetForm() {
         });
     }
 
-    function gestionSelectionsCompet(){
-        form.find(".competitioninputdashboard").select2({
-            allowClear: true,
-            placeholder: "Choisir une competition",
-            cache: true,
-            ajax: {
-                url: 'competitions',
-                dataType: 'json',
-                data: function (params) {
-                    return {
-                        q: params.term
-                    };
-                },
-                processResults: function (data) {
-                    return {
-                        results: data
-                    };
+    function gestionSelectionsCompet() {
+        form.find(".competitioninputdashboard").each(function () {
+            var $this = $(this);
+            $this.select2({
+                allowClear: true,
+                placeholder: "Choisir une competition",
+                cache: true,
+                ajax: {
+                    url: 'competitions',
+                    dataType: 'json',
+                    data: function (params) {
+                        return {
+                            sport_id: $this.closest('.betline').find('.sportinputdashboard').val(),
+                            q: params.term
+                        };
+                    },
+                    processResults: function (data) {
+                        return {
+                            results: data
+                        };
+                    }
                 }
-            }
+            });
         });
     }
 
-    function gestionSelectionsMarket(){
-        form.find(".marketinputdashboard").select2({
-            allowClear: true,
-            placeholder: "Choisir un type de pari",
-            cache: true,
-            ajax: {
-                url: 'markets',
-                dataType: 'json',
-                data: function (params) {
-                    return {
-                        sport_id: $('.sportinputdashboard').val(),
-                        q: params.term
-                    };
-                },
-                processResults: function (data) {
-                    return {
-                        results: data
-                    };
+    function gestionSelectionsMarket() {
+        form.find(".marketinputdashboard").each(function () {
+            var $this = $(this);
+            $this.select2({
+                allowClear: true,
+                placeholder: "Choisir un type de pari",
+                cache: true,
+                ajax: {
+                    url: 'markets',
+                    dataType: 'json',
+                    data: function (params) {
+                        return {
+                            sport_id: $this.closest('.betline').find('.sportinputdashboard').val(),
+                            q: params.term
+                        };
+                    },
+                    processResults: function (data) {
+                        return {
+                            results: data
+                        };
+                    }
                 }
-            }
+            });
         });
-
-        form.find(".marketinputdashboard").on('select2:selecting',function(){
-            $(this).closest('betline').find('.team1inputdashboard').prop("disabled", true);
-        });
-
     }
 
-    function gestionSelectionsEquipes(){
+    function gestionSelectionsScope() {
+        form.find(".scopeinputdashboard").each(function () {
+            var $this = $(this);
+            $this.select2({
+                allowClear: true,
+                placeholder: "Choisir un sous type",
+                cache: true,
+                ajax: {
+                    url: 'scopes',
+                    dataType: 'json',
+                    data: function (params) {
+                        return {
+                            sport_id: $this.closest('.betline').find('.sportinputdashboard').val(),
+                            q: params.term
+                        };
+                    },
+                    processResults: function (data) {
+                        return {
+                            results: data
+                        };
+                    }
+                }
+            });
+        });
+    }
+
+    function gestionSelectionsEquipes() {
         form.find(".team1inputdashboard").select2({
             allowClear: true,
             placeholder: "Choisir une quipe",
@@ -411,7 +439,6 @@ function manualBetForm() {
     }
 
 
-
     // inits
     assignerEtatEnDebut();
 
@@ -422,5 +449,6 @@ function manualBetForm() {
     gestionSelectionsSport();
     gestionSelectionsCompet();
     gestionSelectionsMarket();
+    gestionSelectionsScope();
     gestionSelectionsEquipes();
 }

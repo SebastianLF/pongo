@@ -18,11 +18,8 @@
 		{
 			$q = Input::get('q');
 
-
 			$sports = Sport::select('id', 'name AS text', 'logo')->where('name', 'LIKE', '%' . $q . '%')->orderBy('name')->get();
 			return Response::json($sports);
-
-
 		}
 
 
@@ -30,26 +27,40 @@
 		{
 			$q = Input::get('q');
 			$sport_id = Input::get('sport_id');
-			if (empty($sport_id)) {
-				$competitions = Competition::select('id', 'name AS text', 'logo')->where('name', 'LIKE', '%' . $q . '%')->get();
-				return Response::json($competitions);
-			} else {
+			Clockwork::info($sport_id);
+			if (isset($sport_id)) {
 				$competitions = Competition::select('id', 'name AS text', 'logo')->where('sport_id',$sport_id)->where('name', 'LIKE', '%' . $q . '%')->get();
 				return Response::json($competitions);
+			}else{
+				return Response::json([]);
 			}
 		}
 
 		public function getMarkets()
 		{
-			$q = Input::get('q');
 			$sport_id = Input::get('sport_id');
-			Clockwork::info($sport_id);
-			if(!is_null($sport_id)){
+			if(isset($sport_id)){
 				$sport = Sport::find($sport_id);
-				$markets = isset($sport) ? $sport->markets()->select('markets.id', 'markets.name AS text')->where('name', 'LIKE', '%' . $q . '%')->get() : '';
+				$markets = isset($sport) ? $sport->markets()->select('markets.id', 'markets.name AS text')->where('name', 'LIKE', '%' . Input::get('q') . '%')->get() : '';
 				return Response::json($markets);
+			}else{
+				return Response::json([]);
 			}
 		}
+
+		public function getScopes()
+		{
+			$sport_id = Input::get('sport_id');
+			Clockwork::info($sport_id);
+			if(isset($sport_id)){
+				$sport = Sport::find($sport_id);
+				$markets = isset($sport) ? $sport->scopes()->select('scopes.id', 'scopes.name AS text')->where('name', 'LIKE', '%' . Input::get('q') . '%')->get() : '';
+				return Response::json($markets);
+			}else{
+				return Response::json([]);
+			}
+		}
+
 
 		public function getEquipes()
 		{

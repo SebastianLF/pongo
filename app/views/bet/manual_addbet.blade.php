@@ -155,6 +155,7 @@
                 <th width="">SPORT</th>
                 <th width="">LEAGUE</th>
                 <th>TYPE PARI</th>
+                <th>SOUS TYPE</th>
                 <th>CHOIX N°1</th>
                 <th class="hide">CHOIX N°2</th>
                 <th class="hide">CHOIX N°2</th>
@@ -168,7 +169,7 @@
                 <th></th>
             </tr>
             <tr class="betline">
-                <td>
+                <td width="70px">
                     <div class="">
                         <input name="datematchinputdashboard[]"
                                class="form-control datematchinputdashboard input-sm"
@@ -192,35 +193,40 @@
                     </select>
                 </td>
                 <td>
+                    <select name="scopeinputdashboard[]" class="form-control scopeinputdashboard">
+                        <option value=""></option>
+                    </select>
+                </td>
+                <td>
                     <select name="pick[]" class="form-control pick">
                         <option value=""></option>
                     </select>
                 </td>
-                <td>
+                <td class="hide">
                     <select name="oddParam1[]" class="form-control oddParam1 ">
                         <option value=""></option>
                     </select>
                 </td>
-                <td>
+                <td class="hide">
                     <select name="oddParam2[]" class="form-control oddParam2 hide">
                         <option value=""></option>
                     </select>
                 </td>
-                <td>
+                <td class="hide">
                     <select name="oddParam3[]" class="form-control oddParam3 hide">
                         <option value=""></option>
                     </select>
-                <td>
+                <td class="hide">
                     <select name="parametreName1[]" class="form-control parametreName1 hide">
                         <option value=""></option>
                     </select>
                 </td>
-                <td>
+                <td class="hide">
                     <select name="parametreName2[]" class="form-control parametreName2 hide">
                         <option value=""></option>
                     </select>
                 </td>
-                <td>
+                <td class="hide">
                     <select name="parametreName3[]" class="form-control parametreName3 hide">
                         <option value=""></option>
                     </select>
@@ -235,7 +241,7 @@
                         <option value=""></option>
                     </select>
                 </td>
-                <td>
+                <td width="60px">
                     <input name="oddinputdashboard[]" class="form-control input-sm" placeholder="ex: 1.83">
                 </td>
                 <td width="230px">

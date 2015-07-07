@@ -61,3 +61,4 @@
 	Route::get('equipes', 'AjaxController@getEquipes');
 	Route::get('competitions', 'AjaxController@getCompetitions');
 	Route::get('markets', 'AjaxController@getMarkets');
+	Route::get('scopes', 'AjaxController@getScopes');
