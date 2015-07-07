@@ -303,7 +303,6 @@
 
 						// (on attribue l'id)
 						$market = Market::firstOrNew(array('id' => $selection_coupon->market_id, 'name' => $selection_coupon->market, 'isMatch' => $selection_coupon->isMatch));
-						$market->save();
 
 						// creation pour le formulaire manuel.
 						$sport_market = SportMarket::firstOrNew(array('sport_id' => $sport->id, 'market_id' => $market->id));
@@ -311,13 +310,13 @@
 
 						// id ajouté manuellement.
 						$scope = Scope::find(intval($selection_coupon->scope_id));
+						if(is_null($scope)){
+							$scope = new Scope(); $scope->id = $selection_coupon->scope_id; $scope->name = $selection_coupon->scope; $scope->save();
+						}
 
 						// creation pour le formulaire manuel. ( !! sport_scope !! )
 						$sport->scopes()->save($scope);
 
-						if(is_null($scope)){
-							$scope = new Scope(); $scope->id = $selection_coupon->scope_id; $scope->name = $selection_coupon->scope; $scope->save();
-						}
 						Clockwork::info($scope);
 						$competition_country = Country::firstOrNew(array('name' => $selection_coupon->event_country_name));
 						$competition_country->save();
