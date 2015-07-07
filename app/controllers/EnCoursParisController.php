@@ -313,7 +313,7 @@
 						$scope = Scope::find(intval($selection_coupon->scope_id));
 
 						// creation pour le formulaire manuel. ( !! sport_scope !! )
-						$sport->scopes()->attach($scope->id);
+						$sport->scopes()->save($scope);
 
 						if(is_null($scope)){
 							$scope = new Scope(); $scope->id = $selection_coupon->scope_id; $scope->name = $selection_coupon->scope; $scope->save();
