@@ -1,218 +1,276 @@
 @if($count_paris_termine == '0')
     <div class="row">
         <div class="col-sm-2 col-sm-offset-5">
-            Aucun résultat
+            Aucun historique pour l'instant
         </div>
     </div>
 @else
-    <div class="table-scrollable table-scrollable-borderless">
-        <table id="paristerminetable" class="table table-condensed table-hover table-light"
-               style="border-collapse:collapse;">
-            <thead>
-            <tr class="uppercase">
-                <th id="count" class="hidden ">{{$count_paris_termine}}</th>
-                <th></th>
-                <th>N°</th>
-                <th>date ajout</th>
-                <th>type</th>
-                <th colspan="3" align="center">Apercu</th>
-                <th>Pari <span class="glyphicon glyphicon-info-sign"></span></th>
-                <th>Cote</th>
-                <th>Tipster</th>
-                <th>Bookmaker</th>
-                <th>Mise</th>
-                <th>status</th>
-                <th>profits</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($paristermine as $pari)
-                <div class="wrapperRow">
-                    <a href="">
-                        <tr data-toggle="collapse" data-target="{{'.row'.$pari->numero_pari}}"
-                            class="mainrow accordion-toggle parisencours-accordeon">
+    <div class="table-scrollable-borderless table-responsive">
+            <table id="parisencourstable" class="table table-condensed"
+                   style="border-collapse:collapse;">
+                <thead>
+                <tr class="uppercase">
+                    <th  id="count" class="hidden ">{{$count_paris_termine}}</th>
+                    <th></th>
+                    <th>N°</th>
+                    <th>type</th>
+                    <th>Evenement</th>
+                    <th>Rencontre</th>
+                    <th>Pari <span class="glyphicon glyphicon-info-sign"></span></th>
+                    <th>Tipster</th>
+                    <th>Book</th>
+                    <th>Cote</th>
+                    <th>Mise</th>
+                    <th>Resultat</th>
+                    <th>Status</th>
+                    <th>bén./per.</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($paristermine as $pari)
+                    <div class="wrapperRow">
 
-                            <td class="hidden id">{{$pari->id}}</td>
+                    <!-- pour le cas d'un pari simple. -->
+                        @if($pari->type_profil == 's')
+                            <a href="">
+                            <tr data-toggle="collapse" data-target="{{'.row'.$pari->numero_pari}}" class="mainrow accordion-toggle parisencours-accordeon">
+                                <td class="hidden id">{{$pari->id}}</td>
+                                <td class="subbetclick"></td>
+                                <td><a href="javascript:;" class="primary-link">#{{$pari->numero_pari}}</a></td>
 
-                            <td class="subbetclick"><span data-toggle="collapse"
-                                                          data-target="{{'.row'.$pari->numero_pari}}"
-                                                          class="glyphicon glyphicon-chevron-right"></span></td>
-                            <td><a href="javascript:;" class="primary-link">#{{$pari->numero_pari}}</a></td>
-                            <td>{{$pari->created_at}}</td>
-                            <td>
-                                <span class="label label-sm label-success label-mini">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>
-                                <span class="label label-sm label-warning label-mini">{{$pari->pari_long_terme ? 'long terme' : '' }}</span>
-                                <span class="label label-sm label-danger label-mini">{{$pari->pari_abcd ? 'ABCD' : '' }}</span>
-                            </td>
-                            <td>
-                <span data-toggle="tooltip"
-                      title="{{isset($pari->selections[0]->sport) ? $pari->selections[0]->sport->name : 'aucun'}}">
-                    @if(isset($pari->selections[0]->sport))
-                        <img width="25px"
-                             src="{{isset($pari->selections[0]->sport->logo) ? asset('img/logos/sports').'/'.$pari->selections[0]->sport->logo : ''}}"
-                             alt=""/>{{isset($pari->selections[0]->sport->logo) ? '' : $pari->selections[0]->sport->name}}
-                    @else
-                        {{'non spéc.'}}
-                    @endif
-                </span>
-                            </td>
-                            <td>
-                <span data-toggle="tooltip"
-                      title="{{isset($pari->selections[0]->competition) ? $pari->selections[0]->competition->name : 'aucun'}}">
-                    @if(isset($pari->selections[0]->competition))
-                        <img width="30px"
-                             src="{{isset($pari->selections[0]->competition->logo) ? asset('img/logos/sports').'/'.$pari->selections[0]->competition->logo : ''}}"
-                             alt=""/>{{{isset($pari->selections[0]->competition->logo)? '' : $pari->selections[0]->competition->name}}}
-                    @else
-                        {{'non spéc.'}}
-                    @endif
-                </span>
-                            </td>
-                            <td>
-                <span data-toggle="tooltip"
-                      title="{{isset($pari->selections[0]->equipe1) ? $pari->selections[0]->equipe1->name : 'aucun'}}">
-                    @if(isset($pari->selections[0]->equipe1))
-                        <img width="30px"
-                             src="{{isset($pari->selections[0]->equipe1->logo) ? asset('img/logos/sports').'/'.$pari->selections[0]->equipe1->logo : ''}}"
-                             alt=""/>{{isset($pari->selections[0]->equipe1->logo) ? '':$pari->selections[0]->equipe1->name}}
-                    @else
-                        {{'non spéc.'}}
-                    @endif
-                </span>
-                <span data-toggle="tooltip"
-                      title="{{isset($pari->selections[0]->equipe2) ? $pari->selections[0]->equipe2->name  : 'aucun'}}">
-                    @if(isset($pari->selections[0]->equipe2))
-                        <img width="25px"
-                             src="{{isset($pari->selections[0]->equipe2->logo) ? asset('img/logos/sports').'/'.$pari->selections[0]->equipe2->logo : ''}}"
-                             alt=""/>{{isset($pari->selections[0]->equipe2->logo) ? '':$pari->selections[0]->equipe2->name}}
-                    @endif
-                </span>
-                            </td>
-                            <td>
+                                <td><span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_live ? 'live' : '' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_gratuit ? 'gratuit' : '' }}</span></td>
+                                <td width="">
+                                        {{$pari->selections->first()->sport->name}}{{', '}}{{$pari->selections->first()->competition->name}}
+                                </td>
+                                <td>
+                                        @if($pari->selections->first()->isMatch)
+                                            {{' ('.$pari->selections->first()->date_match.') -'}}
+                                            {{$pari->selections->first()->game_name}}
+                                        @else
+                                            {{'N/A'}}
+                                        @endif
+                                </td>
 
-                            </td>
+                                <!--
+                                // 1 , 'pick'
+                                // 2 , 'pick doubleparam'
+                                // 3 , 'pick, parametername1 doubleparam1
+                                // 4 , 'pick, doubleparam1-doubleparam2 minutes'
+                                // 5 , 'parametername1 doubleparam1' avec '+'
+                                // 6 , 'pick Top doubleparam1'
+                                // 7 , 'pick (optional + )doubleparam'
+                                // 8 , 'parametername1 pick doubleparam1'-->
+                                <td class="blue" width="">
+                                     {{$pari->selections->first()->market->name.(' : ')}}
+                                 @if($pari->selections->first()->affichage == 1)
+                                        {{$pari->selections->first()->pick}}
+                                     @elseif($pari->selections->first()->affichage == 2)
+                                        {{$pari->selections->first()->pick}}{{' '}}{{$pari->selections->first()->odd_doubleParam}}
+                                     @elseif($pari->selections->first()->affichage == 3)
+                                        {{$pari->selections->first()->pick}}{{', '}}{{$pari->selections->first()->odd_participantParameterName}}{{' '}}{{$pari->selections->first()->odd_doubleParam}}
+                                     @elseif($pari->selections->first()->affichage == 4)
+                                        {{$pari->selections->first()->pick}}{{', '}}{{$pari->selections->first()->odd_doubleParam}}{{'-'}}{{$pari->selections->first()->odd_doubleParam2}}{{' minutes'}}
+                                     @elseif($pari->selections->first()->affichage == 5)
+                                         @if($pari->selections->first()->odd_doubleParam > 0)
+                                        {{', '}}{{$pari->selections->first()->odd_participantParameterName}}{{' +'}}{{$pari->selections->first()->odd_doubleParam}}
+                                         @else
+                                            {{', '}}{{$pari->selections->first()->odd_participantParameterName}}{{' '}}{{$pari->selections->first()->odd_doubleParam}}
+                                         @endif
+                                     @elseif($pari->selections->first()->affichage == 6)
+                                        {{$pari->selections->first()->pick}}{{', '}}{{' Top '}}{{$pari->selections->first()->odd_doubleParam1}}
+                                     @elseif($pari->selections->first()->affichage == 7)
+                                        {{' '.$pari->selections->first()->pick}}
+                                        @if($pari->selections->first()->odd_doubleParam > 0)
+                                            {{{' +'.$pari->selections->first()->odd_doubleParam}}}
+                                        @else
+                                            {{{' '.$pari->selections->first()->odd_doubleParam}}}
+                                        @endif
+                                     @elseif($pari->selections->first()->affichage == 3)
+                                            {{$pari->selections->first()->odd_participantParameterName}}{{' '}}{{$pari->selections->first()->pick}}{{' '}}{{$pari->selections->first()->odd_doubleParam}}
+                                @endif
+                                </td>
 
-                            <td class="fit tdcote">{{$pari->cote}}</td>
-                            <td>{{$pari->tipster->name}}</td>
-                            <td>
-                <span data-toggle="tooltip"
+                                <td class="">{{$pari->tipster->name}}</td>
+                                <td class=""><span data-toggle="tooltip"
                       title="{{isset($pari->compte->bookmaker->nom) ? $pari->compte->bookmaker->nom : 'à blanc' }}">
                     @if(isset($pari->compte))
                         <img width="60px"
                              src="{{isset($pari->compte->bookmaker->logo) ? asset('img/logos/bookmakers').'/'.$pari->compte->bookmaker->logo : ''}}"
-                             alt=""/>{{isset($pari->compte->bookmaker->logo) ? '' : $pari->compte->bookmaker->nom }}{{' ('.$pari->compte->nom_compte.')'}}
+                             alt=""/>{{isset($pari->compte->bookmaker->logo) ? '' : $pari->compte->bookmaker->nom }}
+                    @else
+                        <span class="label label-sm label-success label-mini uppercase">à blanc</span>
+                    @endif
+                </span>
+                                </td>
+                                <td class="fit tdcote">{{$pari->cote}}</td>
+                                <td class="tdmise  bold"><span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{$user->devise}}} {{'('.+$pari->nombre_unites.'u)'}}</td>
+                                <td width="90px"><input type="text" name="childrowsinput[]"
+                                           class="form-control input-sm"
+                                           value="" placeholder="Résultat"/></td>
+                                <td width="110px"><select name="resultatSelectionDashboardInput[]"
+                                            data-value=""
+                                            class="form-control input-sm">
+                                        <option value="0">-Choisir-</option>
+                                        @foreach($types_resultat as $key => $type)
+                                            <option value="{{$key}}"><a href="javascript:;"
+                                                                        class="btn btn-xs">{{$type}}</a>
+                                            </option>
+                                        @endforeach
+                                    </select></td>
+                                <td class="bold fontsize15" width=""><span class="profits"></span><span class="devise hide">{{{' '.$user->devise}}}</span></td>
+
+                                <td width="150px">
+                                    {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris', 'role' => 'form', 'data-toggle' => 'tooltip', 'data-original-title' => 'Confirmer')) }}
+                                    {{ Form::button('<i class="fa fa-check"></i>', array('type' => 'submit', 'class' => 'boutonvalider btn btn-sm green', 'disabled' => 'disabled')) }}
+                                    {{ Form::close() }}
+
+                                    {{ Form::open(array('route' => 'historique.destroy', 'class' => 'supprimerform form-bouton-paris','role' => 'form', 'data-toggle' => 'tooltip', 'data-original-title' => 'Supprimer')) }}
+                                    {{ Form::button('<i class="fa fa-trash-o"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red', )) }}
+                                    {{ Form::close() }}
+                                    @if($pari->followtype == 'n')
+                                    {{ Form::button('<i class="fa fa-briefcase"></i>', array('type' => 'submit', 'class' => 'btn btn-sm grey-gallery form-bouton-paris', 'data-toggle' => 'modal', 'data-target' => '#cashoutModal', 'data-hover' => 'tooltip', 'data-id' => $pari->id, 'title' => 'Cash Out')) }}
+                                    @endif
+                                </td>
+                            </tr>
+                        </a>
+
+
+
+                        <!-- dans le cas d'un pari combiné. -->
+                        @else
+                            <a href="">
+                                <tr data-toggle="collapse" data-target="{{'.row'.$pari->numero_pari}}"
+                                    class="mainrow accordion-toggle parisencours-accordeon">
+
+                                    <td class="hidden id">{{$pari->id}}</td>
+                                    <td></td>
+                                    <!-- <td class="subbetclick"><span data-toggle="collapse"
+                                                                  data-target="{{'.row'.$pari->numero_pari}}"
+                                                                  class="glyphicon glyphicon-plus-sign"></span></td> -->
+                                    <td><a href="javascript:;" class="primary-link">#{{$pari->numero_pari}}</a></td>
+                                    <td>
+                                        <span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>
+                                    </td>
+                                    <td>
+                                        <span class="label label-sm label-success label-mini type">{{'combiné'}}</span>
+                                    </td>
+                                    <td><span class="label label-sm label-success label-mini type">{{'combiné'}}</span></td>
+                                    <td>{{$pari->tipster->name}}</td>
+                                    <td><span data-toggle="tooltip"
+                      title="{{isset($pari->compte->bookmaker->nom) ? $pari->compte->bookmaker->nom : 'à blanc' }}">
+                    @if(isset($pari->compte))
+                        <img width="60px"
+                             src="{{isset($pari->compte->bookmaker->logo) ? asset('img/logos/bookmakers').'/'.$pari->compte->bookmaker->logo : ''}}"
+                             alt=""/>{{isset($pari->compte->bookmaker->logo) ? '' : $pari->compte->bookmaker->nom }}
                     @else
                         <span class="label label-sm label-success label-mini">à blanc</span>
                     @endif
-                </span>
-                            </td>
-                            <td class="tdmise bold">
-                                <span class="tdsubmise bold ">{{{$pari->mise_totale}}} </span>{{{$user->devise}}}
-                            </td>
-                            <td class="bold uppercase">
-                                @if($pari->type_profil == 's')
-                                @if($pari->status == 1)
-                                    <span class="font-green">{{'Gagné'}}</span>
-                                @elseif($pari->status == 2)
-                                    <span class="font-red">{{'Perdu'}}</span>
-                                @elseif($pari->status == 3)
-                                    <span class="font-green">{{'1/2 Gagné'}}</span>
-                                @elseif($pari->status == 4)
-                                    <span class="font-red">{{'1/2 Perdu'}}</span>
-                                @elseif($pari->status == 5)
-                                    <span class="font-blue">{{'Remboursé'}}</span>
-                                @endif
-                                    @else
-                                @endif
-                            </td>
-                            <td class="bold">
-                            <span class="profits">
+                </span></td>
+                                    <td class="fit tdcote">{{$pari->cote}}</td>
+                                    <td class="tdmise bold">
+                                        <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{$user->devise.' '}}}{{'('.+$pari->nombre_unites.'u)'}}
+                                    </td>
+                                    <td>
+                                        <span class="label label-sm label-success label-mini type">{{'combiné'}}</span>
+                                    </td>
+                                    <td><span class="label label-sm label-success label-mini type">{{'combiné'}}</span></td>
 
-                                    @if($pari->status == 1)
-                                        <span class="font-green">{{{$pari->montant_profit}}}</span>
-                                        <span class="devise font-green"> {{{$user->devise}}}</span>
-                                    @elseif($pari->status == 2)
-                                        <span class="font-red">{{{$pari->montant_profit}}}</span>
-                                        <span class="devise font-red"> {{{$user->devise}}}</span>
-                                    @elseif($pari->status == 3)
-                                        <span class="font-green">{{{$pari->montant_profit}}}</span>
-                                        <span class="devise font-green"> {{{$user->devise}}}</span>
-                                    @elseif($pari->status == 4)
-                                        <span class="font-red">{{{$pari->montant_profit}}}</span>
-                                        <span class="devise font-red"> {{{$user->devise}}}</span>
-                                    @elseif($pari->status == 5)
-                                        <span class="font-blue">{{{$pari->montant_profit}}}</span>
-                                        <span class="devise font-blue"> {{{$user->devise}}}</span>
-                                    @endif
+                                    <td class="bold fontsize15"><span class="profits"></span><span
+                                                class="devise hide">{{{' '.$user->devise}}}</span></td>
+                                    <td>
+                                        {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris' ,'role' => 'form', )) }}
+                                        {{ Form::button('<i class="fa fa-check"></i>', array('type' => 'submit', 'class' => 'boutonvalider btn btn-sm green', 'disabled' => 'disabled')) }}
+                                        {{ Form::close() }}
 
-                            </span>
-                            </td>
+                                        {{ Form::open(array('route' => 'historique.destroy', 'class' => 'supprimerform form-bouton-paris','role' => 'form')) }}
+                                        {{ Form::button('<i class="fa fa-times"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red', )) }}
+                                        {{ Form::close() }}
+                                        @if($pari->followtype == 'n')
+                                        {{ Form::button('<i class="fa fa-briefcase"></i>', array('type' => 'submit', 'class' => 'btn btn-sm grey-gallery form-bouton-paris', 'data-toggle' => 'modal', 'data-target' => '#cashoutModal', 'data-hover' => 'tooltip', 'data-id' => $pari->id, 'title' => 'Cash Out')) }}
+                                        @endif
+                                    </td>
+                                </tr>
+                                <tr class="subrow">
+                                    <td colspan="17" class="childtable cancel-padding">
+                                        <div class="{{'accordian-body collapse row'.$pari->numero_pari}}">
+                                            <table class="table table-striped child-table table-bordered">
+                                                <thead>
 
-                            <td>
-                                {{ Form::open(array('route' => 'historique.destroy', 'class' => 'supprimerform form-bouton-paris','role' => 'form')) }}
-                                {{ Form::button('<i class="glyphicon glyphicon-trash"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red', )) }}
-                                {{ Form::close() }}
-                            </td>
-                        </tr>
-                        <tr class="subrow">
-                            <td colspan="17" class="childtable cancel-padding">
-                                <div class="{{'accordian-body collapse row'.$pari->numero_pari}}">
-                                    <table class="table table-striped child-table table-bordered">
-                                        <thead>
-                                        <tr>
-                                            <th>date rencontre</th>
-                                            <th>sport</th>
-                                            <th>competition</th>
-                                            <th>equipe/joueur n°1</th>
-                                            <th>equipe/joueur n°2</th>
-                                            <th>cote</th>
-                                            <th>score/autre</th>
-                                            <th>status</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-
-                                        @foreach($pari->selections as $selection)
-                                            <tr class="child-table-tr">
-                                                <td class="hidden child-id">{{$selection->id}}</td>
-                                                <td>{{isset($selection->date_match) ? $selection->date_match : 'non spéc.'}}</td>
-                                                <td>{{isset($selection->sport) ? $selection->sport->name : 'non spéc.'}}</td>
-                                                <td>{{isset($selection->competition) ? $selection->competition->name : 'non spéc.'}}</td>
-                                                <td>{{isset($selection->equipe1) ? $selection->equipe1->name : 'non spéc.'}}</td>
-                                                <td>{{isset($selection->equipe2) ? $selection->equipe2->name : 'non spéc.'}}</td>
-                                                <td>
-                                                    <span class="cote-td">{{$selection->cote}}</span>{{empty($selection->cote_apres_status) ? '' : ' ('.($selection->cote_apres_status).')'}}
-                                                </td>
-                                                <td>{{$selection->infos_pari}}</td>
-                                                <td class="status-td uppercase bold">
-                                                    @if($pari->status == 1)
-                                                        <span class="font-green">{{'Gagne'}}</span>
-                                                    @elseif($pari->status == 2)
-                                                        <span class="font-red">{{'Perdu'}}</span>
-                                                    @elseif($pari->status == 3)
-                                                        <span class="font-green">{{'1/2 Gagne'}}</span>
-                                                    @elseif($pari->status == 4)
-                                                        <span class="font-red">{{'1/2 Perdu'}}</span>
-                                                    @elseif($pari->status == 5)
-                                                        <span class="font-blue">{{'Rembourse'}}</span>
-                                                    @endif
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                        </tbody>
-                                    </table>
-
-                                </div>
-                            </td>
+                                                <tr class="uppercase">
+                                                    <th>evenement</th>
+                                                    <th>pari</th>
 
 
-                        </tr>
-                    </a>
-                </div>
-            @endforeach
-            </tbody>
+                                                    <th>cote</th>
+                                                    <th>score/autre</th>
+                                                    <th>status</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
 
-        </table>
-    </div>
+                                                @foreach($pari->selections as $selection)
+                                                    <tr class="child-table-tr">
+                                                        <td class="hidden child-id">{{$selection->id}}</td>
+                                                        <td>{{$pari->selections->first()->date_match.' -'}}
+                                                            {{$pari->selections->first()->sport->name}}{{', '}}{{$pari->selections->first()->competition->name}}
+
+                                                        @if($pari->selections->first()->isMatch)
+                                                                    {{', '}}<strong>{{$pari->selections->first()->game_name}}</strong>
+                                                                  @else
+                                                            @endif
+                                                        </td>
+                                                        <td class="blue">{{$pari->selections->first()->market->name.(' : ')}}
+                                                            @if($pari->selections->first()->affichage == 1)
+                                                                    {{$pari->selections->first()->pick}}
+                                                                 @elseif($pari->selections->first()->affichage == 2)
+                                                                    {{$pari->selections->first()->pick}}{{' '}}{{$pari->selections->first()->odd_doubleParam}}
+                                                                 @elseif($pari->selections->first()->affichage == 3)
+                                                                    {{$pari->selections->first()->pick}}{{', '}}{{$pari->selections->first()->odd_participantParameterName}}{{' '}}{{$pari->selections->first()->odd_doubleParam}}
+                                                                 @elseif($pari->selections->first()->affichage == 4)
+                                                                    {{$pari->selections->first()->pick}}{{', '}}{{$pari->selections->first()->odd_doubleParam}}{{'-'}}{{$pari->selections->first()->odd_doubleParam2}}{{' minutes'}}
+                                                                 @elseif($pari->selections->first()->affichage == 5)
+                                                                     @if($pari->selections->first()->odd_doubleParam > 0)
+                                                                    {{', '}}{{$pari->selections->first()->odd_participantParameterName}}{{' +'}}{{$pari->selections->first()->odd_doubleParam}}
+                                                                     @else
+                                                                        {{', '}}{{$pari->selections->first()->odd_participantParameterName}}{{' '}}{{$pari->selections->first()->odd_doubleParam}}
+                                                                     @endif
+                                                                 @elseif($pari->selections->first()->affichage == 6)
+                                                                    {{$pari->selections->first()->pick}}{{', '}}{{' Top '}}{{$pari->selections->first()->odd_doubleParam1}}
+                                                            @endif
+                                                        </td>
+
+                                                        <td>
+                                                            <span class="cote-td">{{$selection->cote}}</span>
+                                                        </td>
+                                                        <td width="120px"><input  type="text" name="childrowsinput[]"
+                                                                   class="form-control input-sm"
+                                                                   value="{{empty($selection->infos_pari) ? '' : $selection->infos_pari}}"/>
+                                                        </td>
+                                                        <td width="150px" class="status-td">
+                                                            <select name="resultatSelectionDashboardInput[]"
+                                                                    data-value="{{$selection->status}}"
+                                                                    class="form-control input-sm">
+                                                                <option value="0">--Selectionnez--</option>
+                                                                @foreach($types_resultat as $key => $type)
+                                                                    <option value="{{$key}}"><a href="javascript:;"
+                                                                                                class="btn btn-xs">{{$type}}</a>
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </a>
+                        @endif
+                    </div>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
 @endif

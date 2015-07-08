@@ -83,9 +83,9 @@
 
                     <a href="{{url('config')}}"><span class="glyphicon glyphicon-cog"></span>Configuration</a>
                 </li>
-                <li>
+                <!--<li>
                     <a href="{{url('stats')}}"><span class="glyphicon glyphicon glyphicon-stats"></span>Statistiques</a>
-                </li>
+                </li>-->
 
             </ul>
         </div>

@@ -58,6 +58,19 @@
 
 		public function destroy($id)
 		{
+			$regles = array(
+				'id' => 'required|exists:en_cours_paris,id,user_id,' . $this->currentUser->id,
+			);
+
+			$validator = Validator::make(Input::all(), $regles);
+			if ($validator->fails()) {
+				$array = $validator->getMessageBag()->toArray();
+				return Response::json(array(
+					'etat' => 0,
+					'msg' => $array,
+				));
+			}
+
 			$pari = EnCoursParis::find($id);
 			if ($pari->followtype == 'n') {
 				$compte = $pari->compte()->first();
@@ -302,7 +315,10 @@
 						$sport->save();
 
 						// (on attribue l'id)
-						$market = Market::firstOrNew(array('id' => $selection_coupon->market_id, 'name' => $selection_coupon->market, 'isMatch' => $selection_coupon->isMatch));
+						$market = Market::find($selection_coupon->market_id);
+						if(is_null($market)){
+							$market = new Market(); $market->id = $selection_coupon->market_id; $market->name = $selection_coupon->market; $market->isMatch = $selection_coupon->isMatch; $market->save();
+						}
 
 						// creation pour le formulaire manuel.
 						$sport_market = SportMarket::firstOrNew(array('sport_id' => $sport->id, 'market_id' => $market->id));
