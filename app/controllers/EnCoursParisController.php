@@ -366,6 +366,8 @@
 							$competition_equipe2->save();
 						}
 
+						Clockwork::info($scope);
+
 						$selection = new Selection(array(
 							'date_match' => new Carbon($selection_coupon->game_time),
 							'cote' => $odds_array[$odds_iterator],
