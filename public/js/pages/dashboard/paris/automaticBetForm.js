@@ -30,12 +30,10 @@ function automaticBetForm() {
                     data: data + '&linesnum=' + linesnum + '&ticketABCD=' + ticketABCD + '&ticketGratuit=' + ticketGratuit + '&ticketLongTerme=' + ticketLongTerme,
                     dataType: 'json',
                     success: function (json) {
-                        alert(json);
                         var keyname;
                         if (json.etat == 0) {
                             if ($.isArray(json.msg)) {
                                 for (key in json.msg) {
-                                    alert(key);
                                     keyname = key;
                                     toastr.error(json.msg[keyname], 'Erreur:');
                                 }
