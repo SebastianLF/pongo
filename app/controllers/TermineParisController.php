@@ -48,7 +48,7 @@
 
 			$validator = Validator::make(Input::all(), $regles, $messages);
 			$validator->each('childrowsinput', ['sometimes']);
-			$validator->each('childrowsstatus', ['between:1,5']);
+			$validator->each('childrowsstatus', ['between:1,6']);
 
 			if ($validator->fails()) {
 				return Response::json(array(
@@ -69,7 +69,10 @@
 				$profit_devise = null;
 				$nom_abcd = null;
 				$lettre_abcd = null;
-				$status_array = Input::get('childrowsstatus');
+				$scores_array = Input::get('childrowsinput');
+				$status_array = Input::get('resultatSelectionDashboardInput');
+				Clockwork::info($status_array);
+
 
 				/*
 					1 = gagné,
@@ -77,15 +80,16 @@
 					3 = 1/2 gagné,
 					4 = 1/2 perdu,
 					5 = remboursé,
+					6 = cashouted
 				*/
 
-				$status = null;
+				$status_termine_pari = null;
 				$cote_general = 1;
 				$nb = $encoursparis->selections()->count();
-				Clockwork::info($nb);
 				$selections = $encoursparis->selections()->get();
 				for ($i = 0; $i < $nb; $i++) {
 					$status_s = $status_array[$i];
+					$score_s = $scores_array[$i];
 					$cote = $selections[$i]->cote;
 					$cote_selection = 1;
 					switch ($status_s) {
@@ -104,8 +108,6 @@
 						case 4:
 							$cote_general = $cote_general * 0.5;
 							$cote_selection = 0.5;
-							Clockwork::info($cote_general);
-							Clockwork::info($cote_selection);
 							break;
 						case 5:
 							$cote_general += 0;
@@ -113,6 +115,7 @@
 							break;
 					}
 					$selections[$i]->cote_apres_status = $cote_selection;
+					$selections[$i]->score = $score_s;
 					$selections[$i]->status = $status_s;
 					$selections[$i]->save();
 
@@ -121,18 +124,16 @@
 					$profit_devise = $retour_devise - $mise;
 					$retour_unites = $nombre_unites * $cote_general;
 					$profit_unites = $retour_unites - $nombre_unites;
-					Clockwork::info($retour_devise);
-					Clockwork::info($profit_devise);
 
 					if ($encoursparis->type_profil == 's') {
-						$status = $selections[0]->status;
+						$status_termine_pari = $selections[0]->status;
 					} else if ($encoursparis->type_profil == 'c') {
 						if ($profit_devise > 0) {
-							$status = 1;
+							$status_termine_pari = 1;
 						} else if ($profit_devise == 0) {
-							$status = 5;
+							$status_termine_pari = 5;
 						} else if ($profit_devise < 0) {
-							$status = 2;
+							$status_termine_pari = 2;
 						}
 					}
 				}
@@ -144,7 +145,7 @@
 					'numero_pari' => $encoursparis->numero_pari,
 					'cote' => $encoursparis->cote,
 					'cote_apres_status' => $cote_general,
-					'status' => $status,
+					'status' => $status_termine_pari,
 					'mt_par_unite' => $encoursparis->mt_par_unite,
 					'nombre_unites' => $encoursparis->nombre_unites,
 					'mise_totale' => $encoursparis->mise_totale,
@@ -167,6 +168,7 @@
 				// mise en global pour que la variable soit accessible dans la boucle ci-dessous.
 				$id_termine = $termine_paris_ajoute->id;
 
+				$iterator_sscore = 0;
 				foreach ($selections as $selection) {
 					$selection->termine_pari_id = $id_termine;
 					$selection->en_cours_pari_id = NULL;
@@ -182,10 +184,8 @@
 					$book = BookmakerUser::find($book_id);
 					$book->bankroll_actuelle += $retour_devise;
 					$book->save();
-					Clockwork::info($book);
 				}
 
-				Clockwork::info($encoursparis);
 				return Response::json(array(
 					'etat' => 1,
 					'msg' => 'pari validé',

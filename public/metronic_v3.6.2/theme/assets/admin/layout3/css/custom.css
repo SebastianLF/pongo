@@ -18,7 +18,7 @@ Rounded Portlets
 }
 */
 
-/*
+
 
 .glyphicon-plus-sign{
     font-size: 1.2em !important;
@@ -59,7 +59,7 @@ select{
 
 .child-table{
  margin: 0px !important;
-}*/
+}
 
 table{
     font-size: 12px !important;
@@ -83,6 +83,7 @@ table{
 }
 
 .fontsize15{
+    line-height: 17px;
     font-size: 15px;
 }
 

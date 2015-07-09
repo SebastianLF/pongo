@@ -157,6 +157,7 @@
                                         <span class="label label-sm label-success label-mini type">{{'combiné'}}</span>
                                     </td>
                                     <td><span class="label label-sm label-success label-mini type">{{'combiné'}}</span></td>
+                                    <td><span class="label label-sm label-success label-mini type">{{'combiné'}}</span></td>
                                     <td>{{$pari->tipster->name}}</td>
                                     <td><span data-toggle="tooltip"
                       title="{{isset($pari->compte->bookmaker->nom) ? $pari->compte->bookmaker->nom : 'à blanc' }}">

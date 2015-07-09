@@ -74,6 +74,12 @@
 			$pari = EnCoursParis::find($id);
 			if ($pari->followtype == 'n') {
 				$compte = $pari->compte()->first();
+				if($compte->bankroll_actuelle < $pari->mise_totale){
+					return Response::json(array(
+						'etat' => 0,
+						'msg' => 'Probleme lors de la suppression du ticket en cours.'
+					));
+				}
 				$compte->bankroll_actuelle += $pari->mise_totale;
 				$compte->save();
 				$pari->delete();
@@ -373,7 +379,7 @@
 							'odd_groupParam' => $selection_coupon->odd_groupParam == '-999.888' ? null : $selection_coupon->odd_groupParam,
 							'isLive' => $selection_coupon->isLive ? true : false,
 							'isMatch' => $selection_coupon->isMatch ? true : false,
-							'score' => $selection_coupon->score,
+							'score' => $selection_coupon->score == 'null' ? null : $selection_coupon->score,
 							'affichage' => $selection_coupon->affichage,
 							'market_id' => $market->id,
 							'market_id' => $market->id,
@@ -397,6 +403,7 @@
 
 						$selection->save();
 						$cotes *= $odds_array[$odds_iterator];
+						$odds_iterator += 1;
 					}
 
 
