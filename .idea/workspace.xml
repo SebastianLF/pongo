@@ -7,7 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/EnCoursParisController.php" afterPath="$PROJECT_DIR$/app/controllers/EnCoursParisController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2015_02_01_035211_create_termine_paris_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2015_02_01_035211_create_termine_paris_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2015_06_25_168700_create_selections_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2015_06_25_168700_create_selections_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/TermineParisController.php" afterPath="$PROJECT_DIR$/app/controllers/TermineParisController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="betsmanage.iws" />
@@ -67,8 +69,8 @@
       <file leaf-file-name="parisencours.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.652174" vertical-offset="544" max-vertical-offset="4350">
-              <caret line="48" column="53" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
+            <state vertical-scroll-proportion="-10.26087" vertical-offset="364" max-vertical-offset="4350">
+              <caret line="40" column="78" selection-start-line="40" selection-start-column="78" selection-end-line="40" selection-end-column="78" />
               <folding>
                 <marker date="1436401601678" expanded="true" signature="9868:10118" placeholder="..." />
                 <marker date="1436401601678" expanded="true" signature="9909:10117" placeholder="..." />
@@ -89,21 +91,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EnCoursParisController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EnCoursParisController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.57355124" vertical-offset="4729" max-vertical-offset="11025">
+            <state vertical-scroll-proportion="-74.304344" vertical-offset="3406" max-vertical-offset="11025">
               <caret line="342" column="25" selection-start-line="342" selection-start-column="25" selection-end-line="342" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TermineParisController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TermineParisController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/TermineParisController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-60.0" vertical-offset="705" max-vertical-offset="4005">
-              <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6341108" vertical-offset="1830" max-vertical-offset="4035">
+              <caret line="151" column="68" selection-start-line="151" selection-start-column="68" selection-end-line="151" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015_02_01_035211_create_termine_paris_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_02_01_035211_create_termine_paris_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.826087" vertical-offset="135" max-vertical-offset="1050">
+              <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -209,7 +221,6 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="db-console:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/" />
         <option value="dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..selections" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2015_06_25_168700_create_selections_table.php" />
         <option value="$PROJECT_DIR$/app/controllers/CouponController.php" />
         <option value="$PROJECT_DIR$/app/models/Scope.php" />
         <option value="$PROJECT_DIR$/app/views/recaps/recaps.blade.php" />
@@ -235,13 +246,14 @@
         <option value="$PROJECT_DIR$/app/controllers/AjaxController.php" />
         <option value="$PROJECT_DIR$/app/views/includes/header.blade.php" />
         <option value="$PROJECT_DIR$/infos.txt" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2015_02_01_035211_create_termine_paris_table.php" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/parisEnCoursEnclose.js" />
         <option value="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
         <option value="$PROJECT_DIR$/app/views/bet/paristermine.blade.php" />
         <option value="$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css" />
-        <option value="$PROJECT_DIR$/app/controllers/TermineParisController.php" />
         <option value="$PROJECT_DIR$/app/controllers/EnCoursParisController.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_06_25_168700_create_selections_table.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_02_01_035211_create_termine_paris_table.php" />
+        <option value="$PROJECT_DIR$/app/controllers/TermineParisController.php" />
       </list>
     </option>
   </component>
@@ -442,7 +454,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slfweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slfweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -914,7 +948,13 @@
       <option name="project" value="LOCAL" />
       <updated>1436417509825</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="test avec php storm">
+      <created>1436421330820</created>
+      <option name="number" value="00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1436421330820</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1290,22 +1330,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_02_01_035211_create_termine_paris_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29605263" vertical-offset="180" max-vertical-offset="1050">
-          <caret line="28" column="60" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_06_25_168700_create_selections_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21710527" vertical-offset="180" max-vertical-offset="1290">
-          <caret line="24" column="43" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bet/paristermine.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-126.434784" vertical-offset="1307" max-vertical-offset="5100">
@@ -1366,8 +1390,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.652174" vertical-offset="544" max-vertical-offset="4350">
-          <caret line="48" column="53" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
+        <state vertical-scroll-proportion="-10.26087" vertical-offset="364" max-vertical-offset="4350">
+          <caret line="40" column="78" selection-start-line="40" selection-start-column="78" selection-end-line="40" selection-end-column="78" />
           <folding>
             <marker date="1436401601678" expanded="true" signature="9868:10118" placeholder="..." />
             <marker date="1436401601678" expanded="true" signature="9909:10117" placeholder="..." />
@@ -1377,18 +1401,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/TermineParisController.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-60.0" vertical-offset="705" max-vertical-offset="4005">
-          <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
+        <state vertical-scroll-proportion="-74.304344" vertical-offset="3406" max-vertical-offset="11025">
+          <caret line="342" column="25" selection-start-line="342" selection-start-column="25" selection-end-line="342" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_06_25_168700_create_selections_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57355124" vertical-offset="4729" max-vertical-offset="11025">
-          <caret line="342" column="25" selection-start-line="342" selection-start-column="25" selection-end-line="342" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.52478135" vertical-offset="225" max-vertical-offset="1305">
+          <caret line="40" column="66" selection-start-line="40" selection-start-column="66" selection-end-line="40" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_02_01_035211_create_termine_paris_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.826087" vertical-offset="135" max-vertical-offset="1050">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/TermineParisController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6341108" vertical-offset="1830" max-vertical-offset="4035">
+          <caret line="151" column="68" selection-start-line="151" selection-start-column="68" selection-end-line="151" selection-end-column="68" />
           <folding />
         </state>
       </provider>

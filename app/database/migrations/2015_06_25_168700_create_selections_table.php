@@ -32,6 +32,7 @@ class CreateSelectionsTable extends Migration {
 			$table->boolean('isLive');
 			$table->boolean('isMatch');
 			$table->string('score')->nullable();
+			$table->string('resultat')->nullable();
 			$table->smallInteger('affichage');
 			$table->unsignedInteger('market_id')->nullable();
 			$table->unsignedInteger('scope_id')->nullable();

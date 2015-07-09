@@ -69,7 +69,7 @@
 				$profit_devise = null;
 				$nom_abcd = null;
 				$lettre_abcd = null;
-				$scores_array = Input::get('childrowsinput');
+				$resultats_array = Input::get('childrowsinput');
 				$status_array = Input::get('resultatSelectionDashboardInput');
 				Clockwork::info($status_array);
 
@@ -89,7 +89,7 @@
 				$selections = $encoursparis->selections()->get();
 				for ($i = 0; $i < $nb; $i++) {
 					$status_s = $status_array[$i];
-					$score_s = $scores_array[$i];
+					$resultat_s = $resultats_array[$i];
 					$cote = $selections[$i]->cote;
 					$cote_selection = 1;
 					switch ($status_s) {
@@ -115,7 +115,7 @@
 							break;
 					}
 					$selections[$i]->cote_apres_status = $cote_selection;
-					$selections[$i]->score = $score_s;
+					$selections[$i]->resultat = $resultat_s;
 					$selections[$i]->status = $status_s;
 					$selections[$i]->save();
 
@@ -137,6 +137,8 @@
 						}
 					}
 				}
+
+				Clockwork::info($status_termine_pari);
 
 				// creation du pari validé.
 				$termine_pari = new TermineParis(array(
