@@ -11,6 +11,7 @@
                    style="border-collapse:collapse;">
                 <thead>
                 <tr class="uppercase">
+                    <th class="hidden"></th>
                     <th>N°</th>
                     <th>type</th>
                     <th>Evenement</th>
