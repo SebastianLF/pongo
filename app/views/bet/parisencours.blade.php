@@ -109,7 +109,7 @@
                                 <td width="90px"><input type="text" name="childrowsinput[]"
                                            class="form-control input-sm"
                                            value="" placeholder="Résultat"/></td>
-                                <td width="110px"><select name="resultatSelectionDashboardInput[]"
+                                <td width="110px"><select name="childrowsstatus[][]"
                                             data-value=""
                                             class="form-control input-sm">
                                         <option value="0">-Choisir-</option>
@@ -250,7 +250,7 @@
                                                                    value="{{empty($selection->infos_pari) ? '' : $selection->infos_pari}}"/>
                                                         </td>
                                                         <td width="150px" class="status-td">
-                                                            <select name="resultatSelectionDashboardInput[]"
+                                                            <select name="childrowsstatus[][]"
                                                                     data-value="{{$selection->status}}"
                                                                     class="form-control input-sm">
                                                                 <option value="0">--Selectionnez--</option>

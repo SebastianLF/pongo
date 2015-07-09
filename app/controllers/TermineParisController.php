@@ -70,9 +70,7 @@
 				$nom_abcd = null;
 				$lettre_abcd = null;
 				$resultats_array = Input::get('childrowsinput');
-				$status_array = Input::get('resultatSelectionDashboardInput');
-				Clockwork::info($status_array);
-
+				$status_array = Input::get('childrowsstatus');
 
 				/*
 					1 = gagné,
@@ -137,8 +135,6 @@
 						}
 					}
 				}
-
-				Clockwork::info($status_termine_pari);
 
 				// creation du pari validé.
 				$termine_pari = new TermineParis(array(
