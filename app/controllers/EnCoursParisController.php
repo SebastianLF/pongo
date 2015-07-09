@@ -336,10 +336,12 @@
 							$scope = new Scope(); $scope->id = $selection_coupon->scope_id; $scope->name = $selection_coupon->scope; $scope->save();
 						}
 
-						// creation pour le formulaire manuel. ( !! sport_scope !! )
-						$sport->scopes()->save($scope);
+						// gestion du 'sport scope' pour le formulaire manuel. ( !! sport_scope !! )
+						$exist_already = $sport->scopes()->contains($scope->id);
+						if(!$exist_already){
+							$sport->scopes()->save($scope->id);
+						}
 
-						Clockwork::info($scope);
 						$competition_country = Country::firstOrNew(array('name' => $selection_coupon->event_country_name));
 						$competition_country->save();
 						$competition = Competition::firstOrNew(array('name' => $selection_coupon->league_name, 'sport_id' => $sport->id, 'country_id' => $competition_country->id));
