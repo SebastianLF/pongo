@@ -22,7 +22,7 @@ class CreateEnCoursParisTable extends Migration {
 			$table->decimal('cote_apres_status');
             $table->decimal('mt_par_unite',8,2); // montant par unité
             $table->decimal('nombre_unites',5,2);
-            $table->decimal('mise_totale', ²8,2); // mise totale du pari
+            $table->decimal('mise_totale', 8,2); // mise totale du pari
             $table->boolean('pari_long_terme')->default(0);
             $table->boolean('pari_gratuit')->default(0);
             $table->boolean('pari_live')->default(0);
