@@ -170,7 +170,7 @@
 				// mise en global pour que la variable soit accessible dans la boucle ci-dessous.
 				$id_termine = $termine_paris_ajoute->id;
 
-				$iterator_sscore = 0;
+				$iterator_resultats = 0;
 				foreach ($selections as $selection) {
 					$selection->termine_pari_id = $id_termine;
 					$selection->en_cours_pari_id = NULL;
