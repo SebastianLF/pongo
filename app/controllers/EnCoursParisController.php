@@ -58,26 +58,21 @@
 
 		public function destroy($id)
 		{
-			$regles = array(
-				'id' => 'required|exists:en_cours_paris,id,user_id,' . $this->currentUser->id,
-			);
 
-			$validator = Validator::make(Input::all(), $regles);
-			if ($validator->fails()) {
-				$array = $validator->getMessageBag()->toArray();
+			$pari = $this->currentUser->enCoursParis()->find($id);
+			if(is_null($pari)){
 				return Response::json(array(
 					'etat' => 0,
-					'msg' => $array,
+					'msg' => 'cet id n\'existe pas',
 				));
 			}
 
-			$pari = EnCoursParis::find($id);
 			if ($pari->followtype == 'n') {
 				$compte = $pari->compte()->first();
 				if($compte->bankroll_actuelle < $pari->mise_totale){
 					return Response::json(array(
 						'etat' => 0,
-						'msg' => 'Probleme lors de la suppression du ticket en cours.'
+						'msg' => 'Le compte se retrouve avec une bankroll inférieur à 0 si ce ticket est supprimé.'
 					));
 				}
 				$compte->bankroll_actuelle += $pari->mise_totale;
@@ -85,7 +80,7 @@
 				$pari->delete();
 				return Response::json(array(
 					'etat' => 1,
-					'msg' => 'Ticket Supprimé'
+					'msg' => 'Ticket Suzpprimé'
 				));
 			} else {
 				$pari->delete();

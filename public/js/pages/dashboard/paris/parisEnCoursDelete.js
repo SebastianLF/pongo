@@ -15,13 +15,13 @@ function parisEnCoursDelete(tablename,formname,urlgiven){
         var mise = parent.find(".tdmise .tdsubmise").text();
         var ser = $(this).serialize();
         swal({
-                title: "Are you sure?",
-                text: "You will not be able to recover this imaginary file!",
+                title: "Supprimer le ticket",
+                text: "Etes-vous sur?",
                 type: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Yes, delete it!",
-                cancelButtonText: "No, cancel plx!",
+                confirmButtonText: "Oui!",
+                cancelButtonText: "Non, annuler",
                 closeOnConfirm: true,
                 closeOnCancel: true
             },
@@ -31,7 +31,7 @@ function parisEnCoursDelete(tablename,formname,urlgiven){
                         url: url + id,
                         type: 'delete',
                         success: function (data) {
-                            loadParisEnCoursWithPage('delete');
+                            loadParisEnCours();
                             loadBookmakersOnDashboard();
                             if (data.etat == 0) {
                                 toastr.error(data.msg, 'Suppression');

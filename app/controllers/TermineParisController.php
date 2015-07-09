@@ -72,6 +72,7 @@
 				$resultats_array = Input::get('childrowsinput');
 				$status_array = Input::get('childrowsstatus');
 
+
 				/*
 					1 = gagné,
 					2 = perdu,

@@ -5,7 +5,16 @@ function loadParisEnCours() {
         data: {page: 1},
         type: 'get',
         success: function (data) {
-            $('#tab_15_1').html(data);
+            $('#tab_15_1').html(data.vue);
+
+            // afficher le count dans le bon endroit.
+            var count = data.count_paris_encours;
+            if (count == 0) {
+                $('#onglet_paris_en_cours span').text('');
+            } else {
+                $('#onglet_paris_en_cours span').html(count);
+            }
+
             featuresParisEnCours();
             paginationParisEnCours();
             cashOut();
@@ -40,15 +49,6 @@ function featuresParisEnCours() {
     $('[data-toggle="tooltip"]').tooltip();
     $("[data-hover='tooltip']").tooltip();
 
-
-
-    // afficher le count dans le bon endroit.
-    var count = $('#parisencourstable #count').text();
-    if (count == '0') {
-        $('#onglet_paris_en_cours span').text('');
-    } else {
-        $('#onglet_paris_en_cours span').text(count);
-    }
 
 
     // stopper la propagation quand on click sur le choix du resultat.

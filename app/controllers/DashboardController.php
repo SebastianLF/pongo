@@ -103,11 +103,12 @@
 			switch ($type) {
 				case 'parisencours':
 					$parisEnCours = $this->showParisEnCours();
-					Clockwork::info($parisEnCours);
-					$countParisEnCours = $parisEnCours->getTotal();
+     					$countParisEnCours = $parisEnCours->getTotal();
 					$view = View::make('bet.parisencours', array('parisencours' => $parisEnCours, 'types_resultat' => $this->types_resultat, 'count_paris_encours' => $countParisEnCours));
-					return $view;
-
+					return Response::json(array(
+						'vue' => $view->render(),
+						'count_paris_encours' => $countParisEnCours,
+					));
 					break;
 				case 'parislongterme':
 					$parisLongTerme = $this->showParisLongTerme();
@@ -134,21 +135,5 @@
 				default:
 					throw new Exception('Invalid type(parisencours|parislongterme|parisabcd|paristermine) passed');
 			}
-		}
-
-
-		function getBetInformations()
-		{
-			$inputs = Input::all();
-			Session::put('inputs', $inputs);
-			Redirect::action('DashboardController@refreshSelections', array('inputs' => $inputs));
-		}
-
-		function refreshSelections(){
-
-			/*$posts = $_POST;
-			$inputs = Request::all();
-			$view = View::make('bet.auto_form_selections', array('inputs' => $inputs, 'posts' => $posts));
-			return $view;*/
 		}
 	}

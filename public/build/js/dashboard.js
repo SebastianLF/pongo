@@ -85,12 +85,10 @@ function automaticBetForm() {
                     data: data + '&linesnum=' + linesnum + '&ticketABCD=' + ticketABCD + '&ticketGratuit=' + ticketGratuit + '&ticketLongTerme=' + ticketLongTerme,
                     dataType: 'json',
                     success: function (json) {
-                        alert(json);
                         var keyname;
                         if (json.etat == 0) {
                             if ($.isArray(json.msg)) {
                                 for (key in json.msg) {
-                                    alert(key);
                                     keyname = key;
                                     toastr.error(json.msg[keyname], 'Erreur:');
                                 }
@@ -306,16 +304,6 @@ function automaticBetForm() {
                 };
             },
             processResults: function (data) {
-                // parse the results into the format expected by Select2.
-                // since we are using custom formatting functions we do not need to
-                // alter the remote JSON data
-                /* var newData = [];
-                 $.each(data, function (index,value) {
-                 newData.push({
-                 id:value.id,  //id part present in data
-                 text: value.text  //string to be displayed
-                 });
-                 });*/
                 return {
                     results: data
                 };
@@ -456,7 +444,16 @@ function loadParisEnCours() {
         data: {page: 1},
         type: 'get',
         success: function (data) {
-            $('#tab_15_1').html(data);
+            $('#tab_15_1').html(data.vue);
+
+            // afficher le count dans le bon endroit.
+            var count = data.count_paris_encours;
+            if (count == 0) {
+                $('#onglet_paris_en_cours span').text('');
+            } else {
+                $('#onglet_paris_en_cours span').html(count);
+            }
+
             featuresParisEnCours();
             paginationParisEnCours();
             cashOut();
@@ -491,15 +488,6 @@ function featuresParisEnCours() {
     $('[data-toggle="tooltip"]').tooltip();
     $("[data-hover='tooltip']").tooltip();
 
-
-
-    // afficher le count dans le bon endroit.
-    var count = $('#parisencourstable #count').text();
-    if (count == '0') {
-        $('#onglet_paris_en_cours span').text('');
-    } else {
-        $('#onglet_paris_en_cours span').text(count);
-    }
 
 
     // stopper la propagation quand on click sur le choix du resultat.
@@ -1459,13 +1447,13 @@ function parisEnCoursDelete(tablename,formname,urlgiven){
         var mise = parent.find(".tdmise .tdsubmise").text();
         var ser = $(this).serialize();
         swal({
-                title: "Are you sure?",
-                text: "You will not be able to recover this imaginary file!",
+                title: "Supprimer le ticket",
+                text: "Etes-vous sur?",
                 type: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Yes, delete it!",
-                cancelButtonText: "No, cancel plx!",
+                confirmButtonText: "Oui!",
+                cancelButtonText: "Non, annuler",
                 closeOnConfirm: true,
                 closeOnCancel: true
             },
@@ -1475,7 +1463,7 @@ function parisEnCoursDelete(tablename,formname,urlgiven){
                         url: url + id,
                         type: 'delete',
                         success: function (data) {
-                            loadParisEnCoursWithPage('delete');
+                            loadParisEnCours();
                             loadBookmakersOnDashboard();
                             if (data.etat == 0) {
                                 toastr.error(data.msg, 'Suppression');
@@ -1556,7 +1544,7 @@ function parisEnCoursEnclose(tablename,formname,urlgiven) {
 function parisTermineDelete(){
     var tablename = '#paristerminetable';
     var formname = '.supprimerform';
-    var url = 'historique';
+    var url = 'historique/';
     $(tablename+' '+formname).submit(function (e) {
         e.preventDefault();
         var parent = $(this).closest('.mainrow');
@@ -1582,6 +1570,7 @@ function parisTermineDelete(){
                                 toastr.error(data.msg, 'Suppression');
                             } else {
                                 toastr.success(data.msg, 'Suppression');
+                                loadParisTermine();
                                 loadBookmakersOnDashboard();
                                 loadRecapsOnDashboard();
                             }

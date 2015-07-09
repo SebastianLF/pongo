@@ -6,7 +6,7 @@
     </div>
 @else
     <div class="table-scrollable-borderless table-responsive">
-            <table id="parisencourstable" class="table table-condensed"
+            <table id="paristerminetable" class="table table-condensed"
                    style="border-collapse:collapse;">
                 <thead>
                 <tr class="uppercase">

@@ -5,7 +5,7 @@
 function parisTermineDelete(){
     var tablename = '#paristerminetable';
     var formname = '.supprimerform';
-    var url = 'historique';
+    var url = 'historique/';
     $(tablename+' '+formname).submit(function (e) {
         e.preventDefault();
         var parent = $(this).closest('.mainrow');
@@ -31,6 +31,7 @@ function parisTermineDelete(){
                                 toastr.error(data.msg, 'Suppression');
                             } else {
                                 toastr.success(data.msg, 'Suppression');
+                                loadParisTermine();
                                 loadBookmakersOnDashboard();
                                 loadRecapsOnDashboard();
                             }

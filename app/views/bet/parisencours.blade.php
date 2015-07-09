@@ -11,7 +11,7 @@
                    style="border-collapse:collapse;">
                 <thead>
                 <tr class="uppercase">
-                    <th  id="count" class="hidden ">{{$count_paris_encours}}</th>
+                    <th></th>
                     <th></th>
                     <th>N°</th>
                     <th>type</th>

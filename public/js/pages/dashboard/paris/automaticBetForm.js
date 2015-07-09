@@ -249,16 +249,6 @@ function automaticBetForm() {
                 };
             },
             processResults: function (data) {
-                // parse the results into the format expected by Select2.
-                // since we are using custom formatting functions we do not need to
-                // alter the remote JSON data
-                /* var newData = [];
-                 $.each(data, function (index,value) {
-                 newData.push({
-                 id:value.id,  //id part present in data
-                 text: value.text  //string to be displayed
-                 });
-                 });*/
                 return {
                     results: data
                 };
