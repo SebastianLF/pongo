@@ -67,8 +67,8 @@
       <file leaf-file-name="parisencours.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.26087" vertical-offset="3257" max-vertical-offset="4350">
-              <caret line="239" column="88" selection-start-line="239" selection-start-column="88" selection-end-line="239" selection-end-column="88" />
+            <state vertical-scroll-proportion="-7.652174" vertical-offset="544" max-vertical-offset="4350">
+              <caret line="48" column="53" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
               <folding>
                 <marker date="1436401601678" expanded="true" signature="9868:10118" placeholder="..." />
                 <marker date="1436401601678" expanded="true" signature="9909:10117" placeholder="..." />
@@ -89,11 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EnCoursParisController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EnCoursParisController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-123.73913" vertical-offset="2299" max-vertical-offset="11025">
-              <caret line="344" column="0" selection-start-line="344" selection-start-column="0" selection-end-line="344" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.57355124" vertical-offset="4729" max-vertical-offset="11025">
+              <caret line="342" column="25" selection-start-line="342" selection-start-column="25" selection-end-line="342" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -109,11 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CouponController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CouponController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.803207" vertical-offset="2959" max-vertical-offset="4725">
-              <caret line="234" column="86" selection-start-line="234" selection-start-column="86" selection-end-line="234" selection-end-column="86" />
+            <state vertical-scroll-proportion="-23.304348" vertical-offset="2959" max-vertical-offset="4725">
+              <caret line="233" column="9" selection-start-line="233" selection-start-column="9" selection-end-line="233" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -908,7 +908,13 @@
       <option name="project" value="LOCAL" />
       <updated>1436414433163</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="test avec php storm">
+      <created>1436417509825</created>
+      <option name="number" value="00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1436417509825</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1276,19 +1282,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.26087" vertical-offset="3257" max-vertical-offset="4350">
-          <caret line="239" column="88" selection-start-line="239" selection-start-column="88" selection-end-line="239" selection-end-column="88" />
-          <folding>
-            <marker date="1436401601678" expanded="true" signature="9868:10118" placeholder="..." />
-            <marker date="1436401601678" expanded="true" signature="9909:10117" placeholder="..." />
-            <marker date="1436401601678" expanded="true" signature="14489:14739" placeholder="..." />
-            <marker date="1436401601678" expanded="true" signature="14530:14738" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/TermineParis.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.27631578" vertical-offset="0" max-vertical-offset="760">
@@ -1355,19 +1348,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-123.73913" vertical-offset="2299" max-vertical-offset="11025">
-          <caret line="344" column="0" selection-start-line="344" selection-start-column="0" selection-end-line="344" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/parisTermineDelete.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="783">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.304348" vertical-offset="2959" max-vertical-offset="4725">
+          <caret line="233" column="9" selection-start-line="233" selection-start-column="9" selection-end-line="233" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.652174" vertical-offset="544" max-vertical-offset="4350">
+          <caret line="48" column="53" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
+          <folding>
+            <marker date="1436401601678" expanded="true" signature="9868:10118" placeholder="..." />
+            <marker date="1436401601678" expanded="true" signature="9909:10117" placeholder="..." />
+            <marker date="1436401601678" expanded="true" signature="14489:14739" placeholder="..." />
+            <marker date="1436401601678" expanded="true" signature="14530:14738" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1379,10 +1385,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.803207" vertical-offset="2959" max-vertical-offset="4725">
-          <caret line="234" column="86" selection-start-line="234" selection-start-column="86" selection-end-line="234" selection-end-column="86" />
+        <state vertical-scroll-proportion="0.57355124" vertical-offset="4729" max-vertical-offset="11025">
+          <caret line="342" column="25" selection-start-line="342" selection-start-column="25" selection-end-line="342" selection-end-column="25" />
           <folding />
         </state>
       </provider>

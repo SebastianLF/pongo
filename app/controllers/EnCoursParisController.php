@@ -337,7 +337,7 @@
 						}
 
 						// gestion du 'sport scope' pour le formulaire manuel. ( !! sport_scope !! )
-						$exist_already = $sport->scopes()->contains($scope->id);
+						$exist_already = $sport->scopes()->wherePivot('scope_id', $scope->id);
 						if(!$exist_already){
 							$sport->scopes()->save($scope->id);
 						}
