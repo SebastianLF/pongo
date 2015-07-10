@@ -134,7 +134,7 @@
                                     }?>
 
                                 </td>
-                                <td><span class="bold fontsize15">
+                                <td><span class="{{'bold fontsize15'}} {{$pari->mise_totale > $pari->montant_retour ? ' font-red' : '' }} {{$pari->mise_totale < $pari->montant_retour ? ' font-green' : '' }}">
                                         <span class="">{{$pari->montant_retour.''.$user->devise}}<span>{{' ('.$pari->unites_retour.'u)'}}</span></span>
                                 </span>
                                 </td>
