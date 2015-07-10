@@ -171,10 +171,10 @@
                                         <span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>
                                     </td>
                                     <td>
-                                        <span class="label label-sm label-success label-mini type">{{'combiné'}}</span>
+                                        <span class="label label-sm label-combine label-mini type">{{'combiné'}}</span>
                                     </td>
-                                    <td><span class="label label-sm label-success label-mini type">{{'combiné'}}</span></td>
-                                    <td><span class="label label-sm label-success label-mini type">{{'combiné'}}</span></td>
+                                    <td><span class="label label-sm label-combine label-mini type">{{'combiné'}}</span></td>
+                                    <td><span class="label label-sm label-combine label-mini type">{{'combiné'}}</span></td>
                                     <td>{{$pari->tipster->name}}</td>
                                     <td><span data-toggle="tooltip"
                       title="{{isset($pari->compte->bookmaker->nom) ? $pari->compte->bookmaker->nom : 'à blanc' }}">
@@ -183,15 +183,15 @@
                              src="{{isset($pari->compte->bookmaker->logo) ? asset('img/logos/bookmakers').'/'.$pari->compte->bookmaker->logo : ''}}"
                              alt=""/>{{isset($pari->compte->bookmaker->logo) ? '' : $pari->compte->bookmaker->nom }}
                     @else
-                        <span class="label label-sm label-success label-mini">à blanc</span>
+                        <span class="label label-sm label-combine label-mini">à blanc</span>
                     @endif
                 </span></td>
                                     <td class="fit tdcote">{{$pari->cote}}</td>
                                     <td class="tdmise bold">
-                                        <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{$user->devise.' '}}}{{'('.+$pari->nombre_unites.'u)'}}
+                                        <span class="tdsubmise bold ">{{{$pari->mise_totale}}}</span>{{{$user->devise.' '}}}{{'('.+$pari->nombre_unites.'u)'}}
                                     </td>
                                     <td width="90px">
-                                        {{'N/A'}}
+                                        <span class="label label-sm label-combine label-mini type">{{'combiné'}}</span>
                                     </td>
 
                                     <td width="110px" class="uppercase">
@@ -218,7 +218,8 @@
                                         }?>
 
                                     </td>
-                                    <td><span class="bold fontsize15">
+                                    <td>
+                                        <span class="{{'bold fontsize15'}} {{$pari->mise_totale > $pari->montant_retour ? ' font-red' : '' }} {{$pari->mise_totale < $pari->montant_retour ? ' font-green' : '' }}">
                                         <span class="">{{$pari->montant_retour.''.$user->devise}}<span>{{' ('.$pari->unites_retour.'u)'}}</span></span></span>
                                     </td>
                                     <td>
@@ -285,10 +286,10 @@
                                                             <span class="cote-td">{{$selection->cote}}</span>
                                                         </td>
                                                         <td width="150px" class="status-td">
-                                                            @if(is_null($selection->score))
+                                                            @if(is_null($selection->resultat))
                                                                 {{'N/A'}}
                                                             @else
-                                                                {{$selection->score}}
+                                                                {{$selection->resultat}}
                                                             @endif
                                                         </td>
                                                         <td width="110px" class="uppercase">

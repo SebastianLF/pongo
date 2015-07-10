@@ -36,7 +36,6 @@
                             <a href="">
                             <tr data-toggle="collapse" data-target="{{'.row'.$pari->numero_pari}}" class="mainrow accordion-toggle parisencours-accordeon">
                                 <td class="hidden id">{{$pari->id}}</td>
-                                <td class="subbetclick"></td>
                                 <td><a href="javascript:;" class="primary-link">#{{$pari->numero_pari}}</a></td>
                                 
                                 <td><span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_live ? 'live' : '' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_gratuit ? 'gratuit' : '' }}</span></td>
@@ -144,7 +143,6 @@
                                     class="mainrow accordion-toggle parisencours-accordeon">
 
                                     <td class="hidden id">{{$pari->id}}</td>
-                                    <td></td>
                                     <!-- <td class="subbetclick"><span data-toggle="collapse"
                                                                   data-target="{{'.row'.$pari->numero_pari}}"
                                                                   class="glyphicon glyphicon-plus-sign"></span></td> -->
@@ -245,13 +243,13 @@
                                                             <span class="cote-td">{{$selection->cote}}</span>
                                                         </td>
                                                         <td width="120px"><input  type="text" name="childrowsinput[]"
-                                                                   class="form-control input-sm"
+                                                                   class="form-control input-sm childrowsinput"
                                                                    value="{{empty($selection->infos_pari) ? '' : $selection->infos_pari}}"/>
                                                         </td>
                                                         <td width="150px" class="status-td">
                                                             <select name="resultatSelectionDashboardInput[]"
                                                                     data-value="{{$selection->status}}"
-                                                                    class="form-control input-sm">
+                                                                    class="form-control input-sm resultatSelectionDashboardInput">
                                                                 <option value="0">--Selectionnez--</option>
                                                                 @foreach($types_resultat as $key => $type)
                                                                     <option value="{{$key}}"><a href="javascript:;"

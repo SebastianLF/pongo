@@ -8,6 +8,7 @@
 		{
 			parent::__construct();
 			$this->beforeFilter('auth');
+			//$this->beforeFilter('csrf');
 			$this->timezone = $this->currentUser->timezone;
 		}
 
@@ -561,7 +562,6 @@
 			$validator->each('selectionsLongterme', ['sometimes', 'in:0,1']);
 
 			if ($validator->fails()) {
-				//$array = array_merge($validator->getMessageBag()->toArray(),$validator_selections->getMessageBag()->toArray());
 				$array = $validator->getMessageBag()->toArray();
 				Clockwork::info($array);
 				return Response::json(array(

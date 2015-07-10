@@ -10,7 +10,7 @@
 		}
 
 		/**
-		 * Display a listing of the resource.
+		 * Display a listing of the  resource.
 		 *
 		 * @return Response
 		 */
@@ -37,6 +37,7 @@
 		public function store()
 		{
 
+
 			$regles = array(
 				'ticket-id' => 'required|exists:en_cours_paris,id,user_id,' . $this->currentUser->id,
 			);
@@ -48,7 +49,7 @@
 
 			$validator = Validator::make(Input::all(), $regles, $messages);
 			$validator->each('childrowsinput', ['sometimes']);
-			$validator->each('childrowsstatus', ['between:1,6']);
+			$validator->each('resultatSelectionDashboardInput', ['between:1,6']);
 
 			if ($validator->fails()) {
 				return Response::json(array(
@@ -69,9 +70,13 @@
 				$profit_devise = null;
 				$nom_abcd = null;
 				$lettre_abcd = null;
-				$resultats_array = Input::get('childrowsinput');
-				$status_array = Input::get('childrowsstatus');
 
+				$resultats_array = Input::get('childrowsinput');
+				$status_array = Input::get('resultatSelectionDashboardInput');
+				Clockwork::info(Input::get('childrowsinput'));
+				Clockwork::info($resultats_array);
+
+				Clockwork::info($resultats_array[1]);
 
 				/*
 					1 = gagné,
@@ -88,6 +93,7 @@
 				$selections = $encoursparis->selections()->get();
 				for ($i = 0; $i < $nb; $i++) {
 					$status_s = $status_array[$i];
+					//Clockwork::info($status_array[$i]);
 					$resultat_s = $resultats_array[$i];
 					$cote = $selections[$i]->cote;
 					$cote_selection = 1;
@@ -253,7 +259,8 @@
 			}
 		}
 
-		public function recaps(){
+		public function recaps()
+		{
 
 		}
 

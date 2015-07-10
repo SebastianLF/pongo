@@ -82,6 +82,11 @@ table{
     text-align: center !important;
 }
 
+.label-combine{
+    background-color: #45B6AF;
+    opacity: 0.5 !important;
+}
+
 .fontsize15{
     line-height: 17px;
     font-size: 15px;
