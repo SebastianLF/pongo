@@ -5,12 +5,13 @@
         </div>
     </div>
 @else
+    <div class="slimScrollTermine">
     <div class="table-scrollable-borderless table-responsive">
             <table id="paristerminetable" class="table table-condensed"
                    style="border-collapse:collapse;">
                 <thead>
                 <tr class="uppercase">
-                    <th  id="count" class="hidden ">{{$count_paris_termine}}</th>
+                    <th id="count" class="hidden ">{{$count_paris_termine}}</th>
                     <th></th>
                     <th>N°</th>
                     <th>type</th>
@@ -333,4 +334,5 @@
                 </tbody>
             </table>
         </div>
+    </div>
 @endif

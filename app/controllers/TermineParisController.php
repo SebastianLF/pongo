@@ -73,10 +73,8 @@
 
 				$resultats_array = Input::get('childrowsinput');
 				$status_array = Input::get('resultatSelectionDashboardInput');
-				Clockwork::info(Input::get('childrowsinput'));
 				Clockwork::info($resultats_array);
-
-				Clockwork::info($resultats_array[1]);
+				Clockwork::info($status_array);
 
 				/*
 					1 = gagné,
@@ -93,7 +91,6 @@
 				$selections = $encoursparis->selections()->get();
 				for ($i = 0; $i < $nb; $i++) {
 					$status_s = $status_array[$i];
-					//Clockwork::info($status_array[$i]);
 					$resultat_s = $resultats_array[$i];
 					$cote = $selections[$i]->cote;
 					$cote_selection = 1;
@@ -119,7 +116,6 @@
 							$cote_selection = 1;
 							break;
 					}
-					$selections[$i]->cote_apres_status = $cote_selection;
 					$selections[$i]->resultat = $resultat_s;
 					$selections[$i]->status = $status_s;
 					$selections[$i]->save();
@@ -241,21 +237,25 @@
 		public function destroy($id)
 		{
 			$pari = $this->currentUser->termineParis()->where('id', $id)->first();
-			if ($pari->followtype == 'n') {
-				$compte = $pari->compte()->first();
-				$compte->bankroll_actuelle += $pari->profit_devise;
-				$compte->save();
-				$pari->delete();
-				return Response::json(array(
-					'etat' => 1,
-					'msg' => 'Pari Supprimé'
-				));
-			} else {
-				$pari->delete();
-				return Response::json(array(
-					'etat' => 1,
-					'msg' => 'Pari Supprimé'
-				));
+
+			if(!$pari->cashouted){
+
+				if ($pari->followtype == 'n') {
+					$compte = $pari->compte()->first();
+					$compte->bankroll_actuelle += $pari->profit_devise;
+					$compte->save();
+					$pari->delete();
+					return Response::json(array(
+						'etat' => 1,
+						'msg' => 'Pari Supprimé'
+					));
+				} else {
+					$pari->delete();
+					return Response::json(array(
+						'etat' => 1,
+						'msg' => 'Pari Supprimé'
+					));
+				}
 			}
 		}
 

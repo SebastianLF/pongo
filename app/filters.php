@@ -80,6 +80,14 @@
 		}
 	});
 
+	Route::filter('expired', function(){
+		$bag = Session::getMetadataBag();
+		$max = Config::get('session.lifetime') * 60;
+		if ($bag && $max < (time() - $bag->getLastUsed())) {
+			return Redirect::route('auth/login');
+		}
+	});
+
 
 	Route::filter('ajax', function () {
 		if (!Request::ajax()) App::abort(404);

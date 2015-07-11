@@ -209,7 +209,6 @@
 				$query->where('bookmaker_user.user_id', $this->currentUser->id);
 			}))->get();
 			$view = View::make('dashboard.bookmakers', array('bookmakers' => $bookmakers));
-			//Clockwork::info($bookmakers);
 			return $view;
 		}
 

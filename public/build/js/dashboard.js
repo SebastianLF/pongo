@@ -476,6 +476,17 @@ function loadParisTermine() {
             $("#paristerminetable .boutonsupprimer").click(function (e) {
                 e.stopPropagation();
             });
+
+            // barre de défilement vertical pour les paris terminés.
+            $(function(){
+                $('.slimScrollTermine').slimScroll({
+                    height: '250px',
+                    allowPageScroll: false,
+                    wheelStep: 10,
+                    alwaysVisible: true
+                });
+            });
+
         },
         error: function (data) {
             $('#tab_15_4').html('<p>impossible de récuperer les paris terminés</p>');
@@ -1500,10 +1511,13 @@ function parisEnCoursEnclose(tablename, formname, urlgiven) {
         var subrow = parent.next().find('.child-row input');
         var type = parent.find('.type').text();
 
-
+        if (type == 'simple') {
+            childrows = parent.find('select[name="resultatSelectionDashboardInput[]"]').serialize();
+            childrowsstatus = parent.find('input[name="childrowsinput[]"]').serialize();
+        } else {
             childrows = parent.next().find('select[name="resultatSelectionDashboardInput[]"]').serialize();
             childrowsstatus = parent.next().find('input[name="childrowsinput[]"]').serialize();
-
+        }
 
         $.ajax({
             url: url,
@@ -1541,13 +1555,13 @@ function parisTermineDelete(){
         var parent = $(this).closest('.mainrow');
         var id = parent.find('.id').text();
         swal({
-                title: "Etes-vous sur?",
-                text: "Vous allez définitivement supprimer ce pari.",
-                type: "Attention",
+                title: "Supprimer le ticket",
+                text: "Etes-vous sur?",
+                type: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Oui, le supprimer!",
-                cancelButtonText: "Non, ne pas le supprimer!",
+                confirmButtonText: "Oui!",
+                cancelButtonText: "Non, annuler",
                 closeOnConfirm: true,
                 closeOnCancel: true
             },

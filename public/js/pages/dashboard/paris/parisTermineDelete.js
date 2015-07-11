@@ -11,13 +11,13 @@ function parisTermineDelete(){
         var parent = $(this).closest('.mainrow');
         var id = parent.find('.id').text();
         swal({
-                title: "Etes-vous sur?",
-                text: "Vous allez définitivement supprimer ce pari.",
-                type: "Attention",
+                title: "Supprimer le ticket",
+                text: "Etes-vous sur?",
+                type: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Oui, le supprimer!",
-                cancelButtonText: "Non, ne pas le supprimer!",
+                confirmButtonText: "Oui!",
+                cancelButtonText: "Non, annuler",
                 closeOnConfirm: true,
                 closeOnCancel: true
             },

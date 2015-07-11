@@ -37,6 +37,17 @@ function loadParisTermine() {
             $("#paristerminetable .boutonsupprimer").click(function (e) {
                 e.stopPropagation();
             });
+
+            // barre de défilement vertical pour les paris terminés.
+            $(function(){
+                $('.slimScrollTermine').slimScroll({
+                    height: '250px',
+                    allowPageScroll: false,
+                    wheelStep: 10,
+                    alwaysVisible: true
+                });
+            });
+
         },
         error: function (data) {
             $('#tab_15_4').html('<p>impossible de récuperer les paris terminés</p>');

@@ -333,10 +333,8 @@
 						}
 
 						// gestion du 'sport scope' pour le formulaire manuel. ( !! sport_scope !! )
-						$exist_already = $sport->scopes()->wherePivot('scope_id', $scope->id);
-						if(!$exist_already){
-							$sport->scopes()->save($scope->id);
-						}
+						$sport_scope = SportScope::firstOrNew(array('sport_id' => $sport->id, 'scope_id' => $scope->id));
+						$sport_scope->save();
 
 						$competition_country = Country::firstOrNew(array('name' => $selection_coupon->event_country_name));
 						$competition_country->save();

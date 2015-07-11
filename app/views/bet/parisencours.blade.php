@@ -154,10 +154,10 @@
                                         <span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>
                                     </td>
                                     <td>
-                                        <span class="label label-sm label-success label-mini type">{{'combiné'}}</span>
+                                        <span class="label label-sm label-combine label-combine label-mini type">{{'combiné'}}</span>
                                     </td>
-                                    <td><span class="label label-sm label-success label-mini type">{{'combiné'}}</span></td>
-                                    <td><span class="label label-sm label-success label-mini type">{{'combiné'}}</span></td>
+                                    <td><span class="label label-sm label-combine label-mini type">{{'combiné'}}</span></td>
+                                    <td><span class="label label-sm label-combine label-mini type">{{'combiné'}}</span></td>
                                     <td>{{$pari->tipster->name}}</td>
                                     <td><span data-toggle="tooltip"
                       title="{{isset($pari->compte->bookmaker->nom) ? $pari->compte->bookmaker->nom : 'à blanc' }}">
@@ -166,7 +166,7 @@
                              src="{{isset($pari->compte->bookmaker->logo) ? asset('img/logos/bookmakers').'/'.$pari->compte->bookmaker->logo : ''}}"
                              alt=""/>{{isset($pari->compte->bookmaker->logo) ? '' : $pari->compte->bookmaker->nom }}
                     @else
-                        <span class="label label-sm label-success label-mini">à blanc</span>
+                        <span class="label label-sm label-combine label-mini">à blanc</span>
                     @endif
                 </span></td>
                                     <td class="fit tdcote">{{$pari->cote}}</td>
@@ -174,9 +174,9 @@
                                         <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{$user->devise.' '}}}{{'('.+$pari->nombre_unites.'u)'}}
                                     </td>
                                     <td>
-                                        <span class="label label-sm label-success label-mini type">{{'combiné'}}</span>
+                                        <span class="label label-sm label-combine label-mini type">{{'combiné'}}</span>
                                     </td>
-                                    <td><span class="label label-sm label-success label-mini type">{{'combiné'}}</span></td>
+                                    <td><span class="label label-sm label-combine label-mini type">{{'combiné'}}</span></td>
 
                                     <td class="bold fontsize15"><span class="profits"></span><span
                                                 class="devise hide">{{{' '.$user->devise}}}</span></td>
@@ -186,7 +186,7 @@
                                         {{ Form::close() }}
 
                                         {{ Form::open(array('route' => 'historique.destroy', 'class' => 'supprimerform form-bouton-paris','role' => 'form')) }}
-                                        {{ Form::button('<i class="fa fa-times"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red', )) }}
+                                        {{ Form::button('<i class="fa fa-trash-o"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red', )) }}
                                         {{ Form::close() }}
                                         @if($pari->followtype == 'n')
                                         {{ Form::button('<i class="fa fa-briefcase"></i>', array('type' => 'submit', 'class' => 'btn btn-sm grey-gallery form-bouton-paris', 'data-toggle' => 'modal', 'data-target' => '#cashoutModal', 'data-hover' => 'tooltip', 'data-id' => $pari->id, 'title' => 'Cash Out')) }}

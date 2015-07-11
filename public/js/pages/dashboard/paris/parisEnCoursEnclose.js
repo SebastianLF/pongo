@@ -18,10 +18,13 @@ function parisEnCoursEnclose(tablename, formname, urlgiven) {
         var subrow = parent.next().find('.child-row input');
         var type = parent.find('.type').text();
 
-
+        if (type == 'simple') {
+            childrows = parent.find('select[name="resultatSelectionDashboardInput[]"]').serialize();
+            childrowsstatus = parent.find('input[name="childrowsinput[]"]').serialize();
+        } else {
             childrows = parent.next().find('select[name="resultatSelectionDashboardInput[]"]').serialize();
             childrowsstatus = parent.next().find('input[name="childrowsinput[]"]').serialize();
-
+        }
 
         $.ajax({
             url: url,
