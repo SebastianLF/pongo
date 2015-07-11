@@ -18,7 +18,7 @@
                 <form action="javascript:;" class="form-horizontal">
                     <div class="form-body">
                         <div class="row " style="padding:10px;">
-                            <div class="col-md-7">
+                            <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
                                 <div class="portlet light bordered ">
                                     <div class="portlet-title">
                                         <div class="caption">
@@ -39,7 +39,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-5 col-xs-1   2 col-sm-12">
+                            <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
                                 <div class="portlet light bordered">
                                     <div class="portlet-title">
                                         <div class="caption">
