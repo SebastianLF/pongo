@@ -31,7 +31,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN LOGO -->
 <div class="logo">
     <a href="{{url('dashboard')}}">
-        <img src="{{asset('img/pongo2.jpg')}}" alt=""/>
+        <img src="{{asset('img/logo-pongo-blanc.jpg')}}" alt=""/>
     </a>
 </div>
 <!-- END LOGO -->

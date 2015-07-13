@@ -80,7 +80,7 @@
 		}
 	});
 
-	Route::filter('expired', function(){
+	Route::filter('expired', function () {
 		$bag = Session::getMetadataBag();
 		$max = Config::get('session.lifetime') * 60;
 		if ($bag && $max < (time() - $bag->getLastUsed())) {
@@ -92,5 +92,11 @@
 	Route::filter('ajax', function () {
 		if (!Request::ajax()) App::abort(404);
 	});
+
+	/*Route::filter('aucune_devise', function () {
+		if (!Route::is('welcome') && !Route::is('auth/login')) {
+			if (Auth::user()->devise == 'aucun') return Redirect::to('welcome');
+		}
+	});*/
 
 

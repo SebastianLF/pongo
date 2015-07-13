@@ -10,53 +10,44 @@
 		public function __construct()
 		{
 			parent::__construct();
-			$this->beforeFilter('auth', ['except' => 'getBetInformations','refreshSelections']);
-
+			$this->beforeFilter('auth');
+			$this->beforeFilter('csrf', ['on' => array('postDevise')]);
 		}
 
-		public function showDashboard()
+		public function welcome(){
+			return View::make('pages.welcome');
+		}
+
+		public function index()
 		{
-			$devisearray = '';
-			// premiere connexion au compte
-			if ($this->currentUser->devise == 'Non') {
-				$devisearray = $this->getDevise();
-			}
-			// donnees lors du chargement de la page dashboard
-			return View::make('pages/dashboard', array(
-					//$devisearray ne sert que pour la boite modal affichée pour la premiere connexion
-					'devisearray' => $devisearray ,
-				)
-			);
+			return View::make('pages.dashboard');
 		}
 
 		public function getDevise(){
-			$devises = Devise::orderBy('initiales')->get(array('id','initiales as text'));
-			return $devises;
+			/*$devises = Devise::orderBy('initiales')->get(array('id','initiales as text'));
+			return $devises;*/
 		}
 
-
 		public function postDevise(){
-
 			$rules = array(
 				'devise' => 'required|exists:devises,id'
 			);
 
+
 			$validator = Validator::make(Input::all(), $rules);
 
 			if($validator->passes()){
+				Clockwork::info(Input::get('devise'));
 				$devise_id = Input::get('devise');
 				$sigle = Devise::find($devise_id)->sigle;
 				$this->currentUser->devise = $sigle;
 				$this->currentUser->save();
-				return Redirect::to('dashboard');
-
+				return View::make('pages/dashboard');
 			}else{
+
 				return Redirect::back()->withErrors($validator);
 			}
-
-
 		}
-
 
 		public function getTipsters()
 		{
@@ -95,6 +86,28 @@
 			$count = $recaps->count();
 			$view = View::make('recaps.recaps', array('recaps' => $recaps->toArray(), 'count' => $count ));
 			return $view;
+		}
+
+		public function getTotalProfit(){
+
+			// tous les paris terminés sauf les a blanc.
+			$paristermines = $this->currentUser->termineParis()->where('followtype', 'n')->get();
+
+			$benefices = $paristermines->sum('montant_profit');
+			$capital = $paristermines->sum('mise_totale');
+
+			// calcul du ROI. Si nombres = 0 , division impossible
+			if($benefices != 0 || $capital != 0){
+				$roi = ($benefices / $capital) * 100;
+			}else{
+				$roi = 'N/A';
+			}
+
+			// calcul des profits.
+			$montant_total_profit = 0;
+			$montant_total_profit += $paristermines->sum('montant_profit');
+
+			return Response::json(array('montantprofit' => $montant_total_profit, 'roi' => round($roi,2)));
 		}
 
 		public function itemTypeCheck($type)

@@ -5,7 +5,6 @@ class StatsController extends BaseController {
 	{
 		parent::__construct();
 		$this->beforeFilter('auth');
-
 	}
 	/**
 	 * Display a listing of the resource.
@@ -15,11 +14,7 @@ class StatsController extends BaseController {
 	public function index()
 	{
 		$dt = Carbon::now();
-        return View::make('pages.stats', array(
-	        'dt' => $dt
-        ));
-
-
+        return View::make('pages.stats', array());
 	}
 
 	/**

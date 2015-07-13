@@ -340,7 +340,7 @@ function automaticBetForm() {
     form.find('#serieinputdashboard').prop('disabled', true);
     form.find('#letterinputdashboard').prop('disabled', true);
     form.find('.methodeabcdcontainer').addClass("hide");
-    form.find('.bookmakercontainer').addClass("hide");
+    //form.find('.bookmakercontainer').addClass("hide");
 
     form.find('#ticketABCD').on('click', function(){
         if ( $(this).is(':checked') ) {

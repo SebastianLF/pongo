@@ -15,7 +15,7 @@
             <div class="row">
                 @if(Session::has('mdp_updated'))
                     <div class="alert alert-success" role="alert">{{ Session::get('mdp_updated') }}</div>
-                @endif 
+                @endif
                 <div class="col-lg-12">
                     <div class="portlet light ">
                         <div class="portlet-title">
@@ -34,7 +34,7 @@
 
                                     <div class="col-md-4">
                                     <span class="form-control-static">{{$user->name}}</span>
-                                        
+
                                     </div>
                                 </div>
 
@@ -92,7 +92,7 @@
                                 <div class="caption">
                                     <i class="icon-equalizer font-blue-hoki"></i>
                                     <span class="caption-subject font-blue-hoki bold uppercase">Abonnement</span>
-                                    
+
                                 </div>
                             </div>
                             <div class="portlet-body">

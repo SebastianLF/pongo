@@ -1,18 +1,26 @@
 <?php
 
+	Route::get('/', function(){
+		return Redirect::to('auth/login');
+	});
 
-	Route::get('/', 'HomeController@showWelcome');
-	Route::get('home', 'HomeController@showWelcome');
 	Route::controller('config', 'ConfigController');
-	Route::get('stats', 'StatsController@index');
-
-
-	Route::get('dashboard', 'DashboardController@showDashboard');
+	Route::controller('stats', 'StatsController');
+	Route::resource('dashboard', 'DashboardController');
 
 // pour la recuperation du listing, en ajax, selon le type dans le lien, pour tipster,bookmaker ou transaction.
 	Route::get('pagination/ajax/{type}', 'ConfigController@itemTypeCheck')->where('type', 'tipsters|bookmakers|transactions');
 	Route::get('dashboard/ajax/{type}', 'DashboardController@itemTypeCheck')->where('type', 'parisencours|parislongterme|parisabcd|paristermine');
 
+
+	Route::post('encourspari/auto', 'EnCoursParisController@automatic_store');
+	Route::post('cashout', 'EnCoursParisController@cashOut');
+	Route::post('coupon', 'CouponController@postSelections');
+	Route::get('comptes', 'BookmakerController@showComptes');
+	Route::get('bookmakers', 'BookmakerController@getMyBookmakers');
+	Route::get('allbookmakers', 'BookmakerController@showAllBookmakers');
+	Route::get('parisabcd', 'EnCoursParisController@getEnCoursABCD');
+	Route::get('lettreabcd', 'EnCoursParisController@getlettreABCD');
 	Route::controller('auth', 'AuthController');
 	Route::controller('password', 'RemindersController');
 	Route::get('recaps', 'DashboardController@showRecaps');
@@ -26,16 +34,8 @@
 	Route::resource('encourspari', 'EnCoursParisController');
 	Route::resource('historique', 'TermineParisController');
 	Route::resource('coupon', 'CouponController');
-	Route::post('encourspari/auto', 'EnCoursParisController@automatic_store');
-	Route::post('cashout', 'EnCoursParisController@cashOut');
-	Route::post('coupon', 'CouponController@postSelections');
-	Route::get('comptes', 'BookmakerController@showComptes');
-	Route::get('bookmakers', 'BookmakerController@getMyBookmakers');
-	Route::get('allbookmakers', 'BookmakerController@showAllBookmakers');
-	Route::get('parisabcd', 'EnCoursParisController@getEnCoursABCD');
-	Route::get('lettreabcd', 'EnCoursParisController@getlettreABCD');
-	Route::get('devise', 'DashboardController@getDevise');
-	Route::post('devise', 'DashboardController@postDevise');
+
+
 
 	Route::get('account', 'AccountController@showIndex');
 
@@ -62,3 +62,13 @@
 	Route::get('competitions', 'AjaxController@getCompetitions');
 	Route::get('markets', 'AjaxController@getMarkets');
 	Route::get('scopes', 'AjaxController@getScopes');
+	Route::get('totalprofit', 'DashboardController@getTotalProfit');
+
+
+	Route::group(array('before' => 'auth'), function()
+	{
+		Route::get('devise', 'DashboardController@getDevise');
+		Route::post('devise', 'DashboardController@postDevise');
+		Route::get('welcome', 'DashboardController@welcome');
+	});
+

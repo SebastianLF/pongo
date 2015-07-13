@@ -13,7 +13,7 @@ class UserGestion implements UserGestionInterface {
 		$user->name = Input::get('name');
 		$user->email = Input::get('email');		
 		$user->abonnement = 'free';
-		$user->devise = 'Non';
+		$user->devise = 'aucun';
 		$user->timezone = 'Europe/Paris';
 		$user->langue = 'fr';
 		$user->type_cote = 'euro';
@@ -22,14 +22,11 @@ class UserGestion implements UserGestionInterface {
         $id = $user->id;
 
         //creation du tipster par defaut
-        $tipster = new Tipster(array(
-            'name' => 'Mes paris', // le nom du tipster sera le meme nom que le pseudo de l'utilisateur
-            'montant_par_unite' => 10,
-            'followtype' => 'n', // on considere que le followtype demarre en normal
-        ));
-        $user->tipsters()->save($tipster);
-
-}
+		$tispter = new Tipster;
+		$tispter->name = $user->name;
+		$tispter->followtype = 'n';
+        $user->tipsters()->save($tispter);
+	}
 
 	public function index($n)
 	{

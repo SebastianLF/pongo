@@ -115,16 +115,16 @@
                                     <?php
                                     switch ($pari->status) {
                                         case 1:
-                                            echo '<span class="bold fontsize15 font-green">gagné</span>';
+                                            echo '<span class="bold fontsize15 font-green-sharp">gagné</span>';
                                             break;
                                         case 2:
-                                            echo '<span class="bold fontsize15 font-red">perdu</span>';
+                                            echo '<span class="bold fontsize15 font-red-haze">perdu</span>';
                                             break;
                                         case 3:
-                                            echo '<span class="bold fontsize15 font-green">1/2 gagné</span>';
+                                            echo '<span class="bold fontsize15 font-green-sharp">1/2 gagné</span>';
                                             break;
                                         case 4:
-                                            echo '<span class="bold fontsize15 font-red">1/2 perdu</span>';
+                                            echo '<span class="bold fontsize15 font-red-haze">1/2 perdu</span>';
                                             break;
                                         case 5:
                                             echo '<span class="bold fontsize15">Remboursé</span>';
@@ -135,13 +135,13 @@
                                     }?>
 
                                 </td>
-                                <td><span class="{{'bold fontsize15'}} {{$pari->mise_totale > $pari->montant_retour ? ' font-red' : '' }} {{$pari->mise_totale < $pari->montant_retour ? ' font-green' : '' }}">
+                                <td><span class="{{'bold fontsize15'}} {{$pari->mise_totale > $pari->montant_retour ? ' font-red-haze' : '' }} {{$pari->mise_totale < $pari->montant_retour ? ' font-green-sharp' : '' }}">
                                         <span class="">{{$pari->montant_retour.''.$user->devise}}<span>{{' ('.$pari->unites_retour.'u)'}}</span></span>
                                 </span>
                                 </td>
                                 <td>
-                                    @if($pari->montant_profit > 0)<span class="bold fontsize15 font-green" ><span class="profits">{{' +'.$pari->montant_profit}}</span><span class="devise">{{{$user->devise}}}</span><span>{{' (+'.$pari->unites_profit.'u)'}}</span></span>
-                                    @elseif($pari->montant_profit < 0)<span class="bold fontsize15 font-red"><span class="profits">{{$pari->montant_profit}}</span><span class="devise">{{{$user->devise}}}</span><span>{{' ('.$pari->unites_profit.'u)'}}</span></span>
+                                    @if($pari->montant_profit > 0)<span class="bold fontsize15 font-green-sharp" ><span class="profits">{{' +'.$pari->montant_profit}}</span><span class="devise">{{{$user->devise}}}</span><span>{{' (+'.$pari->unites_profit.'u)'}}</span></span>
+                                    @elseif($pari->montant_profit < 0)<span class="bold fontsize15 font-red-haze"><span class="profits">{{$pari->montant_profit}}</span><span class="devise">{{{$user->devise}}}</span><span>{{' ('.$pari->unites_profit.'u)'}}</span></span>
                                     @else($pari->montant_profit == 0)<span class="bold fontsize15"><span class="profits">{{$pari->montant_profit}}</span><span class="devise">{{{$user->devise}}}</span><span>{{' ('.$pari->unites_profit.'u)'}}</span></span>
                                     @endif
                                 </td>

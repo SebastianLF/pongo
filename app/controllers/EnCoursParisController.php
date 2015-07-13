@@ -8,8 +8,7 @@
 		{
 			parent::__construct();
 			$this->beforeFilter('auth');
-			//$this->beforeFilter('csrf');
-			$this->timezone = $this->currentUser->timezone;
+			$this->beforeFilter('csrf', ['on' => array('automatic_store', 'destroy')]);
 		}
 
 		public function index()

@@ -31,6 +31,12 @@ gulp.task('dashboard-js', function() {
         .pipe(gulp.dest('public/build/js'));
 });
 
+gulp.task('welcome-js', function() {
+    return gulp.src(['public/js/pages/welcome/*.js'])
+        .pipe(concat('welcome.js'))
+        .pipe(gulp.dest('public/build/js'));
+});
+
 gulp.task('default', ["dashboard-js"], function(){
     gulp.watch(['public/js/pages/dashboard/paris', 'public/js/pages/dashboard/'], function(){
         gulp.run('dashboard-js');

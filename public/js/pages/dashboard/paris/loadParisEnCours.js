@@ -17,6 +17,7 @@ function loadParisEnCours() {
 
             featuresParisEnCours();
             paginationParisEnCours();
+            totalProfits();
             cashOut();
         },
         error: function (data) {
@@ -41,12 +42,13 @@ function loadParisTermine() {
             // barre de défilement vertical pour les paris terminés.
             $(function(){
                 $('.slimScrollTermine').slimScroll({
-                    height: '250px',
+                    height: 'auto',
                     allowPageScroll: false,
                     wheelStep: 10,
                     alwaysVisible: true
                 });
             });
+
 
         },
         error: function (data) {
