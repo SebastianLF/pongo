@@ -19,10 +19,10 @@ class CreateSportMarketTable extends Migration {
 			$table->timestamps();
 			$table->foreign('sport_id')->references('id')->on('sports')
 				->onDelete('restrict')
-				->onUpdate('restrict');
+				->onUpdate('cascade');
 			$table->foreign('market_id')->references('id')->on('markets')
 				->onDelete('restrict')
-				->onUpdate('restrict');
+				->onUpdate('cascade');
 		});
 	}
 

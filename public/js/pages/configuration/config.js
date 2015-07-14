@@ -1,9 +1,4 @@
 
-    //tipster
-tipsterUpdate();
-tipsterAdd();
-tipsterDelete();
-tipsterEdit();
 
 //bookmaker
 editBookmakerButton();

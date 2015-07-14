@@ -68,7 +68,7 @@
 
 <!-- tipster -->
 <script src="<?php echo asset('js/loadTipsters.js'); ?>" type="text/javascript"></script>
-<script src="<?php echo asset('js/tipsterUpdate.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('js/gestionTipsters.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('js/tipsterAdd.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('js/tipsterDelete.js'); ?>" type="text/javascript"></script>
 

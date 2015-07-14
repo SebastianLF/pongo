@@ -33,8 +33,9 @@
 	*/
 
 	Route::filter('auth', function () {
-		if (Auth::guest()) {
+		if ($quest = Auth::guest()) {
 			if (Request::ajax()) {
+				Log::info('Connecté: '.$quest);
 				return Response::make('Unauthorized', 401);
 			} else {
 				return Redirect::guest('auth/login');
@@ -75,7 +76,9 @@
 
 	Route::filter('csrf', function () {
 
-		if (Session::token() != Input::get('_token')) {
+		$token = Request::ajax() ? Request::header('X-CSRF-Token') : Input::get('_token');
+
+		if (Session::token() != $token) {
 			throw new Illuminate\Session\TokenMismatchException;
 		}
 	});

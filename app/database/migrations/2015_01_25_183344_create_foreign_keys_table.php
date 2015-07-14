@@ -14,7 +14,7 @@ class CreateForeignKeysTable extends Migration {
     {
         Schema::table('tipsters', function(Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users')
-                ->onDelete('restrict')
+                ->onDelete('cascade')
                 ->onUpdate('restrict');
         });
 
@@ -33,7 +33,7 @@ class CreateForeignKeysTable extends Migration {
 
         Schema::table('bookmaker_user', function(Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users')
-                ->onDelete('restrict')
+                ->onDelete('cascade')
                 ->onUpdate('restrict');
         });
 
@@ -57,7 +57,7 @@ class CreateForeignKeysTable extends Migration {
 
         Schema::table('en_cours_paris', function(Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users')
-                ->onDelete('restrict')
+                ->onDelete('cascade')
                 ->onUpdate('restrict');
         });
 

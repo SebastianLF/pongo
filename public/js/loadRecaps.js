@@ -7,8 +7,6 @@ function loadRecapsOnDashboard() {
         success: function (data) {
             $('[data-toggle="collapse"]').collapse();
             $('#recaps').html(data);
-        },
-        error: function () {
         }
     });
 }

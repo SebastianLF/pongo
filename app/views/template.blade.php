@@ -54,7 +54,7 @@
 
 <!-- tipster -->
 <script src="{{asset('js/loadTipsters.js')}}" type="text/javascript"></script>
-<script src="{{asset('js/tipsterUpdate.js')}}" type="text/javascript"></script>
+<script src="{{asset(gestionTipsters.jss')}}" type="text/javascript"></script>
 <script src="{{asset('js/tipsterAdd.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/tipsterDelete.js')}}" type="text/javascript"></script>
 

@@ -45,7 +45,7 @@ class CreateTermineParisTable extends Migration {
 				->onDelete('restrict')
 				->onUpdate('restrict');
 			$table->foreign('user_id')->references('id')->on('users')
-				->onDelete('restrict')
+				->onDelete('cascade')
 				->onUpdate('restrict');
 
 		});

@@ -5,6 +5,7 @@
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 <meta content="" name="description"/>
 <meta content="" name="author"/>
+<meta name="_token" content="{{ csrf_token() }}" />
 
 <!--ZingChart Script-->
 <!--<script src="http://cdn.zingchart.com/zingchart.min.js"></script>-->

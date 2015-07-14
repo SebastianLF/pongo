@@ -18,10 +18,10 @@ class CreateSportScopeTable extends Migration {
 			$table->integer('scope_id')->unsigned();
 			$table->timestamps();
 			$table->foreign('sport_id')->references('id')->on('sports')
-				->onDelete('restrict')
+				->onDelete('cascade')
 				->onUpdate('restrict');
 			$table->foreign('scope_id')->references('id')->on('scopes')
-				->onDelete('restrict')
+				->onDelete('cascade')
 				->onUpdate('restrict');
 		});
 	}

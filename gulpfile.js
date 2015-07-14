@@ -28,12 +28,14 @@ gulp.task('config-js', function() {
 gulp.task('dashboard-js', function() {
     return gulp.src(['public/js/pages/dashboard/*.js', 'public/js/pages/dashboard/paris/*.js'])
         .pipe(concat('dashboard.js'))
+        .pipe(uglify())
         .pipe(gulp.dest('public/build/js'));
 });
 
 gulp.task('welcome-js', function() {
     return gulp.src(['public/js/pages/welcome/*.js'])
         .pipe(concat('welcome.js'))
+        .pipe(uglify())
         .pipe(gulp.dest('public/build/js'));
 });
 

@@ -1,4 +1,8 @@
 paginationOnclick('pagination/ajax/tipsters','#tipsters-pagination');
+
+
+
+
 // quand la page config se charge, elle charge aussi les popover tipster
 function loadTipsters() {
     $.ajax({
@@ -7,12 +11,13 @@ function loadTipsters() {
         type: 'get',
         success: function (data) {
             $('#tipsters-pagination').html(data);
-            tipsterEdit();
-            tipsterDelete();
+            gestionTipsters()
         }
     });
 }
-function loadTipstersWithPage() {
+
+
+/*function loadTipstersWithPage() {
 
     // numero de page en cours
     var pg = $('#tipsters-pagination').find('.active').find('span').text();
@@ -38,7 +43,7 @@ function loadTipstersWithPage() {
             }
         });
     }
-}
+}*/
 
 
 

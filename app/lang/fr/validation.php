@@ -77,6 +77,7 @@ return [
 
     "european_odd" => "les cotes doivent etre du type 1.50",
     "cashout" => "le montant doit etre un nombre décimal supérieur à 0",
+    "decimal>0" => "Un nombre est requis, supérieur à 0 et sous la forme 19.99",
 
     /*
     |--------------------------------------------------------------------------

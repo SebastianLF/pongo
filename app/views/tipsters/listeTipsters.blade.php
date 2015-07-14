@@ -6,14 +6,14 @@
                     <th colspan="">Nom</th>
                     <th>Suivi</th>
                     <th>Montant par indice</th>
-                    <th></th>
+
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($tipsters as $tipster)
                     <tr>
                         <td class="idtipstertd hidden">{{$tipster->id}}</td>
-                        <td class="name">{{$tipster->name}}</td>
+                        <td class="name"><img alt="" class="user img-circle" src="img/unknown.jpg" width="25px">{{' '.$tipster->name}}</td>
                         <td>
 
                             @if($tipster->followtype == 'n')
@@ -31,7 +31,7 @@
                             <div class="action-tipster-btn ">
                                 <button type="button" class="tipsterEditButton btn btn-sm bg-yellow-saffron"
                                         data-target="#tipsterEditModal" data-toggle="modal" data-id="{{$tipster->id}}"
-                                        data-name="{{$tipster->name}}" data-indice="{{$tipster->indice_unite}}"
+                                        data-name="{{$tipster->name}}"
                                         data-mt="{{$tipster->montant_par_unite}}" data-suivi="{{$tipster->followtype}}">
 
                                     <i

@@ -2,7 +2,6 @@
 
 	class TipsterController extends BaseController
 	{
-
 		public function __construct()
 		{
 			parent::__construct();
@@ -29,7 +28,6 @@
 		 */
 		public function create()
 		{
-
 		}
 
 
@@ -40,21 +38,23 @@
 		 */
 		public function store()
 		{
+
+
 			$regles = array(
-				'name_tipster' => 'required|max:30|unique:tipsters,name,NULL,id,user_id,' . $this->currentUser->id . ',deleted_at,NULL',
+				'name_tipster' => 'required|max:20|unique:tipsters,name,NULL,id,user_id,' . Auth::user()->id . ',deleted_at,NULL',
 				'suivi_tipster' => 'required|in:n,b',
-				'amount_tipster' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+				'amount_tipster' => 'required|decimal>0',
 			);
 			$messages = array(
 				'name_tipster.required' => 'Un nom est nécéssaire',
-				'name_tipster.max' => 'Nom trop long, 30 caracteres maximum',
-				'name_tipster.unique' => 'Ce nom existe deja',
+				'name_tipster.max' => 'Nom trop long, 20 caracteres maximum',
+				'name_tipster.unique' => 'Ce tipster existe deja',
 				'suivi_tipster.required' => "Un type de suvi est nécéssaire",
-				'suivi_tipster.alpha' => "le type de suivi ne doit comporter que des lettres",
-				'amount_tipster.required' => 'Vous devez entrer un montant par unité.',
-				'amount_tipster.regex' => "l'unité de mise doit etre un nombre. Si vous rentrez un nombre decimal, remplacez la virgule par un point ex: 45.78",
-
+				'suivi_tipster.alpha' => "Le type de suivi ne doit comporter que des lettres",
+				'amount_tipster.required' => 'Un montant par unité est requis.',
+				'amount_tipster.regex' => "Le montant par unité doit etre au format: 17.65",
 			);
+
 			$validator = Validator::make(Input::all(), $regles, $messages);
 			if ($validator->fails()) {
 				return Response::json(array(
@@ -129,30 +129,29 @@
 		{
 
 			$regles = array(
-				'nameTipsterEditInput' => 'required|max:30|unique:tipsters,name,' . $id . ',id,user_id,' . $this->currentUser->id . ',deleted_at,NULL',
-				'mtTipsterEditInput' => 'required|regex:/^\d+(\.\d{1,2})?$/',
-				'suiviTipsterEditSelect' => 'required|in:n,b',
+				'name_tipster' => 'required|max:20|unique:tipsters,name,' . $id . ',id,user_id,' . $this->currentUser->id . ',deleted_at,NULL',
+				'amount_tipster' => 'required|decimal>0',
+				'suivi_tipster' => 'required|in:n,b',
 			);
 			$messages = array(
-				'nameTipsterEditInput.required' => 'Un nom est nécéssaire',
-				'nameTipsterEditInput.max' => 'Nom trop long, 30 caracteres maximum',
-				'nameTipsterEditInput.unique' => 'Ce nom existe deja',
-				'mtTipsterEditInput.required' => 'Une unité de mise est nécéssaire',
-				'mtTipsterEditInput.regex' => "le montant par unité doit etre de type 0.00 ou 0",
-				'suiviTipsterEditSelect.required' => "Un type de suvi est nécéssaire",
-				'suiviTipsterEditSelect.in' => 'Le suivi doit etre normal ou à blanc'
+				'name_tipster.required' => 'Un nom est nécéssaire',
+				'name_tipster.max' => 'Nom trop long, 20 caracteres maximum',
+				'name_tipster.unique' => 'Ce tipster existe deja',
+				'amount_tipster.required' => 'Une unité de mise est nécéssaire',
+				'suivi_tipster.required' => "Un type de suvi est nécéssaire",
+				'suivi_tipster.in' => 'Le suivi doit etre normal ou à blanc'
 			);
 			$validator = Validator::make(Input::all(), $regles, $messages);
 			if ($validator->fails()) {
 				return Response::json(array(
-					'success' => false,
+					'state' => false,
 					'errors' => $validator->getMessageBag()->toArray()
 				));
 			} else {
 				// récuperation des entrées
-				$name = Input::get('nameTipsterEditInput');
-				$stakeamount = Input::get('mtTipsterEditInput');
-				$followtype = Input::get('suiviTipsterEditSelect');
+				$name = Input::get('name_tipster');
+				$stakeamount = Input::get('amount_tipster');
+				$followtype = Input::get('suivi_tipster');
 
 				// trouver le tipster
 				$tipsterfinal = Tipster::find($id);
@@ -185,8 +184,7 @@
 				Tipster::where('id', '=', $id)->update(array('name' => $name, 'montant_par_unite' => $stakeamount, 'followtype' => $followtype));
 
 				return Response::json(array(
-					'success' => true,
-					'tipster' => $tipsterfinal,
+					'state' => true,
 				));
 			}
 		}
@@ -201,19 +199,23 @@
 
 		public function destroy($id)
 		{
-			$tipster = Tipster::find($id);
+			$tipster = $this->currentUser->tipsters()->where('id', $id)->first();
 			// si il y a un pari ou plus en cours associé a ce tipster, il faut d'abord les supprimer.
-			if ($tipster->enCoursParis()->count() >= 1) {
+			if (is_null($tipster)) {
 				return Response::json(array(
-					'success' => 0,
-					'tipster' => $tipster
+					'state' => 0,
 				));
 			} else {
-				$tipster->delete();
-				return Response::json(array(
-					'success' => 1,
-					'tipster' => $tipster
-				));
+				if ($tipster->enCoursParis()->count() > 0) {
+					return Response::json(array(
+						'state' => 2,
+					));
+				} else {
+					$tipster->delete();
+					return Response::json(array(
+						'state' => 1,
+					));
+				}
 			}
 		}
 
@@ -241,4 +243,6 @@
 			$tipster = $this->currentUser->tipsters()->where('id', '=', $tipster_id)->first(array('montant_par_unite', 'followtype'));
 			return Response::json($tipster);
 		}
+
+
 	}

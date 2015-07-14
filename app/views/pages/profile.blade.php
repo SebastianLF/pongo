@@ -68,7 +68,6 @@
                                         <input type="password" name="confirmation_mdp" class="form-control" value="">
                                         <span class="help-block">{{$errors->first('confirmation_mdp')}}</span>
                                     </div>
-
                                 </div>
 
                                 <div class="form-actions">

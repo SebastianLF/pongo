@@ -18,7 +18,9 @@ Rounded Portlets
 }
 
 
-
+.page-content{
+    background: #e9edef !important;
+}
 
 .glyphicon-plus-sign{
     font-size: 1.2em !important;
@@ -78,7 +80,7 @@ table{
     line-height: 50px;
 }
 
-.table td,th {
+.table-pari td {
     text-align: center !important;
 }
 

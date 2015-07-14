@@ -79,7 +79,6 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="{{asset('metronic_v3.8.1/theme/assets/admin/pages/scripts/table-advanced.js')}}"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/admin/pages/scripts/form-samples.js')}}"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/admin/pages/scripts/components-dropdowns.js')}}"></script>
-    <script src="{{asset('js/ajax/functions.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/getPaginationSelectedPage.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/paginationOnclick.js')}}"></script>
     <script src="{{asset('js/pages/getBookmakersForSelection.js')}}" type="text/javascript"></script>
@@ -92,6 +91,13 @@ License: You must have a valid license purchased only from themeforest(the above
                 $('#spinner').fadeIn();
             }).ajaxStop(function () {
                 $('#spinner').fadeOut();
+            });
+
+            // ajouter le token a chaque requete ajax.
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-Token': $('meta[name="_token"]').attr('content')
+                }
             });
 
             // toastr plugin configuration

@@ -18,7 +18,7 @@
 			return View::make('pages.welcome');
 		}
 
-		public function index()
+		public function showDashboard()
 		{
 			return View::make('pages.dashboard');
 		}

@@ -4,7 +4,7 @@
 <script src="{{asset('js/pages/configuration/transactions/transactionAdd.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/configuration/tipsters/loadTipsters.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/configuration/tipsters/tipsterAdd.js')}}" type="text/javascript"></script>
-<script src="{{asset('js/pages/configuration/tipsters/tipsterUpdate.js')}}" type="text/javascript"></script>
+<script src="{{asset(gestionTipsters.jss')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/configuration/tipsters/tipsterEdit.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/configuration/tipsters/tipsterDelete.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/pages/configuration/bookmakers/loadBookmakers.js')}}" type="text/javascript"></script>
