@@ -13,7 +13,7 @@
                 @foreach($tipsters as $tipster)
                     <tr>
                         <td class="idtipstertd hidden">{{$tipster->id}}</td>
-                        <td class="name"><img alt="" class="user img-circle" src="img/unknown.jpg" width="25px">{{' '.$tipster->name}}</td>
+                        <td class="name"><img alt="" class="user img-circle" src="{{asset('img/unknown.jpg')}}" width="25px">{{' '.$tipster->name}}</td>
                         <td>
 
                             @if($tipster->followtype == 'n')
@@ -23,7 +23,7 @@
                             @endif
                         </td>
                         <td class="">
-                            <span class="bold theme-font">{{number_format($tipster->montant_par_unite, 2, '.', ',' )}}</span>
+                            <span class="bold theme-font">{{round($tipster->montant_par_unite, 2)}}</span>
                             <span class="bold theme-font">{{$user->devise}}</span>
                         </td>
 
@@ -32,7 +32,7 @@
                                 <button type="button" class="tipsterEditButton btn btn-sm bg-yellow-saffron"
                                         data-target="#tipsterEditModal" data-toggle="modal" data-id="{{$tipster->id}}"
                                         data-name="{{$tipster->name}}"
-                                        data-mt="{{$tipster->montant_par_unite}}" data-suivi="{{$tipster->followtype}}">
+                                        data-mt="{{round($tipster->montant_par_unite, 2)}}" data-suivi="{{$tipster->followtype}}">
 
                                     <i
                                             class="fa fa-pencil-square-o fa-2x"></i></button>

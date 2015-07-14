@@ -4,7 +4,7 @@
 editBookmakerButton();
 updateBookmaker();
 
-loadTipsters();
+gestionTipsters();
 loadBookmakers();
 loadTransactions();
 

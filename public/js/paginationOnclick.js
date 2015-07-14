@@ -1,3 +1,4 @@
+
 function paginationOnclick(url,contentContainer){
     // when you click on pagination numbers
     $(contentContainer).on('click', '.pagination a', function (e) {
@@ -10,11 +11,6 @@ function paginationOnclick(url,contentContainer){
                 $(contentContainer).html(data);
                 editBookmakerButton();
                 deleteBookmakerButton();
-                tipsterEdit();
-                tipsterDelete();
-            },
-            error: function (data) {
-                console.log('erreur: pagination par click');
             }
         });
     });

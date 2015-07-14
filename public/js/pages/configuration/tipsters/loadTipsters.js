@@ -1,20 +1,7 @@
-paginationOnclick('pagination/ajax/tipsters','#tipsters-pagination');
-
-
 
 
 // quand la page config se charge, elle charge aussi les popover tipster
-function loadTipsters() {
-    $.ajax({
-        url: 'pagination/ajax/tipsters',
-        data: { page: '1' },
-        type: 'get',
-        success: function (data) {
-            $('#tipsters-pagination').html(data);
-            gestionTipsters()
-        }
-    });
-}
+
 
 
 /*function loadTipstersWithPage() {
