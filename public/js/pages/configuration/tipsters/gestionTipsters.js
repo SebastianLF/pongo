@@ -1,7 +1,7 @@
 
 function gestionTipsters(){
 
-    /*var nameInput = "input[name='name_tipster']";
+    var nameInput = "input[name='name_tipster']";
     var nameContainer = "#name_container";
     var nameError = "#name_error";
     var suiviSelect = "select[name='suivi_tipster']";
@@ -12,11 +12,10 @@ function gestionTipsters(){
     var amountError =  "#amount_error";
 
     var idEdit = "input[name='id']";
-    var idDelete = ".idtipstertd";*/
+    var idDelete = ".idtipstertd";
 
     var paginationContainer = '#tipsters-pagination';
     //var url_pagination = 'pagination/ajax/tipsters';
-
 
     function loadTipsters(page){
         var pg = page || 1;
@@ -26,11 +25,11 @@ function gestionTipsters(){
             type: 'get',
             success: function (data) {
                 $(paginationContainer).html(data);
+                tipsterEdit();
+                tipsterDelete();
             }
         });
     }
-
-
 
     function paginationOnclickTipsters(){
         // when you click on pagination numbers
@@ -40,8 +39,6 @@ function gestionTipsters(){
             loadTipsters(pg);
         });
     }
-
-
 
     function tipsterAdd() {
         var form = $('#tipsterform-add');
@@ -116,8 +113,19 @@ function gestionTipsters(){
         });
     }
 
+    function tipsterEdit(){
+        var form = $('#tipsterform-edit');
+        $('.tipsterEditButton').click(function() {
+            var suivi = $(this).attr('data-suivi');
+            form.find(idEdit).val($(this).attr('data-id'));
+            form.find(nameInput).val($(this).attr('data-name'));
+            form.find(amountInput).val($(this).attr('data-mt'));
+            form.find(suiviSelect+' option[value="'+suivi+'"]').prop('selected',true);
+        });
+    }
 
-    /*function tipsterUpdate() {
+
+    function tipsterUpdate() {
 
         // mise en variable du formulaire
         var form = $('#tipsterform-edit');
@@ -150,14 +158,7 @@ function gestionTipsters(){
                 dataType: 'json',
                 success: function (json) {
                     if (json.state) {
-                        $.ajax({
-                            url: 'pagination/ajax/tipsters',
-                            data: { page: '1' },
-                            type: 'get',
-                            success: function (data) {
-                                $(paginationContainer).html(data);
-                            }
-                        });
+                        loadTipsters();
                         toastr.success('Le tipster à été modifié avec <strong>succès</strong>!', 'Tipster');
                         $('#tipsterEditModal').modal('hide');
 
@@ -190,18 +191,6 @@ function gestionTipsters(){
 
     }
 
-
-
-    function tipsterEdit(){
-        var form = $('#tipsterform-edit');
-        $('.tipsterEditButton').click(function() {
-            var suivi = $(this).attr('data-suivi');
-            form.find(idEdit).val($(this).attr('data-id'));
-            form.find(nameInput).val($(this).attr('data-name'));
-            form.find(amountInput).val($(this).attr('data-mt'));
-            form.find(suiviSelect+' option[value="'+suivi+'"]').prop('selected',true);
-        });
-    }
 
     function tipsterDelete() {
         $('#tipsterstable').on('click', '.tipsterDeleteButton', function (e) {
@@ -246,15 +235,10 @@ function gestionTipsters(){
         });
     }
 
-    function tipsterEssentials(){
-        tipsterAdd();
-        tipsterEdit();
-        tipsterUpdate();
-        tipsterDelete();
-    }*/
-
     //inits
     loadTipsters();
+    tipsterAdd();
+    tipsterUpdate();
     paginationOnclickTipsters();
 }
 
