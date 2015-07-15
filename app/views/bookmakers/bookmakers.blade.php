@@ -1,25 +1,31 @@
 @include('bookmaker_edit_modal')
 @include('bookmaker_add_modal')
-
-<div class="portlet light">
-    <div class="portlet-title">
-        <div class="caption caption-md">
-            <i class="fa fa-cogs font-red-sunglo"></i>
-            <span class="caption-subject font-red-sunglo bold uppercase">Bookmakers</span>
-            <span class="caption-helper">Configuration</span>
-        </div>
-    </div>
-    <div class="portlet-body">
-        <div class="note note-danger">
-            <p>
-                Seul le nom sera modifiable après creation.
-            </p>
-        </div>
-        <button type="button" id="addBookmakerButton" class="btn red" data-toggle="modal" data-target="#bookmakerAddModal"><span class="icon-book-open"></span> Ajouter un compte </button>
-        <div class="table-scrollable table-scrollable-borderless">
-
-        </div>
-        <div id="bookmakers-pagination">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet light">
+                <div class="portlet-title">
+                    <div class="caption caption-md">
+                        <i class="fa fa-cogs font-red-sunglo"></i>
+                        <span class="caption-subject font-red-sunglo bold uppercase">Bookmakers</span>
+                        <span class="caption-helper">Configuration</span>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="note note-danger">
+                        <p>
+                            Seul le nom sera modifiable après creation. Pour les depots et les retraits, veuillez utiliser les transactions.
+                        </p>
+                    </div>
+                    <button type="button" id="addBookmakerButton" class="btn red" data-toggle="modal"
+                            data-target="#bookmakerAddModal"> Ajouter un compte <span class="icon-book-open"></span>
+                    </button>
+                    <div class="row">
+                        <div id="bookmakers-pagination" class="col-md-8 col-md-offset-2">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

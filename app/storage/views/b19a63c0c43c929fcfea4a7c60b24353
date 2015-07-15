@@ -99,7 +99,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 <script src="<?php echo asset('js/loadParisLongTerme.js'); ?>" type="text/javascript"></script>
 
-<script src="<?php echo asset('js/pages/configuration/transactions/loadTransactions.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('js/pages/configuration/transactions/gestionTransactions.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('js/pages/configuration/transactions/transactionAdd.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('js/loadRecaps.js'); ?>" type="text/javascript"></script>
 
@@ -111,7 +111,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="<?php echo asset('js/pages/configuration/tipsters/tipsterEdit.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('js/pages/configuration/tipsters/tipsterDelete.js'); ?>" type="text/javascript"></script>
 
-<script src="<?php echo asset('js/pages/configuration/bookmakers/loadBookmakers.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo asset('js/pages/configuration/bookmakers/gestionBookmakers.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('js/pages/configuration/bookmakers/bookmakerAdd.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('js/pages/configuration/bookmakers/bookmakerDelete.js'); ?>" type="text/javascript"></script>
 <script src="<?php echo asset('js/pages/configuration/bookmakers/bookmakerUpdate.js'); ?>" type="text/javascript"></script>

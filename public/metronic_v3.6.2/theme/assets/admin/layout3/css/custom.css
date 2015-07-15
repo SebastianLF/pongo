@@ -83,6 +83,9 @@ table{
 .table-pari td {
     text-align: center !important;
 }
+.table-pari th {
+    text-align: center !important;
+}
 
 .label-combine{
     background-color: #45B6AF;

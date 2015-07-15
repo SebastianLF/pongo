@@ -4,22 +4,28 @@
             <div class="modal-header">
                 <h4 class="modal-title">Modification Compte Bookmaker</h4>
             </div>
+            {{ Form::open(array('route' => 'bookmaker.update', 'method' => 'put', 'id' => 'bookmakerform-edit', 'role' =>
+               'form')) }}
             <div class="modal-body">
-                {{ Form::open(array('route' => 'bookmaker.update', 'method' => 'put', 'id' => 'bookmakerform-edit', 'role' =>
-                'form')) }}
-
-                <input type="hidden" id="idBookmakerEditInput" name="idBookmakerEditInput"/>
-                <input type="hidden" id="idAccountEditInput" name="idAccountEditInput">
-                <div id="nameAccountEditContainer" class="form-group has-feedback">
-                    <label for="nameAccountEditInput">n° ou nom compte</label>
-                    <input type="text" class="form-control" id="nameAccountEditInput" name="nameAccountEditInput" placeholder="n° ou nom compte">
+                <div class="row">
+                    <input type="hidden" id="idBookmakerEditInput" name="idBookmakerEditInput"/>
+                    <input type="hidden" id="idAccountEditInput" name="idAccountEditInput">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div id="account_container" class="form-group">
+                            <label class="control-label" for="name_account">N° ou nom de compte</label>
+                            <input name="name_account" type="text"
+                                   class="form-control">
+                            <span id="account_error" class="help-block"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" data-toggle="modal" data-target="#bookmakerEditModal" class="btn btn-default">Annuler</button>
-                <button type="submit" class="btn green">Mettre à jour</button>
-                {{ Form::close() }}
+                <button type="submit" class="btn green">Modifier</button>
+
             </div>
+            {{ Form::close() }}
         </div>
     </div>
 </div>

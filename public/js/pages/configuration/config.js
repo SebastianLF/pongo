@@ -1,12 +1,9 @@
 
 
-//bookmaker
-editBookmakerButton();
-updateBookmaker();
-
+// lancement des differents gestionnaires.
 gestionTipsters();
-loadBookmakers();
-loadTransactions();
+gestionBookmakers();
+gestionTransactions();
 
 
 

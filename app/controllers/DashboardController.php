@@ -139,7 +139,7 @@
 
 					break;
 				case 'paristermine':
-					$parisTermine = $this->currentUser->termineParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport', 'selections.typePari', 'tipster', 'compte.bookmaker')->orderBy('created_at','DESC')->get();
+					$parisTermine = $this->currentUser->termineParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport','compte.bookmaker')->with(array('tipster' => function ($query){ $query->withThrashed(); }))->orderBy('created_at','DESC')->get();
 					$countParisTermine = $parisTermine->count();
 					$view = View::make('bet.paristermine', array('paristermine' => $parisTermine, 'types_resultat' => $this->types_resultat, 'count_paris_termine' => $countParisTermine));
 					return $view;

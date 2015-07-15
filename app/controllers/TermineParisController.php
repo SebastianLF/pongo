@@ -238,25 +238,29 @@
 		{
 			$pari = $this->currentUser->termineParis()->where('id', $id)->first();
 
-			if(!$pari->cashouted){
+			if(!is_null($pari)){
+				if(!$pari->cashouted){
 
-				if ($pari->followtype == 'n') {
-					$compte = $pari->compte()->first();
-					$compte->bankroll_actuelle += $pari->profit_devise;
-					$compte->save();
-					$pari->delete();
-					return Response::json(array(
-						'etat' => 1,
-						'msg' => 'Pari Supprimé'
-					));
-				} else {
-					$pari->delete();
-					return Response::json(array(
-						'etat' => 1,
-						'msg' => 'Pari Supprimé'
-					));
+					if ($pari->followtype == 'n') {
+						$compte = $pari->compte()->first();
+						$compte->bankroll_actuelle += $pari->profit_devise;
+						$compte->save();
+						$pari->delete();
+						return Response::json(array(
+							'etat' => 1,
+							'msg' => 'Pari Supprimé'
+						));
+					} else {
+						$pari->delete();
+						return Response::json(array(
+							'etat' => 1,
+							'msg' => 'Pari Supprimé'
+						));
+					}
 				}
 			}
+
+
 		}
 
 		public function recaps()

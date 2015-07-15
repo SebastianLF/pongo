@@ -14,7 +14,7 @@
         <td class="hidden">{{$bookmaker->id}}</td>
         <td class="idbookmakertd hidden id">{{$bookmaker->pivot->id}}</td>
         <td class="name">{{$bookmaker->pivot->nom_compte}}</td>
-        <td><img src="{{isset($bookmaker->logo) ? asset('img/logos/bookmakers').'/'.$bookmaker->logo : $bookmaker->nom}}" width="100px"></td>
+        <td class="bold theme-font"><img src="{{isset($bookmaker->logo) ? asset('img/logos/bookmakers').'/'.$bookmaker->logo : $bookmaker->nom}}" width="100px"></td>
         <td class="bold theme-font"><span class="bankrollamountconfig">{{$bookmaker->pivot->bankroll_actuelle}} {{$user->devise}}</span>
         </td>
         <td>

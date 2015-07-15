@@ -4,34 +4,44 @@
             <div class="modal-header">
                 <h4 class="modal-title">Nouveau compte de bookmaker</h4>
             </div>
-            <div class="modal-body">
-                {{ Form::open(array('route' => 'bookmaker.store', 'method' => 'post', 'id' =>
+            {{ Form::open(array('route' => 'bookmaker.store', 'method' => 'post', 'id' =>
                 'bookmakerform-add', 'class' => '', 'role' => 'form')) }}
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div id="bookmaker_container" class="form-group">
+                            <label class="control-label" for="name_bookmaker">Bookmaker</label>
 
-
-                            <div id="bookmakerListOnBookmakerContainer" class="form-group has-feedback">
-                                <label for="booknameselect">bookmaker</label>
-                                <small class="text-danger"></small>
-                                <select id="booknameselect" name="booknameselect" class="form-control">
-                                    @foreach($allbookmakers as $one)
+                            <select name="name_bookmaker" class="form-control">
+                                <option value=""></option>
+                                @foreach($allbookmakers as $one)
                                     <option value="{{$one->id}}">{{$one->nom}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div id="accountNameBookmakerContainer" class="form-group has-feedback">
-                                <label for="accountnameinput" class="control-label">n° ou nom compte :</label>
-                                <input id="accountnameinput" type="text" name="accountnameinput" class="form-control" >
-                            </div>
-                            <div id="bankrollAmountBookmakerContainer">
-                                <label for="bankrollamountinput" class="control-label">solde actuel:</label>
-                                <input id="bankrollamountinput" name="bankrollamountinput" class="form-control" placeholder="0.00" >
-                            </div>
+                                @endforeach
+                            </select>
+                            <span id="bookmaker_error" class="help-block"></span>
+                        </div>
 
+                        <div id="account_container" class="form-group">
+                            <label class="control-label" for="name_account">N° ou nom de compte</label>
+                            <input name="name_account" type="text"
+                                   class="form-control">
+                            <span id="account_error" class="help-block"></span>
+                        </div>
 
+                        <div id="amount_container" class="form-group">
+                            <label class="control-label" for="amount_bookmaker">Montant actuel (en {{$user->devise}})</label>
+                            <input name="amount_bookmaker" type="text"
+                                   class="form-control">
+                            <span id="amount_error" class="help-block"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" data-toggle="modal" data-target="#bookmakerAddModal" class="btn btn-default">Annuler</button>
-                <button type="submit" class="btn green">Mettre à jour</button>
+                <button type="button" data-toggle="modal" data-target="#bookmakerAddModal" class="btn btn-default">
+                    Annuler
+                </button>
+                <button type="submit" class="btn green">Ajouter</button>
                 {{ Form::close() }}
             </div>
         </div>

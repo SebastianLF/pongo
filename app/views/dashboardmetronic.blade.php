@@ -598,7 +598,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="{{asset('js/dashboard/dashboard.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/ajax/functions.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/loadParisEnCours.js')}}" type="text/javascript"></script>
-<script src="{{asset('js/loadBookmakers.js')}}" type="text/javascript"></script>
+<script src="{{asset(gestgestionBookmakers.js}}" type="text/javascript"></script>
 <script src="{{asset('js/loadParisLongTerme.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/typeaheads.js')}}" type="text/javascript"></script>
 

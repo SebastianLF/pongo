@@ -1,5 +1,6 @@
 <?php
 
+
 	class BookmakerController extends BaseController
 	{
 
@@ -7,7 +8,8 @@
 		public function __construct()
 		{
 			parent::__construct();
-			$this->beforeFilter('auth', array('only' => array('store', 'edit', 'update', 'destroy')));
+			$this->beforeFilter('auth');
+			$this->beforeFilter('csrf', array('only' => array('store', 'update', 'destroy')));
 
 		}
 
@@ -40,61 +42,36 @@
 		 */
 		public function store()
 		{
-
-			//$typeaccount = Input::get('typeAccountInput');
-
-			Clockwork::info(Input::get('bankrollamountinput'));
-
-			// recherche de l'id du bookmaker.
-			$bookname_id = Input::get('booknameselect');
-			$bookmaker = DB::table('bookmakers')->where('id', $bookname_id)->first();
-
-
 			$regles = array(
-				'booknameselect' => 'required|exists:bookmakers,id',
-				'accountnameinput' => 'required|unique:bookmaker_user,nom_compte,null,id,bookmaker_id,' . $bookmaker->id . ',user_id,' . $this->currentUser->id,
-				'bankrollamountinput' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+				'name_bookmaker' => 'required|exists:bookmakers,id',
+				'name_account' => 'required|max:20|unique:bookmaker_user,nom_compte,NULL,id,user_id,' . Auth::user()->id,
+				'amount_bookmaker' => 'required|decimal>0',
 			);
 			$messages = array(
-				'booknameselect.required' => 'Vous devez specifier un bookmaker',
-				'booknameselect.exists' => "ce bookmaker n'existe pas",
-				'accountnameinput.required' => 'Vous devez specifier un nom ou un n° de compte',
-				'accountnameinput.unique' => 'Ce compte existe deja pour ce bookmaker',
-				'bankrollamountinput.required' => "Vous devez specifier une bankroll actuelle",
-				'bankrollamountinput.regex' => "la bankroll actuelle doit etre un entier ou un nombre decimal de type 0.00",
+				'name_bookmaker.required' => 'Le bookmaker doit être obligatoire.',
+				'name_bookmaker.exists' => "Ce bookmaker n'existe pas.",
+				'name_account.required' => 'Vous devez specifier un nom ou un n° de compte.',
+				'name_account.max' => 'Taille maximum : 20 caractères.',
+				'name_account.unique' => 'Ce nom ou n° de compte existe déja ou à deja existé.',
+				'amount_bookmaker.required' => "Vous devez entrer un montant actuel. ",
 			);
-
-			/*Clockwork::info($typeaccount);
-			if($typeaccount == 'new'){
-				Clockwork::info($validator = Validator::make(Input::except(array('bankrollamountinput')), $regles, $messages));
-			}else{
-				Clockwork::info($validator = Validator::make(Input::except(array('bankrollinvestedinput','bonusinput')), $regles, $messages));
-			}*/
 
 			$validator = Validator::make(Input::all(), $regles, $messages);
 
 			if ($validator->fails()) {
 				return Response::json(array(
-					'success' => false,
+					'state' => false,
 					'errors' => $validator->getMessageBag()->toArray()
 				));
 			} else {
-
-				$accountname = Input::get('accountnameinput');
-				$bankrollamount = Input::get('bankrollamountinput');
-
-				/*$bankrollinvested = Input::get('bankrollinvestedinput');
-				$bonus = Input::get('bonusinput');*/
-
-				/*if($typeaccount == 'new'){$bankrollamount=$bankrollinvested+$bonus;}
-				else{$bankrollinvested=$bankrollamount;$bonus=0;}*/
+				$book = Bookmaker::find(Input::get('name_bookmaker'));
 
 				// ajout dans la table pivot.
-				$this->currentUser->bookmakers()->attach($bookmaker->id, array('nom_compte' => $accountname, 'bankroll_actuelle' => $bankrollamount));
+				Auth::user()->bookmakers()->attach($book->id, array('nom_compte' => Input::get('name_account'), 'bankroll_actuelle' => Input::get('amount_bookmaker')));
 
 				return Response::json(
 					array(
-						'success' => true
+						'state' => true
 					)
 				);
 			}
@@ -122,7 +99,7 @@
 		public function edit($id)
 		{
 			$allbookmakers = $this->showBookmakers();
-			$bookmaker = $this->currentUser->bookmakers()->where('bookmaker_user.id', '=', $id)->first();
+			$bookmaker = Auth::user()->bookmakers()->where('bookmaker_user.id', '=', $id)->first();
 			return View::make('bookmakers.bookmakeredit', array('bookmaker' => $bookmaker, 'allbookmakers' => $allbookmakers));
 		}
 
@@ -135,31 +112,32 @@
 		 */
 		public function update($id)
 		{
-			$bookmakerid = Input::get('idBookmakerEditInput');
-
 			$regles = array(
-				'nameAccountEditInput' => 'required|unique:bookmaker_user,nom_compte,' . $id . ',id,user_id,' . $this->currentUser . ',bookmaker_id,' . $bookmakerid,
+				'idAccountEditInput' => 'required|exists:bookmaker_user,id,user_id,' . Auth::user()->id,
+				'name_account' => 'required|unique:bookmaker_user,nom_compte,' . $id . ',id,user_id,' . Auth::user()->id,
 			);
 
 			$messages = array(
-				'nameAccountEditInput.required' => 'Vous devez specifier un nom ou un n° de compte',
-				'nameAccountEditInput.unique' => 'Ce nom ou n° de compte existe deja',
+				'name_account.required' => 'Vous devez entrer un nom ou un n° de compte.',
+				'name_account.unique' => 'Ce nom ou n° de compte existe déja ou à deja existé.',
+				'idAccountEditInput.required' => 'L\'id du compte n\'est pas renseigné.',
+				'idAccountEditInput.exists' => 'Ce compte ne vous appartient pas.',
 			);
 
 			$validator = Validator::make(Input::all(), $regles, $messages);
 			if ($validator->fails()) {
 				return Response::json(array(
-					'success' => false,
+					'state' => false,
 					'errors' => $validator->getMessageBag()->toArray()
 				));
 			} else {
 
-				$nom_compte = Input::get('nameAccountEditInput');
-				DB::table('bookmaker_user')->where('id', $id)->update(array('nom_compte' => $nom_compte));
-
+				$account = Auth::user()->comptes()->where('id', Input::get('idAccountEditInput'))->first();
+				$account->nom_compte = Input::get('name_account');
+				$account->save();
 
 				return Response::json(array(
-					'success' => true
+					'state' => true
 				));
 			}
 		}
@@ -173,19 +151,26 @@
 		 */
 		public function destroy($id)
 		{
-			$compte = BookmakerUser::find($id);
-			if ($compte->enCoursParis()->count() >= 1) {
+			$compte = Auth::user()->comptes()->where('id', $id)->first();
+			if (!is_null($compte)) {
+				if ($compte->enCoursParis()->count() >= 1) {
+					return Response::json(array(
+						'state' => 0,
+						'compte' => $compte
+					));
+				} else {
+					$compte->delete();
+					return Response::json(array(
+						'state' => 1,
+						'compte' => $compte
+					));
+				}
+			}else{
 				return Response::json(array(
-					'success' => 0,
-					'compte' => $compte
-				));
-			} else {
-				$compte->delete();
-				return Response::json(array(
-					'success' => 1,
-					'compte' => $compte
+					'state' => 0,
 				));
 			}
+
 		}
 
 		public function showAllBookmakers()
@@ -197,16 +182,16 @@
 		public function getMyBookmakers()
 		{
 			$nom = Input::get('q');
-			$allbookmakers = $this->currentUser->bookmakers()->whereNull('deleted_at')->where('nom', 'LIKE', '%' . $nom . '%')->groupBy('nom')->get(array('bookmakers.id', 'bookmakers.nom AS text'));
+			$allbookmakers = Auth::user()->bookmakers()->whereNull('deleted_at')->where('nom', 'LIKE', '%' . $nom . '%')->groupBy('nom')->get(array('bookmakers.id', 'bookmakers.nom AS text'));
 			return Response::json($allbookmakers);
 		}
 
 		public function showComptes()
 		{
 			$bookmakers = Bookmaker::whereHas('comptes', function ($query) {
-				$query->where('user_id', $this->currentUser->id);
+				$query->where('user_id', Auth::user()->id);
 			})->with(array('comptes' => function ($query) {
-				$query->where('bookmaker_user.user_id', $this->currentUser->id);
+				$query->where('bookmaker_user.user_id', Auth::user()->id);
 			}))->get();
 			$view = View::make('dashboard.bookmakers', array('bookmakers' => $bookmakers));
 			return $view;
@@ -215,7 +200,7 @@
 		public function showMyAccounts()
 		{
 			$book_id = Input::get('book_id');
-			$accounts = $this->currentUser->bookmakers()->where('bookmaker_user.bookmaker_id', '=', $book_id)->whereNull('deleted_at')->get(array('bookmaker_user.id', 'bookmaker_user.nom_compte AS text'));
+			$accounts = Auth::user()->bookmakers()->where('bookmaker_user.bookmaker_id', '=', $book_id)->whereNull('deleted_at')->get(array('bookmaker_user.id', 'bookmaker_user.nom_compte AS text'));
 			return Response::json($accounts);
 
 		}

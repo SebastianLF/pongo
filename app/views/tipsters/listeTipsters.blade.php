@@ -1,12 +1,14 @@
-
-        <div class="table-scrollable table-scrollable-borderless">
+@if($tipsters->count() == 0)
+    <div class="text-center">Aucun tipster</div>
+@else
+        <div class="table-scrollable table-scrollable-borderless" w>
             <table id="tipsterstable" class="table table-hover table-light">
                 <thead>
                 <tr class="uppercase">
-                    <th colspan="">Nom</th>
+                    <th width="25%" colspan="">Nom</th>
                     <th>Suivi</th>
-                    <th>Montant par indice</th>
-
+                    <th width="25%">Montant par indice</th>
+                    <th width="25%"></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -46,6 +48,6 @@
             </table>
         </div>
         {{$tipsters->links()}}
-
+@endif
 
 

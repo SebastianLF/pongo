@@ -1,6 +1,8 @@
 <?php
 
+
 class TermineParis extends Eloquent {
+
 	protected $guarded = array('id');
 
 	public static $rules = array();
@@ -24,6 +26,10 @@ class TermineParis extends Eloquent {
 	}
 
 	public function tipster(){
+		return $this->belongsTo('Tipster');
+	}
+
+	public function tipsterWithTrashed(){
 		return $this->belongsTo('Tipster');
 	}
 }

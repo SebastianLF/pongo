@@ -80,7 +80,6 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="{{asset('metronic_v3.8.1/theme/assets/admin/pages/scripts/form-samples.js')}}"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/admin/pages/scripts/components-dropdowns.js')}}"></script>
     <script src="{{asset('js/getPaginationSelectedPage.js')}}" type="text/javascript"></script>
-    <script src="{{asset('js/paginationOnclick.js')}}"></script>
     <script src="{{asset('js/pages/getBookmakersForSelection.js')}}" type="text/javascript"></script>
 
     <script>

@@ -78,12 +78,7 @@ $(function () {
                     loadTransactions();
                     loadBookmakers();
                     toastr.success('transaction crée avec succès', 'Transaction');
-
                 }
-
-            },
-            error: function () {
-
             }
         });
 

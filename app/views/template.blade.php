@@ -59,13 +59,13 @@
 <script src="{{asset('js/tipsterDelete.js')}}" type="text/javascript"></script>
 
 <!-- bookmaker -->
-<script src="{{asset('js/loadBookmakers.js')}}" type="text/javascript"></script>
+<script src="{{asset(gestionBookmakers.jsjs')}}" type="text/javascript"></script>
 <script src="{{asset('js/bookmakerAdd.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/bookmakerUpdate.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/bookmakerDelete.js')}}" type="text/javascript"></script>
 
 <!-- transaction -->
-<script src="{{asset('js/loadTransactions.js')}}" type="text/javascript"></script>
+<script src="{{asset(gestgestionTransactions.js}}" type="text/javascript"></script>
 <script src="{{asset('js/transactionAdd.js')}}" type="text/javascript"></script>
 
 
