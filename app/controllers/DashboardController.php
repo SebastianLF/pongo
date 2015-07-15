@@ -40,8 +40,8 @@
 				Clockwork::info(Input::get('devise'));
 				$devise_id = Input::get('devise');
 				$sigle = Devise::find($devise_id)->sigle;
-				$this->currentUser->devise = $sigle;
-				$this->currentUser->save();
+				Auth::user()->devise = $sigle;
+				Auth::user()->save();
 				return View::make('pages/dashboard');
 			}else{
 
@@ -51,7 +51,7 @@
 
 		public function getTipsters()
 		{
-			$tipsters = $this->currentUser->tipsters;
+			$tipsters = Auth::user()->tipsters;
 			return $tipsters;
 		}
 
@@ -64,25 +64,25 @@
 
 		public function showParisEnCours()
 		{
-			$parisencours = $this->currentUser->enCoursParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport', 'selections.market', 'tipster', 'compte.bookmaker')->where('pari_abcd', '0')->orderBy('numero_pari', 'desc')->paginate(8);
+			$parisencours = Auth::user()->enCoursParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport', 'selections.market', 'tipster', 'compte.bookmaker')->where('pari_abcd', '0')->orderBy('numero_pari', 'desc')->paginate(8);
 			return $parisencours;
 		}
 
 		public function showParisLongTerme()
 		{
-			$parislongterme = $this->currentUser->enCoursParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport', 'tipster', 'compte.bookmaker')->where('pari_long_terme', '1')->orderBy('numero_pari', 'desc')->paginate(8);
+			$parislongterme = Auth::user()->enCoursParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport', 'tipster', 'compte.bookmaker')->where('pari_long_terme', '1')->orderBy('numero_pari', 'desc')->paginate(8);
 			return $parislongterme;
 		}
 
 		public function showParisABCD()
 		{
-			$parislongterme = $this->currentUser->enCoursParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport', 'tipster', 'compte.bookmaker')->where('pari_abcd', '1')->orderBy('numero_pari', 'desc')->paginate(8);
+			$parislongterme = Auth::user()->enCoursParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport', 'tipster', 'compte.bookmaker')->where('pari_abcd', '1')->orderBy('numero_pari', 'desc')->paginate(8);
 			return $parislongterme;
 		}
 
 		public function showRecaps()
 		{
-			$recaps = $this->currentUser->termineParis()->select(DB::raw('YEAR(created_at) year, MONTH(created_at) month, tipster_id, followtype'))->with('tipster')->groupBy('year')->groupBy('month')->groupBy('tipster_id')->groupBy('followtype')->orderBy('year', 'desc')->orderBy('month', 'desc')->orderBy('followtype', 'desc')->get();
+			$recaps = Auth::user()->termineParis()->select(DB::raw('YEAR(created_at) year, MONTH(created_at) month, tipster_id, followtype'))->with('tipster')->groupBy('year')->groupBy('month')->groupBy('tipster_id')->groupBy('followtype')->orderBy('year', 'desc')->orderBy('month', 'desc')->orderBy('followtype', 'desc')->get();
 			$count = $recaps->count();
 			$view = View::make('recaps.recaps', array('recaps' => $recaps->toArray(), 'count' => $count ));
 			return $view;
@@ -91,7 +91,7 @@
 		public function getTotalProfit(){
 
 			// tous les paris terminés sauf les a blanc.
-			$paristermines = $this->currentUser->termineParis()->where('followtype', 'n')->get();
+			$paristermines = Auth::user()->termineParis()->where('followtype', 'n')->get();
 
 			$benefices = $paristermines->sum('montant_profit');
 			$capital = $paristermines->sum('mise_totale');
@@ -139,7 +139,7 @@
 
 					break;
 				case 'paristermine':
-					$parisTermine = $this->currentUser->termineParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport','compte.bookmaker')->with(array('tipster' => function ($query){ $query->withThrashed(); }))->orderBy('created_at','DESC')->get();
+					$parisTermine = Auth::user()->termineParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport','compte.bookmaker')->with(array('tipster' => function ($query){ $query->withThrashed(); }))->orderBy('created_at','DESC')->get();
 					$countParisTermine = $parisTermine->count();
 					$view = View::make('bet.paristermine', array('paristermine' => $parisTermine, 'types_resultat' => $this->types_resultat, 'count_paris_termine' => $countParisTermine));
 					return $view;

@@ -7,41 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/pages/configuration/bookmakers/gestionBookmakers.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/pages/configuration/transactions/gestionTransactions.js" />
-      <change type="DELETED" beforePath="C:\wamp\www\slfweb\app\views\includes\subview\config_scripts.blade.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\slfweb\app\views\includes\subview\dashboard_scripts.blade.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\slfweb\public\js\pages\configuration\bookmakers\bookmakerAdd.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\slfweb\public\js\pages\configuration\bookmakers\loadBookmakers.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\slfweb\public\js\pages\configuration\transactions\loadTransactions.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\slfweb\public\js\paginationOnclick.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/443eaec0b6984e351f3b6b570880b4bb" afterPath="$PROJECT_DIR$/app/storage/views/443eaec0b6984e351f3b6b570880b4bb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/50e133a057fbae87d4a6263c4d67de57" afterPath="$PROJECT_DIR$/app/storage/views/50e133a057fbae87d4a6263c4d67de57" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/BookmakerController.php" afterPath="$PROJECT_DIR$/app/controllers/BookmakerController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/DashboardController.php" afterPath="$PROJECT_DIR$/app/controllers/DashboardController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Selection.php" afterPath="$PROJECT_DIR$/app/models/Selection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/TermineParis.php" afterPath="$PROJECT_DIR$/app/models/TermineParis.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/TermineParisController.php" afterPath="$PROJECT_DIR$/app/controllers/TermineParisController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/b19a63c0c43c929fcfea4a7c60b24353" afterPath="$PROJECT_DIR$/app/storage/views/b19a63c0c43c929fcfea4a7c60b24353" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/configuration/bookmakers/bookmakerDelete.js" afterPath="$PROJECT_DIR$/public/js/pages/configuration/bookmakers/bookmakerDelete.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/configuration/bookmakers/bookmakerUpdate.js" afterPath="$PROJECT_DIR$/public/js/pages/configuration/bookmakers/bookmakerUpdate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bookmaker_add_modal.blade.php" afterPath="$PROJECT_DIR$/app/views/bookmaker_add_modal.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bookmaker_edit_modal.blade.php" afterPath="$PROJECT_DIR$/app/views/bookmaker_edit_modal.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bookmakers/bookmakers.blade.php" afterPath="$PROJECT_DIR$/app/views/bookmakers/bookmakers.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/storage/views/c7496473028311a7d29cf781c45cf3cb" afterPath="$PROJECT_DIR$/app/storage/views/c7496473028311a7d29cf781c45cf3cb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/js/config.js" afterPath="$PROJECT_DIR$/public/build/js/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/configuration/config.js" afterPath="$PROJECT_DIR$/public/js/pages/configuration/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coupon.sql" afterPath="$PROJECT_DIR$/coupon.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css" afterPath="$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dashboardmetronic.blade.php" afterPath="$PROJECT_DIR$/app/views/dashboardmetronic.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/default.blade.php" afterPath="$PROJECT_DIR$/app/views/layouts/default.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bookmakers/listeBookmakers.blade.php" afterPath="$PROJECT_DIR$/app/views/bookmakers/listeBookmakers.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tipsters/listeTipsters.blade.php" afterPath="$PROJECT_DIR$/app/views/tipsters/listeTipsters.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/template.blade.php" afterPath="$PROJECT_DIR$/app/views/template.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tipsters/tipsters.blade.php" afterPath="$PROJECT_DIR$/app/views/tipsters/tipsters.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/configuration/transactions/transactionAdd.js" afterPath="$PROJECT_DIR$/public/js/pages/configuration/transactions/transactionAdd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/transaction_add_modal.blade.php" afterPath="$PROJECT_DIR$/app/views/transaction_add_modal.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/transactions/transactions.blade.php" afterPath="$PROJECT_DIR$/app/views/transactions/transactions.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="betsmanage.iws" />
@@ -101,12 +67,52 @@
       <file leaf-file-name="transaction_add_modal.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/transaction_add_modal.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.695652" vertical-offset="0" max-vertical-offset="1320">
-              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+            <state vertical-scroll-proportion="-10.434783" vertical-offset="0" max-vertical-offset="1320">
+              <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
               <folding>
                 <marker date="1436943240688" expanded="true" signature="3907:4043" placeholder="..." />
                 <marker date="1436943240688" expanded="true" signature="3968:4042" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BookmakerController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/BookmakerController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="49.565216" vertical-offset="1305" max-vertical-offset="3195">
+              <caret line="11" column="19" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-44.347828" vertical-offset="0" max-vertical-offset="1200">
+              <caret line="68" column="5" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/AuthController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.375" vertical-offset="339" max-vertical-offset="1275">
+              <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DashboardController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.26087" vertical-offset="0" max-vertical-offset="2355">
+              <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -151,11 +157,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getBookmakersForSelection.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="getBookmakersForSelection.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/pages/getBookmakersForSelection.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="959">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -250,7 +256,6 @@
         <option value="$PROJECT_DIR$/app/views/bookmakers/listeBookmakers.blade.php" />
         <option value="$PROJECT_DIR$/app/views/bookmaker_add_modal.blade.php" />
         <option value="$PROJECT_DIR$/app/models/TermineParis.php" />
-        <option value="$PROJECT_DIR$/app/controllers/DashboardController.php" />
         <option value="$PROJECT_DIR$/app/views/bookmaker_edit_modal.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/BookmakerController.php" />
         <option value="$PROJECT_DIR$/coupon.sql" />
@@ -262,6 +267,7 @@
         <option value="$PROJECT_DIR$/app/views/transactions/transactions.blade.php" />
         <option value="$PROJECT_DIR$/public/js/pages/configuration/config.js" />
         <option value="$PROJECT_DIR$/public/js/pages/configuration/transactions/loadTransactions.js" />
+        <option value="$PROJECT_DIR$/app/controllers/DashboardController.php" />
       </list>
     </option>
   </component>
@@ -513,202 +519,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="configuration" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="configuration" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transactions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="configuration" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tipsters" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="configuration" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bookmakers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -727,51 +537,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transactions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bookmakers" />
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1390,7 +1156,13 @@
       <option name="project" value="LOCAL" />
       <updated>1436840829616</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="test avec php storm">
+      <created>1436945082595</created>
+      <option name="number" value="00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1436945082595</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1426,6 +1198,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25025433" sideWeight="0.50156575" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17828418" sideWeight="0.50119334" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928064" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928064" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18385416" sideWeight="0.2289767" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32816902" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24865592" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1436,7 +1209,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928064" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39977604" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
@@ -1468,13 +1240,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/loadParisLongTerme.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5219842" vertical-offset="1350" max-vertical-offset="2280">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/loadRecaps.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15219842" vertical-offset="0" max-vertical-offset="887">
@@ -1507,13 +1272,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="700" max-vertical-offset="2160">
           <caret line="59" column="34" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1764706" vertical-offset="0" max-vertical-offset="1200">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -1584,6 +1342,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5208333" vertical-offset="0" max-vertical-offset="864">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1598,6 +1357,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49041712" vertical-offset="540" max-vertical-offset="3945">
           <caret line="65" column="6" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1619,6 +1379,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.3287038" vertical-offset="2287" max-vertical-offset="4155">
           <caret line="229" column="0" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1636,6 +1397,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="887">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1674,6 +1436,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.04405286" vertical-offset="45" max-vertical-offset="885">
           <caret line="1" column="42" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1688,6 +1451,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1695,6 +1459,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.565218" vertical-offset="0" max-vertical-offset="615">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1709,13 +1474,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.39617082" vertical-offset="151" max-vertical-offset="855">
           <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6396396" vertical-offset="1689" max-vertical-offset="2355">
-          <caret line="141" column="197" selection-start-line="141" selection-start-column="197" selection-end-line="141" selection-end-column="197" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1723,6 +1482,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.70731705" vertical-offset="661" max-vertical-offset="1350">
           <caret line="75" column="494" selection-start-line="75" selection-start-column="494" selection-end-line="75" selection-end-column="494" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1730,6 +1490,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20119224" vertical-offset="0" max-vertical-offset="810">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1737,13 +1498,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.59530026" vertical-offset="1974" max-vertical-offset="2970">
           <caret line="162" column="24" selection-start-line="162" selection-start-column="24" selection-end-line="162" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/BookmakerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9520547" vertical-offset="1575" max-vertical-offset="3195">
-          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -1752,6 +1506,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5047106" vertical-offset="0" max-vertical-offset="743">
           <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1759,6 +1514,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18169583" vertical-offset="0" max-vertical-offset="743">
           <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1813,21 +1569,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/transaction_add_modal.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/js/pages/getBookmakersForSelection.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.695652" vertical-offset="0" max-vertical-offset="1320">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-          <folding>
-            <marker date="1436943240688" expanded="true" signature="3907:4043" placeholder="..." />
-            <marker date="1436943240688" expanded="true" signature="3968:4042" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/pages/configuration/tipsters/gestionTipsters.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="3750">
-          <caret line="223" column="0" selection-start-line="223" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1840,10 +1585,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/pages/getBookmakersForSelection.js">
+    <entry file="file://$PROJECT_DIR$/app/views/transaction_add_modal.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="704">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-10.434783" vertical-offset="0" max-vertical-offset="1320">
+          <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+          <folding>
+            <marker date="1436943240688" expanded="true" signature="3907:4043" placeholder="..." />
+            <marker date="1436943240688" expanded="true" signature="3968:4042" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.26087" vertical-offset="0" max-vertical-offset="2355">
+          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/pages/configuration/tipsters/gestionTipsters.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="3750">
+          <caret line="223" column="0" selection-start-line="223" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/BookmakerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="49.565216" vertical-offset="1305" max-vertical-offset="3195">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-44.347828" vertical-offset="0" max-vertical-offset="1200">
+          <caret line="68" column="5" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.375" vertical-offset="339" max-vertical-offset="1275">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
           <folding />
         </state>
       </provider>
