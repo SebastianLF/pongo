@@ -17,6 +17,7 @@
         <?php $mois = 30 ?>
         <?php $i = 0 ?>
         <?php $iterate = true; ?>
+
         <div class="panel-group accordion" id="accordion2">
         @while($i < $count)
             <?php $iterate = true; ?>
@@ -67,7 +68,7 @@
                                 <div class="panel-body">
                                     <ul>
                                         @while($annee == $recaps[$i]['year'] && $mois == $recaps[$i]['month'])
-                                        <li>{{$recaps[$i]['tipster']['name']}}</li>
+                                        <li class="">{{$recaps[$i]['tipster']['name']}} <span class="theme-font">{{round($recaps[$i]['total_devise_par_mois_tipster'],2)}} {{$user->devise}}</span></li>
                                             <?php $i++; ?>
                                         @if($i == $count)
                                             <?php break; ?>

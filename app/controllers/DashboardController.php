@@ -82,7 +82,7 @@
 
 		public function showRecaps()
 		{
-			$recaps = Auth::user()->termineParis()->select(DB::raw('YEAR(created_at) year, MONTH(created_at) month, tipster_id, followtype'))->with('tipster')->groupBy('year')->groupBy('month')->groupBy('tipster_id')->groupBy('followtype')->orderBy('year', 'desc')->orderBy('month', 'desc')->orderBy('followtype', 'desc')->get();
+			$recaps = Auth::user()->termineParis()->select(DB::raw('YEAR(created_at) year, MONTH(created_at) month, SUM(montant_profit) AS total_mois, tipster_id, followtype, SUM(montant_profit) AS total_devise_par_mois_tipster'))->with('tipster')->groupBy('year')->groupBy('month')->groupBy('tipster_id')->groupBy('followtype')->orderBy('year', 'desc')->orderBy('month', 'desc')->orderBy('followtype', 'desc')->get();
 			Clockwork::info($recaps);
 			$count = $recaps->count();
 			$view = View::make('recaps.recaps', array('recaps' => $recaps->toArray(), 'count' => $count ));
