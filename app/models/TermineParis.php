@@ -1,7 +1,9 @@
 <?php
 
 
+
 class TermineParis extends Eloquent {
+
 
 	protected $guarded = array('id');
 
@@ -22,11 +24,11 @@ class TermineParis extends Eloquent {
 	}
 
 	public function compte(){
-		return $this->belongsTo('BookmakerUser','bookmaker_user_id');
+		return $this->belongsTo('BookmakerUser','bookmaker_user_id')->withTrashed();
 	}
 
 	public function tipster(){
-		return $this->belongsTo('Tipster');
+		return $this->belongsTo('Tipster')->withTrashed();
 	}
 
 	public function tipsterWithTrashed(){

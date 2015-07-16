@@ -10,6 +10,7 @@
 			parent::__construct();
 			$this->beforeFilter('auth');
 			$this->beforeFilter('csrf', array('only' => array('store', 'update', 'destroy')));
+			$this->beforeFilter('ajax', array('only' => array('showComptes')));
 
 		}
 
@@ -182,7 +183,9 @@
 		public function getMyBookmakers()
 		{
 			$nom = Input::get('q');
-			$allbookmakers = Auth::user()->bookmakers()->whereNull('deleted_at')->where('nom', 'LIKE', '%' . $nom . '%')->groupBy('nom')->get(array('bookmakers.id', 'bookmakers.nom AS text'));
+			$allbookmakers = Auth::user()->bookmakers()->whereHas('comptes', function ($query) {
+				$query->where('user_id', Auth::user()->id);
+			})->where('nom', 'LIKE', '%' . $nom . '%')->groupBy('nom')->get(array('bookmakers.id', 'bookmakers.nom AS text'));
 			return Response::json($allbookmakers);
 		}
 

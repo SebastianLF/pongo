@@ -35,7 +35,7 @@
 	Route::filter('auth', function () {
 		if ($quest = Auth::guest()) {
 			if (Request::ajax()) {
-				Log::info('Connecté: '.$quest);
+				Log::info('Connecté: ' . $quest);
 				return Response::make('Unauthorized', 401);
 			} else {
 				return Redirect::guest('auth/login');
@@ -95,6 +95,21 @@
 	Route::filter('ajax', function () {
 		if (!Request::ajax()) App::abort(404);
 	});
+
+	Route::filter('devise_missing', function () {
+		if (Auth::user()->devise == 'aucun') {
+			return Redirect::to('welcome');
+		}
+	});
+
+	Route::filter('welcome_verification', function () {
+		if(Auth::check()){
+			if (Auth::user()->devise != 'aucun') {
+				return Redirect::to('dashboard');
+			}
+		}
+	});
+
 
 	/*Route::filter('aucune_devise', function () {
 		if (!Route::is('welcome') && !Route::is('auth/login')) {

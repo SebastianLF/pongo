@@ -17,8 +17,7 @@ class CreateBookmakerUserTable extends Migration {
 			$table->timestamps();
             $table->softDeletes();
 			$table->string('nom_compte');
-			$table->decimal('bankroll_totale',12,2)->default(0);
-			$table->decimal('bonus',12,2)->default(0);
+			$table->decimal('bonus')->default(0);
 			$table->decimal('bankroll_actuelle',12,2)->default(0);
 			$table->integer('bookmaker_id')->unsigned();
 			$table->integer('user_id')->unsigned();

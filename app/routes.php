@@ -1,29 +1,48 @@
 <?php
 
+	//login page
 	Route::get('/', function(){
 		return Redirect::to('auth/login');
 	});
+	Route::controller('password', 'RemindersController');
 
-	Route::controller('config', 'ConfigController');
-	Route::controller('stats', 'StatsController');
+	// welcome page
+	Route::get('welcome', 'DashboardController@welcome');
+	Route::post('devise', 'DashboardController@postDevise');
+
+	// dashboard page
 	Route::get('dashboard', 'DashboardController@showDashboard');
-
-// pour la recuperation du listing, en ajax, selon le type dans le lien, pour tipster,bookmaker ou transaction.
-	Route::get('pagination/ajax/{type}', 'ConfigController@itemTypeCheck')->where('type', 'tipsters|bookmakers|transactions');
-	Route::get('dashboard/ajax/{type}', 'DashboardController@itemTypeCheck')->where('type', 'parisencours|parislongterme|parisabcd|paristermine');
-
-
 	Route::post('encourspari/auto', 'EnCoursParisController@automatic_store');
 	Route::post('cashout', 'EnCoursParisController@cashOut');
 	Route::post('coupon', 'CouponController@postSelections');
+	Route::get('parisabcd', 'EnCoursParisController@getEnCoursABCD');
+	Route::get('lettreabcd', 'EnCoursParisController@getlettreABCD');
+	Route::get('recaps', 'DashboardController@showRecaps');
+
+	//config page
+	Route::controller('config', 'ConfigController');
+
+	//stats page
+	Route::controller('stats', 'StatsController');
+
+
+
+
+
+// pour la recuperation du listing, en ajax, selon le type dans le lien, pour tipster,bookmaker ou transaction.
+	Route::get('pagination/ajax/{type}', 'ConfigController@itemTypeCheck')->where('type', 'tipsters|bookmakers');
+	Route::get('dashboard/ajax/{type}', 'DashboardController@itemTypeCheck')->where('type', 'parisencours|parislongterme|parisabcd|paristermine');
+
+
+
+
 	Route::get('comptes', 'BookmakerController@showComptes');
 	Route::get('bookmakers', 'BookmakerController@getMyBookmakers');
 	Route::get('allbookmakers', 'BookmakerController@showAllBookmakers');
-	Route::get('parisabcd', 'EnCoursParisController@getEnCoursABCD');
-	Route::get('lettreabcd', 'EnCoursParisController@getlettreABCD');
+
 	Route::controller('auth', 'AuthController');
-	Route::controller('password', 'RemindersController');
-	Route::get('recaps', 'DashboardController@showRecaps');
+
+
 	Route::resource('abcdparis', 'ABCDParisController');
 	Route::resource('mtmoistipster', 'MtMoisTipsterController');
 	Route::resource('preferences', 'PreferenceController');
@@ -34,7 +53,6 @@
 	Route::resource('encourspari', 'EnCoursParisController');
 	Route::resource('historique', 'TermineParisController');
 	Route::resource('coupon', 'CouponController');
-
 
 
 	Route::get('account', 'AccountController@showIndex');
@@ -64,11 +82,4 @@
 	Route::get('scopes', 'AjaxController@getScopes');
 	Route::get('totalprofit', 'DashboardController@getTotalProfit');
 
-
-	Route::group(array('before' => 'auth'), function()
-	{
-		Route::get('devise', 'DashboardController@getDevise');
-		Route::post('devise', 'DashboardController@postDevise');
-		Route::get('welcome', 'DashboardController@welcome');
-	});
 

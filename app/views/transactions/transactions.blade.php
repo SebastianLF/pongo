@@ -13,8 +13,7 @@
                 <div class="portlet-body">
                     <div class="note note-warning">
                         <p>
-                            Vous pouvez utilisez les transactions pour reporter les gains ou pertes d'un pari que
-                            vous n'avez pas la possibilité d'ajouter sur dopedrop.
+                            En attendant le formulaire d'ajout manuel, veuillez utiliser les transactions pour ajouter les gains ou pertes d'un pari qui n'est pas disponible.
                         </p>
                     </div>
                     <button id="transactionAddButton" type="button" class="btn yellow-crusta" data-toggle="modal"

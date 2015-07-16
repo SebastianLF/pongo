@@ -36,16 +36,7 @@
 
 		public function showTransactions()
 		{
-			$transactions = DB::table('transactions')
-				->join('bookmaker_user', 'transactions.bookmaker_user_id', '=', 'bookmaker_user.id')
-				->join('users', 'bookmaker_user.user_id', '=', 'users.id')
-				->join('bookmakers', 'bookmaker_user.bookmaker_id', '=', 'bookmakers.id')
-				->where('users.id', '=', $this->currentUser->id)
-				->orderBy('transactions.created_at', 'desc')
-				->select('transactions.created_at', 'bookmakers.logo', 'bookmakers.nom' , 'bookmaker_user.nom_compte', 'transactions.type', 'transactions.montant', 'transactions.description')
-				->paginate(8);
-			Clockwork::info($transactions);
-			return $transactions;
+
 		}
 
 		/* afficher les comptes bookmaker dans la liste deroulante pour les transactions */
@@ -63,7 +54,7 @@
 		{
 			switch ($type) {
 				case 'tipsters':
-					$tipsters = User::find($this->currentUser->id)->tipsters()->orderBy('created_at', 'desc')->paginate(5);
+					$tipsters = Auth::user()->tipsters()->orderBy('created_at', 'desc')->paginate(5);
 					$view = View::make('tipsters.listeTipsters', array('tipsters' => $tipsters ));
 					return $view;
 					break;
@@ -71,12 +62,6 @@
 				case 'bookmakers':
 					$bookmakers = $this->showBookmakers();
 					$view = View::make('bookmakers.listeBookmakers', array('bookmakers' => $bookmakers));
-					return $view;
-					break;
-
-				case 'transactions':
-					$transactions = $this->showTransactions();
-					$view = View::make('transactions.listeTransactions', array('transactions' => $transactions));
 					return $view;
 					break;
 

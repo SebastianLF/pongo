@@ -7,8 +7,8 @@
 		{
 			parent::__construct();
 			$this->beforeFilter('auth');
-			$dt = Carbon::now();
-
+			$this->beforeFilter('csrf', array('only' => array('store')));
+			$this->beforeFilter('ajax', array('only' => array('index', 'store')));
 		}
 
 
@@ -19,7 +19,18 @@
 		 */
 		public function index()
 		{
-			//
+			$transactions = Auth::user()->transactions()->with(array('compte', 'compte.bookmaker'))->orderBy('created_at', 'DESC')->paginate(5);
+			/*$transactions = DB::table('transactions')
+				->join('bookmaker_user', 'transactions.bookmaker_user_id', '=', 'bookmaker_user.id')
+				->join('users', 'bookmaker_user.user_id', '=', 'users.id')
+				->join('bookmakers', 'bookmaker_user.bookmaker_id', '=', 'bookmakers.id')
+				->where('users.id', '=', Auth::user()->id)
+				->orderBy('transactions.created_at', 'desc')
+				->select('transactions.created_at', 'bookmakers.logo', 'bookmakers.nom' , 'bookmaker_user.nom_compte', 'transactions.type', 'transactions.montant', 'transactions.description')
+				->paginate(5);*/
+			Clockwork::info($transactions);
+			$view = View::make('transactions.listeTransactions', array('transactions' => $transactions));
+			return $view;
 		}
 
 
@@ -42,21 +53,21 @@
 		public function store()
 		{
 			$regles = array(
-				'amounttransinput' => 'required|regex:/^\d+(\.\d{1,2})?$/',
-				'typetransinput' => 'in:depot,retrait,bonus',
-				'booknametransselect' => 'required|exists:bookmakers,id',
-				'accountnametransselect' => 'required|exists:bookmaker_user,id,user_id,' . $this->currentUserId,
-				'describetranstext' => 'max:255'
+				'type' => 'required|in:d,r,b',
+				'book' => 'required|exists:bookmakers,id',
+				'account' => 'required|exists:bookmaker_user,id,user_id,' . Auth::user()->id,
+				'amount' => 'required|decimal>0',
+				'description' => 'sometimes|max:50'
 			);
 			$messages = array(
-				'amounttransinput.required' => 'Vous devez specifier un montant',
-				'amounttransinput.regex' => 'le type du montant n\'est pas bon',
-				'typetransinput.in' => 'Ce type de transaction n\'existe pas',
-				'booknametransselect.required' => 'Vous devez specifier un bookmaker',
-				'booknametransselect.exists' => 'Ce bookmaker n\'existe pas',
-				'accountnametransselect.required' => 'Un compte doit etre selectionné',
-				'accountnametransselect.exists' => 'Ce compte n\'existe pas',
-				'describetranstext.max' => 'Maximum : 255 caractéres',
+				'type.required' => 'Un type de transaction est obligatoire',
+				'type.in' => 'Ce type de transaction n\'existe pas',
+				'book.required' => 'Vous devez specifier un bookmaker',
+				'book.exists' => 'Ce bookmaker n\'existe pas',
+				'account.required' => 'Un compte doit etre selectionné',
+				'account.exists' => 'Ce compte n\'existe pas',
+				'amount.required' => 'Vous devez specifier un montant',
+				'description.max' => 'Maximum : 50 caractères',
 			);
 
 
@@ -64,92 +75,73 @@
 			$validator = Validator::make(Input::all(), $regles, $messages);
 			if ($validator->fails()) {
 				return Response::json(array(
-					'success' => false,
+					'state' => false,
 					'errors' => $validator->getMessageBag()->toArray()
 				));
 			} else {
 				// mise en variable des differentes informations.
-				$type = Input::get('typetransinput');
-				$amount = Input::get('amounttransinput');
-				$describe = Input::get('describetranstext');
-				// id du compte en question.
-				$accountid = Input::get('accountnametransselect');
-				// recherche du compte correspondant a la requete.
-				$compte = BookmakerUser::find($accountid);
+				$type = Input::get('type');
+				$book_id = Input::get('book');
+				$account_id = Input::get('account');
+				$amount = Input::get('amount');
+				$description = Input::get('description');
 
+				$compte = Auth::user()->comptes()->where('id', $account_id)->first();
 
-				// recherche de la bankroll actuelle du compte en question.
-				if (Input::get('booknametransselect')) {
-					$amountaccount = DB::table('bookmaker_user')->where('id', '=', $accountid)->first()->bankroll_actuelle;
-				}
-				if ($type == 'retrait') {
+				if($type == 'd'){
+
+					// insertion d'une nouvelle transaction.
+					$transaction = new Transaction(array('type' => $type, 'montant' => $amount, 'description' => $description));
+					$compte->transactions()->save($transaction);
+
+					// mise a jour du montant du compte.
+					$compte->bankroll_actuelle += $amount;
+					$compte->save();
+
+					return Response::json(array(
+						'state' => true,
+					));
+
+				}elseif($type == 'r'){
 
 					// si le retrait est superieur au montant actuelle du compte.
-					if ($amount <= $amountaccount) {
+					if ($amount <= $compte->bankroll_actuelle) {
 
 						// modification du montant actuelle du compte.
-						$newamount = $amountaccount - $amount;
-						$compte->bankroll_actuelle = $newamount;
+						$compte->bankroll_actuelle -= $amount;
 						$compte->save();
 
 						// insertion d'une nouvelle transaction.
-						$transaction = new Transaction(array('type' => $type, 'montant' => $amount, 'description' => $describe));
+						$transaction = new Transaction(array('type' => $type, 'montant' => $amount, 'description' => $description));
 						$compte->transactions()->save($transaction);
 
 						return Response::json(array(
-							'success' => true,
+							'state' => true,
 						));
-					} else {
+					} else{
 
 						// retour de l'erreur pour la requete en ajax.
-						$error = array('retraitNonDispo' => 'le retrait est superieur au montant actuelle du compte.');
+						$error = array('amount' => 'le montant du retrait est supérieur au montant actuelle du compte.');
 
 						// retour.
 						return Response::json(array(
-							'success' => false,
+							'state' => false,
 							'errors' => $error,
 						));
 					}
-				} else if ($type == 'depot') {
-
-
-					// ajout à la bankroll du compte.
-					$newamount = $amountaccount + $amount;
-					DB::table('bookmaker_user')
-						->where('id', $accountid)
-						->update(array('bankroll_actuelle' => $newamount));
+				}elseif($type == 'b'){
 
 					// insertion d'une nouvelle transaction.
-					$transaction = new Transaction(array('type' => $type, 'montant' => $amount, 'description' => $describe));
+					$transaction = new Transaction(array('type' => $type, 'montant' => $amount, 'description' => $description));
 					$compte->transactions()->save($transaction);
 
-					// retour.
+					// modification du montant actuelle du compte.
+					$compte->bankroll_actuelle += $amount;
+					$compte->bonus += $amount;
+					$compte->save();
+
 					return Response::json(array(
-						'success' => true,
-					));
-
-				} else if ($type == 'bonus') {
-
-					// insertion d'une nouvelle transaction.
-					$transaction = new Transaction(array('type' => $type, 'montant' => $amount, 'description' => $describe));
-					$compte->transactions()->save($transaction);
-
-					// ajout à la bankroll du compte
-					// recherche du montant bonus actuelle du compte.
-					$bonusaccount = DB::table('bookmaker_user')->where('id', '=', $accountid)->first()->bonus;
-					// calcul de la nouvelle bankroll actuelle.
-					$newamount = $amountaccount + $amount;
-					// calcul du nouveau bonus total du compte.
-					$bonus = $amount + $bonusaccount;
-
-					// mise a jour du compte avec les nouvelles données.
-					DB::table('bookmaker_user')
-						->where('id', $accountid)
-						->update(array('bankroll_actuelle' => $newamount, 'bonus' => $bonus));
-
-					// retour.
-					return Response::json(array(
-						'success' => true,
+						'state' => true,
 					));
 				}
 			}
@@ -202,6 +194,8 @@
 		{
 			//
 		}
+
+
 
 
 	}

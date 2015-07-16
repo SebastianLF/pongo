@@ -9,7 +9,7 @@ function getBookmakersForSelection(bookmakersSelect, accountsSelect) {
         dataType: 'json',
         success: function (json) {
             $.each(json, function (index, value) {
-                books.append('<option value="' + value.id + '">' + value.nom + '</option>');
+                books.append('<option value="' + value.id + '">' + value.text + '</option>');
             });
         }
     });

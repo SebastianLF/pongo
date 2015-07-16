@@ -7,10 +7,13 @@
 
 		protected $types_resultat = [1 => 'Gagné', 2 => 'Perdu', 3 => '1/2 Gagné', 4 => '1/2 Perdu', 5 => 'Remboursé'];
 
+
 		public function __construct()
 		{
 			parent::__construct();
 			$this->beforeFilter('auth');
+			$this->beforeFilter('devise_missing', array('only' => array('showDashboard')));
+			$this->beforeFilter('welcome_verification', array('only' => array('welcome')));
 			$this->beforeFilter('csrf', ['on' => array('postDevise')]);
 		}
 
@@ -33,16 +36,13 @@
 				'devise' => 'required|exists:devises,id'
 			);
 
-
 			$validator = Validator::make(Input::all(), $rules);
 
 			if($validator->passes()){
-				Clockwork::info(Input::get('devise'));
-				$devise_id = Input::get('devise');
-				$sigle = Devise::find($devise_id)->sigle;
+				$sigle = Devise::find(Input::get('devise'))->sigle;
 				Auth::user()->devise = $sigle;
 				Auth::user()->save();
-				return View::make('pages/dashboard');
+				return Redirect::to('dashboard');
 			}else{
 
 				return Redirect::back()->withErrors($validator);
@@ -83,6 +83,7 @@
 		public function showRecaps()
 		{
 			$recaps = Auth::user()->termineParis()->select(DB::raw('YEAR(created_at) year, MONTH(created_at) month, tipster_id, followtype'))->with('tipster')->groupBy('year')->groupBy('month')->groupBy('tipster_id')->groupBy('followtype')->orderBy('year', 'desc')->orderBy('month', 'desc')->orderBy('followtype', 'desc')->get();
+			Clockwork::info($recaps);
 			$count = $recaps->count();
 			$view = View::make('recaps.recaps', array('recaps' => $recaps->toArray(), 'count' => $count ));
 			return $view;
@@ -139,7 +140,8 @@
 
 					break;
 				case 'paristermine':
-					$parisTermine = Auth::user()->termineParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport','compte.bookmaker')->with(array('tipster' => function ($query){ $query->withThrashed(); }))->orderBy('created_at','DESC')->get();
+					$parisTermine = Auth::user()->termineParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport', 'compte.bookmaker', 'tipster')->orderBy('created_at','DESC')->get();
+					Clockwork::info($parisTermine);
 					$countParisTermine = $parisTermine->count();
 					$view = View::make('bet.paristermine', array('paristermine' => $parisTermine, 'types_resultat' => $this->types_resultat, 'count_paris_termine' => $countParisTermine));
 					return $view;

@@ -28,6 +28,7 @@
 
 {{ HTML::style('css/toastr.css') }}
 {{ HTML::style('css/sweetalert.css') }}
+{{ HTML::style('css/select2-bootstrap-css.css') }}
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN PAGE LEVEL STYLES -->
 {{ HTML::style('css/select2.css') }}
