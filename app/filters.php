@@ -96,12 +96,16 @@
 		if (!Request::ajax()) App::abort(404);
 	});
 
+
+
+	// lorsque la devise n'est pas specifié
 	Route::filter('devise_missing', function () {
 		if (Auth::user()->devise == 'aucun') {
 			return Redirect::to('welcome');
 		}
 	});
 
+	// pour eviter que ca boucle quand on accede a la route welcome
 	Route::filter('welcome_verification', function () {
 		if(Auth::check()){
 			if (Auth::user()->devise != 'aucun') {
