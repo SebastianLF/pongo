@@ -39,6 +39,11 @@ select{
 	font-weight: 600;
 }
 
+.tipster{
+    font-family: "Open Sans", sans-serif !important;
+    font-weight: 300 !important;
+}
+
 .child-row{
 	display: inline-block;
 }
