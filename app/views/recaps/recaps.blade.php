@@ -34,12 +34,42 @@
                                     <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse"
                                        data-parent="#accordion2" href="{{'#collapse_'.$annee.'_'.$recaps[$i]['month']}}">
                                                 @if($recaps[$i]['month'] == 1)
-                                                {{'Janvier '}}
+                                                    <span class="uppercase ">{{'Janvier '}}</span>
+                                                        @if($recaps2[$i]['month'] == 1 && $annee == $recaps2[$i]['year'])
+                                                            @if($recaps2[$i]['total_mois'] > 0)
+                                                                <span class="font-green-sharp pull-right bold">{{' +'.round($recaps2[$i]['total_mois'], 2)}} {{$user->devise}}</span>
+                                                            @elseif($recaps2[$i]['total_mois'] < 0)
+                                                                <span class="font-red-haze pull-right">{{round($recaps2[$i]['total_mois'], 2)}} {{$user->devise}}</span>
+                                                            @elseif($recaps2[$i]['total_mois'] == 0)
+                                                                <span class="pull-right">{{round($recaps2[$i]['total_mois'], 2)}} {{$user->devise}}</span>
+                                                            @endif
+                                                        @endif
 
                                                 @elseif($recaps[$i]['month'] == 2)
-                                                {{'Fevrier'}}
+
+                                                    <span class="uppercase ">{{'Fevrier'}}</span>
+                                                        @if($recaps2[$i]['month'] == 2 && $annee == $recaps2[$i]['year'])
+                                                            @if($recaps2[$i]['total_mois'] > 0)
+                                                                <span class="font-green-sharp pull-right bold">{{' +'.round($recaps2[$i]['total_mois'], 2)}} {{$user->devise}}</span>
+                                                            @elseif($recaps2[$i]['total_mois'] < 0)
+                                                                <span class="font-red-haze pull-right">{{round($recaps2[$i]['total_mois'], 2)}} {{$user->devise}}</span>
+                                                            @elseif($recaps2[$i]['total_mois'] == 0)
+                                                                <span class="pull-right">{{round($recaps2[$i]['total_mois'], 2)}} {{$user->devise}}</span>
+                                                            @endif
+                                                        @endif
+
                                                 @elseif($recaps[$i]['month'] == 3)
-                                                {{'Mars'}}
+
+                                                    <span class="uppercase ">{{'Mars'}}</span>
+                                                        @if($recaps2[$i]['month'] == 3 && $annee == $recaps2[$i]['year'])
+                                                            @if($recaps2[$i]['total_mois'] > 0)
+                                                                <span class="font-green-sharp pull-right bold">{{' +'.round($recaps2[$i]['total_mois'], 2)}} {{$user->devise}}</span>
+                                                            @elseif($recaps2[$i]['total_mois'] < 0)
+                                                                <span class="font-red-haze pull-right">{{round($recaps2[$i]['total_mois'], 2)}} {{$user->devise}}</span>
+                                                            @elseif($recaps2[$i]['total_mois'] == 0)
+                                                                <span class="pull-right">{{round($recaps2[$i]['total_mois'], 2)}} {{$user->devise}}</span>
+                                                            @endif
+                                                        @endif
                                                 @elseif($recaps[$i]['month'] == 4)
                                                 {{'Avril'}}
                                                 @elseif($recaps[$i]['month'] == 5)
