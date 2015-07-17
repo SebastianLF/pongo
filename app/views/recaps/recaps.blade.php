@@ -34,7 +34,10 @@
                                     <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse"
                                        data-parent="#accordion2" href="{{'#collapse_'.$annee.'_'.$recaps[$i]['month']}}">
                                                 @if($recaps[$i]['month'] == 1)
-                                                 {{'Janvier'}}
+                                                 {{'Janvier '}}
+                                                    @if($recaps2[$i]['month'] == 1)
+                                                        <span class="push-right">{{$recaps2[$i]['total_mois']}}</span>
+                                                    @endif
                                                 @elseif($recaps[$i]['month'] == 2)
                                                 {{'Fevrier'}}
                                                 @elseif($recaps[$i]['month'] == 3)
@@ -47,6 +50,12 @@
                                                 {{'Juin'}}
                                                 @elseif($recaps[$i]['month'] == 7)
                                                 {{'Juillet'}}
+                                                    @if($recaps2[$i]['month'] == 7)
+                                                        <span class="pull-right">
+
+                                                            {{$recaps2[$i]['total_mois']}}{{$user->devise}}</span>
+
+                                                    @endif
                                                 @elseif($recaps[$i]['month'] == 8)
                                                 {{'Aout'}}
                                                 @elseif($recaps[$i]['month'] == 9)
@@ -66,14 +75,32 @@
                         @endif
                             <div id="{{'collapse_'.$annee.'_'.$mois}}" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <ul>
-                                        @while($annee == $recaps[$i]['year'] && $mois == $recaps[$i]['month'])
-                                        <li class="">{{$recaps[$i]['tipster']['name']}} <span class="theme-font">{{round($recaps[$i]['total_devise_par_mois_tipster'],2)}} {{$user->devise}}</span></li>
+                                <table class="table">
+                                    <tbody>
+
+                                    @while($annee == $recaps[$i]['year'] && $mois == $recaps[$i]['month'])
+                                    <tr>
+                                        <td>{{$recaps[$i]['tipster']['name']}}
+                                        @if($recaps[$i]['total_devise_par_mois_tipster'] > 0)
+                                            <span class="font-green-sharp pull-right">{{' +'.round($recaps[$i]['total_devise_par_mois_tipster'],2)}} {{$user->devise}}</span>
+                                        @elseif($recaps[$i]['total_devise_par_mois_tipster'] < 0)
+                                            <span class="font-red-haze pull-right">{{round($recaps[$i]['total_devise_par_mois_tipster'],2)}} {{$user->devise}}</span>
+                                        @elseif($recaps[$i]['total_devise_par_mois_tipster'] == 0)
+                                            <span class="pull-right">{{round($recaps[$i]['total_devise_par_mois_tipster'],2)}} {{$user->devise}}</span>
+                                        @endif
+
+                                        </td>
                                             <?php $i++; ?>
                                         @if($i == $count)
                                             <?php break; ?>
                                         @endif
-                                        @endwhile
+                                        </tr>
+                                    @endwhile
+
+                                    </tbody>
+                                </table>
+                                    <ul>
+
                                     </ul>
                                 </div>
                             </div>

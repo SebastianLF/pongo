@@ -4,6 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php" line="71" />
     <bookmark url="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php" line="401" />
     <bookmark url="file://$PROJECT_DIR$/app/controllers/BookmakerController.php" line="123" />
+    <bookmark url="file://$PROJECT_DIR$/app/controllers/DashboardController.php" line="84" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
@@ -65,21 +66,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="recaps.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/recaps/recaps.blade.php">
+      <file leaf-file-name="DashboardController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.956522" vertical-offset="0" max-vertical-offset="1350">
-              <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+            <state vertical-scroll-proportion="-11.478261" vertical-offset="981" max-vertical-offset="2415">
+              <caret line="83" column="9" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DashboardController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
+      <file leaf-file-name="recaps.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/recaps/recaps.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4278607" vertical-offset="916" max-vertical-offset="2385">
-              <caret line="84" column="66" selection-start-line="84" selection-start-column="59" selection-end-line="84" selection-end-column="66" />
+            <state vertical-scroll-proportion="0.5483444" vertical-offset="396" max-vertical-offset="1755">
+              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="paristermine.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/bet/paristermine.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.565217" vertical-offset="1879" max-vertical-offset="5145">
+              <caret line="143" column="103" selection-start-line="143" selection-start-column="103" selection-end-line="143" selection-end-column="103" />
               <folding />
             </state>
           </provider>
@@ -184,8 +195,8 @@
         <option value="$PROJECT_DIR$/app/controllers/TransactionController.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_10_29_132406_create_bookmaker_user_table.php" />
         <option value="$PROJECT_DIR$/app/controllers/BookmakerController.php" />
-        <option value="$PROJECT_DIR$/app/views/recaps/recaps.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/DashboardController.php" />
+        <option value="$PROJECT_DIR$/app/views/recaps/recaps.blade.php" />
       </list>
     </option>
   </component>
@@ -610,7 +621,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bet" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1247,7 +1262,13 @@
       <option name="project" value="LOCAL" />
       <updated>1437059308320</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="test avec php storm">
+      <created>1437074676629</created>
+      <option name="number" value="00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1437074676629</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1288,7 +1309,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272543" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24865592" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25936812" sideWeight="0.77073735" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1653765" sideWeight="0.77073735" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19554205" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32858595" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1704,26 +1725,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.478261" vertical-offset="981" max-vertical-offset="2415">
+          <caret line="83" column="9" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bet/paristermine.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49945828" vertical-offset="214" max-vertical-offset="5145">
-          <caret line="45" column="89" selection-start-line="45" selection-start-column="89" selection-end-line="45" selection-end-column="89" />
+        <state vertical-scroll-proportion="-11.565217" vertical-offset="1879" max-vertical-offset="5145">
+          <caret line="143" column="103" selection-start-line="143" selection-start-column="103" selection-end-line="143" selection-end-column="103" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/recaps/recaps.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.956522" vertical-offset="0" max-vertical-offset="1350">
-          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4278607" vertical-offset="916" max-vertical-offset="2385">
-          <caret line="84" column="66" selection-start-line="84" selection-start-column="59" selection-end-line="84" selection-end-column="66" />
+        <state vertical-scroll-proportion="0.5483444" vertical-offset="396" max-vertical-offset="1755">
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding />
         </state>
       </provider>
