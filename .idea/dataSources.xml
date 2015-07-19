@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2316097579">
+  <component name="DataSourceManagerImpl" format="xml" hash="3997291556">
     <data-source source="LOCAL" name="MySQL - sbs@localhost" uuid="df636a34-977d-4dba-b7e3-b636c8873f85">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
@@ -21,6 +21,20 @@
       <auto-commit>false</auto-commit>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://slfweb.mysql.eu1.frbit.com:3306/slfweb</jdbc-url>
+      <driver-properties>
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="tinyInt1isBit" value="false" />
+        <property name="characterEncoding" value="utf8" />
+        <property name="characterSetResults" value="utf8" />
+        <property name="yearIsDateType" value="false" />
+      </driver-properties>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="MySQL - homestead@127.0.0.1" uuid="bdacbe7c-d15d-4e81-9d7e-31eeab200255">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1:33060/homestead</jdbc-url>
       <driver-properties>
         <property name="zeroDateTimeBehavior" value="convertToNull" />
         <property name="tinyInt1isBit" value="false" />

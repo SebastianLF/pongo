@@ -26,7 +26,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	
 	public function bookmakers(){
 		return $this->belongsToMany('Bookmaker', 'bookmaker_user', 'user_id', 'bookmaker_id')
-				->withPivot('id', 'nom_compte', 'bankroll_totale', 'bonus', 'bankroll_actuelle')->withTimestamps();
+				->withPivot('id', 'nom_compte', 'bonus', 'bankroll_actuelle')->withTimestamps();
 	}
 	public function comptes(){
 		return $this->hasMany('BookmakerUser');

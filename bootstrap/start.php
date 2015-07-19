@@ -30,7 +30,8 @@ $env = $app->detectEnvironment(function(){
 		gethostname(),
 		[
 			'seb-PC',
-			'seb'
+			'seb',
+			'homestead'
 		]
 	) ?
 		'local' :

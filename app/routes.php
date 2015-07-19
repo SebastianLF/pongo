@@ -14,7 +14,6 @@
 	Route::get('dashboard', 'DashboardController@showDashboard');
 	Route::post('encourspari/auto', 'EnCoursParisController@automatic_store');
 	Route::post('cashout', 'EnCoursParisController@cashOut');
-	Route::post('coupon', 'CouponController@postSelections');
 	Route::get('parisabcd', 'EnCoursParisController@getEnCoursABCD');
 	Route::get('lettreabcd', 'EnCoursParisController@getlettreABCD');
 	Route::get('recaps', 'DashboardController@showRecaps');
@@ -52,9 +51,11 @@
 	Route::resource('transaction', 'TransactionController');
 	Route::resource('encourspari', 'EnCoursParisController');
 	Route::resource('historique', 'TermineParisController');
+
+
+	// toujours routes post ou get apres la ressource route.
 	Route::resource('coupon', 'CouponController');
-
-
+	Route::post('coupon', 'CouponController@postSelections');
 	Route::get('account', 'AccountController@showIndex');
 
 	 Route::get('selections', 'CouponController@getSelections');
