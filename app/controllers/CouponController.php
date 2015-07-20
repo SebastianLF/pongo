@@ -220,6 +220,7 @@
 				'session_id' => $session_id,
 				'affichage' => $affichage_num
 			));
+			$coupon->save();
 
 			file_put_contents('log_index.txt', json_encode(Input::all()) . "\n\n", FILE_APPEND | LOCK_EX);
 
