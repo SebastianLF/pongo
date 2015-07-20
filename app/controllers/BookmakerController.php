@@ -9,9 +9,7 @@
 		{
 			parent::__construct();
 			$this->beforeFilter('auth');
-			$this->beforeFilter('csrf', array('only' => array('store', 'update', 'destroy')));
 			$this->beforeFilter('ajax', array('only' => array('showComptes')));
-
 		}
 
 		/**
