@@ -364,7 +364,7 @@
 							'pick' => $selection_coupon->pick,
 							'game_id' => $selection_coupon->game_id,
 							'game_name' => $selection_coupon->game_name,
-							'odd_doubleParam' => $selection_coupon->odd_doubleParam == '-999.888' ? null : $selection_coupon->odd_doubleParam,
+							'odd_doubleParam' => $selection_coupon->odd_doubleParam ==  -999.888  ? null : $selection_coupon->odd_doubleParam,
 							'odd_doubleParam2' => $selection_coupon->odd_doubleParam2 == '-999.888' ? null : $selection_coupon->odd_doubleParam2,
 							'odd_doubleParam3' => $selection_coupon->odd_doubleParam3 == '-999.888' ? null : $selection_coupon->odd_doubleParam3,
 							'odd_participantParameterName' => $selection_coupon->odd_participantParameterName == 'null' ? null : $selection_coupon->odd_participantParameterName,

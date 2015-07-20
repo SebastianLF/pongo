@@ -139,9 +139,11 @@
 			$affichage_num = '';
 			if ($market_id == '43') {
 				$affichage_num = 1;
+			}elseif ($market_id == '7') {
+				$affichage_num = 6;
 			}elseif ($market_id == '28') {
 				$affichage_num = 6;
-			} elseif ($market_id == '48') {
+			}  elseif ($market_id == '48') {
 				$affichage_num = 2;
 			} elseif ($market_id == '46') {
 				$affichage_num = 1;
