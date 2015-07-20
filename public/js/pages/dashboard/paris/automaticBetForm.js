@@ -355,11 +355,7 @@ function automaticBetForm() {
         }
     });
 
-    function envoi(){
-        $.post( "coupon", { name: "John", time: "2pm" } );
-    }
 
-    envoi();
     // initialisation
     //$(".bookinputdashboard").prop("disabled", true);
     //$("#accountsinputdashboard").prop("disabled", true);
