@@ -344,12 +344,8 @@
 							$equipe1_country->save();
 							$equipe2_country = Country::firstOrNew(array('name' => $selection_coupon->away_team_country_name));
 							$equipe2_country->save();
-							$competition_de_equipe1 = Competition::firstOrNew(array('name' => $selection_coupon->league_name, 'sport_id' => $sport->id, 'country_id' => $equipe1_country->id));
-							$competition_de_equipe1->save();
 							$equipe1 = Equipe::firstOrNew(array('name' => $selection_coupon->home_team, 'sport_id' => $sport->id)); // home team
 							$equipe1->save();
-							$competition_de_equipe2 = Competition::firstOrNew(array('name' => $selection_coupon->league_name, 'sport_id' => $sport->id, 'country_id' => $equipe2_country->id));
-							$competition_de_equipe2->save();
 							$equipe2 = Equipe::firstOrNew(array('name' => $selection_coupon->away_team, 'sport_id' => $sport->id)); // away team
 							$equipe2->save();
 							$competition_equipe1 = CompetitionEquipe::firstOrNew(array('competition_id' => $competition->id, 'equipe_id' => $equipe1->id));
