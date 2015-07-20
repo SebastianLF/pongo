@@ -100,15 +100,12 @@
 			foreach($result as $one){
 				array_push($result, $one->id);
 			}*/
-			Clockwork::info($parisabcd);
 			return Response::json($parisabcd);
 		}
 
 		public function getlettreABCD()
 		{
 			$nom = Input::get('serie_nom');
-			Clockwork::info($nom);
-			Clockwork::info(empty($nom));
 			$result = [];
 			if (!empty($nom)) {
 				$lettreabcd = $this->currentUser->enCoursParis()->where('nom_abcd', $nom)->get(array('lettre_abcd'));
@@ -162,7 +159,7 @@
 			$count = $selections_coupon->count();
 
 
-			// verification cote serveur de présence d'une selection, au moins.
+			// verification de présence d'une selection, au moins.
 			if ($count <= 0) {
 				return Response::json(array(
 					'etat' => 0,
@@ -376,7 +373,7 @@
 							'odd_groupParam' => $selection_coupon->odd_groupParam == '-999.888' ? null : $selection_coupon->odd_groupParam,
 							'isLive' => $selection_coupon->isLive ? true : false,
 							'isMatch' => $selection_coupon->isMatch ? true : false,
-							'score' => $selection_coupon->score == 'null' ? null : $selection_coupon->score,
+							'score' => $selection_coupon->score == null ? null : $selection_coupon->score,
 							'affichage' => $selection_coupon->affichage,
 							'market_id' => $market->id,
 							'scope_id' => $scope->id,
