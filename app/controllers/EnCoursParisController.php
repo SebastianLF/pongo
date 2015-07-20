@@ -334,8 +334,9 @@
 
 						$competition_country = Country::firstOrNew(array('name' => $selection_coupon->event_country_name));
 						$competition_country->save();
-						$competition = Competition::firstOrNew(array('name' => $selection_coupon->league_name, 'sport_id' => $sport->id, 'country_id' => $competition_country->id));
-						$competition->save();
+
+						$competition = Competition::where('name', $selection_coupon->league_name)->first();
+						if(is_null($competition)){$competition = new Competition(); $competition->name = $selection_coupon->league_name; $competition->sport_id = $sport->id; $competition->country_id = $competition_country->id; $competition->save();}
 
 						if ($selection_coupon->isMatch) {
 							$equipe1_country = Country::firstOrNew(array('name' => $selection_coupon->home_team_country_name));
