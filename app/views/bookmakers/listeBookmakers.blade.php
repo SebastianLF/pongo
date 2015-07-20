@@ -21,8 +21,8 @@
                     <td class="idbookmakertd hidden id">{{$bookmaker->pivot->id}}</td>
                     <td class="name">{{$bookmaker->pivot->nom_compte}}</td>
                     <td class="bold theme-font"><img
-                                src="{{isset($bookmaker->logo) ? asset('img/logos/bookmakers').'/'.$bookmaker->logo : $bookmaker->nom}}"
-                                width="100px">{{!isset($bookmaker->logo) ? $bookmaker->nom : ''}}</td>
+                                src="{{isset($bookmaker->logo) ? asset('img/logos/bookmakers').'/'.$bookmaker->logo : ''}}"
+                                width="100px">{{!$bookmaker->logo ? $bookmaker->nom : ''}}</td>
                     <td class="bold theme-font"><span
                                 class="bankrollamountconfig">{{round($bookmaker->pivot->bankroll_actuelle, 2)}} {{$user->devise}}</span>
                     </td>
