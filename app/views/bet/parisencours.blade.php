@@ -1,3 +1,4 @@
+
 @if($count_paris_encours == '0')
     <div class="row">
         <div class="col-lg-4 col-lg-offset-4">
@@ -15,8 +16,8 @@
                     <th>N°</th>
                     <th>type</th>
                     <th>Evenement</th>
-                    <th>Rencontre</th>
-                    <th>Pari <span class="glyphicon glyphicon-info-sign"></span></th>
+                    <th colspan="2">Rencontre</th>
+                    <th colspan="2">Pari <span class="glyphicon glyphicon-info-sign"></span></th>
                     <th>Tipster</th>
                     <th>Book</th>
                     <th>Cote</th>
@@ -40,9 +41,12 @@
                                 
                                 <td><span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_live ? 'live' : '' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_gratuit ? 'gratuit' : '' }}</span></td>
                                 <td width="">
+                                    <span data-toggle="tooltip"
+                                          title="{{$pari->selections->first()->sport->name}}{{', '}}{{$pari->selections->first()->competition->name}}">
                                         {{$pari->selections->first()->sport->name}}{{', '}}{{$pari->selections->first()->competition->name}}
+                                        </span>
                                 </td>
-                                <td>
+                                <td colspan="2">
                                         @if($pari->selections->first()->isMatch)
                                             {{' ('.$pari->selections->first()->date_match.') -'}}
                                             {{$pari->selections->first()->game_name}}
@@ -60,7 +64,7 @@
                                 // 6 , 'pick Top doubleparam1'
                                 // 7 , 'pick (optional + )doubleparam'
                                 // 8 , 'parametername1 pick doubleparam1'-->
-                                <td class="blue" width="">
+                                <td class="blue" width="" colspan="2">
                                      {{$pari->selections->first()->market->name.(' : ')}}       
                                  @if($pari->selections->first()->affichage == 1)
                                         {{$pari->selections->first()->pick}}
@@ -89,14 +93,18 @@
                                             {{$pari->selections->first()->odd_participantParameterName}}{{' '}}{{$pari->selections->first()->pick}}{{' '}}{{$pari->selections->first()->odd_doubleParam}}
                                 @endif
                                 </td>
-                                
+
                                 <td class="">{{$pari->tipster->name}}</td>
                                 <td class=""><span data-toggle="tooltip"
                       title="{{isset($pari->compte->bookmaker->nom) ? $pari->compte->bookmaker->nom : 'à blanc' }}">
                     @if(isset($pari->compte))
+                        @if(!empty($pari->compte->bookmaker->logo))
                         <img width="60px"
                              src="{{isset($pari->compte->bookmaker->logo) ? asset('img/logos/bookmakers').'/'.$pari->compte->bookmaker->logo : ''}}"
-                             alt=""/>{{isset($pari->compte->bookmaker->logo) ? '' : $pari->compte->bookmaker->nom }}
+                             alt=""/>
+                        @else
+                             {{$pari->compte->bookmaker->nom}}
+                        @endif
                     @else
                         <span class="label label-sm label-success label-mini uppercase">à blanc</span>
                     @endif

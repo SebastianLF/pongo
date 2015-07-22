@@ -9,11 +9,7 @@
 <div class="row ">
     <div class="col-md-12">
         <div class="portlet box green-meadow">
-            <div class="portlet-title">
-                <div class="caption">
-                    <i class="fa fa-gift"></i>Ticket
-                </div>
-            </div>
+
             <div class="portlet-body form ">
                 <form action="javascript:;" class="form-horizontal">
                     <div class="form-body">

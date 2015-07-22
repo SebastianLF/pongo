@@ -28,10 +28,11 @@
 
 {{ HTML::style('css/toastr.css') }}
 {{ HTML::style('css/sweetalert.css') }}
-{{ HTML::style('css/select2-bootstrap-css.css') }}
+
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN PAGE LEVEL STYLES -->
 {{ HTML::style('css/select2.css') }}
+{{ HTML::style('css/select2-bootstrap.min.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/bootstrap-select/bootstrap-select.min.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css') }}

@@ -22,6 +22,11 @@ Rounded Portlets
     background: #e9edef !important;
 }
 
+.select2-container {
+    width: 100% !important;
+    padding: 0;
+}
+
 .glyphicon-plus-sign{
     font-size: 1.2em !important;
 }
@@ -260,3 +265,14 @@ table{
     margin: 0px;
 }
 
+/* si le contenu d une cellule est trop longue elle est cachée */
+.table {
+    table-layout:fixed;
+}
+
+.table td,th {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

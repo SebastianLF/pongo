@@ -374,6 +374,7 @@ function manualBetForm() {
         form.find(".scopeinputdashboard").each(function () {
             var $this = $(this);
             $this.select2({
+                theme: 'bootstrap',
                 allowClear: true,
                 placeholder: "Choisir un sous type",
                 cache: true,
@@ -398,6 +399,7 @@ function manualBetForm() {
 
     function gestionSelectionsEquipes() {
         form.find(".team1inputdashboard").select2({
+
             allowClear: true,
             placeholder: "Choisir une quipe",
             cache: true,
@@ -438,10 +440,17 @@ function manualBetForm() {
         });
     }
 
+    function AddModal() {
+
+    }
 
     // inits
     assignerEtatEnDebut();
 
+    // hack pour avoir le focus sur les inputs avec select2 dans les modals.
+    $.fn.modal.Constructor.prototype.enforceFocus = function () {
+    };
+    gestionSelectionsScope();
     gestionTipsters();
     gestionTypeMise();
     gestionBookmakers();

@@ -42,7 +42,7 @@ function loadParisTermine() {
             // barre de défilement vertical pour les paris terminés.
             $(function(){
                 $('.slimScrollTermine').slimScroll({
-                    height: 'auto',
+                    height: '150px',
                     allowPageScroll: false,
                     wheelStep: 10,
                     alwaysVisible: true

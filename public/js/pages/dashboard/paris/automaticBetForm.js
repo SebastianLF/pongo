@@ -211,8 +211,6 @@ function automaticBetForm() {
                     }
                     var mt = Number(data.montant_par_unite);
                     isNaN(mt) ?  montant_par_unite.val('') : montant_par_unite.val(mt);
-                },
-                error: function (data) {
                 }
             });
         });

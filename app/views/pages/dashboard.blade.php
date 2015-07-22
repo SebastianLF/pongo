@@ -82,7 +82,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-10">
                         <div class="portlet light">
                             <div class="portlet-title">
                                 <div class="caption">
@@ -131,7 +131,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="dashboard-stat2">
                             <div class="display">
                                 <div class="number">
