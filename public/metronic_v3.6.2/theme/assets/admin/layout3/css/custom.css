@@ -22,10 +22,7 @@ Rounded Portlets
     background: #e9edef !important;
 }
 
-.select2-container {
-    width: 100% !important;
-    padding: 0;
-}
+
 
 .glyphicon-plus-sign{
     font-size: 1.2em !important;
@@ -129,7 +126,7 @@ table{
 }
 
 .form-automatic{
-    background-color: #e9edef;
+
     margin-left: 10px !important;
 }
 
@@ -269,10 +266,15 @@ table{
 .table {
     table-layout:fixed;
 }
-
 .table td,th {
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+/* uniquement pour les select2 dans modal */
+.select2-container {
+    width: 100% !important;
+    padding: 0;
 }

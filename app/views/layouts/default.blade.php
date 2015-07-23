@@ -93,11 +93,11 @@ License: You must have a valid license purchased only from themeforest(the above
             });
 
             // ajouter le token a chaque requete ajax.
-            /*$.ajaxSetup({
+            $.ajaxSetup({
                 headers: {
                     'X-CSRF-Token': $('meta[name="_token"]').attr('content')
                 }
-            });*/
+            });
 
             // toastr plugin configuration
             toastr.options = {

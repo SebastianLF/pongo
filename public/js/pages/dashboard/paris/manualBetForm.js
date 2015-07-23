@@ -7,6 +7,7 @@ function manualBetForm() {
     // gestion formulaire
     var form = $('#manubetform-add');
     var form_string = '#manubetform-add';
+    var modal_form = $('#manualselectionform-add');
 
 
     function assignerEtatEnDebut() {
@@ -297,7 +298,7 @@ function manualBetForm() {
 
 
     function gestionSelectionsSport() {
-        form.find(".sportinputdashboard").select2({
+        modal_form.find(".sportinputdashboard").select2({
             allowClear: true,
             placeholder: "Choisir un sport",
             cache: true,
@@ -319,86 +320,101 @@ function manualBetForm() {
     }
 
     function gestionSelectionsCompet() {
-        form.find(".competitioninputdashboard").each(function () {
-            var $this = $(this);
-            $this.select2({
-                allowClear: true,
-                placeholder: "Choisir une competition",
-                cache: true,
-                ajax: {
-                    url: 'competitions',
-                    dataType: 'json',
-                    data: function (params) {
-                        return {
-                            sport_id: $this.closest('.betline').find('.sportinputdashboard').val(),
-                            q: params.term
-                        };
-                    },
-                    processResults: function (data) {
-                        return {
-                            results: data
-                        };
-                    }
+        modal_form.find(".competitioninputdashboard").select2({
+            allowClear: true,
+            placeholder: "Choisir une competition",
+            cache: true,
+            ajax: {
+                url: 'competitions',
+                dataType: 'json',
+                data: function (params) {
+                    return {
+                        sport_id: modal_form.find('.sportinputdashboard').val(),
+                        q: params.term
+                    };
+                },
+                processResults: function (data) {
+                    return {
+                        results: data
+                    };
                 }
-            });
+            }
         });
     }
 
     function gestionSelectionsMarket() {
-        form.find(".marketinputdashboard").each(function () {
-            var $this = $(this);
-            $this.select2({
-                allowClear: true,
-                placeholder: "Choisir un type de pari",
-                cache: true,
-                ajax: {
-                    url: 'markets',
-                    dataType: 'json',
-                    data: function (params) {
-                        return {
-                            sport_id: $this.closest('.betline').find('.sportinputdashboard').val(),
-                            q: params.term
-                        };
-                    },
-                    processResults: function (data) {
-                        return {
-                            results: data
-                        };
-                    }
+        modal_form.find(".marketinputdashboard").select2({
+            allowClear: true,
+            placeholder: "Choisir un type de pari",
+            cache: true,
+            ajax: {
+                url: 'markets',
+                dataType: 'json',
+                data: function (params) {
+                    return {
+                        sport_id: modal_form.find('.sportinputdashboard').val(),
+                        q: params.term
+                    };
+                },
+                processResults: function (data) {
+                    return {
+                        results: data
+                    };
                 }
-            });
+            }
+        }).change( function(){
+            
         });
     }
 
     function gestionSelectionsScope() {
-        form.find(".scopeinputdashboard").each(function () {
-            var $this = $(this);
-            $this.select2({
-                theme: 'bootstrap',
-                allowClear: true,
-                placeholder: "Choisir un sous type",
-                cache: true,
-                ajax: {
-                    url: 'scopes',
-                    dataType: 'json',
-                    data: function (params) {
-                        return {
-                            sport_id: $this.closest('.betline').find('.sportinputdashboard').val(),
-                            q: params.term
-                        };
-                    },
-                    processResults: function (data) {
-                        return {
-                            results: data
-                        };
-                    }
+        modal_form.find(".scopeinputdashboard").select2({
+            allowClear: true,
+            placeholder: "Choisir un sous type",
+            cache: true,
+            ajax: {
+                url: 'scopes',
+                dataType: 'json',
+                data: function (params) {
+                    return {
+                        sport_id: modal_form.find('.sportinputdashboard').val(),
+                        q: params.term
+                    };
+                },
+                processResults: function (data) {
+                    return {
+                        results: data
+                    };
                 }
-            });
+            }
+        });
+    }
+
+    function gestionSelectionsPick() {
+        modal_form.find(".pickinputdashboard").select2({
+            allowClear: true,
+            placeholder: "Selectionner un choix",
+            cache: true,
+            ajax: {
+                url: 'pick',
+                dataType: 'json',
+                data: function (params) {
+                    return {
+                        market_id: modal_form.find('.marketinputdashboard').val(),
+                        q: params.term
+                    };
+                },
+                processResults: function (data) {
+                    return {
+                        results: data
+                    };
+                }
+            }
         });
     }
 
     function gestionSelectionsEquipes() {
-        form.find(".team1inputdashboard").select2({
+        modal_form.find(".team1inputdashboard").select2({
 
             allowClear: true,
             placeholder: "Choisir une quipe",
@@ -408,6 +424,7 @@ function manualBetForm() {
                 dataType: 'json',
                 data: function (params) {
                     return {
+                        market_id: modal_form.find('.marketinputdashboard').val(),
                         q: params.term
                     };
                 },
@@ -419,7 +436,7 @@ function manualBetForm() {
             }
         });
 
-        form.find(".team2inputdashboard").select2({
+        modal_form.find(".team2inputdashboard").select2({
             allowClear: true,
             placeholder: "Choisir une équipe",
             cache: true,
@@ -428,6 +445,7 @@ function manualBetForm() {
                 dataType: 'json',
                 data: function (params) {
                     return {
+                        market_id: modal_form.find('.marketinputdashboard').val(),
                         q: params.term
                     };
                 },
@@ -440,7 +458,7 @@ function manualBetForm() {
         });
     }
 
-    function AddModal() {
+    function selectionAddModal() {
 
     }
 
@@ -450,7 +468,7 @@ function manualBetForm() {
     // hack pour avoir le focus sur les inputs avec select2 dans les modals.
     $.fn.modal.Constructor.prototype.enforceFocus = function () {
     };
-    gestionSelectionsScope();
+
     gestionTipsters();
     gestionTypeMise();
     gestionBookmakers();
@@ -459,5 +477,6 @@ function manualBetForm() {
     gestionSelectionsCompet();
     gestionSelectionsMarket();
     gestionSelectionsScope();
+    gestionSelectionsPick();
     gestionSelectionsEquipes();
 }

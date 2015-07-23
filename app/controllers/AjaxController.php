@@ -51,10 +51,21 @@
 		public function getScopes()
 		{
 			$sport_id = Input::get('sport_id');
-			Clockwork::info($sport_id);
 			if(isset($sport_id)){
 				$sport = Sport::find($sport_id);
 				$markets = isset($sport) ? $sport->scopes()->select('scopes.id', 'scopes.name AS text')->where('name', 'LIKE', '%' . Input::get('q') . '%')->get() : '';
+				return Response::json($markets);
+			}else{
+				return Response::json([]);
+			}
+		}
+
+		public function getPick()
+		{
+			$market_id = Input::get('market_id');
+			if(isset($market_id)){
+				$market = Sport::find($market_id);
+				$markets = isset($market) ? $market->scopes()->select('scopes.id', 'scopes.name AS text')->where('name', 'LIKE', '%' . Input::get('q') . '%')->get() : '';
 				return Response::json($markets);
 			}else{
 				return Response::json([]);

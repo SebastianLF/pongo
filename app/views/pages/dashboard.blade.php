@@ -82,7 +82,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-10">
+                    <div class="col-md-9">
                         <div class="portlet light">
                             <div class="portlet-title">
                                 <div class="caption">
@@ -93,18 +93,18 @@
                             <div class="portlet-body">
                                 <div class="tabbable-custom nav-justified">
                                     <ul class="nav nav-tabs nav-justified">
-                                        <li class="">
-                                            <a href="#tab_1_1_1" data-toggle="tab">
-                                                Automatique <span class="badge badge-default">bientot</span></a>
-                                        </li>
                                         <li class="active">
-                                            <a href="#tab_1_1_2" data-toggle="tab">
-                                                Manuel </a>
+                                            <a href="#tab_1_1_1" data-toggle="tab">
+                                                Automatique </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="javascript;" data-toggle="tab">
+                                                Manuel (désactivé)</a>
                                         </li>
 
                                     </ul>
                                     <div class="tab-content">
-                                        <div class="tab-pane " id="tab_1_1_1">
+                                        <div class="tab-pane active" id="tab_1_1_1">
                                             @include('bet.automatic_addbet');
                                             <div class="portlet box blue-hoki">
                                                 <div class="portlet-title">
@@ -123,7 +123,7 @@
                                             </div>
 
                                         </div>
-                                        <div class="tab-pane active" id="tab_1_1_2">
+                                        <div class="tab-pane" id="tab_1_1_2">
                                             @include('bet.manual_addbet');
                                         </div>
                                     </div>
@@ -131,7 +131,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <div class="dashboard-stat2">
                             <div class="display">
                                 <div class="number">
