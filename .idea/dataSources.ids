@@ -447,13 +447,12 @@
       <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
       <column name="nom_compte" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="bankroll_totale" sqlType="DECIMAL" precision="12" scale="2" nullable="false" jdbcType="3" def="MC4wMA=="/>
-      <column name="bonus" sqlType="DECIMAL" precision="12" scale="2" nullable="false" jdbcType="3" def="MC4wMA=="/>
+      <column name="bonus" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3" def="MC4wMA=="/>
       <column name="bankroll_actuelle" sqlType="DECIMAL" precision="12" scale="2" nullable="false" jdbcType="3" def="MC4wMA=="/>
       <column name="bookmaker_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="user_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="bookmaker_user_user_id_foreign" columns="user_id" ref-table="users" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="bookmaker_user_user_id_foreign" columns="user_id" ref-table="users" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
       <foreign-key name="bookmaker_user_bookmaker_id_foreign" columns="bookmaker_id" ref-table="bookmakers" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="en_cours_paris_bookmaker_user_id_foreign" table="en_cours_paris" schema="" catalog="slfweb" columns="bookmaker_user_id"/>
       <exported-key name="termine_paris_bookmaker_user_id_foreign" table="termine_paris" schema="" catalog="slfweb" columns="bookmaker_user_id"/>
@@ -583,7 +582,7 @@
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="en_cours_paris_bookmaker_user_id_foreign" columns="bookmaker_user_id" ref-table="bookmaker_user" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="en_cours_paris_tipster_id_foreign" columns="tipster_id" ref-table="tipsters" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="en_cours_paris_user_id_foreign" columns="user_id" ref-table="users" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="en_cours_paris_user_id_foreign" columns="user_id" ref-table="users" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
       <exported-key name="selections_en_cours_pari_id_foreign" table="selections" schema="" catalog="slfweb" columns="en_cours_pari_id"/>
       <index name="en_cours_paris_bookmaker_user_id_foreign" unique="false" columns="bookmaker_user_id"/>
       <index name="en_cours_paris_tipster_id_foreign" unique="false" columns="tipster_id"/>
@@ -736,8 +735,8 @@
       <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="sport_market_market_id_foreign" columns="market_id" ref-table="markets" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="sport_market_sport_id_foreign" columns="sport_id" ref-table="sports" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="sport_market_market_id_foreign" columns="market_id" ref-table="markets" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
+      <foreign-key name="sport_market_sport_id_foreign" columns="sport_id" ref-table="sports" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
       <index name="sport_market_market_id_foreign" unique="false" columns="market_id"/>
       <index name="sport_market_sport_id_foreign" unique="false" columns="sport_id"/>
     </table>
@@ -748,8 +747,8 @@
       <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="sport_scope_scope_id_foreign" columns="scope_id" ref-table="scopes" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="sport_scope_sport_id_foreign" columns="sport_id" ref-table="sports" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="sport_scope_scope_id_foreign" columns="scope_id" ref-table="scopes" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="sport_scope_sport_id_foreign" columns="sport_id" ref-table="sports" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
       <index name="sport_scope_scope_id_foreign" unique="false" columns="scope_id"/>
       <index name="sport_scope_sport_id_foreign" unique="false" columns="sport_id"/>
     </table>
@@ -795,7 +794,7 @@
       <column name="user_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="bookmaker_user_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="termine_paris_user_id_foreign" columns="user_id" ref-table="users" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="termine_paris_user_id_foreign" columns="user_id" ref-table="users" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
       <foreign-key name="termine_paris_bookmaker_user_id_foreign" columns="bookmaker_user_id" ref-table="bookmaker_user" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="termine_paris_tipster_id_foreign" columns="tipster_id" ref-table="tipsters" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="selections_termine_pari_id_foreign" table="selections" schema="" catalog="slfweb" columns="termine_pari_id"/>
@@ -813,7 +812,7 @@
       <column name="followtype" sqlType="VARCHAR" precision="2" scale="0" nullable="false" jdbcType="12"/>
       <column name="user_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="tipsters_user_id_foreign" columns="user_id" ref-table="users" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="tipsters_user_id_foreign" columns="user_id" ref-table="users" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
       <exported-key name="en_cours_paris_tipster_id_foreign" table="en_cours_paris" schema="" catalog="slfweb" columns="tipster_id"/>
       <exported-key name="followtype_logs_tipster_id_foreign" table="followtype_logs" schema="" catalog="slfweb" columns="tipster_id"/>
       <exported-key name="mt_unite_logs_tipster_id_foreign" table="mt_unite_logs" schema="" catalog="slfweb" columns="tipster_id"/>
