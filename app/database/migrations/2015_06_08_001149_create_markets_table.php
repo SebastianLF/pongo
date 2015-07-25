@@ -13,7 +13,7 @@ class CreateMarketsTable extends Migration {
 	public function up()
 	{
 		Schema::create('markets', function(Blueprint $table) {
-			$table->integer('id',10)->unsigned();
+			$table->increments('id');
 			$table->string('name');
 			$table->boolean('odd_doubleParam')->nullable();
 			$table->boolean('odd_doubleParam2')->nullable();

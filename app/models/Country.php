@@ -2,6 +2,6 @@
 
 class Country extends Eloquent {
     protected $table = 'countries';
-    protected $fillable = array('name');
+    protected $guarded = array('id');
 
 }

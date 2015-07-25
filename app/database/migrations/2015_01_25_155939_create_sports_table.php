@@ -13,7 +13,7 @@ class CreateSportsTable extends Migration {
 	public function up()
 	{
 		Schema::create('sports', function(Blueprint $table) {
-			$table->integer('id',10)->unsigned();
+			$table->increments('id');
 			$table->string('name',100);
             $table->string('logo');
             $table->tinyInteger('categorie'); // 1 = sport co, 2 = sport individuel

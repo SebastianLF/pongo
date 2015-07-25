@@ -288,8 +288,6 @@
 						'user_id' => $this->currentUser->id,
 						'bookmaker_user_id' => $suivi == 'n' ? Input::get('accountsinputdashboard') : null
 					));
-					Clockwork::info($encourparis);
-
 					$encourparis->save();
 
 					$cotes = 1;
@@ -309,24 +307,17 @@
 						$count_live = $selection_coupon->isLive == null ? $count_live + 0 : $count_live + 1;
 
 						// (on attribue l'id)
-						$sport = Sport::firstOrNew(array('id' => $selection_coupon->sport_id, 'name' => $selection_coupon->sport_name));
-						$sport->save();
+						$sport = Sport::firstOrCreate(array('name' => $selection_coupon->sport_name));
 
 						// (on attribue l'id)
-						$market = Market::find($selection_coupon->market_id);
-						if(is_null($market)){
-							$market = new Market(); $market->id = $selection_coupon->market_id; $market->name = $selection_coupon->market; $market->isMatch = $selection_coupon->isMatch; $market->save();
-						}
+						$market = Market::firstOrCreate(array('name' => $selection_coupon->market));
 
 						// creation pour le formulaire manuel.
 						$sport_market = SportMarket::firstOrNew(array('sport_id' => $sport->id, 'market_id' => $market->id));
 						$sport_market->save();
 
 						// id ajouté manuellement.
-						$scope = Scope::find(intval($selection_coupon->scope_id));
-						if(is_null($scope)){
-							$scope = new Scope(); $scope->id = $selection_coupon->scope_id; $scope->name = $selection_coupon->scope; $scope->save();
-						}
+						$scope = Scope::firstOrCreate(array('name' => $selection_coupon->scope));
 
 						// gestion du 'sport scope' pour le formulaire manuel. ( !! sport_scope !! )
 						$sport_scope = SportScope::firstOrNew(array('sport_id' => $sport->id, 'scope_id' => $scope->id));
@@ -336,25 +327,18 @@
 						$competition_country->save();
 
 						$competition = Competition::where('name', $selection_coupon->league_name)->first();
-						Clockwork::info($competition);
 						if(is_null($competition)){$competition = new Competition(); $competition->name = $selection_coupon->league_name; $competition->sport_id = $sport->id; $competition->country_id = $competition_country->id; $competition->save();}
 
 						if ($selection_coupon->isMatch) {
-							$equipe1_country = Country::firstOrNew(array('name' => $selection_coupon->home_team_country_name));
-							$equipe1_country->save();
-							$equipe2_country = Country::firstOrNew(array('name' => $selection_coupon->away_team_country_name));
-							$equipe2_country->save();
-							$equipe1 = Equipe::firstOrNew(array('name' => $selection_coupon->home_team, 'sport_id' => $sport->id)); // home team
-							$equipe1->save();
-							$equipe2 = Equipe::firstOrNew(array('name' => $selection_coupon->away_team, 'sport_id' => $sport->id)); // away team
-							$equipe2->save();
+							$equipe1_country = Country::firstOrCreate(array('name' => $selection_coupon->home_team_country_name));
+							$equipe2_country = Country::firstOrCreate(array('name' => $selection_coupon->away_team_country_name));
+							$equipe1 = Equipe::firstOrCreate(array('name' => $selection_coupon->home_team, 'sport_id' => $sport->id, 'country_id' => $equipe1_country->id)); // home team
+							$equipe2 = Equipe::firstOrCreate(array('name' => $selection_coupon->away_team, 'sport_id' => $sport->id, 'country_id' => $equipe2_country->id)); // away team
 							$competition_equipe1 = CompetitionEquipe::firstOrNew(array('competition_id' => $competition->id, 'equipe_id' => $equipe1->id));
 							$competition_equipe1->save();
 							$competition_equipe2 = CompetitionEquipe::firstOrNew(array('competition_id' => $competition->id, 'equipe_id' => $equipe2->id));
 							$competition_equipe2->save();
 						}
-
-						Clockwork::info($scope);
 
 						$selection = new Selection(array(
 							'date_match' => new Carbon($selection_coupon->game_time),
@@ -390,13 +374,11 @@
 						$market->odd_participantParameterName3 = $selection->odd_participantParameterName3 ? 1 : 0;
 						$market->odd_groupParam = $selection->odd_groupParam ? 1 : 0;
 						$market->save();
-						Clockwork::info($selection);
 
 						$selection->save();
 						$cotes *= $odds_array[$odds_iterator];
 						$odds_iterator += 1;
 					}
-
 
 					// mis a jour de la cote general.
 					$encourparis->cote = $cotes;

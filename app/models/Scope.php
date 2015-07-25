@@ -1,7 +1,6 @@
 <?php
 
 class Scope extends Eloquent {
-	protected $fillable = array('id','name');
+	protected $fillable = array('name');
 	protected $table = 'scopes';
-	public $incrementing = false;
 }

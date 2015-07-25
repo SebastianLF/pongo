@@ -13,7 +13,7 @@ class CreateScopesTable extends Migration {
 	public function up()
 	{
 		Schema::create('scopes', function(Blueprint $table) {
-			$table->integer('id',10)->unsigned();
+			$table->increments('id');
 			$table->string('name');
 			$table->timestamps();
 		});
