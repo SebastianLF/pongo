@@ -417,7 +417,7 @@ function manualBetForm() {
         modal_form.find(".team1inputdashboard").select2({
 
             allowClear: true,
-            placeholder: "Choisir une quipe",
+            placeholder: "Equipe n°1/Joueur n°1",
             cache: true,
             ajax: {
                 url: 'equipes',
@@ -438,14 +438,14 @@ function manualBetForm() {
 
         modal_form.find(".team2inputdashboard").select2({
             allowClear: true,
-            placeholder: "Choisir une équipe",
+            placeholder: "Equipe n°2/Joueur n°2",
             cache: true,
             ajax: {
                 url: 'equipes',
                 dataType: 'json',
                 data: function (params) {
                     return {
-                        market_id: modal_form.find('.marketinputdashboard').val(),
+                        league_id: modal_form.find('.marketinputdashboard').val(),
                         q: params.term
                     };
                 },

@@ -33,6 +33,20 @@
                             <span id="competition_error" class="help-block"></span>
                         </div>
 
+                        <div id="team1_container" class="form-group">
+                            <select name="team1" class="form-control team1inputdashboard input-sm">
+                                <option value=""></option>
+                            </select>
+                            <span id="team1_error" class="help-block"></span>
+                        </div>
+
+                        <div id="team2_container" class="form-group">
+                            <select name="team2" class="form-control team2inputdashboard input-sm">
+                                <option value=""></option>
+                            </select>
+                            <span id="team2_error" class="help-block"></span>
+                        </div>
+
                         <div id="market_container" class="form-group">
                             <select name="market" class="form-control marketinputdashboard input-sm">
                                 <option value=""></option>
@@ -54,19 +68,12 @@
                             <span id="pick_error" class="help-block"></span>
                         </div>
 
-                        <div id="team1_container" class="form-group">
-                            <select name="team1" class="form-control team1inputdashboard input-sm">
-                                <option value=""></option>
-                            </select>
-                            <span id="team1_error" class="help-block"></span>
+                        <div id="odd_container" class="form-group">
+                            <input name="odd" class="form-control oddinputdashboard input-sm" placeholder="Cote">
+                            <span id="odd_error" class="help-block"></span>
                         </div>
 
-                        <div id="team2_container" class="form-group">
-                            <select name="team2" class="form-control team2inputdashboard input-sm">
-                                <option value=""></option>
-                            </select>
-                            <span id="team2_error" class="help-block"></span>
-                        </div>
+
                     </div>
                 </div>
 
