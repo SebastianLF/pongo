@@ -26,7 +26,7 @@
                 </div>
 
                 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#manualBetAddModal"><span
-                            class="glyphicon glyphicon-plus"></span>ajouter une sélection
+                            class="glyphicon glyphicon-plus"></span> ajouter une sélection
                 </button>
             </div>
         </div>
@@ -41,8 +41,6 @@
             <div class="portlet-body">
                 {{ Form::open(array('method' => 'post', 'id' => 'manubetform-add', 'class' => 'form-horizontal form-row-seperated', 'role' => 'form')
             ) }}
-
-
                 <div class="form-body">
                     <div class="form-group form-group-manual-bet">
                         <div class="col-md-4">

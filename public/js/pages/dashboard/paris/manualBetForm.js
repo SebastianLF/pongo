@@ -459,8 +459,19 @@ function manualBetForm() {
     }
 
     function selectionAddModal() {
+        $('select.country_d').change(function(){
+            if($('select.country_d').val() == "Europe")
+                $('.state_d').replaceWith('<input type="text" name="state_d" id="state_d">');
+        });
 
+        $('select.country_o').change(function(){
+            if($('select.country_o').val() == "Europe")
+                $('.state_o').replaceWith('<input type="text" name="state_o" id="state_o">');
+        });
     }
+
+
+
 
     // inits
     assignerEtatEnDebut();
@@ -469,6 +480,7 @@ function manualBetForm() {
     $.fn.modal.Constructor.prototype.enforceFocus = function () {
     };
 
+    selectionAddModal();
     gestionTipsters();
     gestionTypeMise();
     gestionBookmakers();
