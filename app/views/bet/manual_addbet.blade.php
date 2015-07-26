@@ -1,5 +1,5 @@
 
-@include('bet/manual_bet_add_modal')
+
 <div class="note note-success">
     <p>
         Pour <strong>vos paris perso</strong>, creez vous un tipster se nommant 'moi' ou 'Michel' par exemple.
@@ -25,9 +25,7 @@
 
                 </div>
 
-                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#manualBetAddModal"><span
-                            class="glyphicon glyphicon-plus"></span> ajouter une sélection
-                </button>
+
             </div>
         </div>
     </div>

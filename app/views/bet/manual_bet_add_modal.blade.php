@@ -8,6 +8,9 @@
             {{ Form::open(array('url' => 'coupon', 'method' => 'post', 'id' => 'manualselectionform-add', 'role' =>
                 'form')) }}
             <div class="modal-body">
+                <div class="note note-success ">
+                    <p>Les informations a remplir dépendent du sport, renseignez le champ sport avant le reste.</p>
+                </div>
                 <div class="row">
 
                     <div class="col-md-6 col-md-offset-3">
@@ -33,14 +36,14 @@
                             <span id="competition_error" class="help-block"></span>
                         </div>
 
-                        <div id="team1_container" class="form-group">
+                        <div id="team1_container" class="form-group col-md-6">
                             <select name="team1" class="form-control team1inputdashboard input-sm">
                                 <option value=""></option>
                             </select>
                             <span id="team1_error" class="help-block"></span>
                         </div>
 
-                        <div id="team2_container" class="form-group">
+                        <div id="team2_container" class="form-group col-md-6">
                             <select name="team2" class="form-control team2inputdashboard input-sm">
                                 <option value=""></option>
                             </select>

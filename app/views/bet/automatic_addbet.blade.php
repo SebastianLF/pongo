@@ -1,3 +1,4 @@
+@include('bet/manual_bet_add_modal')
 {{ Form::open(array('method' => 'post', 'id' => 'automaticform-add', 'class' => 'form-horizontal', 'role' => 'form')
             ) }}
 
@@ -10,6 +11,7 @@
                     <div class="row " style="padding:10px;">
                         <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
                             <div class="portlet light">
+
                                 <div class="portlet-title">
                                     <div class="caption">
                                         <i class="fa fa-gift"></i>Panier des sélections | <span class="glyphicon glyphicon-refresh glyphicon-spin"></span><a id="selection-refresh" class="" href="">Rafraichir</a>
@@ -18,10 +20,15 @@
                                     <div class="actions">
                                     </div>
                                 </div>
+
                                 <div class="portlet-body form form-automatic">
+
                                     <div id="automatic-selections">
 
                                     </div>
+                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#manualBetAddModal"><span
+                                                class="glyphicon glyphicon-plus"></span> ajouter une sélection manuellement
+                                    </button>
                                 </div>
                             </div>
                         </div>

@@ -362,8 +362,9 @@ function manualBetForm() {
                     };
                 }
             }
-        }).change( function(){
-            
+        }).change(function(){
+            var val = modal_form.find(".marketinputdashboard").val();
+            if(val == 43){alert('ok');}
         });
     }
 
@@ -424,7 +425,7 @@ function manualBetForm() {
                 dataType: 'json',
                 data: function (params) {
                     return {
-                        market_id: modal_form.find('.marketinputdashboard').val(),
+                        sport_id: modal_form.find('.sportinputdashboard').val(),
                         q: params.term
                     };
                 },
@@ -445,7 +446,7 @@ function manualBetForm() {
                 dataType: 'json',
                 data: function (params) {
                     return {
-                        league_id: modal_form.find('.marketinputdashboard').val(),
+                        sport_id: modal_form.find('.sportinputdashboard').val(),
                         q: params.term
                     };
                 },

@@ -263,7 +263,7 @@ table{
 }
 
 /* si le contenu d une cellule est trop longue elle est cachée */
-.table {
+/*.table {
     table-layout:fixed;
 }
 .table td,th {
@@ -271,7 +271,7 @@ table{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
+}*/
 
 /* uniquement pour les select2 dans modal */
 .select2-container {
