@@ -82,5 +82,6 @@
 	Route::get('markets', 'AjaxController@getMarkets');
 	Route::get('scopes', 'AjaxController@getScopes');
 	Route::get('totalprofit', 'DashboardController@getTotalProfit');
+	Route::get('bookmakers', 'AjaxController@getBookmakers');
 
 

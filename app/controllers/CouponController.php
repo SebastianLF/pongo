@@ -87,6 +87,7 @@
 		{
 			$pick = Input::get('pick');
 			$scope = Input::get('scope');
+			$scope = Scope::firstOrCreate(array('name' => $scope));
 			$scope_id = Input::get('scope_id');
 			$bookmaker = Input::get('bookmaker');
 			$bookmaker_id = Input::get('bookmaker_id');

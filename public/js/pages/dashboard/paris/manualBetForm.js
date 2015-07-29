@@ -8,9 +8,36 @@ function manualBetForm() {
     var form = $('#manubetform-add');
     var form_string = '#manubetform-add';
     var modal_form = $('#manualselectionform-add');
-
+    var date = modal_form.find('input[name="date"]');
+    var sport = modal_form.find('select[name="sport"]');
+    var competition = modal_form.find('select[name="competition"]');
+    var market = modal_form.find('select[name="market"]');
+    var scope = modal_form.find('select[name="scope"]');
+    var team1 = modal_form.find('select[name="team1"]');
+    var team1Container = modal_form.find('#team1_container');
+    var team2 = modal_form.find('select[name="team2"]');
+    var team2Container = modal_form.find('#team2_container');
+    var pick = modal_form.find('select[name="pick"]');
+    var pickContainer = modal_form.find('#pick_container');
+    var pickLabel = pickContainer.find('label');
+    var oddParam = modal_form.find('select[name="odd_doubleParam"]');
+    var oddParamContainer = modal_form.find('#odd_doubleParam_container');
+    var oddParamLabel = oddParamContainer.find('label');
+    var oddParam2 = modal_form.find('select[name="odd_doubleParam2"]');
+    var oddParam2Container = modal_form.find('#odd_doubleParam2_container');
+    var oddParam3 = modal_form.find('select[name="odd_doubleParam3"]');
+    var oddParam3Container = modal_form.find('#odd_doubleParam3_container');
+    var bookmakerContainer = modal_form.find('#bookmaker_container');
+    var bookmaker = modal_form.find('select[name="bookmaker"]');
+    var odd = modal_form.find('input[name="odd"]');
 
     function assignerEtatEnDebut() {
+        pickContainer.addClass("hidden");
+        team1Container.addClass("hidden");
+        team2Container.addClass("hidden");
+        oddParamContainer.addClass("hidden");
+        oddParam2Container.addClass("hidden");
+        oddParam3Container.addClass("hidden");
     }
 
     function gestionCheckboxs() {
@@ -363,8 +390,28 @@ function manualBetForm() {
                 }
             }
         }).change(function(){
+            var picks = [];
+            pick.select2({data:picks, minimumResultsForSearch: Infinity});
+
+            pick.html('');pick.val("").trigger("change");
+            team1.val("").trigger("change");team1Container.addClass("hidden");
+            team2.val("").trigger("change");team2Container.addClass("hidden");
+            oddParam.val("").trigger("change");oddParamContainer.addClass("hidden");
+            oddParam2.val("").trigger("change");oddParam2Container.addClass("hidden");
+            oddParam3.val("").trigger("change");oddParam3Container.addClass("hidden");
+
             var val = modal_form.find(".marketinputdashboard").val();
-            if(val == 43){alert('ok');}
+
+            if(val == ''){pickContainer.addClass("hidden");}else{pickContainer.removeClass("hidden");}
+
+                  if(val == 7){pick.select2({tags: true});} // Winner
+            else if(val == 43){team1Container.removeClass("hidden"); team2Container.removeClass("hidden"); picks = [{id:"Home", text: "Home"}, {id:"Away", text: "Away"}, {id:"Draw", text: "Draw"}]; pick.select2({data:picks, minimumResultsForSearch: Infinity});} // 1X2
+            else if(val == 46){team1Container.removeClass("hidden"); team2Container.removeClass("hidden"); picks = [{id:"Home", text: "Home"}, {id:"Away", text: "Away"}]; pick.select2({data:picks, minimumResultsForSearch: Infinity});} // Match Winner / HomeAway
+            else if(val == 48){team1Container.removeClass("hidden"); team2Container.removeClass("hidden"); picks = [{id:"Home", text: "Home"}, {id:"Away", text: "Away"}]; pick.select2({data:picks, minimumResultsForSearch: Infinity}); oddParamContainer.removeClass("hidden"); oddParamLabel.text('Handicap'); oddParam.select2({placeholder: "-2.5 ou 2.5", tags: true});} // Asian Handicap
+            else{
+                modal_form.find(".pickinputdashboard").html('');
+                modal_form.find(".pickinputdashboard").val("").trigger("change");
+                }
         });
     }
 
@@ -392,26 +439,7 @@ function manualBetForm() {
     }
 
     function gestionSelectionsPick() {
-        modal_form.find(".pickinputdashboard").select2({
-            allowClear: true,
-            placeholder: "Selectionner un choix",
-            cache: true,
-            ajax: {
-                url: 'pick',
-                dataType: 'json',
-                data: function (params) {
-                    return {
-                        market_id: modal_form.find('.marketinputdashboard').val(),
-                        q: params.term
-                    };
-                },
-                processResults: function (data) {
-                    return {
-                        results: data
-                    };
-                }
-            }
-        });
+        modal_form.find(".pickinputdashboard").select2();
     }
 
     function gestionSelectionsEquipes() {
@@ -459,20 +487,59 @@ function manualBetForm() {
         });
     }
 
-    function selectionAddModal() {
-        $('select.country_d').change(function(){
-            if($('select.country_d').val() == "Europe")
-                $('.state_d').replaceWith('<input type="text" name="state_d" id="state_d">');
+    bookmaker.select2({
+        allowClear: true,
+        placeholder: "Choisir un bookmaker",
+        cache: true,
+        ajax: {
+            url: 'bookmakers',
+            dataType: 'json',
+            data: function (params) {
+                return {
+                    q: params.term
+                };
+            },
+            processResults: function (data) {
+                return {
+                    results: data
+                };
+            }
+        }
+    });
+
+
+    function postCouponSelection() {
+        modal_form.submit(function (e){
+            e.preventDefault();
+            var data = modal_form.serialize();
+            $.ajax({
+                url: 'coupon',
+                type: 'post',
+                data: data,
+                success: function (data) {
+
+                }
+            });
         });
 
-        $('select.country_o').change(function(){
-            if($('select.country_o').val() == "Europe")
-                $('.state_o').replaceWith('<input type="text" name="state_o" id="state_o">');
-        });
     }
 
-
-
+    function resetModal(){
+        $('#manualBetAddModal').on('hidden.bs.modal', function () {
+            date.val(null).trigger('change');
+            sport.val(null).trigger('change');
+            competition.val(null).trigger('change');
+            market.val(null).trigger('change');
+            scope.val(null).trigger('change');
+            team1.val(null).trigger('change');
+            team2.val(null).trigger('change');
+            pick.val(null).trigger('change');
+            oddParam.val(null).trigger('change');
+            oddParam2.val(null).trigger('change');
+            oddParam3.val(null).trigger('change');
+            odd.val(null).trigger('change');
+        })
+    }
 
     // inits
     assignerEtatEnDebut();
@@ -481,7 +548,8 @@ function manualBetForm() {
     $.fn.modal.Constructor.prototype.enforceFocus = function () {
     };
 
-    selectionAddModal();
+    resetModal();
+    postCouponSelection();
     gestionTipsters();
     gestionTypeMise();
     gestionBookmakers();

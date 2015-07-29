@@ -366,15 +366,6 @@
 							'en_cours_pari_id' => $encourparis->id
 						));
 
-						$market->odd_doubleParam = $selection->odd_doubleParam ? 1 : 0;
-						$market->odd_doubleParam2 = $selection->odd_doubleParam2 ? 1 : 0;
-						$market->odd_doubleParam3 = $selection->odd_doubleParam3 ? 1 : 0;
-						$market->odd_participantParameterName = $selection->odd_participantParameterName ? 1 : 0;
-						$market->odd_participantParameterName2 = $selection->odd_participantParameterName2 ? 1 : 0;
-						$market->odd_participantParameterName3 = $selection->odd_participantParameterName3 ? 1 : 0;
-						$market->odd_groupParam = $selection->odd_groupParam ? 1 : 0;
-						$market->save();
-
 						$selection->save();
 						$cotes *= $odds_array[$odds_iterator];
 						$odds_iterator += 1;
