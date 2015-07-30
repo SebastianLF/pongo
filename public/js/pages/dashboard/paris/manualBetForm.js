@@ -29,7 +29,7 @@ function manualBetForm() {
     var oddParam3Container = modal_form.find('#odd_doubleParam3_container');
     var bookmakerContainer = modal_form.find('#bookmaker_container');
     var bookmaker = modal_form.find('select[name="bookmaker"]');
-    var odd = modal_form.find('input[name="odd"]');
+    var odd = modal_form.find('input[name="odd_value"]');
 
     function assignerEtatEnDebut() {
         pickContainer.addClass("hidden");

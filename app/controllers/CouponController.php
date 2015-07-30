@@ -86,47 +86,36 @@
 		public function postSelections()
 		{
 			$pick = Input::get('pick');
-			$scope = Input::get('scope');
-			$scope = Scope::firstOrCreate(array('name' => $scope));
-			$scope_id = Input::get('scope_id');
-			$bookmaker = Input::get('bookmaker');
-			$bookmaker_id = Input::get('bookmaker_id');
+			$scope = Scope::firstOrCreate(array('name' => Input::get('scope')));
+			$bookmaker = Bookmaker::firstOrCreate(array('nom' => Input::get('bookmaker')));
 			$odd_value = Input::get('odd_value');
 			$odd_doubleParam = Input::get('odd_doubleParam');
 			$odd_doubleParam2 = Input::get('odd_doubleParam2');
 			$odd_doubleParam3 = Input::get('odd_doubleParam3');
-			$odd_participantParameter = Input::get('odd_participantParameter');
-			$odd_participantParameter2 = Input::get('odd_participantParameter2');
-			$odd_participantParameter3 = Input::get('odd_participantParameter3');
 			$odd_participantParameterName = Input::get('odd_participantParameterName');
 			$odd_participantParameterName2 = Input::get('odd_participantParameterName2');
 			$odd_participantParameterName3 = Input::get('odd_participantParameterName3');
 			$odd_groupParam = Input::get('odd_groupParam');
-			$market = Input::get('market');
-			$market_id = Input::get('market_id');
+			$market = Market::firstOrCreate(array('name' => Input::get('market')));
 			$game_time = Input::get('game_time');
-			$game_id = Input::get('game_id');
 			$game_name = Input::get('game_name');
-			$sport_id = Input::get('sport_id');
 			$sport_name = Input::get('sport_Name');
-			$league_id = Input::get('league_id');
 			$league_name = Input::get('league_name');
 			$isMatch = Input::get('isMatch');
 			$event_country_name = Input::get('event_country_name');
+			$isLive = Input::get('isLive') == 'false' ? false : true;
 			if($isMatch == 'true'){
 				$home_team = Input::get('home_team');
 				$home_team_country_name = Input::get('home_team_country_name');
 				$away_team = Input::get('away_team');
 				$away_team_country_name = Input::get('away_team_country_name');
 				$score = Input::get('score');
-				$isLive = Input::get('isLive');
 			}else{
-				$home_team = 'null';
-				$home_team_country_name = 'null';
-				$away_team = 'null';
-				$away_team_country_name = 'null';
+				$home_team = null;
+				$home_team_country_name = null;
+				$away_team = null;
+				$away_team_country_name = null;
 				$score = null;
-				$isLive = 'false';
 			}
 			$session_id = Input::get('userSessionId');
 
@@ -189,28 +178,19 @@
 			$coupon = new Coupon(array(
 				'pick' => $pick,
 				'scope' => $scope,
-				'scope_id' => $scope_id,
 				'bookmaker' => $bookmaker,
-				'bookmaker_id' => $bookmaker_id,
 				'odd_value' => $odd_value,
 				'odd_doubleParam' => $odd_doubleParam,
 				'odd_doubleParam2' => $odd_doubleParam2,
 				'odd_doubleParam3' => $odd_doubleParam3,
-				'odd_participantParameter' => $odd_participantParameter,
-				'odd_participantParameter2' => $odd_participantParameter2,
-				'odd_participantParameter3' => $odd_participantParameter3,
 				'odd_participantParameterName' => $odd_participantParameterName,
 				'odd_participantParameterName2' => $odd_participantParameterName2,
 				'odd_participantParameterName3' => $odd_participantParameterName3,
 				'odd_groupParam' => $odd_groupParam,
 				'market' => $market,
-				'market_id' => $market_id,
 				'game_time' => $game_time,
-				'game_id' => $game_id,
 				'game_name' => $game_name,
-				'sport_id' => $sport_id,
 				'sport_name' => $sport_name,
-				'league_id' => $league_id,
 				'league_name' => $league_name,
 				'event_country_name' => $event_country_name,
 				'home_team' => $home_team,

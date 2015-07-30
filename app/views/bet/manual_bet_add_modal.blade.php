@@ -103,8 +103,8 @@
                         </div>
 
                         <div id="odd_container" class="form-group">
-                            <label for="odd">Cote</label>
-                            <input name="odd" class="form-control oddinputdashboard input-sm" placeholder="Cote">
+                            <label for="odd_value">Cote</label>
+                            <input name="odd_value" class="form-control oddinputdashboard input-sm" placeholder="Cote">
                             <span id="odd_error" class="help-block"></span>
                         </div>
 
