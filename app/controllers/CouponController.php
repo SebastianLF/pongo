@@ -83,6 +83,64 @@
 			$coupon->delete();
 		}
 
+		public function setAffichage($market_id, $pick = null, $odd_doubleParam = null){
+			// affectation du numero d'affichage selon le type de pari.
+			// 1 , 'pick'
+			// 2 , 'pick doubleparam'
+			// 3 , 'pick, parametername1 doubleparam1
+			// 4 , 'pick, doubleparam1-doubleparam2 minutes'
+			// 5 , 'parametername1 doubleparam1' avec '+'
+			// 6 , 'pick Top doubleparam1'
+			$affichage_num = '';
+			if ($market_id == '43') {
+				return $affichage_num = 1;
+			}elseif ($market_id == '7') {
+				return $affichage_num = 6;
+			}elseif ($market_id == '28') {
+				return $affichage_num = 6;
+			}  elseif ($market_id == '48') {
+				return $affichage_num = 2;
+			} elseif ($market_id == '46') {
+				return $affichage_num = 1;
+			} elseif ($market_id == '47') {
+				return $affichage_num = 7;
+			} elseif ($market_id == '8') {
+				if ($pick == $odd_doubleParam) {
+					return $affichage_num = 2;
+				} else {
+					return $affichage_num = 3;
+				}
+			} elseif ($market_id == '158') {
+				return $affichage_num = 1;
+			} elseif ($market_id == '145') {
+				return $affichage_num = 1;
+			} elseif ($market_id == '77') {
+				return $affichage_num = 8;
+			} elseif ($market_id == '79') {
+				return $affichage_num = 1;
+			} elseif ($market_id == '150') {
+				return $affichage_num = 1;
+			} elseif ($market_id == '151') {
+				return $affichage_num = 1;
+			} elseif ($market_id == '118') {
+				return $affichage_num = 2;
+			} elseif ($market_id == '112') {
+				return $affichage_num = 1;
+			} elseif ($market_id == '24') {
+				return $affichage_num = 1;
+			} elseif ($market_id == '12') {
+				return $affichage_num = 1;
+			} elseif ($market_id == '140') {
+				return $affichage_num = 1;
+			} elseif ($market_id == '94') {
+				return $affichage_num = 4;
+			} elseif ($market_id == '39') {
+				return $affichage_num = 5;
+			} elseif ($market_id == '9') {
+				return $affichage_num = 1;
+			}
+		}
+
 		public function postSelections()
 		{
 			$pick = Input::get('pick');
@@ -101,7 +159,7 @@
 			$game_name = Input::get('game_name');
 			$sport_name = Input::get('sport_Name');
 			$league_name = Input::get('league_name');
-			$isMatch = Input::get('isMatch');
+			$isMatch = Input::get('isMatch') == 'false' ? false : true;;
 			$event_country_name = Input::get('event_country_name');
 			$isLive = Input::get('isLive') == 'false' ? false : true;
 			if($isMatch == 'true'){
@@ -119,61 +177,6 @@
 			}
 			$session_id = Input::get('userSessionId');
 
-			// affectation du numero d'affichage selon le type de pari.
-			// 1 , 'pick'
-			// 2 , 'pick doubleparam'
-			// 3 , 'pick, parametername1 doubleparam1
-			// 4 , 'pick, doubleparam1-doubleparam2 minutes'
-			// 5 , 'parametername1 doubleparam1' avec '+'
-			// 6 , 'pick Top doubleparam1'
-			$affichage_num = '';
-			if ($market_id == '43') {
-				$affichage_num = 1;
-			}elseif ($market_id == '7') {
-				$affichage_num = 6;
-			}elseif ($market_id == '28') {
-				$affichage_num = 6;
-			}  elseif ($market_id == '48') {
-				$affichage_num = 2;
-			} elseif ($market_id == '46') {
-				$affichage_num = 1;
-			} elseif ($market_id == '47') {
-				$affichage_num = 7;
-			} elseif ($market_id == '8') {
-				if ($pick == $odd_doubleParam) {
-					$affichage_num = 2;
-				} else {
-					$affichage_num = 3;
-				}
-			} elseif ($market_id == '158') {
-				$affichage_num = 1;
-			} elseif ($market_id == '145') {
-				$affichage_num = 1;
-			} elseif ($market_id == '77') {
-				$affichage_num = 8;
-			} elseif ($market_id == '79') {
-				$affichage_num = 1;
-			} elseif ($market_id == '150') {
-				$affichage_num = 1;
-			} elseif ($market_id == '151') {
-				$affichage_num = 1;
-			} elseif ($market_id == '118') {
-				$affichage_num = 2;
-			} elseif ($market_id == '112') {
-				$affichage_num = 1;
-			} elseif ($market_id == '24') {
-				$affichage_num = 1;
-			} elseif ($market_id == '12') {
-				$affichage_num = 1;
-			} elseif ($market_id == '140') {
-				$affichage_num = 1;
-			} elseif ($market_id == '94') {
-				$affichage_num = 4;
-			} elseif ($market_id == '39') {
-				$affichage_num = 5;
-			} elseif ($market_id == '9') {
-				$affichage_num = 1;
-			}
 
 			$coupon = new Coupon(array(
 				'pick' => $pick,
@@ -201,7 +204,7 @@
 				'isLive' => $isLive == 'true' ? true : false,
 				'isMatch' => $isMatch == 'true' ? true : false,
 				'session_id' => $session_id,
-				'affichage' => $affichage_num
+				'affichage' => setAffichage($market, $pick, $odd_doubleParam)
 			));
 			$coupon->save();
 
