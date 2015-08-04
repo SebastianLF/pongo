@@ -55,7 +55,7 @@
 
 	// toujours routes post ou get apres la ressource route.
 	Route::resource('coupon', 'CouponController');
-	Route::post('coupon', 'CouponController@postSelections');
+	Route::post('coupon', 'CouponController@postAutomaticSelections');
 	Route::get('account', 'AccountController@showIndex');
 
 	 Route::get('selections', 'CouponController@getSelections');

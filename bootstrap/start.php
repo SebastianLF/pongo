@@ -30,7 +30,7 @@ $env = $app->detectEnvironment(function(){
 		gethostname(),
 		[
 			'seb-PC',
-			'seb',
+			'seb-portable',
 			'homestead'
 		]
 	) ?

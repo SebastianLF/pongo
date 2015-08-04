@@ -93,123 +93,65 @@
 			// 6 , 'pick Top doubleparam1'
 			$affichage_num = '';
 			if ($market_id == '43') {
-				return $affichage_num = 1;
+				return 1;
 			}elseif ($market_id == '7') {
-				return $affichage_num = 6;
+				return 6;
 			}elseif ($market_id == '28') {
-				return $affichage_num = 6;
+				return 6;
 			}  elseif ($market_id == '48') {
-				return $affichage_num = 2;
+				return 2;
 			} elseif ($market_id == '46') {
-				return $affichage_num = 1;
+				return 1;
 			} elseif ($market_id == '47') {
-				return $affichage_num = 7;
+				return 7;
 			} elseif ($market_id == '8') {
 				if ($pick == $odd_doubleParam) {
-					return $affichage_num = 2;
+					return 2;
 				} else {
-					return $affichage_num = 3;
+					return 3;
 				}
 			} elseif ($market_id == '158') {
-				return $affichage_num = 1;
+				return 1;
 			} elseif ($market_id == '145') {
-				return $affichage_num = 1;
+				return 1;
 			} elseif ($market_id == '77') {
-				return $affichage_num = 8;
+				return 8;
 			} elseif ($market_id == '79') {
-				return $affichage_num = 1;
+				return 1;
 			} elseif ($market_id == '150') {
-				return $affichage_num = 1;
+				return 1;
 			} elseif ($market_id == '151') {
-				return $affichage_num = 1;
+				return 1;
 			} elseif ($market_id == '118') {
-				return $affichage_num = 2;
+				return 2;
 			} elseif ($market_id == '112') {
-				return $affichage_num = 1;
+				return 1;
 			} elseif ($market_id == '24') {
-				return $affichage_num = 1;
+				return 1;
 			} elseif ($market_id == '12') {
-				return $affichage_num = 1;
+				return 1;
 			} elseif ($market_id == '140') {
-				return $affichage_num = 1;
+				return 1;
 			} elseif ($market_id == '94') {
-				return $affichage_num = 4;
+				return 4;
 			} elseif ($market_id == '39') {
-				return $affichage_num = 5;
+				return 5;
 			} elseif ($market_id == '9') {
-				return $affichage_num = 1;
+				return 1;
+			} else {
+				return 0;
 			}
 		}
 
-		public function postSelections()
-		{
-			$pick = Input::get('pick');
-			$scope = Scope::firstOrCreate(array('name' => Input::get('scope')));
-			$bookmaker = Bookmaker::firstOrCreate(array('nom' => Input::get('bookmaker')));
-			$odd_value = Input::get('odd_value');
-			$odd_doubleParam = Input::get('odd_doubleParam');
-			$odd_doubleParam2 = Input::get('odd_doubleParam2');
-			$odd_doubleParam3 = Input::get('odd_doubleParam3');
-			$odd_participantParameterName = Input::get('odd_participantParameterName');
-			$odd_participantParameterName2 = Input::get('odd_participantParameterName2');
-			$odd_participantParameterName3 = Input::get('odd_participantParameterName3');
-			$odd_groupParam = Input::get('odd_groupParam');
+		public function postManualSelections(){
+			$date = Input::get('date');
+			$sport = Sport::firstOrCreate(array('name' => Input::get('sport')));
 			$market = Market::firstOrCreate(array('name' => Input::get('market')));
-			$game_time = Input::get('game_time');
-			$game_name = Input::get('game_name');
-			$sport_name = Input::get('sport_Name');
-			$league_name = Input::get('league_name');
-			$isMatch = Input::get('isMatch') == 'false' ? false : true;;
-			$event_country_name = Input::get('event_country_name');
-			$isLive = Input::get('isLive') == 'false' ? false : true;
-			if($isMatch == 'true'){
-				$home_team = Input::get('home_team');
-				$home_team_country_name = Input::get('home_team_country_name');
-				$away_team = Input::get('away_team');
-				$away_team_country_name = Input::get('away_team_country_name');
-				$score = Input::get('score');
-			}else{
-				$home_team = null;
-				$home_team_country_name = null;
-				$away_team = null;
-				$away_team_country_name = null;
-				$score = null;
-			}
-			$session_id = Input::get('userSessionId');
+		}
 
-
-			$coupon = new Coupon(array(
-				'pick' => $pick,
-				'scope' => $scope,
-				'bookmaker' => $bookmaker,
-				'odd_value' => $odd_value,
-				'odd_doubleParam' => $odd_doubleParam,
-				'odd_doubleParam2' => $odd_doubleParam2,
-				'odd_doubleParam3' => $odd_doubleParam3,
-				'odd_participantParameterName' => $odd_participantParameterName,
-				'odd_participantParameterName2' => $odd_participantParameterName2,
-				'odd_participantParameterName3' => $odd_participantParameterName3,
-				'odd_groupParam' => $odd_groupParam,
-				'market' => $market,
-				'game_time' => $game_time,
-				'game_name' => $game_name,
-				'sport_name' => $sport_name,
-				'league_name' => $league_name,
-				'event_country_name' => $event_country_name,
-				'home_team' => $home_team,
-				'home_team_country_name' => $home_team_country_name,
-				'away_team' => $away_team,
-				'away_team_country_name' => $away_team_country_name,
-				'score' => $score,
-				'isLive' => $isLive == 'true' ? true : false,
-				'isMatch' => $isMatch == 'true' ? true : false,
-				'session_id' => $session_id,
-				'affichage' => setAffichage($market, $pick, $odd_doubleParam)
-			));
-			$coupon->save();
-
+		public function postAutomaticSelections()
+		{
 			file_put_contents('log_index.txt', json_encode(Input::all()) . "\n\n", FILE_APPEND | LOCK_EX);
-
 			return 1;
 		}
 
