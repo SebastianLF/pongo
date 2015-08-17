@@ -531,6 +531,7 @@
       <column name="market" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="game_time" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
       <column name="game_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="game_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="sport_id" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="sport_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="league_id" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
