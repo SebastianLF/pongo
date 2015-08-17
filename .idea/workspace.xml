@@ -6,6 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2015_05_22_032137_create_coupon_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2015_05_22_032137_create_coupon_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/CouponController.php" afterPath="$PROJECT_DIR$/app/controllers/CouponController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -109,8 +110,31 @@
       <file leaf-file-name="CouponController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5596529" vertical-offset="4196" max-vertical-offset="6256">
-              <caret line="262" column="48" selection-start-line="262" selection-start-column="48" selection-end-line="262" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.37527114" vertical-offset="4298" max-vertical-offset="6273">
+              <caret line="263" column="51" selection-start-line="263" selection-start-column="51" selection-end-line="263" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="slfweb.coupon" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..coupon">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015_05_22_032137_create_coupon_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_05_22_032137_create_coupon_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.730769" vertical-offset="316" max-vertical-offset="1156">
+              <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -218,7 +242,6 @@
         <option value="$PROJECT_DIR$/app/views/includes/head.blade.php" />
         <option value="$PROJECT_DIR$/app/views/layouts/default.blade.php" />
         <option value="$PROJECT_DIR$/app/models/Coupon.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2015_05_22_032137_create_coupon_table.php" />
         <option value="$PROJECT_DIR$/app/controllers/DashboardController.php" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/dashboard.js" />
         <option value="$PROJECT_DIR$/app/models/Equipe.php" />
@@ -236,6 +259,7 @@
         <option value="$PROJECT_DIR$/app/database/migrations/2015_06_08_001149_create_markets_table.php" />
         <option value="$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php" />
         <option value="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_05_22_032137_create_coupon_table.php" />
         <option value="$PROJECT_DIR$/app/controllers/CouponController.php" />
       </list>
     </option>
@@ -1430,7 +1454,13 @@
       <option name="project" value="LOCAL" />
       <updated>1439819706243</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="orm-group">
+      <created>1439820660730</created>
+      <option name="number" value="00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1439820660730</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1752,14 +1782,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_05_22_032137_create_coupon_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3298097" vertical-offset="0" max-vertical-offset="1139">
-          <caret line="38" column="49" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Coupon.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10782241" vertical-offset="0" max-vertical-offset="473">
@@ -1906,6 +1928,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_05_22_032137_create_coupon_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.730769" vertical-offset="316" max-vertical-offset="1156">
+          <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..coupon">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state />
@@ -1919,8 +1949,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5596529" vertical-offset="4196" max-vertical-offset="6256">
-          <caret line="262" column="48" selection-start-line="262" selection-start-column="48" selection-end-line="262" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.37527114" vertical-offset="4298" max-vertical-offset="6273">
+          <caret line="263" column="51" selection-start-line="263" selection-start-column="51" selection-end-line="263" selection-end-column="51" />
           <folding />
         </state>
       </provider>

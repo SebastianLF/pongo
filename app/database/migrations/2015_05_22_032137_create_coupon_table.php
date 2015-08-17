@@ -32,6 +32,7 @@ class CreateCouponTable extends Migration {
 			$table->string('market');
 			$table->dateTime('game_time');
 			$table->string('game_name')->nullable();
+			$table->integer('game_id')->nullable(); // null = manual
 			$table->string('sport_id');
 			$table->string('sport_name');
 			$table->string('league_id');

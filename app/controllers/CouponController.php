@@ -207,6 +207,7 @@
 					'market_id' => $market->id,
 					'market' => $market->name,
 					'game_time' => $date,
+					'game_id' => null,
 					'game_name' => Input::exists(array('team1', 'team2')) ? $home_team->name . ' - ' . $away_team->name : null,
 					'sport_id' => $sport->id,
 					'sport_name' => $sport->name,
