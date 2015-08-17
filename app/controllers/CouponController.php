@@ -272,8 +272,8 @@
 				"away_team_country_name" => Input::exists('away_team_country_name') ?  Input::get('away_team_country_name') : null,
 				"score" => Input::exists('score') ? Input::get('score') : null,
 				"isLive" => $isLive,
-				"isMatch" => Input::get('isMatch'),
-				"session_id" => Session::getId(),
+				"isMatch" => Input::get('isMatch') == 'true' ? 1 : 0,
+				"session_id" => Input::get('userSessionId'),
 				"affichage" => $this->setAffichage(Input::get('market_id'))
 			));
 			$coupon->save();
