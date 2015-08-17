@@ -473,6 +473,7 @@
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="competition_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="equipe_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="display" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
       <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
@@ -514,29 +515,25 @@
       <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="pick" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="scope" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="scope_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="bookmaker" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="scope" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="bookmaker_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="bookmaker" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="odd_value" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
-      <column name="odd_doubleParam" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
-      <column name="odd_doubleParam2" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
-      <column name="odd_doubleParam3" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
-      <column name="odd_participantParameter" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="odd_participantParameterName" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="odd_participantParameter2" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="odd_participantParameterName2" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="odd_participantParameter3" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="odd_participantParameterName3" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="odd_groupParam" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
-      <column name="market" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="odd_doubleParam" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
+      <column name="odd_doubleParam2" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
+      <column name="odd_doubleParam3" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
+      <column name="odd_participantParameterName" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="odd_participantParameterName2" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="odd_participantParameterName3" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="odd_groupParam" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
       <column name="market_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="market" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="game_time" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
-      <column name="game_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="game_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="sport_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="game_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sport_id" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="sport_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="league_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="league_id" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="league_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="event_country_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="home_team" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
@@ -619,13 +616,10 @@
     <table name="markets" schema="" catalog="slfweb" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="odd_doubleParam" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
-      <column name="odd_doubleParam2" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
-      <column name="odd_doubleParam3" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
-      <column name="odd_participantParameterName" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
-      <column name="odd_participantParameterName2" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
-      <column name="odd_participantParameterName3" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
-      <column name="odd_groupParam" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="representation" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="fr" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="priorite" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="isMatch" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
       <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
@@ -673,6 +667,7 @@
     <table name="scopes" schema="" catalog="slfweb" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="priorite" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
@@ -730,6 +725,7 @@
     </table>
     <table name="sport_market" schema="" catalog="slfweb" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="display" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
       <column name="sport_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="market_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
@@ -742,6 +738,7 @@
     </table>
     <table name="sport_scope" schema="" catalog="slfweb" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="display" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
       <column name="sport_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="scope_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
@@ -756,6 +753,8 @@
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
       <column name="logo" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="priorite" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="categorie" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
       <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
