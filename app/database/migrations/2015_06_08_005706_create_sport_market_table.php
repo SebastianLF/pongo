@@ -14,6 +14,7 @@ class CreateSportMarketTable extends Migration {
 	{
 		Schema::create('sport_market', function(Blueprint $table) {
 			$table->increments('id');
+			$table->boolean('display')->default(1);
 			$table->unsignedInteger('sport_id');
 			$table->unsignedInteger('market_id');
 			$table->timestamps();

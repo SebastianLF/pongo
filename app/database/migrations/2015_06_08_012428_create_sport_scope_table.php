@@ -14,6 +14,7 @@ class CreateSportScopeTable extends Migration {
 	{
 		Schema::create('sport_scope', function(Blueprint $table) {
 			$table->increments('id');
+			$table->boolean('display')->default(1);
 			$table->integer('sport_id')->unsigned();
 			$table->integer('scope_id')->unsigned();
 			$table->timestamps();

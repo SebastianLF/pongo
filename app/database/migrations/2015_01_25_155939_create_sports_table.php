@@ -16,7 +16,9 @@ class CreateSportsTable extends Migration {
 			$table->increments('id');
 			$table->string('name',100);
             $table->string('logo');
-            $table->tinyInteger('categorie'); // 1 = sport co, 2 = sport individuel
+            $table->string('description')->nullable();
+			$table->string('priorite');
+			$table->tinyInteger('categorie'); // 1 = sport co, 2 = sport individuel
 			$table->timestamps();
 		});
 	}

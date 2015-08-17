@@ -13,8 +13,8 @@ class DatabaseSeeder extends Seeder {
 
 		$this->call('UserTableSeeder');
 		$this->call('DeviseTableSeeder');
-		$this->call('BookmakerTableSeeder');
-		$this->call('BookmakerUserTableSeeder');
+		//$this->call('BookmakerTableSeeder');
+		//$this->call('BookmakerUserTableSeeder');
 		$this->call('TipsterTableSeeder');
 		$this->call('SportTableSeeder');
 		$this->call('CountryTableSeeder');

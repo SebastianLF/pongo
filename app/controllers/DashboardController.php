@@ -1,6 +1,8 @@
 <?php
 
 	use Carbon\Carbon;
+	use Maatwebsite\Excel\Facades\Excel;
+
 
 	class DashboardController extends BaseController
 	{
@@ -23,6 +25,32 @@
 
 		public function showDashboard()
 		{
+			/*Excel::selectSheetsByIndex(0)->load('xls/BettingTypes.xls', function ($reader) {
+				// Getting all results
+				$results = $reader->get();
+				Clockwork::info($results);
+				foreach($results as $result){
+					Market::create(array('id' => $result->id, 'name' => $result->name, 'description' => $result->description));
+				}
+			});
+
+			Excel::selectSheetsByIndex(2)->load('xls/BettingTypes.xls', function ($reader) {
+				// Getting all results
+				$results = $reader->get();
+				Clockwork::info($results);
+				foreach($results as $result){
+					Sport::create(array('id' => $result->id, 'name' => $result->name, 'description' => $result->description));
+				}
+			});
+
+			Excel::selectSheetsByIndex(0)->load('xls/bookmakers.xls', function ($reader) {
+				// Getting all results
+				$results = $reader->get();
+				foreach ($results as $result) {
+					$name = trim($result->name);
+					Bookmaker::create(array('nom' => $name));
+				}
+			});*/
 			return View::make('pages.dashboard');
 		}
 

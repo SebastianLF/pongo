@@ -92,9 +92,66 @@
 		return false;
 	});
 
+
 	Validator::extend('checkHashedPass', function ($attribute, $value, $parameters) {
 		if (Hash::check($value, $parameters[0])) {
 			return true;
+		}
+		return false;
+	});
+
+	Validator::extend('pick_validation', function ($attribute, $value, $parameters) {
+		$market = $parameters[0];
+
+		if ($market == 7) { //Winner
+			return true;
+		} elseif ($market == 8) { //1x2 with european handicap
+			return true;
+		} elseif ($market == 9) { //1x2 with european handicap
+			if (preg_match("(1X|X2|12)", $value)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		return false;
+	});
+
+	Validator::extend('oddParam_validation', function ($attribute, $value, $parameters) {
+		$market = $parameters[0];
+
+		if ($market == 7) { //Winner
+			return true;
+		} elseif ($market == 8) { //1x2 with european handicap
+			if (preg_match("/^-?[0-9]\d*(\.\d+)?$/", $value)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		return false;
+	});
+
+	Validator::extend('oddParam2_validation', function ($attribute, $value, $parameters) {
+		$market = $parameters[0];
+		return false;
+	});
+
+	Validator::extend('oddParam3_validation', function ($attribute, $value, $parameters) {
+		$market = $parameters[0];
+		return false;
+	});
+
+	Validator::extend('participantParameter_validation', function ($attribute, $value, $parameters) {
+		$market = $parameters[0];
+
+		if ($market == 8) { //1x2 with european handicap
+			if (preg_match("(Home|Away)", $value)) {
+				return true;
+			} else {
+				return false;
+			}
 		}
 		return false;
 	});

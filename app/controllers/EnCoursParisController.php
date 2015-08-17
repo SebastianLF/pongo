@@ -17,27 +17,11 @@
 
 		public function create()
 		{
-			Excel::load('xls/BettingTypes.xls', function ($reader) {
-				// Getting all results
-				$results = $reader->get();
-				Clockwork::info($results);
-			});
 
-			Excel::load('xls/bookmakers.xls', function ($reader) {
-				// Getting all results
-				$results = $reader->get();
-				foreach ($results as $result) {
-					DB::table('bookmakers')->insert(array('nom' => $result->name));
-				}
-			});
 		}
-
 
 		public function store()
 		{
-
-
-
 
 		}
 

@@ -43,6 +43,7 @@
                             {{' '.$selection->pick}}
                         @elseif($selection->affichage == "2")
                             {{' '.$selection->pick.' '.$selection->odd_doubleParam}}
+
                         @elseif($selection->affichage == "3")
                             {{' '.$selection->pick}}{{', '.$selection->odd_participantParameterName}}
                             @if($selection->odd_doubleParam > 0)
@@ -71,7 +72,9 @@
                         @elseif($selection->affichage == "8")
                             {{$selection->odd_participantParameterName}}{{' '}}{{$selection->pick}}{{' '}}{{$selection->odd_doubleParam}}
                         @endif
-
+                        @if($selection->isLive)
+                            {{'('.$selection->score.')'}}
+                        @endif
                     </td>
                     <td><span class="bold">Cote: </span><input name="automatic-selection-cote[]" type="text"
                                                                value="{{$selection->odd_value}}"/></td>

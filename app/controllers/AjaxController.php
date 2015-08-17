@@ -18,7 +18,7 @@
 		{
 			$q = Input::get('q');
 
-			$sports = Sport::select('id', 'name AS text', 'logo')->where('name', 'LIKE', '%' . $q . '%')->orderBy('name')->get();
+			$sports = Sport::select('id', 'name AS text', 'logo')->where('name', 'LIKE', '%' . $q . '%')->get();
 			return Response::json($sports);
 		}
 

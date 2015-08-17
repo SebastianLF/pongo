@@ -3,7 +3,7 @@
 class Bookmaker extends Eloquent {
 
     protected $table = 'bookmakers';
-    protected $guarded = array('id');
+    protected $fillable = array('nom');
 
     public function comptes(){
         return $this->hasMany('BookmakerUser');

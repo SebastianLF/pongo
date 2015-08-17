@@ -16,6 +16,7 @@ class CreateCompetitionEquipeTable extends Migration {
 			$table->increments('id');
 			$table->integer('competition_id')->unsigned();
 			$table->integer('equipe_id')->unsigned();
+			$table->boolean('display')->default(1);
 			$table->timestamps();
 			$table->softDeletes();
 			$table->foreign('competition_id')->references('id')->on('competitions')

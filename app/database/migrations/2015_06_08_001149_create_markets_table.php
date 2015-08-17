@@ -15,6 +15,10 @@ class CreateMarketsTable extends Migration {
 		Schema::create('markets', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('name');
+			$table->string('description');
+			$table->string('representation');
+			$table->string('fr');
+			$table->string('priorite');
 			$table->boolean('isMatch')->default(0);
 			$table->timestamps();
 		});

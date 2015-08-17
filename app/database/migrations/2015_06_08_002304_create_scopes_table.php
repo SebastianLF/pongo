@@ -15,6 +15,7 @@ class CreateScopesTable extends Migration {
 		Schema::create('scopes', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('name');
+			$table->string('priorite');
 			$table->timestamps();
 		});
 	}
