@@ -1479,7 +1479,13 @@
       <option name="project" value="LOCAL" />
       <updated>1439837976842</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="orm-group">
+      <created>1439837990961</created>
+      <option name="number" value="00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1439837990961</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
