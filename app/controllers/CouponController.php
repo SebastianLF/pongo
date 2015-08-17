@@ -260,6 +260,7 @@
 				'market_id' => Input::get('market_id'),
 				'market' => Input::get('market'),
 				'game_time' => Input::get('game_time'),
+				'game_id' => Input::get('game_id'),
 				'game_name' => Input::get('game_name'),
 				'sport_id' => Input::get('sport_id'),
 				'sport_name' => Input::get('sport_Name'),
