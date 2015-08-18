@@ -226,13 +226,29 @@
 				));
 				Clockwork::info($coupon);
 				$coupon->save();
-
 			}
-
 		}
 
 		public function postAutomaticSelections()
 		{
+
+			// données a entrer dans la bd dans le but de grossir la bd.
+			$bookmaker = Bookmaker::firstOrCreate(array('nom' => Input::get('bookmaker')));
+			$sport = Sport::firstOrCreate(array('name' => Input::get('sport_Name')));
+			$event_country = Country::firstOrCreate(array('name' => Input::get('event_country_name')));
+			$home_country = Input::exists('home_team') ? Country::firstOrCreate(array('name' => Input::get('home_team_country_name'))) : null;
+			$away_country = Input::exists('away_team') ? Country::firstOrCreate(array('name' => Input::get('away_team_country_name'))) : null;
+			$competition = Competition::firstOrCreate(array('name' => Input::get('league_name'), 'sport_id' => $sport->id, 'country_id' => $event_country->id));
+			$home_team = Input::exists('home_team') ? Equipe::firstOrCreate(array('name' => Input::get('home_team'), 'sport_id' => $sport->id, 'country_id' => $home_country->id)) : null;
+			$away_team = Input::exists('away_team') ? Equipe::firstOrCreate(array('name' => Input::get('away_team'), 'sport_id' => $sport->id, 'country_id' => $away_country->id)) : null;
+
+			$market = Market::firstOrCreate(array('id' => Input::get('market_id'))); // le nom peut etre change du coté de betbrain donc on recherche uniquement par id.
+			$market->name = Input::get('market'); // donc du coup on met a jour le nom du market si il y a eu une nouvelle creation ou mise à jour si betbrain a décidé de changer le nom du market.
+			$market->save();
+
+			$scope = Scope::firstOrCreate(array('name' => Input::get('scope')));
+
+			// verification si l'input islive existe et ensuite suivant si c true ou false.
 			$isLive = '';
 			if(Input::exists('isLive')){
 				if(Input::get('isLive') == 'true'){
