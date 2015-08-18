@@ -246,7 +246,14 @@
 			$market->name = Input::get('market'); // donc du coup on met a jour le nom du market si il y a eu une nouvelle creation ou mise à jour si betbrain a décidé de changer le nom du market.
 			$market->save();
 
-			$scope = Scope::firstOrCreate(array('name' => Input::get('scope')));
+			$scope = Scope::firstOrCreate(array('name' => Input::get('scope'))); // recherche par nom parceque betbrain peut envoyer un scope qui a 0 en id ce qui fait buguer l appli.
+
+			if(Input::exists('home_team')){ $competition->equipes()->save($home_team);}
+			if(Input::exists('away_team')){ $competition->equipes()->save($away_team);}
+
+			$sport->markets()->save($market);
+			$sport->scopes()->save($scope);
+
 
 			// verification si l'input islive existe et ensuite suivant si c true ou false.
 			$isLive = '';
