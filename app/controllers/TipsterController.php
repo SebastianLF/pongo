@@ -232,7 +232,7 @@
 		public function getMyTipsters()
 		{
 			$nom = Input::get('q');
-			$tipsters = $this->currentUser->tipsters()->where('name', 'LIKE', '%' . $nom . '%')->get(array('id', 'name AS text'));
+			$tipsters = $this->currentUser->tipsters()->where('name', 'LIKE', '%' . $nom . '%')->get(array('id', 'name AS text', 'montant_par_unite', 'followtype'));
 			return Response::json($tipsters);
 		}
 

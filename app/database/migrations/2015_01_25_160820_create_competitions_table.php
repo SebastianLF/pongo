@@ -16,6 +16,7 @@ class CreateCompetitionsTable extends Migration {
 			$table->increments('id');
 			$table->string('name');
             $table->string('logo');
+			$table->tinyInteger('pirorite')->default(3);
             $table->unsignedInteger('sport_id');
             $table->integer('country_id')->unsigned()->nullable();
 			$table->timestamps();

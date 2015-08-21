@@ -186,7 +186,7 @@
 					}
 				}
 				$regles = array(
-					'tipstersinputdashboard' => 'required|exists:tipsters,id,user_id,' . $this->currentUser->id,
+					'tipstersinputdashboard' => 'required|exists:tipsters,id,user_id,' . $this->currentUser->id, // la validation du tipster doit etre en premiere position.
 					'typestakeinputdashboard' => 'required|in:u,f',
 					'stakeunitinputdashboard' => 'required_if:typestakeinputdashboard,u|unites',
 					'amountinputdashboard' => 'required_if:typestakeinputdashboard,f|decimal>0',
@@ -365,11 +365,13 @@
 						$selection_coupon->delete();
 					}
 
-					// deduction du montant dans le bookmaker correspondant uniquement si le suivi est de type normal.
-					if ($suivi == 'n') {
-						$compte_to_deduct = $this->currentUser->comptes()->where('id', Input::get('accountsinputdashboard'))->first();
-						$compte_to_deduct->bankroll_actuelle -= $mise_devise;
-						$compte_to_deduct->save();
+					// deduction du montant dans le bookmaker correspondant uniquement si le suivi est de type normal et si ce n'est pas un pari gratuit.
+					if(Input::get('ticketGratuit') == 0){
+						if ($suivi == 'n') {
+							$compte_to_deduct = $this->currentUser->comptes()->where('id', Input::get('accountsinputdashboard'))->first();
+							$compte_to_deduct->bankroll_actuelle -= $mise_devise;
+							$compte_to_deduct->save();
+						}
 					}
 
 					return Response::json(array(

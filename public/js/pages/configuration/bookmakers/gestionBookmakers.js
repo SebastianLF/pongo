@@ -1,4 +1,4 @@
-function gestionBookmakers() {
+function Bookmakers() {
 
     var nameBookmakerSelect = "select[name='name_bookmaker']";
     var nameBookmakerContainer = "#bookmaker_container";
@@ -16,7 +16,7 @@ function gestionBookmakers() {
     var paginationContainer = '#bookmakers-pagination';
     var url_pagination = 'pagination/ajax/bookmakers';
 
-    function loadBookmakers(page) {
+    this.loadBookmakers = function(page) {
         //si un numero n'est pas specifié, on affiche la premiere page.
         page = page || '1';
         $.ajax({
@@ -24,22 +24,22 @@ function gestionBookmakers() {
             data: {page: page},
             success: function (data) {
                 $(paginationContainer).html(data);
-                editBookmakerButton();
-                deleteBookmakerButton();
+                this.editBookmakerButton();
+                this.deleteBookmakerButton();
             }
         });
-    }
+    };
 
-    function paginationOnclick() {
+    this.paginationOnclick = function() {
         // when you click on pagination numbers
         $(paginationContainer).on('click', '.pagination a', function (e) {
             e.preventDefault();
             var pg = getPaginationSelectedPage($(this).attr('href'));
             loadBookmakers(pg);
         });
-    }
+    };
 
-    function BookmakerAdd() {
+    this.BookmakerAdd = function() {
         var form = $('#bookmakerform-add');
         $('#bookmakerAddModal').on('hide.bs.modal', function () {
             // remise a zero des champs erreurs
@@ -104,9 +104,9 @@ function gestionBookmakers() {
                 }
             });
         });
-    }
+    };
 
-    function bookmakerUpdate() {
+    this.bookmakerUpdate = function() {
         var form = $('#bookmakerform-edit');
         var id_account = 'idAccountEditInput';
         form.submit(function (e) {
@@ -134,18 +134,18 @@ function gestionBookmakers() {
                 }
             });
         });
-    }
+    };
 
-    function editBookmakerButton() {
+    this.editBookmakerButton = function() {
         var form = $('#bookmakerform-edit');
         $('.bookmakerEditButton').click(function () {
             form.find("#idBookmakerEditInput").val($(this).attr('data-id-bookmaker'));
             form.find("#idAccountEditInput").val($(this).attr('data-id'));
             form.find(nameAccountInput).val($(this).attr('data-name'));
         });
-    }
+    };
 
-    function deleteBookmakerButton() {
+    this.deleteBookmakerButton = function() {
         $('.bookmakerDeleteButton').click(function (e) {
             e.preventDefault();
             var parent = $(this).parents('tr');
@@ -178,15 +178,16 @@ function gestionBookmakers() {
                             }
                         });
                     }
-
                 });
         });
+    };
+    this.inits = function (){
+        this.loadBookmakers();
+        this.paginationOnclick();
+        this.BookmakerAdd();
+        this.bookmakerUpdate();
     }
-
-    //inits
-    loadBookmakers();
-    paginationOnclick();
-    BookmakerAdd();
-    bookmakerUpdate();
 }
 
+var GestionBookmakers = new Bookmakers();
+GestionBookmakers.inits();

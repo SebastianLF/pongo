@@ -2,6 +2,10 @@ function automaticBetForm() {
 
     var form = $('#automaticform-add');
     var form_string = '#automaticform-add';
+    var followtype = form.find('#followtypeinputdashboard');
+    var abcd_checkbox = form.find("#ticketABCD");
+    var gratuit_checkbox = form.find("#ticketGratuit");
+    var longterme_checkbox = form.find("#ticketLongTerme");
 
     function ajouterTicket() {
         form.submit(function (e) {
@@ -20,9 +24,10 @@ function automaticBetForm() {
                 var ticketABCD;
                 var ticketGratuit;
                 var ticketLongTerme;
-                if (form.find("#ticketABCD").is(":checked")) {ticketABCD = 1;}else{ticketABCD = 0;}
-                if (form.find("#ticketGratuit").is(":checked")) {ticketGratuit = 1;}else{ticketGratuit = 0;}
-                if (form.find("#ticketLongTerme").is(":checked")) {ticketLongTerme = 1;}else{ticketLongTerme = 0;}
+                if (abcd_checkbox.is(":checked")) {ticketABCD = 1;}else{ticketABCD = 0;}
+                if (gratuit_checkbox.is(":checked")) {ticketGratuit = 1;}else{ticketGratuit = 0;}
+                console.log(abcd_checkbox.is(":checked"));
+                if (longterme_checkbox.is(":checked")) {ticketLongTerme = 1;}else{ticketLongTerme = 0;}
 
                 $.ajax({
                     url: 'encourspari/auto',
@@ -59,7 +64,7 @@ function automaticBetForm() {
 
     // fonction de rafraichissement.
     function refreshSelections() {
-        var suivi = form.find('#followtypeinputdashboard').val();
+        var suivi = followtype.val();
         $.ajax({
             url: 'selections',
             success: function (data){
@@ -140,13 +145,19 @@ function automaticBetForm() {
         form.find('.typestakeflat').hide();
         select.on('change', function () {
             if ($(this).val() == 'f') {
+                form.find('#stakeunitinputdashboard').val(0);
+                form.find('#amountconversion').val(0);
+                form.find('#amountinputdashboard').val(0);
+                form.find('#flattounitconversion').val(0);
                 form.find('.typestakeunites').hide();
-                form.find('#stakeunitinputdashboard').val('');
                 form.find('.typestakeflat').show();
             } else {
+                form.find('#amountinputdashboard').val(0);
+                form.find('#flattounitconversion').val(0);
+                form.find('#stakeunitinputdashboard').val(0);
+                form.find('#amountconversion').val(0);
                 form.find('.typestakeunites').show();
                 form.find('.typestakeflat').hide();
-                form.find('#amountinputdashboard').val('');
             }
         });
     }
@@ -161,66 +172,78 @@ function automaticBetForm() {
                 dataType: 'json',
                 data: function (params) {
                     return {
-                        q: params.term // search term
+                        q: params.term // search ter+m
                     };
                 },
                 processResults: function (data) {
+
                     return {
                         results: data
                     };
                 }
             }
-        });
-        form.find('#tipstersinputdashboard').change(function () {
-            var tipster_id = $(form_string + ' #tipstersinputdashboard').val();
-            var followtype = $(form_string + ' #followtypeinputdashboard');
-            var montant_par_unite = $(form_string + ' #amountperunit');
+        }).change(function () {
+            var tipster = $(this).select2('data');
+            if(form.find('#tipstersinputdashboard').val() == ''){
+                resetAutomaticForm();
+                form.find('#WithoutTipsterPart').fadeOut().addClass('hidden');
+                followtype.val(null).trigger('change');
+                form.find('#amountperunit').val('');
 
-            // remise a zero des champs liés.
-            $(form_string + ' #stakeunitinputdashboard').val('');
-            $(form_string + ' #amountperunit').val('');
-            $(form_string + ' #amountconversion').val('0');
-            $(form_string + ' #amountinputdashboard').val('');
-            $(form_string + ' #flattounitconversion').val('0');
-            $.ajax({
-                url: 'infosTipster',
-                data: 'tipster_id=' + tipster_id,
-                dataType: 'json',
-                success: function (data) {
-                    form.find('.bookinputdashboard').val(null).trigger("change");
-                    form.find('#accountsinputdashboard').val(null).trigger("change");
-                    followtype.val('');
-                    if (data.followtype == 'n') {
-                        followtype.val('normal');
-                        form.find(".bookinputdashboard").prop("disabled", false);
-                        form.find("#accountsinputdashboard").prop("disabled", false);
-                        form.find('.bookinputdashboard').val(bookmaker_id).trigger("change");
-                        form.find('#accountsinputdashboard').val(null).trigger("change");
-                    } else if (data.followtype == 'b') {
-                        followtype.val('à blanc');
-                        form.find('.bookinputdashboard').val(null).trigger("change");
-                        form.find('#accountsinputdashboard').val(null).trigger("change");
-                        form.find('.bookinputdashboard').prop('disabled', true);
-                        form.find('#accountsinputdashboard').prop('disabled', true);
-                    }else{
-                        form.find(".bookinputdashboard").prop("disabled", false);
-                        form.find("#accountsinputdashboard").prop("disabled", false);
-                        form.find('.bookinputdashboard').val(bookmaker_id).trigger("change");
-                        form.find('#accountsinputdashboard').val(null).trigger("change");
+            }else{
+                form.find('#WithoutTipsterPart').fadeIn().removeClass('hidden');
+                if(tipster[0]['followtype'] == 'n'){followtype.val('n').trigger('change');}
+                else if(tipster[0]['followtype'] == 'b'){followtype.val('b').trigger('change');}
 
-                    }
-                    var mt = Number(data.montant_par_unite);
-                    isNaN(mt) ?  montant_par_unite.val('') : montant_par_unite.val(mt);
-                }
-            });
+            }
+
+            var mt = Number(tipster[0]['montant_par_unite']);
+            isNaN(mt) ?  form.find('#amountperunit').val('') : form.find('#amountperunit').val(mt);
+
         });
+        followtype.select2({
+            cache: true,
+            minimumResultsForSearch: Infinity,
+            data : [{id: "n", text: "normal"}, {id: "b", text: "à blanc"}]
+        }).prop("disabled", true);
     }
 
     function resetAutomaticForm(){
-        form.find('#stakeunitinputdashboard').val(null).trigger("change");
-        form.find('#amountinputdashboard').val(null).trigger("change");
+        form.find('#stakeunitinputdashboard').val(null);
+        form.find('#amountinputdashboard').val(null);
         form.find('#accountsinputdashboard').val(null).trigger("change");
-        form.find('input:checkbox').prop('checked', false);
+        form.find('.methodeabcdcontainer').addClass("hide");
+        form.find('#serieinputdashboard').val(null).trigger("change").prop('disabled', true);
+        form.find('#letterinputdashboard').val(null).trigger("change").prop('disabled', true);
+        form.find('#amountconversion').val(0);
+        form.find('#flattounitconversion').val(0);
+        form.find('#amountinputdashboard').val(0);
+        form.find('#stakeunitinputdashboard').val(0);
+        resetCheckboxs();
+    }
+
+    function resetOnChangingTipster(){
+
+        form.find('#stakeunitinputdashboard').val(null);
+        form.find('#amountinputdashboard').val(null);
+        form.find('#accountsinputdashboard').val(null).trigger("change");
+        form.find('.methodeabcdcontainer').addClass("hide");
+        form.find('#serieinputdashboard').val(null).trigger("change").prop('disabled', true);
+        form.find('#letterinputdashboard').val(null).trigger("change").prop('disabled', true);
+        form.find('#amountconversion').val(0);
+        form.find('#flattounitconversion').val(0);
+        form.find('#amountinputdashboard').val(0);
+        form.find('#stakeunitinputdashboard').val(0);
+        resetCheckboxs();
+    }
+
+    function resetCheckboxs(){
+        abcd_checkbox.prop('checked', false);
+        abcd_checkbox.parents('span').removeClass("checked");
+        gratuit_checkbox.prop('checked', false);
+        gratuit_checkbox.parents('span').removeClass("checked");
+        longterme_checkbox.prop('checked', false);
+        longterme_checkbox.parents('span').removeClass("checked");
     }
 
     var type_stake = [{ id: 'u', text: 'en unités' }, { id: 'f', text: 'en devise' }];
@@ -335,28 +358,27 @@ function automaticBetForm() {
         isNaN(res_final) || res_final < 0 || montant_par_unite == '' ? $(form_string + ' #flattounitconversion').val('0') : $(form_string + ' #flattounitconversion').val(res_final);
     });
 
-    form.find('#serieinputdashboard').prop('disabled', true);
-    form.find('#letterinputdashboard').prop('disabled', true);
-    form.find('.methodeabcdcontainer').addClass("hide");
-    //form.find('.bookmakercontainer').addClass("hide");
-
-    form.find('#ticketABCD').on('click', function(){
-        if ( $(this).is(':checked') ) {
-            form.find('.methodeabcdcontainer').removeClass("hide");
-            form.find('#serieinputdashboard').prop('disabled', false);
-            form.find('#letterinputdashboard').prop('disabled', false);
-        }
-        else {
-            form.find('.methodeabcdcontainer').addClass("hide");
-            form.find('#serieinputdashboard').prop('disabled', true);
-            form.find('#letterinputdashboard').prop('disabled', true);
-        }
-    });
-
+    function assignerEtatEnDebut() {
+        console.log(followtype.val());
+        followtype.val('b').trigger('change');
+        form.find('#WithoutTipsterPart').addClass('hidden');
+        resetAutomaticForm();
+        form.find('#ticketABCD').on('click', function(){
+            if ( $(this).is(':checked') ) {
+                form.find('.methodeabcdcontainer').removeClass("hide");
+                form.find('#serieinputdashboard').val(null).trigger("change").prop('disabled', false);
+                form.find('#letterinputdashboard').val(null).trigger("change").prop('disabled', false);
+            }
+            else {
+                form.find('.methodeabcdcontainer').addClass("hide");
+                form.find('#serieinputdashboard').val(null).trigger("change").prop('disabled', true);
+                form.find('#letterinputdashboard').val(null).trigger("change").prop('disabled', true);
+            }
+        });
+    }
 
     // initialisation
-    //$(".bookinputdashboard").prop("disabled", true);
-    //$("#accountsinputdashboard").prop("disabled", true);
+    assignerEtatEnDebut();
     refreshSelectionsClick();
     refreshSelections();
     ajouterTicket();

@@ -17,7 +17,7 @@ class CreateSportsTable extends Migration {
 			$table->string('name',100);
             $table->string('logo');
             $table->string('description')->nullable();
-			$table->string('priorite');
+			$table->tinyInteger('pirorite')->default(3);
 			$table->tinyInteger('categorie'); // 1 = sport co, 2 = sport individuel
 			$table->timestamps();
 		});

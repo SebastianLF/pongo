@@ -105,7 +105,7 @@
                                                 <div class="portlet-body">
                                                     {{App::environment()}}
                                                     @if(App::environment('local'))
-                                                        <iframe src={{"http://stage.betbrain.com/?portalId=1312&userSessionId=".Session::getId()}} height="1090" width="100%" frameborder="0">Odds service provided in co-operation with <a href="http://www.betbrain.com" target="_blank"><b>BetBrain.com</b></a></iframe>
+                                                        <!--<iframe src={{"http://stage.betbrain.com/?portalId=1312&userSessionId=".Session::getId()}} height="1090" width="100%" frameborder="0">Odds service provided in co-operation with <a href="http://www.betbrain.com" target="_blank"><b>BetBrain.com</b></a></iframe> -->
                                                     @else
                                                         <iframe src={{"http://betbrain.com/?portalId=1326&userSessionId=".Session::getId()}} height="1090" width="100%" frameborder="0">Odds service provided in co-operation with <a href="http://www.betbrain.com" target="_blank"><b>BetBrain.com</b></a></iframe>
                                                     @endif

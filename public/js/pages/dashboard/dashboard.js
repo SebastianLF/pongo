@@ -15,5 +15,6 @@
     loadBookmakersOnDashboard();
 
     // formulaire d'ajout de pari
-    automaticBetForm();
-    manualBetForm();
+    //automaticBetForm();
+    //manualBetForm();
+    addTicket();
