@@ -162,7 +162,7 @@ function gestionTicket() {
         amount_per_unit.val(null);
         typestake.val('u').trigger("change");
         conversion_to_devise.val(0).prop('disabled', true);
-        devise_stake.val(0);
+        devise_stake.val(0).prop('disabled', true);
         unit_stake.val(0);
         bookmaker_account.val(null).trigger("change").html('').prop('disabled', true);
         containerABCD.addClass("hide");
