@@ -116,7 +116,6 @@ function gestionTicket() {
                 var ticketLongTerme;
                 if (abcd_checkbox.is(":checked")) {ticketABCD = 1;}else{ticketABCD = 0;}
                 if (gratuit_checkbox.is(":checked")) {ticketGratuit = 1;}else{ticketGratuit = 0;}
-                console.log(abcd_checkbox.is(":checked"));
                 if (longterme_checkbox.is(":checked")) {ticketLongTerme = 1;}else{ticketLongTerme = 0;}
 
                 $.ajax({
@@ -135,7 +134,13 @@ function gestionTicket() {
                                     toastr.error(json.msg[keyname], 'Erreur:');
                                 }
                             } else {
-                                toastr.error(json.msg, 'Erreur:');
+                                var errorString = '<ul>';
+                                $.each( json.msg, function( key, value) {
+                                    errorString += '<li>' + value + '</li>';
+                                });
+                                errorString += '</ul>';
+                                toastr.error(errorString, 'Erreur:');
+
                             }
 
                         } else if (json.etat == 1) {
