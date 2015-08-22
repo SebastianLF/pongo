@@ -130,54 +130,52 @@
  }
  }*/
 
-var Transactions = {
-    form: $('#transactionform-add'),
-    addButton: '#transactionAddButton',
-    modal: '#transactionAddModal',
+function gestionTransactions() {
+    var form = $('#transactionform-add');
+    var addButton = '#transactionAddButton';
+    var modal = '#transactionAddModal';
 
-    type: 'select[name="type"]',
-    typeContainer: '#type_container',
-    typeError: '#type_error',
-    book: 'select[name="book"]',
-    bookContainer: '#book_container',
-    bookError: '#book_error',
-    account: 'select[name="account"]',
-    accountContainer: '#account_container',
-    accountError: '#account_error',
-    amount: 'input[name="amount"]',
-    amountContainer: '#amount_container',
-    amountError: '#amount_error',
-    description: 'input[name="description"]',
-    descriptionContainer: '#description_container',
-    descriptionError: '#description_error',
+    var type = 'select[name="type"]';
+    var typeContainer = '#type_container';
+    var typeError = '#type_error';
+    var book = 'select[name="book"]';
+    var bookContainer = '#book_container';
+    var bookError = '#book_error';
+    var account = 'select[name="account"]';
+    var accountContainer = '#account_container';
+    var accountError = '#account_error';
+    var amount = 'input[name="amount"]';
+    var amountContainer = '#amount_container';
+    var amountError = '#amount_error';
+    var description = 'input[name="description"]';
+    var descriptionContainer = '#description_container';
+    var descriptionError = '#description_error';
 
-    paginationContainer: $('#transactions-pagination'),
+    var paginationContainer = $('#transactions-pagination');
 
-
-
-    loadTransactions: function (page) {
+    function loadTransactions(page) {
         page = page || '1';
-        var cont = this.paginationContainer;
         $.ajax({
             url: 'transaction',
             data: {page: page},
             success: function (data) {
-                cont.html(data);
+                paginationContainer.html(data);
                 getBookmakersForSelection(this.book, this.account);
             }
         });
     }
 
-    /*paginationOnclickTransactions: function () {
+    function paginationOnclickTransactions() {
         // when you click on pagination numbers
-        $(this.paginationContainer).on('click', '.pagination a', function (e) {
+        paginationContainer.on('click', '.pagination a', function (e) {
             e.preventDefault();
             var pg = getPaginationSelectedPage($(this).attr('href'));
-            this.loadTransactions(pg);
+            loadTransactions(pg);
         });
-    },
+    }
 
-    transactionAdd: function () {
+
+    function transactionAdd() {
         var modal = this.modal;
         var form = this.form;
         var typeContainer = this.typeContainer;
@@ -265,19 +263,17 @@ var Transactions = {
                     }
                     else {
                         loadTransactions();
-                        this.loadBookmakers();
+                        loadBookmakers();
                         $(modal).modal('hide');
                         toastr.success('Le transactions à été crée avec <strong>succès</strong>!', 'Transaction');
                     }
                 }
             });
         });
-    },
-    inits: function () {
-        loadTransactions();
-        transactionAdd();
-        this.paginationOnclickTransactions();
-    }*/
+    }
 
-};
-Transactions.inits();
+    loadTransactions();
+    transactionAdd();
+    paginationOnclickTransactions();
+
+}

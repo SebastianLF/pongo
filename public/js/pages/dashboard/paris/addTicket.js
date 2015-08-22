@@ -99,7 +99,7 @@ function gestionTicket() {
         form.submit(function (e) {
             e.preventDefault();
 
-            followtype.prop('disabled', false); // sinon le follwotype n est pas evnoye puisqu il ne peut pas y avoir de readonly pour les select.
+            followtype.prop('disabled', false); // sinon le follwotype n est pas evnoye puisqu il ne peut pas y avoir de readonly pour les select. Le followtype est remis en disabled avec le callback 'complete' de la requete ajax d'ajout.
             var data = $(this).serialize();
             var linesnum = form.find('.betline').length;
             if (linesnum == '') {
@@ -151,7 +151,8 @@ function gestionTicket() {
                         console.log('erreur ajout de pari');
                     },
                     complete: function (){
-                        followtype.prop('disabled', true);
+
+                        followtype.prop('disabled', true); // remettre le followtype sur disabled.
                     }
                 });
             }
@@ -169,7 +170,6 @@ function gestionTicket() {
         containerABCD.addClass("hide");
         serieABCD.val(null).trigger("change").prop('disabled', true);
         letterABCD.val(null).trigger("change").prop('disabled', true);
-
         options_container.addClass('hidden');
         bookmaker_container.addClass('hidden');
         typestake_container.addClass('hidden');
@@ -185,16 +185,12 @@ function gestionTicket() {
         longterme_checkbox.parents('span').removeClass("checked");
     }
 
-
-
     function refreshSelectionsClick() {
         form.find('#selection-refresh').click(function (e) {
             e.preventDefault();
             refreshSelections();
         });
     }
-
-
 
     function gestionTipsters() {
         tipster.select2({

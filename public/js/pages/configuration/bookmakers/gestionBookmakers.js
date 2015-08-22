@@ -1,4 +1,65 @@
-function Bookmakers() {
+
+function loadBookmakers(page) {
+    //si un numero n'est pas specifié, on affiche la premiere page.
+    page = page || '1';
+    $.ajax({
+        url: 'pagination/ajax/bookmakers',
+        data: {page: page},
+        success: function (data) {
+            $('#bookmakers-pagination').html(data);
+            editBookmakerButton();
+            deleteBookmakerButton();
+        }
+    });
+}
+
+function editBookmakerButton() {
+    var form = $('#bookmakerform-edit');
+    $('.bookmakerEditButton').click(function () {
+        form.find("#idBookmakerEditInput").val($(this).attr('data-id-bookmaker'));
+        form.find("#idAccountEditInput").val($(this).attr('data-id'));
+        form.find(nameAccountInput).val($(this).attr('data-name'));
+    });
+}
+
+function deleteBookmakerButton() {
+    $('.bookmakerDeleteButton').click(function (e) {
+        e.preventDefault();
+        var parent = $(this).parents('tr');
+        var id = parent.find(".idbookmakertd").text();
+        console.log(id);
+        swal({
+                title: "Supprimer",
+                text: "Etes vous sur ?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Oui, supprimer",
+                cancelButtonText: "Non, annuler",
+                closeOnConfirm: true,
+                closeOnCancel: true
+            },
+            function (isConfirm) {
+                if (isConfirm) {
+                    $.ajax({
+                        url: 'bookmaker/' + id,
+                        method: "DELETE",
+                        dataType: 'json',
+                        success: function (json) {
+                            if (json.state) {
+                                toastr.success('Le compte ' + json.compte.nom_compte + ' à été supprimé avec succès!', 'Compte de bookmaker');
+                                loadBookmakers();
+                            } else {
+                                swal("Attention!", "Vous devez d\'abord supprimer les tickets en cours liés à ce compte.", "error");
+                            }
+                        }
+                    });
+                }
+            });
+    });
+}
+
+function gestionBookmakers() {
 
     var nameBookmakerSelect = "select[name='name_bookmaker']";
     var nameBookmakerContainer = "#bookmaker_container";
@@ -16,30 +77,18 @@ function Bookmakers() {
     var paginationContainer = '#bookmakers-pagination';
     var url_pagination = 'pagination/ajax/bookmakers';
 
-    this.loadBookmakers = function(page) {
-        //si un numero n'est pas specifié, on affiche la premiere page.
-        page = page || '1';
-        $.ajax({
-            url: url_pagination,
-            data: {page: page},
-            success: function (data) {
-                $(paginationContainer).html(data);
-                this.editBookmakerButton();
-                this.deleteBookmakerButton();
-            }
-        });
-    };
 
-    this.paginationOnclick = function() {
+
+    function paginationOnclick() {
         // when you click on pagination numbers
         $(paginationContainer).on('click', '.pagination a', function (e) {
             e.preventDefault();
             var pg = getPaginationSelectedPage($(this).attr('href'));
             loadBookmakers(pg);
         });
-    };
+    }
 
-    this.BookmakerAdd = function() {
+    function BookmakerAdd() {
         var form = $('#bookmakerform-add');
         $('#bookmakerAddModal').on('hide.bs.modal', function () {
             // remise a zero des champs erreurs
@@ -104,9 +153,9 @@ function Bookmakers() {
                 }
             });
         });
-    };
+    }
 
-    this.bookmakerUpdate = function() {
+    function bookmakerUpdate() {
         var form = $('#bookmakerform-edit');
         var id_account = 'idAccountEditInput';
         form.submit(function (e) {
@@ -134,60 +183,11 @@ function Bookmakers() {
                 }
             });
         });
-    };
-
-    this.editBookmakerButton = function() {
-        var form = $('#bookmakerform-edit');
-        $('.bookmakerEditButton').click(function () {
-            form.find("#idBookmakerEditInput").val($(this).attr('data-id-bookmaker'));
-            form.find("#idAccountEditInput").val($(this).attr('data-id'));
-            form.find(nameAccountInput).val($(this).attr('data-name'));
-        });
-    };
-
-    this.deleteBookmakerButton = function() {
-        $('.bookmakerDeleteButton').click(function (e) {
-            e.preventDefault();
-            var parent = $(this).parents('tr');
-            var id = parent.find(".idbookmakertd").text();
-            console.log(id);
-            swal({
-                    title: "Supprimer",
-                    text: "Etes vous sur ?",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Oui, supprimer",
-                    cancelButtonText: "Non, annuler",
-                    closeOnConfirm: true,
-                    closeOnCancel: true
-                },
-                function (isConfirm) {
-                    if (isConfirm) {
-                        $.ajax({
-                            url: 'bookmaker/' + id,
-                            method: "DELETE",
-                            dataType: 'json',
-                            success: function (json) {
-                                if (json.state) {
-                                    toastr.success('Le compte ' + json.compte.nom_compte + ' à été supprimé avec succès!', 'Compte de bookmaker');
-                                    loadBookmakers();
-                                } else {
-                                    swal("Attention!", "Vous devez d\'abord supprimer les tickets en cours liés à ce compte.", "error");
-                                }
-                            }
-                        });
-                    }
-                });
-        });
-    };
-    this.inits = function (){
-        this.loadBookmakers();
-        this.paginationOnclick();
-        this.BookmakerAdd();
-        this.bookmakerUpdate();
     }
+
+    loadBookmakers();
+    paginationOnclick();
+    BookmakerAdd();
+    bookmakerUpdate();
 }
 
-var GestionBookmakers = new Bookmakers();
-GestionBookmakers.inits();

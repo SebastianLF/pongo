@@ -19,9 +19,8 @@
                         <div class="panel-title">
                             <a class="accordion-toggle accordion-toggle-styled collapsed"
                                data-toggle="collapse" data-parent="#accordion3" href="{{'#row'.$bookmaker->id}}">
-                                <img width="100px"
-                                     src="{{asset('img/logos/bookmakers').'/'.$bookmaker->logo}}"
-                                     alt=""/> <span
+                                <span class="uppercase theme-font"></span>{{$bookmaker->nom.' -'}}
+                                     <span
                                             class="theme-font">{{$bookmaker['comptes']->sum('bankroll_actuelle')}} {{$user->devise}}</span></span>
                                 {{$paris_en_attente ? '<span class="badge badge-danger bcg-red" data-toggle="tooltip" data-original-title="Nombre de tickets en cours associés: '.$paris_en_attente.'">'.$paris_en_attente.'</span>' : ''}}
                             </a>
