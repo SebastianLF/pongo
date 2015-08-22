@@ -1,9 +1,64 @@
 /**
  * Created by sebs on 21/08/2015.
  */
+// fonction de rafraichissement.
+function refreshSelections() {
+    var form = $('#automaticform-add');
+    $.ajax({
+        url: 'selections',
+        success: function (data){
+            form.find('#automatic-selections').html(data.vue);
+            supprimerSelection();
+            misAjourCompteBookmaker();
+            /*if (data.msg.length > 0){
+             swal({
+             title: "Erreur!",
+             text: data.msg,
+             type: "warning",
+             confirmButtonText: "OK"
+             });
+             }*/
+        },
+        error: function (data) {
+            form.find('#automatic-selections').html('<p>impossible de récuperer les selections</p>');
+        }
+    });
+}
 
+// supprime la selection.
+function supprimerSelection(){
+    var form = $('#automaticform-add');
+    form.find('#automatic-selections .boutonsupprimer').on('click', function (e) {
+        e.preventDefault();
+        var parent = $(this).parents('tr');
+        var id = parent.find(".selection_id").text();
+        $.ajax({
+            url: 'coupon/' + id,
+            method: 'delete',
+            success: function (data) {
+                refreshSelections();
+            }
+        });
+    });
+}
 
-function addTicket() {
+function misAjourCompteBookmaker(){
+    $.ajax({
+        url: 'updateaccountform',
+        success: function (data){
+            console.log(data);
+            console.log(data.length > 0);
+            $('#automaticform-add').find('#accountsinputdashboard').html('');
+            if(data.length > 0){
+                $('#automaticform-add').find('#accountsinputdashboard').select2({data: data, minimumResultsForSearch: Infinity}).val(data[0]['id']).trigger('change');
+            }else{
+                $('#automaticform-add').find('#accountsinputdashboard').select2({minimumResultsForSearch: Infinity, placeholder: 'Choisir un compte de bookmaker'}).val('').trigger('change').html('');
+            }
+        }
+    })
+}
+
+function gestionTicket() {
     var form = $('#automaticform-add');
     var form_string = '#automaticform-add';
     var tipster = form.find('#tipstersinputdashboard');
@@ -15,7 +70,6 @@ function addTicket() {
     var conversion_to_devise = form.find('#amountconversion');
     var devise_stake_container = form.find('.typestakeflat');
     var devise_stake = form.find('#amountinputdashboard');
-    var bookmaker = form.find('select[name="bookinputdashboard"]');
     var bookmaker_account = form.find('#accountsinputdashboard');
     var containerABCD = form.find('#methodeabcdcontainer');
     var serieABCD = form.find('#serieinputdashboard');
@@ -41,18 +95,80 @@ function addTicket() {
                 letterABCD.val(null).trigger("change").prop('disabled', true);}
         });}
 
+    function ajouterTicket() {
+        form.submit(function (e) {
+            e.preventDefault();
+
+            followtype.prop('disabled', false); // sinon le follwotype n est pas evnoye puisqu il ne peut pas y avoir de readonly pour les select.
+            var data = $(this).serialize();
+            var linesnum = form.find('.betline').length;
+            if (linesnum == '') {
+                swal({
+                    title: "Erreur!",
+                    text: "Ajoutez au moins une selection pour pouvoir valider le ticket!",
+                    type: "warning",
+                    confirmButtonText: "OK"
+                });
+            } else if (linesnum >= 1) {
+                //serialize doesnt retrieve .text() of an input
+                var ticketABCD;
+                var ticketGratuit;
+                var ticketLongTerme;
+                if (abcd_checkbox.is(":checked")) {ticketABCD = 1;}else{ticketABCD = 0;}
+                if (gratuit_checkbox.is(":checked")) {ticketGratuit = 1;}else{ticketGratuit = 0;}
+                console.log(abcd_checkbox.is(":checked"));
+                if (longterme_checkbox.is(":checked")) {ticketLongTerme = 1;}else{ticketLongTerme = 0;}
+
+                $.ajax({
+                    url: 'encourspari/auto',
+                    type: 'post',
+                    data: data + '&linesnum=' + linesnum + '&ticketABCD=' + ticketABCD + '&ticketGratuit=' + ticketGratuit + '&ticketLongTerme=' + ticketLongTerme,
+                    dataType: 'json',
+                    success: function (json) {
+                        var keyname;
+                        if (json.etat == 0) {
+                            console.log(json.msg);
+                            console.log($.isArray(json.msg));
+                            if ($.isArray(json.msg)) {
+                                for (key in json.msg) {
+                                    keyname = key;
+                                    toastr.error(json.msg[keyname], 'Erreur:');
+                                }
+                            } else {
+                                toastr.error(json.msg[0], 'Erreur:');
+                            }
+
+                        } else if (json.etat == 1) {
+                            resetGeneralForm();
+                            refreshSelections();
+                            toastr.success(json.msg, 'Pari');
+                            loadParisEnCours();
+                            loadBookmakersOnDashboard();
+                        }
+                    },
+                    error: function (json) {
+                        console.log('erreur ajout de pari');
+                    },
+                    complete: function (){
+                        followtype.prop('disabled', true);
+                    }
+                });
+            }
+        });
+    }
+
     function resetGeneralForm() {
-        tipster.val(null).trigger('change');
         followtype.val(null).trigger('change');
         amount_per_unit.val(null);
-        bookmaker_account.val(null).trigger("change");
-        containerABCD.addClass("hide");
-        serieABCD.val(null).trigger("change").prop('disabled', true);
-        letterABCD.val(null).trigger("change").prop('disabled', true);
         typestake.val('u').trigger("change");
         conversion_to_devise.val(0).prop('disabled', true);
         devise_stake.val(0);
         unit_stake.val(0);
+        bookmaker_account.val(null).trigger("change").html('').prop('disabled', true);
+        containerABCD.addClass("hide");
+        serieABCD.val(null).trigger("change").prop('disabled', true);
+        letterABCD.val(null).trigger("change").prop('disabled', true);
+
         options_container.addClass('hidden');
         bookmaker_container.addClass('hidden');
         typestake_container.addClass('hidden');
@@ -67,6 +183,17 @@ function addTicket() {
         longterme_checkbox.prop('checked', false);
         longterme_checkbox.parents('span').removeClass("checked");
     }
+
+
+
+    function refreshSelectionsClick() {
+        form.find('#selection-refresh').click(function (e) {
+            e.preventDefault();
+            refreshSelections();
+        });
+    }
+
+
 
     function gestionTipsters() {
         tipster.select2({
@@ -89,18 +216,32 @@ function addTicket() {
                 }
             }
         }).change(function () {
+            // informations du tipster.
             var tipster_infos = tipster.select2('data');
+
+            // remise à zero
+            conversion_to_devise.val(0);
+            devise_stake.val(0);
+            unit_stake.val(0);
+
             if (tipster.val() == '') {
                 resetGeneralForm();
+                followtype.val(null).trigger('change');amount_per_unit.val(null);options_container.addClass('hidden');bookmaker_container.addClass('hidden');typestake_container.addClass('hidden');
+
             } else {
                 options_container.fadeIn().removeClass('hidden');
                 bookmaker_container.fadeIn().removeClass('hidden');
                 typestake_container.fadeIn().removeClass('hidden');
                 if (tipster_infos[0]['followtype'] == 'n') {
                     followtype.val('n').trigger('change');
+                    bookmaker_account.prop('disabled', false);
+                    bookmaker_container.removeClass('hidden');
+                    misAjourCompteBookmaker();
                 }
                 else if (tipster_infos[0]['followtype'] == 'b') {
                     followtype.val('b').trigger('change');
+                    bookmaker_account.prop('disabled', true);
+                    bookmaker_container.addClass('hidden');
                 }
             }
             var mt = Number(tipster_infos[0]['montant_par_unite']);
@@ -114,26 +255,26 @@ function addTicket() {
         }).prop("disabled", true);
     }
 
+
+
     function typestakechoice() {
         var types = [{ id: 'u', text: 'en unités' }, { id: 'f', text: 'en devise' }];
-
         typestake.select2({
             minimumResultsForSearch: Infinity,
             cache: true,
             data: types
         });
-
         devise_stake_container.hide();
         typestake.on('change', function () {
             if (typestake.val() == 'f') {
-                unit_stake.val(0);
+                unit_stake.val(0).prop('disabled', true);
                 conversion_to_devise.val(0);
-                devise_stake.val(0);
+                devise_stake.val(0).prop('disabled', false);
                 unit_stake_container.hide();
                 devise_stake_container.show();}
             else {
-                devise_stake.val(0);
-                unit_stake.val(0);
+                devise_stake.val(0).prop('disabled', true);
+                unit_stake.val(0).prop('disabled', false);
                 conversion_to_devise.val(0);
                 unit_stake_container.show();
                 devise_stake_container.hide();}});
@@ -237,11 +378,16 @@ function addTicket() {
             isNaN(res_final) || res_final < 0 || montant_par_unite == '' ? $(form_string + ' #flattounitconversion').val('0') : $(form_string + ' #flattounitconversion').val(res_final);
         });*/
     }
-
     assignerEtatEnDebut();
+    refreshSelectionsClick();
+    refreshSelections();
+    ajouterTicket();
+    misAjourCompteBookmaker();
     gestionTipsters();
     typestakechoice();
     conversionMises();
     gestionBookmakerAccount();
     gestionABCD();
+
+
 }

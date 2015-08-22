@@ -69,7 +69,7 @@
                                                 <select type="text" id="followtypeinputdashboard"
                                                         name="followtypeinputdashboard"
                                                         class="form-control input-sm"
-                                                        ></select>
+                                                        readonly></select>
                                             </div>
                                         </div>
                                         <div class="col-md-4 col-md-offset-1">
@@ -151,19 +151,7 @@
                                         </div>
                                     </div>
                                     <div id="bookmakercontainer" class="row">
-                                        <div class="col-md-4 bookmakercontainer hide">
-                                            <div class="form-group">
-                                                <div class="">
-                                                    <label class="">Bookmaker</label>
-                                                </div>
-                                                <div class="">
-                                                    <select name="bookinputdashboard"
-                                                            class="form-control bookinputdashboard input-sm">
-                                                        <option></option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
+
                                         <!--/span-->
                                         <div class="col-md-4">
                                             <div class="form-group">
@@ -192,13 +180,13 @@
                                                         <input type="checkbox" id="ticketABCD"
                                                                value="ticketABCD">Pari ABCD
                                                     </label>
-                                                    <label class="checkbox-inline">
+                                                   <!-- <label class="checkbox-inline">
                                                         <input type="checkbox" id="ticketGratuit"
                                                                value="ticketGratuit">Pari gratuit <span
                                                                 class="glyphicon glyphicon-question-sign"
                                                                 data-toggle="tooltip"
                                                                 title="Pari Gratuit: à cocher uniquement lorsque le bookmaker"></span>
-                                                    </label>
+                                                    </label> -->
                                                     <label class="checkbox-inline">
                                                         <input type="checkbox" id="ticketLongTerme"
                                                                value="ticketLongTerme">Pari long terme

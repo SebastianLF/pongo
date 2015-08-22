@@ -2,7 +2,7 @@
  * Created by sebs on 08/05/2015.
  */
 
-function manualBetForm() {
+function addManualCouponSelection() {
 
     // gestion formulaire
     var form = $('#automaticform-add');
@@ -87,49 +87,6 @@ function manualBetForm() {
         score.prop("disabled", true);
     }
 
-    // fonction de rafraichissement.
-    function refreshSelections() {
-        var suivi = form.find('#followtypeinputdashboard').val();
-        $.ajax({
-            url: 'selections',
-            success: function (data) {
-                form.find('#automatic-selections').html(data.vue);
-                supprimerSelection();
-                $.ajax({
-                    url: 'allbookmakers',
-                    dataType: 'json',
-                    success: function (data2) {
-                        form.find('.bookinputdashboard').select2({
-                            minimumResultsForSearch: Infinity,
-                            cache: true,
-                            data: data2
-                        });
-
-                        if (suivi == 'à blanc') {
-                            form.find('.bookinputdashboard').val("").trigger("change");
-                            form.find('#accountsinputdashboard').val("").trigger("change");
-                        } else {
-                            form.find('.bookinputdashboard').prop('disabled', false);
-                            form.find('#accountsinputdashboard').prop('disabled', false);
-                            form.find('.bookinputdashboard').val(data.bookmaker_id).trigger("change");
-                        }
-                        gestionTipsters(data.bookmaker_id);
-                    }
-                });
-                if (data.msg.length > 0) {
-                    swal({
-                        title: "Erreur!",
-                        text: data.msg,
-                        type: "warning",
-                        confirmButtonText: "OK"
-                    });
-                }
-            },
-            error: function (data) {
-                form.find('#automatic-selections').html('<p>impossible de récuperer les selections</p>');
-            }
-        });
-    }
 
 
     function gestionCheckboxs() {

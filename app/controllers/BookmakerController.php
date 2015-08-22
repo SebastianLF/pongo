@@ -205,4 +205,15 @@
 			return Response::json($accounts);
 
 		}
+
+		function updateBookmakerAccountOnForm(){
+			$selections_coupon = Coupon::where('session_id', Session::getId())->get();
+			if($selections_coupon->count() > 0){
+				$bookmaker_id = Bookmaker::where('nom', $selections_coupon->first()->bookmaker)->first()->id;
+				$comptes = Auth::user()->comptes()->where('bookmaker_user.bookmaker_id', $bookmaker_id)->get(array('id', 'bookmaker_user.nom_compte AS text'));
+				return $comptes;
+			}else{
+				return '';
+			}
+		}
 	}

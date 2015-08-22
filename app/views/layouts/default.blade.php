@@ -69,6 +69,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="{{asset('js/plugin/select2.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/plugin/toastr.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/plugin/sweetalert.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('js/plugin/jquery.animateNumber.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js')}}" type="text/javascript"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/bootstrap-select/bootstrap-select.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js')}}" type="text/javascript"></script>
@@ -82,7 +83,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="{{asset('metronic_v3.8.1/theme/assets/admin/pages/scripts/table-advanced.js')}}"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/admin/pages/scripts/form-samples.js')}}"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/admin/pages/scripts/components-dropdowns.js')}}"></script>
-    <script src="{{asset('js/getPaginationSelectedPage.js')}}" type="text/javascript"></script>
+    <script src="{{asset('js/pages/getPaginationSelectedPage.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/pages/getBookmakersForSelection.js')}}" type="text/javascript"></script>
 
     <script>

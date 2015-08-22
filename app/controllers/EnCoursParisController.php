@@ -22,121 +22,7 @@
 
 		public function store()
 		{
-
-		}
-
-		public function show($id)
-		{
-			//
-		}
-
-		public function edit($id)
-		{
-			//
-		}
-
-		public function update($id)
-		{
-			//
-		}
-
-		public function destroy($id)
-		{
-
-			$pari = $this->currentUser->enCoursParis()->find($id);
-			if(is_null($pari)){
-				return Response::json(array(
-					'etat' => 0,
-					'msg' => 'cet id n\'existe pas',
-				));
-			}
-
-			if ($pari->followtype == 'n') {
-				$compte = $pari->compte()->first();
-				if($compte->bankroll_actuelle < $pari->mise_totale){
-					return Response::json(array(
-						'etat' => 0,
-						'msg' => 'Le compte se retrouve avec une bankroll inférieur à 0 si ce ticket est supprimé.'
-					));
-				}
-				$compte->bankroll_actuelle += $pari->mise_totale;
-				$compte->save();
-				$pari->delete();
-				return Response::json(array(
-					'etat' => 1,
-					'msg' => 'Ticket Suzpprimé'
-				));
-			} else {
-				$pari->delete();
-				return Response::json(array(
-					'etat' => 1,
-					'msg' => 'Ticket Supprimé'
-				));
-			}
-
-		}
-
-		public function getEnCoursABCD()
-		{
-			$nom = Input::get('q');
-			$parisabcd = $this->currentUser->enCoursParis()->orderBy('created_at', 'desc')->groupBy('nom_abcd')->where('pari_abcd', '1')->where('nom_abcd', 'LIKE', '%' . $nom . '%')->get(array('nom_abcd AS id', 'nom_abcd AS text'));
-			/*$result = array();
-			foreach($result as $one){
-				array_push($result, $one->id);
-			}*/
-			return Response::json($parisabcd);
-		}
-
-		public function getlettreABCD()
-		{
-			$nom = Input::get('serie_nom');
-			$result = [];
-			if (!empty($nom)) {
-				$lettreabcd = $this->currentUser->enCoursParis()->where('nom_abcd', $nom)->get(array('lettre_abcd'));
-				$liste_reponse = array();
-				foreach ($lettreabcd as $one) {
-					array_push($liste_reponse, $one->lettre_abcd);
-				}
-				$liste = array('A', 'B', 'C', 'D');
-				$result = array_diff($liste, $liste_reponse);
-				Clockwork::info($lettreabcd);
-				Clockwork::info($liste_reponse);
-				Clockwork::info($liste);
-				Clockwork::info($result);
-				return Response::json($result);
-			} else {
-				Clockwork::info($result);
-				return Response::json($result);
-
-			}
-
-		}
-
-		/*public function updateSelection(){
-			$id = Input::get('id');
-			$status = Input::get('status');
-			$info = Input::get('info');
-			$selection = $this->currentUser->selections()->where('selections.id', $id)->first(array('selections.id','selections.status','selections.infos_pari'));
-
-			if(!$selection){
-				return Response::json(array(
-					'etat' => 0,
-					'message' => 'cette selection n\'existe pas.'
-				));
-			}else{
-				$selection->status = $status;
-				$selection->infos_pari = $info;
-				$selection->save();
-				return Response::json(array(
-					'etat' => 1,
-					'message' => 'Changements enregistrés',
-				));
-			}
-		}*/
-
-		public function automatic_store()
-		{
-			// récuperation des selections choisies.
+// récuperation des selections choisies.
 			$selections_coupon = Coupon::where('session_id', Session::getId())->get();
 
 			// nombre de selections.
@@ -181,22 +67,22 @@
 					if ($bookmakers_count == 0) {
 						return Response::json(array(
 							'etat' => 0,
-							'msg' => 'Aucun compte n\'a été crée pour ce bookmaker, rendez vous dans la page configuration pour le créer.',
+							'msg' => 'Ce bookmaker n\'a pas de compte associé, rendez vous dans la page configuration pour le créer.',
 						));
 					}
 				}
 				$regles = array(
-					'tipstersinputdashboard' => 'required|exists:tipsters,id,user_id,' . $this->currentUser->id, // la validation du tipster doit etre en premiere position.
+					'tipstersinputdashboard' => 'required|exists:tipsters,id,user_id,' . Auth::id(), // la validation du tipster doit etre en premiere position.
+					'followtypeinputdashboard' => 'required|in:n,b',
 					'typestakeinputdashboard' => 'required|in:u,f',
-					'stakeunitinputdashboard' => 'required_if:typestakeinputdashboard,u|unites',
-					'amountinputdashboard' => 'required_if:typestakeinputdashboard,f|decimal>0',
-					'accountsinputdashboard' => 'required_if:followtypeinputdashboard,normal|exists:bookmaker_user,id,user_id,' . $this->currentUser->id,
+					'accountsinputdashboard' => 'required_if:followtypeinputdashboard,n|exists:bookmaker_user,id,user_id,' . Auth::id(),
+					'stakeunitinputdashboard' => 'required_if:typestakeinputdashboard,u|unites|mise_montant_en_unites<solde:'.Input::get('accountsinputdashboard').','.Input::get('followtypeinputdashboard').','.Input::get('tipstersinputdashboard'),
+					'amountinputdashboard' => 'required_if:typestakeinputdashboard,f|decimal>0|mise_montant_en_devise<solde:'.Input::get('accountsinputdashboard').','.Input::get('followtypeinputdashboard'),
 					'ticketABCD' => 'required|in:0,1',
 					'ticketGratuit' => 'required|in:0,1',
 					'ticketLongTerme' => 'required|in:0,1',
 					'serieinputdashboard' => 'required_if:ticketABCD,1',
 					'letterinputdashboard' => 'required_if:ticketABCD,1|in:A,B,C,D',
-					'followtypeinputdashboard' => 'required|in:normal,à blanc',
 				);
 				$messages = array(
 					'typestakeinputdashboard.in' => 'ce type de mise n\'existe pas.',
@@ -224,14 +110,9 @@
 
 					// type de suivi
 					$suivi = Input::get('followtypeinputdashboard');
-					if ($suivi == 'normal') {
-						$suivi = 'n';
-					} else {
-						$suivi = 'b';
-					}
 
 					// tipster
-					$tipster = $this->currentUser->tipsters(Input::get('tipstersinputdashboard'))->first();
+					$tipster = Auth::user()->tipsters(Input::get('tipstersinputdashboard'))->first();
 
 					// type stake
 					$type_stake = Input::get('typestakeinputdashboard');
@@ -380,6 +261,120 @@
 					));
 				}
 			}
+		}
+
+		public function show($id)
+		{
+			//
+		}
+
+		public function edit($id)
+		{
+			//
+		}
+
+		public function update($id)
+		{
+			//
+		}
+
+		public function destroy($id)
+		{
+
+			$pari = $this->currentUser->enCoursParis()->find($id);
+			if(is_null($pari)){
+				return Response::json(array(
+					'etat' => 0,
+					'msg' => 'cet id n\'existe pas',
+				));
+			}
+
+			if ($pari->followtype == 'n') {
+				$compte = $pari->compte()->first();
+				if($compte->bankroll_actuelle < $pari->mise_totale){
+					return Response::json(array(
+						'etat' => 0,
+						'msg' => 'Le compte se retrouve avec une bankroll inférieur à 0 si ce ticket est supprimé.'
+					));
+				}
+				$compte->bankroll_actuelle += $pari->mise_totale;
+				$compte->save();
+				$pari->delete();
+				return Response::json(array(
+					'etat' => 1,
+					'msg' => 'Ticket Suzpprimé'
+				));
+			} else {
+				$pari->delete();
+				return Response::json(array(
+					'etat' => 1,
+					'msg' => 'Ticket Supprimé'
+				));
+			}
+
+		}
+
+		public function getEnCoursABCD()
+		{
+			$nom = Input::get('q');
+			$parisabcd = $this->currentUser->enCoursParis()->orderBy('created_at', 'desc')->groupBy('nom_abcd')->where('pari_abcd', '1')->where('nom_abcd', 'LIKE', '%' . $nom . '%')->get(array('nom_abcd AS id', 'nom_abcd AS text'));
+			/*$result = array();
+			foreach($result as $one){
+				array_push($result, $one->id);
+			}*/
+			return Response::json($parisabcd);
+		}
+
+		public function getlettreABCD()
+		{
+			$nom = Input::get('serie_nom');
+			$result = [];
+			if (!empty($nom)) {
+				$lettreabcd = $this->currentUser->enCoursParis()->where('nom_abcd', $nom)->get(array('lettre_abcd'));
+				$liste_reponse = array();
+				foreach ($lettreabcd as $one) {
+					array_push($liste_reponse, $one->lettre_abcd);
+				}
+				$liste = array('A', 'B', 'C', 'D');
+				$result = array_diff($liste, $liste_reponse);
+				Clockwork::info($lettreabcd);
+				Clockwork::info($liste_reponse);
+				Clockwork::info($liste);
+				Clockwork::info($result);
+				return Response::json($result);
+			} else {
+				Clockwork::info($result);
+				return Response::json($result);
+
+			}
+
+		}
+
+		/*public function updateSelection(){
+			$id = Input::get('id');
+			$status = Input::get('status');
+			$info = Input::get('info');
+			$selection = $this->currentUser->selections()->where('selections.id', $id)->first(array('selections.id','selections.status','selections.infos_pari'));
+
+			if(!$selection){
+				return Response::json(array(
+					'etat' => 0,
+					'message' => 'cette selection n\'existe pas.'
+				));
+			}else{
+				$selection->status = $status;
+				$selection->infos_pari = $info;
+				$selection->save();
+				return Response::json(array(
+					'etat' => 1,
+					'message' => 'Changements enregistrés',
+				));
+			}
+		}*/
+
+		public function automatic_store()
+		{
+
 		}
 
 		public function cashOut()

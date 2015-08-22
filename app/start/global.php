@@ -92,7 +92,34 @@
 		return false;
 	});
 
+	// en cours paris's validation extension
+	Validator::extend('mise_montant_en_unites<solde', function ($attribute, $value, $parameters) {
+		if ($parameters[1] == 'n') {
+			$montant_par_unite = Auth::user()->tipsters()->where('id', $parameters[2])->first()->montant_par_unite;
+			$bankroll_actuelle = Auth::user()->comptes()->where('id', $parameters[0])->first()->bankroll_actuelle;
+			if (($value*$montant_par_unite) < $bankroll_actuelle) {
+				return true;
+			}
+		}elseif ($parameters[1] == 'b') {
+			return true;
+		}
+		return false;
+	});
 
+	Validator::extend('mise_montant_en_devise<solde', function ($attribute, $value, $parameters) {
+		if ($parameters[1] == 'n') {
+			$bankroll_actuelle = Auth::user()->comptes()->where('id', $parameters[0])->first()->bankroll_actuelle;
+			if (($value) < $bankroll_actuelle) {
+				return true;
+			}
+		}elseif ($parameters[1] == 'b') {
+			return true;
+		}
+		return false;
+	});
+
+
+	// to decrypt hashed pass
 	Validator::extend('checkHashedPass', function ($attribute, $value, $parameters) {
 		if (Hash::check($value, $parameters[0])) {
 			return true;
@@ -100,6 +127,7 @@
 		return false;
 	});
 
+	// manual selections's validation extension
 	Validator::extend('pick_validation', function ($attribute, $value, $parameters) {
 		$market = $parameters[0];
 

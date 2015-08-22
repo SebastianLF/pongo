@@ -17,7 +17,6 @@
 		public function getSports()
 		{
 			$q = Input::get('q');
-
 			$sports = Sport::select('id', 'name AS text', 'logo')->where('name', 'LIKE', '%' . $q . '%')->get();
 			return Response::json($sports);
 		}
@@ -71,7 +70,6 @@
 				return Response::json([]);
 			}
 		}
-
 
 		public function getEquipes()
 		{

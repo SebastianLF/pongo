@@ -12,7 +12,7 @@
 
 	// dashboard page
 	Route::get('dashboard', 'DashboardController@showDashboard');
-	Route::post('encourspari/auto', 'EnCoursParisController@automatic_store');
+	Route::post('encourspari/auto', 'EnCoursParisController@store');
 	Route::post('cashout', 'EnCoursParisController@cashOut');
 	Route::get('parisabcd', 'EnCoursParisController@getEnCoursABCD');
 	Route::get('lettreabcd', 'EnCoursParisController@getlettreABCD');
@@ -55,7 +55,7 @@
 
 	// toujours routes post ou get apres la ressource route.
 	Route::resource('coupon', 'CouponController');
-	Route::post('coupon', 'CouponController@postAutomaticSelections');
+	Route::post('coupon', 'CouponController@postAutomaticSelections');// route de reception des données
 	Route::post('manualcoupon', 'CouponController@postManualSelections');
 	Route::get('account', 'AccountController@showIndex');
 
@@ -84,5 +84,6 @@
 	Route::get('scopes', 'AjaxController@getScopes');
 	Route::get('totalprofit', 'DashboardController@getTotalProfit');
 	Route::get('bookmakers', 'AjaxController@getBookmakers');
+	Route::get('updateaccountform', 'BookmakerController@updateBookmakerAccountOnForm');
 
 

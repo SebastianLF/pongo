@@ -142,8 +142,6 @@
 
 		public function postManualSelections()
 		{
-
-
 			$regles = array(
 				'date' => 'required|date_format:d-m-Y H:i',
 				'sport' => 'required|exists:sports,id',
@@ -382,5 +380,7 @@
 				'count' => $count
 			));
 		}
+
+
 
 	}

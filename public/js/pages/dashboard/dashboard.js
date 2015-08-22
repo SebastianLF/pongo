@@ -3,18 +3,17 @@
  */
 
     //paris
-    parisEnCoursDelete();
-    getBookmakersForSelection();
-    loadParisEnCours();
-    loadParisLongTerme();
-    loadParisABCD();
-    loadParisTermine();
+parisEnCoursDelete();
+getBookmakersForSelection();
+loadParisEnCours();
+loadParisLongTerme();
+loadParisABCD();
+loadParisTermine();
 
-    // dashboard
-    loadRecapsOnDashboard();
-    loadBookmakersOnDashboard();
+// dashboard
+loadRecapsOnDashboard();
+loadBookmakersOnDashboard();
 
-    // formulaire d'ajout de pari
-    //automaticBetForm();
-    //manualBetForm();
-    addTicket();
+// formulaire d'ajout de pari
+gestionTicket();
+addManualCouponSelection();
