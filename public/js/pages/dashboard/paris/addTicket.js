@@ -135,7 +135,7 @@ function gestionTicket() {
                                     toastr.error(json.msg[keyname], 'Erreur:');
                                 }
                             } else {
-                                toastr.error(json.msg[0], 'Erreur:');
+                                toastr.error(json.msg, 'Erreur:');
                             }
 
                         } else if (json.etat == 1) {

@@ -1,6 +1,5 @@
 <?php
 	use Carbon\Carbon;
-	use Maatwebsite\Excel\Facades\Excel;
 
 	class EnCoursParisController extends BaseController
 	{
@@ -76,8 +75,8 @@
 					'followtypeinputdashboard' => 'required|in:n,b',
 					'typestakeinputdashboard' => 'required|in:u,f',
 					'accountsinputdashboard' => 'required_if:followtypeinputdashboard,n|exists:bookmaker_user,id,user_id,' . Auth::id(),
-					'stakeunitinputdashboard' => 'required_if:typestakeinputdashboard,u|unites|mise_montant_en_unites<solde:'.Input::get('accountsinputdashboard').','.Input::get('followtypeinputdashboard').','.Input::get('tipstersinputdashboard'),
-					'amountinputdashboard' => 'required_if:typestakeinputdashboard,f|decimal>0|mise_montant_en_devise<solde:'.Input::get('accountsinputdashboard').','.Input::get('followtypeinputdashboard'),
+					'stakeunitinputdashboard' => 'required_if:typestakeinputdashboard,u|unites|mise_montant_en_unites<solde:' . Input::get('accountsinputdashboard') . ',' . Input::get('followtypeinputdashboard') . ',' . Input::get('tipstersinputdashboard'),
+					'amountinputdashboard' => 'required_if:typestakeinputdashboard,f|decimal>0|mise_montant_en_devise<solde:' . Input::get('accountsinputdashboard') . ',' . Input::get('followtypeinputdashboard'),
 					'ticketABCD' => 'required|in:0,1',
 					'ticketGratuit' => 'required|in:0,1',
 					'ticketLongTerme' => 'required|in:0,1',
@@ -192,7 +191,13 @@
 						$competition_country->save();
 
 						$competition = Competition::where('name', $selection_coupon->league_name)->first();
-						if(is_null($competition)){$competition = new Competition(); $competition->name = $selection_coupon->league_name; $competition->sport_id = $sport->id; $competition->country_id = $competition_country->id; $competition->save();}
+						if (is_null($competition)) {
+							$competition = new Competition();
+							$competition->name = $selection_coupon->league_name;
+							$competition->sport_id = $sport->id;
+							$competition->country_id = $competition_country->id;
+							$competition->save();
+						}
 
 						if ($selection_coupon->isMatch) {
 							$equipe1_country = Country::firstOrCreate(array('name' => $selection_coupon->home_team_country_name));
@@ -211,7 +216,7 @@
 							'pick' => $selection_coupon->pick,
 							'game_id' => $selection_coupon->game_id,
 							'game_name' => $selection_coupon->game_name,
-							'odd_doubleParam' => $selection_coupon->odd_doubleParam ==  -999.888  ? null : $selection_coupon->odd_doubleParam,
+							'odd_doubleParam' => $selection_coupon->odd_doubleParam == -999.888 ? null : $selection_coupon->odd_doubleParam,
 							'odd_doubleParam2' => $selection_coupon->odd_doubleParam2 == -999.888 ? null : $selection_coupon->odd_doubleParam2,
 							'odd_doubleParam3' => $selection_coupon->odd_doubleParam3 == -999.888 ? null : $selection_coupon->odd_doubleParam3,
 							'odd_participantParameterName' => $selection_coupon->odd_participantParameterName == 'null' ? null : $selection_coupon->odd_participantParameterName,
@@ -247,7 +252,7 @@
 					}
 
 					// deduction du montant dans le bookmaker correspondant uniquement si le suivi est de type normal et si ce n'est pas un pari gratuit.
-					if(Input::get('ticketGratuit') == 0){
+					if (Input::get('ticketGratuit') == 0) {
 						if ($suivi == 'n') {
 							$compte_to_deduct = $this->currentUser->comptes()->where('id', Input::get('accountsinputdashboard'))->first();
 							$compte_to_deduct->bankroll_actuelle -= $mise_devise;
@@ -282,7 +287,7 @@
 		{
 
 			$pari = $this->currentUser->enCoursParis()->find($id);
-			if(is_null($pari)){
+			if (is_null($pari)) {
 				return Response::json(array(
 					'etat' => 0,
 					'msg' => 'cet id n\'existe pas',
@@ -291,7 +296,7 @@
 
 			if ($pari->followtype == 'n') {
 				$compte = $pari->compte()->first();
-				if($compte->bankroll_actuelle < $pari->mise_totale){
+				if ($compte->bankroll_actuelle < $pari->mise_totale) {
 					return Response::json(array(
 						'etat' => 0,
 						'msg' => 'Le compte se retrouve avec une bankroll inférieur à 0 si ce ticket est supprimé.'
@@ -470,7 +475,8 @@
 
 
 		// formulaire d'ajout manuel
-		public function manual_store(){
+		public function manual_store()
+		{
 
 			$regles = array(
 				'tipstersinputdashboard' => 'required|exists:tipsters,id,user_id,' . $this->currentUser->id,
@@ -485,9 +491,7 @@
 				'letterinputdashboard' => 'required_if:ticketABCD,1|in:A,B,C,D',
 				'followtypeinputdashboard' => 'required|in:normal,à blanc',
 			);
-			$messages = array(
-
-			);
+			$messages = array();
 
 			$validator = Validator::make(Input::all(), $regles, $messages);
 			$validator->each('datematchinputdashboard', ['required', 'date']);
