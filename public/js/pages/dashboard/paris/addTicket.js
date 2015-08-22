@@ -134,12 +134,8 @@ function gestionTicket() {
                                     toastr.error(json.msg[keyname], 'Erreur:');
                                 }
                             } else {
-                                var errorString = '<ul>';
-                                $.each( json.msg, function( key, value) {
-                                    errorString += '<li>' + value + '</li>';
-                                });
-                                errorString += '</ul>';
-                                toastr.error(errorString, 'Erreur:');
+
+                                toastr.error(json.msg, 'Erreur:');
 
                             }
 

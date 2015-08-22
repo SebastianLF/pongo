@@ -20,8 +20,8 @@ class CreateSelectionsTable extends Migration {
 			$table->decimal('cote_apres_status');
 			$table->tinyInteger('status')->default(0); // gagné , perdu , remboursé etc..
 			$table->string('pick');
-			$table->integer('game_id');
-			$table->string('game_name');
+			$table->integer('game_id')->nullable();
+			$table->string('game_name')->nullable();
 			$table->double('odd_doubleParam')->nullable();
 			$table->double('odd_doubleParam2')->nullable();
 			$table->double('odd_doubleParam3')->nullable();

@@ -84,11 +84,11 @@
 					'letterinputdashboard' => 'required_if:ticketABCD,1|in:A,B,C,D',
 				);
 				$messages = array(
+					'tipstersinputdashboard.required' => 'Choisissez un tipster, si il n\'y a pas de tipster dans la liste, veuillez en créer un dans la page configuration',
+					'tipstersinputdashboard.exists' => 'Ce tipster n\'existe pas dans votre liste.',
 					'typestakeinputdashboard.in' => 'ce type de mise n\'existe pas.',
 					'stakeunitinputdashboard.required_if' => 'Vous devez mettre une mise (en unités).',
 					'amountinputdashboard.required_if' => 'Vous devez mettre une mise (en devise).',
-					'tipstersinputdashboard.required' => 'Choisissez un tipster, si il n\'y a pas de tipster dans la liste, veuillez en créer un dans la page configuration',
-					'tipstersinputdashboard.exists' => 'Ce tipster n\'existe pas dans votre liste.',
 					'accountsinputdashboard.required_if' => 'Vous devez choisir un compte de bookmaker quand le suivi est de type normal. Si vous n\'avez pas de compte de bookmaker, veuillez en créer un, dans la page configuration',
 					'accountsinputdashboard.exists' => 'Ce compte bookmaker n\'existe pas dans votre liste.',
 					'serieinputdashboard.required_if' => 'Un n° ou nom de serie est nécéssaire',
@@ -99,7 +99,7 @@
 				$validator = Validator::make(Input::all(), $regles, $messages);
 				$validator->each('automatic-selection-cote', ['required', 'european_odd']);
 				if ($validator->fails()) {
-					$array = $validator->getMessageBag()->toArray();
+					$array = $validator->getMessageBag()->first();
 					return Response::json(array(
 						'etat' => 0,
 						'msg' => $array,

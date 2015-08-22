@@ -75,9 +75,7 @@ return [
     "url"                  => "Le format de l'URL de :attribute n'est pas valide.",
     
 
-    "european_odd" => "les cotes doivent etre du type 1.50",
-    "cashout" => "le montant doit etre un nombre décimal supérieur à 0",
-    "decimal>0" => "Un nombre est requis, supérieur à 0 et sous la forme 19.99",
+
 
     /*
     |--------------------------------------------------------------------------
@@ -89,6 +87,13 @@ return [
     | specify a specific custom language line for a given attribute rule.
     |
     */
+
+    "european_odd" => "les cotes doivent etre du type 1.50",
+    "cashout" => "le montant doit etre un nombre décimal supérieur à 0",
+    "decimal>0" => "Un nombre est requis, supérieur à 0 et sous la forme 19.99",
+    "unites" => "La mise en unité doit être supérieure à 0.",
+    "mise_montant_en_unites<solde" => "La mise en unité est supérieure au solde actuel sur le compte bookmaker.",
+    "mise_montant_en_devise<solde" => "La mise en montant libre est supérieure au solde actuel sur le compte bookmaker.",
 
     'custom' => [
         'attribute-name' => [
