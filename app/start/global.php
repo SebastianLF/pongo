@@ -100,7 +100,7 @@
 			if (($value*$montant_par_unite) < $bankroll_actuelle) {
 				return true;
 			}
-		}elseif ($parameters[1] == 'b') {
+		}else{
 			return true;
 		}
 		return false;
