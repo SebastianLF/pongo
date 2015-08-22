@@ -159,7 +159,7 @@ function gestionTicket() {
     }
 
     function resetGeneralForm() {
-        followtype.val(null).trigger('change');
+        followtype.val(null).trigger('change').prop('disabled', true);
         amount_per_unit.val(null);
         typestake.val('u').trigger("change");
         conversion_to_devise.val(0).prop('disabled', true);
