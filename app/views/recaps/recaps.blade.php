@@ -1,13 +1,11 @@
 <div class="portlet light">
     <div class="portlet-title">
         <div class="caption">
-            <i class="fa fa-cogs font-yellow-crusta"></i>
-            <span class="caption-subject font-yellow-crusta bold uppercase">Tipsters</span>
+            <i class="fa fa-cogs font-green-sharp"></i>
+            <span class="caption-subject font-green-sharp bold uppercase">Recap Tipsters</span>
         </div>
         <div class="tools">
             <a href="javascript:;" class="collapse">
-            </a>
-            <a href="#portlet-config" data-toggle="modal" class="config">
             </a>
         </div>
     </div>
@@ -22,7 +20,7 @@
         @while($i < $count)
             <?php $iterate = true; ?>
             @if($annee != $recaps[$i]['year'])
-                <p class="font-yellow-crusta"><span class="icon-calendar"></span>{{{' '.$recaps[$i]['year']}}}</p>
+                <p class="font-green-sharp"><span class="icon-calendar"></span>{{{' '.$recaps[$i]['year']}}}</p>
                         <?php $annee = $recaps[$i]['year'] ?>
                         <?php $mois = 30 ?>
             @else
@@ -88,7 +86,16 @@
                                                         @endif
                                                     @endif
                                                 @elseif($recaps[$i]['month'] == 8)
-                                                {{'Aout'}}
+                                                <span class="theme-font blue-bookmaker">{{'Aout | '}}</span>
+                                                @if($recaps2[$i]['month'] == 8 && $annee == $recaps2[$i]['year'])
+                                                        @if($recaps2[$i]['total_unites_par_mois'] > 0)
+                                                            <span class="font-green-sharp">{{'+'.floatval(round($recaps2[$i]['total_unites_par_mois'], 2)).' unités'}}</span>
+                                                        @elseif($recaps2[$i]['total_unites_par_mois'] < 0)
+                                                            <span class="font-red-haze">{{floatval(round($recaps2[$i]['total_unites_par_mois'], 2)).' unités'}}</span>
+                                                        @elseif($recaps2[$i]['total_unites_par_mois'] == 0)
+                                                            <span class="">{{floatval(round($recaps2[$i]['total_unites_par_mois'], 2)).' unités'}}</span>
+                                                        @endif
+                                                    @endif
                                                 @elseif($recaps[$i]['month'] == 9)
                                                 {{'Septembre'}}
                                                 @elseif($recaps[$i]['month'] == 10)
@@ -106,15 +113,15 @@
                         @endif
                             <div id="{{'collapse_'.$annee.'_'.$mois}}" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                <table class="table table-light table-hover">
+                                <table class="table table-light">
                                     <tbody>
 
                                     @while($annee == $recaps[$i]['year'] && $mois == $recaps[$i]['month'])
                                     <tr>
-                                        <td class="uppercase "> {{$recaps[$i]['followtype'] == 'b' ? $recaps[$i]['tipster']['name'].'  <span class="label label-sm label-warning label-mini">à blanc</span>' : $recaps[$i]['tipster']['name']}}</td>
+                                        <td class=""> {{$recaps[$i]['followtype'] == 'b' ? $recaps[$i]['tipster']['name'].'  <span class="label label-sm label-warning label-mini">à blanc</span>' : $recaps[$i]['tipster']['name']}}</td>
 
                                         @if($recaps[$i]['total_devise_par_mois_tipster'] > 0)
-                                            <td><span class="font-green-sharp">{{' +'.floatval(round($recaps[$i]['total_unites_par_mois_tipster'], 2)).'u (1u='.floatval(round($recaps[$i]['moyenne_unite_par_mois_tipster'], 2)).Auth::user()->devise.')'}}</span></td>
+                                            <td><span class="font-green-sharp">{{' +'.floatval(round($recaps[$i]['total_unites_par_mois_tipster'], 2)).'u '}}</span><span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="bottom" title="{{'1u='.floatval(round($recaps[$i]['moyenne_unite_par_mois_tipster'], 2)).Auth::user()->devise.' en moy.'}}"></span></td>
                                             <td><span class="font-green-sharp">{{' +'.floatval(round($recaps[$i]['total_devise_par_mois_tipster'],2)).Auth::user()->devise}}</span></td>
                                         @elseif($recaps[$i]['total_devise_par_mois_tipster'] < 0)
                                             <td><span class="font-red-haze">{{floatval(round($recaps[$i]['total_unites_par_mois_tipster'], 2)).'u (1u='.floatval(round($recaps[$i]['moyenne_unite_par_mois_tipster'], 2)).Auth::user()->devise.')'}}</span></td>

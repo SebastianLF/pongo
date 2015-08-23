@@ -8,14 +8,14 @@
     </div>
 @else
         <div class="table-scrollable-borderless table-responsive">
-            <table id="parisencourstable" class="table table-condensed table-hover table-light "
+            <table id="parisencourstable" class="table table-condensed table-hover table-fixed table-light table-ellipsis"
                    style="border-collapse:collapse;">
                 <thead>
                 <tr class="uppercase">
                     <th class="hidden"></th>
                     <th>N°</th>
                     <th>type</th>
-                    <th class="ellipsis">Evenement</th>
+                    <th colspan="2">Evenement</th>
                     <th colspan="2">Rencontre</th>
                     <th colspan="2">Pari <span class="glyphicon glyphicon-info-sign"></span></th>
                     <th>Tipster</th>
@@ -40,11 +40,10 @@
                                 <td><a href="javascript:;" class="primary-link">#{{$pari->numero_pari}}</a></td>
                                 
                                 <td><span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_live ? 'live' : '' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_gratuit ? 'gratuit' : '' }}</span></td>
-                                <td width="">
-                                    <span data-toggle="tooltip"
-                                          title="{{$pari->selections->first()->sport->name}}{{', '}}{{$pari->selections->first()->competition->name}}">
+                                <td colspan="2">
+
                                         {{$pari->selections->first()->sport->name}}{{', '}}{{$pari->selections->first()->competition->name}}
-                                        </span>
+
                                 </td>
                                 <td colspan="2">
                                         @if($pari->selections->first()->isMatch)

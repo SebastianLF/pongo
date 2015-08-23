@@ -58,7 +58,7 @@
 				if (!$bookmakers_differents) {
 
 					// vérification si il existe au moins un compte bookmaker correspondant au bookmaker des selections.
-					$comptes = $this->currentUser->comptes()->whereHas('bookmaker', function ($query) use ($bookmaker) {
+					$comptes = Auth::user()->comptes()->whereHas('bookmaker', function ($query) use ($bookmaker) {
 						$query->where('nom', $bookmaker);
 					})->where('deleted_at', NULL)->get();
 
@@ -111,15 +111,15 @@
 					$suivi = Input::get('followtypeinputdashboard');
 
 					// tipster
-					$tipster = Auth::user()->tipsters(Input::get('tipstersinputdashboard'))->first();
+					$tipster = Auth::user()->tipsters()->where('id', Input::get('tipstersinputdashboard'))->first();
 
 					// type stake
 					$type_stake = Input::get('typestakeinputdashboard');
 
 					// numero de pari par utilisateur + incrementation de celui-ci.
-					$this->currentUser->compteur_pari += 1;
-					$this->currentUser->save();
-					$numero_pari = $this->currentUser->compteur_pari;
+					Auth::user()->compteur_pari += 1;
+					Auth::user()->save();
+					$numero_pari = Auth::user()->compteur_pari;
 
 					// mise en unités.
 					$mise_unites = 0;
@@ -149,7 +149,7 @@
 						'nom_abcd' => Input::get('serieinputdashboard'),
 						'lettre_abcd' => Input::get('letterinputdashboard'),
 						'tipster_id' => $tipster->id,
-						'user_id' => $this->currentUser->id,
+						'user_id' => Auth::user()->id,
 						'bookmaker_user_id' => $suivi == 'n' ? Input::get('accountsinputdashboard') : null
 					));
 					$encourparis->save();
@@ -254,7 +254,7 @@
 					// deduction du montant dans le bookmaker correspondant uniquement si le suivi est de type normal et si ce n'est pas un pari gratuit.
 					if (Input::get('ticketGratuit') == 0) {
 						if ($suivi == 'n') {
-							$compte_to_deduct = $this->currentUser->comptes()->where('id', Input::get('accountsinputdashboard'))->first();
+							$compte_to_deduct = Auth::user()->comptes()->where('id', Input::get('accountsinputdashboard'))->first();
 							$compte_to_deduct->bankroll_actuelle -= $mise_devise;
 							$compte_to_deduct->save();
 						}
@@ -286,7 +286,7 @@
 		public function destroy($id)
 		{
 
-			$pari = $this->currentUser->enCoursParis()->find($id);
+			$pari = Auth::user()->enCoursParis()->find($id);
 			if (is_null($pari)) {
 				return Response::json(array(
 					'etat' => 0,
@@ -322,7 +322,7 @@
 		public function getEnCoursABCD()
 		{
 			$nom = Input::get('q');
-			$parisabcd = $this->currentUser->enCoursParis()->orderBy('created_at', 'desc')->groupBy('nom_abcd')->where('pari_abcd', '1')->where('nom_abcd', 'LIKE', '%' . $nom . '%')->get(array('nom_abcd AS id', 'nom_abcd AS text'));
+			$parisabcd = Auth::user()->enCoursParis()->orderBy('created_at', 'desc')->groupBy('nom_abcd')->where('pari_abcd', '1')->where('nom_abcd', 'LIKE', '%' . $nom . '%')->get(array('nom_abcd AS id', 'nom_abcd AS text'));
 			/*$result = array();
 			foreach($result as $one){
 				array_push($result, $one->id);
@@ -335,7 +335,7 @@
 			$nom = Input::get('serie_nom');
 			$result = [];
 			if (!empty($nom)) {
-				$lettreabcd = $this->currentUser->enCoursParis()->where('nom_abcd', $nom)->get(array('lettre_abcd'));
+				$lettreabcd = Auth::user()->enCoursParis()->where('nom_abcd', $nom)->get(array('lettre_abcd'));
 				$liste_reponse = array();
 				foreach ($lettreabcd as $one) {
 					array_push($liste_reponse, $one->lettre_abcd);
@@ -359,7 +359,7 @@
 			$id = Input::get('id');
 			$status = Input::get('status');
 			$info = Input::get('info');
-			$selection = $this->currentUser->selections()->where('selections.id', $id)->first(array('selections.id','selections.status','selections.infos_pari'));
+			$selection = Auth::user()->selections()->where('selections.id', $id)->first(array('selections.id','selections.status','selections.infos_pari'));
 
 			if(!$selection){
 				return Response::json(array(
@@ -407,7 +407,7 @@
 				$encourspari_id = Input::get('id');
 				$cashout_type = Input::get('cashout-select');
 				$montant = Input::get('classic-cash-out');
-				$encourspari = $this->currentUser->enCoursParis()->where('id', $encourspari_id)->firstOrFail();
+				$encourspari = Auth::user()->enCoursParis()->where('id', $encourspari_id)->firstOrFail();
 				if ($cashout_type == 'c') {
 
 					$retour_unites = round($montant / $encourspari->mt_par_unite, 2);
@@ -440,7 +440,7 @@
 					));
 
 					// ajout du paris dans la table termine paris.
-					$termine_paris_ajoute = $this->currentUser->termineParis()->save($termine_pari);
+					$termine_paris_ajoute = Auth::user()->termineParis()->save($termine_pari);
 
 					// uniquemenent si le type de suivi est normal.
 					if ($encourspari->followtype == 'n') {
@@ -479,11 +479,11 @@
 		{
 
 			$regles = array(
-				'tipstersinputdashboard' => 'required|exists:tipsters,id,user_id,' . $this->currentUser->id,
+				'tipstersinputdashboard' => 'required|exists:tipsters,id,user_id,' . Auth::user()->id,
 				'typestakeinputdashboard' => 'required|in:u,f',
 				'stakeunitinputdashboard' => 'required_if:typestakeinputdashboard,u|unites',
 				'amountinputdashboard' => 'required_if:typestakeinputdashboard,f|decimal>0',
-				'accountsinputdashboard' => 'required_if:followtypeinputdashboard,normal|exists:bookmaker_user,id,user_id,' . $this->currentUser->id,
+				'accountsinputdashboard' => 'required_if:followtypeinputdashboard,normal|exists:bookmaker_user,id,user_id,' . Auth::user()->id,
 				'ticketABCD' => 'required|in:0,1',
 				'ticketGratuit' => 'required|in:0,1',
 				'ticketLongTerme' => 'required|in:0,1',
@@ -523,15 +523,15 @@
 				$tipster_id = Input::get('tipstersinputdashboard');
 				$tipster = Tipster::find($tipster_id);
 				$compte_id = Input::get('accountsinputdashboard');
-				$compte = $this->currentUser->comptes()->where('id', $compte_id)->first();
+				$compte = Auth::user()->comptes()->where('id', $compte_id)->first();
 
 				// ajout de la date du jour pour la date de creation du pari.
 				$date_ajout = Carbon::now();
 
 				// numero de pari par utilisateur + incrementation de celui-ci.
-				$this->currentUser->compteur_pari += 1;
-				$this->currentUser->save();
-				$numero_pari = $this->currentUser->compteur_pari;
+				Auth::user()->compteur_pari += 1;
+				Auth::user()->save();
+				$numero_pari = Auth::user()->compteur_pari;
 
 				// calcul de la cote generale avec le type de cote 1.00 .
 				$cotes = Input::get('oddinputdashboard');
@@ -590,7 +590,7 @@
 				Clockwork::info($en_cours_pari);
 
 				// ajout du nouveau pari.
-				$pari = $this->currentUser->enCoursParis()->save($en_cours_pari);
+				$pari = Auth::user()->enCoursParis()->save($en_cours_pari);
 
 				// processus pour ceer les selecions.
 				for ($i = 0; $i < Input::get('linesnum'); $i++) {
@@ -660,7 +660,7 @@
 
 				// deduction du montant dans le bookmaker correspondant uniquement si le suivi est de type normal.
 				if ($compte_id != NULL) {
-					$compte_to_deduct = $this->currentUser->comptes()->where('id', $compte_id)->firstOrfail();
+					$compte_to_deduct = Auth::user()->comptes()->where('id', $compte_id)->firstOrfail();
 					$compte_to_deduct->bankroll_actuelle -= $mise_totale;
 					$compte_to_deduct->save();
 				}

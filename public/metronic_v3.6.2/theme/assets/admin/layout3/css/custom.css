@@ -70,9 +70,9 @@ select{
  margin: 0px !important;
 }
 
-table{
+/*table{
     font-size: 12px !important;
-}
+}*/
 
 .hiddenRow {
     padding: 0 !important;
@@ -271,11 +271,15 @@ table{
     table-layout:fixed;
 }
 
-.ellipsis{
+.table-ellipsis th,td{
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.table-centred th,td{
+    text-align: center;
 }
 
 

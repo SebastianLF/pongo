@@ -2,7 +2,7 @@
     <div class="portlet-title">
         <div class="caption">
             <i class="fa fa-cogs font-green-sharp"></i>
-            <span class="caption-subject font-green-sharp bold uppercase">Bookmakers</span>
+            <span class="caption-subject font-green-sharp bold uppercase">Solde Bookmakers</span>
         </div>
     </div>
     <div class="portlet-body">
@@ -19,7 +19,7 @@
                         <div class="panel-title">
                             <a class="accordion-toggle accordion-toggle-styled collapsed"
                                data-toggle="collapse" data-parent="#accordion3" href="{{'#row'.$bookmaker->id}}">
-                                <span class="theme-font blue-bookmaker">{{$bookmaker->nom.' -'}}</span>
+                                <span class="theme-font blue-bookmaker">{{$bookmaker->nom.' |'}}</span>
                                      <span
                                             class="theme-font">{{$bookmaker['comptes']->sum('bankroll_actuelle')}} {{$user->devise}}</span></span>
                                 {{$paris_en_attente ? '<span class="badge badge-danger bcg-red" data-toggle="tooltip" data-original-title="Nombre de tickets en cours associés: '.$paris_en_attente.'">'.$paris_en_attente.'</span>' : ''}}
