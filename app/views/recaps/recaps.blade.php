@@ -111,16 +111,20 @@
 
                                     @while($annee == $recaps[$i]['year'] && $mois == $recaps[$i]['month'])
                                     <tr>
-                                        <td class="uppercase "> {{$recaps[$i]['followtype'] == 'b' ? $recaps[$i]['tipster']['name'].'  <span class="label label-sm label-warning label-mini">à blanc</span>' : $recaps[$i]['tipster']['name']}}
+                                        <td class="uppercase "> {{$recaps[$i]['followtype'] == 'b' ? $recaps[$i]['tipster']['name'].'  <span class="label label-sm label-warning label-mini">à blanc</span>' : $recaps[$i]['tipster']['name']}}</td>
+
                                         @if($recaps[$i]['total_devise_par_mois_tipster'] > 0)
-                                            <span class="font-green-sharp pull-right">{{' +'.round($recaps[$i]['total_devise_par_mois_tipster'],2)}} {{$user->devise}}</span>
+                                            <td><span class="font-green-sharp">{{' +'.floatval(round($recaps[$i]['total_unites_par_mois_tipster'], 2)).'u (1u='.floatval(round($recaps[$i]['moyenne_unite_par_mois_tipster'], 2)).Auth::user()->devise.')'}}</span></td>
+                                            <td><span class="font-green-sharp">{{' +'.floatval(round($recaps[$i]['total_devise_par_mois_tipster'],2)).Auth::user()->devise}}</span></td>
                                         @elseif($recaps[$i]['total_devise_par_mois_tipster'] < 0)
-                                            <span class="font-red-haze pull-right">{{round($recaps[$i]['total_devise_par_mois_tipster'],2)}} {{$user->devise}}</span>
+                                            <td><span class="font-red-haze">{{floatval(round($recaps[$i]['total_unites_par_mois_tipster'], 2)).'u (1u='.floatval(round($recaps[$i]['moyenne_unite_par_mois_tipster'], 2)).Auth::user()->devise.')'}}</span></td>
+                                            <td><span class="font-red-haze">{{floatval(round($recaps[$i]['total_devise_par_mois_tipster'], 2)).Auth::user()->devise}}</span></td>
                                         @elseif($recaps[$i]['total_devise_par_mois_tipster'] == 0)
-                                            <span class="pull-right">{{round($recaps[$i]['total_devise_par_mois_tipster'],2)}} {{$user->devise}}</span>
+                                            <td><span class="">{{floatval(round($recaps[$i]['total_unites_par_mois_tipster'], 2)).'u (1u='.floatval(round($recaps[$i]['moyenne_unite_par_mois_tipster'], 2)).Auth::user()->devise.')'}}</span></td>
+                                            <td><span class="">{{floatval(round($recaps[$i]['total_devise_par_mois_tipster'], 2)).Auth::user()->devise}}</span></td>
                                         @endif
 
-                                        </td>
+
                                             <?php $i++; ?>
                                         @if($i == $count)
                                             <?php break; ?>
