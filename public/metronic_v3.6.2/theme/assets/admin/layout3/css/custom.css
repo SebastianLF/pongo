@@ -112,6 +112,10 @@ table{
     background-color: #F3565D !important;
 }
 
+.blue-bookmaker{
+    color: #5b9bd1 !important;
+}
+
 .login-container {
 	margin: 0 auto;
 	width: 400px; /* Whatever exact width you are looking for (not bound by preset bootstrap widths) */
@@ -263,15 +267,17 @@ table{
 }
 
 /* si le contenu d une cellule est trop longue elle est cachée */
-/*.table {
+.table-fixed {
     table-layout:fixed;
 }
-.table td,th {
+
+.ellipsis{
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}*/
+}
+
 
 /* uniquement pour les select2 dans modal */
 .select2-container {

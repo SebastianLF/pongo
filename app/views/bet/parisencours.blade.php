@@ -8,14 +8,14 @@
     </div>
 @else
         <div class="table-scrollable-borderless table-responsive">
-            <table id="parisencourstable" class="table table-condensed table-hover table-light"
+            <table id="parisencourstable" class="table table-condensed table-hover table-light "
                    style="border-collapse:collapse;">
                 <thead>
                 <tr class="uppercase">
                     <th class="hidden"></th>
                     <th>N°</th>
                     <th>type</th>
-                    <th>Evenement</th>
+                    <th class="ellipsis">Evenement</th>
                     <th colspan="2">Rencontre</th>
                     <th colspan="2">Pari <span class="glyphicon glyphicon-info-sign"></span></th>
                     <th>Tipster</th>

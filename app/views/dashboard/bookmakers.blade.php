@@ -19,7 +19,7 @@
                         <div class="panel-title">
                             <a class="accordion-toggle accordion-toggle-styled collapsed"
                                data-toggle="collapse" data-parent="#accordion3" href="{{'#row'.$bookmaker->id}}">
-                                <span class="uppercase theme-font"></span>{{$bookmaker->nom.' -'}}
+                                <span class="theme-font blue-bookmaker">{{$bookmaker->nom.' -'}}</span>
                                      <span
                                             class="theme-font">{{$bookmaker['comptes']->sum('bankroll_actuelle')}} {{$user->devise}}</span></span>
                                 {{$paris_en_attente ? '<span class="badge badge-danger bcg-red" data-toggle="tooltip" data-original-title="Nombre de tickets en cours associés: '.$paris_en_attente.'">'.$paris_en_attente.'</span>' : ''}}
@@ -28,7 +28,7 @@
                     </div>
                     <div id="{{'row'.$bookmaker->id}}" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <table class="table">
+                            <table class="table table-condensed table-hover table-light">
                                 @foreach($bookmaker->comptes as $compte)
                                     <tr>
                                         <td>{{$compte->nom_compte}}</td>
