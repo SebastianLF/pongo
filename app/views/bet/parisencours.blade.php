@@ -41,50 +41,48 @@
                                 
                                 <td><span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_live ? 'live' : '' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_gratuit ? 'gratuit' : '' }}</span></td>
                                 <td colspan="2">
-
-                                        {{$pari->selections->first()->sport->name}}{{', '}}{{$pari->selections->first()->competition->name}}
-
+                                    {{{$pari->selections->first()->sport->name.', '.$pari->selections->first()->competition->name}}}
                                 </td>
                                 <td colspan="2">
                                         @if($pari->selections->first()->isMatch)
-                                            {{' ('.$pari->selections->first()->date_match.') -'}}
-                                            {{$pari->selections->first()->game_name}}
-                                        @else
-                                            {{'N/A'}}
-                                        @endif
-                                </td>
+                                        {{{' ('.$pari->selections->first()->date_match.') -'}}}
+                                        {{{$pari->selections->first()->game_name}}}
+                                    @else
+                                        {{{'N/A'}}}
+                                    @endif
+                            </td>
 
-                                <!--
-                                // 1 , 'pick'
-                                // 2 , 'pick doubleparam'
-                                // 3 , 'pick, parametername1 doubleparam1
-                                // 4 , 'pick, doubleparam1-doubleparam2 minutes'
-                                // 5 , 'parametername1 doubleparam1' avec '+'
-                                // 6 , 'pick Top doubleparam1'
-                                // 7 , 'pick (optional + )doubleparam'
-                                // 8 , 'parametername1 pick doubleparam1'-->
-                                <td class="blue" width="" colspan="2">
-                                     {{$pari->selections->first()->market->name.(' : ')}}       
-                                 @if($pari->selections->first()->affichage == 1)
-                                        {{$pari->selections->first()->pick}}
-                                     @elseif($pari->selections->first()->affichage == 2)
-                                        {{$pari->selections->first()->pick}}{{' '}}{{$pari->selections->first()->odd_doubleParam}}
-                                     @elseif($pari->selections->first()->affichage == 3)
-                                        {{$pari->selections->first()->pick}}{{', '}}{{$pari->selections->first()->odd_participantParameterName}}{{' '}}{{$pari->selections->first()->odd_doubleParam}}
-                                     @elseif($pari->selections->first()->affichage == 4)
-                                        {{$pari->selections->first()->pick}}{{', '}}{{$pari->selections->first()->odd_doubleParam}}{{'-'}}{{$pari->selections->first()->odd_doubleParam2}}{{' minutes'}}
-                                     @elseif($pari->selections->first()->affichage == 5)
-                                         @if($pari->selections->first()->odd_doubleParam > 0)
-                                        {{', '}}{{$pari->selections->first()->odd_participantParameterName}}{{' +'}}{{$pari->selections->first()->odd_doubleParam}}
-                                         @else
-                                            {{', '}}{{$pari->selections->first()->odd_participantParameterName}}{{' '}}{{$pari->selections->first()->odd_doubleParam}}
-                                         @endif
-                                     @elseif($pari->selections->first()->affichage == 6)
-                                        {{$pari->selections->first()->pick}}{{', '}}{{' Top '}}{{$pari->selections->first()->odd_doubleParam1}}
-                                     @elseif($pari->selections->first()->affichage == 7)
-                                        {{' '.$pari->selections->first()->pick}}
-                                        @if($pari->selections->first()->odd_doubleParam > 0)
-                                            {{{' +'.$pari->selections->first()->odd_doubleParam}}}
+                            <!--
+                            // 1 , 'pick'
+                            // 2 , 'pick doubleparam'
+                            // 3 , 'pick, parametername1 doubleparam1
+                            // 4 , 'pick, doubleparam1-doubleparam2 minutes'
+                            // 5 , 'parametername1 doubleparam1' avec '+'
+                            // 6 , 'pick Top doubleparam1'
+                            // 7 , 'pick (optional + )doubleparam'
+                            // 8 , 'parametername1 pick doubleparam1'-->
+                            <td class="blue" width="" colspan="2">
+                                 {{$pari->selections->first()->market->name.(' : ')}}
+                             @if($pari->selections->first()->affichage == 1)
+                                    {{$pari->selections->first()->pick}}
+                                 @elseif($pari->selections->first()->affichage == 2)
+                                    {{$pari->selections->first()->pick}}{{' '}}{{$pari->selections->first()->odd_doubleParam}}
+                                 @elseif($pari->selections->first()->affichage == 3)
+                                    {{$pari->selections->first()->pick}}{{', '}}{{$pari->selections->first()->odd_participantParameterName}}{{' '}}{{$pari->selections->first()->odd_doubleParam}}
+                                 @elseif($pari->selections->first()->affichage == 4)
+                                    {{$pari->selections->first()->pick}}{{', '}}{{$pari->selections->first()->odd_doubleParam}}{{'-'}}{{$pari->selections->first()->odd_doubleParam2}}{{' minutes'}}
+                                 @elseif($pari->selections->first()->affichage == 5)
+                                     @if($pari->selections->first()->odd_doubleParam > 0)
+                                    {{', '}}{{$pari->selections->first()->odd_participantParameterName}}{{' +'}}{{$pari->selections->first()->odd_doubleParam}}
+                                     @else
+                                        {{', '}}{{$pari->selections->first()->odd_participantParameterName}}{{' '}}{{$pari->selections->first()->odd_doubleParam}}
+                                     @endif
+                                 @elseif($pari->selections->first()->affichage == 6)
+                                    {{$pari->selections->first()->pick}}{{', '}}{{' Top '}}{{$pari->selections->first()->odd_doubleParam1}}
+                                 @elseif($pari->selections->first()->affichage == 7)
+                                    {{' '.$pari->selections->first()->pick}}
+                                    @if($pari->selections->first()->odd_doubleParam > 0)
+                                        {{{' +'.$pari->selections->first()->odd_doubleParam}}}
                                         @else
                                             {{{' '.$pari->selections->first()->odd_doubleParam}}}
                                         @endif

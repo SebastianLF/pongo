@@ -7,16 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/DashboardController.php" afterPath="$PROJECT_DIR$/app/controllers/DashboardController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/EnCoursParisController.php" afterPath="$PROJECT_DIR$/app/controllers/EnCoursParisController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dashboard/bookmakers.blade.php" afterPath="$PROJECT_DIR$/app/views/dashboard/bookmakers.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css" afterPath="$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" afterPath="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/js/dashboard.js" afterPath="$PROJECT_DIR$/public/build/js/dashboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/default.blade.php" afterPath="$PROJECT_DIR$/app/views/layouts/default.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/dashboard/loadRecaps.js" afterPath="$PROJECT_DIR$/public/js/pages/dashboard/loadRecaps.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recaps/recaps.blade.php" afterPath="$PROJECT_DIR$/app/views/recaps/recaps.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="betsmanage.iws" />
@@ -106,13 +97,17 @@
       <file leaf-file-name="parisencours.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61170214" vertical-offset="450" max-vertical-offset="4455">
-              <caret line="53" column="46" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.45212767" vertical-offset="390" max-vertical-offset="4425">
+              <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
               <folding>
-                <marker date="1440357302066" expanded="true" signature="10008:10258" placeholder="..." />
-                <marker date="1440357302066" expanded="true" signature="10049:10257" placeholder="..." />
-                <marker date="1440357302066" expanded="true" signature="14599:14849" placeholder="..." />
-                <marker date="1440357302066" expanded="true" signature="14640:14848" placeholder="..." />
+                <marker date="1440357576852" expanded="true" signature="2646:2741" placeholder="{...}" />
+                <marker date="1440357576852" expanded="true" signature="3060:3547" placeholder="//..." />
+                <marker date="1440357576852" expanded="true" signature="3777:3850" placeholder="{...}" />
+                <marker date="1440357576852" expanded="true" signature="4799:4844" placeholder="{...}" />
+                <marker date="1440357576852" expanded="true" signature="9849:10099" placeholder="..." />
+                <marker date="1440357576852" expanded="true" signature="9890:10098" placeholder="..." />
+                <marker date="1440357576852" expanded="true" signature="14440:14690" placeholder="..." />
+                <marker date="1440357576852" expanded="true" signature="14481:14689" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -1476,7 +1471,13 @@
       <option name="project" value="LOCAL" />
       <updated>1440341343010</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="orm-group">
+      <created>1440357311295</created>
+      <option name="number" value="00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1440357311295</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1505,7 +1506,7 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32816902" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2641844" sideWeight="0.49843425" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26645434" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.110929854" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35352114" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25025433" sideWeight="0.50156575" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21715818" sideWeight="0.23521127" order="2" side_tool="true" content_ui="tabs" />
@@ -1749,17 +1750,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..en_cours_paris">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/lang/fr/manualform.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="373">
@@ -1941,15 +1931,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..en_cours_paris">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61170214" vertical-offset="450" max-vertical-offset="4455">
-          <caret line="53" column="46" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.45212767" vertical-offset="390" max-vertical-offset="4425">
+          <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
           <folding>
-            <marker date="1440357302066" expanded="true" signature="10008:10258" placeholder="..." />
-            <marker date="1440357302066" expanded="true" signature="10049:10257" placeholder="..." />
-            <marker date="1440357302066" expanded="true" signature="14599:14849" placeholder="..." />
-            <marker date="1440357302066" expanded="true" signature="14640:14848" placeholder="..." />
+            <marker date="1440357576852" expanded="true" signature="2646:2741" placeholder="{...}" />
+            <marker date="1440357576852" expanded="true" signature="3060:3547" placeholder="//..." />
+            <marker date="1440357576852" expanded="true" signature="3777:3850" placeholder="{...}" />
+            <marker date="1440357576852" expanded="true" signature="4799:4844" placeholder="{...}" />
+            <marker date="1440357576852" expanded="true" signature="9849:10099" placeholder="..." />
+            <marker date="1440357576852" expanded="true" signature="9890:10098" placeholder="..." />
+            <marker date="1440357576852" expanded="true" signature="14440:14690" placeholder="..." />
+            <marker date="1440357576852" expanded="true" signature="14481:14689" placeholder="..." />
           </folding>
         </state>
       </provider>
