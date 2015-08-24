@@ -150,6 +150,104 @@
                         </div>
                     </div>
 
+                    <div class="portlet light ">
+                        <div class="portlet-title">
+                            <div class="caption caption-md">
+                                <i class="icon-bar-chart theme-font hide"></i>
+                                <span class="caption-subject font-blue-madison bold uppercase">Your Activity</span>
+                                <span class="caption-helper hide">weekly stats...</span>
+                            </div>
+                            <div class="actions">
+                                <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                    <label class="btn btn-transparent grey-salsa btn-circle btn-sm active">
+                                        <input type="radio" name="options" class="toggle" id="option1">Today</label>
+                                    <label class="btn btn-transparent grey-salsa btn-circle btn-sm">
+                                        <input type="radio" name="options" class="toggle" id="option2">Week</label>
+                                    <label class="btn btn-transparent grey-salsa btn-circle btn-sm">
+                                        <input type="radio" name="options" class="toggle" id="option2">Month</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="row number-stats margin-bottom-30">
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="stat-left">
+                                        <div class="stat-chart">
+                                            <!-- do not line break "sparkline_bar" div. sparkline chart has an issue when the container div has line break -->
+                                            <div id="sparkline_bar"><canvas width="90" height="45" style="display: inline-block; width: 90px; height: 45px; vertical-align: top;"></canvas></div>
+                                        </div>
+                                        <div class="stat-number">
+                                            <div class="title">
+                                                Total
+                                            </div>
+                                            <div class="number">
+                                                246
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="stat-right">
+                                        <div class="stat-chart">
+                                            <!-- do not line break "sparkline_bar" div. sparkline chart has an issue when the container div has line break -->
+                                            <div id="sparkline_bar2"><canvas width="90" height="45" style="display: inline-block; width: 90px; height: 45px; vertical-align: top;"></canvas></div>
+                                        </div>
+                                        <div class="stat-number">
+                                            <div class="title">
+                                                New
+                                            </div>
+                                            <div class="number">
+                                                719
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-scrollable table-scrollable-borderless">
+                                <table class="table table-hover table-light">
+                                    <thead>
+                                    <tr class="uppercase">
+                                        <th colspan="2">
+                                            MEMBER
+                                        </th>
+                                        <th>
+                                            Earnings
+                                        </th>
+                                        <th>
+                                            CASES
+                                        </th>
+                                        <th>
+                                            CLOSED
+                                        </th>
+                                        <th>
+                                            RATE
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody><tr>
+                                        <td class="fit">
+                                            <img class="user-pic" src="../../assets/admin/layout3/img/avatar4.jpg">
+                                        </td>
+                                        <td>
+                                            <a href="javascript:;" class="primary-link">Brain</a>
+                                        </td>
+                                        <td>
+                                            $345
+                                        </td>
+                                        <td>
+                                            45
+                                        </td>
+                                        <td>
+                                            124
+                                        </td>
+                                        <td>
+                                            <span class="bold theme-font">80%</span>
+                                        </td>
+                                    </tr>
+                                    </tbody></table>
+                            </div>
+                        </div>
+                    </div>
                     <div id="comptes_par_bookmakers">
 
                     </div>

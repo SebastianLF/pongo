@@ -114,11 +114,29 @@
                             <div id="{{'collapse_'.$annee.'_'.$mois}}" class="panel-collapse collapse">
                                 <div class="panel-body">
                                 <table class="table table-light">
+                                    <thead>
+                                    <tr class="uppercase">
+                                        <th colspan="">
+                                            Tipster
+                                        </th>
+                                        <th>
+                                            1u=
+                                        </th>
+                                        <th>
+                                            cote moy.
+                                        </th>
+                                        <th>
+                                            G/P
+                                        </th>
+                                        <th>
+                                            ROI
+                                        </th>
+                                    </tr>
+                                    </thead>
                                     <tbody>
-
                                     @while($annee == $recaps[$i]['year'] && $mois == $recaps[$i]['month'])
                                     <tr>
-                                        <td class=""> {{$recaps[$i]['followtype'] == 'b' ? $recaps[$i]['tipster']['name'].'  <span class="label label-sm label-warning label-mini">à blanc</span>' : $recaps[$i]['tipster']['name']}}</td>
+                                        <td class="blue bold"> {{$recaps[$i]['followtype'] == 'b' ? '<span class="label label-sm label-warning label-mini">B</span>'.$recaps[$i]['tipster']['name'] : $recaps[$i]['tipster']['name']}}</td>
 
                                         @if($recaps[$i]['total_devise_par_mois_tipster'] > 0)
                                             <td><span class="font-green-sharp">{{' +'.floatval(round($recaps[$i]['total_unites_par_mois_tipster'], 2)).'u '}}</span><span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="bottom" title="{{'1u='.floatval(round($recaps[$i]['moyenne_unite_par_mois_tipster'], 2)).Auth::user()->devise.' en moy.'}}"></span></td>
@@ -130,17 +148,31 @@
                                             <td><span class="">{{floatval(round($recaps[$i]['total_unites_par_mois_tipster'], 2)).'u (1u='.floatval(round($recaps[$i]['moyenne_unite_par_mois_tipster'], 2)).Auth::user()->devise.')'}}</span></td>
                                             <td><span class="">{{floatval(round($recaps[$i]['total_devise_par_mois_tipster'], 2)).Auth::user()->devise}}</span></td>
                                         @endif
-
-
                                             <?php $i++; ?>
                                         @if($i == $count)
                                             <?php break; ?>
                                         @endif
-                                        </tr>
+                                    </tr>
                                     @endwhile
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:;" class="primary-link">Brain</a>
+                                        </td>
+                                        <td>
+                                            $345
+                                        </td>
+                                        <td>
+                                            45
+                                        </td>
+                                        <td>
+                                            124
+                                        </td>
+                                        <td>
+                                            <span class="bold theme-font">80%</span>
+                                        </td>
+                                    </tr>
+                                    </tbody></table>
 
-                                    </tbody>
-                                </table>
                                     <ul>
 
                                     </ul>
