@@ -111,7 +111,7 @@
 		public function showRecaps()
 		{
 			// pour calculer total par mois pour chaque tipster.
-			$recaps = Auth::user()->termineParis()->select(DB::raw('YEAR(created_at) year, MONTH(created_at) month, tipster_id, followtype, SUM(montant_profit) AS total_devise_par_mois_tipster, SUM(unites_profit) AS total_unites_par_mois_tipster, AVG(mt_par_unite) AS moyenne_unite_par_mois_tipster'))->with('tipster')->groupBy('year', 'month', 'tipster_id', 'followtype')->orderBy('year', 'desc')->orderBy('month', 'desc')->orderBy('followtype', 'desc')->get();
+			$recaps = Auth::user()->termineParis()->select(DB::raw('YEAR(created_at) year, MONTH(created_at) month, tipster_id, followtype, SUM(montant_profit) AS total_devise_par_mois_tipster, SUM(unites_profit) AS total_unites_par_mois_tipster, AVG(mt_par_unite) AS moyenne_mt_par_unite_par_mois_tipster', 'AVG(nombre_unites) AS moyenne_mise_unites'))->with('tipster')->groupBy('year', 'month', 'tipster_id', 'followtype')->orderBy('year', 'desc')->orderBy('month', 'desc')->orderBy('followtype', 'desc')->get();
 
 			// pour calculer le total par mois tout court.
 			$recaps2 = Auth::user()->termineParis()->select(DB::raw('YEAR(created_at) year, MONTH(created_at) month, SUM(unites_profit) AS total_unites_par_mois'))->groupBy('year', 'month', 'followtype')->having('followtype', '=', 'n')->orderBy('year', 'desc')->orderBy('month', 'desc')->get();

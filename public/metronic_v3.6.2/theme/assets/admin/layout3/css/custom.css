@@ -271,17 +271,25 @@ select{
     table-layout:fixed;
 }
 
-.table-ellipsis th,td{
+.table-ellipsis{
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.table-centred th,td{
-    text-align: center;
+.table-centred > th,td{
+
 }
 
+.panel-body-recaps{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.table-recap{
+    text-align: left;
+}
 
 /* uniquement pour les select2 dans modal */
 .select2-container {
