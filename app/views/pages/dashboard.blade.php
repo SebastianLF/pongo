@@ -244,7 +244,8 @@
                                             <span class="bold theme-font">80%</span>
                                         </td>
                                     </tr>
-                                    </tbody></table>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
