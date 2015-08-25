@@ -278,8 +278,8 @@ select{
     text-overflow: ellipsis;
 }
 
-.table-centred > th,td{
-
+.table-centred th td{
+    text-align: center;
 }
 
 .panel-body-recaps{
@@ -288,7 +288,7 @@ select{
 }
 
 .table-recap{
-    text-align: left;
+    text-align: center;
 }
 
 /* uniquement pour les select2 dans modal */

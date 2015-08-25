@@ -8,6 +8,7 @@ function loadRecapsOnDashboard() {
             $('[data-toggle="collapse"]').collapse();
             $('#recaps').html(data);
             $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="popover"]').popover();
         }
     });
 }
