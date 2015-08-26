@@ -83,6 +83,14 @@ select{
     color: #65A0D0 !important;
 }
 
+.red-lose{
+    color: #E26A6A;
+}
+
+.blue-rembourse{
+    color: #3598dc;
+}
+
 .header-date{
     line-height: 50px;
 }
@@ -289,6 +297,10 @@ select{
 
 .table-recap{
     text-align: center;
+}
+
+.textalignright{
+    text-align: right;
 }
 
 /* uniquement pour les select2 dans modal */

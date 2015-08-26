@@ -119,10 +119,23 @@
                                     </thead>
                                     <tbody>
                                     @while($annee == $recaps[$i]['year'] && $mois == $recaps[$i]['month'])
-                                        <?php $nom_mois = '';
-                                            $total_devise_par_mois_tipster = $recaps[$i]['total_devise_par_mois_tipster'];
+                                        <?php
+                                            $nom_mois = '';
+                                            $total_unites_par_mois_tipster = '';
+                                            $nombre_paris_gagnes = $recaps[$i]['nombre_paris_gagnes_par_mois_tipster'] + $recaps[$i]['nombre_paris_demigagnes_par_mois_tipster'];
+                                            $nombre_paris_total = $recaps[$i]['nombre_paris_total'];
+                                            $pourcentage_paris_gagnes = floatval(round($nombre_paris_gagnes / $nombre_paris_total * 100));
+                                            $nombre_paris_gagnes = '<span class="bold theme-font">'.$nombre_paris_gagnes.'</span>';
+                                            $nombre_paris_perdu = $recaps[$i]['nombre_paris_perdu_par_mois_tipster'] + $recaps[$i]['nombre_paris_demiperdu_par_mois_tipster'];
+                                            $nombre_paris_perdu = '<span class="bold red-lose">'.$nombre_paris_perdu.'</span>';
+                                            $nombre_paris_rembourse = '<span class="bold blue-rembourse">'. $recaps[$i]['nombre_paris_rembourse_par_mois_tipster'].'</span>';
+                                            $total_devise_retour_par_mois_tipster = $recaps[$i]['total_devise_retour_par_mois_tipster'];
                                             $total_investissement_par_mois_tipster = $recaps[$i]['total_investissement_par_mois_tipster'];
-                                            $roi = floatval($total_devise_par_mois_tipster - $total_investissement_par_mois_tipster)/$total_investissement_par_mois_tipster*100;
+                                            $roi = floatval(round(($total_devise_retour_par_mois_tipster - $total_investissement_par_mois_tipster)/$total_investissement_par_mois_tipster*100));
+                                            if($roi > 0){$roi = '<span class="bold theme-font">'.$roi.'%'.'</span>';}else if($roi < 0){$roi = '<span class="bold red-lose">'.$roi.'%'.'</span>';}else if($roi == 0){$roi = '<span class="bold">'.$roi.'%'.'</span>';}
+                                            $cote = floatval(round($recaps[$i]['moyenne_cote_par_mois_tipster'], 2));
+                                            $moyenne_mise_unites = floatval(round($recaps[$i]['moyenne_mise_unites'], 2));
+
                                         if($recaps[$i]['month'] == 1)
                                         {$nom_mois = 'Janvier';}
                                         elseif($recaps[$i]['month'] == 2)
@@ -152,20 +165,20 @@
                                         <td class="blue"> {{$recaps[$i]['followtype'] == 'b' ? '<span class="label label-sm label-warning label-mini">B</span>'.$recaps[$i]['tipster']['name'] : $recaps[$i]['tipster']['name']}}</td>
                                         <!--<td>{{{'1u='.floatval($recaps[$i]['moyenne_mt_par_unite_par_mois_tipster']).Auth::user()->devise}}}</td>-->
 
-                                        @if($recaps[$i]['total_devise_par_mois_tipster'] > 0)
+                                        @if($recaps[$i]['total_unites_par_mois_tipster'] > 0)
                                             <td><span class="font-green-sharp">{{' +'.floatval(round($recaps[$i]['total_unites_par_mois_tipster'], 2)).'u '}}</span></td>
-                                             <!--<td><span class="font-green-sharp">{{' +'.floatval(round($recaps[$i]['total_devise_par_mois_tipster'],2)).Auth::user()->devise}}</span></td> -->
-                                        @elseif($recaps[$i]['total_devise_par_mois_tipster'] < 0)
-                                            <td><span class="font-red-haze">{{floatval(round($recaps[$i]['total_unites_par_mois_tipster'], 2)).'u (1u='.floatval(round($recaps[$i]['moyenne_unite_par_mois_tipster'], 2)).Auth::user()->devise.')'}}</span></td>
-                                           <!-- <td><span class="font-red-haze">{{floatval(round($recaps[$i]['total_devise_par_mois_tipster'], 2)).Auth::user()->devise}}</span></td> -->
-                                        @elseif($recaps[$i]['total_devise_par_mois_tipster'] == 0)
-                                            <td><span class="">{{floatval(round($recaps[$i]['total_unites_par_mois_tipster'], 2)).'u (1u='.floatval(round($recaps[$i]['moyenne_unite_par_mois_tipster'], 2)).Auth::user()->devise.')'}}</span></td>
-                                             <!--<td><span class="">{{floatval(round($recaps[$i]['total_devise_par_mois_tipster'], 2)).Auth::user()->devise}}</span></td>-->
+                                             <!--<td><span class="font-green-sharp">{{' +'.floatval(round($recaps[$i]['total_devise_retour_par_mois_tipster'],2)).Auth::user()->devise}}</span></td> -->
+                                        @elseif($recaps[$i]['total_unites_par_mois_tipster'] < 0)
+                                            <td><span class="red-lose">{{floatval(round($recaps[$i]['total_unites_par_mois_tipster'], 2)).'u '}}</span></td>
+                                           <!-- <td><span class="font-red-haze">{{floatval(round($recaps[$i]['total_devise_retour_par_mois_tipster'], 2)).Auth::user()->devise}}</span></td> -->
+                                        @elseif($recaps[$i]['total_unites_par_mois_tipster'] == 0)
+                                            <td><span class="">{{floatval(round($recaps[$i]['total_unites_par_mois_tipster'], 2)).'u '}}</span></td>
+                                             <!--<td><span class="">{{floatval(round($recaps[$i]['total_devise_retour_par_mois_tipster'], 2)).Auth::user()->devise}}</span></td>-->
                                         @endif
                                             <?php $i++;
 
                                             ?>
-                                        <td><button type="button" class="btn btn-default recap-profil" data-placement="left" data-trigger="focus" data-toggle="popover" data-html="true" data-content="{{{'<table><thead><tr><th>'.$nom_mois.' '.$annee.'</th><th></th></tr></thead><tbody><tr><td>ROI= '.$roi.'</td></tr><tr><td>ROI= '.$annee.'</td></tr></tbody></table>'}}}" title="Popover title"><i class="fa fa-user"></i> Profil</button></td>
+                                        <td><button type="button" class="btn btn-default btn-xs recap-profil" data-placement="left" data-trigger="focus" data-toggle="popover" data-html="true" data-content="{{{'<table><thead><tr><th>'.$nom_mois.' '.$annee.'</th><th></th></tr></thead><tbody><tr><td>ROI = '.$roi.'</td></tr><tr><td>G/P/R = '.$nombre_paris_gagnes.'('.$pourcentage_paris_gagnes.'%)/'.$nombre_paris_perdu.'/'.$nombre_paris_rembourse.' (Total = '.$nombre_paris_total.' )</td></tr><tr><td>moy. cote = '.$cote.'</td></tr><tr><td>moy. mise = '.$moyenne_mise_unites.'u</td></tr></tbody></table>'}}}"><i class="fa fa-user"></i> Profil</button></td>
                                         @if($i == $count)
                                                 <?php break; ?>
                                             @endif
