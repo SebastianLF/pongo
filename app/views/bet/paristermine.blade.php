@@ -146,7 +146,7 @@
                                     @endif
                                 </td>
 
-                                <td width="150px">
+                                <td width="150px" class="textaligncenter">
                                     {{ Form::open(array('route' => 'historique.destroy', 'class' => 'supprimerform form-bouton-paris','role' => 'form', 'data-toggle' => 'tooltip', 'data-original-title' => 'Supprimer')) }}
                                     {{ Form::button('<i class="fa fa-trash-o"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red', )) }}
                                     {{ Form::close() }}
@@ -162,11 +162,11 @@
                                 <tr
                                     class="mainrow accordion-toggle parisencours-accordeon">
 
-                                    <td class="hidden id">{{$pari->id}}</td>
-                                    <td class="subbetclick"><span data-toggle="collapse"
+                                    <td class="hidden id " >{{$pari->id}}</td>
+                                    <td class="subbetclick "><span data-toggle="collapse"
                                               data-target="{{'.row'.$pari->numero_pari}}"
                                               class="glyphicon glyphicon-chevron-right"></span></td>
-                                    <td class="primary-link">{{'#'.$pari->numero_pari}}</td>
+                                    <td class="blue">{{'#'.$pari->numero_pari}}</td>
                                     <td>
                                         <span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>
                                     </td>
@@ -229,12 +229,13 @@
                                         @endif
                                     </td>
 
-                                    <td width="150px">
+                                    <td width="150px" class="textaligncenter">
                                         {{ Form::open(array('route' => 'historique.destroy', 'class' => 'supprimerform form-bouton-paris','role' => 'form', 'data-toggle' => 'tooltip', 'data-original-title' => 'Supprimer')) }}
                                         {{ Form::button('<i class="fa fa-trash-o"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red', )) }}
                                         {{ Form::close() }}
                                     </td>
                                 </tr>
+
                                 <tr class="subrow">
                                     <td colspan="17" class="childtable cancel-padding">
                                         <div class="{{'accordian-body collapse row'.$pari->numero_pari}}">
