@@ -7,15 +7,14 @@ function loadRecapsOnDashboard() {
         success: function (data) {
             $('[data-toggle="collapse"]').collapse();
             $('#recaps').html(data);
-            var now = new Date(Date.now());
-            var month = now.getMonth();
-            var year = now.getFullYear();
-            $('[data-toggle="tooltip"]').tooltip();
             $('[data-toggle="popover"]').popover();
+
+            // ouverture de l accordeon correspondant au mois en cours.
+            var now = new Date(Date.now());
+            var month = now.getMonth()+1;
+            var year = now.getFullYear();
+            var recap = $('#recaps');
+            recap.find('#collapse_'+year+'_'+month).addClass('in');
         }
     });
-}
-
-function expand_actual_month_recap(){
-
 }

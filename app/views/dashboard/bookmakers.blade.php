@@ -4,6 +4,10 @@
             <i class="fa fa-cogs font-green-sharp"></i>
             <span class="caption-subject font-green-sharp bold uppercase">Solde Bookmakers</span>
         </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse">
+            </a>
+        </div>
     </div>
     <div class="portlet-body">
         @if(!empty($bookmakers))
@@ -28,7 +32,7 @@
                     </div>
                     <div id="{{'row'.$bookmaker->id}}" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <table class="table table-condensed table-hover table-light">
+                            <table class="table table-condensed table-hover table-light table-centred table-bookmakersOnDashboard">
                                 @foreach($bookmaker->comptes as $compte)
                                     <tr>
                                         <td>{{$compte->nom_compte}}</td>

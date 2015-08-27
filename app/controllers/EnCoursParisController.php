@@ -162,7 +162,7 @@
 					foreach ($selections_coupon as $selection_coupon) {
 						// sport = id de betbrain
 						// market  = id de betbrain
-						// scope  = id de betbrain
+						// scope  = id de pongo
 						// competition  = id de pongo
 						// equipe1  = id de pongo
 						// equipe2  = id de pongo
@@ -171,7 +171,7 @@
 						$count_live = $selection_coupon->isLive == null ? $count_live + 0 : $count_live + 1;
 
 						// (on attribue l'id)
-						$sport = Sport::firstOrCreate(array('name' => $selection_coupon->sport_name));
+						/*$sport = Sport::firstOrCreate(array('name' => $selection_coupon->sport_name));
 
 						// (on attribue l'id)
 						$market = Market::firstOrCreate(array('name' => $selection_coupon->market));
@@ -208,7 +208,7 @@
 							$competition_equipe1->save();
 							$competition_equipe2 = CompetitionEquipe::firstOrNew(array('competition_id' => $competition->id, 'equipe_id' => $equipe2->id));
 							$competition_equipe2->save();
-						}
+						}*/
 
 						$selection = new Selection(array(
 							'date_match' => new Carbon($selection_coupon->game_time),
@@ -216,23 +216,23 @@
 							'pick' => $selection_coupon->pick,
 							'game_id' => $selection_coupon->game_id,
 							'game_name' => $selection_coupon->game_name,
-							'odd_doubleParam' => $selection_coupon->odd_doubleParam == -999.888 ? null : $selection_coupon->odd_doubleParam,
-							'odd_doubleParam2' => $selection_coupon->odd_doubleParam2 == -999.888 ? null : $selection_coupon->odd_doubleParam2,
-							'odd_doubleParam3' => $selection_coupon->odd_doubleParam3 == -999.888 ? null : $selection_coupon->odd_doubleParam3,
-							'odd_participantParameterName' => $selection_coupon->odd_participantParameterName == 'null' ? null : $selection_coupon->odd_participantParameterName,
-							'odd_participantParameterName2' => $selection_coupon->odd_participantParameterName2 == 'null' ? null : $selection_coupon->odd_participantParameterName2,
-							'odd_participantParameterName3' => $selection_coupon->odd_participantParameterName3 == 'null' ? null : $selection_coupon->odd_participantParameterName3,
-							'odd_groupParam' => $selection_coupon->odd_groupParam == -999.888 ? null : $selection_coupon->odd_groupParam,
-							'isLive' => $selection_coupon->isLive ? true : false,
-							'isMatch' => $selection_coupon->isMatch ? true : false,
-							'score' => $selection_coupon->score == null ? null : $selection_coupon->score,
+							'odd_doubleParam' => $selection_coupon->odd_doubleParam,
+							'odd_doubleParam2' => $selection_coupon->odd_doubleParam2,
+							'odd_doubleParam3' => $selection_coupon->odd_doubleParam3,
+							'odd_participantParameterName' => $selection_coupon->odd_participantParameterName,
+							'odd_participantParameterName2' => $selection_coupon->odd_participantParameterName2,
+							'odd_participantParameterName3' => $selection_coupon->odd_participantParameterName3,
+							'odd_groupParam' => $selection_coupon->odd_groupParam,
+							'isLive' => $selection_coupon->isLive,
+							'isMatch' => $selection_coupon->isMatch,
+							'score' => $selection_coupon->score,
 							'affichage' => $selection_coupon->affichage,
-							'market_id' => $market->id,
-							'scope_id' => $scope->id,
-							'sport_id' => $sport->id,
-							'competition_id' => $competition->id,
-							'equipe1_id' => isset($equipe1) ? $equipe1->id : null,
-							'equipe2_id' => isset($equipe2) ? $equipe2->id : null,
+							'market_id' => $selection_coupon->market_id,
+							'scope_id' => $selection_coupon->scope_id,
+							'sport_id' => $selection_coupon->sport_id,
+							'competition_id' => $selection_coupon->league_id,
+							'equipe1_id' => is_null($selection_coupon->home_team) ? null : Equipe::where('name', $selection_coupon->home_team)->first()->id,
+							'equipe2_id' => is_null($selection_coupon->away_team) ? null : Equipe::where('name', $selection_coupon->away_team)->first()->id,
 							'en_cours_pari_id' => $encourparis->id
 						));
 

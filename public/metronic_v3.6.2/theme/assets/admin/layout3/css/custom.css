@@ -286,8 +286,8 @@ select{
     text-overflow: ellipsis;
 }
 
-.table-centred th td{
-    text-align: center;
+.table-centred tr{
+    text-align: center !important;
 }
 
 .panel-body-recaps{
@@ -297,6 +297,11 @@ select{
 
 .table-recap{
     text-align: center;
+}
+
+.table-bookmakersOnDashboard{
+    margin: 0;
+    padding: 0;
 }
 
 .textalignright{
