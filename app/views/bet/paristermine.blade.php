@@ -7,7 +7,7 @@
 @else
     <div class="slimScrollTermine">
     <div class="table-scrollable-borderless table-responsive">
-            <table id="paristerminetable" class="table table-condensed"
+            <table id="paristerminetable" class="table table-condensed table-light"
                    style="border-collapse:collapse;">
                 <thead>
                 <tr class="uppercase">
@@ -158,16 +158,15 @@
 
                         <!-- dans le cas d'un pari combiné. -->
                         @else
-                            <a href="">
-                                <tr data-toggle="collapse" data-target="{{'.row'.$pari->numero_pari}}"
+
+                                <tr
                                     class="mainrow accordion-toggle parisencours-accordeon">
 
                                     <td class="hidden id">{{$pari->id}}</td>
-                                    <td></td>
-                                    <!-- <td class="subbetclick"><span data-toggle="collapse"
-                                                                  data-target="{{'.row'.$pari->numero_pari}}"
-                                                                  class="glyphicon glyphicon-plus-sign"></span></td> -->
-                                    <td><a href="javascript:;" class="primary-link">#{{$pari->numero_pari}}</a></td>
+                                    <td class="subbetclick"><span data-toggle="collapse"
+                                              data-target="{{'.row'.$pari->numero_pari}}"
+                                              class="glyphicon glyphicon-chevron-right"></span></td>
+                                    <td class="primary-link">{{'#'.$pari->numero_pari}}</td>
                                     <td>
                                         <span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>
                                     </td>
@@ -327,7 +326,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                            </a>
+
                         @endif
                     </div>
                 @endforeach
