@@ -306,6 +306,13 @@ select{
     padding: 0;
 }
 
+/* css pour recapitulatif sur la page dashboard */
+.number{
+    font-size: 17px !important;
+    line-height: 27px !important;
+    color: #7D8C9D;
+}
+
 .textalignright{
     text-align: right;
 }

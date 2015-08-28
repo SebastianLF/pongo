@@ -83,7 +83,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-8">
                     <div class="portlet light">
                         <div class="portlet-title">
                             <div class="caption">
@@ -120,7 +120,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="dashboard-stat2">
                         <div class="display">
                             <div class="number">
@@ -146,6 +146,124 @@
                                 <div class="status-number roi">
 
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portlet light ">
+                        <div class="portlet-title">
+                            <div class="caption caption-md">
+                                <i class="icon-bar-chart theme-font hide"></i>
+                                <span class="caption-subject theme-font bold uppercase">Récapitulatif</span>
+                                <span class="caption-helper hide">stats</span>
+                            </div>
+                            <div class="actions">
+                                <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                    <label class="btn btn-transparent grey-salsa btn-circle btn-sm active">
+                                        <input type="radio" name="options" class="toggle" id="option1">Aujourd'hui</label>
+                                    <label class="btn btn-transparent grey-salsa btn-circle btn-sm">
+                                        <input type="radio" name="options" class="toggle" id="option2">Cette semaine</label>
+                                    <label class="btn btn-transparent grey-salsa btn-circle btn-sm">
+                                        <input type="radio" name="options" class="toggle" id="option2">Ce mois</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="row number-stats margin-bottom-30">
+                                <div class="col-md-12 col-sm-6 col-xs-6 ">
+                                    <div class="stat-right ">
+                                        <div class="stat-number">
+                                            <div class="title">
+                                                Total
+                                            </div>
+                                            <div class="number">
+                                                2460
+                                            </div>
+                                        </div>
+                                        <div class="stat-number">
+                                            <div class="title">
+                                                Total
+                                            </div>
+                                            <div class="number">
+                                                2460
+                                            </div>
+                                        </div>
+                                        <div class="stat-number">
+                                            <div class="title">
+                                                Total
+                                            </div>
+                                            <div class="number">
+                                                2460
+                                            </div>
+                                        </div>
+                                        <div class="stat-number">
+                                            <div class="title">
+                                                Total
+                                            </div>
+                                            <div class="number">
+                                                2460
+                                            </div>
+                                        </div>
+                                        <div class="stat-number">
+                                            <div class="title">
+                                                Total
+                                            </div>
+                                            <div class="number">
+                                                2460
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="table-scrollable table-scrollable-borderless">
+                                <table class="table table-hover table-light">
+                                    <thead>
+                                    <tr class="uppercase">
+                                        <th colspan="">
+                                            NOM
+                                        </th>
+                                        <th>
+                                            COTE MOY.
+                                        </th>
+                                        <th>
+                                            MISE MOY.
+                                        </th>
+                                        <th>
+                                            EFFICACITE
+                                        </th>
+                                        <th>
+                                            PROFITS
+                                        </th>
+                                        <th>
+                                            ROI
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody><tr>
+
+                                        <td>
+                                            <a href="javascript:;" class="primary-link">Brain</a>
+                                        </td>
+                                        <td>
+                                            0
+                                        </td>
+
+                                        <td>
+                                            $345
+                                        </td>
+                                        <td>
+                                            220% (2/0/0)
+                                        </td>
+                                        <td>
+                                            124
+                                        </td>
+                                        <td>
+                                            <span class="bold theme-font">80%</span>
+                                        </td>
+                                    </tr>
+
+                                    </tbody></table>
                             </div>
                         </div>
                     </div>
