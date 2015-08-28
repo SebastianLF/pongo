@@ -27,6 +27,7 @@ function loadParisEnCours() {
 }
 
 function loadParisTermine() {
+    $("#bs-example").DataTable();
     var onglet = $('#onglet_paris_long_terme span');
     $.ajax({
         url: 'dashboard/ajax/paristermine',

@@ -4,4 +4,5 @@
     Demo.init(); // init demo features
     FormSamples.init();
     ComponentsDropdowns.init();
+
 </script>

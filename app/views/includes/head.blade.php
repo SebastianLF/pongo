@@ -34,7 +34,7 @@
 {{ HTML::style('css/select2.css') }}
 {{ HTML::style('css/select2-bootstrap.min.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/bootstrap-select/bootstrap-select.min.css') }}
-{{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css') }}
+{{ HTML::style('metronic_v3.8.1/theme/assets/global/plugins/datatables/media/css/jquery.dataTables.min.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}
