@@ -5,40 +5,28 @@
         </div>
     </div>
 @else
-    <div id="bs-example" data-example-id="condensed-table">
-        <table class="table table-condensed">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Username</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+    <table id="test" class="display">
+        <thead>
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Row 1 Data 1</td>
+            <td>Row 1 Data 2</td>
+        </tr>
+        <tr>
+            <td>Row 2 Data 1</td>
+            <td>Row 2 Data 2</td>
+        </tr>
+        </tbody>
+    </table>
+
     <div class="slimScrollTermine">
         <div class="table-scrollable-borderless table-responsive">
-            <table id="paristerminetable" class="table table-condensed table-light"
+            <table id="paristerminetable" class="table table-condensed table-light table-striped"
                    style="border-collapse:collapse;">
                 <thead>
                 <tr class="uppercase">
@@ -275,6 +263,7 @@
 
                                                 <tr class="uppercase">
                                                     <th>evenement</th>
+                                                    <th>rencontre</th>
                                                     <th>pari</th>
                                                     <th>cote</th>
                                                     <th>score/autre</th>
@@ -286,13 +275,16 @@
                                                 @foreach($pari->selections as $selection)
                                                     <tr class="child-table-tr">
                                                         <td class="hidden child-id">{{$selection->id}}</td>
-                                                        <td>{{$selection->date_match.' -'}}
+                                                        <td>
                                                             {{$selection->sport->name}}{{', '}}{{$selection->competition->name}}
 
                                                         @if($selection->isMatch)
                                                                     {{', '}}<strong>{{$selection->game_name}}</strong>
                                                                   @else
                                                             @endif
+                                                        </td>
+                                                        <td>
+                                                            @if($selection->isMatch) {{'('.$selection->date_match.') - '.$selection->game_name}} @endif
                                                         </td>
                                                         <td class="blue">{{$selection->market->name.(' : ')}}
                                                             @if($selection->affichage == 1)
