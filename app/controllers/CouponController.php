@@ -218,7 +218,7 @@
 					"away_team_country_name" => Input::exists(array('team2')) ? $away_team->country()->first()->name : null,
 					"score" => Input::exists('score') ? Input::get('score') : null,
 					"isLive" => Input::exists('live') ? Input::get('live') : null,
-					"isMatch" => $market->isMatch,
+					"isMatch" => Input::exists(array('team1', 'team2')) ? 1 : 0,
 					"session_id" => Session::getId(),
 					"affichage" => $this->setAffichage($market->id)
 				));

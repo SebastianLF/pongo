@@ -5,25 +5,6 @@
         </div>
     </div>
 @else
-    <table id="test" class="display">
-        <thead>
-        <tr>
-            <th>Column 1</th>
-            <th>Column 2</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Row 1 Data 1</td>
-            <td>Row 1 Data 2</td>
-        </tr>
-        <tr>
-            <td>Row 2 Data 1</td>
-            <td>Row 2 Data 2</td>
-        </tr>
-        </tbody>
-    </table>
-
     <div class="slimScrollTermine">
         <div class="table-scrollable-borderless table-responsive">
             <table id="paristerminetable" class="table table-condensed table-light table-striped"
@@ -113,17 +94,8 @@
                                 </td>
 
                                 <td class="">{{$pari->tipster->name}}</td>
-                                <td class=""><span data-toggle="tooltip"
-                      title="{{isset($pari->compte->bookmaker->nom) ? $pari->compte->bookmaker->nom : 'à blanc' }}">
-                    @if(isset($pari->compte))
-                        <img width="60px"
-                             src="{{isset($pari->compte->bookmaker->logo) ? asset('img/logos/bookmakers').'/'.$pari->compte->bookmaker->logo : ''}}"
-                             alt=""/>{{isset($pari->compte->bookmaker->logo) ? '' : $pari->compte->bookmaker->nom }}
-                    @else
-                        <span class="label label-sm label-success label-mini uppercase">à blanc</span>
-                    @endif
-                </span>
-                                </td>
+                                <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-success label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}</td>
+
                                 <td class="fit tdcote">{{$pari->cote}}</td>
                                 <td class="tdmise  bold"><span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{$user->devise}}} {{'('.+$pari->nombre_unites.'u)'}}</td>
                                 <td width="90px">
@@ -195,16 +167,7 @@
                                     <td><span class="label label-sm label-combine label-mini type">{{'combiné'}}</span></td>
                                     <td><span class="label label-sm label-combine label-mini type">{{'combiné'}}</span></td>
                                     <td>{{$pari->tipster->name}}</td>
-                                    <td><span data-toggle="tooltip"
-                      title="{{isset($pari->compte->bookmaker->nom) ? $pari->compte->bookmaker->nom : 'à blanc' }}">
-                    @if(isset($pari->compte))
-                        <img width="60px"
-                             src="{{isset($pari->compte->bookmaker->logo) ? asset('img/logos/bookmakers').'/'.$pari->compte->bookmaker->logo : ''}}"
-                             alt=""/>{{isset($pari->compte->bookmaker->logo) ? '' : $pari->compte->bookmaker->nom }}
-                    @else
-                        <span class="label label-sm label-combine label-mini">à blanc</span>
-                    @endif
-                </span></td>
+                                    <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}</td>
                                     <td class="fit tdcote">{{$pari->cote}}</td>
                                     <td class="tdmise bold">
                                         <span class="tdsubmise bold ">{{{$pari->mise_totale}}}</span>{{{$user->devise.' '}}}{{'('.+$pari->nombre_unites.'u)'}}
@@ -217,16 +180,16 @@
                                         <?php
                                         switch ($pari->status) {
                                             case 1:
-                                                echo '<span class="bold fontsize15 font-green">gagné</span>';
+                                                echo '<span class="bold fontsize15 font-green-sharp">gagné</span>';
                                                 break;
                                             case 2:
-                                                echo '<span class="bold fontsize15 font-red">perdu</span>';
+                                                echo '<span class="bold fontsize15 font-red-haze">perdu</span>';
                                                 break;
                                             case 3:
-                                                echo '<span class="bold fontsize15 font-green">1/2 gagné</span>';
+                                                echo '<span class="bold fontsize15 font-green-sharp">1/2 gagné</span>';
                                                 break;
                                             case 4:
-                                                echo '<span class="bold fontsize15 font-red">1/2 perdu</span>';
+                                                echo '<span class="bold fontsize15 font-red-haze">1/2 perdu</span>';
                                                 break;
                                             case 5:
                                                 echo '<span class="bold fontsize15">Remboursé</span>';
@@ -238,11 +201,11 @@
 
                                     </td>
                                     <td>
-                                        <span class="{{'bold fontsize15'}} {{$pari->mise_totale > $pari->montant_retour ? ' font-red' : '' }} {{$pari->mise_totale < $pari->montant_retour ? ' font-green' : '' }}">
+                                        <span class="{{'bold fontsize15'}} {{$pari->mise_totale > $pari->montant_retour ? ' font-red' : '' }} {{$pari->mise_totale < $pari->montant_retour ? ' font-green-sharp' : '' }}">
                                         <span class="">{{$pari->montant_retour.''.$user->devise}}<span>{{' ('.$pari->unites_retour.'u)'}}</span></span></span>
                                     </td>
                                     <td>
-                                        @if($pari->montant_profit > 0)<span class="bold fontsize15 font-green" ><span class="profits">{{' +'.$pari->montant_profit}}</span><span class="devise">{{{$user->devise}}}</span><span>{{' (+'.$pari->unites_profit.'u)'}}</span></span>
+                                        @if($pari->montant_profit > 0)<span class="bold fontsize15 font-green-sharp" ><span class="profits">{{' +'.$pari->montant_profit}}</span><span class="devise">{{{$user->devise}}}</span><span>{{' (+'.$pari->unites_profit.'u)'}}</span></span>
                                         @elseif($pari->montant_profit < 0)<span class="bold fontsize15 font-red"><span class="profits">{{$pari->montant_profit}}</span><span class="devise">{{{$user->devise}}}</span><span>{{' ('.$pari->unites_profit.'u)'}}</span></span>
                                         @else($pari->montant_profit == 0)<span class="bold fontsize15"><span class="profits">{{$pari->montant_profit}}</span><span class="devise">{{{$user->devise}}}</span><span>{{' ('.$pari->unites_profit.'u)'}}</span></span>
                                         @endif
@@ -266,7 +229,7 @@
                                                     <th>rencontre</th>
                                                     <th>pari</th>
                                                     <th>cote</th>
-                                                    <th>score/autre</th>
+                                                    <th>resultat</th>
                                                     <th>status</th>
                                                 </tr>
                                                 </thead>
@@ -277,14 +240,9 @@
                                                         <td class="hidden child-id">{{$selection->id}}</td>
                                                         <td>
                                                             {{$selection->sport->name}}{{', '}}{{$selection->competition->name}}
-
-                                                        @if($selection->isMatch)
-                                                                    {{', '}}<strong>{{$selection->game_name}}</strong>
-                                                                  @else
-                                                            @endif
                                                         </td>
                                                         <td>
-                                                            @if($selection->isMatch) {{'('.$selection->date_match.') - '.$selection->game_name}} @endif
+                                                            @if($selection->isMatch) {{'('.$selection->date_match.') '.$selection->game_name}} @else {{"N/A"}}@endif
                                                         </td>
                                                         <td class="blue">{{$selection->market->name.(' : ')}}
                                                             @if($selection->affichage == 1)
@@ -304,13 +262,14 @@
                                                                  @elseif($selection->affichage == 6)
                                                                     {{$selection->pick}}{{', '}}{{' Top '}}{{$selection->odd_doubleParam1}}
                                                             @endif
+                                                            @if(!is_null($selection->score)){{'('.$selection->score.')'}} @endif
                                                         </td>
 
                                                         <td>
                                                             <span class="cote-td">{{$selection->cote}}</span>
                                                         </td>
                                                         <td width="150px" class="status-td">
-                                                            @if(is_null($selection->resultat))
+                                                            @if($selection->resultat == '')
                                                                 {{'N/A'}}
                                                             @else
                                                                 {{$selection->resultat}}
@@ -323,16 +282,16 @@
                                                                     echo '<span class="bold fontsize15">N/A</span>';
                                                                     break;
                                                                 case 1:
-                                                                    echo '<span class="bold fontsize15 font-green">gagné</span>';
+                                                                    echo '<span class="bold fontsize15 font-green-sharp">gagné</span>';
                                                                     break;
                                                                 case 2:
-                                                                    echo '<span class="bold fontsize15 font-red">perdu</span>';
+                                                                    echo '<span class="bold fontsize15 font-red-haze">perdu</span>';
                                                                     break;
                                                                 case 3:
-                                                                    echo '<span class="bold fontsize15 font-green">1/2 gagné</span>';
+                                                                    echo '<span class="bold fontsize15 font-green-sharp">1/2 gagné</span>';
                                                                     break;
                                                                 case 4:
-                                                                    echo '<span class="bold fontsize15 font-red">1/2 perdu</span>';
+                                                                    echo '<span class="bold fontsize15 font-red-haze">1/2 perdu</span>';
                                                                     break;
                                                                 case 5:
                                                                     echo '<span class="bold fontsize15">Remboursé</span>';
