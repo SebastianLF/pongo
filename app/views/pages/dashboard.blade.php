@@ -151,124 +151,56 @@
                     </div>
                     <div class="portlet light ">
                         <div class="portlet-title">
-                            <div class="caption caption-md">
+                            <div class="caption caption-md col-md-5">
                                 <i class="icon-bar-chart theme-font hide"></i>
                                 <span class="caption-subject theme-font bold uppercase">Récapitulatif</span>
                                 <span class="caption-helper hide">stats</span>
                             </div>
-                            <div class="actions">
-                                <div class="btn-group btn-group-devided" data-toggle="buttons">
-                                    <label class="btn btn-transparent grey-salsa btn-circle btn-sm active">
-                                        <input type="radio" name="options" class="toggle" id="option1">Aujourd'hui</label>
-                                    <label class="btn btn-transparent grey-salsa btn-circle btn-sm">
-                                        <input type="radio" name="options" class="toggle" id="option2">Cette semaine</label>
-                                    <label class="btn btn-transparent grey-salsa btn-circle btn-sm">
-                                        <input type="radio" name="options" class="toggle" id="option2">Ce mois</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portlet-body">
-                            <div class="row number-stats margin-bottom-30">
-                                <div class="col-md-12 col-sm-6 col-xs-6 ">
-                                    <div class="stat-right ">
-                                        <div class="stat-number">
-                                            <div class="title">
-                                                Total
-                                            </div>
-                                            <div class="number">
-                                                2460
-                                            </div>
-                                        </div>
-                                        <div class="stat-number">
-                                            <div class="title">
-                                                Total
-                                            </div>
-                                            <div class="number">
-                                                2460
-                                            </div>
-                                        </div>
-                                        <div class="stat-number">
-                                            <div class="title">
-                                                Total
-                                            </div>
-                                            <div class="number">
-                                                2460
-                                            </div>
-                                        </div>
-                                        <div class="stat-number">
-                                            <div class="title">
-                                                Total
-                                            </div>
-                                            <div class="number">
-                                                2460
-                                            </div>
-                                        </div>
-                                        <div class="stat-number">
-                                            <div class="title">
-                                                Total
-                                            </div>
-                                            <div class="number">
-                                                2460
-                                            </div>
-                                        </div>
-
+                            <div class="actions col-md-6">
+                                <div class="">
+                                    <div class="input-group" id="defaultrange">
+                                        <input type="text" class="form-control" value="{{Carbon::now()->startOfMonth()->format('d/m/Y').' - '.Carbon::now()->endOfMonth()->format('d/m/Y')}}" readonly>
+												<span class="input-group-btn">
+												<button class="btn default date-range-toggle" type="button"><i
+                                                            class="fa fa-calendar"></i></button>
+												</span>
                                     </div>
                                 </div>
 
                             </div>
-                            <div class="table-scrollable table-scrollable-borderless">
-                                <table class="table table-hover table-light">
-                                    <thead>
-                                    <tr class="uppercase">
-                                        <th colspan="">
-                                            NOM
-                                        </th>
-                                        <th>
-                                            COTE MOY.
-                                        </th>
-                                        <th>
-                                            MISE MOY.
-                                        </th>
-                                        <th>
-                                            EFFICACITE
-                                        </th>
-                                        <th>
-                                            PROFITS
-                                        </th>
-                                        <th>
-                                            ROI
-                                        </th>
-                                    </tr>
-                                    </thead>
-                                    <tbody><tr>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="row number-stats margin-bottom-30">
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="stat-left">
+                                        <div class="stat-number">
+                                            <div class="title">
+                                                {{'Total profits en '.Auth::user()->devise}}
+                                            </div>
+                                            <div id="total-recap-profits-devise" class="number">
 
-                                        <td>
-                                            <a href="javascript:;" class="primary-link">Brain</a>
-                                        </td>
-                                        <td>
-                                            0
-                                        </td>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="stat-right">
+                                        <div class="stat-number">
+                                            <div class="title">
+                                                {{'Total profits en U'}}
+                                            </div>
+                                            <div id="total-recap-profits-unites" class="number">
 
-                                        <td>
-                                            $345
-                                        </td>
-                                        <td>
-                                            220% (2/0/0)
-                                        </td>
-                                        <td>
-                                            124
-                                        </td>
-                                        <td>
-                                            <span class="bold theme-font">80%</span>
-                                        </td>
-                                    </tr>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tipsters-general-recap">
 
-                                    </tbody></table>
                             </div>
                         </div>
                     </div>
-
-
                     <div id="comptes_par_bookmakers">
 
                     </div>

@@ -29,7 +29,6 @@ Rounded Portlets
 }
 
 input{
-	padding: 5px !important;
 }
 
 select{
@@ -326,3 +325,5 @@ select{
     width: 100% !important;
     padding: 0;
 }
+
+/* remet à zero pour le plugin datetimepicker dans recap*/

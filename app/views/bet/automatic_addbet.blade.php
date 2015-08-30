@@ -75,7 +75,7 @@
                                         <div class="col-md-4 col-md-offset-1">
                                             <div class="form-group">
                                                 <div class="">
-                                                    <label class="">Montant par unité <span
+                                                    <label class="">Montant par u. <span
                                                                 class="glyphicon glyphicon-question-sign"
                                                                 data-toggle="tooltip" data-placement="bottom"
                                                                 title="Montant par unité spécifique au tipster selectionné. Pour le changer, veuillez vous rendre sur la page configuration"></span></label>

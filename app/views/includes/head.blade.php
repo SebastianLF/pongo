@@ -25,10 +25,8 @@
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/uniform/css/uniform.default.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/bootstrap/css/bootstrap.min.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css') }}
-<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.8/css/jquery.dataTables.css">
 {{ HTML::style('css/toastr.css') }}
 {{ HTML::style('css/sweetalert.css') }}
-
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN PAGE LEVEL STYLES -->
 {{ HTML::style('css/select2.css') }}
@@ -40,6 +38,8 @@
 {{ HTML::style('metronic_v3.6.2/theme/assets/admin/pages/css/pricing-table.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/icheck/skins/all.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/admin/pages/css/login.css') }}
+{{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css') }}
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.8/css/jquery.dataTables.css">
 <!-- END PAGE LEVEL STYLES -->
 <!-- BEGIN THEME STYLES -->
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/css/components-rounded.css') }}

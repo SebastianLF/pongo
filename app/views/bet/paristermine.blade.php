@@ -7,7 +7,7 @@
 @else
     <div class="slimScrollTermine">
         <div class="table-scrollable-borderless table-responsive">
-            <table id="paristerminetable" class="table table-condensed table-light table-striped"
+            <table id="paristerminetable" class="table table-condensed table-advance table-striped"
                    style="border-collapse:collapse;">
                 <thead>
                 <tr class="uppercase">

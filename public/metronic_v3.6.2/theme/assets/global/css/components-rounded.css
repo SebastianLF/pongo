@@ -2395,7 +2395,7 @@ Forms
 
 /* Form input sizing */
 .input-mini {
-  width: 45px !important;
+  width: 45px ;
 }
 
 .input-xsmall {

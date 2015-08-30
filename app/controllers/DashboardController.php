@@ -108,6 +108,37 @@
 			return $parislongterme;
 		}
 
+		public function showGeneralRecap(){
+
+			// tipsters
+			Clockwork::info(Input::get('range'));
+			$dates = explode("-", Input::get('range'));
+			$startDate = explode("/", trim($dates[0]));
+			$startDate = Carbon::create($startDate[2], $startDate[1], $startDate[0], 0, 0, 0, Auth::user()->timezone);
+			$endDate = Carbon::createFromFormat('d/m/Y', trim($dates[1]), Auth::user()->timezone);
+			$recap_tipsters = Auth::user()->termineParis()->select(DB::raw('tipster_id, followtype, SUM(montant_profit) AS total_devise_profit_par_mois_tipster, SUM(montant_retour) AS total_devise_retour_par_mois_tipster, SUM(unites_profit) AS total_unites_benefs_par_mois_tipster, AVG(mt_par_unite) AS moyenne_mt_par_unite_par_mois_tipster, AVG(nombre_unites) AS moyenne_mise_unites, AVG(mise_totale) AS moyenne_mise_devise, SUM(mise_totale) AS total_investissement_par_mois_tipster, COUNT(case when status = 1 then 1 else null end) AS nombre_paris_gagnes_par_mois_tipster, COUNT(case when status = 2 then 1 else null end) AS nombre_paris_perdu_par_mois_tipster, COUNT(case when status = 5 then 1 else null end) AS nombre_paris_rembourse_par_mois_tipster, COUNT(case when status = 3 then 1 else null end) AS nombre_paris_demigagnes_par_mois_tipster, COUNT(case when status = 4 then 1 else null end) AS nombre_paris_demiperdu_par_mois_tipster, COUNT(*) AS nombre_paris_total, AVG(cote) AS moyenne_cote_par_mois_tipster'))->with('tipster')->whereBetween('created_at', array($startDate, $endDate))->groupBy('tipster_id', 'followtype')->orderBy('total_unites_benefs_par_mois_tipster', 'desc')->get();
+			Clockwork::info($recap_tipsters);
+			$recap_tipsters_view = View::make('recaps.tipstersrecap', array('recap_tipsters' => $recap_tipsters));
+
+			// general
+			$recap_general = Auth::user()->termineParis()->whereBetween('created_at', array($startDate, $endDate))->where('followtype', '!=', 'b')->get();
+			$total_profit_devise = $this->setCouleur(floatval(round($recap_general->sum('montant_profit'), 2)), Auth::user()->devise);
+			$total_profit_unites = $this->setCouleur(floatval(round($recap_general->sum('unites_profit'), 2)), 'U');
+
+			return array('tipsters_view' => $recap_tipsters_view->render(), 'total_profit_devise' => $total_profit_devise, 'total_profit_unites' => $total_profit_unites);
+		}
+
+		function setCouleur($nombre, $monnaie){
+			if($nombre > 0){
+				return '<span class="bold theme-font">+'.$nombre.' '.$monnaie.'</span>';
+			}elseif($nombre < 0){
+				return '<span class="bold red-lose">'.$nombre.' '.$monnaie.'</span>';
+			}elseif($nombre == 0){
+				return '<span class="bold">'.$nombre.' '.$monnaie.'</span>';
+			}
+			return '';
+		}
+
 		public function showRecaps()
 		{
 			// pour calculer total par mois pour chaque tipster.

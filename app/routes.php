@@ -17,6 +17,7 @@
 	Route::get('parisabcd', 'EnCoursParisController@getEnCoursABCD');
 	Route::get('lettreabcd', 'EnCoursParisController@getlettreABCD');
 	Route::get('recaps', 'DashboardController@showRecaps');
+	Route::get('generalrecap', 'DashboardController@showGeneralRecap');
 
 	//config page
 	Route::controller('config', 'ConfigController');
