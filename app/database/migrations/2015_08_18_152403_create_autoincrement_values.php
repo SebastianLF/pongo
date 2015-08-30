@@ -23,7 +23,7 @@ class CreateAutoincrementValues extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('autoincrement_values');
+
 	}
 
 }
