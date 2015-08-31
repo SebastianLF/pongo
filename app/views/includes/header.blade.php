@@ -83,6 +83,10 @@
 
                     <a href="{{url('config')}}"><span class="glyphicon glyphicon-cog"></span>Configuration</a>
                 </li>
+                <li>
+
+                    <a href="{{url('faq')}}"><span class="fa fa-comments"></span>FAQ</a>
+                </li>
                 <!--<li>
                     <a href="{{url('stats')}}"><span class="glyphicon glyphicon glyphicon-stats"></span>Statistiques</a>
                 </li>-->

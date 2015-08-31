@@ -2,7 +2,7 @@
  * Created by seb on 12/07/2015.
  */
 
-function totalProfits(){
+/*function totalProfits(){
     $.getJSON( "totalprofit", function(data) {
         var parent = $('.dashboard-stat2');
         parent.find('.totalprofit').text(data.montantprofit);
@@ -17,4 +17,4 @@ function totalProfits(){
         // taille de la barre.
         parent.find('.roi-bar').css( "width", data.roi );
     })
-}
+} */

@@ -6,7 +6,7 @@
                 NOM
             </th>
             <th>
-                COTE MOY.
+                COTE M.
             </th>
             <th>
                 MISE MOY.

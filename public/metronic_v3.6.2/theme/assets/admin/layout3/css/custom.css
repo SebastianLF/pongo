@@ -305,7 +305,16 @@ select{
     padding: 0;
 }
 
+.table-termine{
+    vertical-align: middle !important;
+}
+
+.subrow{
+    border-spacing: 0px !important;
+}
+
 .table-subrow-combine{
+
     margin: 0 auto !important;
     width: 1500px !important;
 }

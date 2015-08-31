@@ -88,67 +88,16 @@
                         <div class="portlet-title">
                             <div class="caption">
                                 <i class="icon-paper-plane font-green-sharp"></i>
-                                <span class="caption-subject font-green-sharp bold uppercase">Ajout</span>
+                                <span class="caption-subject font-green-sharp bold uppercase">Ajouter un ticket</span>
                             </div>
                         </div>
                         <div class="portlet-body">
-                            <div class="tabbable-custom nav-justified">
-
-                                <div class="tab-pane active" id="tab_1_1_1">
-                                    @include('bet.automatic_addbet');
-                                    <div class="portlet box blue-hoki">
-                                        <div class="portlet-title">
-                                            <div class="caption">
-                                                <i class="fa fa-gift"></i>Rechercher un pari ( ajouter une
-                                                selection à l'aide du panneau ci-dessous )
-                                            </div>
-                                        </div>
-                                        <div class="portlet-body">
-                                            {{App::environment()}}
-                                            @if(App::environment('local'))
-                                                <iframe src={{"http://stage.betbrain.com/?portalId=1312&userSessionId=".Session::getId()}} height="1090" width="100%" frameborder="0">Odds service provided in co-operation with <a href="http://www.betbrain.com" target="_blank"><b>BetBrain.com</b></a></iframe>
-                                            @else
-                                                <iframe src={{"http://betbrain.com/?portalId=1326&userSessionId=".Session::getId()}} height="1090"
-                                                        width="100%" frameborder="0">Odds service provided in
-                                                    co-operation with <a href="http://www.betbrain.com" target="_blank"><b>BetBrain.com</b></a>
-                                                </iframe>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @include('bet.automatic_addbet');
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="dashboard-stat2">
-                        <div class="display">
-                            <div class="number">
-                                <h3 class="font-green-sharp"><span class="totalprofit"></span>
-                                    <small class="font-green-sharp">{{' '.$user->devise}}</small>
-                                </h3>
-                                <small>TOTAL PROFIT</small>
-                            </div>
-                            <div class="icon">
-                                <i class="icon-pie-chart"></i>
-                            </div>
-                        </div>
-                        <div class="progress-info">
-                            <div class="progress">
-								<span class="progress-bar progress-bar-success green-sharp roi-bar">
-								<span class="sr-only"></span>
-								</span>
-                            </div>
-                            <div class="status">
-                                <div class="status-title">
-                                    ROI
-                                </div>
-                                <div class="status-number roi">
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="portlet light ">
                         <div class="portlet-title">
                             <div class="caption caption-md col-md-5">
@@ -159,7 +108,9 @@
                             <div class="actions col-md-6">
                                 <div class="">
                                     <div class="input-group" id="defaultrange">
-                                        <input type="text" class="form-control" value="{{Carbon::now()->startOfMonth()->format('d/m/Y').' - '.Carbon::now()->endOfMonth()->format('d/m/Y')}}" readonly>
+                                        <input type="text" class="form-control"
+                                               value="{{Carbon::now()->startOfMonth()->format('d/m/Y').' - '.Carbon::now()->endOfMonth()->format('d/m/Y')}}"
+                                               readonly>
 												<span class="input-group-btn">
 												<button class="btn default date-range-toggle" type="button"><i
                                                             class="fa fa-calendar"></i></button>

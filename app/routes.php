@@ -25,6 +25,9 @@
 	//stats page
 	Route::controller('stats', 'StatsController');
 
+	//faq page
+	Route::get('faq', 'FAQController@index');
+
 
 
 

@@ -14,7 +14,7 @@
 
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i>Panier des sélections | <span
+                                    <i class="glyphicon glyphicon-lock"></i>Panier des sélections | <span
                                             class="glyphicon glyphicon-refresh glyphicon-spin"></span><a
                                             id="selection-refresh" class="" href="">Rafraichir</a>
 
@@ -39,7 +39,7 @@
                         <div class="portlet light ">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="fa fa-gift"></i>Informations générales du ticket
+                                    <i class="glyphicon glyphicon-cog"></i>Informations générales du ticket
                                 </div>
                             </div>
 
@@ -231,8 +231,37 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="portlet light">
+
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="glyphicon glyphicon-globe"></i>Recherche automatique
+
+                                </div>
+                                <div class="actions">
+                                </div>
+                            </div>
+
+                            <div class="portlet-body form form-automatic">
+
+                                @if(App::environment('local'))
+                                    <iframe src={{"http://stage.betbrain.com/?portalId=1312&userSessionId=".Session::getId()}} height="600"
+                                            width="100%" frameborder="0">Odds service provided in co-operation with
+                                        <a href="http://www.betbrain.com" target="_blank"><b>BetBrain.com</b></a>
+                                    </iframe>
+                                @else
+                                    <iframe src={{"http://betbrain.com/?portalId=1326&userSessionId=".Session::getId()}} height="1090"
+                                            width="100%" frameborder="0">Odds service provided in
+                                        co-operation with <a href="http://www.betbrain.com" target="_blank"><b>BetBrain.com</b></a>
+                                    </iframe>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="form-actions form-actions-automatic-bet">
                 <div class="col-md-12">
                     <div class="row">

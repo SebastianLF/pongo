@@ -160,7 +160,7 @@ function gestionTransactions() {
             data: {page: page},
             success: function (data) {
                 paginationContainer.html(data);
-                getBookmakersForSelection(this.book, this.account);
+                getBookmakersForSelection(book, account);
             }
         });
     }
@@ -176,23 +176,6 @@ function gestionTransactions() {
 
 
     function transactionAdd() {
-        var modal = this.modal;
-        var form = this.form;
-        var typeContainer = this.typeContainer;
-        var bookContainer = this.bookContainer;
-        var accountContainer = this.accountContainer;
-        var amountContainer = this.amountContainer;
-        var descriptionContainer = this.descriptionContainer;
-        var typeError = this.typeError;
-        var bookError = this.bookError;
-        var accountError = this.accountError;
-        var amountError = this.amountError;
-        var descriptionError = this.descriptionError;
-        var type = this.type;
-        var book = this.book;
-        var account = this.account;
-        var amount = this.amount;
-        var description = this.description;
         $(modal).on('hide.bs.modal', function () {
             // remise a zero des champs erreurs
             form.find(typeContainer).removeClass('has-error');

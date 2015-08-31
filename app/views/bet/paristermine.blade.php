@@ -7,7 +7,7 @@
 @else
     <div class="slimScrollTermine">
         <div class="table-scrollable-borderless table-responsive">
-            <table id="paristerminetable" class="table table-condensed table-advance table-striped"
+            <table id="paristerminetable" class="table table-condensed table-light table-hover table-termine"
                    style="border-collapse:collapse;">
                 <thead>
                 <tr class="uppercase">
@@ -17,7 +17,7 @@
                     <th>type</th>
                     <th>Evenement</th>
                     <th>Rencontre</th>
-                    <th>Pari <span class="glyphicon glyphicon-info-sign"></span></th>
+                    <th>Pari</th>
                     <th>Tipster</th>
                     <th>Book</th>
                     <th>Cote</th>
@@ -25,7 +25,7 @@
                     <th>Resultat</th>
                     <th>Status</th>
                     <th>Retour</th>
-                    <th>bén./per.</th>
+                    <th>PROFITS</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -39,7 +39,7 @@
                             <tr data-toggle="collapse" data-target="{{'.row'.$pari->numero_pari}}" class="mainrow accordion-toggle parisencours-accordeon">
                                 <td class="hidden id">{{$pari->id}}</td>
                                 <td class="subbetclick"></td>
-                                <td><a href="javascript:;" class="primary-link">#{{$pari->numero_pari}}</a></td>
+                                <td class="primary-link">{{'#'.$pari->numero_pari}}</td>
 
                                 <td><span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_live ? 'live' : '' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_gratuit ? 'gratuit' : '' }}</span></td>
                                 <td width="">
@@ -221,7 +221,7 @@
                                 <tr class="subrow">
                                     <td colspan="17" class="childtable cancel-padding">
                                         <div class="{{'accordian-body collapse row'.$pari->numero_pari}}">
-                                            <table class="table table-striped child-table table-bordered table-subrow-combine">
+                                            <table class="table child-table table-bordered table-condensed table-subrow-combine">
                                                 <thead>
 
                                                 <tr class="uppercase">

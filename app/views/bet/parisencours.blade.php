@@ -39,7 +39,7 @@
                                 <td class="hidden id">{{$pari->id}}</td>
                                 <td><a href="javascript:;" class="primary-link">#{{$pari->numero_pari}}</a></td>
                                 
-                                <td><span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_live ? 'live' : '' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_gratuit ? 'gratuit' : '' }}</span></td>
+                                <td><span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">@if($pari->pari_abcd){{$pari->nom_abcd.' - '.$pari->lettre_abcd}}@endif</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_live ? 'live' : '' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_gratuit ? 'gratuit' : '' }}</span></td>
                                 <td colspan="2">
                                     {{{$pari->selections->first()->sport->name.', '.$pari->selections->first()->competition->name}}}
                                 </td>
