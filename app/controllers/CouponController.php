@@ -244,7 +244,7 @@
 			$market->name = Input::get('market'); // donc du coup on met a jour le nom du market si il y a eu une nouvelle creation ou mise à jour si betbrain a décidé de changer le nom du market.
 			$market->save();
 
-			$scope = Scope::firstOrCreate(array('name' => Input::get('scope'))); // recherche par nom parceque betbrain peut envoyer un scope qui a 0 en id ce qui fait buguer l appli.
+			$scope = Scope::firstOrCreate(array('name' => Input::get('scope'))); // recherche par nom parceque betbrain peut envoyer un scope qui a 0 en id ce qui fait buguer.
 
 			if(Input::exists('home_team')){ $competition->equipes()->save($home_team);}
 			if(Input::exists('away_team')){ $competition->equipes()->save($away_team);}
@@ -267,10 +267,10 @@
 
 			$coupon = new Coupon(array(
 				'pick' => Input::get('pick'),
-				'scope' => Input::get('scope'),
-				'scope_id' => Input::get('scope_id'),
-				'bookmaker' => Input::get('bookmaker'),
-				'bookmaker_id' => Input::get('bookmaker_id'),
+				'scope' => $scope->name,
+				'scope_id' => $scope->id,
+				'bookmaker' => $bookmaker->nom,
+				'bookmaker_id' => $bookmaker->id,
 				'odd_value' => Input::get('odd_value'),
 				'odd_doubleParam' => Input::get('odd_doubleParam') == "-999.888" ? null : Input::get('odd_doubleParam'),
 				'odd_doubleParam2' => Input::get('odd_doubleParam2') == "-999.888" ? null : Input::get('odd_doubleParam2'),
