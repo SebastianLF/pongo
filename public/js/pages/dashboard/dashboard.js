@@ -11,7 +11,8 @@ loadParisABCD();
 loadParisTermine();
 
 // dashboard
-loadRecapsOnDashboard();
+// loadRecapsOnDashboard();
+loadGeneralRecapsOnDashboard();
 loadBookmakersOnDashboard();
 
 // formulaire d'ajout de pari

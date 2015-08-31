@@ -140,6 +140,7 @@ function gestionTicket() {
                             }
 
                         } else if (json.etat == 1) {
+                            tipster.val(null).trigger('change');
                             resetGeneralForm();
                             refreshSelections();
                             toastr.success(json.msg, 'Pari');

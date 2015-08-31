@@ -33,7 +33,7 @@ function parisTermineDelete(){
                                 toastr.success(data.msg, 'Suppression');
                                 loadParisTermine();
                                 loadBookmakersOnDashboard();
-                                loadRecapsOnDashboard();
+                                loadGeneralRecapsOnDashboard();
                             }
                         },
                         error: function () {

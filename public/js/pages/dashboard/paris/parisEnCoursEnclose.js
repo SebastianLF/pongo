@@ -40,7 +40,7 @@ function parisEnCoursEnclose(tablename, formname, urlgiven) {
                     loadParisEnCours();
                     loadParisTermine();
                     loadBookmakersOnDashboard();
-                    loadRecapsOnDashboard();
+                    loadGeneralRecapsOnDashboard();
                 }
             },
             error: function () {

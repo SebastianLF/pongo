@@ -1,7 +1,7 @@
 
 
 //nouvelle version
-loadGeneralRecapsOnDashboard();
+
 
 $('#defaultrange').daterangepicker({
         opens: 'left',
@@ -39,7 +39,7 @@ function loadGeneralRecapsOnDashboard() {
 }
 
 // ancienne version
-function loadRecapsOnDashboard() {
+/*function loadRecapsOnDashboard() {
     $.ajax({
         url: 'recaps',
         type: 'get',
@@ -56,4 +56,4 @@ function loadRecapsOnDashboard() {
             recap.find('#collapse_' + year + '_' + month).addClass('in');
         }
     });
-}
+}*/
