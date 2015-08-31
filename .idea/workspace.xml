@@ -105,8 +105,8 @@
       <file leaf-file-name="paristermine.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/bet/paristermine.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.62274367" vertical-offset="1542" max-vertical-offset="5525">
-              <caret line="111" column="105" selection-start-line="111" selection-start-column="105" selection-end-line="111" selection-end-column="105" />
+            <state vertical-scroll-proportion="0.59205776" vertical-offset="1542" max-vertical-offset="5525">
+              <caret line="110" column="47" selection-start-line="110" selection-start-column="47" selection-end-line="110" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -1506,7 +1506,13 @@
       <option name="project" value="LOCAL" />
       <updated>1441013557760</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="termine table + recap general">
+      <created>1441013566637</created>
+      <option name="number" value="00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1441013566637</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1973,8 +1979,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bet/paristermine.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62274367" vertical-offset="1542" max-vertical-offset="5525">
-          <caret line="111" column="105" selection-start-line="111" selection-start-column="105" selection-end-line="111" selection-end-column="105" />
+        <state vertical-scroll-proportion="0.59205776" vertical-offset="1542" max-vertical-offset="5525">
+          <caret line="110" column="47" selection-start-line="110" selection-start-column="47" selection-end-line="110" selection-end-column="47" />
           <folding />
         </state>
       </provider>
