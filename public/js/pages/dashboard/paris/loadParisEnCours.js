@@ -29,8 +29,6 @@ function loadParisEnCours() {
 }
 
 function loadParisTermine() {
-
-    var onglet = $('#onglet_paris_long_terme span');
     $.ajax({
         url: 'dashboard/ajax/paristermine',
         data: {page: 1},
@@ -42,6 +40,18 @@ function loadParisTermine() {
                 e.stopPropagation();
             });
 
+            $('.subbetclick a').on('click', function(){
+                if($(this).find('i').hasClass('glyphicon-chevron-right')){
+                    $(this).find('i').removeClass('glyphicon-chevron-right');
+                    $(this).find('i').addClass('glyphicon-chevron-down');
+                }else{
+                    $(this).find('i').addClass('glyphicon-chevron-right');
+                    $(this).find('i').removeClass('glyphicon-chevron-down');
+                }
+                var nom_subrow = $('.subbetclick a').data('target');
+                $('#paristerminetable').find(nom_subrow);
+            });
+
             // barre de défilement vertical pour les paris terminés.
             $(function(){
                 $('.slimScrollTermine').slimScroll({
@@ -51,8 +61,6 @@ function loadParisTermine() {
                     alwaysVisible: true
                 });
             });
-
-
         },
         error: function (data) {
             $('#tab_15_4').html('<p>impossible de récuperer les paris terminés</p>');

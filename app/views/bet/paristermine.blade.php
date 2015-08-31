@@ -153,10 +153,10 @@
                                 <tr
                                     class="mainrow accordion-toggle parisencours-accordeon">
 
-                                    <td class="hidden id " >{{$pari->id}}</td>
-                                    <td class="subbetclick "><span data-toggle="collapse"
+                                    <td class="hidden id" >{{$pari->id}}</td>
+                                    <td class="subbetclick"><a data-toggle="collapse"
                                               data-target="{{'.row'.$pari->numero_pari}}"
-                                              class="glyphicon glyphicon-chevron-right"></span></td>
+                                              class=""><i class="glyphicon glyphicon-chevron-right"></i></a></td>
                                     <td class="blue">{{'#'.$pari->numero_pari}}</td>
                                     <td>
                                         <span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>
@@ -221,7 +221,7 @@
                                 <tr class="subrow">
                                     <td colspan="17" class="childtable cancel-padding">
                                         <div class="{{'accordian-body collapse row'.$pari->numero_pari}}">
-                                            <table class="table table-striped child-table table-bordered">
+                                            <table class="table table-striped child-table table-bordered table-subrow-combine">
                                                 <thead>
 
                                                 <tr class="uppercase">
@@ -268,14 +268,14 @@
                                                         <td>
                                                             <span class="cote-td">{{$selection->cote}}</span>
                                                         </td>
-                                                        <td width="150px" class="status-td">
+                                                        <td width="" class="status-td">
                                                             @if($selection->resultat == '')
                                                                 {{'N/A'}}
                                                             @else
                                                                 {{$selection->resultat}}
                                                             @endif
                                                         </td>
-                                                        <td width="110px" class="uppercase">
+                                                        <td class="uppercase">
                                                             <?php
                                                             switch ($selection->status) {
                                                                 case 0:

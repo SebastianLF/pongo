@@ -305,6 +305,11 @@ select{
     padding: 0;
 }
 
+.table-subrow-combine{
+    margin: 0 auto !important;
+    width: 1500px !important;
+}
+
 /* css pour recapitulatif sur la page dashboard */
 .number{
     font-size: 17px !important;
