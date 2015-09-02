@@ -35,6 +35,8 @@ function parisTermineDelete(){
                                 loadBookmakersOnDashboard();
                                 loadGeneralRecapsOnDashboard();
                             }
+
+
                         },
                         error: function () {
                             console.log("supprimer un pari en cours ne fonctionne pas");

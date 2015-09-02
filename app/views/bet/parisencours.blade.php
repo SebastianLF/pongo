@@ -8,11 +8,12 @@
     </div>
 @else
         <div class="table-scrollable-borderless table-responsive">
-            <table id="parisencourstable" class="table table-condensed table-hover table-fixed table-light table-ellipsis"
+            <table id="parisencourstable" class="table table-condensed table-hover table-light"
                    style="border-collapse:collapse;">
                 <thead>
                 <tr class="uppercase">
                     <th class="hidden"></th>
+                    <th></th>
                     <th>N°</th>
                     <th>type</th>
                     <th colspan="2">Evenement</th>
@@ -37,7 +38,7 @@
                             <a href="">
                             <tr data-toggle="collapse" data-target="{{'.row'.$pari->numero_pari}}" class="mainrow accordion-toggle parisencours-accordeon">
                                 <td class="hidden id">{{$pari->id}}</td>
-                                <td><a href="javascript:;" class="primary-link">#{{$pari->numero_pari}}</a></td>
+                                <td><a href="javascript:;" class="primary-link">{{'#'.$pari->numero_pari}}</a></td>
                                 
                                 <td><span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">@if($pari->pari_abcd){{$pari->nom_abcd.' - '.$pari->lettre_abcd}}@endif</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_live ? 'live' : '' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_gratuit ? 'gratuit' : '' }}</span></td>
                                 <td colspan="2">
@@ -92,20 +93,7 @@
                                 </td>
 
                                 <td class="">{{$pari->tipster->name}}</td>
-                                <td class=""><span data-toggle="tooltip"
-                      title="{{isset($pari->compte->bookmaker->nom) ? $pari->compte->bookmaker->nom : 'à blanc' }}">
-                    @if(isset($pari->compte))
-                        @if(!empty($pari->compte->bookmaker->logo))
-                        <img width="60px"
-                             src="{{isset($pari->compte->bookmaker->logo) ? asset('img/logos/bookmakers').'/'.$pari->compte->bookmaker->logo : ''}}"
-                             alt=""/>
-                        @else
-                             {{$pari->compte->bookmaker->nom}}
-                        @endif
-                    @else
-                        <span class="label label-sm label-success label-mini uppercase">à blanc</span>
-                    @endif
-                </span>
+                                <td class="">{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}
                                 </td>
                                 <td class="fit tdcote">{{$pari->cote}}</td>
                                 <td class="tdmise  bold">
@@ -151,29 +139,20 @@
                                     class="mainrow accordion-toggle parisencours-accordeon">
 
                                     <td class="hidden id">{{$pari->id}}</td>
-                                    <!-- <td class="subbetclick"><span data-toggle="collapse"
-                                                                  data-target="{{'.row'.$pari->numero_pari}}"
-                                                                  class="glyphicon glyphicon-plus-sign"></span></td> -->
-                                    <td><a href="javascript:;" class="primary-link">#{{$pari->numero_pari}}</a></td>
+                                    <td class="subbetclick"><a data-toggle="collapse"
+                                                               data-target="{{'.row'.$pari->numero_pari}}"
+                                                               class=""><i class="glyphicon glyphicon-chevron-right"></i></a></td>
+                                    <td class="primary-link">{{'#'.$pari->numero_pari}}</td>
                                     <td>
                                         <span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>
                                     </td>
-                                    <td>
+                                    <td colspan="2">
                                         <span class="label label-sm label-combine label-combine label-mini type">{{'combiné'}}</span>
                                     </td>
-                                    <td><span class="label label-sm label-combine label-mini type">{{'combiné'}}</span></td>
-                                    <td><span class="label label-sm label-combine label-mini type">{{'combiné'}}</span></td>
+                                    <td colspan="2"><span class="label label-sm label-combine label-mini type">{{'combiné'}}</span></td>
+                                    <td colspan="2"><span class="label label-sm label-combine label-mini type">{{'combiné'}}</span></td>
                                     <td>{{$pari->tipster->name}}</td>
-                                    <td><span data-toggle="tooltip"
-                      title="{{isset($pari->compte->bookmaker->nom) ? $pari->compte->bookmaker->nom : 'à blanc' }}">
-                    @if(isset($pari->compte))
-                        <img width="60px"
-                             src="{{isset($pari->compte->bookmaker->logo) ? asset('img/logos/bookmakers').'/'.$pari->compte->bookmaker->logo : ''}}"
-                             alt=""/>{{isset($pari->compte->bookmaker->logo) ? '' : $pari->compte->bookmaker->nom }}
-                    @else
-                        <span class="label label-sm label-combine label-mini">à blanc</span>
-                    @endif
-                </span></td>
+                                    <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}</td>
                                     <td class="fit tdcote">{{$pari->cote}}</td>
                                     <td class="tdmise bold">
                                         <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise.' '}}}{{'('.+$pari->nombre_unites.'u)'}}
@@ -183,7 +162,7 @@
                                     </td>
                                     <td><span class="label label-sm label-combine label-mini type">{{'combiné'}}</span></td>
 
-                                    <td class="bold fontsize15"><span class="profits"></span><span
+                                    <td width="150px" class="bold fontsize15"><span class="profits"></span><span
                                                 class="devise hide">{{{' '.Auth::user()->devise}}}</span></td>
                                     <td>
                                         {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris' ,'role' => 'form', )) }}

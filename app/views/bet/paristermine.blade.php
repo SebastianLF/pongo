@@ -35,7 +35,7 @@
 
                     <!-- pour le cas d'un pari simple. -->
                         @if($pari->type_profil == 's')
-                            <a href="">
+
                             <tr data-toggle="collapse" data-target="{{'.row'.$pari->numero_pari}}" class="mainrow accordion-toggle parisencours-accordeon">
                                 <td class="hidden id">{{$pari->id}}</td>
                                 <td class="subbetclick"></td>
@@ -147,7 +147,7 @@
                                     {{ Form::close() }}
                                 </td>
                             </tr>
-                        </a>
+
 
 
 
@@ -161,7 +161,7 @@
                                     <td class="subbetclick"><a data-toggle="collapse"
                                               data-target="{{'.row'.$pari->numero_pari}}"
                                               class=""><i class="glyphicon glyphicon-chevron-right"></i></a></td>
-                                    <td class="">{{'#'.$pari->numero_pari}}</td>
+                                    <td class="primary-link">{{'#'.$pari->numero_pari}}</td>
                                     <td>
                                         <span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>
                                     </td>

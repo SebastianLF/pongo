@@ -60,6 +60,9 @@ function loadParisTermine() {
                     alwaysVisible: true
                 });
             });
+            $('#paristerminetable').tableSearch({
+                searchPlaceHolder:'Recherche...'
+            });
         },
         error: function (data) {
             $('#tab_15_4').html('<p>impossible de récuperer les paris terminés</p>');

@@ -7,7 +7,7 @@ parisEnCoursDelete();
 getBookmakersForSelection();
 loadParisEnCours();
 loadParisLongTerme();
-loadParisABCD();
+//loadParisABCD();
 loadParisTermine();
 
 // dashboard
