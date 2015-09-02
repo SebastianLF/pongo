@@ -38,7 +38,7 @@
 
                             <tr data-toggle="collapse" data-target="{{'.row'.$pari->numero_pari}}" class="mainrow accordion-toggle parisencours-accordeon">
                                 <td class="hidden id">{{$pari->id}}</td>
-                                <td class="subbetclick"></td>
+                                <td width="20px" class="subbetclick"></td>
                                 <td class="primary-link">{{'#'.$pari->numero_pari}}</td>
 
                                 <td><span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_live ? 'live' : '' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_gratuit ? 'gratuit' : '' }}</span></td>
@@ -158,7 +158,7 @@
                                     class="mainrow accordion-toggle parisencours-accordeon">
 
                                     <td class="hidden id" >{{$pari->id}}</td>
-                                    <td class="subbetclick"><a data-toggle="collapse"
+                                    <td width="20px" class="subbetclick"><a data-toggle="collapse"
                                               data-target="{{'.row'.$pari->numero_pari}}"
                                               class=""><i class="glyphicon glyphicon-chevron-right"></i></a></td>
                                     <td class="primary-link">{{'#'.$pari->numero_pari}}</td>
