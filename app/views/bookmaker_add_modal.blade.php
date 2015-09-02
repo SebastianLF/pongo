@@ -29,7 +29,7 @@
                         </div>
 
                         <div id="amount_container" class="form-group">
-                            <label class="control-label" for="amount_bookmaker">Montant actuel (en {{$user->devise}})</label>
+                            <label class="control-label" for="amount_bookmaker">Montant actuel (en {{Auth::user()->devise}})</label>
                             <input name="amount_bookmaker" type="text"
                                    class="form-control">
                             <span id="amount_error" class="help-block"></span>

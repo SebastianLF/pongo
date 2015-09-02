@@ -6,8 +6,6 @@
 		public function __construct()
 		{
 			parent::__construct();
-			$this->beforeFilter('auth');
-			$this->beforeFilter('csrf', array('only' => array('store')));
 			$this->beforeFilter('ajax', array('only' => array('index', 'store')));
 		}
 

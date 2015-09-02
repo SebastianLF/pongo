@@ -211,3 +211,10 @@
 	*/
 
 	require app_path() . '/filters.php';
+
+
+	/* */
+	App::missing(function($exception)
+	{
+		return Response::view('pages.404', array(), 404);
+	});

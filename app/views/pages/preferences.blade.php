@@ -24,7 +24,7 @@
                         </div>
                         <div class="portlet-body form">
                             <!-- BEGIN FORM-->
-                            {{Form::open(array('route' => array('preferences.update', $user->id), 'class' => 'form-horizontal form-bordered' ))}}
+                            {{Form::open(array('route' => array('preferences.update', Auth::user()->id), 'class' => 'form-horizontal form-bordered' ))}}
                                 <div class="form-body">
 
                                     <div class="form-group">

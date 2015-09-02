@@ -1,7 +1,7 @@
 <!-- BEGIN FOOTER -->
 <div class="page-footer">
     <div class="container-fluid">
-        2014 &copy; Design Template by Metronic.
+        Pongo - All Rights Reserved
     </div>
 </div>
 <div class="scroll-to-top">

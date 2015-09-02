@@ -6,8 +6,6 @@
 		public function __construct()
 		{
 			parent::__construct();
-			$this->beforeFilter('auth');
-			$this->beforeFilter('csrf', ['on' => array('automatic_store', 'destroy')]);
 		}
 
 		public function index()

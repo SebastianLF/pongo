@@ -19,7 +19,7 @@
             </div>
             <ul class="nav navbar-nav pull-right">
                 <li class="header-date">
-                   <span class="fa fa-calendar"></span> {{$dt->timezone($user->timezone)->formatLocalized('%d %B %Y - %H:%M')}}
+                   <span class="fa fa-calendar"></span> {{Carbon::now()->timezone(Auth::user()->timezone)->formatLocalized('%d %B %Y - %H:%M')}}
                 </li>
                 <!-- BEGIN TODO DROPDOWN -->
                 <li class="droddown dropdown-separator">
@@ -30,7 +30,7 @@
                 <li class="dropdown dropdown-user dropdown-dark">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                         <img alt="" class="img-circle" src="img/ec.jpg">
-                        <span class="username name">{{$user->name}}</span>
+                        <span class="username name">{{Auth::user()->name}}</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default">
                         <li>

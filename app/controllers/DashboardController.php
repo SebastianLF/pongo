@@ -13,10 +13,6 @@
 		public function __construct()
 		{
 			parent::__construct();
-			$this->beforeFilter('auth');
-			$this->beforeFilter('devise_missing', array('only' => array('showDashboard')));
-			$this->beforeFilter('welcome_verification', array('only' => array('welcome')));
-			$this->beforeFilter('csrf', ['on' => array('postDevise')]);
 		}
 
 		public function welcome(){
@@ -52,29 +48,6 @@
 				}
 			});*/
 			return View::make('pages.dashboard');
-		}
-
-		public function getDevise(){
-			/*$devises = Devise::orderBy('initiales')->get(array('id','initiales as text'));
-			return $devises;*/
-		}
-
-		public function postDevise(){
-			$rules = array(
-				'devise' => 'required|exists:devises,id'
-			);
-
-			$validator = Validator::make(Input::all(), $rules);
-
-			if($validator->passes()){
-				$sigle = Devise::find(Input::get('devise'))->sigle;
-				Auth::user()->devise = $sigle;
-				Auth::user()->save();
-				return Redirect::to('dashboard');
-			}else{
-
-				return Redirect::back()->withErrors($validator);
-			}
 		}
 
 		public function getTipsters()

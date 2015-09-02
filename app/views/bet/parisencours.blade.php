@@ -110,7 +110,7 @@
                                 <td class="fit tdcote">{{$pari->cote}}</td>
                                 <td class="tdmise  bold">
 
-                                    <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{$user->devise}}} {{'('.+$pari->nombre_unites.'u)'}}
+                                    <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise}}} {{'('.+$pari->nombre_unites.'u)'}}
                                 </td>
                                 <td width="90px"><input type="text" name="childrowsinput[]"
                                            class="form-control input-sm"
@@ -125,7 +125,7 @@
                                             </option>
                                         @endforeach
                                     </select></td>
-                                <td class="bold fontsize15" width=""><span class="profits"></span><span class="devise hide">{{{' '.$user->devise}}}</span></td>
+                                <td class="bold fontsize15" width=""><span class="profits"></span><span class="devise hide">{{{' '.Auth::user()->devise}}}</span></td>
 
                                 <td width="150px">
                                     {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris', 'role' => 'form', 'data-toggle' => 'tooltip', 'data-original-title' => 'Confirmer')) }}
@@ -176,7 +176,7 @@
                 </span></td>
                                     <td class="fit tdcote">{{$pari->cote}}</td>
                                     <td class="tdmise bold">
-                                        <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{$user->devise.' '}}}{{'('.+$pari->nombre_unites.'u)'}}
+                                        <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise.' '}}}{{'('.+$pari->nombre_unites.'u)'}}
                                     </td>
                                     <td>
                                         <span class="label label-sm label-combine label-mini type">{{'combiné'}}</span>
@@ -184,7 +184,7 @@
                                     <td><span class="label label-sm label-combine label-mini type">{{'combiné'}}</span></td>
 
                                     <td class="bold fontsize15"><span class="profits"></span><span
-                                                class="devise hide">{{{' '.$user->devise}}}</span></td>
+                                                class="devise hide">{{{' '.Auth::user()->devise}}}</span></td>
                                     <td>
                                         {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris' ,'role' => 'form', )) }}
                                         {{ Form::button('<i class="fa fa-check"></i>', array('type' => 'submit', 'class' => 'boutonvalider btn btn-sm green', 'disabled' => 'disabled')) }}

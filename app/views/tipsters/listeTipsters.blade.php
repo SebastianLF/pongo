@@ -26,7 +26,7 @@
                         </td>
                         <td class="">
                             <span class="bold theme-font">{{round($tipster->montant_par_unite, 2)}}</span>
-                            <span class="bold theme-font">{{$user->devise}}</span>
+                            <span class="bold theme-font">{{Auth::user()->devise}}</span>
                         </td>
 
                         <td>

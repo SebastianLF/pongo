@@ -6,7 +6,6 @@
 		public function __construct()
 		{
 			parent::__construct();
-			$this->beforeFilter('auth');
 		}
 
 		/**
@@ -36,10 +35,8 @@
 		 */
 		public function store()
 		{
-
-
 			$regles = array(
-				'ticket-id' => 'required|exists:en_cours_paris,id,user_id,' . $this->currentUser->id,
+				'ticket-id' => 'required|exists:en_cours_paris,id,user_id,' . Auth::user()->id,
 			);
 
 			$messages = array(
@@ -58,7 +55,7 @@
 				));
 			} else {
 				$id = Input::get('ticket-id');
-				$encoursparis = $this->currentUser->enCoursParis()->where('id', $id)->first();
+				$encoursparis = Auth::user()->enCoursParis()->where('id', $id)->first();
 				$mt_par_unite = $encoursparis->mt_par_unite;
 				$mise = $encoursparis->mise_totale;
 				$cote = $encoursparis->cote;
@@ -164,7 +161,7 @@
 				));
 
 				// ajout du paris dans la table termine paris.
-				$termine_paris_ajoute = $this->currentUser->termineParis()->save($termine_pari);
+				$termine_paris_ajoute = Auth::user()->termineParis()->save($termine_pari);
 
 				// mise en global pour que la variable soit accessible dans la boucle ci-dessous.
 				$id_termine = $termine_paris_ajoute->id;
@@ -236,7 +233,7 @@
 		 */
 		public function destroy($id)
 		{
-			$pari = $this->currentUser->termineParis()->where('id', $id)->first();
+			$pari = Auth::user()->termineParis()->where('id', $id)->first();
 
 			if(!is_null($pari)){
 				if(!$pari->cashouted){

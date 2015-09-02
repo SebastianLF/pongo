@@ -4,7 +4,6 @@ class StatsController extends BaseController {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->beforeFilter('auth');
 	}
 	/**
 	 * Display a listing of the resource.

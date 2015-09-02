@@ -1,1 +1,0 @@
-var data_devise=[{id:1,text:"US Dollar"},{id:2,text:"Euro"},{id:3,text:"British Po"}];$('#form-devise select[name="devise"]').select2({minimumResultsForSearch:1/0,placeholder:"Choisir une devise",cache:!0,data:data_devise});

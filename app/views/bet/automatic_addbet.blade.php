@@ -126,7 +126,7 @@
                                         <div class="col-md-4 col-md-offset-1 typestakeunites">
                                             <div class="form-group">
                                                 <div class="">
-                                                    <label class="">Conversion en {{$user->devise}}</label>
+                                                    <label class="">Conversion en {{Auth::user()->devise}}</label>
                                                 </div>
                                                 <div class="input-group">
                                                     <div class="input-group-addon">€</div>
@@ -139,7 +139,7 @@
                                         <div class="col-md-3 col-md-offset-1 typestakeflat">
                                             <div class="form-group">
                                                 <div class="">
-                                                    <label class="">Mise en {{$user->devise}}</label>
+                                                    <label class="">Mise en {{Auth::user()->devise}}</label>
                                                 </div>
                                                 <div class="input-group">
                                                     <div class="input-group-addon">€</div>

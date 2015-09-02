@@ -33,7 +33,7 @@
                                     <label class="control-label col-md-3">Nom</label>
 
                                     <div class="col-md-4">
-                                    <span class="form-control-static">{{$user->name}}</span>
+                                    <span class="form-control-static">{{Auth::user()->name}}</span>
 
                                     </div>
                                 </div>
@@ -42,7 +42,7 @@
                                     <label class="control-label col-md-3">Email</label>
 
                                     <div class="col-md-4">
-                                        <span class="form-control-static">{{$user->email}}</span>
+                                        <span class="form-control-static">{{Auth::user()->email}}</span>
                                     </div>
                                 </div>
                                 <div class="{{$errors->has('actuel_mdp') ? 'form-group has-error' : 'form-group'}}">
@@ -107,7 +107,7 @@
                                                     <h3>Beta 1.0</h3>
                                                 </div>
                                                 <div class="panel-body text-center">
-                                                    <p><strong>0 {{$user->devise}} / Mois</strong></p>
+                                                    <p><strong>0 {{Auth::user()->devise}} / Mois</strong></p>
                                                 </div>
                                                 <ul class="list-group text-center">
                                                     <li class="list-group-item"><i class="fa fa-check"></i> Toutes les fonctions

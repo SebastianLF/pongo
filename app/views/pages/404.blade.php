@@ -19,57 +19,24 @@ License: You must have a valid license purchased only from themeforest(the above
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-	@include('includes.head')
+    @include('includes.head')
+    {{ HTML::style('metronic_v3.8.1/theme/assets/admin/pages/css/error.css') }}
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
-<body class="login">
-<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-<div class="menu-toggler sidebar-toggler">
-</div>
-<!-- END SIDEBAR TOGGLER BUTTON -->
-<!-- BEGIN LOGO -->
-<div class="logo">
-	<a href="{{url('dashboard')}}">
-		<img src="{{asset('img/pongo2.jpg')}}" alt=""/>
-	</a>
-</div>
-<!-- END LOGO -->
-<!-- BEGIN LOGIN -->
-<div class="content">
-	{{ Form::open(array('url' => 'password/reset', 'method' => 'post', 'class' => '')) }}
-	<h3>Réinitialisation</h3>
-
-	<p class="hint">
-		Entrez les informations demandées:
-	</p>
-	<small class="text-danger">{{ Session::get('error') }}</small>
-	<input type="hidden" name="token" value="{{ $token }}">
-	<div class="form-group">
-		<small class="text-danger">{{ $errors->first('email') }}</small>
-		<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-		<label class="control-label visible-ie8 visible-ie9">Email</label>
-		<input class="form-control placeholder-no-fix" type="text" placeholder="E-mail" name="email"/>
-	</div>
-	<div class="form-group">
-		<small class="text-danger">{{ $errors->first('password') }}</small>
-		<label class="control-label visible-ie8 visible-ie9">Mot de passe</label>
-		<input class="form-control placeholder-no-fix" type="password" placeholder="Mot de passe" name="password"/>
-	</div>
-	<div class="form-group">
-		<small class="text-danger">{{ $errors->first('password_confirmation') }}</small>
-		<label class="control-label visible-ie8 visible-ie9">Confirmation mot de passe</label>
-		<input class="form-control placeholder-no-fix" type="password" placeholder="Confirmation du mot de passe" name="password_confirmation"/>
-	</div>
-
-	<div class="form-actions">
-		<button type="submit" id="register-submit-btn" class="btn btn-success uppercase pull-right">Réinitialiser</button>
-	</div>
-	{{ Form::close() }}
-	<!-- END REGISTRATION FORM -->
-</div>
-<div class="copyright">
-	Pongo - All Rights Reserved
+<body class="page-404-full-page">
+<div class="row">
+    <div class="col-md-12 page-404">
+        <div class="">
+            404
+        </div>
+        <div class="details">
+            <h3>Oops! Vous êtes perdu</h3>
+            <p>
+                La page est introuvable.<br/>
+            </p>
+        </div>
+    </div>
 </div>
 <!-- END LOGIN -->
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
@@ -80,22 +47,22 @@ License: You must have a valid license purchased only from themeforest(the above
 <![endif]-->
 <script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/jquery.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/jquery-migrate.min.js')}}"
-		type="text/javascript"></script>
+        type="text/javascript"></script>
 <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
 <script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/jquery-ui/jquery-ui.min.js')}}"
-		type="text/javascript"></script>
+        type="text/javascript"></script>
 <script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/bootstrap/js/bootstrap.min.js')}}"
-		type="text/javascript"></script>
+        type="text/javascript"></script>
 <script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js')}}"
-		type="text/javascript"></script>
+        type="text/javascript"></script>
 <script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js')}}"
-		type="text/javascript"></script>
+        type="text/javascript"></script>
 <script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/jquery.blockui.min.js')}}"
-		type="text/javascript"></script>
+        type="text/javascript"></script>
 <script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/jquery.cokie.min.js')}}"
-		type="text/javascript"></script>
+        type="text/javascript"></script>
 <script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/uniform/jquery.uniform.min.js')}}"
-		type="text/javascript"></script>
+        type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 
@@ -107,12 +74,12 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="{{asset('metronic_v3.6.2/theme/assets/admin/pages/scripts/login.js')}}" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
-	jQuery(document).ready(function () {
+    jQuery(document).ready(function () {
 
-		Metronic.init(); // init metronic core components
-		Layout.init(); // init current layout
-		Demo.init();
-	});
+        Metronic.init(); // init metronic core components
+        Layout.init(); // init current layout
+        Demo.init();
+    });
 </script>
 <!-- END JAVASCRIPTS -->
 </body>

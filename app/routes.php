@@ -7,7 +7,7 @@
 	Route::controller('password', 'RemindersController');
 
 	// welcome page
-	Route::get('welcome', 'DashboardController@welcome');
+	Route::resource('welcome', 'WelcomeController');
 	Route::post('devise', 'DashboardController@postDevise');
 
 	// dashboard page
@@ -28,16 +28,13 @@
 	//faq page
 	Route::get('faq', 'FAQController@index');
 
+	Route::group(array('/', 'dashboard', 'config', 'faq', 'stats', 'preferences', 'profile'), function(){
 
-
-
+	});
 
 // pour la recuperation du listing, en ajax, selon le type dans le lien, pour tipster,bookmaker ou transaction.
 	Route::get('pagination/ajax/{type}', 'ConfigController@itemTypeCheck')->where('type', 'tipsters|bookmakers');
 	Route::get('dashboard/ajax/{type}', 'DashboardController@itemTypeCheck')->where('type', 'parisencours|parislongterme|parisabcd|paristermine');
-
-
-
 
 	Route::get('comptes', 'BookmakerController@showComptes');
 	Route::get('bookmakers', 'BookmakerController@getMyBookmakers');

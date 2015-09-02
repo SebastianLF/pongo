@@ -5,7 +5,6 @@
 		public function __construct()
 		{
 			parent::__construct();
-			$this->beforeFilter('auth');
 		}
 
 
@@ -83,7 +82,7 @@
 				));
 
 				// enregistrement du tipster.
-				$tipsterfinal = $this->currentUser->tipsters()->save($tipster);
+				$tipsterfinal = Auth::user()->tipsters()->save($tipster);
 
 				// creation d'un log montant unité.
 				$tipsterfinal->mtUniteLogs()->save($mtunitelogs);
@@ -128,7 +127,7 @@
 		{
 
 			$regles = array(
-				'name_tipster' => 'required|max:20|unique:tipsters,name,' . $id . ',id,user_id,' . $this->currentUser->id . ',deleted_at,NULL',
+				'name_tipster' => 'required|max:20|unique:tipsters,name,' . $id . ',id,user_id,' . Auth::user()->id . ',deleted_at,NULL',
 				'amount_tipster' => 'required|decimal>0',
 				'suivi_tipster' => 'required|in:n,b',
 			);
@@ -198,7 +197,7 @@
 
 		public function destroy($id)
 		{
-			$tipster = $this->currentUser->tipsters()->where('id', $id)->first();
+			$tipster = Auth::user()->tipsters()->where('id', $id)->first();
 			// si il y a un pari ou plus en cours associé a ce tipster, il faut d'abord les supprimer.
 			if (is_null($tipster)) {
 				return Response::json(array(
@@ -232,14 +231,14 @@
 		public function getMyTipsters()
 		{
 			$nom = Input::get('q');
-			$tipsters = $this->currentUser->tipsters()->where('name', 'LIKE', '%' . $nom . '%')->get(array('id', 'name AS text', 'montant_par_unite', 'followtype'));
+			$tipsters = Auth::user()->tipsters()->where('name', 'LIKE', '%' . $nom . '%')->get(array('id', 'name AS text', 'montant_par_unite', 'followtype'));
 			return Response::json($tipsters);
 		}
 
 		public function infosTipster()
 		{
 			$tipster_id = Input::get('tipster_id');
-			$tipster = $this->currentUser->tipsters()->where('id', '=', $tipster_id)->first(array('montant_par_unite', 'followtype'));
+			$tipster = Auth::user()->tipsters()->where('id', '=', $tipster_id)->first(array('montant_par_unite', 'followtype'));
 			return Response::json($tipster);
 		}
 

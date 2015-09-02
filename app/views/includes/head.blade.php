@@ -49,4 +49,4 @@
 {{ HTML::style('metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css') }}
 
 <!-- END THEME STYLES -->
-<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="shortcut icon" href="{{asset('favicon.ico')}}"/>

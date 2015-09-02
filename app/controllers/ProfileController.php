@@ -4,8 +4,6 @@ class ProfileController extends BaseController {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->beforeFilter('auth');
-		$this->beforeFilter('csrf', array('only' => 'store'));
 	}
 	/**
 	 * Display a listing of the resource.
@@ -14,7 +12,7 @@ class ProfileController extends BaseController {
 	 */
 	public function index()
 	{
-        return View::make('pages.profile', array());
+        return View::make('pages.profile');
 	}
 
 	/**
@@ -35,7 +33,7 @@ class ProfileController extends BaseController {
 	public function store()
 	{
 		$rules = array(
-			'actuel_mdp' => 'required|checkHashedPass:'.$this->currentUser->password,
+			'actuel_mdp' => 'required|checkHashedPass:'.Auth::user()->password,
 			'nouveau_mdp' => 'required|min:6|max:20',
 			'confirmation_mdp' => 'required|min:6|same:nouveau_mdp',
 			);
@@ -56,8 +54,8 @@ class ProfileController extends BaseController {
 			return Redirect::to('profile')->withErrors($validator)->withInput(Input::except('nouveau_mdp', 'confirmation_mdp'));
 		}
 
-		$this->currentUser->password = Hash::make(Input::get('nouveau_mdp'));
-		$this->currentUser->save();
+		Auth::user()->password = Hash::make(Input::get('nouveau_mdp'));
+		Auth::user()->save();
 
 		Session::flash('mdp_updated', 'Mot de passe mis à jour avec succès!'); 
 

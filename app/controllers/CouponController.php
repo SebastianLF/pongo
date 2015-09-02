@@ -1,11 +1,13 @@
 <?php
 
-	class CouponController extends BaseController
+	class CouponController extends Controller
 	{
 
 		public function __construct()
 		{
-			parent::__construct();
+			$this->beforeFilter('auth', array('except' => array('postAutomaticSelections')));
+			$this->beforeFilter('csrf', array('only' => array('postManualSelections')));
+			$this->beforeFilter('devise_missing', array('except' => array('postAutomaticSelections')));
 		}
 
 		/**

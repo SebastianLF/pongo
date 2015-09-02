@@ -4,9 +4,6 @@ class PreferenceController extends BaseController {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->beforeFilter('auth');
-		$this->beforeFilter('csrf', array('only' => 'store'));
-
 	}
 	/**
 	 * Display a listing of the resource.

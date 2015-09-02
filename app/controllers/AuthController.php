@@ -4,7 +4,7 @@ use lib\validation\UserCreateValidator as UserCreateValidator;
 use lib\validation\UserLoginValidator as UserLoginValidator;
 use lib\gestion\UserGestion as UserGestion;
 
-class AuthController extends BaseController {
+class AuthController extends Controller {
 
     protected $login_validation;
     protected $create_validation;
@@ -16,7 +16,7 @@ class AuthController extends BaseController {
 		UserGestion $user_gestion
 		)
 	{
-		parent::__construct();
+
 		$this->create_validation = $create_validation;
 		$this->login_validation = $login_validation;
 		$this->user_gestion = $user_gestion;

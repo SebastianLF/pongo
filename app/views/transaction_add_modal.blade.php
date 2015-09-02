@@ -38,7 +38,7 @@
                         </div>
 
                         <div id="amount_container" class="form-group">
-                            <label class="control-label" for="amount">Montant (en {{$user->devise}})</label>
+                            <label class="control-label" for="amount">Montant (en {{Auth::user()->devise}})</label>
                             <input name="amount" type="text"
                                    class="form-control">
                             <span id="amount_error" class="help-block"></span>

@@ -35,7 +35,6 @@
 	Route::filter('auth', function () {
 		if ($quest = Auth::guest()) {
 			if (Request::ajax()) {
-				Log::info('Connecté: ' . $quest);
 				return Response::make('Unauthorized', 401);
 			} else {
 				return Redirect::guest('auth/login');
@@ -96,12 +95,10 @@
 		if (!Request::ajax()) App::abort(404);
 	});
 
-
-
 	// lorsque la devise n'est pas specifié
 	Route::filter('devise_missing', function () {
 		if (Auth::user()->devise == 'aucun') {
-			return Redirect::to('welcome');
+			return Redirect::to('welcome/create');
 		}
 	});
 
@@ -113,7 +110,6 @@
 			}
 		}
 	});
-
 
 	/*Route::filter('aucune_devise', function () {
 		if (!Route::is('welcome') && !Route::is('auth/login')) {

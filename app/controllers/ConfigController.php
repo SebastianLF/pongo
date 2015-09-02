@@ -7,7 +7,6 @@
 		public function __construct()
 		{
 			parent::__construct();
-			$this->beforeFilter('auth');
 			$this->beforeFilter('ajax', array('only' => 'itemTypeCheck'));
 		}
 
@@ -30,7 +29,7 @@
 		public function showBookmakers()
 		{
 			// pour afficher les lignes non softdelete dans une table pivot il faut faire ca manuellement avec whereNull.
-			$bookmakers = $this->currentUser->bookmakers()->orderBy('bookmaker_user.created_at', 'desc')->whereNull('deleted_at')->paginate(5);
+			$bookmakers = Auth::user()->bookmakers()->orderBy('bookmaker_user.created_at', 'desc')->whereNull('deleted_at')->paginate(5);
 			return $bookmakers;
 		}
 
@@ -43,7 +42,7 @@
 		public function showAllaccounts()
 		{
 			if (isset($_GET['book_id'])) {
-				$accounts = $this->currentUser->bookmakers()->where('bookmaker_user.bookmaker_id', '=', Input::get('book_id'))->whereNull('deleted_at')->get();
+				$accounts = Auth::user()->bookmakers()->where('bookmaker_user.bookmaker_id', '=', Input::get('book_id'))->whereNull('deleted_at')->get();
 				return Response::json($accounts);
 			} else {
 				return Response::json("aucun bookmaker n\'a ete selectionné", 500);

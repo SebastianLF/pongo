@@ -4,9 +4,6 @@ class HistoriqueController extends BaseController {
 
 	public function __construct(){
 		parent::__construct();
-		$this->beforeFilter('auth');
-		$this->userid = Auth::id();
-		$this->user = User::find($this->userid);
 	}
 	/**
 	 * Display a listing of the resource.

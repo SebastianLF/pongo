@@ -8,7 +8,6 @@
 		public function __construct()
 		{
 			parent::__construct();
-			$this->beforeFilter('auth');
 			$this->beforeFilter('ajax', array('only' => array('showComptes')));
 		}
 

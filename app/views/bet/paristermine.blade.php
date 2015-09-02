@@ -6,8 +6,8 @@
     </div>
 @else
     <div class="slimScrollTermine">
-        <div class="table-scrollable-borderless table-responsive">
-            <table id="paristerminetable" class="table table-condensed table-light table-hover table-termine"
+        <div class="table-scrollable-borderless table-responsive table-responsive-scrollbar-top">
+            <table id="paristerminetable" class="table table-condensed table-light table-hover  table-termine"
                    style="border-collapse:collapse;">
                 <thead>
                 <tr class="uppercase">
@@ -42,7 +42,7 @@
                                 <td class="primary-link">{{'#'.$pari->numero_pari}}</td>
 
                                 <td><span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_live ? 'live' : '' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_gratuit ? 'gratuit' : '' }}</span></td>
-                                <td width="">
+                                <td>
                                         {{$pari->selections->first()->sport->name}}{{', '}}{{$pari->selections->first()->competition->name}}
                                 </td>
                                 <td>
@@ -63,7 +63,7 @@
                                 // 6 , 'pick Top doubleparam1'
                                 // 7 , 'pick (optional + )doubleparam'
                                 // 8 , 'parametername1 pick doubleparam1'-->
-                                <td class="blue" width="">
+                                <td class="blue">
                                      {{$pari->selections->first()->market->name.(' : ')}}
                                  @if($pari->selections->first()->affichage == 1)
                                         {{$pari->selections->first()->pick}}
@@ -97,9 +97,13 @@
                                 <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-success label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}</td>
 
                                 <td class="fit tdcote">{{$pari->cote}}</td>
-                                <td class="tdmise  bold"><span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{$user->devise}}} {{'('.+$pari->nombre_unites.'u)'}}</td>
-                                <td width="90px">
-                                    {{'N/A'}}
+                                <td class="tdmise  bold"><span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise}}} {{'('.+$pari->nombre_unites.'u)'}}</td>
+                                <td>
+                                    @if(is_null($pari->selections->first()->resultat))
+                                        {{'N/A'}}
+                                    @else
+                                        {{$pari->selections->first()->resultat}}
+                                    @endif
                                 </td>
 
                                 <td width="110px" class="uppercase">
@@ -127,13 +131,13 @@
 
                                 </td>
                                 <td><span class="{{'bold fontsize15'}} {{$pari->mise_totale > $pari->montant_retour ? ' font-red-haze' : '' }} {{$pari->mise_totale < $pari->montant_retour ? ' font-green-sharp' : '' }}">
-                                        <span class="">{{$pari->montant_retour.''.$user->devise}}<span>{{' ('.$pari->unites_retour.'u)'}}</span></span>
+                                        <span class="">{{$pari->montant_retour.''.Auth::user()->devise}}<span>{{' ('.$pari->unites_retour.'u)'}}</span></span>
                                 </span>
                                 </td>
                                 <td>
-                                    @if($pari->montant_profit > 0)<span class="bold fontsize15 font-green-sharp" ><span class="profits">{{' +'.$pari->montant_profit}}</span><span class="devise">{{{$user->devise}}}</span><span>{{' (+'.$pari->unites_profit.'u)'}}</span></span>
-                                    @elseif($pari->montant_profit < 0)<span class="bold fontsize15 font-red-haze"><span class="profits">{{$pari->montant_profit}}</span><span class="devise">{{{$user->devise}}}</span><span>{{' ('.$pari->unites_profit.'u)'}}</span></span>
-                                    @else($pari->montant_profit == 0)<span class="bold fontsize15"><span class="profits">{{$pari->montant_profit}}</span><span class="devise">{{{$user->devise}}}</span><span>{{' ('.$pari->unites_profit.'u)'}}</span></span>
+                                    @if($pari->montant_profit > 0)<span class="bold fontsize15 font-green-sharp" ><span class="profits">{{' +'.$pari->montant_profit}}</span><span class="devise">{{{Auth::user()->devise}}}</span><span>{{' (+'.$pari->unites_profit.'u)'}}</span></span>
+                                    @elseif($pari->montant_profit < 0)<span class="bold fontsize15 font-red-haze"><span class="profits">{{$pari->montant_profit}}</span><span class="devise">{{{Auth::user()->devise}}}</span><span>{{' ('.$pari->unites_profit.'u)'}}</span></span>
+                                    @else($pari->montant_profit == 0)<span class="bold fontsize15"><span class="profits">{{$pari->montant_profit}}</span><span class="devise">{{{Auth::user()->devise}}}</span><span>{{' ('.$pari->unites_profit.'u)'}}</span></span>
                                     @endif
                                 </td>
 
@@ -157,7 +161,7 @@
                                     <td class="subbetclick"><a data-toggle="collapse"
                                               data-target="{{'.row'.$pari->numero_pari}}"
                                               class=""><i class="glyphicon glyphicon-chevron-right"></i></a></td>
-                                    <td class="blue">{{'#'.$pari->numero_pari}}</td>
+                                    <td class="">{{'#'.$pari->numero_pari}}</td>
                                     <td>
                                         <span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>
                                     </td>
@@ -170,7 +174,7 @@
                                     <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}</td>
                                     <td class="fit tdcote">{{$pari->cote}}</td>
                                     <td class="tdmise bold">
-                                        <span class="tdsubmise bold ">{{{$pari->mise_totale}}}</span>{{{$user->devise.' '}}}{{'('.+$pari->nombre_unites.'u)'}}
+                                        <span class="tdsubmise bold ">{{{$pari->mise_totale}}}</span>{{{Auth::user()->devise.' '}}}{{'('.+$pari->nombre_unites.'u)'}}
                                     </td>
                                     <td width="90px">
                                         <span class="label label-sm label-combine label-mini type">{{'combiné'}}</span>
@@ -202,12 +206,12 @@
                                     </td>
                                     <td>
                                         <span class="{{'bold fontsize15'}} {{$pari->mise_totale > $pari->montant_retour ? ' font-red' : '' }} {{$pari->mise_totale < $pari->montant_retour ? ' font-green-sharp' : '' }}">
-                                        <span class="">{{$pari->montant_retour.''.$user->devise}}<span>{{' ('.$pari->unites_retour.'u)'}}</span></span></span>
+                                        <span class="">{{$pari->montant_retour.''.Auth::user()->devise}}<span>{{' ('.$pari->unites_retour.'u)'}}</span></span></span>
                                     </td>
                                     <td>
-                                        @if($pari->montant_profit > 0)<span class="bold fontsize15 font-green-sharp" ><span class="profits">{{' +'.$pari->montant_profit}}</span><span class="devise">{{{$user->devise}}}</span><span>{{' (+'.$pari->unites_profit.'u)'}}</span></span>
-                                        @elseif($pari->montant_profit < 0)<span class="bold fontsize15 font-red"><span class="profits">{{$pari->montant_profit}}</span><span class="devise">{{{$user->devise}}}</span><span>{{' ('.$pari->unites_profit.'u)'}}</span></span>
-                                        @else($pari->montant_profit == 0)<span class="bold fontsize15"><span class="profits">{{$pari->montant_profit}}</span><span class="devise">{{{$user->devise}}}</span><span>{{' ('.$pari->unites_profit.'u)'}}</span></span>
+                                        @if($pari->montant_profit > 0)<span class="bold fontsize15 font-green-sharp" ><span class="profits">{{' +'.$pari->montant_profit}}</span><span class="devise">{{{Auth::user()->devise}}}</span><span>{{' (+'.$pari->unites_profit.'u)'}}</span></span>
+                                        @elseif($pari->montant_profit < 0)<span class="bold fontsize15 font-red"><span class="profits">{{$pari->montant_profit}}</span><span class="devise">{{{Auth::user()->devise}}}</span><span>{{' ('.$pari->unites_profit.'u)'}}</span></span>
+                                        @else($pari->montant_profit == 0)<span class="bold fontsize15"><span class="profits">{{$pari->montant_profit}}</span><span class="devise">{{{Auth::user()->devise}}}</span><span>{{' ('.$pari->unites_profit.'u)'}}</span></span>
                                         @endif
                                     </td>
 
@@ -221,7 +225,7 @@
                                 <tr class="subrow">
                                     <td colspan="17" class="childtable cancel-padding">
                                         <div class="{{'accordian-body collapse row'.$pari->numero_pari}}">
-                                            <table class="table child-table table-bordered table-condensed table-subrow-combine">
+                                            <table class="table child-table table-bordered table-condensed table-subrow-combine table-responsive ">
                                                 <thead>
 
                                                 <tr class="uppercase">

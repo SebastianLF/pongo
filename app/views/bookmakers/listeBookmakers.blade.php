@@ -22,7 +22,7 @@
                     <td class="name">{{$bookmaker->pivot->nom_compte}}</td>
                     <td class="">{{!$bookmaker->logo ? $bookmaker->nom : ''}}</td>
                     <td class="bold theme-font"><span
-                                class="bankrollamountconfig">{{round($bookmaker->pivot->bankroll_actuelle, 2)}} {{$user->devise}}</span>
+                                class="bankrollamountconfig">{{round($bookmaker->pivot->bankroll_actuelle, 2)}} {{Auth::user()->devise}}</span>
                     </td>
                     <td>
                         <button type="button" class="bookmakerEditButton btn bg-yellow-saffron btn-sm"

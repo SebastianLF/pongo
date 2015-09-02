@@ -13,7 +13,9 @@ abstract class BaseValidator implements ValidatorInterface {
 	{
 		if(!is_null($id)) $this->regles = str_replace('id', $id, $this->regles);
 
-		$validation = Validator::make(Input::all(), $this->regles);
+		$message = array('name.required' => 'Le nom est obligatoire', 'name.exists' => 'Le nom est invalide');
+
+		$validation = Validator::make(Input::all(), $this->regles, $message);
 
 		if($validation->fails())
 		{

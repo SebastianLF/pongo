@@ -19,7 +19,6 @@ function loadParisEnCours() {
 
             featuresParisEnCours();
             paginationParisEnCours();
-            totalProfits();
             cashOut();
         },
         error: function (data) {

@@ -28,7 +28,7 @@
                 </div>
 
                 <div id="amount_container" class="form-group">
-                    <label class="control-label" for="amount_tipster">Montant par unité (en {{$user->devise}})</label>
+                    <label class="control-label" for="amount_tipster">Montant par unité (en {{Auth::user()->devise}})</label>
                     <input id="amount_tipster" name="amount_tipster" type="text"
                            class="form-control">
                     <span id="amount_error" class="help-block"></span>

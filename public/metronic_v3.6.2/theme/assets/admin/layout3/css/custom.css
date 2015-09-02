@@ -316,8 +316,10 @@ select{
 .table-subrow-combine{
 
     margin: 0 auto !important;
-    width: 1500px !important;
+    width: 70% !important;
 }
+
+
 
 /* css pour recapitulatif sur la page dashboard */
 .number{
