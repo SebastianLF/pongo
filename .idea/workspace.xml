@@ -5,59 +5,8 @@
     <bookmark url="file://$PROJECT_DIR$/app/controllers/DashboardController.php" line="152" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="termine table + recap general">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/pages/404.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/layouts/welcome_template.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/Thumbs.db" afterPath="$PROJECT_DIR$/public/img/Thumbs.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/favicon.ico" afterPath="$PROJECT_DIR$/public/favicon.ico" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/AjaxController.php" afterPath="$PROJECT_DIR$/app/controllers/AjaxController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/AuthController.php" afterPath="$PROJECT_DIR$/app/controllers/AuthController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/BaseController.php" afterPath="$PROJECT_DIR$/app/controllers/BaseController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/lib/validation/BaseValidator.php" afterPath="$PROJECT_DIR$/app/lib/validation/BaseValidator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/BookmakerController.php" afterPath="$PROJECT_DIR$/app/controllers/BookmakerController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ConfigController.php" afterPath="$PROJECT_DIR$/app/controllers/ConfigController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/CouponController.php" afterPath="$PROJECT_DIR$/app/controllers/CouponController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/DashboardController.php" afterPath="$PROJECT_DIR$/app/controllers/DashboardController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/EnCoursParisController.php" afterPath="$PROJECT_DIR$/app/controllers/EnCoursParisController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/FAQController.php" afterPath="$PROJECT_DIR$/app/controllers/FAQController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/HistoriqueController.php" afterPath="$PROJECT_DIR$/app/controllers/HistoriqueController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/MtMoisTipsterController.php" afterPath="$PROJECT_DIR$/app/controllers/MtMoisTipsterController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/MtUniteLogsController.php" afterPath="$PROJECT_DIR$/app/controllers/MtUniteLogsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/PreferenceController.php" afterPath="$PROJECT_DIR$/app/controllers/PreferenceController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ProfileController.php" afterPath="$PROJECT_DIR$/app/controllers/ProfileController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/RemindersController.php" afterPath="$PROJECT_DIR$/app/controllers/RemindersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/StatsController.php" afterPath="$PROJECT_DIR$/app/controllers/StatsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/TermineParisController.php" afterPath="$PROJECT_DIR$/app/controllers/TermineParisController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/TipsterController.php" afterPath="$PROJECT_DIR$/app/controllers/TipsterController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/TransactionController.php" afterPath="$PROJECT_DIR$/app/controllers/TransactionController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/lib/validation/UserCreateValidator.php" afterPath="$PROJECT_DIR$/app/lib/validation/UserCreateValidator.php" />
+    <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/automatic_addbet.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/automatic_addbet.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bookmaker_add_modal.blade.php" afterPath="$PROJECT_DIR$/app/views/bookmaker_add_modal.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dashboard/bookmakers.blade.php" afterPath="$PROJECT_DIR$/app/views/dashboard/bookmakers.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css" afterPath="$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/js/dashboard.js" afterPath="$PROJECT_DIR$/public/build/js/dashboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/filters.php" afterPath="$PROJECT_DIR$/app/filters.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/includes/footer.blade.php" afterPath="$PROJECT_DIR$/app/views/includes/footer.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/start/global.php" afterPath="$PROJECT_DIR$/app/start/global.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/includes/head.blade.php" afterPath="$PROJECT_DIR$/app/views/includes/head.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/includes/header.blade.php" afterPath="$PROJECT_DIR$/app/views/includes/header.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/includes/subview/inits.blade.php" afterPath="$PROJECT_DIR$/app/views/includes/subview/inits.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bookmakers/listeBookmakers.blade.php" afterPath="$PROJECT_DIR$/app/views/bookmakers/listeBookmakers.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tipsters/listeTipsters.blade.php" afterPath="$PROJECT_DIR$/app/views/tipsters/listeTipsters.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js" afterPath="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/paristermine.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/paristermine.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/preferences.blade.php" afterPath="$PROJECT_DIR$/app/views/pages/preferences.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/profile.blade.php" afterPath="$PROJECT_DIR$/app/views/pages/profile.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/password/remind.blade.php" afterPath="$PROJECT_DIR$/app/views/password/remind.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/password/reset.blade.php" afterPath="$PROJECT_DIR$/app/views/password/reset.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tipster_add_modal.blade.php" afterPath="$PROJECT_DIR$/app/views/tipster_add_modal.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tipster_edit_modal.blade.php" afterPath="$PROJECT_DIR$/app/views/tipster_edit_modal.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/transaction_add_modal.blade.php" afterPath="$PROJECT_DIR$/app/views/transaction_add_modal.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/welcome.blade.php" afterPath="$PROJECT_DIR$/app/views/pages/welcome.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/js/welcome.js" afterPath="$PROJECT_DIR$/public/build/js/welcome.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/welcome/welcome.js" afterPath="$PROJECT_DIR$/public/js/pages/welcome/welcome.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="betsmanage.iws" />
@@ -117,29 +66,31 @@
       <file leaf-file-name="custom.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4562" max-vertical-offset="5265">
+            <state vertical-scroll-proportion="0.0" vertical-offset="4382" max-vertical-offset="5265">
               <caret line="314" column="0" selection-start-line="314" selection-start-column="0" selection-end-line="314" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filters.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/filters.php">
+      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.652174" vertical-offset="220" max-vertical-offset="1755">
-              <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+            <state vertical-scroll-proportion="-6.2173915" vertical-offset="1267" max-vertical-offset="2655">
+              <caret line="94" column="54" selection-start-line="94" selection-start-column="54" selection-end-line="94" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/BaseController.php">
+      <file leaf-file-name="automatic_addbet.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/bet/automatic_addbet.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38106236" vertical-offset="0" max-vertical-offset="433">
-              <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
-              <folding />
+            <state vertical-scroll-proportion="0.55427253" vertical-offset="225" max-vertical-offset="4335">
+              <caret line="31" column="78" selection-start-line="31" selection-start-column="78" selection-end-line="31" selection-end-column="78" />
+              <folding>
+                <marker date="1441199735587" expanded="true" signature="51:166" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -147,7 +98,7 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.608696" vertical-offset="495" max-vertical-offset="1440">
+            <state vertical-scroll-proportion="-13.695652" vertical-offset="585" max-vertical-offset="1440">
               <caret line="60" column="23" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="23" />
               <folding />
             </state>
@@ -208,7 +159,6 @@
         <option value="$PROJECT_DIR$/app/views/password/reset.blade.php" />
         <option value="$PROJECT_DIR$/app/lib/validation/UserCreateValidator.php" />
         <option value="$PROJECT_DIR$/app/lib/validation/BaseValidator.php" />
-        <option value="$PROJECT_DIR$/app/views/bet/automatic_addbet.blade.php" />
         <option value="$PROJECT_DIR$/app/views/includes/header.blade.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/start/global.php" />
@@ -255,6 +205,7 @@
         <option value="$PROJECT_DIR$/app/controllers/TransactionController.php" />
         <option value="$PROJECT_DIR$/app/controllers/AuthController.php" />
         <option value="$PROJECT_DIR$/app/controllers/BaseController.php" />
+        <option value="$PROJECT_DIR$/app/views/bet/automatic_addbet.blade.php" />
       </list>
     </option>
   </component>
@@ -348,9 +299,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="990" />
+    <option name="x" value="400" />
     <option name="y" value="169" />
-    <option name="width" value="918" />
+    <option name="width" value="1508" />
     <option name="height" value="869" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -477,7 +428,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1500,7 +1455,13 @@
       <option name="project" value="LOCAL" />
       <updated>1441029653710</updated>
     </task>
-    <option name="localTasksCounter" value="139" />
+    <task id="LOCAL-00139" summary="termine table + recap general">
+      <created>1441198711049</created>
+      <option name="number" value="00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1441198711049</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1524,9 +1485,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="990" y="169" width="918" height="869" extended-state="0" />
+    <frame x="400" y="169" width="1508" height="869" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928064" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16713353" sideWeight="0.43" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32816902" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30098453" sideWeight="0.49843425" order="15" side_tool="false" content_ui="tabs" />
@@ -1534,7 +1496,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15351813" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24865592" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21212122" sideWeight="0.568" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12569061" sideWeight="0.568" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21715818" sideWeight="0.23521127" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25025433" sideWeight="0.50156575" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32676056" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1548,7 +1510,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35867238" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35352114" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928064" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39977604" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39111748" sideWeight="0.49913344" order="11" side_tool="false" content_ui="tabs" />
@@ -1581,20 +1542,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/loadRecaps.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.124183" vertical-offset="516" max-vertical-offset="975">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4131356" vertical-offset="0" max-vertical-offset="472">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/totalProfits.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.54025424" vertical-offset="0" max-vertical-offset="472">
@@ -1691,6 +1638,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30963302" vertical-offset="90" max-vertical-offset="750">
           <caret line="15" column="80" selection-start-line="15" selection-start-column="80" selection-end-line="15" selection-end-column="80" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1698,6 +1646,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6605505" vertical-offset="417" max-vertical-offset="1020">
           <caret line="47" column="87" selection-start-line="47" selection-start-column="87" selection-end-line="47" selection-end-column="87" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1705,6 +1654,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3761468" vertical-offset="331" max-vertical-offset="810">
           <caret line="33" column="51" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1733,6 +1683,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6880734" vertical-offset="0" max-vertical-offset="780">
           <caret line="20" column="63" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1740,13 +1691,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30963302" vertical-offset="0" max-vertical-offset="4935">
           <caret line="9" column="93" selection-start-line="9" selection-start-column="93" selection-end-line="9" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4562" max-vertical-offset="5265">
-          <caret line="314" column="0" selection-start-line="314" selection-start-column="0" selection-end-line="314" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1817,14 +1761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20361991" vertical-offset="0" max-vertical-offset="5910">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.47511312" vertical-offset="0" max-vertical-offset="2940">
@@ -1881,14 +1817,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.608696" vertical-offset="495" max-vertical-offset="1440">
-          <caret line="60" column="23" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.40723982" vertical-offset="0" max-vertical-offset="10200">
@@ -1937,14 +1865,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/filters.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.652174" vertical-offset="220" max-vertical-offset="1755">
-          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/AuthController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5381166" vertical-offset="0" max-vertical-offset="1275">
@@ -1961,11 +1881,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.695652" vertical-offset="585" max-vertical-offset="1440">
+          <caret line="60" column="23" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.5652175" vertical-offset="0" max-vertical-offset="5910">
+          <caret line="7" column="59" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/BaseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38106236" vertical-offset="0" max-vertical-offset="433">
-          <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.2078522" vertical-offset="0" max-vertical-offset="433">
+          <caret line="6" column="54" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/filters.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5493274" vertical-offset="220" max-vertical-offset="1755">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4562" max-vertical-offset="5265">
+          <caret line="314" column="0" selection-start-line="314" selection-start-column="0" selection-end-line="314" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.2173915" vertical-offset="1267" max-vertical-offset="2655">
+          <caret line="94" column="54" selection-start-line="94" selection-start-column="54" selection-end-line="94" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/bet/automatic_addbet.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55427253" vertical-offset="225" max-vertical-offset="4335">
+          <caret line="31" column="78" selection-start-line="31" selection-start-column="78" selection-end-line="31" selection-end-column="78" />
+          <folding>
+            <marker date="1441199735587" expanded="true" signature="51:166" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
