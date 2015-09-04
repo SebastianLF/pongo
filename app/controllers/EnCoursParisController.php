@@ -384,14 +384,12 @@
 		{
 			$regles = array(
 				'cashout-select' => 'required|in:c,p',
-				'classic-cash-out' => 'required_if:cashout-select,c|cashout',
-				'partial-cash-out' => 'required_if:cashout-select,p|cashout',
+				'amount-cash-out' => 'required|cashout',
 			);
 			$messages = array(
 				'cashout-select.in' => 'Ce type de cashout n\'existe pas.',
 				'cashout-select.required' => 'Un type de cashout est nécessaire.',
-				'classic-cash-out.required_if' => 'Vous devez spécifier un montant quand le type de suivi est "classic cash out".',
-				'partial-cash-out.required_if' => 'Vous devez spécifier un montant quand le type de suivi est "partial cash out".',
+				'amount-cash-out.required' => 'Un montant retiré est nécessaire.',
 			);
 			$validator = Validator::make(Input::all(), $regles, $messages);
 
@@ -402,10 +400,10 @@
 					'msg' => $errors,
 				));
 			} else {
-				$encourspari_id = Input::get('id');
+				$encourspari_id = Input::get('ticket-id');
 				$cashout_type = Input::get('cashout-select');
-				$montant = Input::get('classic-cash-out');
-				$encourspari = Auth::user()->enCoursParis()->where('id', $encourspari_id)->firstOrFail();
+				$montant = Input::get('amount-cash-out');
+				$encourspari = Auth::user()->enCoursParis()->where('ticket-id', $encourspari_id)->firstOrFail();
 				if ($cashout_type == 'c') {
 
 					$retour_unites = round($montant / $encourspari->mt_par_unite, 2);
@@ -429,6 +427,7 @@
 						'montant_retour' => $retour_devise,
 						'montant_profit' => $profit_devise,
 						'pari_long_terme' => $encourspari->pari_long_terme,
+						'cashouted' => 1,
 						'pari_abcd' => $encourspari->pari_abcd,
 						'nom_abcd' => $encourspari->nom_abcd,
 						'lettre_abcd' => $encourspari->lettre_abcd,
@@ -449,7 +448,7 @@
 						$book->save();
 					}
 
-					// lier à a l'id du pari terminé et delier le pari en cours.
+					// lier à a l'id du pari terminé et délier le pari en cours.
 					$selections = $encourspari->selections()->get();
 					foreach ($selections as $selection) {
 						$selection->termine_pari_id = $termine_paris_ajoute->id;
@@ -466,7 +465,15 @@
 					));
 
 				} elseif ($cashout_type == 'p') {
+					$nouvelle_mise = $encourspari->mise_totale - $encourspari->$montant;
 
+					// creation d'une transaction de type cash out
+					$transaction = new Transaction();
+					$transaction->type = 'pc';
+					$transaction->montant = $montant;
+					$transaction->description = 'Partial Cash-Out Ticket #'.$encourspari->id;
+					$transaction->bookmaker_user_id = $encourspari->bookmaker_user_id;
+					$transaction->save();
 				}
 			}
 		}

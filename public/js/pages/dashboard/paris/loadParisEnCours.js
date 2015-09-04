@@ -75,8 +75,6 @@ function featuresParisEnCours() {
     $('[data-toggle="tooltip"]').tooltip();
     $("[data-hover='tooltip']").tooltip();
 
-
-
     // stopper la propagation quand on click sur le choix du resultat.
     $("#parisencourstable .boutonvalider").click(function (e) {
         e.stopPropagation();
@@ -147,7 +145,7 @@ function cashOut(){
         var pari_id = $(e.relatedTarget).data('id');
 
         //populate the textbox
-        $(e.currentTarget).find('input[name="pari-id"]').val(pari_id);
+        $(e.currentTarget).find('input[name="ticket-id"]').val(pari_id);
     });
 
     // cash out modal
@@ -159,14 +157,6 @@ function cashOut(){
         cache: true,
         data: cashout_array
     }).change(function(){
-         if(cashout_select == 'c'){
-             cashout_form.find('.partial-cash-out-group').toggleClass('hide');
-             cashout_form.find('.classic-cash-out-group').toggleClass('show');
-         }else if(cashout_select == 'p'){
-             cashout_form.find('.classic-cash-out-group').toggleClass('hide');
-             cashout_form.find('.partial-cash-out-group').toggleClass('show');
-         }
-
 
     });
 

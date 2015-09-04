@@ -6,7 +6,7 @@
             </div>
             {{ Form::open(array('url' => 'cashout', 'method' => 'post', 'id' => 'cashout-update', 'role' => 'form')) }}
             <div class="modal-body">
-                <input name="pari-id" type="text" readonly class="hide" />
+                <input name="ticket-id" type="text" readonly class="hide" />
                 <div class="row">
                     <div class="note note-success note-automatic-bet">
                         <p>
@@ -19,16 +19,12 @@
                     <small class="text-danger" id=""></small>
                     <select id="cashout-select" name="cashout-select" class="form-control"></select>
                 </div>
-                <div class="form-group classic-cash-out-group col-md-5 col-md-offset-3">
-                    <label for="classic-cash-out">Montant:</label>
+                <div class="form-group classic-amount-group col-md-5 col-md-offset-3">
+                    <label for="classic-cash-out">Montant retiré:</label>
                     <small class="text-danger" id=""></small>
-                    <input type="text" class="form-control" id="classic-cash-out" name="classic-cash-out" placeholder="Exemple: 25.50">
+                    <input type="text" class="form-control" id="amount-cash-out" name="amount-cash-out" placeholder="Exemple: 25.50">
                 </div>
-                <div class="form-group hide partial-cash-out-group col-md-5 col-md-offset-3">
-                    <label for="partial-cash-out">Nouvelle mise:</label>
-                    <small class="text-danger" id=""></small>
-                    <input type="text" class="form-control" id="partial-cash-out" name="partial-cash-out" placeholder="Exemple: 25.50">
-                </div>
+
                 </div>
             </div>
             <div class="modal-footer">
