@@ -5,6 +5,10 @@
         </div>
     </div>
 @else
+    <div class="row">
+        <div class="has-success has-feedback col-md-2" style="float:left;margin-bottom:20px;"><input id="paris-termine-search-input" class="form-control" type="text" placeholder="Recherche..."></div>
+    </div>
+
     <div class="slimScrollTermine">
         <div class="table-scrollable-borderless table-responsive table-responsive-scrollbar-top">
             <table id="paristerminetable" class="table table-condensed table-light table-hover  table-termine"
@@ -97,7 +101,7 @@
                                 <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-success label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}</td>
 
                                 <td class="fit tdcote">{{$pari->cote}}</td>
-                                <td class="tdmise  bold"><span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise}}} {{'('.+$pari->nombre_unites.'u)'}}</td>
+                                <td class="tdmise  bold"><span class="tdsubmise bold ">{{{floatval(round($pari->mise_totale, 2))}}}</span>{{{Auth::user()->devise}}} {{'('.+floatval(round($pari->nombre_unites, 2)).'u)'}}</td>
                                 <td>
                                     @if(is_null($pari->selections->first()->resultat))
                                         {{'N/A'}}
@@ -131,13 +135,13 @@
 
                                 </td>
                                 <td><span class="{{'bold fontsize15'}} {{$pari->mise_totale > $pari->montant_retour ? ' font-red-haze' : '' }} {{$pari->mise_totale < $pari->montant_retour ? ' font-green-sharp' : '' }}">
-                                        <span class="">{{$pari->montant_retour.''.Auth::user()->devise}}<span>{{' ('.$pari->unites_retour.'u)'}}</span></span>
+                                        <span class="">{{floatval($pari->montant_retour).''.Auth::user()->devise}}<span>{{' ('.floatval($pari->unites_retour).'u)'}}</span></span>
                                 </span>
                                 </td>
                                 <td>
-                                    @if($pari->montant_profit > 0)<span class="bold fontsize15 font-green-sharp" ><span class="profits">{{' +'.$pari->montant_profit}}</span><span class="devise">{{{Auth::user()->devise}}}</span><span>{{' (+'.$pari->unites_profit.'u)'}}</span></span>
-                                    @elseif($pari->montant_profit < 0)<span class="bold fontsize15 font-red-haze"><span class="profits">{{$pari->montant_profit}}</span><span class="devise">{{{Auth::user()->devise}}}</span><span>{{' ('.$pari->unites_profit.'u)'}}</span></span>
-                                    @else($pari->montant_profit == 0)<span class="bold fontsize15"><span class="profits">{{$pari->montant_profit}}</span><span class="devise">{{{Auth::user()->devise}}}</span><span>{{' ('.$pari->unites_profit.'u)'}}</span></span>
+                                    @if($pari->montant_profit > 0)<span class="bold fontsize15 font-green-sharp" ><span class="profits">{{' +'.floatval($pari->montant_profit)}}</span><span class="devise">{{{Auth::user()->devise}}}</span><span>{{' (+'.floatval($pari->unites_profit).'u)'}}</span></span>
+                                    @elseif($pari->montant_profit < 0)<span class="bold fontsize15 font-red-haze"><span class="profits">{{floatval($pari->montant_profit)}}</span><span class="devise">{{{Auth::user()->devise}}}</span><span>{{' ('.floatval($pari->unites_profit).'u)'}}</span></span>
+                                    @else($pari->montant_profit == 0)<span class="bold fontsize15"><span class="profits">{{floatval($pari->montant_profit)}}</span><span class="devise">{{{Auth::user()->devise}}}</span><span>{{' ('.floatval($pari->unites_profit).'u)'}}</span></span>
                                     @endif
                                 </td>
 
@@ -174,7 +178,7 @@
                                     <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}</td>
                                     <td class="fit tdcote">{{$pari->cote}}</td>
                                     <td class="tdmise bold">
-                                        <span class="tdsubmise bold ">{{{$pari->mise_totale}}}</span>{{{Auth::user()->devise.' '}}}{{'('.+$pari->nombre_unites.'u)'}}
+                                        <span class="tdsubmise bold ">{{{floatval(round($pari->mise_totale, 2))}}}</span>{{{Auth::user()->devise.' '}}}{{'('.+floatval(round($pari->nombre_unites, 2)).'u)'}}
                                     </td>
                                     <td width="90px">
                                         <span class="label label-sm label-combine label-mini type">{{'combiné'}}</span>
@@ -206,12 +210,12 @@
                                     </td>
                                     <td>
                                         <span class="{{'bold fontsize15'}} {{$pari->mise_totale > $pari->montant_retour ? ' font-red' : '' }} {{$pari->mise_totale < $pari->montant_retour ? ' font-green-sharp' : '' }}">
-                                        <span class="">{{$pari->montant_retour.''.Auth::user()->devise}}<span>{{' ('.$pari->unites_retour.'u)'}}</span></span></span>
+                                        <span class="">{{floatval($pari->montant_retour).''.Auth::user()->devise}}<span>{{' ('.floatval($pari->unites_retour).'u)'}}</span></span></span>
                                     </td>
                                     <td>
-                                        @if($pari->montant_profit > 0)<span class="bold fontsize15 font-green-sharp" ><span class="profits">{{' +'.$pari->montant_profit}}</span><span class="devise">{{{Auth::user()->devise}}}</span><span>{{' (+'.$pari->unites_profit.'u)'}}</span></span>
-                                        @elseif($pari->montant_profit < 0)<span class="bold fontsize15 font-red"><span class="profits">{{$pari->montant_profit}}</span><span class="devise">{{{Auth::user()->devise}}}</span><span>{{' ('.$pari->unites_profit.'u)'}}</span></span>
-                                        @else($pari->montant_profit == 0)<span class="bold fontsize15"><span class="profits">{{$pari->montant_profit}}</span><span class="devise">{{{Auth::user()->devise}}}</span><span>{{' ('.$pari->unites_profit.'u)'}}</span></span>
+                                        @if($pari->montant_profit > 0)<span class="bold fontsize15 font-green-sharp" ><span class="profits">{{' +'.floatval($pari->montant_profit)}}</span><span class="devise">{{{Auth::user()->devise}}}</span><span>{{' (+'.floatval($pari->unites_profit).'u)'}}</span></span>
+                                        @elseif($pari->montant_profit < 0)<span class="bold fontsize15 font-red-haze"><span class="profits">{{floatval($pari->montant_profit)}}</span><span class="devise">{{{Auth::user()->devise}}}</span><span>{{' ('.floatval($pari->unites_profit).'u)'}}</span></span>
+                                        @else($pari->montant_profit == 0)<span class="bold fontsize15"><span class="profits">{{floatval($pari->montant_profit)}}</span><span class="devise">{{{Auth::user()->devise}}}</span><span>{{' ('.floatval($pari->unites_profit).'u)'}}</span></span>
                                         @endif
                                     </td>
 

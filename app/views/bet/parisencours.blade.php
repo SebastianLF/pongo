@@ -38,7 +38,8 @@
                             <a href="">
                             <tr data-toggle="collapse" data-target="{{'.row'.$pari->numero_pari}}" class="mainrow accordion-toggle parisencours-accordeon">
                                 <td class="hidden id">{{$pari->id}}</td>
-                                <td><a href="javascript:;" class="primary-link">{{'#'.$pari->numero_pari}}</a></td>
+                                <td width="20px" class="subbetclick"></td>
+                                <td class="primary-link">{{'#'.$pari->numero_pari}}</td>
                                 
                                 <td><span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">@if($pari->pari_abcd){{$pari->nom_abcd.' - '.$pari->lettre_abcd}}@endif</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_live ? 'live' : '' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_gratuit ? 'gratuit' : '' }}</span></td>
                                 <td colspan="2">
@@ -162,7 +163,7 @@
                                     </td>
                                     <td><span class="label label-sm label-combine label-mini type">{{'combiné'}}</span></td>
 
-                                    <td width="150px" class="bold fontsize15"><span class="profits"></span><span
+                                    <td width="" class="bold fontsize15"><span class="profits"></span><span
                                                 class="devise hide">{{{' '.Auth::user()->devise}}}</span></td>
                                     <td>
                                         {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris' ,'role' => 'form', )) }}
@@ -180,7 +181,7 @@
                                 <tr class="subrow">
                                     <td colspan="17" class="childtable cancel-padding">
                                         <div class="{{'accordian-body collapse row'.$pari->numero_pari}}">
-                                            <table class="table table-striped child-table table-bordered">
+                                            <table class="table table-striped child-table table-bordered table-subrow-combine">
                                                 <thead>
 
                                                 <tr class="uppercase">

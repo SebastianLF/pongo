@@ -21,27 +21,7 @@
     <!-- BEGIN PAGE CONTENT -->
     <div class="page-content">
         <div class="container-fluid">
-            <table id="table_id" class="display">
-                <thead>
-                <tr>
-                    <th></th>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Salary</th>
-                </tr>
-                </thead>
 
-                <tfoot>
-                <tr>
-                    <th></th>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Salary</th>
-                </tr>
-                </tfoot>
-            </table>
             <div class="row margin-top-10">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 

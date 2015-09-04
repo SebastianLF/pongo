@@ -10,8 +10,8 @@
                 <div class="row">
                     <div class="note note-success note-automatic-bet">
                         <p>
-                            <strong>cash out classique:</strong> retrait du montant misé (très souvent inférieur a la mise de départ donc déficit), le ticket est alors cloturé dans l'historique avec le status 'cash out'. Entrez le montant retiré.<br/>
-                            <strong>cash out partiel:</strong> réajustement de la mise de départ, le ticket reste actif. Entrez la nouvelle mise.
+                            cash out classique: retrait du montant misé (très souvent inférieur a la mise de départ donc déficit), le ticket est alors cloturé dans l'historique avec le status 'cash out'. Entrez le montant retiré.<br/>
+                            cash out partiel: réajustement de la mise de départ, le ticket reste actif. Entrez la nouvelle mise.
                         </p>
                     </div>
                 <div class="form-group col-md-5 col-md-offset-3">

@@ -60,9 +60,9 @@ function loadParisTermine() {
                     alwaysVisible: true
                 });
             });
-            $('#paristerminetable').tableSearch({
-                searchPlaceHolder:'Recherche...'
-            });
+            $('#paristerminetable').tableSearch({});
+
+
         },
         error: function (data) {
             $('#tab_15_4').html('<p>impossible de récuperer les paris terminés</p>');
@@ -102,7 +102,7 @@ function paginationParisEnCours() {
             url: 'dashboard/ajax/parisencours',
             data: {page: pg},
             success: function (data) {
-                $('#tab_15_1').html(data);
+                $('#tab_15_1').html(data.vue);
                 featuresParisEnCours();
             },
             error: function (data) {
