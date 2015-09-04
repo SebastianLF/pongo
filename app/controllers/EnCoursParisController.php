@@ -403,7 +403,7 @@
 				$encourspari_id = Input::get('ticket-id');
 				$cashout_type = Input::get('cashout-select');
 				$montant = Input::get('amount-cash-out');
-				$encourspari = Auth::user()->enCoursParis()->where('ticket-id', $encourspari_id)->firstOrFail();
+				$encourspari = Auth::user()->enCoursParis()->where('id', $encourspari_id)->firstOrFail();
 				if ($cashout_type == 'c') {
 
 					$retour_unites = round($montant / $encourspari->mt_par_unite, 2);
@@ -411,53 +411,7 @@
 					$retour_devise = $montant;
 					$profit_devise = round($montant - $encourspari->mise_totale, 2);
 
-					// creation du pari validé.
-					$termine_pari = new TermineParis(array(
-						'followtype' => $encourspari->followtype,
-						'type_profil' => $encourspari->type_profil,
-						'numero_pari' => $encourspari->numero_pari,
-						'cote' => $encourspari->cote,
-						'cote_apres_status' => $encourspari->cote,
-						'status' => 6,
-						'mt_par_unite' => $encourspari->mt_par_unite,
-						'nombre_unites' => $encourspari->nombre_unites,
-						'mise_totale' => $encourspari->mise_totale,
-						'unites_retour' => $retour_unites,
-						'unites_profit' => $profit_unites,
-						'montant_retour' => $retour_devise,
-						'montant_profit' => $profit_devise,
-						'pari_long_terme' => $encourspari->pari_long_terme,
-						'cashouted' => 1,
-						'pari_abcd' => $encourspari->pari_abcd,
-						'nom_abcd' => $encourspari->nom_abcd,
-						'lettre_abcd' => $encourspari->lettre_abcd,
-						'tipster_id' => $encourspari->tipster_id,
-						'user_id' => $encourspari->user_id,
-						'bookmaker_user_id' => $encourspari->bookmaker_user_id,
-					));
-
-					// ajout du paris dans la table termine paris.
-					$termine_paris_ajoute = Auth::user()->termineParis()->save($termine_pari);
-
-					// uniquemenent si le type de suivi est normal.
-					if ($encourspari->followtype == 'n') {
-						$book = $encourspari->compte->where('id', $encourspari->bookmaker_user_id)->firstOrFail();
-
-						// verification si le bookmaker a une bankroll suffisante en cas de perte.
-						$book->bankroll_actuelle += $retour_devise;
-						$book->save();
-					}
-
-					// lier à a l'id du pari terminé et délier le pari en cours.
-					$selections = $encourspari->selections()->get();
-					foreach ($selections as $selection) {
-						$selection->termine_pari_id = $termine_paris_ajoute->id;
-						$selection->en_cours_pari_id = NULL;
-						$selection->save();
-					}
-
-					// suppression du pari en cours.
-					$encourspari->delete();
+					$this->creation_termine_pari_de_type_cash_out($encourspari, $retour_unites, $profit_unites, $retour_devise, $profit_devise);
 
 					return Response::json(array(
 						'etat' => 1,
@@ -465,19 +419,92 @@
 					));
 
 				} elseif ($cashout_type == 'p') {
-					$nouvelle_mise = $encourspari->mise_totale - $encourspari->$montant;
+					if($encourspari->$montant > $encourspari->mise_totale){
+						return Response::json(array(
+							'etat' => 0,
+							'msg' => 'Le montant retiré est supérieur à la mise de départ.',
+						));
+					}else if($encourspari->$montant == $encourspari->mise_totale){
+						$this->creation_termine_pari_de_type_cash_out($encourspari, $encourspari->retour_unites, $encourspari->profit_unites, $encourspari->retour_devise, $encourspari->profit_devise);
+					}else if($encourspari->$montant < $encourspari->mise_totale){
 
-					// creation d'une transaction de type cash out
-					$transaction = new Transaction();
-					$transaction->type = 'pc';
-					$transaction->montant = $montant;
-					$transaction->description = 'Partial Cash-Out Ticket #'.$encourspari->id;
-					$transaction->bookmaker_user_id = $encourspari->bookmaker_user_id;
-					$transaction->save();
+						//modification de la mise totale dans l encourspari
+						$mise_totale = round($encourspari->mise_totale - $montant, 2);
+						$nombre_unites = round($mise_totale / $encourspari->mt_par_unite, 2);
+						$encourspari->mise_totale = $mise_totale;
+						$encourspari->nombre_unites = $nombre_unites;
+						$encourspari->save();
+
+						// creation d'une transaction de type cash out
+						$transaction = new Transaction();
+						$transaction->type = 'pc';
+						$transaction->montant = $montant;
+						$transaction->description = 'Partial Cash-Out - Ticket #'.$encourspari->id;
+						$transaction->bookmaker_user_id = $encourspari->bookmaker_user_id;
+						$transaction->save();
+
+						return Response::json(array(
+							'etat' => 1,
+							'msg' => 'Ticket mis à jour et une transaction de type cash-out à été crée.',
+						));
+					}
 				}
 			}
 		}
 
+
+		public function creation_termine_pari_de_type_cash_out($encourspari, $retour_unites, $profit_unites, $retour_devise, $profit_devise){
+
+			// creation du pari validé.
+			$termine_pari = new TermineParis(array(
+				'followtype' => $encourspari->followtype,
+				'type_profil' => $encourspari->type_profil,
+				'numero_pari' => $encourspari->numero_pari,
+				'cote' => $encourspari->cote,
+				'cote_apres_status' => $encourspari->cote,
+				'status' => 6,
+				'mt_par_unite' => $encourspari->mt_par_unite,
+				'nombre_unites' => $encourspari->nombre_unites,
+				'mise_totale' => $encourspari->mise_totale,
+				'unites_retour' => $retour_unites,
+				'unites_profit' => $profit_unites,
+				'montant_retour' => $retour_devise,
+				'montant_profit' => $profit_devise,
+				'pari_long_terme' => $encourspari->pari_long_terme,
+				'cashouted' => 1,
+				'pari_abcd' => $encourspari->pari_abcd,
+				'nom_abcd' => $encourspari->nom_abcd,
+				'lettre_abcd' => $encourspari->lettre_abcd,
+				'tipster_id' => $encourspari->tipster_id,
+				'user_id' => $encourspari->user_id,
+				'bookmaker_user_id' => $encourspari->bookmaker_user_id,
+			));
+
+			// ajout du paris dans la table termine paris.
+			$termine_paris_ajoute = Auth::user()->termineParis()->save($termine_pari);
+
+			// uniquemenent si le type de suivi est normal.
+			if ($encourspari->followtype == 'n') {
+				$book = $encourspari->compte->where('id', $encourspari->bookmaker_user_id)->firstOrFail();
+
+				// verification si le bookmaker a une bankroll suffisante en cas de perte.
+				$book->bankroll_actuelle += $retour_devise;
+				$book->save();
+			}
+
+			// lier à a l'id du pari terminé et délier le pari en cours.
+			$selections = $encourspari->selections()->get();
+			foreach ($selections as $selection) {
+				$selection->termine_pari_id = $termine_paris_ajoute->id;
+				$selection->en_cours_pari_id = NULL;
+				$selection->status = 6;
+				$selection->save();
+			}
+
+			// suppression du pari en cours.
+			$encourspari->delete();
+
+		}
 
 		// formulaire d'ajout manuel
 		public function manual_store()

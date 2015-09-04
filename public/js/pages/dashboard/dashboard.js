@@ -6,6 +6,7 @@
 parisEnCoursDelete();
 getBookmakersForSelection();
 loadParisEnCours();
+cashOut();
 loadParisLongTerme();
 //loadParisABCD();
 loadParisTermine();

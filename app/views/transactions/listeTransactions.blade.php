@@ -27,6 +27,8 @@
                             <span class="font-red-haze">{{'retrait'}}</span>
                         @elseif($transaction->type == 'b')
                             <span class="theme-font">{{'bonus'}}</span>
+                        @elseif($transaction->type == 'pc')
+                            <span class="theme-font">{{'partial cash out'}}</span>
                         @endif
                     </td>
                     <td class="bold">
@@ -35,6 +37,8 @@
                         @elseif($transaction->type == 'r')
                             <span class="font-red-haze">{{round($transaction->montant,2)}}{{Auth::user()->devise}}</span>
                         @elseif($transaction->type == 'b')
+                            <span class="theme-font">{{round($transaction->montant,2)}}{{Auth::user()->devise}}</span>
+                        @elseif($transaction->type == 'pc')
                             <span class="theme-font">{{round($transaction->montant,2)}}{{Auth::user()->devise}}</span>
                         @endif
                     </td>

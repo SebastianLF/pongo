@@ -19,7 +19,6 @@ function loadParisEnCours() {
 
             featuresParisEnCours();
             paginationParisEnCours();
-            cashOut();
         },
         error: function (data) {
             $('#tab_15_1').html('<p>impossible de récuperer les paris</p>');
@@ -138,8 +137,9 @@ function loadParisEnCoursWithPage(condition) {
 
 function cashOut(){
 
+    var modal = $('#cashoutModal');
     // passage de parametres vers le modal.
-    $('#cashoutModal').on('show.bs.modal', function(e) {
+    modal.on('show.bs.modal', function(e) {
 
         //get data-id attribute of the clicked element
         var pari_id = $(e.relatedTarget).data('id');
@@ -172,6 +172,12 @@ function cashOut(){
             success: function(data){
                 if(data.etat){
                     toastr.success(data.msg, 'Pari');
+                    loadParisEnCours();
+                    loadParisTermine();
+                    loadBookmakersOnDashboard();
+                    loadParisLongTerme();
+                    loadGeneralRecapsOnDashboard();
+                    modal.hide();
                 }else{
                     for (key in data.msg) {
                         keyname = key;
@@ -184,5 +190,4 @@ function cashOut(){
             }
         });
     });
-
 }
