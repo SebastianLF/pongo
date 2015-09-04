@@ -152,14 +152,22 @@ function cashOut(){
 
     // cash out modal
     var cashout_form = $('#cashout-update');
-    var cashout_array = [{ id: 'c', text: 'classic cash out' }];
-    cashout_form.find('#cashout-select').select2({
+    var cashout_select = cashout_form.find('#cashout-select');
+    var cashout_array = [{ id: 'c', text: 'classic cash out' },{ id: 'p', text: 'partial cash out' }];
+    cashout_select.select2({
         minimumResultsForSearch: Infinity,
         cache: true,
         data: cashout_array
     }).change(function(){
-        cashout_form.find('.classic-cash-out-group').toggleClass('hide');
-        //cashout_form.find('.partial-cash-out-group').toggleClass('hide');
+         if(cashout_select == 'c'){
+             cashout_form.find('.partial-cash-out-group').toggleClass('hide');
+             cashout_form.find('.classic-cash-out-group').toggleClass('show');
+         }else if(cashout_select == 'p'){
+             cashout_form.find('.classic-cash-out-group').toggleClass('hide');
+             cashout_form.find('.partial-cash-out-group').toggleClass('show');
+         }
+
+
     });
 
     // envoi du form.
