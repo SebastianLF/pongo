@@ -415,14 +415,15 @@
 
 					return Response::json(array(
 						'etat' => 1,
-						'msg' => 'pari validé',
+						'msg' => 'Montant retourné: '.floatval($retour_devise).' '.Auth::user()->devise,
+						'head' => 'Ticket cloturé',
 					));
 
 				} elseif ($cashout_type == 'p') {
 					if($encourspari->$montant > $encourspari->mise_totale){
 						return Response::json(array(
 							'etat' => 0,
-							'msg' => 'Le montant retiré est supérieur à la mise de départ.',
+							'msg' => 'Le montant retiré du Partial Cash Out est supérieur à la mise de départ. Le montant doit être inférieur.',
 						));
 					}else if($encourspari->$montant == $encourspari->mise_totale){
 						$this->creation_termine_pari_de_type_cash_out($encourspari, $encourspari->retour_unites, $encourspari->profit_unites, $encourspari->retour_devise, $encourspari->profit_devise);
@@ -439,13 +440,16 @@
 						$transaction = new Transaction();
 						$transaction->type = 'pc';
 						$transaction->montant = $montant;
-						$transaction->description = 'Partial Cash-Out - Ticket #'.$encourspari->id;
+						$transaction->description = 'Partial Cash Out - Ticket #'.$encourspari->id;
 						$transaction->bookmaker_user_id = $encourspari->bookmaker_user_id;
 						$transaction->save();
 
+						$compte = BookmakerUser::find($encourspari->bookmaker_user_id);
+
 						return Response::json(array(
 							'etat' => 1,
-							'msg' => 'Ticket mis à jour et une transaction de type cash-out à été crée.',
+							'msg' => 'nouvelle mise = '.floatval($mise_totale).' '.Auth::user()->devise.'<br> montant transaction ('.$compte->nom_compte.') = '.floatval($montant).' '.Auth::user()->devise,
+							'head' => 'Ticket msie à jour',
 						));
 					}
 				}

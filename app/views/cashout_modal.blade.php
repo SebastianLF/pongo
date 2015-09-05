@@ -8,11 +8,14 @@
             <div class="modal-body">
                 <input name="ticket-id" type="text" readonly class="hide" />
                 <div class="row">
+                    <div class="col-md-12">
                     <div class="note note-success note-automatic-bet">
-                        <p>
-                            cash out classique: retrait du montant misé (très souvent inférieur a la mise de départ donc déficit), le ticket est alors cloturé dans l'historique avec le status 'cash out'. Entrez le montant retiré.<br/>
-                            cash out partiel: réajustement de la mise de départ, le ticket reste actif. Entrez la nouvelle mise.
+                        <p>Lien pour avoir plus d'infos sur le cash out: <a href="http://www.bet365.com.au/extra/en/site-features/cash-out/">http://www.bet365.com.au/extra/en/site-features/cash-out/</a><br><br/>
+                            En résumé, il y a deux types de Cash Out: <br/>
+                            1 - Cash Out (classique): Le ticket est cloturé avec comme montant retourné la valeur du montant du cash out.<br/>
+                            2 - Partial Cash Out : Réajustement de la mise de départ, le ticket reste actif. Le montant retiré sera soustrait à la mise de départ et une transaction (de type partial cash out) sera crée avec comme montant de dépot le montant retiré. Bet365 limite à 10 le nombre de partial cash out pour un seul ticket, la 10eme fois le ticket est cloturé comme un cash out classique. Choisissez donc cash out classique à la 10eme fois.
                         </p>
+                    </div>
                     </div>
                 <div class="form-group col-md-5 col-md-offset-3">
                     <label for="classic-cash-out">Type de cash out:</label>

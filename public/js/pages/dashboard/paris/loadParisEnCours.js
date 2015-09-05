@@ -171,7 +171,7 @@ function cashOut(){
             dataType : 'json',
             success: function(data){
                 if(data.etat){
-                    toastr.success(data.msg, 'Pari');
+                    toastr.success(data.msg, data.head);
                     loadParisEnCours();
                     loadParisTermine();
                     loadBookmakersOnDashboard();
