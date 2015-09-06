@@ -21,19 +21,17 @@
     <!-- BEGIN PAGE CONTENT -->
     <div class="page-content">
         <div class="container-fluid">
+
             @include('bet/manual_bet_add_modal')
+            @include('cashout_modal')
 
             <div class="row margin-top-10">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-
                 </div>
-
-
             </div>
-            @include('cashout_modal')
+
             <!-- BEGIN PAGE CONTENT INNER -->
             <div class="row">
-
                 <div class="col-md-12">
                     <div class="portlet light ">
                         <div class="portlet-title">
@@ -43,7 +41,6 @@
                             </div>
                         </div>
                         <div class="portlet-body">
-
                             <div class="tabbable-line">
                                 <ul class="nav nav-tabs ">
                                     <li id="onglet_paris_en_cours" class="active">
@@ -85,6 +82,8 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col-md-8">
 
                     <div class="portlet light green-haze">
@@ -114,12 +113,15 @@
                                         <div class="panel panel-default">
                                             <div class="panel-heading" role="tab" id="headingOne">
                                                 <h4 class="panel-title">
-                                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                                       href="#collapseOne" aria-expanded="true"
+                                                       aria-controls="collapseOne">
                                                         Panier des sélections
                                                     </a>
                                                 </h4>
                                             </div>
-                                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                                 aria-labelledby="headingOne">
                                                 <div class="panel-body">
                                                     <div id="automatic-selections">
 
@@ -130,12 +132,15 @@
                                         <div class="panel panel-default">
                                             <div class="panel-heading" role="tab" id="headingTwo">
                                                 <h4 class="panel-title">
-                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    <a class="collapsed" role="button" data-toggle="collapse"
+                                                       data-parent="#accordion" href="#collapseTwo"
+                                                       aria-expanded="false" aria-controls="collapseTwo">
                                                         Informations générales
                                                     </a>
                                                 </h4>
                                             </div>
-                                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                                 aria-labelledby="headingTwo">
                                                 <div class="panel-body">
                                                     @include('bet/automatic_addbet')
                                                 </div>
@@ -215,20 +220,15 @@
                                                     manuellement
                                                 </button>
                                             </div>
-
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
 
+            <div class="col-md-4">
                 <div class="portlet light ">
                     <div class="portlet-title">
                         <div class="caption caption-md col-md-5">
@@ -289,6 +289,7 @@
 
                 </div>
 
+            </div>
             </div>
         </div>
         <!-- END PAGE CONTENT INNER -->
