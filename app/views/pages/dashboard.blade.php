@@ -95,10 +95,12 @@
                             </div>
                         </div>
                         <div class="portlet-body">
+                            {{ Form::open(array('method' => 'post', 'id' => 'automaticform-add', 'class' => 'form-horizontal', 'role' => 'form')
+                                            ) }}
                             <div class="portlet light ">
                                 <div class="portlet-title">
                                     <div class="caption">
-                                        <i class="glyphicon glyphicon-lock"></i>Panier des sélections | <span
+                                        <i class="glyphicon glyphicon-lock"></i>Ticket | <span
                                                 class="glyphicon glyphicon-refresh glyphicon-spin"></span><a
                                                 id="selection-refresh" class="" href="">Rafraichir</a>
 
@@ -107,13 +109,42 @@
                                     </div>
                                 </div>
 
-                                {{ Form::open(array('method' => 'post', 'id' => 'automaticform-add', 'class' => 'form-horizontal', 'role' => 'form')
-                                            ) }}
-
                                 <div class="portlet-body form form-automatic">
+                                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="headingOne">
+                                                <h4 class="panel-title">
+                                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                        Panier des sélections
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                                <div class="panel-body">
+                                                    <div id="automatic-selections">
 
-                                    <div id="automatic-selections">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="headingTwo">
+                                                <h4 class="panel-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                        Informations générales
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                                <div class="panel-body">
+                                                    @include('bet/automatic_addbet')
+                                                </div>
+                                            </div>
+                                        </div>
 
+                                    </div>
+
+                                    <div>
                                     </div>
                                 </div>
                                 <div class="form-actions form-actions-automatic-bet">
@@ -128,9 +159,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                {{ Form::close() }}
+
 
                             </div>
+                            {{ Form::close() }}
                             <div class="portlet light ">
 
                                 <div class="portlet-title">
