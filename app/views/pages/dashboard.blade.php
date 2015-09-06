@@ -21,6 +21,7 @@
     <!-- BEGIN PAGE CONTENT -->
     <div class="page-content">
         <div class="container-fluid">
+            @include('bet/manual_bet_add_modal')
 
             <div class="row margin-top-10">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -34,11 +35,11 @@
             <div class="row">
 
                 <div class="col-md-12">
-                    <div class="portlet light">
+                    <div class="portlet light ">
                         <div class="portlet-title">
                             <div class="caption">
                                 <i class="icon-pin font-yellow-casablanca"></i>
-                                <span class="caption-subject font-yellow-casablanca bold uppercase">liste</span>
+                                <span class="caption-subject font-yellow-casablanca bold uppercase">liste des tickets</span>
                             </div>
                         </div>
                         <div class="portlet-body">
@@ -85,85 +86,181 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <div class="portlet light">
-                        <div class="portlet-title">
+
+                    <div class="portlet light green-haze">
+                        <div class="portlet-title ">
                             <div class="caption">
-                                <i class="icon-paper-plane font-green-sharp"></i>
-                                <span class="caption-subject font-green-sharp bold uppercase">Ajouter un ticket</span>
+                                <i class="icon-paper-plane color-white"></i>
+                                <span class="caption-subject color-white bold uppercase">Ajouter un ticket</span>
                             </div>
                         </div>
                         <div class="portlet-body">
-                            @include('bet.automatic_addbet');
+                            <div class="portlet light ">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="glyphicon glyphicon-lock"></i>Panier des sélections | <span
+                                                class="glyphicon glyphicon-refresh glyphicon-spin"></span><a
+                                                id="selection-refresh" class="" href="">Rafraichir</a>
+
+                                    </div>
+                                    <div class="actions">
+                                    </div>
+                                </div>
+
+                                {{ Form::open(array('method' => 'post', 'id' => 'automaticform-add', 'class' => 'form-horizontal', 'role' => 'form')
+                                            ) }}
+
+                                <div class="portlet-body form form-automatic">
+
+                                    <div id="automatic-selections">
+
+                                    </div>
+                                </div>
+                                <div class="form-actions form-actions-automatic-bet">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-offset-5 ">
+                                                <button type="submit" class="btn btn-default"><i class="fa fa-plus"></i>
+                                                    VALIDER LE
+                                                    TICKET
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{ Form::close() }}
+
+                            </div>
+                            <div class="portlet light ">
+
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="glyphicon glyphicon-lock"></i>Ajouter une selection
+
+                                    </div>
+                                    <div class="actions">
+                                    </div>
+                                </div>
+
+                                <div class="portlet-body form form-automatic">
+                                    <div class="tabbable-line ">
+                                        <ul class="nav nav-tabs ">
+                                            <li class="active">
+                                                <a href="#tab_automatique" data-toggle="tab">
+                                                    Recherche Automatique <span class="badge badge-danger"></span></a>
+                                            </li>
+                                            <li>
+                                                <a href="#tab_manuel" data-toggle="tab">
+                                                    Recherche Manuelle <span class="badge badge-default"></span></a>
+                                            </li>
+
+                                        </ul>
+
+
+                                        <div class="tab-content green-haze">
+                                            <div class="tab-pane active fade in" id="tab_automatique">
+                                                @if(App::environment('local'))
+                                                    <iframe src={{"http://stage.betbrain.com/?portalId=1312&userSessionId=".Session::getId()}} height="400"
+                                                            width="100%" frameborder="0">Odds service provided in
+                                                        co-operation
+                                                        with
+                                                        <a href="http://www.betbrain.com"
+                                                           target="_blank"><b>BetBrain.com</b></a>
+                                                    </iframe>
+                                                @else
+                                                    <iframe src={{"http://betbrain.com/?portalId=1326&userSessionId=".Session::getId()}} height="600"
+                                                            width="100%" frameborder="0">Odds service provided in
+                                                        co-operation with <a href="http://www.betbrain.com"
+                                                                             target="_blank"><b>BetBrain.com</b></a>
+                                                    </iframe>
+                                                @endif
+                                            </div>
+                                            <div class="tab-pane fade" id="tab_manuel">
+                                                <button type="button" class="btn btn-default" data-toggle="modal"
+                                                        data-target="#manualBetAddModal"><span
+                                                            class="glyphicon glyphicon-plus"></span> ajouter une
+                                                    sélection
+                                                    manuellement
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
                         </div>
+
                     </div>
                 </div>
-                <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
 
-                    <div class="portlet light ">
-                        <div class="portlet-title">
-                            <div class="caption caption-md col-md-5">
-                                <i class="icon-bar-chart theme-font hide"></i>
-                                <span class="caption-subject theme-font bold uppercase">Récapitulatif</span>
-                                <span class="caption-helper hide">stats</span>
-                            </div>
-                            <div class="actions col-md-6">
-                                <div class="">
-                                    <div class="input-group" id="defaultrange">
-                                        <input type="text" class="form-control"
-                                               value="{{Carbon::now()->startOfMonth()->format('d/m/Y').' - '.Carbon::now()->endOfMonth()->format('d/m/Y')}}"
-                                               readonly>
+                <div class="portlet light ">
+                    <div class="portlet-title">
+                        <div class="caption caption-md col-md-5">
+                            <i class="icon-bar-chart theme-font hide"></i>
+                            <span class="caption-subject theme-font bold uppercase">Récapitulatif</span>
+                            <span class="caption-helper hide">stats</span>
+                        </div>
+                        <div class="actions col-md-6">
+                            <div class="">
+                                <div class="input-group" id="defaultrange">
+                                    <input type="text" class="form-control"
+                                           value="{{Carbon::now()->startOfMonth()->format('d/m/Y').' - '.Carbon::now()->endOfMonth()->format('d/m/Y')}}"
+                                           readonly>
 												<span class="input-group-btn">
 												<button class="btn default date-range-toggle" type="button"><i
                                                             class="fa fa-calendar"></i></button>
 												</span>
-                                    </div>
                                 </div>
-
                             </div>
                         </div>
-                        <div class="portlet-body">
-                            <div class="row number-stats margin-bottom-30">
-                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                    <div class="stat-left">
-                                        <div class="stat-number">
-                                            <div class="title">
-                                                {{'Total profits en '.Auth::user()->devise}}
-                                            </div>
-                                            <div id="total-recap-profits-devise" class="number">
-
-                                            </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="row number-stats margin-bottom-30">
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="stat-left">
+                                    <div class="stat-number">
+                                        <div class="title">
+                                            {{'Total profits en '.Auth::user()->devise}}
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                    <div class="stat-right">
-                                        <div class="stat-number">
-                                            <div class="title">
-                                                {{'Total profits en U'}}
-                                            </div>
-                                            <div id="total-recap-profits-unites" class="number">
+                                        <div id="total-recap-profits-devise" class="number">
 
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div id="tipsters-general-recap">
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="stat-right">
+                                    <div class="stat-number">
+                                        <div class="title">
+                                            {{'Total profits en U'}}
+                                        </div>
+                                        <div id="total-recap-profits-unites" class="number">
 
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div id="comptes_par_bookmakers">
+                        <div id="tipsters-general-recap">
 
+                        </div>
                     </div>
-                    <div id="recaps">
-
-                    </div>
+                </div>
+                <div id="comptes_par_bookmakers">
 
                 </div>
+                <div id="recaps">
+
+                </div>
+
             </div>
-            <!-- END PAGE CONTENT INNER -->
         </div>
+        <!-- END PAGE CONTENT INNER -->
+    </div>
     </div>
 @stop
 @section('scripts')

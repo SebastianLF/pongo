@@ -21,7 +21,14 @@
         <table class="table">
             <thead>
             <tr>
-
+                <th>Date</th>
+                <th>Evenement</th>
+                <th>rencontre</th>
+                <th>bookmaker</th>
+                <th>pari</th>
+                <th>choix</th>
+                <th>cote</th>
+                <th>action</th>
             </tr>
             </thead>
             <tbody>
@@ -29,16 +36,20 @@
                 <tr class="betline">
                     <td class="selection_id hidden">{{$selection->id}}</td>
 
-                    <td><span class="bold">Date:</span>{{' '.$selection->game_time}}<br/><span
-                                class="bold">Evenement:</span>{{' '.$selection->sport_name.' - '}}{{$selection->league_name}}
+                    <td>{{{' '.$selection->game_time}}}<br/>
                         <br/>
-                        @if($selection->isMatch)
-                        <span class="bold">Match:</span>{{' '.$selection->game_name}}
-                        @endif
+
                     </td>
-                    <td><span class="bold">Bookmaker:</span>{{' '.$selection->bookmaker}}<br/><span
-                                class="bold">Pari:</span>{{' '.$selection->market.' '}}{{$selection->score =! 'null' ? '('.$selection->score.')' : ''}}{{' ('.$selection->scope.') '}}<br/>
-                        <span class="bold">Choix:</span>
+                    <td>{{' '.$selection->sport_name.' - '}}{{$selection->league_name}}</td>
+                    <td> @if($selection->isMatch)
+                            {{' '.$selection->game_name}}
+                             @else
+                             {{'N/A'}}
+                        @endif</td>
+                     <td>{{' '.$selection->bookmaker}}<br/></td>
+                    <td>
+                    {{' '.$selection->market.' '}}{{$selection->score =! 'null' ? '('.$selection->score.')' : ''}}{{' ('.$selection->scope.') '}}<br/>
+                    <td>
                         @if($selection->affichage == "1")
                             {{' '.$selection->pick}}
                         @elseif($selection->affichage == "2")
@@ -76,10 +87,10 @@
                             {{'('.$selection->score.')'}}
                         @endif
                     </td>
-                    <td><span class="bold">Cote: </span><input name="automatic-selection-cote[]" type="text"
+                    <td><input name="automatic-selection-cote[]" type="text"
                                                                value="{{$selection->odd_value}}"/></td>
                     <td>
-                        <button class="boutonsupprimer btn btn-sm red"><i class="glyphicon glyphicon-trash"></i>
+                        <button class="boutonsupprimer btn btn-xs red"><i class="glyphicon glyphicon-trash"></i>
                         </button>
                     </td>
                 </tr>

@@ -1,6 +1,5 @@
-@include('bet/manual_bet_add_modal')
-{{ Form::open(array('method' => 'post', 'id' => 'automaticform-add', 'class' => 'form-horizontal', 'role' => 'form')
-            ) }}
+
+
 
 
 <div class="portlet green-haze">
@@ -9,32 +8,7 @@
         <form action="javascript:;" class="form-horizontal">
             <div class="form-body">
                 <div class="row " style="padding:10px;">
-                    <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
-                        <div class="portlet light">
 
-                            <div class="portlet-title">
-                                <div class="caption">
-                                    <i class="glyphicon glyphicon-lock"></i>Panier des sélections | <span
-                                            class="glyphicon glyphicon-refresh glyphicon-spin"></span><a
-                                            id="selection-refresh" class="" href="">Rafraichir</a>
-
-                                </div>
-                                <div class="actions">
-                                </div>
-                            </div>
-
-                            <div class="portlet-body form form-automatic">
-
-                                <div id="automatic-selections">
-
-                                </div>
-                                <button type="button" class="btn btn-default" data-toggle="modal"
-                                        data-target="#manualBetAddModal"><span
-                                            class="glyphicon glyphicon-plus"></span> ajouter une sélection manuellement
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
                         <div class="portlet light ">
                             <div class="portlet-title">
@@ -231,48 +205,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="portlet light">
 
-                            <div class="portlet-title">
-                                <div class="caption">
-                                    <i class="glyphicon glyphicon-globe"></i>Recherche automatique
-
-                                </div>
-                                <div class="actions">
-                                </div>
-                            </div>
-
-                            <div class="portlet-body form form-automatic">
-
-                                @if(App::environment('local'))
-                                    <iframe src={{"http://stage.betbrain.com/?portalId=1312&userSessionId=".Session::getId()}} height="400"
-                                            width="100%" frameborder="0">Odds service provided in co-operation with
-                                        <a href="http://www.betbrain.com" target="_blank"><b>BetBrain.com</b></a>
-                                    </iframe>
-                                @else
-                                    <iframe src={{"http://betbrain.com/?portalId=1326&userSessionId=".Session::getId()}} height="600"
-                                            width="100%" frameborder="0">Odds service provided in
-                                        co-operation with <a href="http://www.betbrain.com" target="_blank"><b>BetBrain.com</b></a>
-                                    </iframe>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
-            <div class="form-actions form-actions-automatic-bet">
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-offset-5 ">
-                            <button type="submit" class="btn btn-default"><i class="fa fa-plus"></i> VALIDER LE
-                                TICKET
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </form>
     </div>
 </div>
@@ -281,4 +218,3 @@
 <div class="portlet-body form form-automatic">
 
 </div>
-{{ Form::close() }}
