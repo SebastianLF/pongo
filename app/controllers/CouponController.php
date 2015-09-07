@@ -170,7 +170,6 @@
 					"isLive" => Input::exists('live') ? Input::get('live') : null,
 					"isMatch" => Input::exists(array('team1', 'team2')) ? 1 : 0,
 					"session_id" => Session::getId(),
-					"affichage" => $this->setAffichage($market->id)
 				));
 				Clockwork::info($coupon);
 				$coupon->save();
@@ -247,7 +246,6 @@
 				"isLive" => $isLive,
 				"isMatch" => Input::get('isMatch') == 'true' ? 1 : 0,
 				"session_id" => Input::get('userSessionId'),
-				"affichage" => $this->setAffichage(Input::get('market_id'))
 			));
 			$coupon->save();
 			file_put_contents('log_index.txt', json_encode(Input::all()) . "\n\n", FILE_APPEND | LOCK_EX);

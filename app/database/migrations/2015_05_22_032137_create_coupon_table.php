@@ -46,7 +46,6 @@ class CreateCouponTable extends Migration {
 			$table->boolean('isLive');
 			$table->boolean('isMatch'); // si true, sport co et sinon sport individuel.
 			$table->string('session_id');
-			$table->smallInteger('affichage');
 		});
 	}
 
