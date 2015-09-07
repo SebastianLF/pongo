@@ -832,6 +832,7 @@
       <column name="montant" sqlType="DECIMAL" precision="12" scale="2" nullable="false" jdbcType="3" def="MC4wMA=="/>
       <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="bookmaker_user_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="partial_cash_out_ticket" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="transactions_bookmaker_user_id_foreign" columns="bookmaker_user_id" ref-table="bookmaker_user" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="transactions_bookmaker_user_id_foreign" unique="false" columns="bookmaker_user_id"/>
