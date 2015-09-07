@@ -190,7 +190,6 @@
 			$away_team = Input::exists('away_team') ? Equipe::firstOrCreate(array('name' => Input::get('away_team'), 'sport_id' => $sport->id, 'country_id' => $away_country->id)) : null;
 
 			$market = Market::find(array('id' => Input::get('market_id'))); // le nom peut etre change du coté de betbrain donc on recherche uniquement par id.
-			Clockwork::info($market);
 			if(is_null($market)){
 				Market::create(array('id' => Input::get('market_id'), 'name' => Input::get('sport_Name')));
 			}
