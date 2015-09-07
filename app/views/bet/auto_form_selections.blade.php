@@ -30,7 +30,6 @@
                 <th>rencontre</th>
                 <th>bookmaker</th>
                 <th>pari</th>
-                <th>choix</th>
                 <th>cote</th>
                 <th>action</th>
             </tr>
@@ -52,11 +51,10 @@
                         @endif</td>
                     <td>{{' '.$selection->bookmaker}}<br/></td>
                     <td>
-                        {{' '.$selection->market.' '}}{{$selection->score =! 'null' ? '('.$selection->score.')' : ''}}{{' ('.$selection->scope.') '}}
-                        <br/>
-                    <td>
                         <?php $app = App::make('pari_affichage') ?>
                         {{$app->display($selection->market_id, $selection->pick, $selection->odd_doubleParam1, $selection->odd_doubleParam2, $selection->odd_doubleParam3,  $selection->odd_participantParameterName, $selection->odd_participantParameterName2, $selection->odd_participantParameterName3)}}
+                        <br/>
+                    <td>
 
                     </td>
                     <td><input name="automatic-selection-cote[]" type="text"

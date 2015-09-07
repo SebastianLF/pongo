@@ -22,6 +22,7 @@ class PariAffichage implements PariAffichageInterface{
 		elseif ($market_id == '8') {$affichage_num = 3;}
 		elseif ($market_id == '9') {$affichage_num = 1;}
 		elseif ($market_id == '43') {$affichage_num = 1;}
+		elseif ($market_id == '46') {$affichage_num = 1;}
 		/*elseif ($market_id == '28') {
 			return 6;
 		} elseif ($market_id == '48') {
