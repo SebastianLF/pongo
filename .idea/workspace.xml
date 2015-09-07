@@ -6,8 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/lib/pari/PariAffichage.php" afterPath="$PROJECT_DIR$/app/lib/pari/PariAffichage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="betsmanage.iws" />
@@ -104,8 +102,8 @@
       <file leaf-file-name="PariAffichage.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/lib/pari/PariAffichage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59490085" vertical-offset="135" max-vertical-offset="1410">
-              <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.509915" vertical-offset="135" max-vertical-offset="1410">
+              <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -1645,7 +1643,13 @@
       <option name="project" value="LOCAL" />
       <updated>1441652344594</updated>
     </task>
-    <option name="localTasksCounter" value="160" />
+    <task id="LOCAL-00160" summary="termine table + recap general">
+      <created>1441653827559</created>
+      <option name="number" value="00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1441653827560</updated>
+    </task>
+    <option name="localTasksCounter" value="161" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -2124,8 +2128,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/lib/pari/PariAffichage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59490085" vertical-offset="135" max-vertical-offset="1410">
-          <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.509915" vertical-offset="135" max-vertical-offset="1410">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
           <folding />
         </state>
       </provider>
