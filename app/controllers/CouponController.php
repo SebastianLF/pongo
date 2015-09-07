@@ -189,12 +189,11 @@
 			$home_team = Input::exists('home_team') ? Equipe::firstOrCreate(array('name' => Input::get('home_team'), 'sport_id' => $sport->id, 'country_id' => $home_country->id)) : null;
 			$away_team = Input::exists('away_team') ? Equipe::firstOrCreate(array('name' => Input::get('away_team'), 'sport_id' => $sport->id, 'country_id' => $away_country->id)) : null;
 
-			$market = Market::firstOrCreate(array('id' => Input::get('market_id'))); // le nom peut etre change du coté de betbrain donc on recherche uniquement par id.
+			$market = Market::find(array('id' => Input::get('market_id'))); // le nom peut etre change du coté de betbrain donc on recherche uniquement par id.
+			Clockwork::info($market);
 			if(is_null($market)){
-
+				Market::create(array('id' => Input::get('market_id'), 'name' => Input::get('sport_Name')));
 			}
-			$market->name = Input::get('market'); // donc du coup on met a jour le nom du market si il y a eu une nouvelle creation ou mise à jour si betbrain a décidé de changer le nom du market.
-			$market->save();
 
 			$scope = Scope::firstOrCreate(array('name' => Input::get('scope'))); // recherche par nom parceque betbrain peut envoyer un scope qui a 0 en id ce qui fait buguer.
 
