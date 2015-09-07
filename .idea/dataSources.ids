@@ -435,7 +435,7 @@
     </table>
   </data-source>
   <data-source name="MySQL - slfweb@slfweb.mysql.eu1.frbit.com" uuid="2226fdbd-0f31-48fa-8a3c-f51c98371bf0">
-    <database-info product="MySQL" version="5.5.40-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+    <database-info product="MySQL" version="5.5.40-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
@@ -548,7 +548,6 @@
       <column name="isLive" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
       <column name="isMatch" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
       <column name="session_id" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <column name="affichage" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="devises" schema="" catalog="slfweb" type="TABLE">
@@ -672,6 +671,7 @@
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="priorite" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="representation" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
@@ -700,7 +700,6 @@
       <column name="isMatch" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
       <column name="score" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="resultat" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="affichage" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5"/>
       <column name="market_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="scope_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="sport_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
@@ -832,7 +831,6 @@
       <column name="montant" sqlType="DECIMAL" precision="12" scale="2" nullable="false" jdbcType="3" def="MC4wMA=="/>
       <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="bookmaker_user_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="partial_cash_out_ticket" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="transactions_bookmaker_user_id_foreign" columns="bookmaker_user_id" ref-table="bookmaker_user" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="transactions_bookmaker_user_id_foreign" unique="false" columns="bookmaker_user_id"/>

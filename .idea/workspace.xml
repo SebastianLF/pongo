@@ -6,7 +6,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/CouponController.php" afterPath="$PROJECT_DIR$/app/controllers/CouponController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="betsmanage.iws" />
@@ -66,8 +68,8 @@
       <file leaf-file-name="CouponController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47589424" vertical-offset="2958" max-vertical-offset="5797">
-              <caret line="192" column="0" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.29082426" vertical-offset="3111" max-vertical-offset="5780">
+              <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1703,7 +1705,13 @@
       <option name="project" value="LOCAL" />
       <updated>1441665714270</updated>
     </task>
-    <option name="localTasksCounter" value="166" />
+    <task id="LOCAL-00166" summary="termine table + recap general">
+      <created>1441666073631</created>
+      <option name="number" value="00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1441666073631</updated>
+    </task>
+    <option name="localTasksCounter" value="167" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -2047,16 +2055,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..coupon">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/log_index.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="460">
@@ -2152,10 +2150,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..coupon">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47589424" vertical-offset="2958" max-vertical-offset="5797">
-          <caret line="192" column="0" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.29082426" vertical-offset="3111" max-vertical-offset="5780">
+          <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
           <folding />
         </state>
       </provider>
