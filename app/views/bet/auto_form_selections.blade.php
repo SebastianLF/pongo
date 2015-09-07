@@ -24,7 +24,7 @@
     <div class="table-responsive">
         <table class="table">
             <thead>
-            <tr>
+            <tr class="uppercase">
                 <th>Date</th>
                 <th>Evenement</th>
                 <th>rencontre</th>
