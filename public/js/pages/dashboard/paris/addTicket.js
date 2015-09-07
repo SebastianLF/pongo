@@ -42,12 +42,12 @@ function supprimerSelection(){
     });
 }
 
+// recherche des compte bookmaker lié au bookmaker du premier selection coupon,
+// puis introduits dans le champ de choix des comptes bookmaker du formulaire 'informations genérales'.
 function misAjourCompteBookmaker(){
     $.ajax({
         url: 'updateaccountform',
         success: function (data){
-            console.log(data);
-            console.log(data.length > 0);
             $('#automaticform-add').find('#accountsinputdashboard').html('');
             if(data.length > 0){
                 $('#automaticform-add').find('#accountsinputdashboard').select2({data: data, minimumResultsForSearch: Infinity}).val(data[0]['id']).trigger('change');
@@ -380,7 +380,6 @@ function gestionTicket() {
     refreshSelectionsClick();
     refreshSelections();
     ajouterTicket();
-    misAjourCompteBookmaker();
     gestionTipsters();
     typestakechoice();
     conversionMises();
