@@ -155,7 +155,6 @@ return array(
     'Whoops\\Module' => $vendorDir . '/filp/whoops/src/deprecated/Zend/Module.php',
     'Whoops\\Provider\\Zend\\ExceptionStrategy' => $vendorDir . '/filp/whoops/src/deprecated/Zend/ExceptionStrategy.php',
     'Whoops\\Provider\\Zend\\RouteNotFoundStrategy' => $vendorDir . '/filp/whoops/src/deprecated/Zend/RouteNotFoundStrategy.php',
-    'lib\\facades\\PariAffichage' => $baseDir . '/app/lib/facades/PariAffichage.php',
     'lib\\gestion\\UserGestion' => $baseDir . '/app/lib/gestion/UserGestion.php',
     'lib\\gestion\\UserGestionInterface' => $baseDir . '/app/lib/gestion/UserGestionInterface.php',
     'lib\\pari\\PariAffichage' => $baseDir . '/app/lib/pari/PariAffichage.php',
