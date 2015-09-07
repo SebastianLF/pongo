@@ -46,6 +46,11 @@
 	|
 	*/
 
+	// binding pour l'affichage des parametres de pari dans le bon ordre.
+	App::bind('pari_affichage', function($app){
+		return new lib\pari\PariAffichage;
+	});
+
 	App::error(function (Exception $exception, $code) {
 		Log::error($exception);
 	});

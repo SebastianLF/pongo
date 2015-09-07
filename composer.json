@@ -30,6 +30,7 @@
             "app/tests/TestCase.php",
             "app/lib/validation",
             "app/lib/gestion",
+            "app/lib/pari",
             "app/tests/TestCase.php"
         ]
     },

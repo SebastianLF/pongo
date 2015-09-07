@@ -86,6 +86,9 @@
                         @if($selection->isLive)
                             {{'('.$selection->score.')'}}
                         @endif
+                            <?php $app = App::make('pari_affichage') ?>
+                            {{$app->display($selection->market_id, $selection->pick, $selection->odd_doubleParam1, $selection->odd_doubleParam2, $selection->odd_doubleParam3,  $selection->odd_participantParameterName, $selection->odd_participantParameterName2, $selection->odd_participantParameterName3)}}
+
                     </td>
                     <td><input name="automatic-selection-cote[]" type="text"
                                                                value="{{$selection->odd_value}}"/></td>
