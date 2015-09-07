@@ -51,6 +51,7 @@
         "preferred-install": "dist"
     },
     "minimum-stability": "stable",
+
     "require-dev": {
         "itsgoingd/clockwork": "~1.6"
     }
