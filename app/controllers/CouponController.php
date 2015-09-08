@@ -197,8 +197,12 @@
 			if(Input::exists('home_team')){ $competition->equipes()->save($home_team);}
 			if(Input::exists('away_team')){ $competition->equipes()->save($away_team);}
 
-			$sport->markets()->save($market);
-			$sport->scopes()->save($scope);
+			if(!$sport->markets()->contains($market->id)){
+				$sport->markets()->save($market);
+			}
+			if(!$sport->scopes()->contains($scope->id)){
+				$sport->scopes()->save($scope);
+			}
 
 
 			// verification si l'input islive existe et ensuite suivant si c true ou false.
