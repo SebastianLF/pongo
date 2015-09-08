@@ -190,12 +190,18 @@
 			$away_team = Input::exists('away_team') ? Equipe::firstOrCreate(array('name' => Input::get('away_team'), 'sport_id' => $sport->id, 'country_id' => $away_country->id)) : null;
 
 			$market = Market::firstOrCreate(array('id' => Input::get('market_id'), 'name' => Input::get('market'))); // le nom peut etre change du coté de betbrain donc on recherche uniquement par id.
-
-
 			$scope = Scope::firstOrCreate(array('name' => Input::get('scope'))); // recherche par nom parceque betbrain peut envoyer un scope qui a 0 en id ce qui fait buguer.
 
-			if(Input::exists('home_team')){ $competition->equipes()->save($home_team);}
-			if(Input::exists('away_team')){ $competition->equipes()->save($away_team);}
+			if(Input::exists('home_team')) {
+					if(!$competition->equipes->contains($home_team->id)){
+						$competition->equipes()->save($home_team);
+					}
+			}
+			if(Input::exists('away_team')) {
+				if(!$competition->equipes->contains($away_team->id)){
+					$competition->equipes()->save($away_team);
+				}
+			}
 
 			if(!$sport->markets->contains($market->id)){
 				$sport->markets()->save($market);

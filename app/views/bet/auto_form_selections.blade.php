@@ -22,7 +22,7 @@
 
 @else
     <div class="table-responsive">
-        <table class="table">
+        <table class="table table-condensed">
             <thead>
             <tr class="uppercase">
                 <th>Date</th>
@@ -30,8 +30,8 @@
                 <th>rencontre</th>
                 <th>bookmaker</th>
                 <th>pari</th>
-                <th>cote</th>
-                <th>action</th>
+                <th width="80px">cote</th>
+                <th class="hide">action</th>
             </tr>
             </thead>
             <tbody>
@@ -50,14 +50,14 @@
                             {{'N/A'}}
                         @endif</td>
                     <td>{{' '.$selection->bookmaker}}<br/></td>
-                    <td>
+                    <td class="blue">
                         <?php $app = App::make('pari_affichage') ?>
                         {{$app->display($selection->market_id, $selection->pick, $selection->odd_doubleParam1, $selection->odd_doubleParam2, $selection->odd_doubleParam3,  $selection->odd_participantParameterName, $selection->odd_participantParameterName2, $selection->odd_participantParameterName3)}}
-                        <br/>
+                        {{' ('.$selection->scope.') '}}
                     </td>
-                    <td><input name="automatic-selection-cote[]" type="text"
+                    <td ><input class="input-sm form-control" name="automatic-selection-cote[]" type="text"
                                value="{{$selection->odd_value}}"/></td>
-                    <td>
+                    <td width="5px">
                         <button class="boutonsupprimer btn btn-xs red"><i class="glyphicon glyphicon-trash"></i>
                         </button>
                     </td>
