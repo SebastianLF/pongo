@@ -1,3 +1,9 @@
+## KEEP ALIVE ##
+<ifModule mod_headers.c>
+    Header set Connection keep-alive
+</ifModule>
+## KEEP ALIVE ##
+
 ## EXPIRES CACHING ##
 <IfModule mod_expires.c>
     ExpiresActive On
@@ -15,6 +21,7 @@
 </IfModule>
 ## EXPIRES CACHING ##
 
+## DEFAULT LARAVEL ##
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews
@@ -30,6 +37,4 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
-<ifModule mod_headers.c>
-    Header set Connection keep-alive
-</ifModule>
+## DEFAULT LARAVEL ##
