@@ -30,3 +30,6 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+<ifModule mod_headers.c>
+    Header set Connection keep-alive
+</ifModule>
