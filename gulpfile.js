@@ -3,6 +3,7 @@ var minifycss = require('gulp-minify-css');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var strip = require('gulp-strip-comments');
+var minifyHTML = require('gulp-minify-html');
 
 gulp.task('css', function(){
     return gulp.src(['public/css/*.css', 'public/css/**/*.css'])
@@ -37,6 +38,17 @@ gulp.task('welcome-js', function() {
         .pipe(concat('welcome.js'))
         .pipe(uglify())
         .pipe(gulp.dest('public/build/js'));
+});
+
+gulp.task('minify-html', function() {
+    var opts = {
+        conditionals: true,
+        spare:true
+    };
+
+    return gulp.src('app/views/pages/login.blade.php')
+        .pipe(minifyHTML(opts))
+        .pipe(gulp.dest('app/dist'));
 });
 
 gulp.task('default', ["dashboard-js"], function(){
