@@ -161,8 +161,8 @@
                                                 <tr class="uppercase">
                                                     <th>evenement</th>
                                                     <th>pari</th>
-                                                    
-                                                    
+
+
                                                     <th>cote</th>
                                                     <th>score/autre</th>
                                                     <th>status</th>
@@ -184,7 +184,10 @@
                                                         <td class="blue">
                                                             <?php $app = App::make('pari_affichage') ?>
                                                             {{$app->display($pari->selections->first()->market_id, $pari->selections->first()->pick, $pari->selections->first()->odd_doubleParam1, $pari->selections->first()->odd_doubleParam2, $pari->selections->first()->odd_doubleParam3,  $pari->selections->first()->odd_participantParameterName, $pari->selections->first()->odd_participantParameterName2, $pari->selections->first()->odd_participantParameterName3)}}
-
+                                                            {{' ('.$pari->selections->first()->scope.') '}}
+                                                            @if($pari->selections->first()->score)
+                                                                    {{' ('.$pari->selections->first()->score.' LIVE!) '}}
+                                                            @endif
                                                         </td>
                                                         
                                                         <td>

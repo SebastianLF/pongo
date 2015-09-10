@@ -224,7 +224,6 @@
 							'isLive' => $selection_coupon->isLive,
 							'isMatch' => $selection_coupon->isMatch,
 							'score' => $selection_coupon->score,
-							'affichage' => $selection_coupon->affichage,
 							'market_id' => $selection_coupon->market_id,
 							'scope_id' => $selection_coupon->scope_id,
 							'sport_id' => $selection_coupon->sport_id,

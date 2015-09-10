@@ -8,13 +8,24 @@ function loadParisEnCours() {
         type: 'get',
         success: function (data) {
             $('#tab_15_1').html(data.vue);
+            $('.subbetclick a').on('click', function(){
+                if($(this).find('i').hasClass('glyphicon-chevron-right')){
+                    $(this).find('i').removeClass('glyphicon-chevron-right');
+                    $(this).find('i').addClass('glyphicon-chevron-down');
+                }else{
+                    $(this).find('i').addClass('glyphicon-chevron-right');
+                    $(this).find('i').removeClass('glyphicon-chevron-down');
+                }
+                var nom_subrow = $('.subbetclick a').data('target');
+                $('#paristerminetable').find(nom_subrow);
+            });
 
             // afficher le count dans le bon endroit.
             var count = data.count_paris_encours;
             if (count == 0) {
-                $('#onglet_paris_en_cours span').text('');
+                onglet.text('');
             } else {
-                $('#onglet_paris_en_cours span').html(count);
+                onglet.html(count);
             }
 
             featuresParisEnCours();

@@ -116,7 +116,6 @@
 			$messages = array();
 
 			$validator = Validator::make(Input::all(), $regles, $messages);
-			Clockwork::info($validator->getData());
 			if ($validator->fails()) {
 				$array = $validator->getMessageBag()->toArray();
 				return Response::json(array(
