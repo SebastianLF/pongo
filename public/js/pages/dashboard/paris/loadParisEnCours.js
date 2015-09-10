@@ -10,7 +10,7 @@ function loadParisEnCours() {
         type: 'get',
         success: function (data) {
             $('#tab_15_1').html(data.vue);
-            table.find('.subbetclick a').on('click', function(){
+            table.find('.subbetclick a').click(function(){
                 if($(this).find('i').hasClass('glyphicon-chevron-right')){
                     $(this).find('i').removeClass('glyphicon-chevron-right');
                     $(this).find('i').addClass('glyphicon-chevron-down');
@@ -37,6 +37,7 @@ function loadParisEnCours() {
 }
 
 function loadParisTermine() {
+    var table = $("#paristerminetable");
     $.ajax({
         url: 'dashboard/ajax/paristermine',
         data: {page: 1},
@@ -44,12 +45,12 @@ function loadParisTermine() {
         success: function (data) {
             $('#tab_15_4').html(data);
             parisTermineDelete();
-            $("#paristerminetable .boutonsupprimer").click(function (e) {
+            table.find(".boutonsupprimer").click(function (e) {
                 e.stopPropagation();
             });
 
             // chevron changes icon on click for combiné/parlay.
-            $('.subbetclick a').on('click', function(){
+            $('.subbetclick a').click(function(){
                 if($(this).find('i').hasClass('glyphicon-chevron-right')){
                     $(this).find('i').removeClass('glyphicon-chevron-right');
                     $(this).find('i').addClass('glyphicon-chevron-down');

@@ -66,7 +66,11 @@
                             <td class="blue" width="" colspan="2">
                                 <?php $app = App::make('pari_affichage') ?>
                                 {{$app->display($pari->selections->first()->market_id, $pari->selections->first()->pick, $pari->selections->first()->odd_doubleParam1, $pari->selections->first()->odd_doubleParam2, $pari->selections->first()->odd_doubleParam3,  $pari->selections->first()->odd_participantParameterName, $pari->selections->first()->odd_participantParameterName2, $pari->selections->first()->odd_participantParameterName3)}}
-                                </td>
+                                    {{' ('.$pari->selections->first()->scope->name.') '}}
+                                    @if($pari->selections->first()->score)
+                                        {{' ('.$pari->selections->first()->score.' LIVE!) '}}
+                                    @endif
+                            </td>
                                 <td class="">{{$pari->tipster->name}}</td>
                                 <td class="">{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}
                                 </td>
@@ -115,7 +119,8 @@
                                     <td class="hidden id">{{$pari->id}}</td>
                                     <td class="subbetclick"><a data-toggle="collapse"
                                                                data-target="{{'.row'.$pari->numero_pari}}"
-                                                               class=""><i class="glyphicon glyphicon-chevron-right"></i></a></td>
+                                                               class=""><i class="glyphicon glyphicon-chevron-right"></i></a>
+                                    </td>
                                     <td class="primary-link">{{'#'.$pari->numero_pari}}</td>
                                     <td>
                                         <span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>
