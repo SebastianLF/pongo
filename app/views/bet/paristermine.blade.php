@@ -42,7 +42,7 @@
 
                             <tr data-toggle="collapse" data-target="{{'.row'.$pari->numero_pari}}" class="mainrow accordion-toggle parisencours-accordeon">
                                 <td class="hidden id">{{$pari->id}}</td>
-                                <td width="20px" class="subbetclick"></td>
+                                <td width="20px" ></td>
                                 <td class="primary-link">{{'#'.$pari->numero_pari}}</td>
 
                                 <td><span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_live ? 'live' : '' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_gratuit ? 'gratuit' : '' }}</span></td>
@@ -237,7 +237,7 @@
                                                     <th>rencontre</th>
                                                     <th>pari</th>
                                                     <th>cote</th>
-                                                    <th>resultat</th>
+                                                    <th>score/autre</th>
                                                     <th>status</th>
                                                 </tr>
                                                 </thead>
@@ -252,25 +252,13 @@
                                                         <td>
                                                             @if($selection->isMatch) {{'('.$selection->date_match.') '.$selection->game_name}} @else {{"N/A"}}@endif
                                                         </td>
-                                                        <td class="blue">{{$selection->market->name.(' : ')}}
-                                                            @if($selection->affichage == 1)
-                                                                    {{$selection->pick}}
-                                                                 @elseif($selection->affichage == 2)
-                                                                    {{$selection->pick}}{{' '}}{{$selection->odd_doubleParam}}
-                                                                 @elseif($selection->affichage == 3)
-                                                                    {{$selection->pick}}{{', '}}{{$selection->odd_participantParameterName}}{{' '}}{{$selection->odd_doubleParam}}
-                                                                 @elseif($selection->affichage == 4)
-                                                                    {{$selection->pick}}{{', '}}{{$selection->odd_doubleParam}}{{'-'}}{{$selection->odd_doubleParam2}}{{' minutes'}}
-                                                                 @elseif($selection->affichage == 5)
-                                                                     @if($selection->odd_doubleParam > 0)
-                                                                    {{', '}}{{$selection->odd_participantParameterName}}{{' +'}}{{$selection->odd_doubleParam}}
-                                                                     @else
-                                                                        {{', '}}{{$selection->odd_participantParameterName}}{{' '}}{{$selection->odd_doubleParam}}
-                                                                     @endif
-                                                                 @elseif($selection->affichage == 6)
-                                                                    {{$selection->pick}}{{', '}}{{' Top '}}{{$selection->odd_doubleParam1}}
+                                                        <td class="blue">
+                                                            <?php $app = App::make('pari_affichage') ?>
+                                                            {{$app->display($selection->market_id, $selection->pick, $selection->odd_doubleParam1, $selection->odd_doubleParam2, $selection->odd_doubleParam3,  $selection->odd_participantParameterName, $selection->odd_participantParameterName2, $selection->odd_participantParameterName3)}}
+                                                            {{' ('.$selection->scope->name.') '}}
+                                                            @if($selection->score)
+                                                                {{' ('.$selection->score.' LIVE!) '}}
                                                             @endif
-                                                            @if(!is_null($selection->score)){{'('.$selection->score.')'}} @endif
                                                         </td>
 
                                                         <td>

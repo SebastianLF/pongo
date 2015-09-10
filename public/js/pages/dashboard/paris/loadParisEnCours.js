@@ -1,14 +1,16 @@
 
 
 function loadParisEnCours() {
-    var onglet = $('#onglet_paris_en_cours span');
+    var onglet = $('#onglet_paris_en_cours');
+    var onglet_span = onglet.find('span');
+    var table = $('#parisencourstable');
     $.ajax({
         url: 'dashboard/ajax/parisencours',
         data: {page: 1},
         type: 'get',
         success: function (data) {
             $('#tab_15_1').html(data.vue);
-            $('.subbetclick a').on('click', function(){
+            table.find('.subbetclick a').on('click', function(){
                 if($(this).find('i').hasClass('glyphicon-chevron-right')){
                     $(this).find('i').removeClass('glyphicon-chevron-right');
                     $(this).find('i').addClass('glyphicon-chevron-down');
@@ -16,16 +18,13 @@ function loadParisEnCours() {
                     $(this).find('i').addClass('glyphicon-chevron-right');
                     $(this).find('i').removeClass('glyphicon-chevron-down');
                 }
-                var nom_subrow = $('.subbetclick a').data('target');
-                $('#paristerminetable').find(nom_subrow);
             });
 
             // afficher le count dans le bon endroit.
-            var count = data.count_paris_encours;
-            if (count == 0) {
-                onglet.text('');
+            if (data.count_paris_encours == 0) {
+                onglet_span.text('');
             } else {
-                onglet.html(count);
+                onglet_span.html(data.count_paris_encours);
             }
 
             featuresParisEnCours();
@@ -49,6 +48,7 @@ function loadParisTermine() {
                 e.stopPropagation();
             });
 
+            // chevron changes icon on click for combiné/parlay.
             $('.subbetclick a').on('click', function(){
                 if($(this).find('i').hasClass('glyphicon-chevron-right')){
                     $(this).find('i').removeClass('glyphicon-chevron-right');
@@ -57,8 +57,6 @@ function loadParisTermine() {
                     $(this).find('i').addClass('glyphicon-chevron-right');
                     $(this).find('i').removeClass('glyphicon-chevron-down');
                 }
-                var nom_subrow = $('.subbetclick a').data('target');
-                $('#paristerminetable').find(nom_subrow);
             });
 
             // barre de défilement vertical pour les paris terminés.
@@ -70,9 +68,9 @@ function loadParisTermine() {
                     alwaysVisible: true
                 });
             });
-            $('#paristerminetable').tableSearch({});
 
-
+            // table search
+            $('#paristerminetable').tableSearch({}); // sans les crochets-parenthese ca ne marche pas, il faut bien les laisser.
         },
         error: function (data) {
             $('#tab_15_4').html('<p>impossible de récuperer les paris terminés</p>');

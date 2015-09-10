@@ -24,6 +24,10 @@ class Selection extends Eloquent{
 		return $this->belongsTo('Sport');
 	}
 
+	public function scope(){
+		return $this->belongsTo('Scope');
+	}
+
 	public function country(){
 		return $this->belongsTo('Country');
 	}

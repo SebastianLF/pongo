@@ -35,10 +35,10 @@
 
                     <!-- pour le cas d'un pari simple. -->
                         @if($pari->type_profil == 's')
-                            <a href="">
+
                             <tr data-toggle="collapse" data-target="{{'.row'.$pari->numero_pari}}" class="mainrow accordion-toggle parisencours-accordeon">
                                 <td class="hidden id">{{$pari->id}}</td>
-                                <td width="20px" class="subbetclick"></td>
+                                <td width="20px"></td>
                                 <td class="primary-link">{{'#'.$pari->numero_pari}}</td>
                                 
                                 <td><span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">@if($pari->pari_abcd){{$pari->nom_abcd.' - '.$pari->lettre_abcd}}@endif</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_live ? 'live' : '' }}</span>{{' '}}<span class="label label-sm label-danger label-mini">{{$pari->pari_gratuit ? 'gratuit' : '' }}</span></td>
@@ -103,13 +103,12 @@
                                     @endif
                                 </td>
                             </tr>
-                        </a>
+
 
 
 
                         <!-- dans le cas d'un pari combiné. -->
                         @else
-                            <a href="">
                                 <tr data-toggle="collapse" data-target="{{'.row'.$pari->numero_pari}}"
                                     class="mainrow accordion-toggle parisencours-accordeon">
 
@@ -155,14 +154,13 @@
                                 <tr class="subrow">
                                     <td colspan="17" class="childtable cancel-padding">
                                         <div class="{{'accordian-body collapse row'.$pari->numero_pari}}">
-                                            <table class="table table-striped child-table table-bordered table-subrow-combine">
+                                            <table class="table child-table table-bordered table-condensed table-subrow-combine table-responsive">
                                                 <thead>
 
                                                 <tr class="uppercase">
                                                     <th>evenement</th>
+                                                    <th>rencontre</th>
                                                     <th>pari</th>
-
-
                                                     <th>cote</th>
                                                     <th>score/autre</th>
                                                     <th>status</th>
@@ -173,20 +171,18 @@
                                                 @foreach($pari->selections as $selection)
                                                     <tr class="child-table-tr">
                                                         <td class="hidden child-id">{{$selection->id}}</td>
-                                                        <td>{{$pari->selections->first()->date_match.' -'}}
-                                                            {{$pari->selections->first()->sport->name}}{{', '}}{{$pari->selections->first()->competition->name}}
-                                                        
-                                                        @if($pari->selections->first()->isMatch)
-                                                                    {{', '}}<strong>{{$pari->selections->first()->game_name}}</strong>
-                                                                  @else
-                                                            @endif
+                                                        <td>
+                                                            {{$selection->sport->name}}{{', '}}{{$selection->competition->name}}
+                                                        </td>
+                                                        <td>
+                                                            @if($selection->isMatch) {{'('.$selection->date_match.') '.$selection->game_name}} @else {{"N/A"}}@endif
                                                         </td>
                                                         <td class="blue">
                                                             <?php $app = App::make('pari_affichage') ?>
-                                                            {{$app->display($pari->selections->first()->market_id, $pari->selections->first()->pick, $pari->selections->first()->odd_doubleParam1, $pari->selections->first()->odd_doubleParam2, $pari->selections->first()->odd_doubleParam3,  $pari->selections->first()->odd_participantParameterName, $pari->selections->first()->odd_participantParameterName2, $pari->selections->first()->odd_participantParameterName3)}}
-                                                            {{' ('.$pari->selections->first()->scope.') '}}
-                                                            @if($pari->selections->first()->score)
-                                                                    {{' ('.$pari->selections->first()->score.' LIVE!) '}}
+                                                            {{$app->display($selection->market_id, $selection->pick, $selection->odd_doubleParam1, $selection->odd_doubleParam2, $selection->odd_doubleParam3,  $selection->odd_participantParameterName, $selection->odd_participantParameterName2, $selection->odd_participantParameterName3)}}
+                                                            {{' ('.$selection->scope->name.') '}}
+                                                            @if($selection->score)
+                                                                    {{' ('.$selection->score.' LIVE!) '}}
                                                             @endif
                                                         </td>
                                                         
@@ -219,7 +215,7 @@
 
 
                                 </tr>
-                            </a>
+
                         @endif
 
                     </div>
