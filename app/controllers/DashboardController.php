@@ -21,7 +21,7 @@
 
 		public function showDashboard()
 		{
-			Excel::selectSheetsByIndex(0)->load('xls/BettingTypes.xls', function ($reader) {
+			/*Excel::selectSheetsByIndex(0)->load('xls/BettingTypes.xls', function ($reader) {
 				// Getting all results
 				$results = $reader->get();
 				Clockwork::info($results);
@@ -46,7 +46,7 @@
 					$name = trim($result->name);
 					Bookmaker::create(array('nom' => $name));
 				}
-			});
+			});*/
 			return View::make('pages.dashboard');
 		}
 
@@ -59,7 +59,7 @@
 		public function showTipsters()
 		{
 			if (Request::ajax()) {
-				;
+
 			}
 		}
 
