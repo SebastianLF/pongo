@@ -6,9 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Competition.php" afterPath="$PROJECT_DIR$/app/models/Competition.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/CouponController.php" afterPath="$PROJECT_DIR$/app/controllers/CouponController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="betsmanage.iws" />
@@ -65,21 +64,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CouponController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CouponController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5384617" vertical-offset="3026" max-vertical-offset="5950">
-              <caret line="188" column="94" selection-start-line="188" selection-start-column="94" selection-end-line="188" selection-end-column="94" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Competition.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/Competition.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25914633" vertical-offset="0" max-vertical-offset="656">
-              <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.44945568" vertical-offset="3026" max-vertical-offset="6018">
+              <caret line="195" column="0" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -88,31 +77,18 @@
       <file leaf-file-name="DashboardController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.423077" vertical-offset="459" max-vertical-offset="3332">
+            <state vertical-scroll-proportion="-30.076923" vertical-offset="0" max-vertical-offset="3332">
               <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slfweb.markets" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..markets">
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="auto_form_selections.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.038462" vertical-offset="700" max-vertical-offset="1343">
-              <caret line="55" column="55" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+            <state vertical-scroll-proportion="-15.576923" vertical-offset="547" max-vertical-offset="1343">
+              <caret line="56" column="47" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="47" />
               <folding>
                 <marker date="1441900126644" expanded="true" signature="2378:2636" placeholder="..." />
               </folding>
@@ -218,9 +194,9 @@
         <option value="$PROJECT_DIR$/app/views/bet/paristermine.blade.php" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js" />
         <option value="$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/CouponController.php" />
         <option value="$PROJECT_DIR$/app/controllers/DashboardController.php" />
         <option value="$PROJECT_DIR$/app/models/Competition.php" />
+        <option value="$PROJECT_DIR$/app/controllers/CouponController.php" />
       </list>
     </option>
   </component>
@@ -1727,7 +1703,13 @@
       <option name="project" value="LOCAL" />
       <updated>1441911838237</updated>
     </task>
-    <option name="localTasksCounter" value="185" />
+    <task id="LOCAL-00185" summary="termine table + recap general">
+      <created>1441912442272</created>
+      <option name="number" value="00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1441912442272</updated>
+    </task>
+    <option name="localTasksCounter" value="186" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1808,20 +1790,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/lib/gestion/UserGestionInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="541">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/validation/BaseValidator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08695652" vertical-offset="2" max-vertical-offset="555">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_06_08_002304_create_scopes_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.434783" vertical-offset="0" max-vertical-offset="600">
@@ -1935,13 +1903,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3161157" vertical-offset="0" max-vertical-offset="484">
           <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Market.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13682093" vertical-offset="0" max-vertical-offset="497">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -2075,17 +2036,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..countries">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..en_cours_paris">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
@@ -2152,39 +2102,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..competitions">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..sports">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.038462" vertical-offset="700" max-vertical-offset="1343">
-          <caret line="55" column="55" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
-          <folding>
-            <marker date="1441900126644" expanded="true" signature="2378:2636" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..markets">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -2206,26 +2124,99 @@
         </state>
       </provider>
     </entry>
+    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..markets">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..countries">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..competitions">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..equipes">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..scopes">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.576923" vertical-offset="547" max-vertical-offset="1343">
+          <caret line="56" column="47" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="47" />
+          <folding>
+            <marker date="1441900126644" expanded="true" signature="2378:2636" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.423077" vertical-offset="459" max-vertical-offset="3332">
+        <state vertical-scroll-proportion="-30.076923" vertical-offset="0" max-vertical-offset="3332">
           <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
+    <entry file="file://$PROJECT_DIR$/app/models/Market.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617" vertical-offset="3026" max-vertical-offset="5950">
-          <caret line="188" column="94" selection-start-line="188" selection-start-column="94" selection-end-line="188" selection-end-column="94" />
+        <state vertical-scroll-proportion="0.103658535" vertical-offset="0" max-vertical-offset="656">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Competition.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25914633" vertical-offset="0" max-vertical-offset="656">
-          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.18140244" vertical-offset="0" max-vertical-offset="656">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44945568" vertical-offset="3026" max-vertical-offset="6018">
+          <caret line="195" column="0" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
           <folding />
         </state>
       </provider>

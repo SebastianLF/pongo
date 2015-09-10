@@ -8,7 +8,7 @@ class Competition extends Eloquent {
 
     protected $dates = ['deleted_at'];
     protected $table = 'competitions';
-    protected $fillable = array('id', 'name', 'sport_id', 'country_id');
+    protected $fillable = array('name', 'sport_id', 'country_id');
 
     public function equipes(){
         return $this->belongsToMany('Equipe','competition_equipe');
