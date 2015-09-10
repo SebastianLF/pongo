@@ -186,7 +186,7 @@
 			$event_country = Country::firstOrCreate(array('name' => Input::get('event_country_name')));
 			$home_country = Input::exists('home_team') ? Country::firstOrCreate(array('name' => Input::get('home_team_country_name'))) : null;
 			$away_country = Input::exists('away_team') ? Country::firstOrCreate(array('name' => Input::get('away_team_country_name'))) : null;
-			$competition = Competition::firstOrCreate(array('name' => Input::get('league_name'), 'sport_id' => $sport->id, 'country_id' => $event_country->id));
+			$competition = Competition::firstOrCreate(array( 'id' => Input::get('league_id'), 'name' => Input::get('league_name'), 'sport_id' => $sport->id, 'country_id' => $event_country->id));
 			$home_team = Input::exists('home_team') ? Equipe::firstOrCreate(array('name' => Input::get('home_team'), 'sport_id' => $sport->id, 'country_id' => $home_country->id)) : null;
 			$away_team = Input::exists('away_team') ? Equipe::firstOrCreate(array('name' => Input::get('away_team'), 'sport_id' => $sport->id, 'country_id' => $away_country->id)) : null;
 
@@ -207,7 +207,7 @@
 			if(!$sport->markets->contains($market->id)){
 				$sport->markets()->save($market);
 			}
-			if(!$sport->scopes->contains($scope->id)){
+			if(!$sport ->scopes->contains($scope->id)){
 				$sport->scopes()->save($scope);
 			}
 
