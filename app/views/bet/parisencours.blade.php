@@ -46,8 +46,10 @@
                                     {{{$pari->selections->first()->sport->name.', '.$pari->selections->first()->competition->name}}}
                                 </td>
                                 <td colspan="2">
-                                        @if($pari->selections->first()->isMatch)
-                                        {{{' ('.$pari->selections->first()->date_match.') -'}}}
+                                    @if($pari->selections->first()->isMatch)
+                                        <?php $date = Carbon::createFromFormat('Y-m-d H:i:s', $pari->selections->first()->date_match, 'Europe/Paris');
+                                        $date->setTimezone(Auth::user()->timezone);?>
+                                        {{{' ('.$date.') -'}}}
                                         {{{$pari->selections->first()->game_name}}}
                                     @else
                                         {{{'N/A'}}}

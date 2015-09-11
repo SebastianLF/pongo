@@ -28,6 +28,10 @@
 	//faq page
 	Route::get('faq', 'FAQController@index');
 
+	// markets page
+	Route::resource('market', 'MarketController');
+
+
 	Route::group(array('/', 'dashboard', 'config', 'faq', 'stats', 'preferences', 'profile'), function(){
 
 	});

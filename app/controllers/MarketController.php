@@ -1,10 +1,7 @@
 <?php
 
-class PreferenceController extends BaseController {
-	public function __construct()
-	{
-		parent::__construct();
-	}
+class MarketController extends BaseController {
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -12,7 +9,8 @@ class PreferenceController extends BaseController {
 	 */
 	public function index()
 	{
-        return View::make('pages.preferences');
+		$markets = Market::orderBy('name', 'ASC')->get();
+        return View::make('pages.markets', array('markets' => $markets));
 	}
 
 	/**
@@ -22,7 +20,7 @@ class PreferenceController extends BaseController {
 	 */
 	public function create()
 	{
-        return View::make('preferences.create');
+        return View::make('markets.create');
 	}
 
 	/**
@@ -43,7 +41,7 @@ class PreferenceController extends BaseController {
 	 */
 	public function show($id)
 	{
-        return View::make('preferences.show');
+        return View::make('markets.show');
 	}
 
 	/**
@@ -54,7 +52,7 @@ class PreferenceController extends BaseController {
 	 */
 	public function edit($id)
 	{
-        return View::make('preferences.edit');
+        return View::make('markets.edit');
 	}
 
 	/**
@@ -65,6 +63,7 @@ class PreferenceController extends BaseController {
 	 */
 	public function update($id)
 	{
+		//
 	}
 
 	/**

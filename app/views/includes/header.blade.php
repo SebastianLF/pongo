@@ -76,16 +76,16 @@
         <div class="hor-menu ">
             <ul class="nav navbar-nav">
                 <li>
-
-                    <a href="{{url('dashboard')}}"><span class="glyphicon glyphicon-dashboard"></span>Dashboard</a>
+                    <a href="{{url('dashboard')}}"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a>
                 </li>
                 <li>
-
-                    <a href="{{url('config')}}"><span class="glyphicon glyphicon-cog"></span>Configuration</a>
+                    <a href="{{url('config')}}"><span class="glyphicon glyphicon-cog"></span> Configuration</a>
                 </li>
                 <li>
-
-                    <a href="{{url('faq')}}"><span class="fa fa-comments"></span>FAQ</a>
+                    <a href="{{url('faq')}}"><span class="fa fa-comments"></span> FAQ</a>
+                </li>
+                <li>
+                    <a href="{{url('market')}}"><span class="glyphicon glyphicon-th-list"></span> Glossaire Paris</a>
                 </li>
                 <!--<li>
                     <a href="{{url('stats')}}"><span class="glyphicon glyphicon glyphicon-stats"></span>Statistiques</a>
