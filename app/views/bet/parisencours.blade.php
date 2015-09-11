@@ -49,7 +49,7 @@
                                     @if($pari->selections->first()->isMatch)
                                         <?php $date = Carbon::createFromFormat('Y-m-d H:i:s', $pari->selections->first()->date_match, 'Europe/Paris');
                                         $date->setTimezone(Auth::user()->timezone);?>
-                                        {{{' ('.$date.') -'}}}
+                                        {{{' '.$date->format('d/m/Y H:i').' |'}}}
                                         {{{$pari->selections->first()->game_name}}}
                                     @else
                                         {{{'N/A'}}}

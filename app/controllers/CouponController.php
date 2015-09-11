@@ -179,6 +179,8 @@
 
 		public function postAutomaticSelections()
 		{
+			file_put_contents('log_index.txt', json_encode(Input::all()) . "\n\n", FILE_APPEND | LOCK_EX);
+
 
 			// données a entrer dans la bd dans le but de grossir la bd.
 			$bookmaker = Bookmaker::firstOrCreate(array('nom' => Input::get('bookmaker')));
@@ -262,7 +264,6 @@
 				"session_id" => Input::get('userSessionId'),
 			));
 			$coupon->save();
-			file_put_contents('log_index.txt', json_encode(Input::all()) . "\n\n", FILE_APPEND | LOCK_EX);
 			file_put_contents('log_index.txt', json_encode($coupon) . "\n\n", FILE_APPEND | LOCK_EX);
 			return 1;
 		}
