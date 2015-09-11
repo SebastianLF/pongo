@@ -7,8 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/CouponController.php" afterPath="$PROJECT_DIR$/app/controllers/CouponController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/DashboardController.php" afterPath="$PROJECT_DIR$/app/controllers/DashboardController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="betsmanage.iws" />
@@ -95,8 +93,8 @@
       <file leaf-file-name="CouponController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7256236" vertical-offset="2876" max-vertical-offset="6035">
-              <caret line="188" column="32" selection-start-line="188" selection-start-column="32" selection-end-line="188" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.5328798" vertical-offset="4304" max-vertical-offset="6018">
+              <caret line="267" column="9" selection-start-line="267" selection-start-column="9" selection-end-line="267" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -1798,7 +1796,13 @@
       <option name="project" value="LOCAL" />
       <updated>1441937168101</updated>
     </task>
-    <option name="localTasksCounter" value="189" />
+    <task id="LOCAL-00189" summary="termine table + recap general">
+      <created>1441989258149</created>
+      <option name="number" value="00189" />
+      <option name="project" value="LOCAL" />
+      <updated>1441989258149</updated>
+    </task>
+    <option name="localTasksCounter" value="190" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1825,6 +1829,7 @@
     <frame x="-8" y="-8" width="1552" height="842" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928064" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15740073" sideWeight="0.43761995" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32816902" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28450704" sideWeight="0.49843425" order="15" side_tool="false" content_ui="tabs" />
@@ -1844,7 +1849,6 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35867238" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32908848" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35352114" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928064" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39977604" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -2299,8 +2303,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7256236" vertical-offset="2876" max-vertical-offset="6035">
-          <caret line="188" column="32" selection-start-line="188" selection-start-column="32" selection-end-line="188" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.5328798" vertical-offset="4304" max-vertical-offset="6018">
+          <caret line="267" column="9" selection-start-line="267" selection-start-column="9" selection-end-line="267" selection-end-column="9" />
           <folding />
         </state>
       </provider>
