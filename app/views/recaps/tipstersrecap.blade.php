@@ -36,7 +36,7 @@
             ?>
         <tr>
             <td>
-                <a href="javascript:;" class="primary-link">{{$recap_tipster->followtype == 'b' ? $recap_tipster->tipster->name.' <span class="label label-sm label-warning label-mini">B</span>' : $recap_tipster->tipster->name}}</a>
+                <span class="primary-link">{{$recap_tipster->followtype == 'b' ? $recap_tipster->tipster->name.' <span class="label label-sm label-warning label-mini">B</span>' : $recap_tipster->tipster->name}}</span>
             </td>
             <td>
                 {{floatval(round($recap_tipster->moyenne_cote_par_mois_tipster, 2))}}

@@ -96,7 +96,7 @@
                                     </select></td>
                                 <td class="bold fontsize15" width=""><span class="profits"></span><span class="devise hide">{{{' '.Auth::user()->devise}}}</span></td>
 
-                                <td width="150px">
+                                <td width="200px">
                                     {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris', 'role' => 'form', 'data-toggle' => 'tooltip', 'data-original-title' => 'Confirmer')) }}
                                     {{ Form::button('<i class="fa fa-check"></i>', array('type' => 'submit', 'class' => 'boutonvalider btn btn-sm green', 'disabled' => 'disabled')) }}
                                     {{ Form::close() }}
@@ -107,7 +107,7 @@
                                     @if($pari->followtype == 'n')
                                     {{ Form::button('<i class="fa fa-briefcase"></i>', array('type' => 'submit', 'class' => 'btn btn-sm grey-gallery form-bouton-paris', 'data-toggle' => 'modal', 'data-target' => '#cashoutModal', 'data-hover' => 'tooltip', 'data-id' => $pari->id, 'title' => 'Cash Out')) }}
                                     @endif
-                                    <a class="button btn btn-sm grey-gallery boutonshowticket form-bouton-paris" type='button' href="{{ url('ticket/'.$pari->numero_pari)}}"><span class="glyphicon glyphicon-play"></span></a>
+                                    <a class="button btn btn-sm grey-gallery boutonshowticket form-bouton-paris" type='button' href="{{ url('ticket/'.$pari->numero_pari)}}" target="_blank"><span class="glyphicon glyphicon-play"></span></a>
                                 </td>
                             </tr>
 
@@ -157,7 +157,7 @@
                                         @if($pari->followtype == 'n')
                                         {{ Form::button('<i class="fa fa-briefcase"></i>', array('type' => 'submit', 'class' => 'btn btn-sm grey-gallery boutoncashout form-bouton-paris', 'data-toggle' => 'modal', 'data-target' => '#cashoutModal', 'data-hover' => 'tooltip', 'data-id' => $pari->id, 'title' => 'Cash Out')) }}
                                         @endif
-                                        <a class="button btn btn-sm grey-gallery boutonshowticket form-bouton-paris" type='button' href="{{ url('ticket/'.$pari->numero_pari)}}"><span class="glyphicon glyphicon-play"></span></a>
+                                        <a class="button btn btn-sm grey-gallery boutonshowticket form-bouton-paris" type='button' href="{{ url('ticket/'.$pari->numero_pari)}}" target="_blank"><span class="glyphicon glyphicon-play"></span></a>
                                     </td>
                                 </tr>
                                 <tr class="subrow">
