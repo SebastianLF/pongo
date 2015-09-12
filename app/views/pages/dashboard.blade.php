@@ -109,7 +109,6 @@
                                 </div>
 
                                 <div class="portlet-body form form-automatic">
-                                    <div class="panel-group" id="accordion-add-ticket" role="tablist" aria-multiselectable="true">
                                         <div class="panel panel-default">
                                             <div class="panel-heading" role="tab" id="headingOne">
                                                 <h4 class="panel-title">
@@ -147,7 +146,7 @@
                                             </div>
                                         </div>
 
-                                    </div>
+
 
                                     <div>
                                     </div>

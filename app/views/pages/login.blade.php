@@ -24,19 +24,19 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
 <body class="login">
-<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-<div class="menu-toggler sidebar-toggler">
-</div>
-<!-- END SIDEBAR TOGGLER BUTTON -->
+
 <!-- BEGIN LOGO -->
-<div class="logo">
+<div class="logo color-white">
     <a href="{{url('dashboard')}}">
         <img src="{{asset('img/logo-pongo-blanc.jpg')}}" alt=""/>
     </a>
+    <h1>Pongo</h1>
+    <h2>Application de suivi de paris, de tipsters et de bookmakers pour les parieurs sportifs.</h2>
 </div>
 <!-- END LOGO -->
 <!-- BEGIN LOGIN -->
 <div class="content">
+
     <!-- BEGIN LOGIN FORM -->
     {{ Form::open(array('url' => 'auth/login', 'method' => 'post', 'class' => '')) }}
     <h3 class="form-title">Se connecter</h3>
@@ -67,7 +67,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- END LOGIN FORM -->
 </div>
 <div class="copyright">
-    2014 © Metronic Design Template. Pongo - All Rights Reserved
+    Pongo - All Rights Reserved. Template Design by Metronic.
 </div>
 <!-- END LOGIN -->
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
@@ -106,10 +106,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
     jQuery(document).ready(function () {
-
         Metronic.init(); // init metronic core components
         Layout.init(); // init current layout
-        Demo.init();
     });
 </script>
 <!-- END JAVASCRIPTS -->

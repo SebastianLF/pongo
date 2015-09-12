@@ -23,6 +23,11 @@
                             </div>
                         </div>
                         <div class="portlet-body">
+                            <div class="note note-danger">
+                                <p>
+                                    CTRL + F puis tapez le nom du type de pari pour le retrouver plus rapidement sur la page.
+                                </p>
+                            </div>
                             <table class="table table-condensed table-bordered">
                                 <thead>
                                 <tr class="uppercase">

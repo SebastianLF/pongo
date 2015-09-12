@@ -25,7 +25,7 @@ class AuthController extends Controller {
 
 	public function getLogin()
 	{
-		return View::make('dist.login');
+		return View::make('pages.login');
 	}
 
 	public function postLogin()
