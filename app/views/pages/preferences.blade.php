@@ -24,14 +24,29 @@
                         </div>
                         <div class="portlet-body form">
                             <!-- BEGIN FORM-->
-                            {{Form::open(array('route' => array('preferences.update', Auth::user()->id), 'class' => 'form-horizontal form-bordered' ))}}
+                            {{Form::open(array('url' =>'user/preferences', 'method' => 'post', 'class' => 'form-horizontal form-bordered', 'id' => 'update-preferences' ))}}
                                 <div class="form-body">
+
+
+                                        @if ($errors->count() > 0)
+                                            <div class="alert alert-danger text-center">
+                                                @foreach($errors->all() as $message)
+                                                    {{ $message }}<br />
+                                                @endforeach
+                                            </div>
+                                        @elseif(Session::has('flash_success'))
+                                                <div class="alert alert-success text-center">
+                                                    {{Session::get('flash_success')}}
+                                                </div>
+                                        @endif
+
+
 
                                     <div class="form-group">
                                         <label class="control-label col-md-3">Langue</label>
 
                                         <div class="col-md-4">
-                                            <select class="bs-select form-control" disabled>
+                                            <select class="form-control" id="language" name="language" disabled>
                                                 <option value="fr">Francais</option>
                                             </select>
                                         </div>
@@ -40,7 +55,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-md-3">Fuseau horaire</label>
                                         <div class="col-md-4">
-                                            <select class="form-control" id="timezone" name="timezone">
+                                            <select class="form-control" id="timezone" name="timezone" >
                                                 <option value="Pacific/Midway">(UTC-11:00) Midway Island</option>
                                                 <option value="Pacific/Samoa">(UTC-11:00) Samoa</option>
                                                 <option value="Pacific/Honolulu">(UTC-10:00) Hawaii</option>
@@ -201,12 +216,14 @@
                                 </div>
                             {{Form::close()}}
                             <!-- END FORM-->
-
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+@stop
+@section('scripts')
+    @parent
+    <script src="{{asset('js/pages/preferences/preferences.js')}}" type="text/javascript"></script>
 @stop

@@ -10,19 +10,23 @@ function refreshSelections() {
             form.find('#automatic-selections').html(data.vue);
             supprimerSelection();
             misAjourCompteBookmaker();
-            /*if (data.msg.length > 0){
-             swal({
-             title: "Erreur!",
-             text: data.msg,
-             type: "warning",
-             confirmButtonText: "OK"
-             });
-             }*/
+            openOrCloseSelectionsCouponAccordeonWhenSelectionsCouponIsRefreshed(data.count);
         },
         error: function (data) {
             form.find('#automatic-selections').html('<p>impossible de récuperer les selections</p>');
         }
     });
+}
+
+function openOrCloseSelectionsCouponAccordeonWhenSelectionsCouponIsRefreshed(count){
+    if(count > 0){
+        //$('#panier-selections-add-ticket').addClass('in');
+        $('#infos-generales-add-ticket').addClass('in');
+    }else{
+        //$('#panier-selections-add-ticket').removeClass('in');
+        $('#infos-generales-add-ticket').removeClass('in');
+    }
+
 }
 
 // supprime la selection.

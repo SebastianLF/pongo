@@ -31,10 +31,9 @@
 	// markets page
 	Route::resource('market', 'MarketController');
 
+	// preferences page
+	Route::controller('user', 'UserController');
 
-	Route::group(array('/', 'dashboard', 'config', 'faq', 'stats', 'preferences', 'profile'), function(){
-
-	});
 
 // pour la recuperation du listing, en ajax, selon le type dans le lien, pour tipster,bookmaker ou transaction.
 	Route::get('pagination/ajax/{type}', 'ConfigController@itemTypeCheck')->where('type', 'tipsters|bookmakers');
@@ -49,7 +48,6 @@
 
 	Route::resource('abcdparis', 'ABCDParisController');
 	Route::resource('mtmoistipster', 'MtMoisTipsterController');
-	Route::resource('preferences', 'PreferenceController');
 	Route::resource('profile', 'ProfileController');
 	Route::resource('tipster', 'TipsterController');
 	Route::resource('bookmaker', 'BookmakerController');
