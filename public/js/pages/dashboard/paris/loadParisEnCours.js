@@ -91,6 +91,12 @@ function featuresParisEnCours() {
     $("#parisencourstable .boutonsupprimer").click(function (e) {
         e.stopPropagation();
     });
+    $("#parisencourstable .boutoncashout").click(function (e) {
+        e.stopPropagation();
+    });
+    $("#parisencourstable .boutonshowticket").click(function (e) {
+        e.stopPropagation();
+    });
     $("select[name='resultatDashboardInput']").click(function (e) {
         e.stopPropagation();
     });

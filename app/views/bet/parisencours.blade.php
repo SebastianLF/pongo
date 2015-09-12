@@ -154,8 +154,10 @@
                                         {{ Form::button('<i class="fa fa-trash-o"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red', )) }}
                                         {{ Form::close() }}
                                         @if($pari->followtype == 'n')
-                                        {{ Form::button('<i class="fa fa-briefcase"></i>', array('type' => 'submit', 'class' => 'btn btn-sm grey-gallery form-bouton-paris', 'data-toggle' => 'modal', 'data-target' => '#cashoutModal', 'data-hover' => 'tooltip', 'data-id' => $pari->id, 'title' => 'Cash Out')) }}
+                                        {{ Form::button('<i class="fa fa-briefcase"></i>', array('type' => 'submit', 'class' => 'btn btn-sm grey-gallery boutoncashout form-bouton-paris', 'data-toggle' => 'modal', 'data-target' => '#cashoutModal', 'data-hover' => 'tooltip', 'data-id' => $pari->id, 'title' => 'Cash Out')) }}
                                         @endif
+                                        {{ Form::button('<i class="glyphicon glyphicon-play"></i>', array('href' => , 'type' => 'button', 'class' => 'btn btn-sm grey-gallery boutonshowticket form-bouton-paris')) }}
+
                                     </td>
                                 </tr>
                                 <tr class="subrow">
