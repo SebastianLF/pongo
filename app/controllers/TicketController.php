@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Database\Eloquent\Model;
+
 class TicketController extends Controller{
 
 	/**
@@ -40,7 +42,9 @@ class TicketController extends Controller{
 	 */
 	public function show($id)
 	{
-        return View::make('tickets.show');
+		$encoursparis = EnCoursParis::where('share_id', $id)->first();
+		$ticket = $encoursparis->selections()->get();
+        return View::make('tickets.show', array('ticket' => $ticket));
 	}
 
 	/**

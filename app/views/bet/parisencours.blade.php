@@ -114,7 +114,7 @@
                                     {{ Form::button('<i class="fa fa-briefcase"></i>', array('type' => 'submit', 'class' => 'btn btn-sm grey-gallery form-bouton-paris', 'data-toggle' => 'modal', 'data-target' => '#cashoutModal', 'data-hover' => 'tooltip', 'data-id' => $pari->id, 'title' => 'Cash Out')) }}
                                 @endif
                                 <a class="button btn btn-sm grey-gallery boutonshowticket form-bouton-paris"
-                                   type='button' href="{{ url('ticket/'.$pari->numero_pari)}}" target="_blank" data-toggle="tooltip" data-original-title = "Partager"><span
+                                   type='button' href="{{ url('ticket/'.$pari->share_id)}}" target="_blank" data-toggle="tooltip" data-original-title = "Partager"><span
                                             class="glyphicon glyphicon-share"></span></a>
                             </td>
                         </tr>

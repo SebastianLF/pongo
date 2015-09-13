@@ -2,9 +2,9 @@
 <div class="page-header-top">
     <div class="container-fluid">
         <!-- BEGIN LOGO -->
-        <div class="page-logo hidden-xs col-xs-pull-4">
+        <div class="page-logo col-xs-pull-4">
             <a href="{{url('dashboard')}}"><img
-                        src="{{asset('img/pongo2.jpg')}}"
+                        src="{{asset('img/zz.jpg')}}"
                         alt="logo" class="logo" height="60px"></a>
         </div>
         <!-- END LOGO -->
@@ -60,8 +60,8 @@
 </div>
 <!-- END HEADER TOP -->
 <!-- BEGIN HEADER MENU -->
-@if(Auth::check())
-<div class="page-header-menu">
+
+<div class="page-header-menu page-header-share-ticket">
     <div class="container-fluid">
         <!-- BEGIN HEADER SEARCH BOX -->
         <!-- <form class="search-form" action="extra_search.html" method="GET">
@@ -76,7 +76,9 @@
         <!-- BEGIN MEGA MENU -->
         <!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
         <!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the dropdown opening on mouse hover -->
-        <div class="hor-menu ">
+
+        <div class="hor-menu">
+            @if(Auth::check())
             <ul class="nav navbar-nav">
                 <li>
                     <a href="{{url('dashboard')}}"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a>
@@ -93,11 +95,11 @@
                 <!--<li>
                     <a href="{{url('stats')}}"><span class="glyphicon glyphicon glyphicon-stats"></span>Statistiques</a>
                 </li>-->
-
             </ul>
+            @endif
         </div>
         <!-- END MEGA MENU -->
     </div>
 </div>
-@endif
+
 <!-- END HEADER MENU -->

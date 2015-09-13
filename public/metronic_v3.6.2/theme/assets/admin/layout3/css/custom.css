@@ -4,6 +4,16 @@
 Rounded Portlets
 ***/
 
+@media (max-width: 991px) {
+    .page-header .page-header-share-ticket{
+        background: #444d58 !important;  /* Horizontal mega menu for share ticket page */
+    }
+
+    .page-container .page-content-share-ticket {
+        padding: 15px 0 15px !important;
+    }
+}
+
 .portlet {
 	border-radius: 4px !important;
 }
