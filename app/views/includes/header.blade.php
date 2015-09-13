@@ -4,7 +4,7 @@
         <!-- BEGIN LOGO -->
         <div class="page-logo col-xs-pull-4">
             <a href="{{url('dashboard')}}"><img
-                        src="{{asset('img/zz.jpg')}}"
+                        src="{{asset('img/pongo-logo.png')}}"
                         alt="logo" class="logo" height="60px"></a>
         </div>
         <!-- END LOGO -->
