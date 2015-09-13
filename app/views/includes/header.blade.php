@@ -9,6 +9,7 @@
         </div>
         <!-- END LOGO -->
         <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+        @if(Auth::check())
         <a href="javascript:;" class="menu-toggler"></a>
         <!-- END RESPONSIVE MENU TOGGLER -->
         <!-- BEGIN TOP NAVIGATION MENU -->
@@ -53,11 +54,13 @@
                 <!-- END USER LOGIN DROPDOWN -->
             </ul>
         </div>
+        @endif
         <!-- END TOP NAVIGATION MENU -->
     </div>
 </div>
 <!-- END HEADER TOP -->
 <!-- BEGIN HEADER MENU -->
+@if(Auth::check())
 <div class="page-header-menu">
     <div class="container-fluid">
         <!-- BEGIN HEADER SEARCH BOX -->
@@ -96,4 +99,5 @@
         <!-- END MEGA MENU -->
     </div>
 </div>
+@endif
 <!-- END HEADER MENU -->

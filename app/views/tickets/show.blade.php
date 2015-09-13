@@ -1,14 +1,8 @@
-@extends('layouts.default')
+@extends('layouts.default', array('title' => 'Partager un ticket'))
 
 @section('content')
     <div class="page-head">
-        <div class="container-fluid">
-            <!-- BEGIN PAGE TITLE -->
-            <div class="page-title">
-                <h1>Configuration </h1>
-            </div>
-            <!-- END PAGE TITLE -->
-        </div>
+
     </div>
     <div class="page-content">
         <div class="container-fluid">
@@ -19,9 +13,4 @@
             </div>
         </div>
     </div>
-
-@stop
-
-@section('scripts')
-    @parent
 @stop

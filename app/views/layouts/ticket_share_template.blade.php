@@ -19,24 +19,16 @@ License: You must have a valid license purchased only from themeforest(the above
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-    @include('includes.head', array('title' => $title ? $title : 'titre non défini'))
+    @include('includes.head', array('title' => 'Partager'))
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
 <!-- DOC: Apply "page-header-menu-fixed" class to set the mega menu fixed  -->
 <!-- DOC: Apply "page-header-top-fixed" class to set the top menu fixed  -->
-<body class="page-header-menu-fixed page-container-bg-solid page-sidebar-closed-hide-logo page-header-fixed-mobile page-footer-fixed1">
-
-<div class="page-header">
-    @include('includes.header')
-</div>
+<body class="page-header-fixed page-container-bg-solid page-sidebar-closed-hide-logo page-header-fixed-mobile page-footer-fixed1 page-header-top-fixed">
 
 <div class="page-container">
     @yield('content')
-</div>
-
-<div class="page-footer">
-    @include('includes.footer')
 </div>
 
 @section('scripts')
@@ -70,16 +62,13 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="{{asset('js/plugin/toastr.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/plugin/sweetalert.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/plugin/jquery.animateNumber.min.js')}}" type="text/javascript"></script>
-    <script src="{{asset('js/plugin/html-table-search.js')}}" type="text/javascript"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js')}}" type="text/javascript"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/bootstrap-select/bootstrap-select.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/bootstrap-daterangepicker/moment.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js')}}" type="text/javascript"></script>
-    <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js')}}" type="text/javascript"></script>
-    <script src="{{asset('js/plugin/kayalshri-tableExport.jquery.plugin-a891806/tableExport.js')}}"  type="text/javascript"></script>
-    <script src="{{asset('js/plugin/kayalshri-tableExport.jquery.plugin-a891806/jquery.base64.js')}}"  type="text/javascript"></script>
-    <script src="{{asset('js/plugin/tablesorter-master/jquery.tablesorter.min.js')}}"  type="text/javascript"></script>
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.8/js/jquery.dataTables.js"></script>
+    <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js')}}" type="text/javascript"></script>
 
     <!-- END PAGE LEVEL PLUGINS -->
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
@@ -95,37 +84,6 @@ License: You must have a valid license purchased only from themeforest(the above
     <script>
         jQuery(document).ready(function () {
 
-            $('[data-toggle="tooltip"]').tooltip();
-
-            // afficher un loader lors des chargements ajax.
-            $(document).ajaxStart(function () {
-                $('#spinner').fadeIn();
-            }).ajaxStop(function () {
-                $('#spinner').fadeOut();
-            });
-
-            // ajouter le token a chaque requete ajax.
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-Token': $('meta[name="_token"]').attr('content')
-                }
-            });
-
-            // toastr plugin configuration
-            toastr.options = {
-                "closeButton": true,
-                "debug": false,
-                "positionClass": "toast-top-right",
-                "onclick": null,
-                "showDuration": "500",
-                "hideDuration": "1000",
-                "timeOut": "5000",
-                "extendedTimeOut": "1000",
-                "showEasing": "swing",
-                "hideEasing": "linear",
-                "showMethod": "fadeIn",
-                "hideMethod": "fadeOut"
-            };
         });
     </script>
 @show

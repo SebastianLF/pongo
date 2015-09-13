@@ -1,6 +1,6 @@
 <?php
 
-class TicketController extends BaseController {
+class TicketController extends Controller{
 
 	/**
 	 * Display a listing of the resource.

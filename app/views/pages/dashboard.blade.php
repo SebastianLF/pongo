@@ -34,51 +34,46 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="portlet light ">
-                        <div class="portlet-title">
+                        <div class="portlet-title tabbable-line">
                             <div class="caption">
                                 <i class="icon-pin font-yellow-casablanca"></i>
                                 <span class="caption-subject font-yellow-casablanca bold uppercase">liste des tickets</span>
                             </div>
+                            <ul class="nav nav-tabs ">
+                                <li id="onglet_paris_en_cours" class="active">
+                                    <a href="#tab_15_1" data-toggle="tab">
+                                        Tickets classique en cours <span class="badge badge-danger"></span></a>
+                                </li>
+                                <li id="onglet_paris_long_terme">
+                                    <a href="#tab_15_2" data-toggle="tab">
+                                        Tickets long terme en cours <span
+                                                class="badge badge-default"></span></a>
+                                </li>
+                                <li id="onglet_paris_systeme_ABCD">
+                                    <a href="#tab_15_3" data-toggle="tab">
+                                        Tickets ABCD en cours <span class="badge badge-default"></span></a>
+                                </li>
+                                <li id="onglet_paris_termine">
+                                    <a href="#tab_15_4" data-toggle="tab">
+                                        Historique </a>
+                                </li>
+                            </ul>
                         </div>
                         <div class="portlet-body">
-                            <div class="tabbable-line">
-                                <ul class="nav nav-tabs ">
-                                    <li id="onglet_paris_en_cours" class="active">
-                                        <a href="#tab_15_1" data-toggle="tab">
-                                            Tickets classique en cours <span class="badge badge-danger"></span></a>
-                                    </li>
-                                    <li id="onglet_paris_long_terme">
-                                        <a href="#tab_15_2" data-toggle="tab">
-                                            Tickets long terme en cours <span
-                                                    class="badge badge-default"></span></a>
-                                    </li>
-                                    <li id="onglet_paris_systeme_ABCD">
-                                        <a href="#tab_15_3" data-toggle="tab">
-                                            Tickets ABCD en cours <span class="badge badge-default"></span></a>
-                                    </li>
-                                    <li id="onglet_paris_termine">
-                                        <a href="#tab_15_4" data-toggle="tab">
-                                            Historique </a>
-                                    </li>
-                                </ul>
-                                <div class="tab-content">
+                            <div class="tab-content">
+                                <div class="tab-pane active fade in" id="tab_15_1">
 
+                                </div>
+                                <div class="tab-pane fade" id="tab_15_2">
 
-                                    <div class="tab-pane active fade in" id="tab_15_1">
+                                </div>
+                                <div class="tab-pane fade" id="tab_15_3">
 
-                                    </div>
-                                    <div class="tab-pane fade" id="tab_15_2">
+                                </div>
+                                <div class="tab-pane fade" id="tab_15_4">
 
-                                    </div>
-                                    <div class="tab-pane fade" id="tab_15_3">
-
-                                    </div>
-                                    <div class="tab-pane fade" id="tab_15_4">
-
-                                    </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -109,45 +104,46 @@
                                 </div>
 
                                 <div class="portlet-body form form-automatic">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading" role="tab" id="headingOne">
-                                                <h4 class="panel-title">
-                                                    <a role="button" data-toggle="collapse" data-parent="#accordion-add-ticket"
-                                                       href="#panier-selections-add-ticket" aria-expanded="true"
-                                                       aria-controls="panier-selections-add-ticket">
-                                                        Panier des sélections
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                            <div id="panier-selections-add-ticket" class="panel-collapse collapse in" role="tabpanel"
-                                                 aria-labelledby="headingOne">
-                                                <div class="panel-body">
-                                                    <div id="automatic-selections">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingSelections">
+                                            <h4 class="panel-title">
+                                                <a role="button" data-toggle="collapse"
+                                                   data-parent="#accordion-add-ticket"
+                                                   href="#panier-selections-add-ticket" aria-expanded="true"
+                                                   aria-controls="panier-selections-add-ticket">
+                                                    Panier des sélections
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="panier-selections-add-ticket" class="panel-collapse collapse in"
+                                             role="tabpanel"
+                                             aria-labelledby="headingSelections">
+                                            <div class="panel-body">
+                                                <div id="automatic-selections">
 
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading" role="tab" id="headingTwo">
-                                                <h4 class="panel-title">
-                                                    <a class="collapsed" role="button" data-toggle="collapse"
-                                                       data-parent="#accordion-add-ticket" href="#infos-generales-add-ticket"
-                                                       aria-expanded="false" aria-controls="infos-generales-add-ticket">
-                                                        Informations générales
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                            <div id="infos-generales-add-ticket" class="panel-collapse collapse" role="tabpanel"
-                                                 aria-labelledby="headingTwo">
-                                                <div class="panel-body">
-                                                    @include('bet/automatic_addbet')
-                                                </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingInfosGenerales">
+                                            <h4 class="panel-title">
+                                                <a class="collapsed" role="button" data-toggle="collapse"
+                                                   data-parent="#accordion-add-ticket"
+                                                   href="#infos-generales-add-ticket"
+                                                   aria-expanded="false" aria-controls="infos-generales-add-ticket">
+                                                    Informations générales
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="infos-generales-add-ticket" class="panel-collapse collapse"
+                                             role="tabpanel"
+                                             aria-labelledby="headingInfosGenerales">
+                                            <div class="panel-body">
+                                                @include('bet/automatic_addbet')
                                             </div>
                                         </div>
-
-
-
+                                    </div>
                                     <div>
                                     </div>
                                 </div>
@@ -227,68 +223,68 @@
                     </div>
                 </div>
 
-            <div class="col-md-4">
-                <div class="portlet light ">
-                    <div class="portlet-title">
-                        <div class="caption caption-md col-md-5">
-                            <i class="icon-bar-chart theme-font hide"></i>
-                            <span class="caption-subject theme-font bold uppercase">Récapitulatif</span>
-                            <span class="caption-helper hide">stats</span>
-                        </div>
-                        <div class="actions col-md-6">
-                            <div class="">
-                                <div class="input-group" id="defaultrange">
-                                    <input type="text" class="form-control"
-                                           value="{{Carbon::now()->startOfMonth()->format('d/m/Y').' - '.Carbon::now()->endOfMonth()->format('d/m/Y')}}"
-                                           readonly>
+                <div class="col-md-4">
+                    <div class="portlet light ">
+                        <div class="portlet-title">
+                            <div class="caption caption-md col-md-5">
+                                <i class="icon-bar-chart theme-font hide"></i>
+                                <span class="caption-subject theme-font bold uppercase">Récapitulatif</span>
+                                <span class="caption-helper hide">stats</span>
+                            </div>
+                            <div class="actions col-md-6">
+                                <div class="">
+                                    <div class="input-group" id="defaultrange">
+                                        <input type="text" class="form-control"
+                                               value="{{Carbon::now()->startOfMonth()->format('d/m/Y').' - '.Carbon::now()->endOfMonth()->format('d/m/Y')}}"
+                                               readonly>
 												<span class="input-group-btn">
 												<button class="btn default date-range-toggle" type="button"><i
                                                             class="fa fa-calendar"></i></button>
 												</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portlet-body">
-                        <div class="row number-stats margin-bottom-30">
-                            <div class="col-md-6 col-sm-6 col-xs-6">
-                                <div class="stat-left">
-                                    <div class="stat-number">
-                                        <div class="title">
-                                            {{'Total profits en '.Auth::user()->devise}}
-                                        </div>
-                                        <div id="total-recap-profits-devise" class="number">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6 col-xs-6">
-                                <div class="stat-right">
-                                    <div class="stat-number">
-                                        <div class="title">
-                                            {{'Total profits en U'}}
-                                        </div>
-                                        <div id="total-recap-profits-unites" class="number">
-
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div id="tipsters-general-recap">
+                        <div class="portlet-body">
+                            <div class="row number-stats margin-bottom-30">
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="stat-left">
+                                        <div class="stat-number">
+                                            <div class="title">
+                                                {{'Total profits en '.Auth::user()->devise}}
+                                            </div>
+                                            <div id="total-recap-profits-devise" class="number">
 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="stat-right">
+                                        <div class="stat-number">
+                                            <div class="title">
+                                                {{'Total profits en U'}}
+                                            </div>
+                                            <div id="total-recap-profits-unites" class="number">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tipsters-general-recap">
+
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div id="comptes_par_bookmakers">
+                    <div id="comptes_par_bookmakers">
+
+                    </div>
+                    <div id="recaps">
+
+                    </div>
 
                 </div>
-                <div id="recaps">
-
-                </div>
-
-            </div>
             </div>
         </div>
         <!-- END PAGE CONTENT INNER -->

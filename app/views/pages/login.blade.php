@@ -19,7 +19,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-    @include('includes.head')
+    @include('includes.head', array('title' => 'Pongo'))
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
