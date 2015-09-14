@@ -63,7 +63,7 @@
 
 	// validator extension
 	Validator::extend('european_odd', function ($attribute, $value, $parameters) {
-		if (preg_match("/^\d+(\.\d{1,2})?$/", $value) && $value >= 1) {
+		if (preg_match("/^\d+(\.\d{1,3})?$/", $value) && $value >= 1) {
 			return true;
 		}
 		return false;
@@ -198,7 +198,7 @@
 		$market = $parameters[0];
 
 		if ($market == 8) { //1x2 with european handicap
-			if (preg_match("(Home|Away)", $value)) {
+			if (preg_match("(1|2)", $value)) {
 				return true;
 			} else {
 				return false;

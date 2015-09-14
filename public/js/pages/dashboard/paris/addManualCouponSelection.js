@@ -185,7 +185,6 @@ function addManualCouponSelection() {
              pick.select2({data: picks, minimumResultsForSearch: Infinity});*/
             resetTeamsInputs();
 
-
             // valeur de market pour la gestion de l affichage des parametres du market.
             var val = modal_form.find(".marketinputdashboard").val();
 
