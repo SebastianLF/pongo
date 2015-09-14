@@ -478,7 +478,8 @@ function addManualCouponSelection() {
 
                         // quand le nouveau tipster est ajouté, on recharge les tipsters. Le nouveau tipster sera donc affiché.
                         refreshSelections();
-                        modal.modal('hide');
+                        resetModal();
+
                     }
                 }
             });
@@ -519,7 +520,7 @@ function addManualCouponSelection() {
     }
 
     function resetModal() {
-        $('#manualBetAddModal').on('hidden.bs.modal', function () {
+
             date.val(null).trigger('change');
             dateContainer.removeClass('has-error');
             dateError.empty();
@@ -568,7 +569,6 @@ function addManualCouponSelection() {
             score.val('').prop("disabled", true);
             liveCheckBox.parents('span').removeClass("checked");
             liveCheckBox.prop('checked', false);
-        })
     }
 
     // inits
