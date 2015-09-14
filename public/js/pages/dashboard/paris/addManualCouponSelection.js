@@ -198,16 +198,16 @@ function addManualCouponSelection() {
                 pickContainer.fadeIn().removeClass("hidden");
             }
 
-            if (val == 7) {
+            if (val == 7) { // Winner
                 pick.select2({tags: true, allowClear: true, placeholder: "Nom de l\'équipe ou du joueur vainqueur"});
                 pickLabel.html("Vainqueur <span class='glyphicon glyphicon-save'></span>");
-            } // Winner
-            else if (val == 8) {
+            }
+            else if (val == 8) { // 1X2 European handicap
                 team1.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
                 team2.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
                 pickContainer.fadeIn().removeClass("hidden");
-                picks = [{id: "Home", text: "Domicile"}, {id: "Away", text: "Exterieur"}, {
-                    id: "Draw",
+                picks = [{id: "1", text: "Domicile"}, {id: "2", text: "Exterieur"}, {
+                    id: "X",
                     text: "Match Nul"
                 }];
                 pick.select2({data: picks, minimumResultsForSearch: Infinity});
@@ -215,7 +215,7 @@ function addManualCouponSelection() {
                 oddParticipantParameterNameLabel.text('Equipe Handicap');
                 oddParticipantParameterNameContainer.fadeIn().removeClass("hidden");
                 oddParticipantParameterNameContainer.addClass("col-md-6");
-                participantNameList = [{id: "Home", text: "Domicile"}, {id: "Away", text: "Exterieur"}];
+                participantNameList = [{id: "1", text: "Domicile"}, {id: "2", text: "Exterieur"}];
                 oddParticipantParameterName.select2({
                     data: participantNameList,
                     minimumResultsForSearch: Infinity,
@@ -226,35 +226,42 @@ function addManualCouponSelection() {
                 oddParamContainer.addClass("col-md-6");
                 oddParam.html('<option value=""></option>');
                 oddParam.select2({tags: true, allowClear: true, placeholder: '2.5 ou -2.5'})
-            } // 1X2 European handicap
-            else if (val == 9) {
+            }
+            else if (val == 9) { // Double Chance
                 picks = [{id: "1X", text: "1X"}, {id: "X2", text: "X2"}, {id: "12", text: "12"}];
                 pick.select2({data: picks, minimumResultsForSearch: Infinity});
                 team1.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
                 team2.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
                 pickLabel.html("Choix");
             }
-            else if (val == 43) {
-                team1Container.removeClass("hidden");
-                team2Container.removeClass("hidden");
-                picks = [{id: "Home", text: "Home"}, {id: "Away", text: "Away"}, {id: "Draw", text: "Draw"}];
+            else if (val == 11) { // Half-Time / Full-Time
+                picks = [{id: "1/1", text: "1/1"}, {id: "1/X", text: "1/X"}, {id: "1/2", text: "1/2"}, {id: "X/1", text: "X/1"}, {id: "X/X", text: "X/X"}, {id: "X/2", text: "X/2"}, {id: "2/1", text: "2/1"}, {id: "2/X", text: "2/X"}, {id: "2/2", text: "2/2"}];
                 pick.select2({data: picks, minimumResultsForSearch: Infinity});
-            } // 1X2
-            else if (val == 46) {
+                team1.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
+                team2.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
+                pickLabel.html("Choix");
+            }
+            else if (val == 43) { // 1X2
                 team1Container.removeClass("hidden");
                 team2Container.removeClass("hidden");
-                picks = [{id: "Home", text: "Home"}, {id: "Away", text: "Away"}];
+                picks = [{id: "1", text: "Home"}, {id: "2", text: "Away"}, {id: "X", text: "Draw"}];
                 pick.select2({data: picks, minimumResultsForSearch: Infinity});
-            } // Match Winner / HomeAway
-            else if (val == 48) {
+            }
+            else if (val == 46) { // Match Winner / HomeAway
                 team1Container.removeClass("hidden");
                 team2Container.removeClass("hidden");
-                picks = [{id: "Home", text: "Home"}, {id: "Away", text: "Away"}];
+                picks = [{id: "1", text: "Home"}, {id: "2", text: "Away"}];
+                pick.select2({data: picks, minimumResultsForSearch: Infinity});
+            }
+            else if (val == 48) { // Asian Handicap
+                team1Container.removeClass("hidden");
+                team2Container.removeClass("hidden");
+                picks = [{id: "1", text: "Home"}, {id: "2", text: "Away"}];
                 pick.select2({data: picks, minimumResultsForSearch: Infinity});
                 oddParamContainer.removeClass("hidden");
                 oddParamLabel.text('Handicap');
                 oddParam.select2({placeholder: "-2.5 ou 2.5", tags: true});
-            } // Asian Handicap
+            }
             else {
                 modal_form.find(".pickinputdashboard").html('');
                 modal_form.find(".pickinputdashboard").val("").trigger("change");

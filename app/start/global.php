@@ -138,14 +138,26 @@
 
 		if ($market == 7) { //Winner
 			return true;
-		} elseif ($market == 8) { //1x2 with european handicap
+		} elseif ($market == 8) { // 1x2 with european handicap or Home Draw Away With Handicap
 			return true;
-		} elseif ($market == 9) { //1x2 with european handicap
+		} elseif ($market == 9) { // Double Chance
 			if (preg_match("(1X|X2|12)", $value)) {
 				return true;
 			} else {
 				return false;
 			}
+		}elseif ($market == 11) { // Half-Time / Full-Time
+			if (preg_match("(1/1|1/X|1/2|X/1|X/X|X/2|2/1|2/X|2/2)", $value)) {
+				return true;
+			} else {
+				return false;
+			}
+		}elseif ($market == 43) { // 1x2
+			return true;
+		}elseif ($market == 46) { // Match Winner / HomeAway
+			return true;
+		}elseif ($market == 48) { // Asian Handicap
+			return true;
 		}
 		return false;
 	});
@@ -156,6 +168,12 @@
 		if ($market == 7) { //Winner
 			return true;
 		} elseif ($market == 8) { //1x2 with european handicap
+			if (preg_match("/^-?[0-9]\d*(\.\d+)?$/", $value)) {
+				return true;
+			} else {
+				return false;
+			}
+		}elseif ($market == 48) { // Asian Handicap
 			if (preg_match("/^-?[0-9]\d*(\.\d+)?$/", $value)) {
 				return true;
 			} else {
