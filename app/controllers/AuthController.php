@@ -16,11 +16,9 @@ class AuthController extends Controller {
 		UserGestion $user_gestion
 		)
 	{
-
 		$this->create_validation = $create_validation;
 		$this->login_validation = $login_validation;
 		$this->user_gestion = $user_gestion;
-
 	}
 
 	public function getLogin()

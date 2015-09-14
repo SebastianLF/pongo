@@ -80,7 +80,7 @@
             </div>
             <div class="row">
                 <div class="col-md-8">
-                    <div class="portlet light">
+                    <div class="portlet light ">
                         <div class="portlet-title ">
                             <div class="caption">
                                 <i class="icon-paper-plane"></i>
@@ -89,7 +89,7 @@
 
                         </div>
                         <div class="portlet-body">
-                            <div>
+                            <div class="">
                                 {{ Form::open(array('method' => 'post', 'id' => 'automaticform-add', 'class' => 'form-horizontal', 'role' => 'form')
                                                 ) }}
                                 <div class="panel panel-default">
@@ -101,8 +101,9 @@
                                                aria-controls="panier-selections-add-ticket">
                                                 Panier des sélections -
                                             </a>
-                                            <a id="selection-refresh" class="" href=""> <span
-                                                        class="glyphicon glyphicon-refresh glyphicon-spin"></span>Rafraichir</a>
+                                            <button><a id="selection-refresh" type="button" > <span
+                                                            class="glyphicon glyphicon-refresh glyphicon-spin"></span>Rafraichir</a></button>
+
                                         </h4>
                                     </div>
                                     <div id="panier-selections-add-ticket" class="panel-collapse collapse"
@@ -136,7 +137,7 @@
                                 </div>
                                 <div class="col-md-offset-5 ">
                                     <button type="submit" class="btn btn-default"><i class="fa fa-plus"></i>
-                                        VALIDER LE
+                                        FINALISER LE
                                         TICKET
                                     </button>
                                 </div>
@@ -316,7 +317,7 @@
                                                 <span id="score_error" class="help-block"></span>
                                             </div>
                                             <hr/>
-                                            <button type="submit" class="btn green">Submit</button>
+                                            <button type="submit" class="btn green"><span class="glyphicon glyphicon-plus"></span> Ajouter</button>
                                         </div>
 
                                         {{ Form::close()}}

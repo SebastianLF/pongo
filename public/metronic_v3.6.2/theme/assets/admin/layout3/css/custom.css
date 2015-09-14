@@ -131,6 +131,10 @@ select{
     background-color: #F3565D !important;
 }
 
+.bcg-green{
+    background-color: #4DB3A2 !important;
+}
+
 .blue-bookmaker{
     color: #5b9bd1 !important;
 }
@@ -344,12 +348,6 @@ select{
 
 .textaligncenter{
     text-align: center;
-}
-
-/* uniquement pour les select2 dans modal */
-.select2-container {
-    width: 100% !important;
-    padding: 0;
 }
 
 /* remet à zero pour le plugin datetimepicker dans recap*/

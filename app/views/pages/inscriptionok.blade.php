@@ -38,15 +38,11 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN LOGIN -->
 <div class="content">
     <h3>Compte crée !</h3>
+    <p>Un email vous à été envoyé à l'adresse indiquée pour finaliser l'inscription. Veuillez vérifier vos emails.</p>
     <br/>
-    <!-- END REGISTRATION FORM -->
-    <div class="form-actions" style="text-align:center;">
-        <button type="text" id="register-submit-btn" class="btn btn-success uppercase" ><a style="color:white !important;text-align:center;" href="{{url('auth/login')}}">Se connecter</a></button>
-    </div>
 </div>
 
 <div class="copyright">
-    2014 © Metronic Design Template. Pongo - All Rights Reserved
 </div>
 <!-- END LOGIN -->
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->

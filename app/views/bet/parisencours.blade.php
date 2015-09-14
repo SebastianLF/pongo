@@ -17,7 +17,7 @@
                 <th>type</th>
                 <th colspan="2">Evenement</th>
                 <th colspan="2">Rencontre</th>
-                <th colspan="2">Pari <span class="glyphicon glyphicon-info-sign"></span></th>
+                <th colspan="2">Pari</th>
                 <th>Tipster</th>
                 <th>Book</th>
                 <th>Cote</th>

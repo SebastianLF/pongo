@@ -146,7 +146,6 @@
 						'pari_abcd' => Input::get('ticketABCD'),
 						'nom_abcd' => Input::get('serieinputdashboard'),
 						'lettre_abcd' => Input::get('letterinputdashboard'),
-						'share_id' => Str::random(),
 						'tipster_id' => $tipster->id,
 						'user_id' => Auth::user()->id,
 						'bookmaker_user_id' => $suivi == 'n' ? Input::get('accountsinputdashboard') : null
