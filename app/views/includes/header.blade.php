@@ -9,7 +9,7 @@
         </div>
         <!-- END LOGO -->
         <!-- BEGIN RESPONSIVE MENU TOGGLER -->
-        @if(Auth::check())
+
         <a href="javascript:;" class="menu-toggler"></a>
         <!-- END RESPONSIVE MENU TOGGLER -->
         <!-- BEGIN TOP NAVIGATION MENU -->
@@ -54,7 +54,7 @@
                 <!-- END USER LOGIN DROPDOWN -->
             </ul>
         </div>
-        @endif
+
         <!-- END TOP NAVIGATION MENU -->
     </div>
 </div>
@@ -78,7 +78,7 @@
         <!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the dropdown opening on mouse hover -->
 
         <div class="hor-menu">
-            @if(Auth::check())
+
             <ul class="nav navbar-nav">
                 <li>
                     <a href="{{url('dashboard')}}"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a>
@@ -96,7 +96,7 @@
                     <a href="{{url('stats')}}"><span class="glyphicon glyphicon glyphicon-stats"></span>Statistiques</a>
                 </li>-->
             </ul>
-            @endif
+
         </div>
         <!-- END MEGA MENU -->
     </div>

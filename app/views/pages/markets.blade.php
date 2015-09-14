@@ -1,11 +1,11 @@
-@extends('layouts.default')
+@extends('layouts.default', array('title' => 'Pongo - Glossaire'))
 
 @section('content')
     <div class="page-head">
         <div class="container-fluid">
             <!-- BEGIN PAGE TITLE -->
             <div class="page-title">
-                <h1>Glossaire Paris</h1>
+                <h1>Glossaire</h1>
             </div>
             <!-- END PAGE TITLE -->
         </div>

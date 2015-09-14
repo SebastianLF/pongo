@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.default', array('title' => 'Pongo - Configuration'))
 
 @section('content')
     <div class="page-head">

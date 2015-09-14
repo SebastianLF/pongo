@@ -80,145 +80,250 @@
             </div>
             <div class="row">
                 <div class="col-md-8">
-
-                    <div class="portlet light green-haze">
+                    <div class="portlet light">
                         <div class="portlet-title ">
                             <div class="caption">
-                                <i class="icon-paper-plane color-white"></i>
-                                <span class="caption-subject color-white bold uppercase">Ajouter un ticket</span>
+                                <i class="icon-paper-plane"></i>
+                                <span class="caption-subject bold uppercase">Ajouter un ticket</span>
                             </div>
+
                         </div>
                         <div class="portlet-body">
-                            {{ Form::open(array('method' => 'post', 'id' => 'automaticform-add', 'class' => 'form-horizontal', 'role' => 'form')
-                                            ) }}
-                            <div class="portlet light ">
-                                <div class="portlet-title">
-                                    <div class="caption">
-                                        <i class="glyphicon glyphicon-lock"></i>Ticket | <span
-                                                class="glyphicon glyphicon-refresh glyphicon-spin"></span><a
-                                                id="selection-refresh" class="" href="">Rafraichir</a>
+                            <div>
+                                {{ Form::open(array('method' => 'post', 'id' => 'automaticform-add', 'class' => 'form-horizontal', 'role' => 'form')
+                                                ) }}
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingSelections">
+                                        <h4 class="panel-title">
+                                            <a role="button" data-toggle="collapse"
+                                               data-parent="#accordion-add-ticket"
+                                               href="#panier-selections-add-ticket" aria-expanded="true"
+                                               aria-controls="panier-selections-add-ticket">
+                                                Panier des sélections -
+                                            </a>
+                                            <a id="selection-refresh" class="" href=""> <span
+                                                        class="glyphicon glyphicon-refresh glyphicon-spin"></span>Rafraichir</a>
+                                        </h4>
+                                    </div>
+                                    <div id="panier-selections-add-ticket" class="panel-collapse collapse"
+                                         role="tabpanel"
+                                         aria-labelledby="headingSelections">
+                                        <div class="panel-body">
+                                            <div id="automatic-selections">
 
-                                    </div>
-                                    <div class="actions">
-                                    </div>
-                                </div>
-
-                                <div class="portlet-body form form-automatic">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading" role="tab" id="headingSelections">
-                                            <h4 class="panel-title">
-                                                <a role="button" data-toggle="collapse"
-                                                   data-parent="#accordion-add-ticket"
-                                                   href="#panier-selections-add-ticket" aria-expanded="true"
-                                                   aria-controls="panier-selections-add-ticket">
-                                                    Panier des sélections
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="panier-selections-add-ticket" class="panel-collapse collapse in"
-                                             role="tabpanel"
-                                             aria-labelledby="headingSelections">
-                                            <div class="panel-body">
-                                                <div id="automatic-selections">
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading" role="tab" id="headingInfosGenerales">
-                                            <h4 class="panel-title">
-                                                <a class="collapsed" role="button" data-toggle="collapse"
-                                                   data-parent="#accordion-add-ticket"
-                                                   href="#infos-generales-add-ticket"
-                                                   aria-expanded="false" aria-controls="infos-generales-add-ticket">
-                                                    Informations générales
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="infos-generales-add-ticket" class="panel-collapse collapse"
-                                             role="tabpanel"
-                                             aria-labelledby="headingInfosGenerales">
-                                            <div class="panel-body">
-                                                @include('bet/automatic_addbet')
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                    </div>
-                                </div>
-                                <div class="form-actions form-actions-automatic-bet">
-                                    <div class="col-md-12">
-                                        <div class="row">
-                                            <div class="col-md-offset-5 ">
-                                                <button type="submit" class="btn btn-default"><i class="fa fa-plus"></i>
-                                                    VALIDER LE
-                                                    TICKET
-                                                </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingInfosGenerales">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                               data-parent="#accordion-add-ticket"
+                                               href="#infos-generales-add-ticket"
+                                               aria-expanded="false" aria-controls="infos-generales-add-ticket">
+                                                Informations générales
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="infos-generales-add-ticket" class="panel-collapse collapse"
+                                         role="tabpanel"
+                                         aria-labelledby="headingInfosGenerales">
+                                        <div class="panel-body">
+                                            @include('bet/automatic_addbet')
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-offset-5 ">
+                                    <button type="submit" class="btn btn-default"><i class="fa fa-plus"></i>
+                                        VALIDER LE
+                                        TICKET
+                                    </button>
+                                </div>
+                                {{ Form::close() }}
                             </div>
-                            {{ Form::close() }}
-                            <div class="portlet light ">
+                            <hr/>
+                            <div class="tabbable-custom">
+                                <ul class="nav nav-tabs">
+                                    <li class="">
+                                        <a href="#tab_automatique" data-toggle="tab" aria-expanded="true">
+                                            Automatique </a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="#tab_manuel" data-toggle="tab" aria-expanded="false">
+                                            Manuel </a>
+                                    </li>
 
-                                <div class="portlet-title">
-                                    <div class="caption">
-                                        <i class="glyphicon glyphicon-lock"></i>Ajouter une selection
-
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade" id="tab_automatique">
+                                        @if(App::environment('local'))
+                                            <iframe src={{"http://stage.betbrain.com/?portalId=1312&userSessionId=".Session::getId()}} height="400"
+                                                    width="100%" frameborder="0">Odds service provided in
+                                                co-operation
+                                                with
+                                                <a href="http://www.betbrain.com"
+                                                   target="_blank"><b>BetBrain.com</b></a>
+                                            </iframe>
+                                        @else
+                                            <iframe src={{"http://betbrain.com/?portalId=1326&userSessionId=".Session::getId()}} height="600"
+                                                    width="100%" frameborder="0">Odds service provided in
+                                                co-operation with <a href="http://www.betbrain.com"
+                                                                     target="_blank"><b>BetBrain.com</b></a>
+                                            </iframe>
+                                        @endif
                                     </div>
-                                    <div class="actions">
-                                    </div>
-                                </div>
-
-                                <div class="portlet-body form form-automatic">
-                                    <div class="tabbable-line ">
-                                        <ul class="nav nav-tabs ">
-                                            <li class="active">
-                                                <a href="#tab_automatique" data-toggle="tab">
-                                                    Recherche Automatique <span class="badge badge-danger"></span></a>
-                                            </li>
-                                            <li>
-                                                <a href="#tab_manuel" data-toggle="tab">
-                                                    Recherche Manuelle <span class="badge badge-default"></span></a>
-                                            </li>
-
-                                        </ul>
-
-
-                                        <div class="tab-content green-haze">
-                                            <div class="tab-pane active fade in" id="tab_automatique">
-                                                @if(App::environment('local'))
-                                                    <iframe src={{"http://stage.betbrain.com/?portalId=1312&userSessionId=".Session::getId()}} height="400"
-                                                            width="100%" frameborder="0">Odds service provided in
-                                                        co-operation
-                                                        with
-                                                        <a href="http://www.betbrain.com"
-                                                           target="_blank"><b>BetBrain.com</b></a>
-                                                    </iframe>
-                                                @else
-                                                    <iframe src={{"http://betbrain.com/?portalId=1326&userSessionId=".Session::getId()}} height="600"
-                                                            width="100%" frameborder="0">Odds service provided in
-                                                        co-operation with <a href="http://www.betbrain.com"
-                                                                             target="_blank"><b>BetBrain.com</b></a>
-                                                    </iframe>
-                                                @endif
-                                            </div>
-                                            <div class="tab-pane fade" id="tab_manuel">
-                                                <button type="button" class="btn btn-default" data-toggle="modal"
-                                                        data-target="#manualBetAddModal"><span
-                                                            class="glyphicon glyphicon-plus"></span> ajouter une
-                                                    sélection
-                                                    manuellement
-                                                </button>
-                                            </div>
+                                    <div class="tab-pane active fade in" id="tab_manuel">
+                                        <div class="note note-success ">
+                                            <p>Les informations a remplir dépendent du sport, renseignez le champ
+                                                sport avant le reste.</p>
                                         </div>
+                                        <div class="note note-danger">
+                                            <p>Lorsque le symbole <span class="glyphicon glyphicon-save"></span>
+                                                apparaît, c'est à vous
+                                                d'inscrire le nom de l'equipe (ou du joueur) dans le champ de
+                                                recherche puis le selectioner.</p>
+                                        </div>
+                                        {{ Form::open(array('url' => 'coupon', 'method' => 'post', 'id' => 'manualselectionform-add', 'role' => 'form')) }}
+
+                                        <div class="center-block">
+                                            <div id="date_container" class="form-group">
+                                                <label for="date">Date</label>
+                                                <input name="date"
+                                                       class="form-control input-sm"
+                                                       placeholder="date rencontre">
+                                                <span id="date_error" class="help-block"></span>
+                                            </div>
+
+                                            <div id="sport_container" class="form-group">
+                                                <label for="sport">Sport</label>
+                                                <select name="sport"
+                                                        class="form-control sportinputdashboard input-sm">
+                                                    <option value=""></option>
+                                                </select>
+                                                <span id="sport_error" class="help-block"></span>
+                                            </div>
+
+                                            <div id="competition_container" class="form-group">
+                                                <label for="competition">Competition</label>
+                                                <select name="competition"
+                                                        class="form-control competitioninputdashboard ">
+                                                    <option value=""></option>
+                                                </select>
+                                                <span id="competition_error" class="help-block"></span>
+                                            </div>
+
+                                            <div id="team1_container" class="form-group col-md-6">
+                                                <label for="team1">Equipe Domicile</label>
+                                                <select name="team1"
+                                                        class="form-control team1inputdashboard input-sm">
+                                                </select>
+                                                <span id="team1_error" class="help-block"></span>
+                                            </div>
+
+                                            <div id="team2_container" class="form-group col-md-6">
+                                                <label for="team2">Equipe Extérieur</label>
+                                                <select name="team2"
+                                                        class="form-control team2inputdashboard input-sm">
+                                                </select>
+                                                <span id="team2_error" class="help-block"></span>
+                                            </div>
+
+                                            <div id="market_container" class="form-group">
+                                                <label for="market">Type du pari</label>
+                                                <select name="market"
+                                                        class="form-control marketinputdashboard input-sm">
+                                                    <option value=""></option>
+                                                </select>
+                                                <span id="market_error" class="help-block"></span>
+                                            </div>
+
+                                            <div id="pick_container" class="form-group">
+                                                <label for="pick">Choix du pari</label>
+                                                <select name="pick"
+                                                        class="form-control pickinputdashboard input-sm">
+                                                </select>
+                                                <span id="pick_error" class="help-block"></span>
+                                            </div>
+
+                                            <div id="scope_container" class="form-group">
+                                                <label for="scope">Portée du pari</label>
+                                                <select name="scope"
+                                                        class="form-control scopeinputdashboard input-sm">
+                                                    <option value=""></option>
+                                                </select>
+                                                <span id="scope_error" class="help-block"></span>
+                                            </div>
+
+                                            <div id="odd_doubleParam_container" class="form-group">
+                                                <label for="odd_doubleParam"></label>
+                                                <select name="odd_doubleParam"
+                                                        class="form-control input-sm"></select>
+                                                <span id="odd_doubleParam_error" class="help-block"></span>
+                                            </div>
+
+                                            <div id="odd_doubleParam2_container" class="form-group">
+                                                <label for="odd_doubleParam2"></label>
+                                                <select name="odd_doubleParam2"
+                                                        class="form-control input-sm"></select>
+                                                <span id="odd_doubleParam2_error" class="help-block"></span>
+                                            </div>
+
+                                            <div id="odd_doubleParam3_container" class="form-group">
+                                                <label for="odd_doubleParam3"></label>
+                                                <select name="odd_doubleParam3"
+                                                        class="form-control input-sm"></select>
+                                                <span id="odd_doubleParam3_error" class="help-block"></span>
+                                            </div>
+
+                                            <div id="odd_participantParameterName_container" class="form-group">
+                                                <label for="odd_participantParameterName"></label>
+                                                <select name="odd_participantParameterName"
+                                                        class="form-control input-sm"></select>
+                                                        <span id="odd_participantParameterName_error"
+                                                              class="help-block"></span>
+                                            </div>
+
+                                            <div id="bookmaker_container" class="form-group">
+                                                <label for="bookmaker">Bookmaker</label>
+                                                <select name="bookmaker" class="form-control input-sm">
+                                                    <option value=""></option>
+                                                </select>
+                                                <span id="bookmaker_error" class="help-block"></span>
+                                            </div>
+
+                                            <div id="odd_container" class="form-group">
+                                                <label for="odd_value">Cote</label>
+                                                <input name="odd_value"
+                                                       class="form-control oddinputdashboard input-sm"
+                                                       placeholder="Cote">
+                                                <span id="odd_error" class="help-block"></span>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="checkbox-inline">
+                                                    <div class="checker" id="uniform-live"><span><input
+                                                                    type="checkbox" id="live"
+                                                                    value="live"></span></div>
+                                                    live
+                                                </label>
+                                            </div>
+
+                                            <div id="score_container" class="form-group">
+                                                <label for="score">Score (en cours)</label>
+                                                <input name="score" class="form-control input-sm"
+                                                       placeholder="score">
+                                                <span id="score_error" class="help-block"></span>
+                                            </div>
+                                            <hr/>
+                                            <button type="submit" class="btn green">Submit</button>
+                                        </div>
+
+                                        {{ Form::close()}}
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

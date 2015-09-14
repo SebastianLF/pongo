@@ -34,9 +34,6 @@
 	// preferences page
 	Route::controller('user', 'UserController');
 
-	// ticket page
-	Route::resource('ticket', 'TicketController');
-
 
 // pour la recuperation du listing, en ajax, selon le type dans le lien, pour tipster,bookmaker ou transaction.
 	Route::get('pagination/ajax/{type}', 'ConfigController@itemTypeCheck')->where('type', 'tipsters|bookmakers');

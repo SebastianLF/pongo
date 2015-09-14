@@ -1,11 +1,11 @@
-@extends('layouts.default')
+@extends('layouts.default',  array('title' => 'Pongo - FAQ'))
 
 @section('content')
     <div class="page-head">
         <div class="container-fluid">
             <!-- BEGIN PAGE TITLE -->
             <div class="page-title">
-                <h1>FAQ</h1>
+                <h1>Foire aux questions</h1>
             </div>
             <!-- END PAGE TITLE -->
         </div>

@@ -26,43 +26,40 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta content="" name="description"/>
     <meta content="" name="author"/>
-    @if(Auth::check())
-        <meta name="_token" content="{{ csrf_token() }}"/>
-        @endif
 
-                <!-- BEGIN GLOBAL MANDATORY STYLES -->
-        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
-              type="text/css">
-        {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/font-awesome/css/font-awesome.min.css') }}
-        {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/uniform/css/uniform.default.css') }}
-        {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/bootstrap/css/bootstrap.min.css') }}
-        {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css') }}
-        {{ HTML::style('css/toastr.css') }}
-        {{ HTML::style('css/sweetalert.css') }}
-        <!-- END GLOBAL MANDATORY STYLES -->
-        <!-- BEGIN PAGE LEVEL STYLES -->
-        {{ HTML::style('css/select2.css') }}
-        {{ HTML::style('css/select2-bootstrap.min.css') }}
-        {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/bootstrap-select/bootstrap-select.min.css') }}
-        {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css') }}
-        {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css') }}
-        {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}
-        {{ HTML::style('metronic_v3.6.2/theme/assets/admin/pages/css/pricing-table.css') }}
-        {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/icheck/skins/all.css') }}
-        {{ HTML::style('metronic_v3.6.2/theme/assets/admin/pages/css/login.css') }}
-        {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css') }}
-        {{ HTML::style('metronic_v3.8.1/theme/assets/global/plugins/datatables/media/css/jquery.dataTables.min.css') }}
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
+          type="text/css">
+    {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/font-awesome/css/font-awesome.min.css') }}
+    {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/uniform/css/uniform.default.css') }}
+    {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/bootstrap/css/bootstrap.min.css') }}
+    {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css') }}
+    {{ HTML::style('css/toastr.css') }}
+    {{ HTML::style('css/sweetalert.css') }}
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    {{ HTML::style('css/select2.css') }}
+    {{ HTML::style('css/select2-bootstrap.min.css') }}
+    {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/bootstrap-select/bootstrap-select.min.css') }}
+    {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css') }}
+    {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css') }}
+    {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}
+    {{ HTML::style('metronic_v3.6.2/theme/assets/admin/pages/css/pricing-table.css') }}
+    {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/icheck/skins/all.css') }}
+    {{ HTML::style('metronic_v3.6.2/theme/assets/admin/pages/css/login.css') }}
+    {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css') }}
+    {{ HTML::style('metronic_v3.8.1/theme/assets/global/plugins/datatables/media/css/jquery.dataTables.min.css') }}
 
-        <!-- END PAGE LEVEL STYLES -->
-        <!-- BEGIN THEME STYLES -->
-        {{ HTML::style('metronic_v3.6.2/theme/assets/global/css/components-rounded.css') }}
-        {{ HTML::style('metronic_v3.6.2/theme/assets/global/css/plugins.css') }}
-        {{ HTML::style('metronic_v3.6.2/theme/assets/admin/layout3/css/layout.css') }}
-        {{ HTML::style('metronic_v3.6.2/theme/assets/admin/layout3/css/themes/default.css') }}
-        {{ HTML::style('metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css') }}
+    <!-- END PAGE LEVEL STYLES -->
+    <!-- BEGIN THEME STYLES -->
+    {{ HTML::style('metronic_v3.6.2/theme/assets/global/css/components-rounded.css') }}
+    {{ HTML::style('metronic_v3.6.2/theme/assets/global/css/plugins.css') }}
+    {{ HTML::style('metronic_v3.6.2/theme/assets/admin/layout3/css/layout.css') }}
+    {{ HTML::style('metronic_v3.6.2/theme/assets/admin/layout3/css/themes/default.css') }}
+    {{ HTML::style('metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css') }}
 
-        <!-- END THEME STYLES -->
-        <link rel="shortcut icon" href="{{asset('favicon.ico')}}"/>
+    <!-- END THEME STYLES -->
+    <link rel="shortcut icon" href="{{asset('favicon.ico')}}"/>
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -71,7 +68,28 @@ License: You must have a valid license purchased only from themeforest(the above
 <body class="page-header-menu-fixed page-container-bg-solid page-sidebar-closed-hide-logo page-header-fixed-mobile page-footer-fixed1">
 
 <div class="page-header">
-    @include('includes.header')
+    <!-- BEGIN HEADER TOP -->
+    <div class="page-header-top">
+        <div class="container-fluid">
+            <!-- BEGIN LOGO -->
+            <div class="page-logo col-xs-pull-4">
+                <a href="{{url('dashboard')}}"><img
+                            src="{{asset('img/pongo.jpg')}}"
+                            alt="logo" class="logo" height="60px"></a>
+            </div>
+            <!-- END LOGO -->
+
+        </div>
+    </div>
+    <!-- END HEADER TOP -->
+    <!-- BEGIN HEADER MENU -->
+
+    <div class="page-header-menu page-header-share-ticket">
+
+    </div>
+
+    <!-- END HEADER MENU -->
+
 </div>
 
 <div class="page-container">
@@ -80,6 +98,26 @@ License: You must have a valid license purchased only from themeforest(the above
             <div class="row">
                 <div class="col-md-12">
                     {{var_dump($ticket)}}
+                    @if(isset($ticket))
+                    <table class="table table-condensed table-hover">
+                        <thead>
+                        <tr>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($ticket->selections->get() as $selection)
+                        <tr>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                        @endforeach
+                    </table>
+                    @else
+                        <div class="text-center">
+                            Ce Ticket n'existe pas
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -153,43 +191,6 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="{{asset('metronic_v3.8.1/theme/assets/admin/pages/scripts/components-dropdowns.js')}}"></script>
     <script src="{{asset('js/pages/getPaginationSelectedPage.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/pages/getBookmakersForSelection.js')}}" type="text/javascript"></script>
-
-    <script>
-        jQuery(document).ready(function () {
-
-            $('[data-toggle="tooltip"]').tooltip();
-
-            // afficher un loader lors des chargements ajax.
-            $(document).ajaxStart(function () {
-                $('#spinner').fadeIn();
-            }).ajaxStop(function () {
-                $('#spinner').fadeOut();
-            });
-
-            // ajouter le token a chaque requete ajax.
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-Token': $('meta[name="_token"]').attr('content')
-                }
-            });
-
-            // toastr plugin configuration
-            toastr.options = {
-                "closeButton": true,
-                "debug": false,
-                "positionClass": "toast-top-right",
-                "onclick": null,
-                "showDuration": "500",
-                "hideDuration": "1000",
-                "timeOut": "5000",
-                "extendedTimeOut": "1000",
-                "showEasing": "swing",
-                "hideEasing": "linear",
-                "showMethod": "fadeIn",
-                "hideMethod": "fadeOut"
-            };
-        });
-    </script>
 @show
 
 @include('includes.subview.inits')

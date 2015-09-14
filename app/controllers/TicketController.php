@@ -42,9 +42,7 @@ class TicketController extends Controller{
 	 */
 	public function show($id)
 	{
-		$encoursparis = EnCoursParis::where('share_id', $id)->first();
-		$ticket = $encoursparis->selections()->get();
-        return View::make('tickets.show', array('ticket' => $ticket));
+
 	}
 
 	/**
