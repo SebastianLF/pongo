@@ -470,6 +470,13 @@ function addManualCouponSelection() {
                             modal_form.find('#odd_container').removeClass('has-error');
                             modal_form.find('#odd_error').empty();
                         }
+                        if (data.errors.score) {
+                            modal_form.find('#score_container').addClass('has-error');
+                            modal_form.find('#score_error').html(data.errors.score);
+                        } else {
+                            modal_form.find('#score_container').removeClass('has-error');
+                            modal_form.find('#score_error').empty();
+                        }
 
                     }
                     // si les champs entrés sont valides
@@ -577,14 +584,30 @@ function addManualCouponSelection() {
     $.fn.modal.Constructor.prototype.enforceFocus = function () {
     };
 
+    // pour le plugin datetimepicker
+    $.fn.datetimepicker.dates['fr'] = {
+        days: ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+        daysShort: ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
+        daysMin: ["D", "L", "Ma", "Me", "J", "V", "S", "D"],
+        months: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+        monthsShort: ["Jan", "Fev", "Mar", "Avr", "Mai", "Jui", "Jul", "Aou", "Sep", "Oct", "Nov", "Dec"],
+        today: "Aujourd'hui",
+        suffix: [],
+        meridiem: '',
+        weekStart: 1
+
+    };
+
     // parametre pour l input datetime.
     date.datetimepicker({
-        format: 'dd-mm-yyyy hh:ii',
-        autoclose: true,
+        format: 'dd/mm/yyyy hh:ii',
         todayBtn: true,
+        autoclose: 'true',
         language: 'fr',
         pickerPosition: "bottom-left"
     });
+
+
 
     resetModal();
     postCouponSelection();

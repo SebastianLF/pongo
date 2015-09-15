@@ -90,7 +90,7 @@
                     <a href="{{url('faq')}}"><span class="fa fa-comments"></span> FAQ</a>
                 </li>
                 <li>
-                    <a href="{{url('market')}}"><span class="glyphicon glyphicon-th-list"></span> Glossaire Paris</a>
+                    <a href="{{url('market')}}"><span class="glyphicon glyphicon-th-list"></span> Glossaire Pari</a>
                 </li>
                 <!--<li>
                     <a href="{{url('stats')}}"><span class="glyphicon glyphicon glyphicon-stats"></span>Statistiques</a>

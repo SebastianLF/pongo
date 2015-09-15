@@ -73,7 +73,6 @@ return [
     "timezone"             => "Le champ :attribute doit être un fuseau horaire valide.",
     "unique"               => "La valeur du champ :attribute est déjà utilisée.",
     "url"                  => "Le format de l'URL de :attribute n'est pas valide.",
-    
 
 
 
@@ -94,6 +93,12 @@ return [
     "unites" => "La mise en unité doit être supérieure à 0.",
     "mise_montant_en_unites<solde" => "La mise en unité est supérieure au solde actuel sur le compte bookmaker.",
     "mise_montant_en_devise<solde" => "La mise en montant libre est supérieure au solde actuel sur le compte bookmaker.",
+
+    "pick_validation" => "la valeur entrée pour ce type de pari est fausse, corrigez.",
+    "odd_double_param_validation" => "valeur incorrecte.",
+    "odd_double_param2_validation" => "valeur incorrecte.",
+    "odd_double_param3_validation" => "valeur incorrecte.",
+    "odd_participant_parametername_validation" => "valeur incorrecte.",
 
     'custom' => [
         'attribute-name' => [

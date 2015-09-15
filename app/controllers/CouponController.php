@@ -95,7 +95,7 @@
 		public function postManualSelections()
 		{
 			$regles = array(
-				'date' => 'required|date_format:d-m-Y H:i',
+				'date' => 'required|date_format:Y-m-d H:i',
 				'sport' => 'required|exists:sports,id',
 				'competition' => 'required|exists:competitions,id',
 				'market' => 'required|exists:markets,id',
@@ -103,17 +103,29 @@
 				'team1' => 'sometimes|required|exists:equipes,id',
 				'team2' => 'sometimes|required|exists:equipes,id',
 				'pick' => 'required|pick_validation:' . Input::get('market'),
-				'odd_doubleParam' => 'sometimes|required|oddParam_validation:' . Input::get('market'),
-				'odd_doubleParam2' => 'sometimes|required|oddParam2_validation:' . Input::get('market'),
-				'odd_doubleParam3' => 'sometimes|required|oddParam3_validation:' . Input::get('market'),
-				'odd_participantParameterName' => 'sometimes|required|participantParameter_validation:' . Input::get('market'),
+				'odd_doubleParam' => 'sometimes|required|odd_double_param_validation:' . Input::get('market'),
+				'odd_doubleParam2' => 'sometimes|required|odd_double_param2_validation:' . Input::get('market'),
+				'odd_doubleParam3' => 'sometimes|required|odd_double_param3_validation:' . Input::get('market'),
+				'odd_participantParameterName' => 'sometimes|required|odd_participant_parametername_validation:' . Input::get('market'),
 				'bookmaker' => 'required|exists:bookmakers,id',
 				'odd_value' => 'required|european_odd',
 				'live' => 'required|in:0,1',
 				'score' => 'required_if:live,1',
 			);
 
-			$messages = array();
+			$messages = array(
+				"market.required" => "type de pari obligatoire.",
+				"scope.required" => "Portée du pari obligatoire.",
+				"team1.required" => "equipe/joueur domicile obligatoire.",
+				"team2.required" => "equipe/joueur extérieur obligatoire.",
+				"pick.required" => "Ce champ est obligatoire pour ce type de pari.",
+				"odd_doubleParam.required" => "Ce champ est obligatoire pour ce type de pari.",
+				"odd_doubleParam2.required" => "Ce champ est obligatoire pour ce type de pari.",
+				"odd_doubleParam3.required" => "Ce champ est obligatoire pour ce type de pari.",
+				"odd_participantParameterName.required" => "Ce champ est obligatoire pour ce type de pari.",
+				"odd_value.required" => "Cote obligatoire.",
+				"score.required_if" => "Le champ score est obligatoire lorsque live est coché.",
+			);
 
 			$validator = Validator::make(Input::all(), $regles, $messages);
 			if ($validator->fails()) {
@@ -124,9 +136,8 @@
 				));
 			} else {
 
-				// creation dans la base ou récuperation avant d'instancier un nouveau coupon.
-				$date = Carbon::createFromFormat('d-m-Y H:i', Input::get('date'));
-				$date->setToStringFormat('Y-m-d H:i');
+				$date = Carbon::createFromFormat('d/m/Y H:i', Input::get('date'), Auth::user()->timezone);
+				$date = $date->timezone('Europe/Paris')->toDateTimeString(); // toujours sauver les dates avec le meme fuseau horaire dans la bd.
 				$sport = Sport::find(Input::get('sport'));
 				$competition = Competition::find(Input::get('competition'));
 				$competition_country = Country::find($competition->country_id);

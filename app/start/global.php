@@ -162,7 +162,7 @@
 		return false;
 	});
 
-	Validator::extend('oddParam_validation', function ($attribute, $value, $parameters) {
+	Validator::extend('odd_double_param_validation', function ($attribute, $value, $parameters) {
 		$market = $parameters[0];
 
 		if ($market == 7) { //Winner
@@ -184,17 +184,17 @@
 		return false;
 	});
 
-	Validator::extend('oddParam2_validation', function ($attribute, $value, $parameters) {
+	Validator::extend('odd_double_param2_validation', function ($attribute, $value, $parameters) {
 		$market = $parameters[0];
 		return false;
 	});
 
-	Validator::extend('oddParam3_validation', function ($attribute, $value, $parameters) {
+	Validator::extend('odd_double_param3_validation', function ($attribute, $value, $parameters) {
 		$market = $parameters[0];
 		return false;
 	});
 
-	Validator::extend('participantParameter_validation', function ($attribute, $value, $parameters) {
+	Validator::extend('odd_participant_parametername_validation', function ($attribute, $value, $parameters) {
 		$market = $parameters[0];
 
 		if ($market == 8) { //1x2 with european handicap
