@@ -4,6 +4,13 @@
 
 function addManualCouponSelection() {
 
+    // differentd picks récurrents.
+    var picks = ''; //initialisation de la variable qui sera modifié a chaque choix de type de pari.
+    var picks1X2 = [{id: "1", text: "Home"}, {id: "2", text: "Away"}, {id: "X", text: "Draw"}];
+    var picks12 = [{id: "1", text: "Home"}, {id: "2", text: "Away"}];
+
+
+
     // gestion formulaire
     var form = $('#automaticform-add');
     var form_string = '#automaticform-add';
@@ -205,18 +212,14 @@ function addManualCouponSelection() {
                 team1.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
                 team2.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
                 pickContainer.fadeIn().removeClass("hidden");
-                picks = [{id: "1", text: "Domicile"}, {id: "2", text: "Exterieur"}, {
-                    id: "X",
-                    text: "Match Nul"
-                }];
-                pick.select2({data: picks, minimumResultsForSearch: Infinity});
+
+                pick.select2({data: picks1X2, minimumResultsForSearch: Infinity});
                 pickLabel.html("Résultat du match");
                 oddParticipantParameterNameLabel.text('Equipe Handicap');
                 oddParticipantParameterNameContainer.fadeIn().removeClass("hidden");
                 oddParticipantParameterNameContainer.addClass("col-md-6");
-                participantNameList = [{id: "1", text: "Domicile"}, {id: "2", text: "Exterieur"}];
                 oddParticipantParameterName.select2({
-                    data: participantNameList,
+                    data: picks12,
                     minimumResultsForSearch: Infinity,
                     placeholder: 'Equipe/Joueur'
                 });
@@ -243,20 +246,17 @@ function addManualCouponSelection() {
             else if (val == 43) { // 1X2
                 team1Container.removeClass("hidden");
                 team2Container.removeClass("hidden");
-                picks = [{id: "1", text: "Home"}, {id: "2", text: "Away"}, {id: "X", text: "Draw"}];
-                pick.select2({data: picks, minimumResultsForSearch: Infinity});
+                pick.select2({data: picks1X2, minimumResultsForSearch: Infinity});
             }
             else if (val == 46) { // Match Winner / HomeAway
                 team1Container.removeClass("hidden");
                 team2Container.removeClass("hidden");
-                picks = [{id: "1", text: "Home"}, {id: "2", text: "Away"}];
-                pick.select2({data: picks, minimumResultsForSearch: Infinity});
+                pick.select2({data: picks12, minimumResultsForSearch: Infinity});
             }
             else if (val == 48) { // Asian Handicap
                 team1Container.removeClass("hidden");
                 team2Container.removeClass("hidden");
-                picks = [{id: "1", text: "Home"}, {id: "2", text: "Away"}];
-                pick.select2({data: picks, minimumResultsForSearch: Infinity});
+                pick.select2({data: picks12, minimumResultsForSearch: Infinity});
                 oddParamContainer.removeClass("hidden");
                 oddParamLabel.text('Handicap');
                 oddParam.select2({placeholder: "-2.5 ou 2.5", tags: true});
