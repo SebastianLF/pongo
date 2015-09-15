@@ -4,11 +4,10 @@
 
 function addManualCouponSelection() {
 
-    // differentd picks récurrents.
+    // mise en variable des picks qui sont récurrents.
     var picks = ''; //initialisation de la variable qui sera modifié a chaque choix de type de pari.
     var picks1X2 = [{id: "1", text: "Home"}, {id: "2", text: "Away"}, {id: "X", text: "Draw"}];
     var picks12 = [{id: "1", text: "Home"}, {id: "2", text: "Away"}];
-
 
 
     // gestion formulaire
