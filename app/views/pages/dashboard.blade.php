@@ -101,8 +101,8 @@
                                                aria-controls="panier-selections-add-ticket">
                                                 Panier des sélections -
                                             </a>
-                                            <button><a id="selection-refresh" type="button" > <span
-                                                            class="glyphicon glyphicon-refresh glyphicon-spin"></span>Rafraichir</a></button>
+                                            <a id="selection-refresh" type="button" > <span
+                                                            class="glyphicon glyphicon-refresh glyphicon-spin"></span>Rafraichir</a>
 
                                         </h4>
                                     </div>
