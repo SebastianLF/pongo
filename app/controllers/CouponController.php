@@ -95,7 +95,7 @@
 		public function postManualSelections()
 		{
 			$regles = array(
-				'date' => 'required|date_format:Y-m-d H:i',
+				'date' => 'required|date_format:d/m/Y H:i',
 				'sport' => 'required|exists:sports,id',
 				'competition' => 'required|exists:competitions,id',
 				'market' => 'required|exists:markets,id',
