@@ -27,7 +27,8 @@
 			$sport_id = Input::get('sport_id');
 			Clockwork::info($sport_id);
 			if (isset($sport_id)) {
-				$competitions = Competition::with('country')->where('sport_id', $sport_id)->where('name', 'LIKE', '%' . $q . '%')->get(array('id', 'name AS text', 'logo'));
+				$competitions = Competition::where('sport_id', $sport_id)->where('name', 'LIKE', '%' . $q . '%')->with('country')->get(array('id', 'name AS text', 'logo', 'country_id'));
+				Clockwork::info($competitions);
 				return Response::json($competitions);
 			} else {
 				return Response::json([]);
@@ -76,7 +77,7 @@
 			$sport_id = Input::get('sport_id');
 
 			if (!empty($sport_id)) {
-				$equipes = Equipe::where('sport_id', $sport_id)->where('name', 'LIKE', '%' . $q . '%')->get(array('id', 'equipes.name AS text'));
+				$equipes = Equipe::where('sport_id', $sport_id)->where('name', 'LIKE', '%' . $q . '%')->with('country')->get(array('id', 'equipes.name AS text', 'country_id'));
 				return Response::json($equipes);
 			} else {
 				return Response::json([]);

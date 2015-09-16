@@ -351,3 +351,23 @@ select{
 }
 
 /* remet à zero pour le plugin datetimepicker dans recap*/
+
+/* flags sprite */
+
+    /*.flag{
+        width: 1.25em;
+        height: .9166em;
+        background-image: url('../../../../../../img/countries-sprite.png');
+        background-repeat: no-repeat;
+    }
+
+    .flag.flag-es{
+        background-position: -357px -165px;
+    }*/
+
+.img-flag{
+    width: 22px;
+    height: 20px;
+}
+
+

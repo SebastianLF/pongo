@@ -143,10 +143,10 @@ function addManualCouponSelection() {
     }
 
     function gestionSelectionsCompet() {
-        function formatState (state) {
+        function formatCompet (state) {
             if (!state.id) { return state.text; }
             var $state = $(
-                '<span><img src="img/flags/' + state.element.value.toLowerCase() + '.png" class="img-flag" /> ' + state.text + '</span>'
+                '<span><img src="img/flags/' + state.country.shortname + '.png" class="img-flag" /> ' + state.text + '</span>'
             );
             return $state;
         }
@@ -171,7 +171,7 @@ function addManualCouponSelection() {
                     };
                 }
             },
-            templateResult: formatState
+            templateResult: formatCompet
         });
     }
 
@@ -305,6 +305,13 @@ function addManualCouponSelection() {
     }
 
     function gestionSelectionsEquipes() {
+        function formatTeams (state) {
+            if (!state.id) { return state.text; }
+            var $state = $(
+                '<span><img src="img/flags/' + state.country.shortname + '.png" class="img-flag" /> ' + state.text + '</span>'
+            );
+            return $state;
+        }
         modal_form.find(".team1inputdashboard").select2({
 
             allowClear: true,
@@ -324,7 +331,8 @@ function addManualCouponSelection() {
                         results: data
                     };
                 }
-            }
+            },
+            templateResult: formatTeams
         });
 
         modal_form.find(".team2inputdashboard").select2({
@@ -345,7 +353,8 @@ function addManualCouponSelection() {
                         results: data
                     };
                 }
-            }
+            },
+            templateResult: formatTeams
         });
     }
 
