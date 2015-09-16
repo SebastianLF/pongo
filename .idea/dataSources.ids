@@ -429,7 +429,7 @@
     </table>
   </data-source>
   <data-source name="MySQL - slfweb@slfweb.mysql.eu1.frbit.com" uuid="2226fdbd-0f31-48fa-8a3c-f51c98371bf0">
-    <database-info product="MySQL" version="5.5.40-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+    <database-info product="MySQL" version="5.5.40-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
@@ -500,6 +500,7 @@
     <table name="countries" schema="" catalog="slfweb" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="shortname" sqlType="VARCHAR" precision="3" scale="0" nullable="false" jdbcType="12"/>
       <column name="logo" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>

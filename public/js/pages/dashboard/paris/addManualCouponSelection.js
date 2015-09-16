@@ -253,18 +253,18 @@ function addManualCouponSelection() {
                 pickLabel.html("Choix");
             }
             else if (val == 43) { // 1X2
-                team1Container.removeClass("hidden");
-                team2Container.removeClass("hidden");
+                team1.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
+                team2.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
                 pick.select2({data: picks1X2, minimumResultsForSearch: Infinity});
             }
             else if (val == 46) { // Match Winner / HomeAway
-                team1Container.removeClass("hidden");
-                team2Container.removeClass("hidden");
+                team1.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
+                team2.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
                 pick.select2({data: picks12, minimumResultsForSearch: Infinity});
             }
             else if (val == 48) { // Asian Handicap
-                team1Container.removeClass("hidden");
-                team2Container.removeClass("hidden");
+                team1.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
+                team2.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
                 pick.select2({data: picks12, minimumResultsForSearch: Infinity});
                 oddParamContainer.removeClass("hidden");
                 oddParamLabel.text('Handicap');
