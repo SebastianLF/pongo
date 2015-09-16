@@ -13,4 +13,8 @@ class Competition extends Eloquent {
     public function equipes(){
         return $this->belongsToMany('Equipe','competition_equipe');
     }
+
+    public function country(){
+        return $this->belongsTo('Country', 'country_id');
+    }
 }

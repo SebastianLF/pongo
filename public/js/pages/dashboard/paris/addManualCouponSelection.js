@@ -143,10 +143,19 @@ function addManualCouponSelection() {
     }
 
     function gestionSelectionsCompet() {
+        function formatState (state) {
+            if (!state.id) { return state.text; }
+            var $state = $(
+                '<span><img src="img/flags/' + state.element.value.toLowerCase() + '.png" class="img-flag" /> ' + state.text + '</span>'
+            );
+            return $state;
+        }
+
         modal_form.find(".competitioninputdashboard").select2({
             allowClear: true,
             placeholder: "Choisir une competition",
             cache: true,
+
             ajax: {
                 url: 'competitions',
                 dataType: 'json',
@@ -161,7 +170,8 @@ function addManualCouponSelection() {
                         results: data
                     };
                 }
-            }
+            },
+            templateResult: formatState
         });
     }
 
