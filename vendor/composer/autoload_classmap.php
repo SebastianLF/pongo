@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'ABCDParisController' => $baseDir . '/app/controllers/ABCDParisController.php',
+    'AddActifToCompetitions' => $baseDir . '/app/database/migrations/2015_09_16_165807_add_actif_to_competitions.php',
     'AddColumnShortname' => $baseDir . '/app/database/migrations/2015_09_16_072744_add_column_shortname.php',
     'AjaxController' => $baseDir . '/app/controllers/AjaxController.php',
     'AuthController' => $baseDir . '/app/controllers/AuthController.php',

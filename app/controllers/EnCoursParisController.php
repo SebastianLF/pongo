@@ -61,7 +61,7 @@
 					})->where('deleted_at', NULL)->get();
 
 					$bookmakers_count = $comptes->count();
-					if ($bookmakers_count == 0) {
+					if ($bookmakers_count == 0 && (Input::get('followtype') == 'n')) {
 						return Response::json(array(
 							'etat' => 0,
 							'msg' => 'Ce bookmaker n\'a pas de compte associé, rendez vous dans la page configuration pour le créer.',
