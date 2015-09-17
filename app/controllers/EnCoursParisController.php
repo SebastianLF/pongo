@@ -53,7 +53,7 @@
 						$bookmakers_differents = false;
 					}
 				}
-				if (!$bookmakers_differents) {
+				if (!$bookmakers_differents && (Input::get('followtype') == 'n')) {
 
 					// vérification si il existe au moins un compte bookmaker correspondant au bookmaker des selections.
 					$comptes = Auth::user()->comptes()->whereHas('bookmaker', function ($query) use ($bookmaker) {
@@ -61,7 +61,7 @@
 					})->where('deleted_at', NULL)->get();
 
 					$bookmakers_count = $comptes->count();
-					if ($bookmakers_count == 0 && (Input::get('followtype') == 'n')) {
+					if ($bookmakers_count == 0 ) {
 						return Response::json(array(
 							'etat' => 0,
 							'msg' => 'Ce bookmaker n\'a pas de compte associé, rendez vous dans la page configuration pour le créer.',

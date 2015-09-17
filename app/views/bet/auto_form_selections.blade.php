@@ -38,7 +38,7 @@
                             {{' ('.$selection->score.' LIVE!) '}}
                         @endif
                     </td>
-                    <td ><input class="input-sm form-control" name="automatic-selection-cote[]" type="text"
+                    <td ><input class=" form-control input-coupon-odd" name="automatic-selection-cote[]" type="text"
                                value="{{$selection->odd_value}}"/></td>
                     <td width="5px">
                         <button class="boutonsupprimer btn btn-xs red"><i class="glyphicon glyphicon-trash"></i>

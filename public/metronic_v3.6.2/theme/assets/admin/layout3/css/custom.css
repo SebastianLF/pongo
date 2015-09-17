@@ -371,3 +371,15 @@ select{
 }
 
 
+/* odd input attributs for coupon selections*/
+.input-sm {
+    height: 23px;
+    padding: 0px 3px;
+    font-size: 13px;
+}
+.input-coupon-odd{
+    height: 23px;
+    padding: 0px 3px;
+    font-size: 13px;
+    margin: 0 0 0 0 !important;
+}

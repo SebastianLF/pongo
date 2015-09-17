@@ -19,7 +19,7 @@ class AddActifToCompetitions extends Migration {
 			$table->boolean('actif', 1)->after('equipe_id')->default(1);
 		});
 		Schema::table('sports', function(Blueprint $table) {
-			$table->tinyInteger('priorite', 1)->after('categorie')->default(4);
+			$table->smallInteger('priorite', 1)->after('categorie')->default(4);
 		});
 	}
 
