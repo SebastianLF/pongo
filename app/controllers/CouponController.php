@@ -266,7 +266,7 @@
 				"home_team_country_name" => Input::exists('home_team_country_name') ?  $home_country->name : null,
 				"away_team" => Input::exists('away_team') ?  $away_team->name : null,
 				"away_team_country_name" => Input::exists('away_team_country_name') ?  $away_country->name : null,
-				"score" => !Input::exists('score')?NULL:Input::get('score'),
+				"score" => Input::exists('score') == 'null' ? NULL : Input::get('score'),
 				"isLive" => $isLive,
 				"isMatch" => Input::get('isMatch') == 'true' ? 1 : 0,
 				"session_id" => Input::get('userSessionId'),
