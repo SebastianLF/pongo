@@ -6,7 +6,296 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/flags/dk.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/images/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/.editorconfig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/.jshintignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/.jshintrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/Gruntfile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/LICENSE.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_sass/_alert.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_sass/_anchorjs.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_sass/_buttons.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_sass/_code.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/scss/theme/classic/_defaults.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/scss/_dropdown.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_sass/_examples.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_sass/_featurette.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_sass/_footer.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/scss/mixins/_gradients.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_sass/_hamburger.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_sass/_home.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_sass/_jumbotron.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_sass/_layout.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/scss/_multiple.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/scss/theme/classic/_multiple.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/scss/theme/default/_multiple.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_sass/_nav.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_sass/_prettify.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_sass/_result-repository.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_sass/_sidenav.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/scss/_single.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/scss/theme/classic/_single.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/scss/theme/default/_single.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_sass/_social.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_sass/_typography.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options-old/adapters.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/data/ajax.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/data/ajax.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/selection/allowClear-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/selection/allowClear.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/core/amd-support.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/announcements-4.0.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/nav/announcements-4.0.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/data/array-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/data/array.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/data/array.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/dropdown/attachBody.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/dropdown/attachContainer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/az.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/az.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options-old/backwards-compatibility.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/banner.end.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/banner.start.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/data/base-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/data/base.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/selection/base.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/examples/basics.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/bg.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/bg.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/ca.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/ca.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/selections/clearing-selections.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/selection/clickMask.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/dropdown/closeOnSelect.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/community.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/compatibility.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/component.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/composer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/selection/containerCss-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/compat/containerCss.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options-old/core-options.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/core.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/core.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/scss/core.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/cs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/cs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/da.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/da.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/core/data-attributes.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/options/data-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/examples/data.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/data.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/de.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/de.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/utils/decorator-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_layouts/default.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/defaults.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/options/deprecated-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/diacritics.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/examples/disabled-mode.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/examples/disabled-results.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/dropdown.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options-old/dropdown.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/dropdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/dropdown/dropdownCss-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/compat/dropdownCss.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/en.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/en.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/es.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/es.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/utils/escapeMarkup-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/et.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/et.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/eu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/eu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/selection/eventRelay.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/events.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options-old/events.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/examples.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/nav/examples.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/fa.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/fa.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/fi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/fi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/dropdown/filtering.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/footer.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/fr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/fr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/ga.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/gl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/gl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/he.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/he.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/head.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/helpers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/hi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/hi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/examples/hide-search.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/dropdown/hidePlaceholder.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_layouts/home.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/hr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/hr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/hu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/hu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/id.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/id.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/dropdown/infiniteScroll.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/compat/initSelection.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/compatibility/initial-selection.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/data/inputData-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/compat/inputData.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/integration.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/events/internal.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/introduction.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/compatibility/introduction.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/is.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/is.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/it.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/it.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/ja.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/ja.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/events/jquery.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/jquery.mousewheel.shim.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/jquery.select2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/jquery.shim.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/js-source-states.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/keys.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/ko.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/ko.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/scss/theme/classic/layout.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/scss/theme/default/layout.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/examples/localization-rtl-diacritics.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/lt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/lt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/lv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/lv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/examples/matcher.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/compatibility/matcher.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/compat/matcher.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/data/maximumInputLength-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/data/maximumInputLength.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/data/maximumSelectionLength-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/data/maximumSelectionLength.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/data/minimumInputLength-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/data/minimumInputLength.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/dropdown/minimumResultsForSearch.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/mk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/mk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/ms.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/ms.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/examples/multiple-max.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/selection/multiple-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/selections/multiple.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/selection/multiple.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/navigation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/nb.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/nb.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/nl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/nl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/not-written.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/notice-previous.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/options-old.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/nav/options-old.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/options.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/nav/options.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/core/options.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/options.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/pl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/pl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/selection/placeholder-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/selections/placeholder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/selection/placeholder.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/examples/placeholders.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/dropdown/placement.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/examples/programmatic-control.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/pt-BR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/pt-BR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/pt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/pt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/compatibility/query-function.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/compat/query.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/results.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/ro.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/ro.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/ru.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/ru.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/css/s2-docs.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/selection/search-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/dropdown/search.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/selection/search.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/data/select-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/data/select.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/data/select.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/integration/select2-methods.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/css/select2.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/select2.full.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/select2.full.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/select2.jquery.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/select2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/css/select2.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/select2.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/dropdown/selectOnClose-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/dropdown/selectOnClose.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/a11y/selection-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/selections.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/dropdown/selections.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options-old/setting-default-options.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/selection/single-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/selection/single.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/sk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/sk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/social-buttons.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/sr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/sr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/dropdown/stopPropagation-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/selection/stopPropagation-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/dropdown/stopPropagation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/selection/stopPropagation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/sv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/sv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/data/tags-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/examples/tags.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/data/tags.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/selections/templating.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/options/compatibility/text-input.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/th.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/th.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/examples/themes-templating-responsive-design.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/data/tokenizer-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/docs/_includes/examples/tokenizer.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/data/tokenizer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/tr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/tr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/options/translation-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/translation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/uk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/uk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/unit.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/utils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/compat/utils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/vi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/vi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/tests/options/width-tests.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/wrapper.end.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/wrapper.start.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/zh-CN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/zh-CN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/zh-TW.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/i18n/zh-TW.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js" afterPath="$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/dashboard/paris/addTicket.js" afterPath="$PROJECT_DIR$/public/js/pages/dashboard/paris/addTicket.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/js/all.min.js" afterPath="$PROJECT_DIR$/public/build/js/all.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/js/dashboard.js" afterPath="$PROJECT_DIR$/public/build/js/dashboard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/default.blade.php" afterPath="$PROJECT_DIR$/app/views/layouts/default.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="betsmanage.iws" />
@@ -63,11 +352,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="addManualCouponSelection.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="addManualCouponSelection.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4267" max-vertical-offset="10965">
-              <caret line="274" column="34" selection-start-line="274" selection-start-column="34" selection-end-line="274" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.55668014" vertical-offset="2224" max-vertical-offset="10965">
+              <caret line="147" column="27" selection-start-line="147" selection-start-column="27" selection-end-line="147" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -76,21 +365,9 @@
       <file leaf-file-name="addTicket.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/addTicket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1326" max-vertical-offset="6783">
-              <caret line="78" column="36" selection-start-line="78" selection-start-column="36" selection-end-line="78" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="6098" max-vertical-offset="6783">
+              <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="3179" max-vertical-offset="6953">
-              <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
-              <folding>
-                <marker date="1442319172830" expanded="true" signature="3986:4137" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -98,28 +375,60 @@
       <file leaf-file-name="CouponController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.807693" vertical-offset="2992" max-vertical-offset="6188">
+            <state vertical-scroll-proportion="-11.769231" vertical-offset="2941" max-vertical-offset="6188">
               <caret line="191" column="9" selection-start-line="191" selection-start-column="9" selection-end-line="191" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EnCoursParisController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EnCoursParisController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.21748401" vertical-offset="646" max-vertical-offset="12189">
-              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+            <state vertical-scroll-proportion="3.2692308" vertical-offset="799" max-vertical-offset="12189">
+              <caret line="42" column="51" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AjaxController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/AjaxController.php">
+      <file leaf-file-name="default.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/default.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.6538463" vertical-offset="235" max-vertical-offset="1666">
-              <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+            <state vertical-scroll-proportion="-7.576923" vertical-offset="1010" max-vertical-offset="2482">
+              <caret line="71" column="48" selection-start-line="71" selection-start-column="48" selection-end-line="71" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fr.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/fr.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+              <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="select2_locale_fr.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/metronic_v3.8.1/theme/assets/global/plugins/select2/select2_locale_fr.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/metronic_v3.8.1/theme/assets/global/plugins/select2/composer.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="595">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -185,8 +494,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/.htaccess" />
-        <option value="$PROJECT_DIR$/app/models/Selection.php" />
         <option value="$PROJECT_DIR$/app/views/bet/paristermine.blade.php" />
         <option value="dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..markets" />
         <option value="db-console:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/" />
@@ -201,9 +508,7 @@
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js" />
         <option value="$PROJECT_DIR$/app/config/app.php" />
         <option value="$PROJECT_DIR$/app/views/recaps/tipstersrecap.blade.php" />
-        <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/addTicket.js" />
         <option value="$PROJECT_DIR$/app/views/layouts/ticket_share_template.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/layouts/default.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/BaseController.php" />
         <option value="$PROJECT_DIR$/app/views/includes/headlogin.blade.php" />
         <option value="$PROJECT_DIR$/app/views/includes/footer.blade.php" />
@@ -229,13 +534,17 @@
         <option value="$PROJECT_DIR$/app/models/Competition.php" />
         <option value="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/app/views/includes/head.blade.php" />
-        <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js" />
         <option value="$PROJECT_DIR$/app/controllers/CouponController.php" />
         <option value="$PROJECT_DIR$/app/controllers/EnCoursParisController.php" />
         <option value="$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css" />
         <option value="$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2015_09_16_165807_add_actif_to_competitions.php" />
         <option value="$PROJECT_DIR$/app/controllers/AjaxController.php" />
+        <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/addTicket.js" />
+        <option value="$PROJECT_DIR$/public/metronic_v3.8.1/theme/assets/global/plugins/select2/select2_locale_fr.js" />
+        <option value="$USER_HOME$/Downloads/select2-master/select2-master/dist/js/i18n/fr.js" />
+        <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js" />
+        <option value="$PROJECT_DIR$/app/views/layouts/default.blade.php" />
       </list>
     </option>
   </component>
@@ -428,7 +737,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -446,11 +759,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="flags" />
+              <option name="myItemId" value="plugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="select2-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slfweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slfweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -465,6 +800,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slfweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slfweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -518,11 +871,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\slfweb\public\js\plugin" />
       <recent name="C:\wamp\www\slfweb\app\views\layouts" />
       <recent name="C:\wamp\www\slfweb\app\views\tickets" />
       <recent name="C:\wamp\www\slfweb\app\views\pages" />
       <recent name="C:\wamp\www\slfweb\app\views\bet" />
-      <recent name="C:\wamp\www\slfweb\public\js\plugin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp\www\slfweb\app\views" />
@@ -642,8 +995,8 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Gulp.js.dashboard-js" />
-        <item index="1" class="java.lang.String" itemvalue="Gulp.js.css" />
-        <item index="2" class="java.lang.String" itemvalue="Gulp.js.js" />
+        <item index="1" class="java.lang.String" itemvalue="Gulp.js.js" />
+        <item index="2" class="java.lang.String" itemvalue="Gulp.js.css" />
         <item index="3" class="java.lang.String" itemvalue="Gulp.js.minify-html" />
         <item index="4" class="java.lang.String" itemvalue="Gulp.js.config-js" />
       </list>
@@ -1914,7 +2267,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442469943583</updated>
     </task>
-    <option name="localTasksCounter" value="210" />
+    <task id="LOCAL-00210" summary="share page en cours">
+      <created>1442470416316</created>
+      <option name="number" value="00210" />
+      <option name="project" value="LOCAL" />
+      <updated>1442470416316</updated>
+    </task>
+    <option name="localTasksCounter" value="211" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1942,19 +2301,19 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32816902" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32394367" sideWeight="0.49843425" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21514745" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32394367" sideWeight="0.49798927" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13739946" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35352114" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24929577" sideWeight="0.50156575" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32394367" sideWeight="0.5013405" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21715818" sideWeight="0.23521127" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32676056" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.113270774" sideWeight="0.45895523" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24128686" sideWeight="0.45794392" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928064" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3253521" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24865592" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.113270774" sideWeight="0.5410448" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24507043" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24128686" sideWeight="0.54018694" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24647887" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32858595" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32957748" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2024,81 +2383,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/lib/validation/UserCreateValidator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="682">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/gestion/UserGestion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3109756" vertical-offset="0" max-vertical-offset="1173">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/gestion/UserGestionInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="682">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/validation/ValidatorInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="682">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/storage/logs/laravel.log">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/TermineParisController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.3576982" vertical-offset="2193" max-vertical-offset="4658">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/mail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54420733" vertical-offset="0" max-vertical-offset="2295">
-          <caret line="21" column="20" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/AuthController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.103658535" vertical-offset="306" max-vertical-offset="1411">
-          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49237806" vertical-offset="204" max-vertical-offset="1666">
-          <caret line="31" column="27" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/validation/UserLoginValidator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="682">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/validation/BaseValidator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40384614" vertical-offset="0" max-vertical-offset="555">
-          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..sport_market">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state />
@@ -2174,25 +2458,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/default.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48479086" vertical-offset="1020" max-vertical-offset="2431">
-          <caret line="75" column="121" selection-start-line="75" selection-start-column="98" selection-end-line="75" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/lang/fr/validation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1500" max-vertical-offset="2370">
           <caret line="100" column="45" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/addTicket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="6783">
-          <caret line="78" column="36" selection-start-line="78" selection-start-column="36" selection-end-line="78" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2285,13 +2554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/includes/head.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67639256" vertical-offset="390" max-vertical-offset="885">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Equipe.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0795756" vertical-offset="0" max-vertical-offset="377">
@@ -2315,26 +2577,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.807693" vertical-offset="2992" max-vertical-offset="6188">
-          <caret line="191" column="9" selection-start-line="191" selection-start-column="9" selection-end-line="191" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.53149605" vertical-offset="6122" max-vertical-offset="6630">
           <caret line="376" column="21" selection-start-line="376" selection-start-column="21" selection-end-line="376" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4267" max-vertical-offset="10965">
-          <caret line="274" column="34" selection-start-line="274" selection-start-column="34" selection-end-line="274" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -2345,16 +2591,6 @@
           <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
           <folding>
             <marker date="1442468591959" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2617" max-vertical-offset="6135">
-          <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
-          <folding>
-            <marker date="1442319172830" expanded="true" signature="3986:4137" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -2391,9 +2627,142 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/AjaxController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6538463" vertical-offset="235" max-vertical-offset="1666">
+        <state vertical-scroll-proportion="0.36886993" vertical-offset="235" max-vertical-offset="1666">
           <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2617" max-vertical-offset="6135">
+          <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+          <folding>
+            <marker date="1442319172830" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.769231" vertical-offset="2941" max-vertical-offset="6188">
+          <caret line="191" column="9" selection-start-line="191" selection-start-column="9" selection-end-line="191" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/layout.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="32351">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.2692308" vertical-offset="799" max-vertical-offset="12189">
+          <caret line="42" column="51" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/metronic_v3.8.1/theme/assets/global/plugins/select2/select2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3322933" vertical-offset="93" max-vertical-offset="59738">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/addTicket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6098" max-vertical-offset="6783">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/includes/head.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58536583" vertical-offset="347" max-vertical-offset="1003">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/metronic_v3.8.1/theme/assets/global/plugins/select2/LICENSE">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="508">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/metronic_v3.8.1/theme/assets/global/plugins/select2/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6181818" vertical-offset="306" max-vertical-offset="1785">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/metronic_v3.8.1/theme/assets/global/plugins/select2/select2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/metronic_v3.8.1/theme/assets/global/plugins/select2/select2_locale_fr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/metronic_v3.8.1/theme/assets/global/plugins/select2/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/select2-master/select2-master/dist/js/i18n/fr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3090909" vertical-offset="0" max-vertical-offset="510">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/plugin/select2-master/src/js/select2/data/ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.2007874" vertical-offset="102" max-vertical-offset="1819">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/select2.full.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="81395" max-vertical-offset="105825">
+          <caret line="4799" column="29" selection-start-line="4799" selection-start-column="21" selection-end-line="4799" selection-end-column="29" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/plugin/select2-master/dist/js/i18n/fr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2419,10 +2788,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/default.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21748401" vertical-offset="646" max-vertical-offset="12189">
-          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        <state vertical-scroll-proportion="-7.576923" vertical-offset="1010" max-vertical-offset="2482">
+          <caret line="71" column="48" selection-start-line="71" selection-start-column="48" selection-end-line="71" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55668014" vertical-offset="2224" max-vertical-offset="10965">
+          <caret line="147" column="27" selection-start-line="147" selection-start-column="27" selection-end-line="147" selection-end-column="27" />
           <folding />
         </state>
       </provider>

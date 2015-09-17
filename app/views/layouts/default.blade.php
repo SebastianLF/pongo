@@ -66,7 +66,8 @@ License: You must have a valid license purchased only from themeforest(the above
             type="text/javascript"></script>
     <!-- END CORE PLUGINS -->
     <!-- BEGIN PAGE LEVEL PLUGINS -->
-    <script src="{{asset('js/plugin/select2.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('js/plugin/select2-master/dist/js/select2.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('js/plugin/select2-master/dist/js/i18n/fr.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/plugin/toastr.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/plugin/sweetalert.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/plugin/jquery.animateNumber.min.js')}}" type="text/javascript"></script>
@@ -94,6 +95,8 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <script>
         jQuery(document).ready(function () {
+
+
 
             $('[data-toggle="tooltip"]').tooltip();
 

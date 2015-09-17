@@ -20,10 +20,10 @@ function refreshSelections() {
 
 function openOrCloseSelectionsCouponAccordeonWhenSelectionsCouponIsRefreshed(count){
     if(count > 0){
-        //$('#panier-selections-add-ticket').addClass('in');
+        $('#panier-selections-add-ticket').collapse('show');
         $('#infos-generales-add-ticket').collapse('show');
     }else{
-        //$('#panier-selections-add-ticket').removeClass('in');
+        $('#panier-selections-add-ticket').collapse('hide');
         $('#infos-generales-add-ticket').collapse('hide');
     }
 

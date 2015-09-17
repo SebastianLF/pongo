@@ -155,7 +155,7 @@ function addManualCouponSelection() {
             allowClear: true,
             placeholder: "Choisir une competition",
             cache: true,
-
+            language: 'fr',
             ajax: {
                 url: 'competitions',
                 dataType: 'json',
