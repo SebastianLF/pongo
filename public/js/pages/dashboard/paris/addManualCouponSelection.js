@@ -81,10 +81,9 @@ function addManualCouponSelection() {
     var scoreError = modal_form.find('#score_error');
     var scoreContainer = modal_form.find('#score_container');
 
-
     function assignerEtatEnDebut() {
-        pickContainer.addClass("hidden");
         scopeContainer.addClass("hidden");
+        pickContainer.addClass("hidden");
         oddParamContainer.addClass("hidden");
         oddParam2Container.addClass("hidden");
         oddParam3Container.addClass("hidden");
@@ -92,8 +91,6 @@ function addManualCouponSelection() {
         scoreContainer.addClass("hidden");
         score.prop("disabled", true);
     }
-
-
 
     function gestionCheckboxs() {
         liveCheckBox.click(function () {
@@ -197,8 +194,6 @@ function addManualCouponSelection() {
             }
         }).change(function () {
             hideMarketParams();
-            /*var picks = [];
-             pick.select2({data: picks, minimumResultsForSearch: Infinity});*/
             resetTeamsInputs();
 
             // valeur de market pour la gestion de l affichage des parametres du market.
@@ -278,7 +273,7 @@ function addManualCouponSelection() {
     }
 
     function gestionSelectionsScope() {
-        modal_form.find(".scopeinputdashboard").select2({
+        scope.select2({
             allowClear: true,
             placeholder: "Choisir une portée",
             cache: true,
@@ -512,7 +507,7 @@ function addManualCouponSelection() {
 
     function hideMarketParams() {
         scope.html('').val("").trigger("change");
-        scopeContainer.addClass("hidden");
+
         scopeContainer.removeClass('has-error');
         scopeError.empty();
         pick.html('').val("").trigger("change");
@@ -535,7 +530,6 @@ function addManualCouponSelection() {
         oddParticipantParameterNameContainer.addClass("hidden");
         oddParticipantParameterNameContainer.removeClass('has-error');
         oddParticipantParameterNameError.empty();
-
     }
 
     function resetTeamsInputs() {
@@ -624,8 +618,6 @@ function addManualCouponSelection() {
         language: 'fr',
         pickerPosition: "bottom-left"
     });
-
-
 
     resetModal();
     postCouponSelection();

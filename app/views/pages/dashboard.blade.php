@@ -213,15 +213,17 @@
                                                 </select>
                                                 <span id="competition_error" class="help-block"></span>
                                             </div>
+                                            <hr/>
 
-                                            <div id="team1_container" class="form-group col-md-6">
+                                            <div class="col-md-6">
+                                            <div id="team1_container" class="form-group">
                                                 <label for="team1">Equipe Domicile</label>
                                                 <select name="team1"
                                                         class="form-control team1inputdashboard input-sm">
                                                 </select>
                                                 <span id="team1_error" class="help-block"></span>
                                             </div>
-
+                                            </div>
                                             <div id="team2_container" class="form-group col-md-6">
                                                 <label for="team2">Equipe Extérieur</label>
                                                 <select name="team2"
