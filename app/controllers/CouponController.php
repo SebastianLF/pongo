@@ -190,7 +190,7 @@
 		public function postAutomaticSelections()
 		{
 			// données a entrer dans la bd dans le but de grossir la bd.
-			// $date = Carbon::createFromFormat('Y-m-d H:i:s', Input::get('game_time'), 'Europe/London');
+			$date = Carbon::createFromFormat('Y-m-d H:i:s', Input::get('game_time'), 'UTC');
 			$bookmaker = Bookmaker::firstOrCreate(array('nom' => Input::get('bookmaker')));
 			$sport = Sport::firstOrCreate(array('name' => Input::get('sport_Name')));
 			$event_country = Country::firstOrCreate(array('name' => Input::get('event_country_name')));
@@ -254,7 +254,7 @@
 				'odd_groupParam' => Input::get('odd_groupParam') == "-999.888" ? null : Input::get('odd_groupParam'),
 				'market_id' => $market->id,
 				'market' => $market->name,
-				'game_time' => Input::get('game_time'),
+				'game_time' => $date,
 				'game_id' => Input::get('game_id'),
 				'game_name' => Input::get('game_name'),
 				'sport_id' => $sport->id,

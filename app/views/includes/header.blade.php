@@ -20,7 +20,7 @@
             </div>
             <ul class="nav navbar-nav pull-right">
                 <li class="header-date">
-                   <span class="fa fa-calendar"></span> {{Carbon::now()->timezone(Auth::user()->timezone)->formatLocalized('%d %B %Y')}}
+                   <span class="fa fa-calendar"></span> {{Carbon::now()->timezone(Auth::user()->timezone)}}
                 </li>
                 <!-- BEGIN TODO DROPDOWN -->
                 <li class="droddown dropdown-separator">
