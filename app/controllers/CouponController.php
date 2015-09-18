@@ -238,8 +238,8 @@
 				$isLive = 0;
 			}
 
-			$date_evenement = Carbon::createFromFormat('Y-m-d H:i', Input::get('game_time'), 'Atlantic/Cape_Verde'); // date is sent in UKT-1(UTC).
-			$date_evenement->timezone('Europe/Paris')->toDateTimeString();
+			/*$date_evenement = Carbon::createFromFormat('Y-m-d H:i', Input::get('game_time'), 'Atlantic/Cape_Verde'); // date is sent in UKT-1(UTC).
+			$date_evenement->timezone('Europe/Paris')->toDateTimeString();*/
 
 			$coupon = new Coupon(array(
 				'pick' => Input::get('pick'),
@@ -257,7 +257,7 @@
 				'odd_groupParam' => Input::get('odd_groupParam') == "-999.888" ? null : Input::get('odd_groupParam'),
 				'market_id' => $market->id,
 				'market' => $market->name,
-				'game_time' => $date_evenement,
+				'game_time' => $date,
 				'game_id' => Input::get('game_id'),
 				'game_name' => Input::get('game_name'),
 				'sport_id' => $sport->id,
