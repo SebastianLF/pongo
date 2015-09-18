@@ -190,7 +190,7 @@
 		public function postAutomaticSelections()
 		{
 			// données a entrer dans la bd dans le but de grossir la bd.
-			$date = Carbon::createFromFormat('d/m/Y H:i', Input::get('game_time'), 'UTC');
+			$date = Carbon::createFromFormat('Y-m-d H:i', Input::get('game_time'), 'UTC');
 			$bookmaker = Bookmaker::firstOrCreate(array('nom' => Input::get('bookmaker')));
 			$sport = Sport::firstOrCreate(array('name' => Input::get('sport_Name')));
 			$event_country = Country::firstOrCreate(array('name' => Input::get('event_country_name')));
