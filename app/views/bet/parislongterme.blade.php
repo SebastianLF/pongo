@@ -7,7 +7,7 @@
     </div>
 @else
     <div class="table-scrollable-borderless table-responsive">
-        <table id="parislongtermetable" class="table table-condensed table-hover table-bordered"
+        <table id="parislongtermetable" class="table table-condensed table-hover"
                style="border-collapse:collapse;">
             <thead>
             <tr class="uppercase">
