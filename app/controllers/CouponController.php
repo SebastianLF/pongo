@@ -239,7 +239,6 @@
 			}
 
 			$date_evenement = Carbon::createFromFormat('Y-m-d H:i', Input::get('game_time'), 'UTC'); // date is sent in UKT-1(UTC).
-			$date_evenement->timezone('Europe/Paris')->toDateTimeString();
 
 			$coupon = new Coupon(array(
 				'pick' => Input::get('pick'),

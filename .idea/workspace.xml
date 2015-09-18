@@ -91,8 +91,8 @@
       <file leaf-file-name="CouponController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65524626" vertical-offset="4114" max-vertical-offset="6239">
-              <caret line="260" column="51" selection-start-line="260" selection-start-column="51" selection-end-line="260" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.43254817" vertical-offset="3895" max-vertical-offset="6222">
+              <caret line="241" column="0" selection-start-line="241" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1981,7 +1981,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442503374427</updated>
     </task>
-    <option name="localTasksCounter" value="214" />
+    <task id="LOCAL-00214" summary="share page en cours">
+      <created>1442552068120</created>
+      <option name="number" value="00214" />
+      <option name="project" value="LOCAL" />
+      <updated>1442552068120</updated>
+    </task>
+    <option name="localTasksCounter" value="215" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -2526,8 +2532,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65524626" vertical-offset="4114" max-vertical-offset="6239">
-          <caret line="260" column="51" selection-start-line="260" selection-start-column="51" selection-end-line="260" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.43254817" vertical-offset="3895" max-vertical-offset="6222">
+          <caret line="241" column="0" selection-start-line="241" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
           <folding />
         </state>
       </provider>
