@@ -14,7 +14,7 @@
                 <th class="hidden"></th>
                 <th></th>
                 <th>N°</th>
-                <th>type</th>
+                <th width="70px">type</th>
                 <th>Evenement</th>
                 <th>Rencontre</th>
                 <th>Pari</th>
@@ -25,7 +25,7 @@
                 <th>Resultat</th>
                 <th>Status</th>
                 <th>bén./per.</th>
-                <th width="150px"></th>
+                <th width="115px"></th>
             </tr>
             </thead>
             <tbody>
@@ -105,7 +105,7 @@
                             <td class="bold fontsize15" width=""><span class="profits"></span><span
                                         class="devise hide">{{{' '.Auth::user()->devise}}}</span></td>
 
-                            <td width="">
+                            <td width="100px">
                                 {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris', 'role' => 'form', 'data-toggle' => 'tooltip', 'data-original-title' => 'Clôturer')) }}
                                 {{ Form::button('<i class="fa fa-check"></i>', array('type' => 'submit', 'class' => 'boutonvalider btn btn-sm green buttons-actions-ticket', 'disabled' => 'disabled')) }}
                                 {{ Form::close() }}
@@ -160,7 +160,7 @@
 
                             <td class="bold fontsize15"><span class="profits"></span><span
                                         class="devise hide">{{{' '.Auth::user()->devise}}}</span></td>
-                            <td>
+                            <td width="100px">
                                 {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris' ,'role' => 'form', 'data-toggle' => 'tooltip', 'data-original-title' => 'Clôturer')) }}
                                 {{ Form::button('<i class="fa fa-check"></i>', array('type' => 'submit', 'class' => 'boutonvalider btn btn-sm green buttons-actions-ticket', 'disabled' => 'disabled')) }}
                                 {{ Form::close() }}

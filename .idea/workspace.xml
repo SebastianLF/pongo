@@ -6,8 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/app.php" afterPath="$PROJECT_DIR$/app/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" afterPath="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="betsmanage.iws" />
@@ -92,15 +91,15 @@
       <file leaf-file-name="parisencours.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="9.130435" vertical-offset="450" max-vertical-offset="3855">
-              <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+            <state vertical-scroll-proportion="-6.521739" vertical-offset="90" max-vertical-offset="3855">
+              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
               <folding>
-                <marker date="1442584119784" expanded="true" signature="4060:4446" placeholder="..." />
-                <marker date="1442584119784" expanded="true" signature="7664:7937" placeholder="..." />
-                <marker date="1442584119784" expanded="true" signature="7705:7936" placeholder="..." />
-                <marker date="1442584119784" expanded="true" signature="12113:12400" placeholder="..." />
-                <marker date="1442584119784" expanded="true" signature="12154:12399" placeholder="..." />
-                <marker date="1442584119784" expanded="true" signature="14470:14728" placeholder="..." />
+                <marker date="1442595348610" expanded="true" signature="4073:4459" placeholder="..." />
+                <marker date="1442595348610" expanded="true" signature="7682:7955" placeholder="..." />
+                <marker date="1442595348610" expanded="true" signature="7723:7954" placeholder="..." />
+                <marker date="1442595348610" expanded="true" signature="12145:12432" placeholder="..." />
+                <marker date="1442595348610" expanded="true" signature="12186:12431" placeholder="..." />
+                <marker date="1442595348610" expanded="true" signature="14502:14760" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -116,11 +115,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parislongterme.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="parislongterme.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/bet/parislongterme.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.391304" vertical-offset="0" max-vertical-offset="3810">
-              <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.54416406" vertical-offset="405" max-vertical-offset="3810">
+              <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
               <folding>
                 <element signature="e#508#541#0#HTML" expanded="true" />
                 <marker date="1442586791651" expanded="true" signature="4067:4453" placeholder="..." />
@@ -130,19 +129,6 @@
                 <marker date="1442586791651" expanded="true" signature="12161:12406" placeholder="..." />
                 <marker date="1442586791651" expanded="true" signature="14477:14735" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="slfweb.selections" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..selections">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -157,27 +143,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.60094637" vertical-offset="2139" max-vertical-offset="6060">
-              <caret line="168" column="42" selection-start-line="168" selection-start-column="42" selection-end-line="168" selection-end-column="42" />
+            <state vertical-scroll-proportion="6.9130435" vertical-offset="2634" max-vertical-offset="6060">
+              <caret line="165" column="52" selection-start-line="165" selection-start-column="52" selection-end-line="165" selection-end-column="52" />
               <folding>
                 <marker date="1442594311601" expanded="true" signature="3583:3734" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="slfweb.en_cours_paris" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..en_cours_paris">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1680">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -286,13 +259,13 @@
         <option value="dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..coupon" />
         <option value="$PROJECT_DIR$/app/views/layouts/default.blade.php" />
         <option value="$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css" />
-        <option value="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/parisEnCoursCalculateStatus.js" />
         <option value="$PROJECT_DIR$/app/controllers/DashboardController.php" />
         <option value="$PROJECT_DIR$/app/views/bet/parislongterme.blade.php" />
         <option value="dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..en_cours_paris" />
         <option value="$PROJECT_DIR$/app/config/app.php" />
         <option value="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
       </list>
     </option>
   </component>
@@ -2193,7 +2166,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442594108454</updated>
     </task>
-    <option name="localTasksCounter" value="236" />
+    <task id="LOCAL-00236" summary="p">
+      <created>1442594317970</created>
+      <option name="number" value="00236" />
+      <option name="project" value="LOCAL" />
+      <updated>1442594317970</updated>
+    </task>
+    <option name="localTasksCounter" value="237" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -2669,18 +2648,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bet/parislongterme.blade.php">
+    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..coupon">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
+          <caret line="36" column="79" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.391304" vertical-offset="0" max-vertical-offset="3810">
-          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+        <state vertical-scroll-proportion="61.95652" vertical-offset="1935" max-vertical-offset="2850">
+          <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.434783" vertical-offset="0" max-vertical-offset="3210">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.521739" vertical-offset="90" max-vertical-offset="3855">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
           <folding>
-            <element signature="e#508#541#0#HTML" expanded="true" />
-            <marker date="1442586791651" expanded="true" signature="4067:4453" placeholder="..." />
-            <marker date="1442586791651" expanded="true" signature="7671:7944" placeholder="..." />
-            <marker date="1442586791651" expanded="true" signature="7712:7943" placeholder="..." />
-            <marker date="1442586791651" expanded="true" signature="12120:12407" placeholder="..." />
-            <marker date="1442586791651" expanded="true" signature="12161:12406" placeholder="..." />
-            <marker date="1442586791651" expanded="true" signature="14477:14735" placeholder="..." />
+            <marker date="1442595348610" expanded="true" signature="4073:4459" placeholder="..." />
+            <marker date="1442595348610" expanded="true" signature="7682:7955" placeholder="..." />
+            <marker date="1442595348610" expanded="true" signature="7723:7954" placeholder="..." />
+            <marker date="1442595348610" expanded="true" signature="12145:12432" placeholder="..." />
+            <marker date="1442595348610" expanded="true" signature="12186:12431" placeholder="..." />
+            <marker date="1442595348610" expanded="true" signature="14502:14760" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..en_cours_paris">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.9130435" vertical-offset="2634" max-vertical-offset="6060">
+          <caret line="165" column="52" selection-start-line="165" selection-start-column="52" selection-end-line="165" selection-end-column="52" />
+          <folding>
+            <marker date="1442594311601" expanded="true" signature="3583:3734" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -2696,65 +2722,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..coupon">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
-          <caret line="36" column="79" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..en_cours_paris">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
+    <entry file="file://$PROJECT_DIR$/app/views/bet/parislongterme.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="61.95652" vertical-offset="1935" max-vertical-offset="2850">
-          <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="9.130435" vertical-offset="450" max-vertical-offset="3855">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.54416406" vertical-offset="405" max-vertical-offset="3810">
+          <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
           <folding>
-            <marker date="1442584119784" expanded="true" signature="4060:4446" placeholder="..." />
-            <marker date="1442584119784" expanded="true" signature="7664:7937" placeholder="..." />
-            <marker date="1442584119784" expanded="true" signature="7705:7936" placeholder="..." />
-            <marker date="1442584119784" expanded="true" signature="12113:12400" placeholder="..." />
-            <marker date="1442584119784" expanded="true" signature="12154:12399" placeholder="..." />
-            <marker date="1442584119784" expanded="true" signature="14470:14728" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.434783" vertical-offset="0" max-vertical-offset="3210">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60094637" vertical-offset="2139" max-vertical-offset="6060">
-          <caret line="168" column="42" selection-start-line="168" selection-start-column="42" selection-end-line="168" selection-end-column="42" />
-          <folding>
-            <marker date="1442594311601" expanded="true" signature="3583:3734" placeholder="..." />
+            <element signature="e#508#541#0#HTML" expanded="true" />
+            <marker date="1442586791651" expanded="true" signature="4067:4453" placeholder="..." />
+            <marker date="1442586791651" expanded="true" signature="7671:7944" placeholder="..." />
+            <marker date="1442586791651" expanded="true" signature="7712:7943" placeholder="..." />
+            <marker date="1442586791651" expanded="true" signature="12120:12407" placeholder="..." />
+            <marker date="1442586791651" expanded="true" signature="12161:12406" placeholder="..." />
+            <marker date="1442586791651" expanded="true" signature="14477:14735" placeholder="..." />
           </folding>
         </state>
       </provider>
