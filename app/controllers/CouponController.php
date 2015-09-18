@@ -137,6 +137,7 @@
 			} else {
 
 				$date = Carbon::createFromFormat('d/m/Y H:i', Input::get('date'), Auth::user()->timezone);
+				$date->setTimezone('Europe/Paris');
 				$sport = Sport::find(Input::get('sport'));
 				$competition = Competition::find(Input::get('competition'));
 				$competition_country = Country::find($competition->country_id);
