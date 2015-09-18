@@ -159,10 +159,10 @@
       <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5536278" vertical-offset="2139" max-vertical-offset="6060">
-              <caret line="166" column="53" selection-start-line="166" selection-start-column="53" selection-end-line="166" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.5536278" vertical-offset="2139" max-vertical-offset="5865">
+              <caret line="166" column="46" selection-start-line="166" selection-start-column="46" selection-end-line="166" selection-end-column="46" />
               <folding>
-                <marker date="1442593216165" expanded="true" signature="3583:3734" placeholder="..." />
+                <marker date="1442593560525" expanded="true" signature="3583:3734" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -2156,7 +2156,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442592959997</updated>
     </task>
-    <option name="localTasksCounter" value="233" />
+    <task id="LOCAL-00233" summary="debuggage table long terme en cours">
+      <created>1442593232753</created>
+      <option name="number" value="00233" />
+      <option name="project" value="LOCAL" />
+      <updated>1442593232753</updated>
+    </task>
+    <option name="localTasksCounter" value="234" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -2712,10 +2718,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5536278" vertical-offset="2139" max-vertical-offset="6060">
-          <caret line="166" column="53" selection-start-line="166" selection-start-column="53" selection-end-line="166" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.5536278" vertical-offset="2139" max-vertical-offset="5865">
+          <caret line="166" column="46" selection-start-line="166" selection-start-column="46" selection-end-line="166" selection-end-column="46" />
           <folding>
-            <marker date="1442593216165" expanded="true" signature="3583:3734" placeholder="..." />
+            <marker date="1442593560525" expanded="true" signature="3583:3734" placeholder="..." />
           </folding>
         </state>
       </provider>
