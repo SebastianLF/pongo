@@ -378,3 +378,16 @@ select{
     font-size: 13px;
     margin: 0 0 0 0 !important;
 }
+
+.inputs-ticket {
+    height: 23px;
+    padding: 0 3px !important;
+    font-size: 13px;
+    margin: 0 0 0 0 !important;
+}
+
+.buttons-actions-ticket{
+    padding: 4px 7px 4px 7px;
+    font-size: 0;
+    line-height: 1.5;
+}

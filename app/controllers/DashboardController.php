@@ -65,19 +65,13 @@
 
 		public function showParisEnCours()
 		{
-			$parisencours = Auth::user()->enCoursParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport', 'selections.market', 'tipster', 'compte.bookmaker')->where('pari_abcd', '0')->orderBy('numero_pari', 'desc')->paginate(5);
+			$parisencours = Auth::user()->enCoursParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport', 'selections.market', 'tipster', 'compte.bookmaker')->where('pari_long_terme', '0')->orderBy('numero_pari', 'desc')->paginate(5);
 			return $parisencours;
 		}
 
 		public function showParisLongTerme()
 		{
 			$parislongterme = Auth::user()->enCoursParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport', 'tipster', 'compte.bookmaker')->where('pari_long_terme', '1')->orderBy('numero_pari', 'desc')->paginate(8);
-			return $parislongterme;
-		}
-
-		public function showParisABCD()
-		{
-			$parislongterme = Auth::user()->enCoursParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport', 'tipster', 'compte.bookmaker')->where('pari_abcd', '1')->orderBy('numero_pari', 'desc')->paginate(8);
 			return $parislongterme;
 		}
 

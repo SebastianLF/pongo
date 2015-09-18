@@ -153,7 +153,7 @@ function statusBoutonValider(type, gran_parent_var, main_parent_valider_var) {
     var status_array = new Array();
     if (type == 'simple') {
         var status_en_cours = grand_parent.find('select[name="resultatSelectionDashboardInput[]"]').val();
-        //console.log(status_en_cours);
+        console.log(status_en_cours);
         if (status_en_cours == '0') {
             main_parent_valider.prop("disabled", true);
         } else {
@@ -192,7 +192,7 @@ function parisEnCoursCalculateStatus(tablename) {
         //console.log(type);
         // pour le cas d'un pari simple.
         if (type == 'simple') {
-            var type = mainrow.find('.type').text();
+            var type = mainrow.find('.type').text() == 'S' ? 'simple' : ''; // la condition correspond au string contenu dans le span correspondant au type de ticket dans la ligne du ticket
             var cote = mainrow.find('.tdcote').text();
             var mise = mainrow.find('.tdsubmise').text();
             var profits = mainrow.find('.profits');
