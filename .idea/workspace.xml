@@ -7,7 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" afterPath="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/parislongterme.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/parislongterme.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="betsmanage.iws" />
@@ -160,10 +159,10 @@
       <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3643533" vertical-offset="1869" max-vertical-offset="5865">
-              <caret line="140" column="57" selection-start-line="140" selection-start-column="57" selection-end-line="140" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.5536278" vertical-offset="2139" max-vertical-offset="6060">
+              <caret line="166" column="53" selection-start-line="166" selection-start-column="53" selection-end-line="166" selection-end-column="53" />
               <folding>
-                <marker date="1442592580746" expanded="true" signature="3583:3734" placeholder="..." />
+                <marker date="1442593216165" expanded="true" signature="3583:3734" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -2151,7 +2150,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442586394248</updated>
     </task>
-    <option name="localTasksCounter" value="232" />
+    <task id="LOCAL-00232" summary="debuggage table long terme en cours">
+      <created>1442592959997</created>
+      <option name="number" value="00232" />
+      <option name="project" value="LOCAL" />
+      <updated>1442592959997</updated>
+    </task>
+    <option name="localTasksCounter" value="233" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -2707,10 +2712,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3643533" vertical-offset="1869" max-vertical-offset="5865">
-          <caret line="140" column="57" selection-start-line="140" selection-start-column="57" selection-end-line="140" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.5536278" vertical-offset="2139" max-vertical-offset="6060">
+          <caret line="166" column="53" selection-start-line="166" selection-start-column="53" selection-end-line="166" selection-end-column="53" />
           <folding>
-            <marker date="1442592580746" expanded="true" signature="3583:3734" placeholder="..." />
+            <marker date="1442593216165" expanded="true" signature="3583:3734" placeholder="..." />
           </folding>
         </state>
       </provider>
