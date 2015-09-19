@@ -63,10 +63,17 @@ select{
 	display: inline-block !important;
 }
 
-.logo{
-	margin-top: 5px;
+.page-header .page-header-top .page-logo {
+    height: 50px;
+    margin: 13px 0 0;
+    padding: 15px 15px;
+    font-size: 2em;
+    line-height: 15px;
+    color: #777 !important;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
 }
-
 
 .color-white {
 	color: white !important;
