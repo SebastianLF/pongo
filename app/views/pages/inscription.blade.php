@@ -30,9 +30,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- END SIDEBAR TOGGLER BUTTON -->
 <!-- BEGIN LOGO -->
 <div class="logo">
-    <a href="{{url('dashboard')}}">
-        <img src="{{asset('img/pongo2.jpg')}}" alt=""/>
-    </a>
+
 </div>
 <!-- END LOGO -->
 <!-- BEGIN LOGIN -->
@@ -67,13 +65,14 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
 
         <div class="form-actions">
-            <button type="button" id="register-back-btn" class="btn btn-default"><a href="{{url('auth/login')}}">Back</a></button>
-            <button type="submit" id="register-submit-btn" class="btn btn-success uppercase pull-right">Submit</button>
+            <button type="button" id="register-back-btn" class="btn btn-default"><a href="{{URL::previous()}}">RETOUR</a></button>
+            <button type="submit" id="register-submit-btn" class="btn btn-success uppercase pull-right">ENVOYER</button>
         </div>
     {{ Form::close() }}
     <!-- END REGISTRATION FORM -->
 </div>
 <div class="copyright">
+    Copyright © Pongo 2015
 </div>
 <!-- END LOGIN -->
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->

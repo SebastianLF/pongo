@@ -27,11 +27,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 <!-- BEGIN LOGO -->
 <div class="logo color-white">
-    <a href="{{url('dashboard')}}">
-        <img src="{{asset('img/pongo-logo.png')}}" alt=""/>
-    </a>
-    <h1>Pongo</h1>
-    <h2>Application de suivi de paris, de tipsters et de bookmakers pour les parieurs sportifs.</h2>
+
 </div>
 <!-- END LOGO -->
 <!-- BEGIN LOGIN -->
@@ -67,6 +63,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- END LOGIN FORM -->
 </div>
 <div class="copyright">
+    Copyright © Pongo 2015
 </div>
 <!-- END LOGIN -->
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->

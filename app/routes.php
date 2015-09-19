@@ -2,7 +2,7 @@
 
 	//login page
 	Route::get('/', function(){
-		return Redirect::to('auth/login');
+		return View::make('pages.landing');
 	});
 	Route::controller('password', 'RemindersController');
 
