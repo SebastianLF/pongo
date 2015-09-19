@@ -2,20 +2,10 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/app/controllers/BookmakerController.php" line="120" />
-    <bookmark url="file://$PROJECT_DIR$/app/controllers/DashboardController.php" line="152" />
+    <bookmark url="file://$PROJECT_DIR$/app/controllers/DashboardController.php" line="146" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/pages/landing.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/pages/landing/landing.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/app.php" afterPath="$PROJECT_DIR$/app/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css" afterPath="$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/inscription.blade.php" afterPath="$PROJECT_DIR$/app/views/pages/inscription.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/inscriptionok.blade.php" afterPath="$PROJECT_DIR$/app/views/pages/inscriptionok.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/login.blade.php" afterPath="$PROJECT_DIR$/app/views/pages/login.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/password/remind.blade.php" afterPath="$PROJECT_DIR$/app/views/password/remind.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/password/reset.blade.php" afterPath="$PROJECT_DIR$/app/views/password/reset.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="betsmanage.iws" />
@@ -55,20 +45,6 @@
         <option name="myItemId" />
         <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
       </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - slfweb@slfweb.mysql.eu1.frbit.com" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="slfweb" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
-      </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
@@ -90,8 +66,8 @@
       <file leaf-file-name="custom.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6579">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="6783">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -130,8 +106,8 @@
       <file leaf-file-name="remind.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/password/remind.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4976672" vertical-offset="666" max-vertical-offset="1921">
-              <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.02177294" vertical-offset="666" max-vertical-offset="1921">
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -2186,7 +2162,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442570820038</updated>
     </task>
-    <option name="localTasksCounter" value="231" />
+    <task id="LOCAL-00231" summary="share page en cours">
+      <created>1442669847276</created>
+      <option name="number" value="00231" />
+      <option name="project" value="LOCAL" />
+      <updated>1442669847276</updated>
+    </task>
+    <option name="localTasksCounter" value="232" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -2513,7 +2495,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="3497" max-vertical-offset="6987">
           <caret line="217" column="51" selection-start-line="217" selection-start-column="51" selection-end-line="217" selection-end-column="51" />
           <folding>
-            <marker date="1442498759206" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1442669872119" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -2603,12 +2585,12 @@
         <state vertical-scroll-proportion="0.31726283" vertical-offset="714" max-vertical-offset="4216">
           <caret line="54" column="36" selection-start-line="54" selection-start-column="36" selection-end-line="57" selection-end-column="79" />
           <folding>
-            <marker date="1442200982004" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1442200982004" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1442200982004" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1442200982004" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1442200982004" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1442200982004" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1442669872107" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1442669872107" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1442669872107" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1442669872107" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1442669872107" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1442669872107" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -2679,8 +2661,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6579">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="6783">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2735,8 +2717,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/password/remind.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4976672" vertical-offset="666" max-vertical-offset="1921">
-          <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.02177294" vertical-offset="666" max-vertical-offset="1921">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding />
         </state>
       </provider>
