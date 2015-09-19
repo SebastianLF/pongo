@@ -45,7 +45,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#page-top">Pongo</a>
+            <a class="navbar-brand" href="{{url('/')}}">Pongo</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -71,7 +71,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <img class="img-responsive" src="img/landing-logo.png" alt="">
+                <img class="img-responsive" src="{{asset('img/landing-logo.png')}}" alt="illustration">
                 <div class="intro-text">
                     <span class="name">pongo beta 1.0</span>
                     <hr class="star-light">
