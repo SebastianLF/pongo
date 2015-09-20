@@ -1,5 +1,7 @@
 <?php
 
+	use Illuminate\Support\Facades\Cookie;
+
 class UserController extends BaseController {
 
 	public function _construct(){
@@ -86,7 +88,7 @@ class UserController extends BaseController {
 	}
 
 	public function postPreferences(){
-		var_dump(Input::all());
+
 		$rules = array(
 			'timezone' => 'required|timezone'
 		);
@@ -98,7 +100,7 @@ class UserController extends BaseController {
 		Auth::user()->timezone = Input::get('timezone');
 		Auth::user()->save();
 
-		return Redirect::back()->with('flash_success', 'Les préfèrences ont été modifiées avec succès.');
+		return Redirect::back()->with('flash_success', 'Les préfèrences ont été modifiées avec succès.')->withCookie(Cookie::make('timezone', Auth::user()->timezone, 60 * 24 * 30));
 }
 
 	public function getTimezone(){

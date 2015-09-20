@@ -336,7 +336,7 @@
                                 <div class="">
                                     <div class="input-group" id="defaultrange">
                                         <input type="text" class="form-control"
-                                               value="{{Carbon::now()->startOfMonth()->format('d/m/Y').' - '.Carbon::now()->endOfMonth()->format('d/m/Y')}}"
+                                               value="{{Carbon::now(Auth::user()->timezone)->startOfMonth()->format('d/m/Y').' - '.Carbon::now(Auth::user()->timezone)->endOfMonth()->format('d/m/Y')}}"
                                                readonly>
 												<span class="input-group-btn">
 												<button class="btn default date-range-toggle" type="button"><i

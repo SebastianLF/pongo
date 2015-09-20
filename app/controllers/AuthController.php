@@ -38,7 +38,9 @@ class AuthController extends Controller {
 				'password' => Input::get('password')
 			);
 			if(Auth::attempt($user)) {
-				return Redirect::to('dashboard');
+
+				// redirigé vers dashboard page
+				return Redirect::to('dashboard')->withCookie(Cookie::make('timezone', Auth::user()->timezone, 60 * 24 * 30));
 			}
 		    return Redirect::to('auth/login')
 		    ->with('pass', 'Le mot de passe n\'est pas correct !')

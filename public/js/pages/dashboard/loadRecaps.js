@@ -6,7 +6,7 @@
 $('#defaultrange').daterangepicker({
         opens: 'left',
         format: 'DD/MM/YYYY',
-        timeZone: moment('Europe/Paris'),
+        timeZone: moment($.cookie('timezone')),
         ranges: {
             'Aujourd\'hui': [moment(), moment()],
             'Hier': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
@@ -25,6 +25,7 @@ $('#defaultrange').daterangepicker({
 
 
 function loadGeneralRecapsOnDashboard() {
+
     var range = $('#defaultrange input').val();
     $.ajax({
         url: 'generalrecap',

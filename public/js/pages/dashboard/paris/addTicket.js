@@ -22,7 +22,6 @@ function startDecompteRefresh() {
     }
 
     function bip() {
-        console.log(counter);
         $('#automatic-refresh').html("- Rafraichissement auto dans " + counter + " secondes");
         counter--;
     }
