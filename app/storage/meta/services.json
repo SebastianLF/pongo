@@ -31,7 +31,8 @@
         "Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider",
         "Clockwork\\Support\\Laravel\\ClockworkServiceProvider",
         "Dollar\\Generators\\GeneratorsServiceProvider",
-        "Maatwebsite\\Excel\\ExcelServiceProvider"
+        "Maatwebsite\\Excel\\ExcelServiceProvider",
+        "Laracasts\\Utilities\\UtilitiesServiceProvider"
     ],
     "eager": [
         "Illuminate\\Cookie\\CookieServiceProvider",
@@ -45,7 +46,8 @@
         "Barryvdh\\Debugbar\\ServiceProvider",
         "Clockwork\\Support\\Laravel\\ClockworkServiceProvider",
         "Dollar\\Generators\\GeneratorsServiceProvider",
-        "Maatwebsite\\Excel\\ExcelServiceProvider"
+        "Maatwebsite\\Excel\\ExcelServiceProvider",
+        "Laracasts\\Utilities\\UtilitiesServiceProvider"
     ],
     "deferred": {
         "artisan": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

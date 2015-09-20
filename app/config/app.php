@@ -135,6 +135,7 @@ return array(
         'Clockwork\Support\Laravel\ClockworkServiceProvider',
         'Dollar\Generators\GeneratorsServiceProvider',
 		'Maatwebsite\Excel\ExcelServiceProvider',
+		'Laracasts\Utilities\UtilitiesServiceProvider'
 	),
 
 	/*
