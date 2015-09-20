@@ -1,12 +1,42 @@
 /**
  * Created by sebs on 21/08/2015.
  */
+
+
+
+function startDecompteRefresh() {
+    var counter = 4;
+    var intervalId = null;
+
+    function start() {
+        counter = 4;
+        intervalId = setInterval(bip, 1000);
+        setTimeout(action, 5000);
+    }
+
+    function action() {
+        $('#automatic-refresh').html("- Rafraichissement auto !!");
+        clearInterval(intervalId);
+        refreshSelections();
+        start();
+    }
+
+    function bip() {
+        console.log(counter);
+        $('#automatic-refresh').html("- Rafraichissement auto dans " + counter + " secondes");
+        counter--;
+    }
+
+    start();
+}
+
+
 // fonction de rafraichissement.
 function refreshSelections() {
     var form = $('#automaticform-add');
     $.ajax({
         url: 'selections',
-        success: function (data){
+        success: function (data) {
             form.find('#automatic-selections').html(data.vue);
             supprimerSelection();
             misAjourCompteBookmaker();
@@ -18,11 +48,11 @@ function refreshSelections() {
     });
 }
 
-function openOrCloseSelectionsCouponAccordeonWhenSelectionsCouponIsRefreshed(count){
-    if(count > 0){
+function openOrCloseSelectionsCouponAccordeonWhenSelectionsCouponIsRefreshed(count) {
+    if (count > 0) {
         $('#panier-selections-add-ticket').collapse('show');
         $('#infos-generales-add-ticket').collapse('show');
-    }else{
+    } else {
         $('#panier-selections-add-ticket').collapse('hide');
         $('#infos-generales-add-ticket').collapse('hide');
     }
@@ -30,7 +60,7 @@ function openOrCloseSelectionsCouponAccordeonWhenSelectionsCouponIsRefreshed(cou
 }
 
 // supprime la selection.
-function supprimerSelection(){
+function supprimerSelection() {
     var form = $('#automaticform-add');
     form.find('#automatic-selections .boutonsupprimer').on('click', function (e) {
         e.preventDefault();
@@ -48,15 +78,21 @@ function supprimerSelection(){
 
 // recherche des compte bookmaker lié au bookmaker du premier selection coupon,
 // puis introduits dans le champ de choix des comptes bookmaker du formulaire 'informations genérales'.
-function misAjourCompteBookmaker(){
+function misAjourCompteBookmaker() {
     $.ajax({
         url: 'updateaccountform',
-        success: function (data){
+        success: function (data) {
             $('#automaticform-add').find('#accountsinputdashboard').html('');
-            if(data.length > 0){
-                $('#automaticform-add').find('#accountsinputdashboard').select2({data: data, minimumResultsForSearch: Infinity}).val(data[0]['id']).trigger('change');
-            }else{
-                $('#automaticform-add').find('#accountsinputdashboard').select2({minimumResultsForSearch: Infinity, placeholder: 'Choisir un compte de bookmaker'}).val('').trigger('change').html('');
+            if (data.length > 0) {
+                $('#automaticform-add').find('#accountsinputdashboard').select2({
+                    data: data,
+                    minimumResultsForSearch: Infinity
+                }).val(data[0]['id']).trigger('change');
+            } else {
+                $('#automaticform-add').find('#accountsinputdashboard').select2({
+                    minimumResultsForSearch: Infinity,
+                    placeholder: 'Choisir un compte de bookmaker'
+                }).val('').trigger('change').html('');
             }
         }
     })
@@ -92,12 +128,15 @@ function gestionTicket() {
             if ($(this).is(':checked')) {
                 containerABCD.removeClass("hide");
                 serieABCD.val(null).trigger("change").prop('disabled', false);
-                letterABCD.val(null).trigger("change").prop('disabled', false);}
+                letterABCD.val(null).trigger("change").prop('disabled', false);
+            }
             else {
                 containerABCD.addClass("hide");
                 serieABCD.val(null).trigger("change").prop('disabled', true);
-                letterABCD.val(null).trigger("change").prop('disabled', true);}
-        });}
+                letterABCD.val(null).trigger("change").prop('disabled', true);
+            }
+        });
+    }
 
     function ajouterTicket() {
         form.submit(function (e) {
@@ -118,9 +157,21 @@ function gestionTicket() {
                 var ticketABCD;
                 var ticketGratuit;
                 var ticketLongTerme;
-                if (abcd_checkbox.is(":checked")) {ticketABCD = 1;}else{ticketABCD = 0;}
-                if (gratuit_checkbox.is(":checked")) {ticketGratuit = 1;}else{ticketGratuit = 0;}
-                if (longterme_checkbox.is(":checked")) {ticketLongTerme = 1;}else{ticketLongTerme = 0;}
+                if (abcd_checkbox.is(":checked")) {
+                    ticketABCD = 1;
+                } else {
+                    ticketABCD = 0;
+                }
+                if (gratuit_checkbox.is(":checked")) {
+                    ticketGratuit = 1;
+                } else {
+                    ticketGratuit = 0;
+                }
+                if (longterme_checkbox.is(":checked")) {
+                    ticketLongTerme = 1;
+                } else {
+                    ticketLongTerme = 0;
+                }
 
                 $.ajax({
                     url: 'encourspari/auto',
@@ -155,7 +206,7 @@ function gestionTicket() {
                     error: function (json) {
                         console.log('erreur ajout de pari');
                     },
-                    complete: function (){
+                    complete: function () {
 
                         followtype.prop('disabled', true); // remettre le followtype sur disabled.
                     }
@@ -228,7 +279,11 @@ function gestionTicket() {
 
             if (tipster.val() == '') {
                 resetGeneralForm();
-                followtype.val(null).trigger('change');amount_per_unit.val(null);options_container.addClass('hidden');bookmaker_container.addClass('hidden');typestake_container.addClass('hidden');
+                followtype.val(null).trigger('change');
+                amount_per_unit.val(null);
+                options_container.addClass('hidden');
+                bookmaker_container.addClass('hidden');
+                typestake_container.addClass('hidden');
 
             } else {
                 options_container.fadeIn().removeClass('hidden');
@@ -258,9 +313,8 @@ function gestionTicket() {
     }
 
 
-
     function typestakechoice() {
-        var types = [{ id: 'u', text: 'en unités' }, { id: 'f', text: 'en devise' }];
+        var types = [{id: 'u', text: 'en unités'}, {id: 'f', text: 'en devise'}];
         typestake.select2({
             minimumResultsForSearch: Infinity,
             cache: true,
@@ -273,16 +327,19 @@ function gestionTicket() {
                 conversion_to_devise.val(0);
                 devise_stake.val(0).prop('disabled', false);
                 unit_stake_container.hide();
-                devise_stake_container.show();}
+                devise_stake_container.show();
+            }
             else {
                 devise_stake.val(0).prop('disabled', true);
                 unit_stake.val(0).prop('disabled', false);
                 conversion_to_devise.val(0);
                 unit_stake_container.show();
-                devise_stake_container.hide();}});
+                devise_stake_container.hide();
+            }
+        });
     }
 
-    function gestionBookmakerAccount(){
+    function gestionBookmakerAccount() {
         bookmaker_account.select2({
             allowClear: true,
             placeholder: "Choisir un compte",
@@ -291,12 +348,17 @@ function gestionTicket() {
             ajax: {
                 url: 'accounts',
                 dataType: 'json',
-                data: function (params) {return {book_id: $(form_string + ' .bookinputdashboard').val(), q: params.term };
+                data: function (params) {
+                    return {book_id: $(form_string + ' .bookinputdashboard').val(), q: params.term};
                 },
-                processResults: function (data) {return {results: data};}}});
+                processResults: function (data) {
+                    return {results: data};
+                }
+            }
+        });
     }
 
-    function gestionABCD(){
+    function gestionABCD() {
         // chargements des paris abcd dans le select input.
         serieABCD.select2({
             allowClear: true,
@@ -363,7 +425,7 @@ function gestionTicket() {
         });
     }
 
-    function conversionMises(){
+    function conversionMises() {
         unit_stake.keyup(function () {
             var montant_par_unite = amount_per_unit.val();
             var unites = Number(unit_stake.val());
@@ -373,13 +435,14 @@ function gestionTicket() {
         });
 
         /*form.find('#amountinputdashboard').keyup(function () {
-            var montant_par_unite = $(form_string + ' #amountperunit').val();
-            var montant = $(form_string + ' #amountinputdashboard').val();
-            var res = Number(montant) / Number(montant_par_unite);
-            var res_final = Math.round(res * 100) / 100;
-            isNaN(res_final) || res_final < 0 || montant_par_unite == '' ? $(form_string + ' #flattounitconversion').val('0') : $(form_string + ' #flattounitconversion').val(res_final);
-        });*/
+         var montant_par_unite = $(form_string + ' #amountperunit').val();
+         var montant = $(form_string + ' #amountinputdashboard').val();
+         var res = Number(montant) / Number(montant_par_unite);
+         var res_final = Math.round(res * 100) / 100;
+         isNaN(res_final) || res_final < 0 || montant_par_unite == '' ? $(form_string + ' #flattounitconversion').val('0') : $(form_string + ' #flattounitconversion').val(res_final);
+         });*/
     }
+
     assignerEtatEnDebut();
     refreshSelectionsClick();
     refreshSelections();

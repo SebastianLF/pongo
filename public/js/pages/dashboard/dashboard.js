@@ -19,3 +19,4 @@ loadBookmakersOnDashboard();
 // formulaire d'ajout de pari
 gestionTicket();
 addManualCouponSelection();
+startDecompteRefresh();
