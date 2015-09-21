@@ -347,32 +347,6 @@
                             </div>
                         </div>
                         <div class="portlet-body">
-                            <div class="row number-stats margin-bottom-30">
-                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                    <div class="stat-left">
-                                        <div class="stat-number">
-                                            <div class="title">
-                                                {{'Total profits en '.Auth::user()->devise}}
-                                            </div>
-                                            <div id="total-recap-profits-devise" class="number">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                    <div class="stat-right">
-                                        <div class="stat-number">
-                                            <div class="title">
-                                                {{'Total profits en U'}}
-                                            </div>
-                                            <div id="total-recap-profits-unites" class="number">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <div id="tipsters-general-recap">
 
                             </div>

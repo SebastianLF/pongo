@@ -183,7 +183,6 @@
 					"isMatch" => Input::exists(array('team1', 'team2')) ? 1 : 0,
 					"session_id" => Session::getId(),
 				));
-				Clockwork::info($coupon);
 				$coupon->save();
 			}
 		}

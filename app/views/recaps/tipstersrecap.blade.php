@@ -23,13 +23,15 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>TOTAL</td>
-            <td></td>
-            <td></td>
+
+        <tr class="bold">
+            <td>GENERAL</td>
+            <td>{{$cote_moyenne_general}}</td>
+            <td>{{$mise_unites_moyenne_general.' U (1U='.$mt_par_unite_moyenne_general.')'}}</td>
             <td></td>
             <td></td>
         </tr>
+
         @foreach($recap_tipsters as $recap_tipster)
             <?php $roi = floatval(round(($recap_tipster->total_devise_retour_par_mois_tipster - $recap_tipster->total_investissement_par_mois_tipster)/$recap_tipster->total_investissement_par_mois_tipster*100));
             if($roi > 0){$roi = '<span class="bold theme-font">'.$roi.'%'.'</span>';}else if($roi < 0){$roi = '<span class="bold red-lose">'.$roi.'%'.'</span>';}else if($roi == 0){$roi = '<span class="bold">'.$roi.'%'.'</span>';}
