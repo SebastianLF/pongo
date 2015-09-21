@@ -607,7 +607,6 @@ function addManualCouponSelection() {
         suffix: [],
         meridiem: '',
         weekStart: 1
-
     };
 
     // parametre pour l input datetime.

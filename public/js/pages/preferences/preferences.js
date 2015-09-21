@@ -12,5 +12,4 @@ $('#update-preferences').submit(function (){
 
 });
 
-
 selectUserTimezoneOnPageLoad();

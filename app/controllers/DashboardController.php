@@ -1,12 +1,10 @@
 <?php
 
 	use Carbon\Carbon;
-	use Maatwebsite\Excel\Facades\Excel;
-
+	use Laracasts\Utilities\JavaScript\Facades\JavaScript;
 
 	class DashboardController extends BaseController
 	{
-
 		protected $types_resultat = [1 => 'Gagné', 2 => 'Perdu', 3 => '1/2 Gagné', 4 => '1/2 Perdu', 5 => 'Remboursé'];
 
 
@@ -47,6 +45,11 @@
 					Bookmaker::create(array('nom' => $name));
 				}
 			});*/
+
+			JavaScript::put([
+				'timezone' => Auth::user()->timezone,
+			]);
+
 			return View::make('pages.dashboard');
 		}
 

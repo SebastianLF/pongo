@@ -6,14 +6,13 @@
 $('#defaultrange').daterangepicker({
         opens: 'left',
         format: 'DD/MM/YYYY',
-        timeZone: moment($.cookie('timezone')),
         ranges: {
-            'Aujourd\'hui': [moment(), moment()],
-            'Hier': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-            'Cette Semaine': [moment().startOf('isoweek'),moment().endOf('isoweek')],
-            'Semaine Précédente': [moment().subtract(1, 'week').startOf('isoweek'), moment().subtract(1, 'week').endOf('isoweek')],
-            'Ce Mois': [moment().startOf('month'), moment().endOf('month')],
-            'Mois Précédent': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            'Aujourd\'hui': [moment.tz(user.timezone), moment.tz(user.timezone)],
+            'Hier': [moment.tz(user.timezone).subtract(1, 'days'), moment.tz(user.timezone).subtract(1, 'days')],
+            'Cette Semaine': [moment.tz(user.timezone).startOf('isoweek'),moment.tz(user.timezone).endOf('isoweek')],
+            'Semaine Précédente': [moment.tz(user.timezone).subtract(1, 'week').startOf('isoweek'), moment.tz(user.timezone).subtract(1, 'week').endOf('isoweek')],
+            'Ce Mois': [moment.tz(user.timezone).startOf('month'), moment.tz(user.timezone).endOf('month')],
+            'Mois Précédent': [moment.tz(user.timezone).subtract(1, 'month').startOf('month'), moment.tz(user.timezone).subtract(1, 'month').endOf('month')]
         }
     },
     function (start, end) {
@@ -25,7 +24,6 @@ $('#defaultrange').daterangepicker({
 
 
 function loadGeneralRecapsOnDashboard() {
-
     var range = $('#defaultrange input').val();
     $.ajax({
         url: 'generalrecap',

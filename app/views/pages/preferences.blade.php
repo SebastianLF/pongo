@@ -53,9 +53,9 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-md-3">Fuseau horaire</label>
+                                        <label for="timezone" class="control-label col-md-3">Fuseau horaire</label>
                                         <div class="col-md-4">
-                                            <select class="form-control" id="timezone" name="timezone" >
+                                            <select class="form-control" id="timezone" name="timezone">
                                                 <option value="Pacific/Midway">(UTC-11:00) Midway Island</option>
                                                 <option value="Pacific/Samoa">(UTC-11:00) Samoa</option>
                                                 <option value="Pacific/Honolulu">(UTC-10:00) Hawaii</option>
