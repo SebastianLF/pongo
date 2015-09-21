@@ -1,4 +1,5 @@
 <div class="table-scrollable table-scrollable-borderless">
+    @if($recap_tipsters->count() > 0)
     <table class="table table-hover table-light">
         <thead>
         <tr class="uppercase">
@@ -67,4 +68,5 @@
         @endforeach
         </tbody>
     </table>
+    @endif
 </div>

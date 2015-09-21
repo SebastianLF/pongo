@@ -64,18 +64,9 @@
                                 @endif
                             </td>
 
-                            <!--
-                            // 1 , 'pick'
-                            // 2 , 'pick doubleparam'
-                            // 3 , 'pick, parametername1 doubleparam1
-                            // 4 , 'pick, doubleparam1-doubleparam2 minutes'
-                            // 5 , 'parametername1 doubleparam1' avec '+'
-                            // 6 , 'pick Top doubleparam1'
-                            // 7 , 'pick (optional + )doubleparam'
-                            // 8 , 'parametername1 pick doubleparam1'-->
                             <td class="blue">
                                 <?php $app = App::make('pari_affichage') ?>
-                                {{$app->display($pari->selections->first()->market_id, $pari->selections->first()->pick, $pari->selections->first()->odd_doubleParam1, $pari->selections->first()->odd_doubleParam2, $pari->selections->first()->odd_doubleParam3,  $pari->selections->first()->odd_participantParameterName, $pari->selections->first()->odd_participantParameterName2, $pari->selections->first()->odd_participantParameterName3)}}
+                                {{$app->display($pari->selections->first()->market_id, $pari->selections->first()->pick, $pari->selections->first()->odd_doubleParam1, $pari->selections->first()->odd_doubleParam2, $pari->selections->first()->odd_doubleParam3,  $pari->selections->first()->odd_participantParameterName, $pari->selections->first()->odd_participantParameterName2, $pari->selections->first()->odd_participantParameterName3, $pari->selections->first()->equipe1->name, $pari->selections->first()->equipe2->name)}}
                                 {{' ('.$pari->selections->first()->scope->representation.') '}}
                                 @if($pari->selections->first()->score)
                                     {{' ('.$pari->selections->first()->score.' LIVE!) '}}

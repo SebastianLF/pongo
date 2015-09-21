@@ -159,6 +159,7 @@
 					$parisEnCours = $this->showParisEnCours();
      					$countParisEnCours = $parisEnCours->getTotal();
 					$view = View::make('bet.parisencours', array('parisencours' => $parisEnCours, 'types_resultat' => $this->types_resultat, 'count_paris_encours' => $countParisEnCours));
+					Clockwork::info($parisEnCours);
 					return Response::json(array(
 						'vue' => $view->render(),
 						'count_paris_encours' => $countParisEnCours,

@@ -6,7 +6,8 @@ use Market;
 
 class PariAffichage implements PariAffichageInterface{
 
-	public function display($market_id, $pick, $oddParameter1, $oddParameter2, $oddParameter3, $parameterName1, $parameterName2, $parameterName3){
+
+	public function display($market_id, $pick, $oddParameter1, $oddParameter2, $oddParameter3, $parameterName1, $parameterName2, $parameterName3, $home_team = null, $away_team = null){
 		$market = Market::find($market_id);
 		// affectation du numero d'affichage selon le type de pari.
 		// 1 , 'pick'
@@ -61,9 +62,12 @@ class PariAffichage implements PariAffichageInterface{
 			return 0;
 		}*/
 
+
+
+
 		if($affichage_num == 1){return $market->name.' : '.$pick;}
 		elseif($affichage_num == 2){return $market->name.' : '.$pick.' '.$oddParameter1;}
-		elseif($affichage_num == 3){return $market->name.' : '.$pick.', '.$parameterName1.' '.$oddParameter1;}
+		elseif($affichage_num == 3){return $market->name.' : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team).', '.$this->UniformiserNomEquipe($parameterName1, $home_team, $away_team);}
 		elseif($affichage_num == 4){return $market->name.' : '.$pick.', '.$oddParameter1.'-'.$oddParameter2.' minutes';}
 		elseif($affichage_num == 5){
 			if($oddParameter1 > 0){
@@ -80,7 +84,20 @@ class PariAffichage implements PariAffichageInterface{
 		}}
 		elseif($affichage_num == 8){return $market->name.' : '.$parameterName1.', '.$pick.' '.$oddParameter1;}
 
-		return 'non connu';
+		return 'Erreur affichage pari';
+	}
+
+	// fonction pour afficher le nom de l'equipe plutot que 1 ou Home. (uniquement pour les paris avec 2 equipes qui se confrontent)
+	function UniformiserNomEquipe($var, $home_team, $away_team){
+		if(!is_null($home_team) && ($var == '1' || $var == 'Home')){
+			return $home_team;
+		}
+		if(!is_null($away_team) && ($var == '2' || $var == 'Away')){
+			return $away_team;
+		}
+		if(!is_null($home_team) && !is_null($away_team) && ($var == 'X' || $var == 'Draw')){
+			return 'Nul';
+		}
 	}
 }
 

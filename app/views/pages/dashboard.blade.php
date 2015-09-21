@@ -36,8 +36,8 @@
                     <div class="portlet light ">
                         <div class="portlet-title tabbable-line">
                             <div class="caption">
-                                <i class="icon-pin font-yellow-casablanca"></i>
-                                <span class="caption-subject font-yellow-casablanca bold uppercase">liste des tickets</span>
+                                <i class="icon-pin font-green-sharp"></i>
+                                <span class="caption-subject font-green-sharp bold uppercase">liste des tickets</span>
                             </div>
                             <ul class="nav nav-tabs ">
                                 <li id="onglet_paris_en_cours" class="active">
@@ -329,7 +329,7 @@
                         <div class="portlet-title">
                             <div class="caption caption-md col-md-5">
                                 <i class="icon-bar-chart theme-font hide"></i>
-                                <span class="caption-subject theme-font bold uppercase">Récapitulatif</span>
+                                <span class="caption-subject theme-font bold uppercase"><span class="glyphicon glyphicon-user"></span> Récapitulatif tipsters</span>
                                 <span class="caption-helper hide">stats</span>
                             </div>
                             <div class="actions col-md-6">
