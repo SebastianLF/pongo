@@ -5,7 +5,7 @@ class WelcomeController extends BaseController {
 	public function __construct(){
 		parent::__construct();
 		$this->beforeFilter('welcome_verification', array('only' => array('create')));
-		$this->beforeFilter('csrf');
+		$this->beforeFilter('csrf', array('only' => array('store')));
 	}
 
 	/**

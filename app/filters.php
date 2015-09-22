@@ -98,6 +98,7 @@
 	// lorsque la devise n'est pas specifié
 	Route::filter('devise_missing', function () {
 		if (Auth::user()->devise == 'aucun') {
+			var_dump(URL::getRequest());
 			return Redirect::to('welcome/create');
 		}
 	});
