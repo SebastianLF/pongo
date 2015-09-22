@@ -70,7 +70,8 @@
                                             <img src="{{asset('img/flags/'.$pari->selections->first()->equipe2->country->shortname.'.png')}}" class="img-flag" alt="country"/>{{' '.$pari->selections->first()->equipe2->name.' -'}}
                                         @else
                                             <img src="{{asset('img/flags/unknown2.png')}}" class="img-flag" alt="country"/>{{' '.$pari->selections->first()->equipe2->name.' -'}}
-                                        @endif                                    </span>
+                                        @endif
+                                    </span>
 
                                 @else
                                     {{{'N/A'}}}
