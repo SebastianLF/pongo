@@ -62,7 +62,7 @@
                                         <img src="{{asset($pari->selections->first()->equipe1->country->shortname != '' ? 'img/flags/'.$pari->selections->first()->equipe1->country->shortname.'.png' : 'img/flags/unknown2.png')}}" class="img-flag" alt="country"/>{{' '.$pari->selections->first()->equipe1->name.' -'}}
                                     </span>
                                     <span>
-                                        <img src="{{asset($pari->selections->first()->equipe2->country->shortname != '' ? 'img/flags/'.$pari->selections->first()->equipe2->country->shortname.'.png' : 'img/flags/unknown2.png')}}" class="img-flag" alt="country"/>{{' '.$pari->selections->first()->equipe2->name.' -'}}
+                                        <img src="{{asset($pari->selections->first()->equipe2->country->shortname != '' ? 'img/flags/'.$pari->selections->first()->equipe2->country->shortname.'.png' : 'img/flags/unknown2.png')}}" class="img-flag" alt="country"/>{{' '.$pari->selections->first()->equipe2->name}}
                                     </span>
 
                                 @else

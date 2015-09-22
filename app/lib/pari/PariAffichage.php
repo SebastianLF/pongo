@@ -66,7 +66,7 @@ class PariAffichage implements PariAffichageInterface{
 
 		if($affichage_num == 1){return $market->name.' : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team);}
 		elseif($affichage_num == 2){return $market->name.' : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team).' '.$oddParameter1;}
-		elseif($affichage_num == 3){return $market->name.' : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team).', '.$this->UniformiserNomEquipe($parameterName1, $home_team, $away_team);}
+		elseif($affichage_num == 3){return $market->representation.' : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team).', '.$this->UniformiserNomEquipe($parameterName1, $home_team, $away_team);}
 		elseif($affichage_num == 4){return $market->name.' : '.$pick.', '.$oddParameter1.'-'.$oddParameter2.' minutes';}
 		elseif($affichage_num == 5){
 			if($oddParameter1 > 0){

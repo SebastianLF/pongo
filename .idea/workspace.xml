@@ -6,9 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js" afterPath="$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" afterPath="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/js/dashboard.js" afterPath="$PROJECT_DIR$/public/build/js/dashboard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/lib/pari/PariAffichage.php" afterPath="$PROJECT_DIR$/app/lib/pari/PariAffichage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="betsmanage.iws" />
@@ -90,15 +89,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46980855" vertical-offset="2366" max-vertical-offset="6150">
+            <state vertical-scroll-proportion="-13.869565" vertical-offset="2366" max-vertical-offset="6150">
               <caret line="179" column="46" selection-start-line="179" selection-start-column="46" selection-end-line="179" selection-end-column="46" />
               <folding>
                 <element signature="e#11688#11709#0#HTML" expanded="true" />
                 <marker date="1442952864747" expanded="true" signature="3571:3722" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parisencours.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.43004417" vertical-offset="518" max-vertical-offset="3870">
+              <caret line="54" column="33" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
+              <folding>
+                <marker date="1442953227913" expanded="true" signature="4246:4717" placeholder="..." />
+                <marker date="1442953227913" expanded="true" signature="7940:8213" placeholder="..." />
+                <marker date="1442953227913" expanded="true" signature="7981:8212" placeholder="..." />
+                <marker date="1442953227913" expanded="true" signature="12403:12690" placeholder="..." />
+                <marker date="1442953227913" expanded="true" signature="12444:12689" placeholder="..." />
+                <marker date="1442953227913" expanded="true" signature="15308:15566" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PariAffichage.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/lib/pari/PariAffichage.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.869565" vertical-offset="701" max-vertical-offset="1650">
+              <caret line="68" column="66" selection-start-line="68" selection-start-column="66" selection-end-line="68" selection-end-column="66" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -200,10 +226,10 @@
         <option value="$PROJECT_DIR$/app/views/pages/welcome.blade.php" />
         <option value="$PROJECT_DIR$/app/filters.php" />
         <option value="$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php" />
-        <option value="$PROJECT_DIR$/app/lib/pari/PariAffichage.php" />
-        <option value="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js" />
         <option value="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
+        <option value="$PROJECT_DIR$/app/lib/pari/PariAffichage.php" />
+        <option value="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
       </list>
     </option>
   </component>
@@ -2101,7 +2127,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442941186984</updated>
     </task>
-    <option name="localTasksCounter" value="250" />
+    <task id="LOCAL-00250" summary="share page en cours">
+      <created>1442952905789</created>
+      <option name="number" value="00250" />
+      <option name="project" value="LOCAL" />
+      <updated>1442952905789</updated>
+    </task>
+    <option name="localTasksCounter" value="251" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -2560,29 +2592,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4700162" vertical-offset="68" max-vertical-offset="3870">
-          <caret line="65" column="43" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
-          <folding>
-            <marker date="1442941170358" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1442941170358" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1442941170358" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1442941170358" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1442941170358" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1442941170358" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/pari/PariAffichage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4047619" vertical-offset="810" max-vertical-offset="1650">
-          <caret line="71" column="35" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="120" max-vertical-offset="1470">
@@ -2601,11 +2610,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46980855" vertical-offset="2366" max-vertical-offset="6150">
+        <state vertical-scroll-proportion="-13.869565" vertical-offset="2366" max-vertical-offset="6150">
           <caret line="179" column="46" selection-start-line="179" selection-start-column="46" selection-end-line="179" selection-end-column="46" />
           <folding>
             <element signature="e#11688#11709#0#HTML" expanded="true" />
             <marker date="1442952864747" expanded="true" signature="3571:3722" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/pari/PariAffichage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.869565" vertical-offset="701" max-vertical-offset="1650">
+          <caret line="68" column="66" selection-start-line="68" selection-start-column="66" selection-end-line="68" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43004417" vertical-offset="518" max-vertical-offset="3870">
+          <caret line="54" column="33" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
+          <folding>
+            <marker date="1442953227913" expanded="true" signature="4246:4717" placeholder="..." />
+            <marker date="1442953227913" expanded="true" signature="7940:8213" placeholder="..." />
+            <marker date="1442953227913" expanded="true" signature="7981:8212" placeholder="..." />
+            <marker date="1442953227913" expanded="true" signature="12403:12690" placeholder="..." />
+            <marker date="1442953227913" expanded="true" signature="12444:12689" placeholder="..." />
+            <marker date="1442953227913" expanded="true" signature="15308:15566" placeholder="..." />
           </folding>
         </state>
       </provider>
