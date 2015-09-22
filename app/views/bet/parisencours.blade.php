@@ -58,8 +58,8 @@
                                     <?php $date = Carbon::createFromFormat('Y-m-d H:i:s', $pari->selections->first()->date_match, 'Europe/Paris');
                                     $date->setTimezone(Auth::user()->timezone);?>
                                     {{{' '.$date->format('d/m H:i').' |'}}}
-                                    <span><img  src="img/flags/{{!is_null($pari->selections->first()->equipe1->country_id) ? $pari->selections->first()->equipe1->country->shortname : 'unknown2'}}.png" class="img-flag" />{{' '.$pari->selections->first()->equipe1->name.' -'}}</span>
-                                    <span><img src="img/flags/{{!is_null($pari->selections->first()->equipe2->country_id) ? $pari->selections->first()->equipe2->country->shortname : 'unknown2'}}.png" class="img-flag" />{{' '.$pari->selections->first()->equipe2->name}}</span>
+                                    <span><img src="img/flags/{{!is_null($pari->selections->first()->equipe1->country_id) ? $pari->selections->first()->equipe1->country->shortname : 'unknown2'}}.png" class="img-flag" alt="country"/>{{' '.$pari->selections->first()->equipe1->name.' -'}}</span>
+                                    <span><img src="img/flags/{{!is_null($pari->selections->first()->equipe2->country_id) ? $pari->selections->first()->equipe2->country->shortname : 'unknown2'}}.png" class="img-flag" alt="country"/>{{' '.$pari->selections->first()->equipe2->name}}</span>
 
                                 @else
                                     {{{'N/A'}}}
@@ -192,7 +192,7 @@
                                                 </td>
                                                 <td>
                                                     @if($selection->isMatch)
-                                                        <span><img  src="img/flags/{{!is_null($selection->equipe1->country_id) ? $selection->equipe1->country->shortname : 'unknown2'}}.png" class="img-flag" />{{' '.$selection->equipe1->name.' -'}}</span>
+                                                        <span><img src="img/flags/{{!is_null($selection->equipe1->country_id) ? $selection->equipe1->country->shortname : 'unknown2'}}.png" class="img-flag" />{{' '.$selection->equipe1->name.' -'}}</span>
                                                         <span><img src="img/flags/{{!is_null($selection->equipe2->country_id) ? $selection->equipe2->country->shortname : 'unknown2'}}.png" class="img-flag" />{{' '.$selection->equipe2->name}}</span>
                                                     @else {{"N/A"}}
                                                     @endif
