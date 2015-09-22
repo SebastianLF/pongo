@@ -6,9 +6,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/lib/pari/PariAffichage.php" afterPath="$PROJECT_DIR$/app/lib/pari/PariAffichage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/filters.php" afterPath="$PROJECT_DIR$/app/filters.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/flags/unknown.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/flags/unknown2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/Thumbs.db" afterPath="$PROJECT_DIR$/public/img/Thumbs.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -94,15 +94,15 @@
       <file leaf-file-name="parisencours.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.63209075" vertical-offset="495" max-vertical-offset="3750">
-              <caret line="59" column="65" selection-start-line="59" selection-start-column="65" selection-end-line="59" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.3517018" vertical-offset="2678" max-vertical-offset="3810">
+              <caret line="193" column="76" selection-start-line="193" selection-start-column="76" selection-end-line="193" selection-end-column="76" />
               <folding>
-                <marker date="1442937679635" expanded="true" signature="3856:4327" placeholder="..." />
-                <marker date="1442937679635" expanded="true" signature="7550:7823" placeholder="..." />
-                <marker date="1442937679635" expanded="true" signature="7591:7822" placeholder="..." />
-                <marker date="1442937679635" expanded="true" signature="12013:12300" placeholder="..." />
-                <marker date="1442937679635" expanded="true" signature="12054:12299" placeholder="..." />
-                <marker date="1442937679635" expanded="true" signature="14370:14628" placeholder="..." />
+                <marker date="1442938852514" expanded="true" signature="4003:4474" placeholder="..." />
+                <marker date="1442938852514" expanded="true" signature="7697:7970" placeholder="..." />
+                <marker date="1442938852514" expanded="true" signature="7738:7969" placeholder="..." />
+                <marker date="1442938852514" expanded="true" signature="12160:12447" placeholder="..." />
+                <marker date="1442938852514" expanded="true" signature="12201:12446" placeholder="..." />
+                <marker date="1442938852514" expanded="true" signature="15066:15324" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -418,6 +418,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slfweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slfweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slfweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slfweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flags" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2084,7 +2124,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442933331328</updated>
     </task>
-    <option name="localTasksCounter" value="244" />
+    <task id="LOCAL-00244" summary="share page en cours">
+      <created>1442937730063</created>
+      <option name="number" value="00244" />
+      <option name="project" value="LOCAL" />
+      <updated>1442937730063</updated>
+    </task>
+    <option name="localTasksCounter" value="245" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -2572,15 +2618,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63209075" vertical-offset="495" max-vertical-offset="3750">
-          <caret line="59" column="65" selection-start-line="59" selection-start-column="65" selection-end-line="59" selection-end-column="65" />
+        <state vertical-scroll-proportion="0.3517018" vertical-offset="2678" max-vertical-offset="3810">
+          <caret line="193" column="76" selection-start-line="193" selection-start-column="76" selection-end-line="193" selection-end-column="76" />
           <folding>
-            <marker date="1442937679635" expanded="true" signature="3856:4327" placeholder="..." />
-            <marker date="1442937679635" expanded="true" signature="7550:7823" placeholder="..." />
-            <marker date="1442937679635" expanded="true" signature="7591:7822" placeholder="..." />
-            <marker date="1442937679635" expanded="true" signature="12013:12300" placeholder="..." />
-            <marker date="1442937679635" expanded="true" signature="12054:12299" placeholder="..." />
-            <marker date="1442937679635" expanded="true" signature="14370:14628" placeholder="..." />
+            <marker date="1442938852514" expanded="true" signature="4003:4474" placeholder="..." />
+            <marker date="1442938852514" expanded="true" signature="7697:7970" placeholder="..." />
+            <marker date="1442938852514" expanded="true" signature="7738:7969" placeholder="..." />
+            <marker date="1442938852514" expanded="true" signature="12160:12447" placeholder="..." />
+            <marker date="1442938852514" expanded="true" signature="12201:12446" placeholder="..." />
+            <marker date="1442938852514" expanded="true" signature="15066:15324" placeholder="..." />
           </folding>
         </state>
       </provider>
