@@ -97,25 +97,10 @@
 
 	// lorsque la devise n'est pas specifié
 	Route::filter('devise_missing', function () {
-		if (Auth::user()->devise == 'aucun') {
-			var_dump(URL::getRequest());
-			return Redirect::to('welcome/create');
+		if (Auth::user()->devise == 'aucun' && Request::path() != 'welcome/create') {
+			return Redirect::route('welcome.create');
 		}
 	});
 
-	// pour eviter que ca boucle quand on accede a la route welcome
-	Route::filter('welcome_verification', function () {
-		if(Auth::check()){
-			if (Auth::user()->devise != 'aucun') {
-				return Redirect::to('dashboard');
-			}
-		}
-	});
-
-	/*Route::filter('aucune_devise', function () {
-		if (!Route::is('welcome') && !Route::is('auth/login')) {
-			if (Auth::user()->devise == 'aucun') return Redirect::to('welcome');
-		}
-	});*/
 
 

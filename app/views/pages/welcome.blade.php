@@ -1,4 +1,4 @@
-    @extends('layouts.welcome_template')
+    @extends('layouts.default', array('title' => 'Bienvenue'))
 
     @section('content')
 
@@ -49,5 +49,4 @@
     @section('scripts')
         @parent
         <script src="{{asset('build/js/welcome.js')}}" type="text/javascript"></script>
-
     @stop
