@@ -32,7 +32,7 @@
 
                     <td class="blue">
                         <?php $app = App::make('pari_affichage') ?>
-                        {{$app->display($selection->market_id, $selection->pick, $selection->odd_doubleParam1, $selection->odd_doubleParam2, $selection->odd_doubleParam3,  $selection->odd_participantParameterName, $selection->odd_participantParameterName2, $selection->odd_participantParameterName3)}}
+                        {{$app->display($selection->market_id, $selection->pick, $selection->odd_doubleParam, $selection->odd_doubleParam2, $selection->odd_doubleParam3,  $selection->odd_participantParameterName, $selection->odd_participantParameterName2, $selection->odd_participantParameterName3, $selection->home_team, $selection->away_team)}}
                         {{' ('.$selection->scope.') '}}
                         @if(!is_null($selection->score))
                             {{' ('.$selection->score.' LIVE!) '}}

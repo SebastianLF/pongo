@@ -97,8 +97,10 @@
 
 	// lorsque la devise n'est pas specifié
 	Route::filter('devise_missing', function () {
-		if (Auth::user()->devise == 'aucun' && Request::path() != 'welcome/create') {
+		if (Auth::user()->devise == 'aucun' && Request::path() != 'welcome/create' && Request::path() != 'welcome') {
 			return Redirect::route('welcome.create');
+		}elseif(Auth::user()->devise != 'aucun' && Request::path() == 'welcome/create'){
+			return Redirect::to('dashboard');
 		}
 	});
 

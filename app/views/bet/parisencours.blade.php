@@ -58,7 +58,9 @@
                                     <?php $date = Carbon::createFromFormat('Y-m-d H:i:s', $pari->selections->first()->date_match, 'Europe/Paris');
                                     $date->setTimezone(Auth::user()->timezone);?>
                                     {{{' '.$date->format('d/m H:i').' |'}}}
-                                    {{{$pari->selections->first()->game_name}}}
+                                    <span><img src="img/flags/{{$pari->selections->first()->equipe1->country->shortname}}.png" class="img-flag" />{{' '.$pari->selections->first()->equipe1->name.' -'}}</span>
+                                    <span><img src="img/flags/{{$pari->selections->first()->equipe2->country->shortname}}.png" class="img-flag" />{{' '.$pari->selections->first()->equipe2->name}}</span>
+
                                 @else
                                     {{{'N/A'}}}
                                 @endif
@@ -66,7 +68,7 @@
 
                             <td class="blue">
                                 <?php $app = App::make('pari_affichage') ?>
-                                {{$app->display($pari->selections->first()->market_id, $pari->selections->first()->pick, $pari->selections->first()->odd_doubleParam1, $pari->selections->first()->odd_doubleParam2, $pari->selections->first()->odd_doubleParam3,  $pari->selections->first()->odd_participantParameterName, $pari->selections->first()->odd_participantParameterName2, $pari->selections->first()->odd_participantParameterName3, $pari->selections->first()->equipe1->name, $pari->selections->first()->equipe2->name)}}
+                                {{$app->display($pari->selections->first()->market_id, $pari->selections->first()->pick, $pari->selections->first()->odd_doubleParam, $pari->selections->first()->odd_doubleParam2, $pari->selections->first()->odd_doubleParam3,  $pari->selections->first()->odd_participantParameterName, $pari->selections->first()->odd_participantParameterName2, $pari->selections->first()->odd_participantParameterName3, $pari->selections->first()->equipe1->name, $pari->selections->first()->equipe2->name)}}
                                 {{' ('.$pari->selections->first()->scope->representation.') '}}
                                 @if($pari->selections->first()->score)
                                     {{' ('.$pari->selections->first()->score.' LIVE!) '}}
