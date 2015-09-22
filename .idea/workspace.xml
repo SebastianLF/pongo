@@ -91,16 +91,26 @@
       <file leaf-file-name="parisencours.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.501634" vertical-offset="563" max-vertical-offset="3810">
-              <caret line="58" column="81" selection-start-line="58" selection-start-column="81" selection-end-line="58" selection-end-column="81" />
+            <state vertical-scroll-proportion="0.7057851" vertical-offset="608" max-vertical-offset="3975">
+              <caret line="69" column="111" selection-start-line="69" selection-start-column="111" selection-end-line="69" selection-end-column="111" />
               <folding>
-                <marker date="1442939358273" expanded="true" signature="4028:4499" placeholder="..." />
-                <marker date="1442939358273" expanded="true" signature="7722:7995" placeholder="..." />
-                <marker date="1442939358273" expanded="true" signature="7763:7994" placeholder="..." />
-                <marker date="1442939358273" expanded="true" signature="12185:12472" placeholder="..." />
-                <marker date="1442939358273" expanded="true" signature="12226:12471" placeholder="..." />
-                <marker date="1442939358273" expanded="true" signature="15090:15348" placeholder="..." />
+                <marker date="1442940388012" expanded="true" signature="4824:5295" placeholder="..." />
+                <marker date="1442940388012" expanded="true" signature="8518:8791" placeholder="..." />
+                <marker date="1442940388012" expanded="true" signature="8559:8790" placeholder="..." />
+                <marker date="1442940388012" expanded="true" signature="12981:13268" placeholder="..." />
+                <marker date="1442940388012" expanded="true" signature="13022:13267" placeholder="..." />
+                <marker date="1442940388012" expanded="true" signature="15886:16144" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listeTipsters.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/tipsters/listeTipsters.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.9565217" vertical-offset="45" max-vertical-offset="885">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -2093,7 +2103,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442938891193</updated>
     </task>
-    <option name="localTasksCounter" value="246" />
+    <task id="LOCAL-00246" summary="share page en cours">
+      <created>1442939404269</created>
+      <option name="number" value="00246" />
+      <option name="project" value="LOCAL" />
+      <updated>1442939404269</updated>
+    </task>
+    <option name="localTasksCounter" value="247" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -2121,14 +2137,14 @@
     <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928064" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11353944" sideWeight="0.46745563" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11353944" sideWeight="0.4678625" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32816902" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2793177" sideWeight="0.49798927" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2867804" sideWeight="0.49798927" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3253521" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.086886995" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24865592" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11353944" sideWeight="0.5310651" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11353944" sideWeight="0.5321375" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21715818" sideWeight="0.23521127" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32394367" sideWeight="0.5013405" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32676056" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -2203,13 +2219,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/metronic_v3.8.1/theme/assets/global/plugins/jquery.cokie.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="489">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Carbon.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34911242" vertical-offset="3563" max-vertical-offset="38437">
@@ -2579,17 +2588,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tipsters/listeTipsters.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.9565217" vertical-offset="45" max-vertical-offset="885">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.501634" vertical-offset="563" max-vertical-offset="3810">
-          <caret line="58" column="81" selection-start-line="58" selection-start-column="81" selection-end-line="58" selection-end-column="81" />
+        <state vertical-scroll-proportion="0.7057851" vertical-offset="608" max-vertical-offset="3975">
+          <caret line="69" column="111" selection-start-line="69" selection-start-column="111" selection-end-line="69" selection-end-column="111" />
           <folding>
-            <marker date="1442939358273" expanded="true" signature="4028:4499" placeholder="..." />
-            <marker date="1442939358273" expanded="true" signature="7722:7995" placeholder="..." />
-            <marker date="1442939358273" expanded="true" signature="7763:7994" placeholder="..." />
-            <marker date="1442939358273" expanded="true" signature="12185:12472" placeholder="..." />
-            <marker date="1442939358273" expanded="true" signature="12226:12471" placeholder="..." />
-            <marker date="1442939358273" expanded="true" signature="15090:15348" placeholder="..." />
+            <marker date="1442940388012" expanded="true" signature="4824:5295" placeholder="..." />
+            <marker date="1442940388012" expanded="true" signature="8518:8791" placeholder="..." />
+            <marker date="1442940388012" expanded="true" signature="8559:8790" placeholder="..." />
+            <marker date="1442940388012" expanded="true" signature="12981:13268" placeholder="..." />
+            <marker date="1442940388012" expanded="true" signature="13022:13267" placeholder="..." />
+            <marker date="1442940388012" expanded="true" signature="15886:16144" placeholder="..." />
           </folding>
         </state>
       </provider>

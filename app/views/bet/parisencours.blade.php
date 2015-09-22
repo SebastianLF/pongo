@@ -58,8 +58,19 @@
                                     <?php $date = Carbon::createFromFormat('Y-m-d H:i:s', $pari->selections->first()->date_match, 'Europe/Paris');
                                     $date->setTimezone(Auth::user()->timezone);?>
                                     {{{' '.$date->format('d/m H:i').' |'}}}
-                                    <span><img src="img/flags/{{!is_null($pari->selections->first()->equipe1->country_id) ? $pari->selections->first()->equipe1->country->shortname : 'unknown2'}}.png" class="img-flag" alt="country"/>{{' '.$pari->selections->first()->equipe1->name.' -'}}</span>
-                                    <span><img src="img/flags/{{!is_null($pari->selections->first()->equipe2->country_id) ? $pari->selections->first()->equipe2->country->shortname : 'unknown2'}}.png" class="img-flag" alt="country"/>{{' '.$pari->selections->first()->equipe2->name}}</span>
+                                    <span>
+                                        @if(!is_null($pari->selections->first()->equipe1->country_id))
+                                            <img src="{{asset('img/flags/'.$pari->selections->first()->equipe1->country->shortname.'.png')}}" class="img-flag" alt="country"/>{{' '.$pari->selections->first()->equipe1->name.' -'}}
+                                        @else
+                                            <img src="{{asset('img/flags/unknown2.png')}}" class="img-flag" alt="country"/>{{' '.$pari->selections->first()->equipe1->name.' -'}}
+                                        @endif
+                                    </span>
+                                    <span>
+                                        @if(!is_null($pari->selections->first()->equipe2->country_id))
+                                            <img src="{{asset('img/flags/'.$pari->selections->first()->equipe2->country->shortname.'.png')}}" class="img-flag" alt="country"/>{{' '.$pari->selections->first()->equipe2->name.' -'}}
+                                        @else
+                                            <img src="{{asset('img/flags/unknown2.png')}}" class="img-flag" alt="country"/>{{' '.$pari->selections->first()->equipe2->name.' -'}}
+                                        @endif                                    </span>
 
                                 @else
                                     {{{'N/A'}}}
