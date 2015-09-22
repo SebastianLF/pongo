@@ -82,7 +82,7 @@ function addManualCouponSelection() {
     var scoreContainer = modal_form.find('#score_container');
 
     function assignerEtatEnDebut() {
-        scopeContainer.addClass("hidden");
+
         pickContainer.addClass("hidden");
         oddParamContainer.addClass("hidden");
         oddParam2Container.addClass("hidden");
@@ -507,7 +507,6 @@ function addManualCouponSelection() {
 
     function hideMarketParams() {
         scope.html('').val("").trigger("change");
-
         scopeContainer.removeClass('has-error');
         scopeError.empty();
         pick.html('').val("").trigger("change");

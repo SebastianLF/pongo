@@ -178,6 +178,42 @@
                                                 d'inscrire le nom de l'equipe (ou du joueur) dans le champ de
                                                 recherche puis le selectioner.</p>
                                         </div>
+                                        <form role="form" id="manualselectionform-add">
+                                            <div class="row">
+
+                                                <div class="col-md-3 col-md-offset-2">
+                                                    <label for="date">Sport</label>
+                                                    <select name="sport"
+                                                            class="form-control sportinputdashboard">
+                                                        <option value=""></option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="date">Competition</label>
+                                                    <input type="text" class="form-control" placeholder="Choisir une competition">
+                                                </div>
+
+                                            </div>
+                                            <hr/>
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <label for="date">Date</label>
+                                                    <input type="text" class="form-control" placeholder=".col-md-2" style="cursor: auto;">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label for="date">Sport</label>
+                                                    <input type="text" class="form-control" placeholder=".col-md-3">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="date">Competition</label>
+                                                    <input type="text" class="form-control" placeholder=".col-md-4">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label for="date">Date</label>
+                                                    <input type="text" class="form-control" placeholder=".col-md-2">
+                                                </div>
+                                            </div>
+                                        </form>
                                         {{ Form::open(array('url' => 'coupon', 'method' => 'post', 'id' => 'manualselectionform-add', 'role' => 'form')) }}
 
                                         <div class="center-block">
@@ -191,10 +227,7 @@
 
                                             <div id="sport_container" class="form-group">
                                                 <label for="sport">Sport</label>
-                                                <select name="sport"
-                                                        class="form-control sportinputdashboard input-sm">
-                                                    <option value=""></option>
-                                                </select>
+
                                                 <span id="sport_error" class="help-block"></span>
                                             </div>
 
