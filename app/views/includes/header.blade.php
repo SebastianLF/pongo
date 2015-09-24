@@ -81,7 +81,7 @@
 
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="{{url('dashboard')}}"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a>
+                    <a href="{{url('dashboard')}}"><span class="glyphicon glyphicon-dashboard"></span> Tableau de bord</a>
                 </li>
                 <li>
                     <a href="{{url('config')}}"><span class="glyphicon glyphicon-cog"></span> Configuration</a>

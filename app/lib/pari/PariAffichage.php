@@ -19,12 +19,12 @@ class PariAffichage implements PariAffichageInterface{
 		// 7 , 'pick (optional + )doubleparam'
 		// 8 , 'parametername1 pick doubleparam1
 		$affichage_num = '';
-		if ($market_id == '7') {$affichage_num = 1;}
-		elseif ($market_id == '8') {$affichage_num = 3;}
-		elseif ($market_id == '9') {$affichage_num = 8;}
+		if ($market_id == '7') {$affichage_num = 2;}
+		elseif ($market_id == '8') {$affichage_num = 4;}
+		elseif ($market_id == '9') {$affichage_num = 2;}
 		elseif ($market_id == '43') {$affichage_num = 1;}
 		elseif ($market_id == '46') {$affichage_num = 1;}
-		elseif ($market_id == '48') {$affichage_num = 7;}
+		elseif ($market_id == '48') {$affichage_num = 8;}
 		/*elseif ($market_id == '28') {
 			return 6;
 		} elseif ($market_id == '48') {
@@ -67,7 +67,7 @@ class PariAffichage implements PariAffichageInterface{
 		if($affichage_num == 1){return $market->name.' : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team);}
 		elseif($affichage_num == 2){return $market->name.' : '.$pick;}
 		elseif($affichage_num == 3){return $market->name.' : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team).' '.$oddParameter1;}
-		elseif($affichage_num == 4){return $market->name.' : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team).', '.$parameterName1;}
+		elseif($affichage_num == 4){return $market->name.' : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team).', '.$this->UniformiserNomEquipe($parameterName1,$home_team, $away_team);}
 		elseif($affichage_num == 5){return $market->name.' : '.$pick.', '.$oddParameter1.'-'.$oddParameter2.' minutes';}
 		elseif($affichage_num == 6){
 			if($oddParameter1 > 0){

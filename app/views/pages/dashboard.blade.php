@@ -354,45 +354,46 @@
 
                     </div>
                 </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="portlet light ">
-                    <div class="portlet-title">
-                        <div class="caption caption-md col-md-5">
-                            <i class="icon-bar-chart theme-font hide"></i>
+                <div class="col-md-4">
+                    <div class="portlet light ">
+                        <div class="portlet-title">
+                            <div class="caption caption-md col-md-5">
+                                <i class="icon-bar-chart theme-font hide"></i>
                                 <span class="caption-subject theme-font bold uppercase"><span
                                             class="glyphicon glyphicon-user"></span> Récapitulatif tipsters</span>
-                            <span class="caption-helper hide">stats</span>
-                        </div>
-                        <div class="actions col-md-6">
-                            <div class="">
-                                <div class="input-group" id="defaultrange">
-                                    <input type="text" class="form-control"
-                                           value="{{Carbon::now(Auth::user()->timezone)->startOfMonth()->format('d/m/Y').' - '.Carbon::now(Auth::user()->timezone)->endOfMonth()->format('d/m/Y')}}"
-                                           readonly>
+                                <span class="caption-helper hide">stats</span>
+                            </div>
+                            <div class="actions col-md-6">
+                                <div class="">
+                                    <div class="input-group" id="defaultrange">
+                                        <input type="text" class="form-control"
+                                               value="{{Carbon::now(Auth::user()->timezone)->startOfMonth()->format('d/m/Y').' - '.Carbon::now(Auth::user()->timezone)->endOfMonth()->format('d/m/Y')}}"
+                                               readonly>
 												<span class="input-group-btn">
 												<button class="btn default date-range-toggle" type="button"><i
                                                             class="fa fa-calendar"></i></button>
 												</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="portlet-body">
-                        <div id="tipsters-general-recap">
+                        <div class="portlet-body">
+                            <div id="tipsters-general-recap">
 
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div id="comptes_par_bookmakers">
+                    <div id="comptes_par_bookmakers">
+
+                    </div>
+                    <div id="recaps">
+
+                    </div>
 
                 </div>
-                <div id="recaps">
-
-                </div>
-
             </div>
+
+
         </div>
     </div>
     <!-- END PAGE CONTENT INNER -->

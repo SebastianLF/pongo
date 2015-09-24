@@ -8,7 +8,7 @@ function addManualCouponSelection() {
     var picks = ''; //initialisation de la variable qui sera modifié a chaque choix de type de pari.
     var picks1X2 = [{id: "1", text: "Home"}, {id: "2", text: "Away"}, {id: "X", text: "Draw"}];
     var picks12 = [{id: "1", text: "Home"}, {id: "2", text: "Away"}];
-    var tooltip_message = "Quand cet icone apparait, aucune proposition vous sera faite, c'est à vous d'inscrire votre réponse dans le champ de recherche. Cette réponse deviendra ensuite une proposition, vous n'avez alors plus qu'à la selectionner.";
+    var tooltip_message = "Quand cet icone apparait, aucune proposition vous sera faite, c\'est à vous d'inscrire votre réponse dans le champ de recherche. Cette réponse deviendra ensuite une proposition, vous n'avez alors plus qu'à la selectionner.";
     var manually_insertion_icon = " <span class='glyphicon glyphicon-save font-red' data-toggle='tooltip' data-title='"+tooltip_message+"'></span>";
 
 
@@ -203,8 +203,9 @@ function addManualCouponSelection() {
             if (val == 7) { // Winner
                 hideTeamsInputs();
                 pickContainer.fadeIn().show();
-                pick.select2({tags: true, allowClear: true, placeholder: "Nom de l\'équipe ou du joueur vainqueur"});
                 pickLabel.html('Vainqueur'+manually_insertion_icon);
+                pick.select2({tags: true, allowClear: true, placeholder: "Nom de l\'équipe ou du joueur vainqueur"});
+
             }
             else if (val == 8) { // 1X2 European handicap
                 showTeamsInputs();
@@ -244,6 +245,7 @@ function addManualCouponSelection() {
             else if (val == 43) { // 1X2
                 teamsRow.fadeIn().show();
                 pickContainer.fadeIn().show();
+                pickLabel.html('Vainqueur');
                 pick.select2({data: picks1X2, minimumResultsForSearch: Infinity});
                 team1.val("").trigger("change").prop("disabled", false);
                 team2.val("").trigger("change").prop("disabled", false);
@@ -251,6 +253,7 @@ function addManualCouponSelection() {
             else if (val == 46) { // Match Winner / HomeAway
                 teamsRow.fadeIn().show();
                 pickContainer.fadeIn().show();
+                pickLabel.html('Vainqueur');
                 pick.select2({data: picks12, minimumResultsForSearch: Infinity});
                 team1.val("").trigger("change").prop("disabled", false);
                 team2.val("").trigger("change").prop("disabled", false);
@@ -263,6 +266,7 @@ function addManualCouponSelection() {
                 oddParamContainer.show();
                 oddParamLabel.html('Handicap'+manually_insertion_icon);
                 oddParam.select2({placeholder: "-2.5 ou 2.5", tags: true});
+                pickLabel.html('Equipe Handicap');
                 pick.select2({data: picks12, minimumResultsForSearch: Infinity});
             }
         });
