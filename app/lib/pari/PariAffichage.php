@@ -21,7 +21,7 @@ class PariAffichage implements PariAffichageInterface{
 		$affichage_num = '';
 		if ($market_id == '7') {$affichage_num = 1;}
 		elseif ($market_id == '8') {$affichage_num = 3;}
-		elseif ($market_id == '9') {$affichage_num = 1;}
+		elseif ($market_id == '9') {$affichage_num = 8;}
 		elseif ($market_id == '43') {$affichage_num = 1;}
 		elseif ($market_id == '46') {$affichage_num = 1;}
 		elseif ($market_id == '48') {$affichage_num = 7;}
@@ -65,6 +65,7 @@ class PariAffichage implements PariAffichageInterface{
 
 
 		if($affichage_num == 1){return $market->name.' : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team);}
+		elseif($affichage_num == 8){return $market->name.' : '.$pick;}
 		elseif($affichage_num == 2){return $market->name.' : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team).' '.$oddParameter1;}
 		elseif($affichage_num == 3){return $market->representation.' : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team).', '.$this->UniformiserNomEquipe($parameterName1, $home_team, $away_team);}
 		elseif($affichage_num == 4){return $market->name.' : '.$pick.', '.$oddParameter1.'-'.$oddParameter2.' minutes';}
@@ -88,10 +89,10 @@ class PariAffichage implements PariAffichageInterface{
 
 	// fonction pour afficher le nom de l'equipe plutot que 1 ou Home. (uniquement pour les paris avec 2 equipes qui se confrontent)
 	function UniformiserNomEquipe($var, $home_team, $away_team){
-		if(!is_null($home_team) && ($var == '1' || $var == 'Home')){
+		if(!is_null($home_team) && ($var == '1' || $var == 'Home' || $var == $home_team)){
 			return $home_team;
 		}
-		if(!is_null($away_team) && ($var == '2' || $var == 'Away')){
+		if(!is_null($away_team) && ($var == '2' || $var == 'Away' || $var == $home_team)){
 			return $away_team;
 		}
 		if(!is_null($home_team) && !is_null($away_team) && ($var == 'X' || $var == 'Draw')){

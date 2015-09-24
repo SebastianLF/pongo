@@ -94,8 +94,8 @@
                                                aria-controls="panier-selections-add-ticket">
                                                 Panier des sélections -
                                             </a>
-                                            <a id="selection-refresh" type="button" > <span
-                                                            class="glyphicon glyphicon-refresh glyphicon-spin"></span>Rafraichir</a>
+                                            <a id="selection-refresh" type="button"> <span
+                                                        class="glyphicon glyphicon-refresh glyphicon-spin"></span>Rafraichir</a>
                                             <span id="automatic-refresh"> - </span>
                                         </h4>
                                     </div>
@@ -160,11 +160,11 @@
                                                    target="_blank"><b>BetBrain.com</b></a>
                                             </iframe>
                                         @else @endif -->
-                                            <iframe src={{"http://betbrain.com/?portalId=1326&userSessionId=".Session::getId()}} height="600"
-                                                    width="100%" frameborder="0">Odds service provided in
-                                                co-operation with <a href="http://www.betbrain.com"
-                                                                     target="_blank"><b>BetBrain.com</b></a>
-                                            </iframe>
+                                        <iframe src={{"http://betbrain.com/?portalId=1326&userSessionId=".Session::getId()}} height="600"
+                                                width="100%" frameborder="0">Odds service provided in
+                                            co-operation with <a href="http://www.betbrain.com"
+                                                                 target="_blank"><b>BetBrain.com</b></a>
+                                        </iframe>
 
                                     </div>
                                     <div class="tab-pane active fade in" id="tab_manuel">
@@ -178,60 +178,28 @@
                                                 d'inscrire le nom de l'equipe (ou du joueur) dans le champ de
                                                 recherche puis le selectioner.</p>
                                         </div>
-                                        <form role="form" id="manualselectionform-add">
-                                            <div class="row">
-
-                                                <div class="col-md-3 col-md-offset-2">
-                                                    <label for="date">Sport</label>
-                                                    <select name="sport"
-                                                            class="form-control sportinputdashboard">
-                                                        <option value=""></option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label for="date">Competition</label>
-                                                    <input type="text" class="form-control" placeholder="Choisir une competition">
-                                                </div>
-
-                                            </div>
-                                            <hr/>
-                                            <div class="row">
-                                                <div class="col-md-2">
-                                                    <label for="date">Date</label>
-                                                    <input type="text" class="form-control" placeholder=".col-md-2" style="cursor: auto;">
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label for="date">Sport</label>
-                                                    <input type="text" class="form-control" placeholder=".col-md-3">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label for="date">Competition</label>
-                                                    <input type="text" class="form-control" placeholder=".col-md-4">
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label for="date">Date</label>
-                                                    <input type="text" class="form-control" placeholder=".col-md-2">
-                                                </div>
-                                            </div>
-                                        </form>
                                         {{ Form::open(array('url' => 'coupon', 'method' => 'post', 'id' => 'manualselectionform-add', 'role' => 'form')) }}
-
-                                        <div class="center-block">
-                                            <div id="date_container" class="form-group">
+                                        <div class="row">
+                                            <div id="date_container" class="col-md-4 col-md-offset-4">
                                                 <label for="date">Date</label>
                                                 <input name="date"
                                                        class="form-control input-sm"
                                                        placeholder="date rencontre">
                                                 <span id="date_error" class="help-block"></span>
                                             </div>
-
-                                            <div id="sport_container" class="form-group">
-                                                <label for="sport">Sport</label>
-
+                                        </div>
+                                        <hr/>
+                                        <div class="row">
+                                            <div id="sport_container" class="col-md-3 col-md-offset-3">
+                                                <label for="date">Sport</label>
+                                                <select name="sport"
+                                                        class="form-control sportinputdashboard">
+                                                    <option value=""></option>
+                                                </select>
                                                 <span id="sport_error" class="help-block"></span>
                                             </div>
 
-                                            <div id="competition_container" class="form-group">
+                                            <div id="competition_container" class="col-md-3">
                                                 <label for="competition">Competition</label>
                                                 <select name="competition"
                                                         class="form-control competitioninputdashboard ">
@@ -239,26 +207,11 @@
                                                 </select>
                                                 <span id="competition_error" class="help-block"></span>
                                             </div>
+                                        </div>
+
+                                        <div class="row">
                                             <hr/>
-
-                                            <div class="col-md-6">
-                                            <div id="team1_container" class="form-group">
-                                                <label for="team1">Equipe Domicile</label>
-                                                <select name="team1"
-                                                        class="form-control team1inputdashboard input-sm">
-                                                </select>
-                                                <span id="team1_error" class="help-block"></span>
-                                            </div>
-                                            </div>
-                                            <div id="team2_container" class="form-group col-md-6">
-                                                <label for="team2">Equipe Extérieur</label>
-                                                <select name="team2"
-                                                        class="form-control team2inputdashboard input-sm">
-                                                </select>
-                                                <span id="team2_error" class="help-block"></span>
-                                            </div>
-
-                                            <div id="market_container" class="form-group">
+                                            <div id="market_container" class="col-md-3 col-md-offset-3">
                                                 <label for="market">Type du pari</label>
                                                 <select name="market"
                                                         class="form-control marketinputdashboard input-sm">
@@ -267,15 +220,7 @@
                                                 <span id="market_error" class="help-block"></span>
                                             </div>
 
-                                            <div id="pick_container" class="form-group">
-                                                <label for="pick">Choix du pari</label>
-                                                <select name="pick"
-                                                        class="form-control pickinputdashboard input-sm">
-                                                </select>
-                                                <span id="pick_error" class="help-block"></span>
-                                            </div>
-
-                                            <div id="scope_container" class="form-group">
+                                            <div id="scope_container" class="col-md-3">
                                                 <label for="scope">Portée du pari</label>
                                                 <select name="scope"
                                                         class="form-control scopeinputdashboard input-sm">
@@ -283,53 +228,87 @@
                                                 </select>
                                                 <span id="scope_error" class="help-block"></span>
                                             </div>
+                                        </div>
 
-                                            <div id="odd_doubleParam_container" class="form-group">
+                                        <div id="teamsRow" class="row">
+
+                                            <div id="team1_container" class="col-md-3 col-md-offset-3">
+                                                <label for="team1">Equipe Domicile</label>
+                                                <select name="team1"
+                                                        class="form-control team1inputdashboard input-sm">
+                                                </select>
+                                                <span id="team1_error" class="help-block"></span>
+                                            </div>
+                                            <div id="team2_container" class="col-md-3">
+                                                <label for="team2">Equipe Extérieur</label>
+                                                <select name="team2"
+                                                        class="form-control team2inputdashboard input-sm">
+                                                </select>
+                                                <span id="team2_error" class="help-block"></span>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div id="pick_container" class="col-md-2 col-md-offset-3">
+                                                <label for="pick">Choix du pari</label>
+                                                <select name="pick"
+                                                        class="form-control pickinputdashboard input-sm">
+                                                </select>
+                                                <span id="pick_error" class="help-block"></span>
+                                            </div>
+                                            <div id="odd_doubleParam_container" class="col-md-2">
                                                 <label for="odd_doubleParam"></label>
                                                 <select name="odd_doubleParam"
                                                         class="form-control input-sm"></select>
                                                 <span id="odd_doubleParam_error" class="help-block"></span>
                                             </div>
 
-                                            <div id="odd_doubleParam2_container" class="form-group">
+                                            <div id="odd_doubleParam2_container" class="col-md-2">
                                                 <label for="odd_doubleParam2"></label>
                                                 <select name="odd_doubleParam2"
                                                         class="form-control input-sm"></select>
                                                 <span id="odd_doubleParam2_error" class="help-block"></span>
                                             </div>
 
-                                            <div id="odd_doubleParam3_container" class="form-group">
+                                            <div id="odd_doubleParam3_container" class="col-md-2">
                                                 <label for="odd_doubleParam3"></label>
                                                 <select name="odd_doubleParam3"
                                                         class="form-control input-sm"></select>
                                                 <span id="odd_doubleParam3_error" class="help-block"></span>
                                             </div>
 
-                                            <div id="odd_participantParameterName_container" class="form-group">
+                                            <div id="odd_participantParameterName_container" class="col-md-2">
                                                 <label for="odd_participantParameterName"></label>
                                                 <select name="odd_participantParameterName"
                                                         class="form-control input-sm"></select>
                                                         <span id="odd_participantParameterName_error"
                                                               class="help-block"></span>
                                             </div>
-
-                                            <div id="bookmaker_container" class="form-group">
+                                        </div>
+                                        <hr/>
+                                        <div class="row">
+                                            <div id="bookmaker_container" class="col-md-3 col-md-offset-3">
                                                 <label for="bookmaker">Bookmaker</label>
                                                 <select name="bookmaker" class="form-control input-sm">
                                                     <option value=""></option>
                                                 </select>
                                                 <span id="bookmaker_error" class="help-block"></span>
                                             </div>
-
-                                            <div id="odd_container" class="form-group">
+                                            <div id="odd_container" class="col-md-3">
                                                 <label for="odd_value">Cote</label>
                                                 <input name="odd_value"
                                                        class="form-control oddinputdashboard input-sm"
                                                        placeholder="Cote">
                                                 <span id="odd_error" class="help-block"></span>
                                             </div>
+                                        </div>
 
-                                            <div class="form-group">
+                                        <div class="row">
+                                            <hr/>
+                                            <div id="liveContainer" class="col-md-2 col-md-offset-4">
                                                 <label class="checkbox-inline">
                                                     <div class="checker" id="uniform-live"><span><input
                                                                     type="checkbox" id="live"
@@ -338,64 +317,85 @@
                                                 </label>
                                             </div>
 
-                                            <div id="score_container" class="form-group">
+                                            <div id="score_container" class="col-md-2">
                                                 <label for="score">Score (en cours)</label>
                                                 <input name="score" class="form-control input-sm"
                                                        placeholder="score">
                                                 <span id="score_error" class="help-block"></span>
                                             </div>
-                                            <hr/>
-                                            <button type="submit" class="btn green"><span class="glyphicon glyphicon-plus"></span> Ajouter</button>
                                         </div>
+                                        <hr/>
+
+                                        <button type="submit" class="btn green"><span
+                                                    class="glyphicon glyphicon-plus"></span> Ajouter
+                                        </button>
+
+
 
                                         {{ Form::close()}}
+
+
+
+
+
+
+
+
+
+
+                                        <hr/>
+
                                     </div>
+
+
                                 </div>
                             </div>
-
                         </div>
+
                     </div>
                 </div>
+            </div>
 
-                <div class="col-md-4">
-                    <div class="portlet light ">
-                        <div class="portlet-title">
-                            <div class="caption caption-md col-md-5">
-                                <i class="icon-bar-chart theme-font hide"></i>
-                                <span class="caption-subject theme-font bold uppercase"><span class="glyphicon glyphicon-user"></span> Récapitulatif tipsters</span>
-                                <span class="caption-helper hide">stats</span>
-                            </div>
-                            <div class="actions col-md-6">
-                                <div class="">
-                                    <div class="input-group" id="defaultrange">
-                                        <input type="text" class="form-control"
-                                               value="{{Carbon::now(Auth::user()->timezone)->startOfMonth()->format('d/m/Y').' - '.Carbon::now(Auth::user()->timezone)->endOfMonth()->format('d/m/Y')}}"
-                                               readonly>
+            <div class="col-md-4">
+                <div class="portlet light ">
+                    <div class="portlet-title">
+                        <div class="caption caption-md col-md-5">
+                            <i class="icon-bar-chart theme-font hide"></i>
+                                <span class="caption-subject theme-font bold uppercase"><span
+                                            class="glyphicon glyphicon-user"></span> Récapitulatif tipsters</span>
+                            <span class="caption-helper hide">stats</span>
+                        </div>
+                        <div class="actions col-md-6">
+                            <div class="">
+                                <div class="input-group" id="defaultrange">
+                                    <input type="text" class="form-control"
+                                           value="{{Carbon::now(Auth::user()->timezone)->startOfMonth()->format('d/m/Y').' - '.Carbon::now(Auth::user()->timezone)->endOfMonth()->format('d/m/Y')}}"
+                                           readonly>
 												<span class="input-group-btn">
 												<button class="btn default date-range-toggle" type="button"><i
                                                             class="fa fa-calendar"></i></button>
 												</span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="portlet-body">
-                            <div id="tipsters-general-recap">
+                    </div>
+                    <div class="portlet-body">
+                        <div id="tipsters-general-recap">
 
-                            </div>
                         </div>
                     </div>
-                    <div id="comptes_par_bookmakers">
-
-                    </div>
-                    <div id="recaps">
-
-                    </div>
+                </div>
+                <div id="comptes_par_bookmakers">
 
                 </div>
+                <div id="recaps">
+
+                </div>
+
             </div>
         </div>
-        <!-- END PAGE CONTENT INNER -->
+    </div>
+    <!-- END PAGE CONTENT INNER -->
     </div>
     </div>
 @stop

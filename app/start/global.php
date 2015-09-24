@@ -47,7 +47,7 @@
 	*/
 
 	// binding pour l'affichage des parametres de pari dans le bon ordre.
-	App::bind('pari_affichage', function($app){
+	App::bind('pari_affichage', function ($app) {
 		return new lib\pari\PariAffichage;
 	});
 
@@ -102,10 +102,10 @@
 		if ($parameters[1] == 'n') {
 			$montant_par_unite = Auth::user()->tipsters()->where('id', $parameters[2])->first()->montant_par_unite;
 			$bankroll_actuelle = Auth::user()->comptes()->where('id', $parameters[0])->first()->bankroll_actuelle;
-			if (($value*$montant_par_unite) < $bankroll_actuelle) {
+			if (($value * $montant_par_unite) < $bankroll_actuelle) {
 				return true;
 			}
-		}else{
+		} else {
 			return true;
 		}
 		return false;
@@ -117,7 +117,7 @@
 			if (($value) < $bankroll_actuelle) {
 				return true;
 			}
-		}elseif ($parameters[1] == 'b') {
+		} elseif ($parameters[1] == 'b') {
 			return true;
 		}
 		return false;
@@ -126,6 +126,13 @@
 
 	// to decrypt hashed pass
 	Validator::extend('checkHashedPass', function ($attribute, $value, $parameters) {
+		if (Hash::check($value, $parameters[0])) {
+			return true;
+		}
+		return false;
+	});
+
+	Validator::extend('team_validation', function ($attribute, $value, $parameters) {
 		if (Hash::check($value, $parameters[0])) {
 			return true;
 		}
@@ -146,17 +153,17 @@
 			} else {
 				return false;
 			}
-		}elseif ($market == 11) { // Half-Time / Full-Time
+		} elseif ($market == 11) { // Half-Time / Full-Time
 			if (preg_match("(1/1|1/X|1/2|X/1|X/X|X/2|2/1|2/X|2/2)", $value)) {
 				return true;
 			} else {
 				return false;
 			}
-		}elseif ($market == 43) { // 1x2
+		} elseif ($market == 43) { // 1x2
 			return true;
-		}elseif ($market == 46) { // Match Winner / HomeAway
+		} elseif ($market == 46) { // Match Winner / HomeAway
 			return true;
-		}elseif ($market == 48) { // Asian Handicap
+		} elseif ($market == 48) { // Asian Handicap
 			return true;
 		}
 		return false;
@@ -165,15 +172,14 @@
 	Validator::extend('odd_double_param_validation', function ($attribute, $value, $parameters) {
 		$market = $parameters[0];
 
-		if ($market == 7) { //Winner
-			return true;
-		} elseif ($market == 8) { //1x2 with european handicap
+		if ($market == 8) { //1x2 with european handicap
 			if (preg_match("/^-?[0-9]\d*(\.\d+)?$/", $value)) {
 				return true;
 			} else {
 				return false;
 			}
-		}elseif ($market == 48) { // Asian Handicap
+
+		} elseif ($market == 48) { // Asian Handicap
 			if (preg_match("/^-?[0-9]\d*(\.\d+)?$/", $value)) {
 				return true;
 			} else {
@@ -237,7 +243,6 @@
 
 
 	/* */
-	App::missing(function($exception)
-	{
+	App::missing(function ($exception) {
 		return Response::view('pages.404', array(), 404);
 	});

@@ -8,6 +8,9 @@ function addManualCouponSelection() {
     var picks = ''; //initialisation de la variable qui sera modifié a chaque choix de type de pari.
     var picks1X2 = [{id: "1", text: "Home"}, {id: "2", text: "Away"}, {id: "X", text: "Draw"}];
     var picks12 = [{id: "1", text: "Home"}, {id: "2", text: "Away"}];
+    var tooltip_message = "Quand cet icone apparait, aucune proposition vous sera faite, c'est à vous d'inscrire votre réponse dans le champ de recherche. Cette réponse deviendra ensuite une proposition, vous n'avez alors plus qu'à la selectionner.";
+    var manually_insertion_icon = " <span class='glyphicon glyphicon-save font-red' data-toggle='tooltip' data-title='"+tooltip_message+"'></span>";
+
 
 
     // gestion formulaire
@@ -44,6 +47,8 @@ function addManualCouponSelection() {
     var team2Container = modal_form.find('#team2_container');
     var team2Error = modal_form.find('#team2_error');
 
+    var teamsRow = modal_form.find('#teamsRow');
+
     var pick = modal_form.find('select[name="pick"]');
     var pickContainer = modal_form.find('#pick_container');
     var pickLabel = pickContainer.find('label');
@@ -75,6 +80,7 @@ function addManualCouponSelection() {
     var oddError = modal_form.find('#odd_error');
     var oddContainer = modal_form.find('#odd_container');
 
+    var liveContainer = modal_form.find('#liveContainer');
     var liveCheckBox = modal_form.find('#live');
 
     var score = modal_form.find('input[name="score"]');
@@ -82,23 +88,23 @@ function addManualCouponSelection() {
     var scoreContainer = modal_form.find('#score_container');
 
     function assignerEtatEnDebut() {
-
-        pickContainer.addClass("hidden");
-        oddParamContainer.addClass("hidden");
-        oddParam2Container.addClass("hidden");
-        oddParam3Container.addClass("hidden");
-        oddParticipantParameterNameContainer.addClass("hidden");
-        scoreContainer.addClass("hidden");
-        score.prop("disabled", true);
+        teamsRow.hide();
+        pickContainer.hide();
+        oddParamContainer.hide();
+        oddParam2Container.hide();
+        oddParam3Container.hide();
+        oddParticipantParameterNameContainer.hide();
     }
 
     function gestionCheckboxs() {
         liveCheckBox.click(function () {
-            scoreContainer.toggleClass("hidden");
+            //scoreContainer.toggleClass("hide");
             if (liveCheckBox.is(':checked')) {
+                scoreContainer.show();
                 score.prop("disabled", false);
                 liveCheckBox.parents('span').addClass("checked");
             }else{
+                scoreContainer.hide();
                 score.prop("disabled", true);
                 liveCheckBox.parents('span').removeClass("checked");
             }
@@ -106,7 +112,7 @@ function addManualCouponSelection() {
     }
 
     function gestionSelectionsSport() {
-        modal_form.find(".sportinputdashboard").select2({
+        sport.select2({
             allowClear: true,
             placeholder: "Choisir un sport",
             cache: true,
@@ -125,17 +131,13 @@ function addManualCouponSelection() {
                 }
             }
         }).change(function () {
-            pick.html('');
-            competition.val("").trigger("change");
-            market.val("").trigger("change");
-            scope.val("").trigger("change");
-            pick.val("").trigger("change");
-            team1.val("").trigger("change");
-            team2.val("").trigger("change");
-            oddParam.val("").trigger("change");
-            oddParam2.val("").trigger("change");
-            oddParam3.val("").trigger("change");
-            oddParticipantParameterName.val('').trigger("change");
+            hideMarketParams();
+            competition.val(null).trigger('change');
+            competitionContainer.removeClass('has-error');
+            competitionError.empty();
+            market.val(null).trigger('change');
+            marketContainer.removeClass('has-error');
+            marketError.empty();
         });
     }
 
@@ -194,80 +196,74 @@ function addManualCouponSelection() {
             }
         }).change(function () {
             hideMarketParams();
-            resetTeamsInputs();
-
+            $('[data-toggle="tooltip"]').tooltip();
             // valeur de market pour la gestion de l affichage des parametres du market.
-            var val = modal_form.find(".marketinputdashboard").val();
-
-            // cacher scope et pick input quand le market n est pas seletionné.
-            if (val == '') {
-                scopeContainer.fadeOut().addClass("hidden");
-                pickContainer.fadeOut().addClass("hidden");
-            } else {
-                scopeContainer.fadeIn().removeClass("hidden");
-                pickContainer.fadeIn().removeClass("hidden");
-            }
+            var val = market.val();
 
             if (val == 7) { // Winner
+                hideTeamsInputs();
+                pickContainer.fadeIn().show();
                 pick.select2({tags: true, allowClear: true, placeholder: "Nom de l\'équipe ou du joueur vainqueur"});
-                pickLabel.html("Vainqueur <span class='glyphicon glyphicon-save'></span>");
+                pickLabel.html('Vainqueur'+manually_insertion_icon);
             }
             else if (val == 8) { // 1X2 European handicap
-                team1.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
-                team2.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
-                pickContainer.fadeIn().removeClass("hidden");
-
+                showTeamsInputs();
+                pickContainer.fadeIn().show();
                 pick.select2({data: picks1X2, minimumResultsForSearch: Infinity});
                 pickLabel.html("Résultat du match");
                 oddParticipantParameterNameLabel.text('Equipe Handicap');
-                oddParticipantParameterNameContainer.fadeIn().removeClass("hidden");
-                oddParticipantParameterNameContainer.addClass("col-md-6");
+                oddParticipantParameterNameContainer.fadeIn().show();
                 oddParticipantParameterName.select2({
                     data: picks12,
                     minimumResultsForSearch: Infinity,
                     placeholder: 'Equipe/Joueur'
                 });
-                oddParamLabel.html('Handicap <span class="glyphicon glyphicon-save"></span>');
-                oddParamContainer.fadeIn().removeClass("hidden");
-                oddParamContainer.addClass("col-md-6");
-                oddParam.html('<option value=""></option>');
+                oddParamLabel.html('Handicap'+manually_insertion_icon);
+                oddParamContainer.fadeIn().show();
                 oddParam.select2({tags: true, allowClear: true, placeholder: '2.5 ou -2.5'})
             }
             else if (val == 9) { // Double Chance
                 picks = [{id: "1X", text: "1X"}, {id: "X2", text: "X2"}, {id: "12", text: "12"}];
+                teamsRow.fadeIn().show();
+                pickContainer.fadeIn().show();
                 pick.select2({data: picks, minimumResultsForSearch: Infinity});
-                team1.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
-                team2.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
+                team1.val("").trigger("change").prop("disabled", false);
+                team2.val("").trigger("change").prop("disabled", false);
                 pickLabel.html("Choix");
+
             }
             else if (val == 11) { // Half-Time / Full-Time
                 picks = [{id: "1/1", text: "1/1"}, {id: "1/X", text: "1/X"}, {id: "1/2", text: "1/2"}, {id: "X/1", text: "X/1"}, {id: "X/X", text: "X/X"}, {id: "X/2", text: "X/2"}, {id: "2/1", text: "2/1"}, {id: "2/X", text: "2/X"}, {id: "2/2", text: "2/2"}];
+                teamsRow.fadeIn().show();
+                pickContainer.fadeIn().show();
                 pick.select2({data: picks, minimumResultsForSearch: Infinity});
-                team1.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
-                team2.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
+                team1.val("").trigger("change").prop("disabled", false);
+                team2.val("").trigger("change").prop("disabled", false);
                 pickLabel.html("Choix");
             }
             else if (val == 43) { // 1X2
-                team1.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
-                team2.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
+                teamsRow.fadeIn().show();
+                pickContainer.fadeIn().show();
                 pick.select2({data: picks1X2, minimumResultsForSearch: Infinity});
+                team1.val("").trigger("change").prop("disabled", false);
+                team2.val("").trigger("change").prop("disabled", false);
             }
             else if (val == 46) { // Match Winner / HomeAway
-                team1.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
-                team2.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
+                teamsRow.fadeIn().show();
+                pickContainer.fadeIn().show();
                 pick.select2({data: picks12, minimumResultsForSearch: Infinity});
+                team1.val("").trigger("change").prop("disabled", false);
+                team2.val("").trigger("change").prop("disabled", false);
             }
             else if (val == 48) { // Asian Handicap
-                team1.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
-                team2.html('<option value=""></option>').val("").trigger("change").prop("disabled", false);
-                pick.select2({data: picks12, minimumResultsForSearch: Infinity});
-                oddParamContainer.removeClass("hidden");
-                oddParamLabel.text('Handicap');
+                teamsRow.fadeIn().show();
+                team1.val("").trigger("change").prop("disabled", false);
+                team2.val("").trigger("change").prop("disabled", false);
+                pickContainer.fadeIn().show();
+                oddParamContainer.show();
+                oddParamLabel.html('Handicap'+manually_insertion_icon);
                 oddParam.select2({placeholder: "-2.5 ou 2.5", tags: true});
-            }
-            else {
-                modal_form.find(".pickinputdashboard").html('');
-                modal_form.find(".pickinputdashboard").val("").trigger("change");
+                pick.select2({data: picks12, minimumResultsForSearch: Infinity});
             }
         });
     }
@@ -506,38 +502,49 @@ function addManualCouponSelection() {
     }
 
     function hideMarketParams() {
+        hideTeamsInputs();
         scope.html('').val("").trigger("change");
         scopeContainer.removeClass('has-error');
         scopeError.empty();
         pick.html('').val("").trigger("change");
-        pickContainer.addClass("hidden");
+        pickContainer.hide();
         pickContainer.removeClass('has-error');
         pickError.empty();
         oddParam.html('').val("").trigger("change");
-        oddParamContainer.addClass("hidden");
+        oddParamContainer.hide();
         oddParamContainer.removeClass('has-error');
         oddParamError.empty();
         oddParam2.html('').val("").trigger("change");
-        oddParam2Container.addClass("hidden");
+        oddParam2Container.hide();
         oddParam2Container.removeClass('has-error');
         oddParam2Error.empty();
         oddParam3.html('').val("").trigger("change");
-        oddParam3Container.addClass("hidden");
+        oddParam3Container.hide();
         oddParam3Container.removeClass('has-error');
         oddParam3Error.empty();
         oddParticipantParameterName.html('').val('').trigger("change");
-        oddParticipantParameterNameContainer.addClass("hidden");
+        oddParticipantParameterNameContainer.hide();
         oddParticipantParameterNameContainer.removeClass('has-error');
         oddParticipantParameterNameError.empty();
     }
 
-    function resetTeamsInputs() {
-        team1.html('').val("").trigger("change").prop("disabled", true);
-        team2.html('').val("").trigger("change").prop("disabled", true);
+    function hideTeamsInputs() {
+        teamsRow.hide();
+        team1.val("").html('<option value=""></option>').trigger("change").prop("disabled", true);
+        team2.val("").html('<option value=""></option>').trigger("change").prop("disabled", true);
+        team1Container.removeClass('has-error');
+        team1Error.empty();
+        team2Container.removeClass('has-error');
+        team2Error.empty();
+    }
+
+    function showTeamsInputs() {
+        teamsRow.show();
+        team1.val("").html('<option value=""></option>').trigger("change").prop("disabled", false);
+        team2.val("").html('<option value=""></option>').trigger("change").prop("disabled", false);
     }
 
     function resetModal() {
-
             date.val(null).trigger('change');
             dateContainer.removeClass('has-error');
             dateError.empty();
@@ -581,7 +588,7 @@ function addManualCouponSelection() {
             bookmakerContainer.removeClass('has-error');
             bookmakerError.empty();
             bookmaker.val(null);
-            scoreContainer.removeClass('has-error').addClass("hidden");
+            scoreContainer.removeClass('has-error').hide();
             scoreError.empty();
             score.val('').prop("disabled", true);
             liveCheckBox.parents('span').removeClass("checked");
@@ -589,7 +596,7 @@ function addManualCouponSelection() {
     }
 
     // inits
-    assignerEtatEnDebut();
+
 
     // hack pour avoir le focus sur les inputs avec select2 dans les modals.
     $.fn.modal.Constructor.prototype.enforceFocus = function () {
@@ -626,4 +633,5 @@ function addManualCouponSelection() {
     gestionSelectionsScope();
     gestionSelectionsPick();
     gestionSelectionsEquipes();
+    assignerEtatEnDebut(); // important de le mettre a la fin sinon ca fait bugger les select2.
 }
