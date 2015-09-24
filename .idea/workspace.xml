@@ -6,7 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/js/dashboard.js" afterPath="$PROJECT_DIR$/public/build/js/dashboard.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/dashboard/paris/parisEnCoursEnclose.js" afterPath="$PROJECT_DIR$/public/js/pages/dashboard/paris/parisEnCoursEnclose.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -111,8 +110,8 @@
       <file leaf-file-name="parisEnCoursEnclose.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/parisEnCoursEnclose.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29198474" vertical-offset="204" max-vertical-offset="986">
-              <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
+            <state vertical-scroll-proportion="0.45419848" vertical-offset="153" max-vertical-offset="986">
+              <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -2138,7 +2137,13 @@
       <option name="project" value="LOCAL" />
       <updated>1443057619177</updated>
     </task>
-    <option name="localTasksCounter" value="252" />
+    <task id="LOCAL-00252" summary="essai correction bug paris en cours enclose">
+      <created>1443058615387</created>
+      <option name="number" value="00252" />
+      <option name="project" value="LOCAL" />
+      <updated>1443058615387</updated>
+    </task>
+    <option name="localTasksCounter" value="253" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -2239,7 +2244,8 @@
     <MESSAGE value="termine table + recap general" />
     <MESSAGE value="preferences page modifié + panel coupon selection accordeon open or close on refresh" />
     <MESSAGE value="share page en cours" />
-    <option name="LAST_COMMIT_MESSAGE" value="share page en cours" />
+    <MESSAGE value="essai correction bug paris en cours enclose" />
+    <option name="LAST_COMMIT_MESSAGE" value="essai correction bug paris en cours enclose" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2632,8 +2638,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/parisEnCoursEnclose.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29198474" vertical-offset="204" max-vertical-offset="986">
-          <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.45419848" vertical-offset="153" max-vertical-offset="986">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
           <folding />
         </state>
       </provider>

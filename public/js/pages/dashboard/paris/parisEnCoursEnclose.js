@@ -18,7 +18,7 @@ function parisEnCoursEnclose(tablename, formname, urlgiven) {
         var subrow = parent.next().find('.child-row input');
         var type = parent.find('.type').text();
 
-        if (type == 'simple') {
+        if (type == 's') {
             childrows = parent.find('select[name="resultatSelectionDashboardInput[]"]').serialize();
             childrowsstatus = parent.find('input[name="childrowsinput[]"]').serialize();
         } else {
