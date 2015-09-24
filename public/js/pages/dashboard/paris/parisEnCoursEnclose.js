@@ -25,6 +25,8 @@ function parisEnCoursEnclose(tablename, formname, urlgiven) {
             childrows = parent.next().find('select[name="resultatSelectionDashboardInput[]"]').serialize();
             childrowsstatus = parent.next().find('input[name="childrowsinput[]"]').serialize();
         }
+        console.log(childrows);
+        console.log(childrowsstatus);
 
         $.ajax({
             url: url,
