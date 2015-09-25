@@ -329,29 +329,12 @@
                                         <button type="submit" class="btn green"><span
                                                     class="glyphicon glyphicon-plus"></span> Ajouter
                                         </button>
-
-
-
                                         {{ Form::close()}}
-
-
-
-
-
-
-
-
-
-
                                         <hr/>
-
                                     </div>
-
-
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -389,11 +372,8 @@
                     <div id="recaps">
 
                     </div>
-
                 </div>
             </div>
-
-
         </div>
     </div>
     <!-- END PAGE CONTENT INNER -->

@@ -92,7 +92,7 @@ class PariAffichage implements PariAffichageInterface{
 		if(!is_null($home_team) && ($var == '1' || $var == 'Home' || $var == $home_team)){
 			return $home_team;
 		}
-		if(!is_null($away_team) && ($var == '2' || $var == 'Away' || $var == $home_team)){
+		if(!is_null($away_team) && ($var == '2' || $var == 'Away' || $var == $away_team)){
 			return $away_team;
 		}
 		if(!is_null($home_team) && !is_null($away_team) && ($var == 'X' || $var == 'Draw')){
