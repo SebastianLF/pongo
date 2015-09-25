@@ -20,7 +20,7 @@ class PariAffichage implements PariAffichageInterface{
 		// 8 , 'parametername1 pick doubleparam1
 		$affichage_num = '';
 		if ($market_id == '7') {$affichage_num = 2;}
-		elseif ($market_id == '8') {$affichage_num = 4;}
+		elseif ($market_id == '8') {$affichage_num = 8;}
 		elseif ($market_id == '9') {$affichage_num = 2;}
 		elseif ($market_id == '43') {$affichage_num = 1;}
 		elseif ($market_id == '46') {$affichage_num = 1;}
@@ -96,7 +96,7 @@ class PariAffichage implements PariAffichageInterface{
 			return $away_team;
 		}
 		if(!is_null($home_team) && !is_null($away_team) && ($var == 'X' || $var == 'Draw')){
-			return 'Nul';
+			return 'Match Nul';
 		}
 	}
 }
