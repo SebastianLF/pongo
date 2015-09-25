@@ -10,15 +10,15 @@ function loadParisEnCours() {
         type: 'get',
         success: function (data) {
             $('#tab_15_1').html(data.vue);
-            /*table.find('.subbetclick a').click(function(){
+            table.find('.subbetclick a').click(function(){
                 if($(this).find('i').hasClass('glyphicon-chevron-right')){
                     $(this).find('i').removeClass('glyphicon-chevron-right');
                     $(this).find('i').addClass('glyphicon-chevron-down');
                 }else{
-                    $(this).find('i').addClass('glyphicon-chevron-right');
                     $(this).find('i').removeClass('glyphicon-chevron-down');
+                    $(this).find('i').addClass('glyphicon-chevron-right');
                 }
-            });*/
+            });
 
             // afficher le count dans le bon endroit.
             if (data.count_paris_encours == 0) {
@@ -50,7 +50,7 @@ function loadParisTermine() {
             });
 
             // chevron changes icon on click for combiné/parlay.
-            /*$('.subbetclick a').click(function(){
+            $('.subbetclick a').click(function(){
                 if($(this).find('i').hasClass('glyphicon-chevron-right')){
                     $(this).find('i').removeClass('glyphicon-chevron-right');
                     $(this).find('i').addClass('glyphicon-chevron-down');
@@ -58,7 +58,7 @@ function loadParisTermine() {
                     $(this).find('i').addClass('glyphicon-chevron-right');
                     $(this).find('i').removeClass('glyphicon-chevron-down');
                 }
-            });*/
+            });
 
             // barre de défilement vertical pour les paris terminés.
             $(function(){

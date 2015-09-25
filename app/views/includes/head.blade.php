@@ -51,7 +51,7 @@
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/css/plugins.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/admin/layout3/css/layout.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/admin/layout3/css/themes/default.css') }}
-{{ HTML::style('metronic_v3.6.2/theme/assets/admin/layout3/css/custom.css') }}
+{{ HTML::style('metronic_v3.8.1/theme/assets/admin/layout3/css/custom.css') }}
 
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="{{asset('favicon.ico')}}"/>

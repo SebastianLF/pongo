@@ -1,9 +1,26 @@
 /* here you can put your own css to customize and override the theme */
 
+/* fonts
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../../../global/plugins/bootstrap/fonts/glyphicons-halflings-regular.eot');
+    src: url('../../../global/plugins/bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../../../global/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff') format('woff'), url('../../../global/plugins/bootstrap/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../../../global/plugins/bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}*/
+
 /***
 Rounded Portlets
 ***/
-/*
+
+@media (max-width: 991px) {
+    .page-header .page-header-share-ticket{
+        background: #444d58 !important;  /* Horizontal mega menu for share ticket page */
+    }
+
+    .page-container .page-content-share-ticket {
+        padding: 15px 0 15px !important;
+    }
+}
+
 .portlet {
 	border-radius: 4px !important;
 }
@@ -16,8 +33,380 @@ Rounded Portlets
 .portlet .portlet-body .form-actions  {
 	border-radius: 0px 0px 4px 4px !important;
 }
-*/
 
-.form-group{
 
+.page-content{
+    background: #e9edef !important;
+}
+
+
+
+.glyphicon-plus-sign{
+    font-size: 1.2em !important;
+}
+
+input{
+}
+
+select{
+	padding: 5px !important;
+}
+
+.name{
+	color: #65A0D0 !important;
+	font-weight: 600;
+}
+
+.tipster{
+    font-family: "Open Sans", sans-serif !important;
+    font-weight: 300 !important;
+}
+
+.child-row{
+	display: inline-block;
+}
+
+.hidebordertopandbot{
+    border-top: none !important;
+    border-bottom:  none !important;
+}
+
+.inline-block{
+	display: inline-block !important;
+}
+
+.page-header .page-header-top .page-logo {
+    height: 50px;
+    margin: 13px 0 0;
+    padding: 15px 15px;
+    font-size: 2em;
+    line-height: 15px;
+    color: #4db3a4 !important;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.color-white {
+	color: white !important;
+}
+
+.cancel-padding{
+	padding :0 !important
+}
+
+.child-table{
+ margin: 0px !important;
+}
+
+/*table{
+    font-size: 12px !important;
+}*/
+
+.hiddenRow {
+    padding: 0 !important;
+    display: inline-block;
+}
+
+.blue{
+    color: #65A0D0 !important;
+    font-weight: 600;
+}
+
+.red-lose{
+    color: #E26A6A;
+}
+
+.blue-rembourse{
+    color: #3598dc;
+}
+
+.header-date{
+    line-height: 50px;
+}
+
+.table-pari td {
+    text-align: center !important;
+}
+.table-pari th {
+    text-align: center !important;
+}
+
+.label-combine{
+    background-color: #45B6AF;
+    opacity: 0.5 !important;
+}
+
+.fontsize15{
+    line-height: 17px;
+    font-size: 15px;
+}
+
+.form-bouton-paris{
+    display: inline-block !important;
+}
+
+.bcg-red{
+    background-color: #F3565D !important;
+}
+
+.bcg-green{
+    background-color: #4DB3A2 !important;
+}
+
+.blue-bookmaker{
+    color: #5b9bd1 !important;
+}
+
+.login-container {
+	margin: 0 auto;
+	width: 400px; /* Whatever exact width you are looking for (not bound by preset bootstrap widths) */
+}
+
+.form-actions-automatic-bet{
+    padding : 5px !important;
+}
+
+.note-automatic-bet{
+    margin : 5px !important;
+}
+
+.form-automatic{
+
+    margin-left: 10px !important;
+}
+
+#spinner {
+    display: none;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+}
+#spinner .ball {
+    width: 20px;
+    height: 20px;
+    background-color: #333333;
+    border-radius: 50%;
+    display: inline-block;
+    -webkit-animation: motion 3s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+    animation: motion 3s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+
+@-webkit-keyframes motion {
+    0% {
+        -webkit-transform: translateX(0) scale(1);
+        transform: translateX(0) scale(1);
+    }
+    25% {
+        -webkit-transform: translateX(-50px) scale(0.3);
+        transform: translateX(-50px) scale(0.3);
+    }
+    50% {
+        -webkit-transform: translateX(0) scale(1);
+        transform: translateX(0) scale(1);
+    }
+    75% {
+        -webkit-transform: translateX(50px) scale(0.3);
+        transform: translateX(50px) scale(0.3);
+    }
+    100% {
+        -webkit-transform: translateX(0) scale(1);
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes motion {
+    0% {
+        -webkit-transform: translateX(0) scale(1);
+        transform: translateX(0) scale(1);
+    }
+    25% {
+        -webkit-transform: translateX(-50px) scale(0.3);
+        transform: translateX(-50px) scale(0.3);
+    }
+    50% {
+        -webkit-transform: translateX(0) scale(1);
+        transform: translateX(0) scale(1);
+    }
+    75% {
+        -webkit-transform: translateX(50px) scale(0.3);
+        transform: translateX(50px) scale(0.3);
+    }
+    100% {
+        -webkit-transform: translateX(0) scale(1);
+        transform: translateX(0) scale(1);
+    }
+}
+
+.fa-spin-custom, .glyphicon-spin {
+    -webkit-animation: spin 1000ms infinite linear;
+    animation: spin 1000ms infinite linear;
+}
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+
+/* css pour les panels de pricing */
+@import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
+
+.panel-pricing {
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+}
+.panel-pricing:hover {
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+}
+.panel-pricing .panel-heading {
+    padding: 20px 10px;
+}
+.panel-pricing .panel-heading .fa {
+    margin-top: 10px;
+    font-size: 58px;
+}
+.panel-pricing .list-group-item {
+    color: #777777;
+    border-bottom: 1px solid rgba(250, 250, 250, 0.5);
+}
+.panel-pricing .list-group-item:last-child {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.panel-pricing .list-group-item:first-child {
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+.panel-pricing .panel-body {
+    background-color: #f0f0f0;
+    font-size: 40px;
+    color: #777777;
+    padding: 20px;
+    margin: 0px;
+}
+
+/* si le contenu d une cellule est trop longue elle est cachée */
+.table-fixed {
+    table-layout:fixed;
+}
+
+.table-ellipsis{
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.table-centred tr{
+    text-align: center !important;
+}
+
+.panel-body-recaps{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.table-recap{
+    text-align: center;
+}
+
+
+.table-bookmakersOnDashboard{
+    margin: 0;
+    padding: 0;
+}
+
+.table-termine{
+    vertical-align: middle !important;
+}
+
+.subrow{
+    border-spacing: 0px !important;
+}
+
+.table-subrow-combine{
+    margin: 0 auto !important;
+    width: 70% !important;
+}
+
+
+
+/* css pour recapitulatif sur la page dashboard */
+.number{
+    font-size: 17px !important;
+    line-height: 27px !important;
+    color: #7D8C9D;
+}
+
+.textalignright{
+    text-align: right;
+}
+
+.textaligncenter{
+    text-align: center;
+}
+
+/* remet à zero pour le plugin datetimepicker dans recap*/
+
+/* flags sprite */
+
+    /*.flag{
+        width: 1.25em;
+        height: .9166em;
+        background-image: url('../../../../../../img/countries-sprite.png');
+        background-repeat: no-repeat;
+    }
+
+    .flag.flag-es{
+        background-position: -357px -165px;
+    }*/
+
+.img-flag{
+    width: 22px;
+    height: 20px;
+}
+
+
+/* odd input attributs for coupon selections*/
+.input-coupon-odd{
+    height: 23px;
+    padding: 0px 3px;
+    font-size: 13px;
+    margin: 0 0 0 0 !important;
+}
+
+.inputs-ticket {
+    height: 23px;
+    padding: 0 3px !important;
+    font-size: 13px;
+    margin: 0 0 0 0 !important;
+}
+
+.buttons-actions-ticket{
+    padding: 4px 7px 4px 7px;
+    font-size: 0;
+    line-height: 1.5;
 }

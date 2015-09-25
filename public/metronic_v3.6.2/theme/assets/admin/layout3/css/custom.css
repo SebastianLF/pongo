@@ -1,5 +1,12 @@
 /* here you can put your own css to customize and override the theme */
 
+/* fonts */
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('metronic_v3.8.1/theme/assets/global/plugins/bootstrap/fonts/glyphicons-halflings-regular.eot');
+    src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
 /***
 Rounded Portlets
 ***/
