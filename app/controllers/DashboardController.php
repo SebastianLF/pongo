@@ -2,6 +2,8 @@
 
 	use Carbon\Carbon;
 	use Laracasts\Utilities\JavaScript\Facades\JavaScript;
+	use yajra\Datatables\Datatables;
+
 
 	class DashboardController extends BaseController
 	{
@@ -185,6 +187,7 @@
 					Clockwork::info($parisTermine);
 					$countParisTermine = $parisTermine->count();
 					$view = View::make('bet.paristermine', array('paristermine' => $parisTermine, 'types_resultat' => $this->types_resultat, 'count_paris_termine' => $countParisTermine));
+
 					return $view;
 
 					break;

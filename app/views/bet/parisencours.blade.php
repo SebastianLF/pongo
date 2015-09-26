@@ -27,6 +27,7 @@
                 <th>bén./per.</th>
                 <th width="115px"></th>
             </tr>
+
             </thead>
             <tbody>
             @foreach($parisencours as $pari)

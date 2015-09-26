@@ -78,9 +78,10 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="{{asset('js/plugin/bootstrap-daterangepicker-master/moment-timezone.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/plugin/bootstrap-daterangepicker-master/daterangepicker.js')}}" type="text/javascript"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js')}}" type="text/javascript"></script>
+
+
     <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js')}}" type="text/javascript"></script>
-    <script src="{{asset('js/plugin/kayalshri-tableExport.jquery.plugin-a891806/tableExport.js')}}"  type="text/javascript"></script>
-    <script src="{{asset('js/plugin/kayalshri-tableExport.jquery.plugin-a891806/jquery.base64.js')}}"  type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js" type="text/javascript"></script>
     <script src="{{asset('js/plugin/tablesorter-master/jquery.tablesorter.min.js')}}"  type="text/javascript"></script>
 
     <!-- END PAGE LEVEL PLUGINS -->

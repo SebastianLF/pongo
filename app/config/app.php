@@ -135,7 +135,8 @@ return array(
         'Clockwork\Support\Laravel\ClockworkServiceProvider',
         'Dollar\Generators\GeneratorsServiceProvider',
 		'Maatwebsite\Excel\ExcelServiceProvider',
-		'Laracasts\Utilities\UtilitiesServiceProvider'
+		'Laracasts\Utilities\UtilitiesServiceProvider',
+		'yajra\Datatables\DatatablesServiceProvider'
 	),
 
 	/*
@@ -207,6 +208,7 @@ return array(
 		'Debugbar' 		  => 'Barryvdh\Debugbar\Facade',
         'Clockwork'         => 'Clockwork\Support\Laravel\Facade',
 		'Excel' => 'Maatwebsite\Excel\Facades\Excel',
+		'Datatables' => 'yajra\Datatables\Facades\Datatables',
 	),
 
 );

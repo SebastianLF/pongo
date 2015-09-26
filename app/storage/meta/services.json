@@ -32,7 +32,8 @@
         "Clockwork\\Support\\Laravel\\ClockworkServiceProvider",
         "Dollar\\Generators\\GeneratorsServiceProvider",
         "Maatwebsite\\Excel\\ExcelServiceProvider",
-        "Laracasts\\Utilities\\UtilitiesServiceProvider"
+        "Laracasts\\Utilities\\UtilitiesServiceProvider",
+        "yajra\\Datatables\\DatatablesServiceProvider"
     ],
     "eager": [
         "Illuminate\\Cookie\\CookieServiceProvider",
@@ -47,7 +48,8 @@
         "Clockwork\\Support\\Laravel\\ClockworkServiceProvider",
         "Dollar\\Generators\\GeneratorsServiceProvider",
         "Maatwebsite\\Excel\\ExcelServiceProvider",
-        "Laracasts\\Utilities\\UtilitiesServiceProvider"
+        "Laracasts\\Utilities\\UtilitiesServiceProvider",
+        "yajra\\Datatables\\DatatablesServiceProvider"
     ],
     "deferred": {
         "artisan": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

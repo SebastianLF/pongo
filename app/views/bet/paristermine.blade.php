@@ -9,10 +9,9 @@
         <div class="has-success has-feedback col-md-2" style="float:left;margin-bottom:20px;"><input id="paris-termine-search-input" class="form-control" type="text" placeholder="Recherche..."></div>
     </div>
 
-    <div class="slimScrollTermine">
-        <div class="table-scrollable-borderless table-responsive table-responsive-scrollbar-top">
-            <table id="paristerminetable" class="table table-condensed table-light table-hover  table-termine"
-                   style="border-collapse:collapse;">
+
+            <table id="paristerminetable" class="table"
+                   >
                 <thead>
                 <tr class="uppercase">
                     <th id="count" class="hidden ">{{$count_paris_termine}}</th>
@@ -290,6 +289,5 @@
                 @endforeach
                 </tbody>
             </table>
-        </div>
-    </div>
+
 @endif

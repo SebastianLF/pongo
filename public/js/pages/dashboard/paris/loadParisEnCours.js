@@ -37,6 +37,7 @@ function loadParisEnCours() {
 }
 
 function loadParisTermine() {
+
     var table = $("#paristerminetable");
     $.ajax({
         url: 'dashboard/ajax/paristermine',
@@ -44,7 +45,20 @@ function loadParisTermine() {
         type: 'get',
         success: function (data) {
             $('#tab_15_4').html(data);
-            parisTermineDelete();
+            $('#paristerminetable').DataTable({
+                buttons: [
+                    {
+                        extend: 'csv',
+                        text: 'Copy all data',
+                        exportOptions: {
+                            modifier: {
+                                search: 'none'
+                            }
+                        }
+                    }
+                ]
+            });
+            /* parisTermineDelete();
             table.find(".boutonsupprimer").click(function (e) {
                 e.stopPropagation();
             });
@@ -71,7 +85,7 @@ function loadParisTermine() {
             });
 
             // table search
-            $('#paristerminetable').tableSearch({}); // sans les crochets-parenthese ca ne marche pas, il faut bien les laisser.
+            $('#paristerminetable').tableSearch({}); // sans les crochets-parenthese ca ne marche pas, il faut bien les laisser.*/
         },
         error: function (data) {
             $('#tab_15_4').html('<p>impossible de récuperer les paris terminés</p>');
