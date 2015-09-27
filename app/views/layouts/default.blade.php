@@ -81,7 +81,10 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
     <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js')}}" type="text/javascript"></script>
-    <script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js" type="text/javascript"></script>
+    <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js')}}" type="text/javascript"></script>
+    <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/plugin/tablesorter-master/jquery.tablesorter.min.js')}}"  type="text/javascript"></script>
 
     <!-- END PAGE LEVEL PLUGINS -->
@@ -89,14 +92,16 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="{{asset('metronic_v3.8.1/theme/assets/global/scripts/metronic.js')}}" type="text/javascript"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/admin/layout3/scripts/layout.js')}}" type="text/javascript"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/admin/layout3/scripts/demo.js')}}" type="text/javascript"></script>
-    <script src="{{asset('metronic_v3.8.1/theme/assets/admin/pages/scripts/table-advanced.js')}}"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/admin/pages/scripts/form-samples.js')}}"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/admin/pages/scripts/components-dropdowns.js')}}"></script>
     <script src="{{asset('js/pages/getPaginationSelectedPage.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/pages/getBookmakersForSelection.js')}}" type="text/javascript"></script>
 
-    <script>
+    <script type="text/javascript">
+
         jQuery(document).ready(function () {
+
+
 
             $('[data-toggle="tooltip"]').tooltip();
 

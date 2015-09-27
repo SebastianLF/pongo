@@ -27,7 +27,7 @@
 {{ HTML::style('js/plugin/bootstrap-daterangepicker-master/daterangepicker-bs3.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/font-awesome/css/font-awesome.min.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/uniform/css/uniform.default.css') }}
-{{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/bootstrap/css/bootstrap.min.css') }}
+{{ HTML::style('metronic_v3.8.1/theme/assets/global/plugins/bootstrap/css/bootstrap.min.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css') }}
 {{ HTML::style('css/toastr.css') }}
 {{ HTML::style('css/sweetalert.css') }}
@@ -38,13 +38,12 @@
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/bootstrap-select/bootstrap-select.min.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css') }}
-{{ HTML::style('https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css') }}
+{{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/admin/pages/css/pricing-table.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/icheck/skins/all.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/admin/pages/css/login.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css') }}
-{{ HTML::style('metronic_v3.8.1/theme/assets/global/plugins/datatables/media/css/jquery.dataTables.min.css') }}
 
 <!-- END PAGE LEVEL STYLES -->
 <!-- BEGIN THEME STYLES -->
