@@ -2836,6 +2836,7 @@ return array(
     'Symfony\\Component\\VarDumper\\Tests\\CliDumperTest' => $vendorDir . '/symfony/var-dumper/Tests/CliDumperTest.php',
     'Symfony\\Component\\VarDumper\\Tests\\Fixture\\DumbFoo' => $vendorDir . '/symfony/var-dumper/Tests/Fixtures/dumb-var.php',
     'Symfony\\Component\\VarDumper\\Tests\\HtmlDumperTest' => $vendorDir . '/symfony/var-dumper/Tests/HtmlDumperTest.php',
+    'Symfony\\Component\\VarDumper\\Tests\\Test\\VarDumperTestTraitTest' => $vendorDir . '/symfony/var-dumper/Tests/Test/VarDumpTestTraitRequire54.php',
     'Symfony\\Component\\VarDumper\\Tests\\VarClonerTest' => $vendorDir . '/symfony/var-dumper/Tests/VarClonerTest.php',
     'Symfony\\Component\\VarDumper\\VarDumper' => $vendorDir . '/symfony/var-dumper/VarDumper.php',
     'System_SSH_Agent' => $vendorDir . '/phpseclib/phpseclib/phpseclib/System/SSH/Agent.php',
@@ -2911,7 +2912,4 @@ return array(
     'phpDocumentor\\Reflection\\DocBlock\\Tag\\VarTag' => $vendorDir . '/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/VarTag.php',
     'phpDocumentor\\Reflection\\DocBlock\\Tag\\VersionTag' => $vendorDir . '/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Tag/VersionTag.php',
     'phpDocumentor\\Reflection\\DocBlock\\Type\\Collection' => $vendorDir . '/phpdocumentor/reflection-docblock/src/phpDocumentor/Reflection/DocBlock/Type/Collection.php',
-    'yajra\\Datatables\\Datatables' => $vendorDir . '/yajra/laravel-datatables-oracle/src/yajra/Datatables/Datatables.php',
-    'yajra\\Datatables\\DatatablesServiceProvider' => $vendorDir . '/yajra/laravel-datatables-oracle/src/yajra/Datatables/DatatablesServiceProvider.php',
-    'yajra\\Datatables\\Facades\\Datatables' => $vendorDir . '/yajra/laravel-datatables-oracle/src/yajra/Datatables/Facades/Datatables.php',
 );

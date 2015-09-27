@@ -2881,9 +2881,55 @@
         ]
     },
     {
+        "name": "laracasts/utilities",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer.git",
+            "reference": "cdcee80cdbe5673f61f59df30979546e4f7fadd6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/laracasts/PHP-Vars-To-Js-Transformer/zipball/cdcee80cdbe5673f61f59df30979546e4f7fadd6",
+            "reference": "cdcee80cdbe5673f61f59df30979546e4f7fadd6",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "~4.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpspec/phpspec": "~2.0"
+        },
+        "time": "2014-04-24 21:43:55",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Laracasts\\Utilities": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jeffrey Way",
+                "email": "jeffrey@laracasts.com"
+            }
+        ],
+        "description": "Transform your PHP to JavaScript",
+        "keywords": [
+            "javascript",
+            "laravel"
+        ]
+    },
+    {
         "name": "symfony/class-loader",
-        "version": "v2.7.4",
-        "version_normalized": "2.7.4.0",
+        "version": "v2.7.5",
+        "version_normalized": "2.7.5.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/class-loader.git",
@@ -2934,17 +2980,17 @@
     },
     {
         "name": "symfony/var-dumper",
-        "version": "v2.7.4",
-        "version_normalized": "2.7.4.0",
+        "version": "v2.7.5",
+        "version_normalized": "2.7.5.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/var-dumper.git",
-            "reference": "b39221998ff5fc26ba63f96d2b833dfddc233d57"
+            "reference": "ba8c9a0edf18f70a7efcb8d3eb35323a10263338"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/var-dumper/zipball/b39221998ff5fc26ba63f96d2b833dfddc233d57",
-            "reference": "b39221998ff5fc26ba63f96d2b833dfddc233d57",
+            "url": "https://api.github.com/repos/symfony/var-dumper/zipball/ba8c9a0edf18f70a7efcb8d3eb35323a10263338",
+            "reference": "ba8c9a0edf18f70a7efcb8d3eb35323a10263338",
             "shasum": ""
         },
         "require": {
@@ -2956,7 +3002,7 @@
         "suggest": {
             "ext-symfony_debug": ""
         },
-        "time": "2015-08-31 12:28:11",
+        "time": "2015-09-22 14:41:01",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2995,17 +3041,17 @@
     },
     {
         "name": "symfony/event-dispatcher",
-        "version": "v2.7.4",
-        "version_normalized": "2.7.4.0",
+        "version": "v2.7.5",
+        "version_normalized": "2.7.5.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/event-dispatcher.git",
-            "reference": "b58c916f1db03a611b72dd702564f30ad8fe83fa"
+            "reference": "ae4dcc2a8d3de98bd794167a3ccda1311597c5d9"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/b58c916f1db03a611b72dd702564f30ad8fe83fa",
-            "reference": "b58c916f1db03a611b72dd702564f30ad8fe83fa",
+            "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/ae4dcc2a8d3de98bd794167a3ccda1311597c5d9",
+            "reference": "ae4dcc2a8d3de98bd794167a3ccda1311597c5d9",
             "shasum": ""
         },
         "require": {
@@ -3023,7 +3069,7 @@
             "symfony/dependency-injection": "",
             "symfony/http-kernel": ""
         },
-        "time": "2015-08-24 07:13:45",
+        "time": "2015-09-22 13:49:29",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3055,17 +3101,17 @@
     },
     {
         "name": "symfony/filesystem",
-        "version": "v2.7.4",
-        "version_normalized": "2.7.4.0",
+        "version": "v2.7.5",
+        "version_normalized": "2.7.5.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/filesystem.git",
-            "reference": "f079e9933799929584200b9a926f72f29e291654"
+            "reference": "a17f8a17c20e8614c15b8e116e2f4bcde102cfab"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/filesystem/zipball/f079e9933799929584200b9a926f72f29e291654",
-            "reference": "f079e9933799929584200b9a926f72f29e291654",
+            "url": "https://api.github.com/repos/symfony/filesystem/zipball/a17f8a17c20e8614c15b8e116e2f4bcde102cfab",
+            "reference": "a17f8a17c20e8614c15b8e116e2f4bcde102cfab",
             "shasum": ""
         },
         "require": {
@@ -3074,7 +3120,7 @@
         "require-dev": {
             "symfony/phpunit-bridge": "~2.7"
         },
-        "time": "2015-08-27 07:03:44",
+        "time": "2015-09-09 17:42:36",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3103,105 +3149,5 @@
         ],
         "description": "Symfony Filesystem Component",
         "homepage": "https://symfony.com"
-    },
-    {
-        "name": "laracasts/utilities",
-        "version": "1.0.1",
-        "version_normalized": "1.0.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer.git",
-            "reference": "cdcee80cdbe5673f61f59df30979546e4f7fadd6"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/laracasts/PHP-Vars-To-Js-Transformer/zipball/cdcee80cdbe5673f61f59df30979546e4f7fadd6",
-            "reference": "cdcee80cdbe5673f61f59df30979546e4f7fadd6",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/support": "~4.0",
-            "php": ">=5.4.0"
-        },
-        "require-dev": {
-            "phpspec/phpspec": "~2.0"
-        },
-        "time": "2014-04-24 21:43:55",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Laracasts\\Utilities": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Jeffrey Way",
-                "email": "jeffrey@laracasts.com"
-            }
-        ],
-        "description": "Transform your PHP to JavaScript",
-        "keywords": [
-            "javascript",
-            "laravel"
-        ]
-    },
-    {
-        "name": "yajra/laravel-datatables-oracle",
-        "version": "v3.6.9",
-        "version_normalized": "3.6.9.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/yajra/laravel-datatables.git",
-            "reference": "40d6217ce382751cb7b1c991fb032ec4b69929e8"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/40d6217ce382751cb7b1c991fb032ec4b69929e8",
-            "reference": "40d6217ce382751cb7b1c991fb032ec4b69929e8",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/database": "4.*",
-            "illuminate/filesystem": "4.*",
-            "illuminate/http": "4.*",
-            "illuminate/support": "4.*",
-            "illuminate/view": "4.*",
-            "php": ">=5.4.0"
-        },
-        "require-dev": {
-            "mockery/mockery": "0.9.*",
-            "phpunit/phpunit": "4.0.*"
-        },
-        "time": "2015-08-29 07:15:45",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "yajra\\Datatables": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Arjay Angeles",
-                "email": "aqangeles@gmail.com"
-            }
-        ],
-        "description": "jQuery DataTables API for Laravel 4|5",
-        "keywords": [
-            "datatable",
-            "datatables",
-            "datatables jquery plugin",
-            "laravel",
-            "laravel4"
-        ]
     }
 ]
