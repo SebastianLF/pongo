@@ -79,13 +79,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="{{asset('js/plugin/bootstrap-daterangepicker-master/daterangepicker.js')}}" type="text/javascript"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js')}}" type="text/javascript"></script>
 
-
-    <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js')}}" type="text/javascript"></script>
-    <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js')}}" type="text/javascript"></script>
-    <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js')}}" type="text/javascript"></script>
-    <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js')}}" type="text/javascript"></script>
-    <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js')}}" type="text/javascript"></script>
-    <script src="{{asset('js/plugin/tablesorter-master/jquery.tablesorter.min.js')}}"  type="text/javascript"></script>
+    <!-- datatables, le script inclut certaines options, voir http://datatables.net/download/index -->
+    <script type="text/javascript" src="https://cdn.datatables.net/r/bs/jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,b-1.0.3,b-html5-1.0.3,cr-1.2.0,r-1.0.7,sc-1.3.0/datatables.min.js"></script>
 
     <!-- END PAGE LEVEL PLUGINS -->
     <!-- BEGIN PAGE LEVEL SCRIPTS -->

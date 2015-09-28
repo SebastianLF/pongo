@@ -7,6 +7,12 @@
     src: url('../../../global/plugins/bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../../../global/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff') format('woff'), url('../../../global/plugins/bootstrap/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../../../global/plugins/bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }*/
 
+/* tabletools export buttons correvtion*/
+.DTTT_button embed {
+    width: 50px;
+    height: 24px;
+}
+
 /***
 Rounded Portlets
 ***/
