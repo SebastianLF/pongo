@@ -136,7 +136,6 @@ return array(
         'Dollar\Generators\GeneratorsServiceProvider',
 		'Maatwebsite\Excel\ExcelServiceProvider',
 		'Laracasts\Utilities\UtilitiesServiceProvider',
-
 	),
 
 	/*

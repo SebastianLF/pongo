@@ -183,7 +183,7 @@
 
 					break;
 				case 'paristermine':
-					$parisTermine = Auth::user()->termineParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport', 'compte.bookmaker', 'tipster')->orderBy('created_at','DESC')->get();
+					$parisTermine = Auth::user()->termineParis()->with('selections.equipe1', 'selections.equipe1.country', 'selections.equipe2', 'selections.equipe2.country', 'selections.competition', 'selections.sport', 'selections.scope', 'compte.bookmaker', 'tipster')->orderBy('created_at','DESC')->get();
 					Clockwork::info($parisTermine);
 					$countParisTermine = $parisTermine->count();
 					$view = View::make('bet.paristermine', array('paristermine' => $parisTermine, 'types_resultat' => $this->types_resultat, 'count_paris_termine' => $countParisTermine));

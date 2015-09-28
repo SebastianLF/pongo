@@ -1,5 +1,3 @@
-
-
 function loadParisEnCours() {
     var onglet = $('#onglet_paris_en_cours');
     var onglet_span = onglet.find('span');
@@ -10,11 +8,11 @@ function loadParisEnCours() {
         type: 'get',
         success: function (data) {
             $('#tab_15_1').html(data.vue);
-            table.find('.subbetclick a').click(function(){
-                if($(this).find('i').hasClass('glyphicon-chevron-right')){
+            table.find('.subbetclick a').click(function () {
+                if ($(this).find('i').hasClass('glyphicon-chevron-right')) {
                     $(this).find('i').removeClass('glyphicon-chevron-right');
                     $(this).find('i').addClass('glyphicon-chevron-down');
-                }else{
+                } else {
                     $(this).find('i').removeClass('glyphicon-chevron-down');
                     $(this).find('i').addClass('glyphicon-chevron-right');
                 }
@@ -59,7 +57,90 @@ function loadParisTermine() {
                 }
             });
 
-            table.dataTable({
+            /* Formatting function for row details */
+            function fnFormatDetails(oTable, selections) {
+                //var aData = oTable.fnGetData(nTr);
+                var sOut = '<table class="table table-bordered table-condensed table-subrow-combine"><thead><tr class="uppercase"><th>date</th><th>sport</th><th>competition</th><th>rencontre</th><th>pari</th><th>cote</th><th>resultat</th><th>status</th></tr></thead><tbody>';
+
+                // affichage de chaque selection dans le child table
+                $.each(selections, function (key, value) {
+                    var rencontre;
+
+                    // afficher la rencontre ou pas.
+                    if (value.game_name == null) {
+                        rencontre = 'N/A'
+                    } else {
+                        rencontre = '<span><img src="img/flags/' + value.equipe1.country.shortname + '.png" class="img-flag"> ' + value.equipe1.name + ' - </span>' + '<span><img src="img/flags/' + value.equipe2.country.shortname + '.png" class="img-flag"> ' + value.equipe2.name + '</span>'
+                    }
+
+                    // affichage du status avec la bonne couleur.
+                    function statusAffichage(){
+                        switch (value.status) {
+                            case 1:
+                                return '<span class="bold fontsize15 font-green-sharp">gagné</span>';
+                                break;
+                            case 2:
+                                return '<span class="bold fontsize15 font-red-haze">perdu</span>';
+                                break;
+                            case 3:
+                                return '<span class="bold fontsize15 font-green-sharp">1/2 gagné</span>';
+                                break;
+                            case 4:
+                                return '<span class="bold fontsize15 font-red-haze">1/2 perdu</span>';
+                                break;
+                            case 5:
+                                return '<span class="bold fontsize15">Remboursé</span>';
+                                break;
+                            case 6:
+                                return '<span class="bold fontsize15 font-blue">cash out</span>';
+                                break;
+                        }
+                    }
+
+                    // afficher N/A ou le resultat suivant ce que contient la variable resultat.
+                    function statusResultat(){
+                        if(value.resultat == '' || value.resultat == null){
+                            return 'N/A'
+                        }else{return value.resultat}
+                    }
+
+                    // structure de representation d'une ligne.
+                    sOut +=
+                        '<tr>' +
+                        '<td>' + moment.tz(value.date_match, 'Europe/Paris').tz(user.timezone).format("MM/DD/YYYY HH:mm") + '</td>' +
+                        '<td>' + value.sport.name + '</td>' +
+                        '<td>' + value.competition.name + '</td>' +
+                        '<td>' + rencontre + '</td>' +
+                        '<td>' + value.pariAffichage + ' ('+ value.scope.representation + ')' + '</td>' +
+                        '<td>' + value.cote + '</td>' +
+                        '<td>' + statusResultat() + '</td>' +
+                        '<td class="uppercase">' + statusAffichage() + '</td>' +
+                        '</tr>';
+                });
+                sOut += '</tbody></table>';
+
+                return sOut;
+            }
+
+            /*
+             * Insert a 'details' column to the table
+             */
+            var nCloneTh = document.createElement('th');
+            nCloneTh.className = "table-checkbox";
+
+            var nCloneTd = document.createElement('td');
+            nCloneTd.innerHTML = '<span class="row-details row-details-close"></span>';
+
+            table.find('thead tr').each(function () {
+                this.insertBefore(nCloneTh, this.childNodes[0]);
+            });
+
+            table.find('tbody tr').each(function () {
+                this.insertBefore(nCloneTd.cloneNode(true), this.childNodes[0]);
+            });
+
+
+            var oTable = table.dataTable({
 
                 // Internationalisation. For more info refer to http://datatables.net/manual/i18n
                 "language": {
@@ -82,7 +163,7 @@ function loadParisTermine() {
                 ],
 
                 // set the initial value
-                "pageLength": 10,
+                "pageLength": 5,
                 "dom": "<'row' <'col-md-12'T>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r><'table-scrollable't><'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>", // horizobtal scrollable datatable
 
                 // Uncomment below line("dom" parameter) to fix the dropdown overflow issue in the datatable cells. The default datatable layout
@@ -115,34 +196,48 @@ function loadParisTermine() {
 
             var tableWrapper = $('#paristerminetable_wrapper'); // datatable creates the table wrapper by adding with id {your_table_jd}_wrapper
             tableWrapper.find('.dataTables_length select').select2(); // initialize select2 dropdown
-            /* parisTermineDelete();
-            table.find(".boutonsupprimer").click(function (e) {
-                e.stopPropagation();
-            });
 
-            // chevron changes icon on click for combiné/parlay.
-            $('.subbetclick a').click(function(){
-                if($(this).find('i').hasClass('glyphicon-chevron-right')){
-                    $(this).find('i').removeClass('glyphicon-chevron-right');
-                    $(this).find('i').addClass('glyphicon-chevron-down');
-                }else{
-                    $(this).find('i').addClass('glyphicon-chevron-right');
-                    $(this).find('i').removeClass('glyphicon-chevron-down');
+            table.on('click', ' tbody td .row-details', function () {
+                var nTr = $(this).parents('tr')[0];
+                var selections = $(this).parents('tr').data('selections');
+                if (oTable.fnIsOpen(nTr)) {
+                    /* This row is already open - close it */
+                    $(this).addClass("row-details-close").removeClass("row-details-open");
+                    oTable.fnClose(nTr);
+                } else {
+                    /* Open this row */
+                    $(this).addClass("row-details-open").removeClass("row-details-close");
+                    oTable.fnOpen(nTr, fnFormatDetails(oTable, selections), 'details');
                 }
             });
+            /* parisTermineDelete();
+             table.find(".boutonsupprimer").click(function (e) {
+             e.stopPropagation();
+             });
 
-            // barre de défilement vertical pour les paris terminés.
-            $(function(){
-                $('.slimScrollTermine').slimScroll({
-                    height: '350px',
-                    allowPageScroll: false,
-                    wheelStep: 10,
-                    alwaysVisible: true
-                });
-            });
+             // chevron changes icon on click for combiné/parlay.
+             $('.subbetclick a').click(function(){
+             if($(this).find('i').hasClass('glyphicon-chevron-right')){
+             $(this).find('i').removeClass('glyphicon-chevron-right');
+             $(this).find('i').addClass('glyphicon-chevron-down');
+             }else{
+             $(this).find('i').addClass('glyphicon-chevron-right');
+             $(this).find('i').removeClass('glyphicon-chevron-down');
+             }
+             });
 
-            // table search
-            $('#paristerminetable').tableSearch({}); // sans les crochets-parenthese ca ne marche pas, il faut bien les laisser.*/
+             // barre de défilement vertical pour les paris terminés.
+             $(function(){
+             $('.slimScrollTermine').slimScroll({
+             height: '350px',
+             allowPageScroll: false,
+             wheelStep: 10,
+             alwaysVisible: true
+             });
+             });
+
+             // table search
+             $('#paristerminetable').tableSearch({}); // sans les crochets-parenthese ca ne marche pas, il faut bien les laisser.*/
         },
         error: function (data) {
             $('#tab_15_4').html('<p>impossible de récuperer les paris terminés</p>');
@@ -222,11 +317,11 @@ function loadParisEnCoursWithPage(condition) {
     }
 }
 
-function cashOut(){
+function cashOut() {
 
     var modal = $('#cashoutModal');
     // passage de parametres vers le modal.
-    modal.on('show.bs.modal', function(e) {
+    modal.on('show.bs.modal', function (e) {
 
         //get data-id attribute of the clicked element
         var pari_id = $(e.relatedTarget).data('id');
@@ -238,26 +333,26 @@ function cashOut(){
     // cash out modal
     var cashout_form = $('#cashout-update');
     var cashout_select = cashout_form.find('#cashout-select');
-    var cashout_array = [{ id: 'c', text: 'classic cash out' },{ id: 'p', text: 'partial cash out' }];
+    var cashout_array = [{id: 'c', text: 'classic cash out'}, {id: 'p', text: 'partial cash out'}];
     cashout_select.select2({
         minimumResultsForSearch: Infinity,
         cache: true,
         data: cashout_array
-    }).change(function(){
+    }).change(function () {
 
     });
 
     // envoi du form.
-    cashout_form.submit(function(e){
+    cashout_form.submit(function (e) {
         e.preventDefault();
         var inputs = cashout_form.serialize();
         $.ajax({
-            url : 'cashout',
-            type : 'post',
-            data : inputs,
-            dataType : 'json',
-            success: function(data){
-                if(data.etat){
+            url: 'cashout',
+            type: 'post',
+            data: inputs,
+            dataType: 'json',
+            success: function (data) {
+                if (data.etat) {
                     toastr.success(data.msg, data.head);
                     loadParisEnCours();
                     loadParisTermine();
@@ -265,14 +360,14 @@ function cashOut(){
                     loadParisLongTerme();
                     loadGeneralRecapsOnDashboard();
                     modal.hide();
-                }else{
+                } else {
                     for (key in data.msg) {
                         keyname = key;
                         toastr.error(data.msg[keyname], 'Erreur:');
                     }
                 }
             },
-            error: function(){
+            error: function () {
 
             }
         });

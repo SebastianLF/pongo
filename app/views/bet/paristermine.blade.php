@@ -9,7 +9,6 @@
         <thead>
         <tr class="uppercase">
             <th id="count" class="hidden ">{{$count_paris_termine}}</th>
-            <th></th>
             <th>N°</th>
             <th>type</th>
             <th>Evenement</th>
@@ -32,11 +31,16 @@
 
                 <!-- pour le cas d'un pari simple. -->
                 @if($pari->type_profil == 's')
-
-                    <tr data-toggle="collapse" data-target="{{'.row'.$pari->numero_pari}}"
+                    <?php $app = App::make('pari_affichage');
+                    $pariAffichage = $app->display($pari->selections->first()->market_id, $pari->selections->first()->pick, $pari->selections->first()->odd_doubleParam1, $pari->selections->first()->odd_doubleParam2, $pari->selections->first()->odd_doubleParam3, $pari->selections->first()->odd_participantParameterName, $pari->selections->first()->odd_participantParameterName2, $pari->selections->first()->odd_participantParameterName3);
+                    $selectionssimple = $pari->selections;
+                    $selectionssimple[0]['pariAffichage'] = $pariAffichage;
+                    ?>
+                    <!-- les parentheses doivent etre des simples quotes pour data-selections car c un objet javascript -->
+                    <tr data-selections='{{$selectionssimple}}'
+                        data-toggle="collapse" data-target="{{'.row'.$pari->numero_pari}}"
                         class="mainrow accordion-toggle parisencours-accordeon">
                         <td class="hidden id">{{$pari->id}}</td>
-                        <td width="20px"></td>
                         <td class="primary-link">{{'#'.$pari->numero_pari}}</td>
 
                         <td>
@@ -49,10 +53,18 @@
                         </td>
                         <td>
                             @if($pari->selections->first()->isMatch)
-                                {{' ('.$pari->selections->first()->date_match.') -'}}
-                                {{$pari->selections->first()->game_name}}
+                                <?php $date = Carbon::createFromFormat('Y-m-d H:i:s', $pari->selections->first()->date_match, 'Europe/Paris');
+                                $date->setTimezone(Auth::user()->timezone);?>
+                                {{{' '.$date->format('d/m H:i').' |'}}}
+                                <span>
+                                        <img src="{{asset($pari->selections->first()->equipe1->country->shortname != '' ? 'img/flags/'.$pari->selections->first()->equipe1->country->shortname.'.png' : 'img/flags/unknown2.png')}}" class="img-flag" alt="country"/>{{' '.$pari->selections->first()->equipe1->name.' -'}}
+                                    </span>
+                                <span>
+                                        <img src="{{asset($pari->selections->first()->equipe2->country->shortname != '' ? 'img/flags/'.$pari->selections->first()->equipe2->country->shortname.'.png' : 'img/flags/unknown2.png')}}" class="img-flag" alt="country"/>{{' '.$pari->selections->first()->equipe2->name}}
+                                    </span>
+
                             @else
-                                {{'N/A'}}
+                                {{{'N/A'}}}
                             @endif
                         </td>
 
@@ -66,9 +78,8 @@
                         // 7 , 'pick (optional + )doubleparam'
                         // 8 , 'parametername1 pick doubleparam1'-->
                         <td class="blue">
-                            <?php $app = App::make('pari_affichage') ?>
-                            {{$app->display($pari->selections->first()->market_id, $pari->selections->first()->pick, $pari->selections->first()->odd_doubleParam1, $pari->selections->first()->odd_doubleParam2, $pari->selections->first()->odd_doubleParam3,  $pari->selections->first()->odd_participantParameterName, $pari->selections->first()->odd_participantParameterName2, $pari->selections->first()->odd_participantParameterName3)}}
-                            {{' ('.$pari->selections->first()->scope->name.') '}}
+                            {{$pariAffichage}}
+                            {{' ('.$pari->selections->first()->scope->representation.') '}}
                             @if($pari->selections->first()->score)
                                 {{' ('.$pari->selections->first()->score.' LIVE!) '}}
                             @endif
@@ -89,7 +100,7 @@
                             @endif
                         </td>
 
-                        <td width="110px" class="uppercase">
+                        <td width="" class="uppercase">
                             <?php
                             switch ($pari->status) {
                                 case 1:
@@ -131,9 +142,9 @@
                             @endif
                         </td>
 
-                        <td width="150px" class="textaligncenter">
+                        <td width="" class="textaligncenter">
                             {{ Form::open(array('route' => 'historique.destroy', 'class' => 'supprimerform form-bouton-paris','role' => 'form', 'data-toggle' => 'tooltip', 'data-original-title' => 'Supprimer')) }}
-                            {{ Form::button('<i class="fa fa-trash-o"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red', )) }}
+                            {{ Form::button('<i class="fa fa-trash-o"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red buttons-actions-ticket', )) }}
                             {{ Form::close() }}
                         </td>
                     </tr>
@@ -143,15 +154,21 @@
 
                     <!-- dans le cas d'un pari combiné. -->
                 @else
-
-                    <tr
-                            class="mainrow accordion-toggle parisencours-accordeon">
+                    <?php $app = App::make('pari_affichage');
+                    $selections_final = $pari->selections;
+                    foreach ($selections_final as $selectionscombiné) {
+                        $pariAffichage = $app->display($selectionscombiné->market_id, $selectionscombiné->pick, $selectionscombiné->odd_doubleParam1, $selectionscombiné->odd_doubleParam2, $selectionscombiné->odd_doubleParam3, $selectionscombiné->odd_participantParameterName, $selectionscombiné->odd_participantParameterName2, $selectionscombiné->odd_participantParameterName3);
+                        $selectionscombiné['pariAffichage'] = $pariAffichage;
+                    }
+                    ?>
+                    <tr data-selections='{{$selections_final}}'
+                        class="mainrow accordion-toggle parisencours-accordeon">
 
                         <td class="hidden id">{{$pari->id}}</td>
-                        <td width="20px" class="subbetclick"><a data-toggle="collapse"
+                        <!--<td width="20px" class="subbetclick"><a data-toggle="collapse"
                                                                 data-target="{{'.row'.$pari->numero_pari}}"
                                                                 class=""><i
-                                        class="glyphicon glyphicon-chevron-right"></i></a></td>
+                                        class="glyphicon glyphicon-chevron-right"></i></a></td>-->
                         <td class="primary-link">{{'#'.$pari->numero_pari}}</td>
                         <td>
                             <span class="label label-sm label-success label-mini type">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>
@@ -167,11 +184,11 @@
                         <td class="tdmise bold">
                             <span class="tdsubmise bold ">{{{floatval(round($pari->mise_totale, 2))}}}</span>{{{Auth::user()->devise.' '}}}{{'('.+floatval(round($pari->nombre_unites, 2)).'u)'}}
                         </td>
-                        <td width="90px">
+                        <td width="">
                             <span class="label label-sm label-combine label-mini type">{{'combiné'}}</span>
                         </td>
 
-                        <td width="110px" class="uppercase">
+                        <td width="" class="uppercase">
                             <?php
                             switch ($pari->status) {
                                 case 1:
@@ -213,14 +230,14 @@
                             @endif
                         </td>
 
-                        <td width="150px" class="textaligncenter">
+                        <td width="" class="textaligncenter">
                             {{ Form::open(array('route' => 'historique.destroy', 'class' => 'supprimerform form-bouton-paris','role' => 'form', 'data-toggle' => 'tooltip', 'data-original-title' => 'Supprimer')) }}
-                            {{ Form::button('<i class="fa fa-trash-o"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red', )) }}
+                            {{ Form::button('<i class="fa fa-trash-o"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red buttons-actions-ticket', )) }}
                             {{ Form::close() }}
                         </td>
                     </tr>
 
-                    <tr class="subrow">
+                    <!--<tr class="subrow">
                         <td colspan="17" class="childtable cancel-padding">
                             <div class="{{'accordian-body collapse row'.$pari->numero_pari}}">
                                 <table class="table child-table table-bordered table-condensed table-subrow-combine table-responsive ">
@@ -245,60 +262,60 @@
                                             </td>
                                             <td>
                                                 @if($selection->isMatch) {{'('.$selection->date_match.') '.$selection->game_name}} @else {{"N/A"}}@endif
-                                            </td>
-                                            <td class="blue">
-                                                <?php $app = App::make('pari_affichage') ?>
+                            </td>
+                            <td class="blue">
+                                <?php $app = App::make('pari_affichage') ?>
                                                 {{$app->display($selection->market_id, $selection->pick, $selection->odd_doubleParam1, $selection->odd_doubleParam2, $selection->odd_doubleParam3,  $selection->odd_participantParameterName, $selection->odd_participantParameterName2, $selection->odd_participantParameterName3)}}
                                                 {{' ('.$selection->scope->name.') '}}
                                                 @if($selection->score)
                                                     {{' ('.$selection->score.' LIVE!) '}}
                                                 @endif
-                                            </td>
+                            </td>
 
-                                            <td>
-                                                <span class="cote-td">{{$selection->cote}}</span>
+                            <td>
+                                <span class="cote-td">{{$selection->cote}}</span>
                                             </td>
                                             <td width="" class="status-td">
                                                 @if($selection->resultat == '')
                                                     {{'N/A'}}
                                                 @else
-                                                    {{$selection->resultat}}
+                    {{$selection->resultat}}
                                                 @endif
-                                            </td>
-                                            <td class="uppercase">
-                                                <?php
-                                                switch ($selection->status) {
-                                                    case 0:
-                                                        echo '<span class="bold fontsize15">N/A</span>';
-                                                        break;
-                                                    case 1:
-                                                        echo '<span class="bold fontsize15 font-green-sharp">gagné</span>';
-                                                        break;
-                                                    case 2:
-                                                        echo '<span class="bold fontsize15 font-red-haze">perdu</span>';
-                                                        break;
-                                                    case 3:
-                                                        echo '<span class="bold fontsize15 font-green-sharp">1/2 gagné</span>';
-                                                        break;
-                                                    case 4:
-                                                        echo '<span class="bold fontsize15 font-red-haze">1/2 perdu</span>';
-                                                        break;
-                                                    case 5:
-                                                        echo '<span class="bold fontsize15">Remboursé</span>';
-                                                        break;
-                                                    case 6:
-                                                        echo '<span class="bold fontsize15 font-blue">cash out</span>';
-                                                        break;
-                                                }?>
+                            </td>
+                            <td class="uppercase">
+                                <?php
+                    switch ($selection->status) {
+                        case 0:
+                            echo '<span class="bold fontsize15">N/A</span>';
+                            break;
+                        case 1:
+                            echo '<span class="bold fontsize15 font-green-sharp">gagné</span>';
+                            break;
+                        case 2:
+                            echo '<span class="bold fontsize15 font-red-haze">perdu</span>';
+                            break;
+                        case 3:
+                            echo '<span class="bold fontsize15 font-green-sharp">1/2 gagné</span>';
+                            break;
+                        case 4:
+                            echo '<span class="bold fontsize15 font-red-haze">1/2 perdu</span>';
+                            break;
+                        case 5:
+                            echo '<span class="bold fontsize15">Remboursé</span>';
+                            break;
+                        case 6:
+                            echo '<span class="bold fontsize15 font-blue">cash out</span>';
+                            break;
+                    }?>
                                             </td>
 
                                         </tr>
                                     @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </td>
-                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr> -->
 
                 @endif
             </div>
