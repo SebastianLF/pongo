@@ -48,7 +48,7 @@ function loadParisTermine() {
             /* Formatting function for row details */
             function fnFormatDetails(oTable, selections) {
                 //var aData = oTable.fnGetData(nTr);
-                var sOut = '<table class="table table-bordered table-condensed table-subrow-combine"><thead><tr class="uppercase"><th>date</th><th>sport</th><th>competition</th><th>rencontre</th><th>pari</th><th>cote</th><th>resultat</th><th>status</th></tr></thead><tbody>';
+                var sOut = '<table class="table table-condensed table-subrow-combine"><thead><tr class="uppercase"><th>date rencontre</th><th>sport</th><th>competition</th><th>rencontre</th><th>pari</th><th>cote</th><th>resultat</th><th>status</th></tr></thead><tbody>';
 
                 // affichage de chaque selection dans le child table
                 $.each(selections, function (key, value) {
@@ -64,6 +64,9 @@ function loadParisTermine() {
                     // affichage du status avec la bonne couleur.
                     function statusAffichage(){
                         switch (value.status) {
+                            case 0:
+                                return 'N/A';
+                                break;
                             case 1:
                                 return '<span class="bold fontsize15 font-green-sharp">gagné</span>';
                                 break;
@@ -88,18 +91,24 @@ function loadParisTermine() {
                     // afficher N/A ou le resultat suivant ce que contient la variable resultat.
                     function statusResultat(){
                         if(value.resultat == '' || value.resultat == null){
-                            return 'N/A'
+                            return 'N/A';
                         }else{return value.resultat}
+                    }
+
+                    function affichageScore(){
+                        if(value.score == '' || value.score == null){
+                            return '';
+                        }else{return '('+value.score+'LIVE!)'}
                     }
 
                     // structure de representation d'une ligne.
                     sOut +=
                         '<tr>' +
-                        '<td>' + moment.tz(value.date_match, 'Europe/Paris').tz(user.timezone).format("MM/DD/YYYY HH:mm") + '</td>' +
+                        '<td>' + moment.tz(value.date_match, 'Europe/Paris').tz(user.timezone).format("DD/MM/YYYY HH:mm") + '</td>' +
                         '<td>' + value.sport.name + '</td>' +
                         '<td>' + value.competition.name + '</td>' +
                         '<td>' + rencontre + '</td>' +
-                        '<td>' + value.pariAffichage + ' ('+ value.scope.representation + ')' + '</td>' +
+                        '<td>' + value.pariAffichage + ' ('+ value.scope.representation + ')' + affichageScore() + '</td>' +
                         '<td>' + value.cote + '</td>' +
                         '<td>' + statusResultat() + '</td>' +
                         '<td class="uppercase">' + statusAffichage() + '</td>' +
@@ -152,7 +161,7 @@ function loadParisTermine() {
 
                 // set the initial value
                 "pageLength": 5,
-                dom: 'Bfrtip',
+                "dom": "<'row' <'col-md-6 col-sm-12 margin-bot'B>><'row'<'col-md-6 col-sm-6'l><'col-md-6 col-sm-6'f>r><'table-scrollable't><'row'<'col-md-5 col-sm-6'i><'col-md-7 col-sm-6'p>>", // horizobtal scrollable datatable
                 // Uncomment below line("dom" parameter) to fix the dropdown overflow issue in the datatable cells. The default datatable layout
                 // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js).
                 // So when dropdowns used the scrollable div should be removed.

@@ -167,29 +167,36 @@
 				$id_termine = $termine_paris_ajoute->id;
 
 				$iterator_resultats = 0;
-				foreach ($selections as $selection) {
-					$selection->termine_pari_id = $id_termine;
-					$selection->en_cours_pari_id = NULL;
-					$selection->save();
+				if($termine_paris_ajoute){
+					foreach ($selections as $selection) {
+						$selection->termine_pari_id = $id_termine;
+						$selection->en_cours_pari_id = NULL;
+						$selection->save();
+					}
+
+					// suppression du pari en cours.
+					$encoursparis->delete();
+
+					// mis a jour des bankrolls des bookmakers uniquement si le followtype est de type normal.
+					if ($followtype == 'n') {
+						$book_id = $encoursparis->bookmaker_user_id;
+						$book = BookmakerUser::find($book_id);
+						$book->bankroll_actuelle += $retour_devise;
+						$book->save();
+					}
+
+					return Response::json(array(
+						'etat' => 1,
+						'msg' => 'pari validé',
+					));
 				}
 
-				// suppression du pari en cours.
-				$encoursparis->delete();
-
-				// mis a jour des bankrolls des bookmakers uniquement si le followtype est de type normal.
-				if ($followtype == 'n') {
-					$book_id = $encoursparis->bookmaker_user_id;
-					$book = BookmakerUser::find($book_id);
-					$book->bankroll_actuelle += $retour_devise;
-					$book->save();
-				}
-
-				return Response::json(array(
-					'etat' => 1,
-					'msg' => 'pari validé',
-				));
 			}
 
+			return Response::json(array(
+				'etat' => 0,
+				'msg' => 'Erreur, ce pari ne peut pas être cloturé.',
+			));
 		}
 
 		/**
@@ -237,32 +244,35 @@
 
 			if(!is_null($pari)){
 				if(!$pari->cashouted){
-
 					if ($pari->followtype == 'n') {
 						$compte = $pari->compte()->first();
-						$compte->bankroll_actuelle += $pari->profit_devise;
-						$compte->save();
-						$pari->delete();
+						$compte->bankroll_actuelle += $pari->mise_totale;
+						$saved = $compte->save();
+						if($saved){
+							$pari->delete();
+						}
 						return Response::json(array(
 							'etat' => 1,
-							'msg' => 'Pari Supprimé'
+							'msg' => 'Pari supprimé !'
 						));
 					} else {
 						$pari->delete();
 						return Response::json(array(
 							'etat' => 1,
-							'msg' => 'Pari Supprimé'
+							'msg' => 'Pari supprimé !'
 						));
 					}
+				}else{
+					return Response::json(array(
+						'etat' => 0,
+						'msg' => 'Pour l\'instant, les paris cash-out ne peuvent pas être supprimés.  .'
+					));
 				}
 			}
 
-
+			return Response::json(array(
+				'etat' => 0,
+				'msg' => 'Erreur, ce pari ne peut pas être supprimé.'
+			));
 		}
-
-		public function recaps()
-		{
-
-		}
-
 	}

@@ -24,6 +24,8 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
       type="text/css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs/jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,b-1.0.3,b-html5-1.0.3,cr-1.2.0,r-1.0.7,sc-1.3.0/datatables.min.css"/>
+
+{{ HTML::style('dist/ladda-themeless.min.css') }}
 {{ HTML::style('js/plugin/bootstrap-daterangepicker-master/daterangepicker-bs3.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/font-awesome/css/font-awesome.min.css') }}
 {{ HTML::style('metronic_v3.6.2/theme/assets/global/plugins/uniform/css/uniform.default.css') }}

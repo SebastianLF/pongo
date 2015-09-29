@@ -1,9 +1,10 @@
 <?php
 
-
+	use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
 class TermineParis extends Eloquent {
-
+	use SoftDeletingTrait;
+	protected $dates = ['deleted_at'];
 
 	protected $guarded = array('id');
 

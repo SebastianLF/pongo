@@ -3,15 +3,16 @@
  */
 
 function parisTermineDelete(){
-    var tablename = '#paristerminetable';
-    var formname = '.supprimerform';
-    var url = 'historique/';
-    $(tablename+' '+formname).submit(function (e) {
+    var tablename = $('#paristerminetable');
+    tablename.find('.bouton-supprimer-historique-pari').click(function (e) {
         e.preventDefault();
-        var parent = $(this).closest('.mainrow');
-        var id = parent.find('.id').text();
+        var id = $(this).data('id');
+
+        var l = Ladda.create(this);
+
+        // pop-up de confirmation
         swal({
-                title: "Supprimer le ticket",
+                title: "Supprimer le pari",
                 text: "Etes-vous sur?",
                 type: "warning",
                 showCancelButton: true,
@@ -23,8 +24,12 @@ function parisTermineDelete(){
             },
             function (isConfirm) {
                 if (isConfirm) {
+
+                    // ladda animation.
+                    l.start();
+
                     $.ajax({
-                        url: url + id,
+                        url: 'historique/' + id,
                         type: 'delete',
                         success: function (data) {
                             if (data.etat == 0) {
@@ -35,11 +40,9 @@ function parisTermineDelete(){
                                 loadBookmakersOnDashboard();
                                 loadGeneralRecapsOnDashboard();
                             }
-
-
                         },
-                        error: function () {
-                            console.log("supprimer un pari en cours ne fonctionne pas");
+                        complete: function (){
+                            l.stop();
                         }
                     });
                 }
