@@ -103,12 +103,12 @@ License: You must have a valid license purchased only from themeforest(the above
 
             $('[data-toggle="tooltip"]').tooltip();
 
-            // afficher un loader lors des chargements ajax.
+            /* afficher un loader lors des chargements ajax.
             $(document).ajaxStart(function () {
                 $('#spinner').fadeIn();
             }).ajaxStop(function () {
                 $('#spinner').fadeOut();
-            });
+            });*/
 
             // ajouter le token a chaque requete ajax.
             $.ajaxSetup({

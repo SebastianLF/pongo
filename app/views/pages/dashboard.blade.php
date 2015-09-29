@@ -77,7 +77,7 @@
                         <div class="portlet-title ">
                             <div class="caption">
                                 <i class="icon-paper-plane"></i>
-                                <span class="caption-subject bold uppercase">Ajouter un ticket</span>
+                                <span class="caption-subject bold uppercase">Ajouter un pari</span>
                             </div>
 
                         </div>
@@ -109,8 +109,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading" role="tab" id="headingInfosGenerales">
+                                <div class="panel panel-default ">
+                                    <div class="panel-heading red-sunglo" role="tab" id="headingInfosGenerales">
                                         <h4 class="panel-title">
                                             <a class="collapsed" role="button" data-toggle="collapse"
                                                data-parent="#accordion-add-ticket"
@@ -129,10 +129,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-offset-5 ">
-                                    <button type="submit" class="btn btn-default"><i class="fa fa-plus"></i>
-                                        FINALISER LE
-                                        TICKET
-                                    </button>
+                                    <button type="submit" class="btn btn-danger ladda-button" data-style="slide-down" data-size="l"><span class="ladda-label">FINALISER LE PARI</span></button>
                                 </div>
                                 {{ Form::close() }}
                             </div>
@@ -325,10 +322,11 @@
                                             </div>
                                         </div>
                                         <hr/>
+                                        <div class="col-md-offset-5">
+                                            <button type="submit" class="btn green ">Ajouter selection
+                                            </button>
+                                        </div>
 
-                                        <button type="submit" class="btn green"><span
-                                                    class="glyphicon glyphicon-plus"></span> Ajouter
-                                        </button>
                                         {{ Form::close()}}
                                         <hr/>
                                     </div>

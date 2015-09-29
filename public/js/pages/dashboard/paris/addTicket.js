@@ -138,11 +138,16 @@ function gestionTicket() {
     }
 
     function ajouterTicket() {
-        form.submit(function (e) {
+        var submit_button = form.find('button[type="submit"]');
+        submit_button.click(function (e) {
             e.preventDefault();
 
+            // button animation
+            var l = Ladda.create(this);
+
+
             followtype.prop('disabled', false); // sinon le follwotype n est pas evnoye puisqu il ne peut pas y avoir de readonly pour les select. Le followtype est remis en disabled avec le callback 'complete' de la requete ajax d'ajout.
-            var data = $(this).serialize();
+            var data = form.serialize();
             var linesnum = form.find('.betline').length;
             if (linesnum == '') {
                 swal({
@@ -172,6 +177,7 @@ function gestionTicket() {
                     ticketLongTerme = 0;
                 }
 
+                l.start();
                 $.ajax({
                     url: 'encourspari/auto',
                     type: 'post',
@@ -206,8 +212,8 @@ function gestionTicket() {
                         console.log('erreur ajout de pari');
                     },
                     complete: function () {
-
                         followtype.prop('disabled', true); // remettre le followtype sur disabled.
+                        l.stop();
                     }
                 });
             }

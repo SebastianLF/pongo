@@ -27,7 +27,6 @@ function parisTermineDelete(){
 
                     // ladda animation.
                     l.start();
-
                     $.ajax({
                         url: 'historique/' + id,
                         type: 'delete',
