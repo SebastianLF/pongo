@@ -1,16 +1,8 @@
-@extends('layouts.default', array('title' => 'Pongo - Preferences'))
+@extends('layouts.default', array('title' => 'Preferences', 'page_title_small' => 'langues, fuseau horaire...'))
 
 @section('content')
-    <div class="page-head">
-        <div class="container-fluid">
-            <!-- BEGIN PAGE TITLE -->
-            <div class="page-title">
-                <h1>Preferences</h1>
-            </div>
-            <!-- END PAGE TOOLBAR -->
-        </div>
-    </div>
-    <div class="page-content">
+
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -221,7 +213,7 @@
                 </div>
             </div>
         </div>
-    </div>
+
 @stop
 @section('scripts')
     @parent

@@ -2,7 +2,7 @@
     <div class="portlet-title">
         <div class="caption">
 
-            <span class="caption-subject font-green-sharp bold uppercase"><i class="icon-book-open"></i> Solde Bookmakers</span>
+            <span class="caption-subject bold theme-font uppercase"><i class="icon-book-open"></i> Solde Bookmakers</span>
         </div>
         <div class="tools">
             <a href="javascript:;" class="collapse">

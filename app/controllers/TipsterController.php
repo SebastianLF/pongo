@@ -15,7 +15,8 @@
 		 */
 		public function index()
 		{
-
+			$tipsters = Auth::user()->tipsters;
+			return View::make('pages.tipsters', array('tipsters' => $tipsters));
 		}
 
 

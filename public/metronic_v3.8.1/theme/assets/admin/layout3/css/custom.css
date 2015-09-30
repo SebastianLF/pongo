@@ -7,11 +7,6 @@
     src: url('../../../global/plugins/bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../../../global/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff') format('woff'), url('../../../global/plugins/bootstrap/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../../../global/plugins/bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }*/
 
-/* tabletools export buttons correvtion*/
-.DTTT_button embed {
-    width: 50px;
-    height: 24px;
-}
 
 /***
 Rounded Portlets
@@ -27,6 +22,8 @@ Rounded Portlets
     }
 }
 
+
+/* portlet */
 .portlet {
 	border-radius: 4px !important;
 }
@@ -81,13 +78,14 @@ select{
 	display: inline-block !important;
 }
 
-.page-header .page-header-top .page-logo {
+
+.page-logo {
     height: 50px;
-    margin: 13px 0 0;
-    padding: 15px 15px;
+    margin: 5px 0 0;
+    /* padding: 15px 15px; */
     font-size: 2em;
-    line-height: 15px;
-    color: #4db3a4 !important;
+    /* line-height: 15px; */
+    color: #fff !important;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
@@ -132,7 +130,11 @@ select{
 }
 
 .header-date{
-    line-height: 50px;
+    margin-right: 10px;
+    line-height: 48px;
+    color: #c5c5c5;
+    font-weight: 300;
+
 }
 
 .table-pari td {
@@ -419,4 +421,8 @@ select{
     padding: 4px 7px 4px 7px;
     font-size: 0;
     line-height: 1.5;
+}
+
+.page-footer{
+
 }

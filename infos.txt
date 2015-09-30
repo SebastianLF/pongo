@@ -1,0 +1,14 @@
+1) les différents status de paris :
+    a) pour en cours paris:
+        - 1 : pari gagné
+        - 2 : pari perdu
+        - 3 : pari 1/2 gagné
+        - 4 : pari 1/2 perdu
+        - 5 : pari remboursé
+    b) pour termine paris
+        - 1 : pari gagné
+        - 2 : pari perdu
+        - 3 : pari 1/2 gagné
+        - 4 : pari 1/2 perdu
+        - 5 : pari remboursé
+        - 6 : pari cashouted

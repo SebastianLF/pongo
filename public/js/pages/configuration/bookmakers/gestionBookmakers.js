@@ -3,7 +3,7 @@ function loadBookmakers(page) {
     //si un numero n'est pas specifié, on affiche la premiere page.
     page = page || '1';
     $.ajax({
-        url: 'pagination/ajax/bookmakers',
+        url: 'bookmaker',
         data: {page: page},
         success: function (data) {
             $('#bookmakers-pagination').html(data);

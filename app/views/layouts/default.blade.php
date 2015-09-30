@@ -19,21 +19,176 @@ License: You must have a valid license purchased only from themeforest(the above
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-    @include('includes.head', array('title' => $title ? $title : 'titre non défini'))
+    @include('includes.head', array('title' => $title))
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
-<!-- DOC: Apply "page-header-menu-fixed" class to set the mega menu fixed  -->
-<!-- DOC: Apply "page-header-top-fixed" class to set the top menu fixed  -->
-<body class="page-header-menu-fixed page-container-bg-solid page-sidebar-closed-hide-logo page-header-fixed-mobile page-footer-fixed1">
+<!-- DOC: Apply "page-header-fixed-mobile" and "page-footer-fixed-mobile" class to body element to force fixed head
+<!-- DOC: Apply "page-sidebar-closed" class to the body and "page-sidebar-menu-closed" class to the sidebar menu el
+<!-- DOC: Apply "page-sidebar-hide" class to the body to make the sidebar completely hidden on toggle -->
+<!-- DOC: Apply "page-sidebar-closed-hide-logo" class to the body element to make the logo hidden on sidebar toggle
+<!-- DOC: Apply "page-sidebar-hide" class to body element to completely hide the sidebar on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-fixed" class to have fixed sidebar -->
+<!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
+<!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
+<!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
+<body class="page-header-fixed page-quick-sidebar-over-content page-sidebar-fixed">
 
-<div class="page-header">
-    @include('includes.header')
+<div class="page-header navbar navbar-fixed-top">
+    <!-- BEGIN HEADER INNER -->
+    <div class="page-header-inner">
+        <!-- BEGIN LOGO -->
+        <div class="page-logo">
+            Pongo
+        </div>
+        <!-- END LOGO -->
+        <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse"
+           data-target=".navbar-collapse">
+        </a>
+        <!-- END RESPONSIVE MENU TOGGLER -->
+        <!-- BEGIN TOP NAVIGATION MENU -->
+        <div class="top-menu">
+            <ul class="nav navbar-nav pull-right">
+
+                <li class="header-date username username-hide-on-mobile">
+                    <span class="fa fa-calendar"></span> {{Carbon::now(Auth::user()->timezone)->formatLocalized('%d %B %Y')}}
+                </li>
+                <!-- BEGIN TODO DROPDOWN -->
+                <li class="droddown dropdown-separator">
+                    <span class="separator"></span>
+                </li>
+
+                <!-- BEGIN USER LOGIN DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+
+                <li class="dropdown dropdown-user dropdown-dark">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                       data-close-others="true">
+                        <img alt="" class="img-circle" src="{{asset('img/ec.jpg')}}">
+                        <span class="username username-hide-on-mobile">{{Auth::user()->name}}</span><i
+                                class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-default">
+                        <li>
+                            <a href="{{url('profile')}}">
+                                <i class="icon-user"></i> Mon profil </a>
+                        </li>
+                        <li>
+                            <a href="{{url('user/preferences')}}">
+                                <i class="icon-user"></i> Mes preferences </a>
+                        </li>
+
+                        <li class="divider">
+                        </li>
+                        <li>
+                            <a href="{{url('auth/logout')}}">
+                                <i class="icon-key"></i>Se deconnecter </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END USER LOGIN DROPDOWN -->
+
+            </ul>
+        </div>
+        <!-- END TOP NAVIGATION MENU -->
+    </div>
+    <!-- END HEADER INNER -->
 </div>
+
 
 <div class="page-container">
-    @yield('content')
+    <div class="page-sidebar-wrapper">
+        <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+        <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+        <div class="page-sidebar navbar-collapse collapse">
+            <!-- BEGIN SIDEBAR MENU -->
+            <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+            <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+            <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
+            <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+            <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+            <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+            <ul class="page-sidebar-menu page-sidebar-menu-light" data-keep-expanded="true" data-auto-scroll="true"
+                data-slide-speed="200">
+                <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+                <li class="sidebar-toggler-wrapper ">
+                    <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                    <div class="sidebar-toggler margin-bot">
+                    </div>
+                    <!-- END SIDEBAR TOGGLER BUTTON -->
+                </li>
+
+                <li class="start active open">
+                    <a href="{{url('dashboard')}}">
+                        <i class="icon-home"></i>
+                        <span class="title">Tableau de bord</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="icon-settings"></i>
+                        <span class="title">Configuration</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="{{url('tipster')}}">
+                                <i class="icon-users"></i> Mes tipsters </a>
+                        </li>
+                        <li>
+                            <a href="{{url('bookmaker')}}">
+                                <i class="icon-book-open"></i> Mes bookmakers </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="heading">
+                    <h3 class="uppercase">PROFIL</h3>
+                </li>
+                <li class="">
+                    <a href="{{url('profile')}}">
+                        <i class="icon-user"></i>
+                        <span class="title">Mon profil</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url('user/preferences')}}">
+                        <i class="icon-user"></i>
+                        <span class="title">Mes preferences</span>
+                    </a>
+                </li>
+                <li class="heading">
+                    <h3 class="uppercase"> UTILES</h3>
+                </li>
+                <li class="">
+                    <a href="{{url('faq')}}">
+                        <i class=" icon-question"></i>
+                        <span class="title">FAQ</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url('market')}}">
+                        <i class="icon-list"></i>
+                        <span class="title">Glossaire</span>
+                    </a>
+                </li>
+
+            </ul>
+            <!-- END SIDEBAR MENU -->
+        </div>
+    </div>
+    <div class="page-content-wrapper">
+        <div class="page-content">
+            <h3 class="page-title">
+                {{$title}}
+                <small>{{isset($page_title_small) ? $page_title_small : ''}}</small>
+            </h3>
+            @yield('content')
+        </div>
+    </div>
 </div>
+
 
 <div class="page-footer">
     @include('includes.footer')
@@ -46,7 +201,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/respond.min.js')}}"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/excanvas.min.js')}}"></script>
     <![endif]-->
-    <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/jquery.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/jquery.min.js')}}"
+            type="text/javascript"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/jquery-migrate.min.js')}}"
             type="text/javascript"></script>
     <!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
@@ -64,6 +220,9 @@ License: You must have a valid license purchased only from themeforest(the above
             type="text/javascript"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/uniform/jquery.uniform.min.js')}}"
             type="text/javascript"></script>
+    <script src="{{asset('v4.1.0/theme/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}"
+            type="text/javascript"></script>
+
     <!-- END CORE PLUGINS -->
     <!-- BEGIN PAGE LEVEL PLUGINS -->
     <script src="{{asset('js/plugin/select2-master/dist/js/select2.min.js')}}" type="text/javascript"></script>
@@ -72,43 +231,48 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="{{asset('js/plugin/sweetalert.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/plugin/jquery.animateNumber.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/plugin/html-table-search.js')}}" type="text/javascript"></script>
-    <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js')}}" type="text/javascript"></script>
-    <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/bootstrap-select/bootstrap-select.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js')}}"
+            type="text/javascript"></script>
+    <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/bootstrap-select/bootstrap-select.min.js')}}"
+            type="text/javascript"></script>
     <script src="{{asset('js/plugin/bootstrap-daterangepicker-master/moment.min.js')}}" type="text/javascript"></script>
-    <script src="{{asset('js/plugin/bootstrap-daterangepicker-master/moment-timezone.js')}}" type="text/javascript"></script>
-    <script src="{{asset('js/plugin/bootstrap-daterangepicker-master/daterangepicker.js')}}" type="text/javascript"></script>
-    <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('js/plugin/bootstrap-daterangepicker-master/moment-timezone.js')}}"
+            type="text/javascript"></script>
+    <script src="{{asset('js/plugin/bootstrap-daterangepicker-master/daterangepicker.js')}}"
+            type="text/javascript"></script>
+    <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js')}}"
+            type="text/javascript"></script>
 
     <script src="{{asset('dist/spin.min.js')}}"></script>
     <script src="{{asset('dist/ladda.min.js')}}"></script>
 
     <!-- datatables, le script inclut certaines options, voir http://datatables.net/download/index -->
-    <script type="text/javascript" src="https://cdn.datatables.net/r/bs/jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,b-1.0.3,b-html5-1.0.3,cr-1.2.0,r-1.0.7,sc-1.3.0/datatables.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdn.datatables.net/r/bs/jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,b-1.0.3,b-html5-1.0.3,cr-1.2.0,r-1.0.7,sc-1.3.0/datatables.min.js"></script>
 
     <!-- END PAGE LEVEL PLUGINS -->
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
-    <script src="{{asset('metronic_v3.8.1/theme/assets/global/scripts/metronic.js')}}" type="text/javascript"></script>
-    <script src="{{asset('metronic_v3.8.1/theme/assets/admin/layout3/scripts/layout.js')}}" type="text/javascript"></script>
-    <script src="{{asset('metronic_v3.8.1/theme/assets/admin/layout3/scripts/demo.js')}}" type="text/javascript"></script>
+    <script src="{{asset('v4.1.0/theme/assets/global/scripts/metronic.js')}}" type="text/javascript"></script>
+    <script src="{{asset('v4.1.0/theme/assets/admin/layout/scripts/layout.js')}}" type="text/javascript"></script>
+    <script src="{{asset('metronic_v3.8.1/theme/assets/admin/layout3/scripts/demo.js')}}"
+            type="text/javascript"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/admin/pages/scripts/form-samples.js')}}"></script>
-    <script src="{{asset('metronic_v3.8.1/theme/assets/admin/pages/scripts/components-dropdowns.js')}}"></script>
+    <script src="{{asset('v4.1.0/theme/assets/admin/pages/scripts/components-dropdowns.js')}}"></script>
     <script src="{{asset('js/pages/getPaginationSelectedPage.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/pages/getBookmakersForSelection.js')}}" type="text/javascript"></script>
+
 
     <script type="text/javascript">
 
         jQuery(document).ready(function () {
-
-
-
             $('[data-toggle="tooltip"]').tooltip();
 
             /* afficher un loader lors des chargements ajax.
-            $(document).ajaxStart(function () {
-                $('#spinner').fadeIn();
-            }).ajaxStop(function () {
-                $('#spinner').fadeOut();
-            });*/
+             $(document).ajaxStart(function () {
+             $('#spinner').fadeIn();
+             }).ajaxStop(function () {
+             $('#spinner').fadeOut();
+             });*/
 
             // ajouter le token a chaque requete ajax.
             $.ajaxSetup({
@@ -132,13 +296,14 @@ License: You must have a valid license purchased only from themeforest(the above
                 "showMethod": "fadeIn",
                 "hideMethod": "fadeOut"
             };
+
         });
         @include('includes.subview.inits')
     </script>
-@show
+    @show
 
 
-<!-- END JAVASCRIPTS -->
+            <!-- END JAVASCRIPTS -->
 </body>
 <!-- END BODY -->
 </html>

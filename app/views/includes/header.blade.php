@@ -14,13 +14,10 @@
         <!-- END RESPONSIVE MENU TOGGLER -->
         <!-- BEGIN TOP NAVIGATION MENU -->
         <div class="top-menu">
-            <div id="spinner" class="hidden-xs">
-              <div class="ball"></div>
-              <p class="bold uppercase">Chargement...</p>
-            </div>
+
             <ul class="nav navbar-nav pull-right">
                 <li class="header-date">
-                   <span class="fa fa-calendar"></span> {{Carbon::now(Auth::user()->timezone)->formatLocalized('%d %B %Y')}}
+                    <span class="fa fa-calendar"></span> {{Carbon::now(Auth::user()->timezone)->formatLocalized('%d %B %Y')}}
                 </li>
                 <!-- BEGIN TODO DROPDOWN -->
                 <li class="droddown dropdown-separator">
@@ -29,7 +26,8 @@
 
                 <!-- BEGIN USER LOGIN DROPDOWN -->
                 <li class="dropdown dropdown-user dropdown-dark">
-                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                       data-close-others="true">
                         <img alt="" class="img-circle" src="{{asset('img/ec.jpg')}}">
                         <span class="username name">{{Auth::user()->name}}</span>
                     </a>
@@ -81,7 +79,8 @@
 
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="{{url('dashboard')}}"><span class="glyphicon glyphicon-dashboard"></span> Tableau de bord</a>
+                    <a href="{{url('dashboard')}}"><span class="glyphicon glyphicon-dashboard"></span> Tableau de
+                        bord</a>
                 </li>
                 <li>
                     <a href="{{url('config')}}"><span class="glyphicon glyphicon-cog"></span> Configuration</a>

@@ -1,25 +1,12 @@
-@extends('layouts.default', array('title' => 'Pongo - Dashboard'))
+@extends('layouts.default', array('title' => 'Tableau de bord', 'page_title_small' => 'Recapitulatifs & ajout de pari'))
 
 @section('content')
 
     <!-- BEGIN PAGE HEAD -->
-    <div class="page-head">
-        <div class="container-fluid">
-            <!-- BEGIN PAGE TITLE -->
-            <div class="page-title">
-                <h1>Tableau de bord </h1>
-            </div>
-            <!-- END PAGE TITLE -->
-            <div class="row pull-right">
-                <div class="pull-right">
 
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- END PAGE HEAD -->
     <!-- BEGIN PAGE CONTENT -->
-    <div class="page-content">
+
         <div class="container-fluid">
 
             @include('bet/manual_bet_add_modal')
@@ -36,8 +23,8 @@
                     <div class="portlet light ">
                         <div class="portlet-title tabbable-line">
                             <div class="caption">
-                                <i class="icon-pin font-green-sharp"></i>
-                                <span class="caption-subject font-green-sharp bold uppercase">liste des tickets</span>
+                                <i class="icon-pin theme-font"></i>
+                                <span class="caption-subject theme-font bold uppercase">liste des tickets</span>
                             </div>
                             <ul class="nav nav-tabs ">
                                 <li id="onglet_paris_en_cours" class="active">
@@ -373,10 +360,10 @@
                 </div>
             </div>
         </div>
-    </div>
+
     <!-- END PAGE CONTENT INNER -->
-    </div>
-    </div>
+
+
 @stop
 @section('scripts')
     @parent

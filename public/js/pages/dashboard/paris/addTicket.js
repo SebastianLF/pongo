@@ -259,7 +259,7 @@ function gestionTicket() {
             placeholder: "Choisir un tipster",
             cache: true,
             ajax: {
-                url: 'tipsters',
+                url: 'ajax/tipsters',
                 dataType: 'json',
                 data: function (params) {
                     return {

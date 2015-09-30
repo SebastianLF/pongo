@@ -1,8 +1,6 @@
     @extends('layouts.default', array('title' => 'Bienvenue'))
 
     @section('content')
-
-        <div class="page-content">
             <div class="container">
                 <div class="portlet light bordered form-fit col-md-8 col-md-offset-2">
                     <div class="portlet-title">
@@ -43,7 +41,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     @stop
 
     @section('scripts')

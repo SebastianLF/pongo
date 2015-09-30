@@ -70,7 +70,7 @@
 	/* accounts : ajax request for select input in 'transaction' form(config page) and 'manual add bet' form(dashboard page) */
 	Route::get('accounts', 'BookmakerController@showMyAccounts');
 	/* tipsters : ajax request for select input about showing id and name for all tipsters of the user auth, in the 'manual addbet' form */
-	Route::get('tipsters', 'TipsterController@getMyTipsters');
+	Route::get('ajax/tipsters', 'TipsterController@getMyTipsters');
 	/* infosTipster : ajax request for select input about tipster infos in the 'manual addbet' form */
 	Route::get('infosTipster', 'TipsterController@infosTipster');
 

@@ -47,7 +47,6 @@
                 </tbody>
             </table>
         </div>
-        {{$tipsters->links()}}
 @endif
 
 

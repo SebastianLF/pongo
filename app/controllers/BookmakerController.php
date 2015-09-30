@@ -3,8 +3,6 @@
 
 	class BookmakerController extends BaseController
 	{
-
-
 		public function __construct()
 		{
 			parent::__construct();
@@ -18,7 +16,9 @@
 		 */
 		public function index()
 		{
-
+			// pour afficher les lignes non softdelete dans une table pivot il faut faire ca manuellement avec whereNull.
+			$bookmakers = Auth::user()->bookmakers()->orderBy('bookmaker_user.created_at', 'desc')->whereNull('deleted_at')->get();
+			return View::make('pages.bookmakers', array('bookmakers' => $bookmakers));
 		}
 
 

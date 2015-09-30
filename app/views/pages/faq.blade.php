@@ -1,16 +1,8 @@
-@extends('layouts.default',  array('title' => 'Pongo - FAQ'))
+@extends('layouts.default',  array('title' => 'FAQ', 'page_title_small' => 'Foire aux questions'))
 
 @section('content')
-    <div class="page-head">
-        <div class="container-fluid">
-            <!-- BEGIN PAGE TITLE -->
-            <div class="page-title">
-                <h1>Foire aux questions</h1>
-            </div>
-            <!-- END PAGE TITLE -->
-        </div>
-    </div>
-    <div class="page-content">
+
+
         <div class="container">
             <div class="portlet light">
                 <div class="portlet-body">
@@ -333,8 +325,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    </div>
 
 @stop
 

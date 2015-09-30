@@ -1,16 +1,8 @@
-@extends('layouts.default')
+@extends('layouts.default', array('title' => 'Profil') )
 
 @section('content')
-    <div class="page-head">
-        <div class="container-fluid">
-            <!-- BEGIN PAGE TITLE -->
-            <div class="page-title">
-                <h1>Profil</h1>
-            </div>
-            <!-- END PAGE TOOLBAR -->
-        </div>
-    </div>
-    <div class="page-content">
+
+
         <div class="container">
             <div class="row">
                 @if(Session::has('mdp_updated'))
@@ -128,5 +120,4 @@
                 </div>
             </div>
 
-        </div>
 @stop
