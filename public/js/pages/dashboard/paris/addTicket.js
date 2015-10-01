@@ -152,7 +152,7 @@ function gestionTicket() {
             if (linesnum == '') {
                 swal({
                     title: "Erreur!",
-                    text: "Ajoutez au moins une selection pour pouvoir valider le ticket!",
+                    text: "Ajoutez au moins une selection pour pouvoir valider le pari!",
                     type: "warning",
                     confirmButtonText: "OK"
                 });

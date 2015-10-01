@@ -1,12 +1,42 @@
 
-function loadBookmakers(page) {
+function loadBookmakers() {
     //si un numero n'est pas specifié, on affiche la premiere page.
-    page = page || '1';
     $.ajax({
-        url: 'bookmaker',
-        data: {page: page},
+        url: 'bettor/my-bookmakers-view-list',
         success: function (data) {
             $('#bookmakers-pagination').html(data);
+            $('#bookmakerstable').dataTable({
+                // Internationalisation. For more info refer to http://datatables.net/manual/i18n
+                language: {
+                    processing:     "Traitement en cours...",
+                    search:         "Rechercher&nbsp;:",
+                    lengthMenu:    "Afficher _MENU_ &eacute;l&eacute;ments",
+                    info:           "Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
+                    infoEmpty:      "Affichage de l'&eacute;lement 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",
+                    infoFiltered:   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+                    infoPostFix:    "",
+                    loadingRecords: "Chargement en cours...",
+                    zeroRecords:    "Aucun &eacute;l&eacute;ment &agrave; afficher",
+                    emptyTable:     "Aucune donnée disponible dans le tableau",
+                    paginate: {
+                        first:      "Premier",
+                        previous:   "Pr&eacute;c&eacute;dent",
+                        next:       "Suivant",
+                        last:       "Dernier"
+                    },
+                    aria: {
+                        sortAscending:  ": activer pour trier la colonne par ordre croissant",
+                        sortDescending: ": activer pour trier la colonne par ordre décroissant"
+                    }
+                },
+                // set the initial value
+                "pageLength": 10,
+                "dom": "<'table-scrollable't><'row'<'col-md-5 col-sm-6'i><'col-md-7 col-sm-6'p>>", // horizobtal scrollable datatable
+                // Uncomment below line("dom" parameter) to fix the dropdown overflow issue in the datatable cells. The default datatable layout
+                // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js).
+                // So when dropdowns used the scrollable div should be removed.
+                //"dom": "<'row' <'col-md-12'T>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r>t<'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>",
+            });
             editBookmakerButton();
             deleteBookmakerButton();
         }
@@ -14,20 +44,19 @@ function loadBookmakers(page) {
 }
 
 function editBookmakerButton() {
-    var form = $('#bookmakerform-edit');
-    $('.bookmakerEditButton').click(function () {
-        form.find("#idBookmakerEditInput").val($(this).attr('data-id-bookmaker'));
-        form.find("#idAccountEditInput").val($(this).attr('data-id'));
-        form.find(nameAccountInput).val($(this).attr('data-name'));
+    $('#bookmakerEditModal').on('show.bs.modal', function (e) {
+        var invoker = $(e.relatedTarget);
+        var form = $('#bookmakerform-edit');
+        form.find("#idBookmakerEditInput").val(invoker.data('id-bookmaker'));
+        form.find("#idAccountEditInput").val(invoker.data('id'));
+        form.find("input[name='name_account']").val(invoker.data('name'));
     });
 }
 
 function deleteBookmakerButton() {
-    $('.bookmakerDeleteButton').click(function (e) {
+    $('#bookmakerstable').on('click', '.bookmakerDeleteButton', function (e) {
         e.preventDefault();
-        var parent = $(this).parents('tr');
-        var id = parent.find(".idbookmakertd").text();
-        console.log(id);
+        var id = $(this).data('id');
         swal({
                 title: "Supprimer",
                 text: "Etes vous sur ?",
@@ -50,7 +79,7 @@ function deleteBookmakerButton() {
                                 toastr.success('Le compte ' + json.compte.nom_compte + ' à été supprimé avec succès!', 'Compte de bookmaker');
                                 loadBookmakers();
                             } else {
-                                swal("Attention!", "Vous devez d\'abord supprimer les tickets en cours liés à ce compte.", "error");
+                                swal("Attention!", "Vous devez d\'abord supprimer les paris en cours liés à ce compte.", "error");
                             }
                         }
                     });
@@ -158,6 +187,14 @@ function gestionBookmakers() {
     function bookmakerUpdate() {
         var form = $('#bookmakerform-edit');
         var id_account = 'idAccountEditInput';
+
+        $('#bookmakerEditModal').on('hide.bs.modal', function () {
+            // remise a zero des champs erreurs
+            form.find('#account_container').removeClass('has-error');
+            form.find('#account_error').removeClass('has-error');
+            form.find('#account_error').empty();
+        });
+
         form.submit(function (e) {
             e.preventDefault();
             var id = $(this).find("#idAccountEditInput").val();
@@ -179,6 +216,7 @@ function gestionBookmakers() {
                         loadBookmakers();
                         toastr.success('Compte mis à jour avec <strong>succes</strong> !', 'Compte de Bookmaker');
                         $('#bookmakerEditModal').modal('hide');
+
                     }
                 }
             });
@@ -186,8 +224,8 @@ function gestionBookmakers() {
     }
 
     loadBookmakers();
-    paginationOnclick();
     BookmakerAdd();
     bookmakerUpdate();
 }
 
+gestionBookmakers();

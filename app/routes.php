@@ -6,6 +6,7 @@
 	});
 	Route::controller('password', 'RemindersController');
 
+	// Controlleur ou se situe toutes les infos relatives au parieur, ce qui n'est pas la meme chose que UserController.
 	Route::controller('bettor', 'BettorController');
 
 	// welcome page
@@ -20,6 +21,13 @@
 	Route::get('lettreabcd', 'EnCoursParisController@getlettreABCD');
 	Route::get('recaps', 'DashboardController@showRecaps');
 	Route::get('generalrecap', 'DashboardController@showGeneralRecap');
+
+	//bookmakers page
+	Route::get('bookmakers', 'BettorController@getMyBookmakers');
+	Route::get('allbookmakers', 'BookmakerController@showAllBookmakers');
+
+	//tipsters page
+	Route::get('tipsters', 'BettorController@getMyTipsters');
 
 	//config page
 	Route::controller('config', 'ConfigController');
@@ -42,8 +50,6 @@
 	Route::get('dashboard/ajax/{type}', 'DashboardController@itemTypeCheck')->where('type', 'parisencours|parislongterme|parisabcd|paristermine');
 
 	Route::get('comptes', 'BookmakerController@showComptes');
-	Route::get('bookmakers', 'BookmakerController@getMyBookmakers');
-	Route::get('allbookmakers', 'BookmakerController@showAllBookmakers');
 
 	Route::controller('auth', 'AuthController');
 
@@ -88,7 +94,7 @@
 	Route::get('markets', 'AjaxController@getMarkets');
 	Route::get('scopes', 'AjaxController@getScopes');
 	Route::get('totalprofit', 'DashboardController@getTotalProfit');
-	Route::get('bookmakers', 'AjaxController@getBookmakers');
+	//Route::get('bookmakers', 'AjaxController@getBookmakers');
 	Route::get('updateaccountform', 'BookmakerController@updateBookmakerAccountOnForm');
 
 

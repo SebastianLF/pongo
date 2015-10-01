@@ -24,16 +24,16 @@
                         <div class="portlet-title tabbable-line">
                             <div class="caption">
                                 <i class="icon-pin theme-font"></i>
-                                <span class="caption-subject theme-font bold uppercase">liste des tickets</span>
+                                <span class="caption-subject theme-font bold uppercase">liste paris</span>
                             </div>
                             <ul class="nav nav-tabs ">
                                 <li id="onglet_paris_en_cours" class="active">
                                     <a href="#tab_15_1" data-toggle="tab">
-                                        Tickets classique en cours <span class="badge badge-danger"></span></a>
+                                        Paris classique en cours <span class="badge badge-danger"></span></a>
                                 </li>
                                 <li id="onglet_paris_long_terme">
                                     <a href="#tab_15_2" data-toggle="tab">
-                                        Tickets long terme en cours <span
+                                        Paris long terme en cours <span
                                                 class="badge badge-default"></span></a>
                                 </li>
                                 <li id="onglet_paris_termine">
@@ -64,7 +64,7 @@
                         <div class="portlet-title ">
                             <div class="caption">
                                 <i class="icon-paper-plane"></i>
-                                <span class="caption-subject bold uppercase">Ajouter un pari</span>
+                                <span class="caption-subject bold uppercase">Finaliser le pari </span>(dernière étape)
                             </div>
 
                         </div>
@@ -119,6 +119,10 @@
                                     <button type="submit" class="btn btn-danger ladda-button" data-style="slide-down" data-size="l"><span class="ladda-label">FINALISER LE PARI</span></button>
                                 </div>
                                 {{ Form::close() }}
+                            </div>
+                            <div class="caption">
+                                <i class="icon-paper-plane"></i>
+                                <span class="caption-subject bold uppercase">Choisir une selection </span>(première étape)
                             </div>
                             <hr/>
                             <div class="tabbable-custom">

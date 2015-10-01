@@ -96,9 +96,7 @@
 		 */
 		public function edit($id)
 		{
-			$allbookmakers = $this->showBookmakers();
-			$bookmaker = Auth::user()->bookmakers()->where('bookmaker_user.id', '=', $id)->first();
-			return View::make('bookmakers.bookmakeredit', array('bookmaker' => $bookmaker, 'allbookmakers' => $allbookmakers));
+
 		}
 
 
@@ -168,13 +166,6 @@
 					'state' => 0,
 				));
 			}
-
-		}
-
-		public function showAllBookmakers()
-		{
-			$bookmakers = Bookmaker::all(array('bookmakers.id', 'bookmakers.nom AS text'));
-			return Response::json($bookmakers);
 		}
 
 		public function getMyBookmakers()

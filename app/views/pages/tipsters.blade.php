@@ -1,4 +1,4 @@
-    @extends('layouts.default', array('title' => 'Tipsters', 'page_title_small' => 'ajouter,supprimer & modifier'))
+    @extends('layouts.default', array('title' => 'Tipsters', 'page_title_small' => 'gestion...'))
 
     @section('content')
         @include('tipster_edit_modal')
@@ -19,16 +19,13 @@
                                         convient
                                         lorsqu'on veut tester l'efficacité d'un nouveau tipster.<br> Vous avez la
                                         possibilité de
-                                        changer le type de suivi a n'importequel moment. Si vous changez de type de suivi
-                                        dans
-                                        le
-                                        meme mois, le tipster aura deux profils avec ses pertes et/ou profits respectifs.
+                                        changer le type de suivi à n'importe quel moment.
                                     </dd>
                                     <dt>Montant par unité:</dt>
                                     <dd>Correspond au montant alloué pour 1 unité. Example: Si le montant par unité est 40€
                                         alors 1
                                         unité = 40€, 2 unités = 80€.<br>
-                                        Vous avez la possibilité de modifier le montant par unité à n'importequel moment.
+                                        Vous avez la possibilité de modifier le montant par unité à n'importe quel moment.
                                     </dd>
                                 </dl>
                             </div>
@@ -37,8 +34,8 @@
                                 Ajouter un
                                 tipster <span class="glyphicon glyphicon-user"></span>
                             </button>
-                            <div class="row">
-                                <div id="tipsters-pagination" class="col-md-8 col-md-offset-2">
+                            <div class="">
+                                <div id="tipsters-pagination" class="">
 
                                 </div>
                             </div>

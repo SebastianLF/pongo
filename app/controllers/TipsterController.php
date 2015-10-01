@@ -37,14 +37,14 @@
 		public function store()
 		{
 			$regles = array(
-				'name_tipster' => 'required|max:20|unique:tipsters,name,NULL,id,user_id,' . Auth::user()->id . ',deleted_at,NULL',
+				'name_tipster' => 'required|max:20|unique:tipsters,name,NULL,id,user_id,' . Auth::user()->id ,
 				'suivi_tipster' => 'required|in:n,b',
 				'amount_tipster' => 'required|decimal>0',
 			);
 			$messages = array(
 				'name_tipster.required' => 'Un nom est nécéssaire',
 				'name_tipster.max' => 'Nom trop long, 20 caracteres maximum',
-				'name_tipster.unique' => 'Ce tipster existe deja',
+				'name_tipster.unique' => 'Un tipster à déjà été crée avec ce nom.',
 				'suivi_tipster.required' => "Un type de suvi est nécéssaire",
 				'suivi_tipster.alpha' => "Le type de suivi ne doit comporter que des lettres",
 				'amount_tipster.required' => 'Un montant par unité est requis.',
@@ -125,14 +125,14 @@
 		{
 
 			$regles = array(
-				'name_tipster' => 'required|max:20|unique:tipsters,name,' . $id . ',id,user_id,' . Auth::user()->id . ',deleted_at,NULL',
+				'name_tipster' => 'required|max:20|unique:tipsters,name,' . $id . ',id,user_id,' . Auth::user()->id,
 				'amount_tipster' => 'required|decimal>0',
 				'suivi_tipster' => 'required|in:n,b',
 			);
 			$messages = array(
 				'name_tipster.required' => 'Un nom est nécéssaire',
 				'name_tipster.max' => 'Nom trop long, 20 caracteres maximum',
-				'name_tipster.unique' => 'Ce tipster existe deja',
+				'name_tipster.unique' => 'Un tipster à déjà été crée avec ce nom.',
 				'amount_tipster.required' => 'Une unité de mise est nécéssaire',
 				'suivi_tipster.required' => "Un type de suvi est nécéssaire",
 				'suivi_tipster.in' => 'Le suivi doit etre normal ou à blanc'

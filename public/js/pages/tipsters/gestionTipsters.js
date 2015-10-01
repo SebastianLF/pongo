@@ -11,6 +11,9 @@ function gestionTipsters(){
     var amountContainer =  "#amount_container";
     var amountError =  "#amount_error";
 
+    var EditModal = $('#tipsterEditModal');
+    var EditForm = $('#tipsterform-edit');
+
     var idEdit = "input[name='id']";
     var idDelete = ".idtipstertd";
 
@@ -19,11 +22,51 @@ function gestionTipsters(){
 
     function loadTipsters(){
         $.ajax({
-            url: 'my-tipsters-view-list',
+            url: 'bettor/my-tipsters-view-list',
             type: 'get',
             success: function (data) {
-                alert(data);
+
                 $(paginationContainer).html(data);
+                $('#tipsterstable').dataTable({
+
+
+                    // Internationalisation. For more info refer to http://datatables.net/manual/i18n
+                    language: {
+                        processing:     "Traitement en cours...",
+                        search:         "Rechercher&nbsp;:",
+                        lengthMenu:    "Afficher _MENU_ &eacute;l&eacute;ments",
+                        info:           "Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
+                        infoEmpty:      "Affichage de l'&eacute;lement 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",
+                        infoFiltered:   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+                        infoPostFix:    "",
+                        loadingRecords: "Chargement en cours...",
+                        zeroRecords:    "Aucun &eacute;l&eacute;ment &agrave; afficher",
+                        emptyTable:     "Aucune donnée disponible dans le tableau",
+                        paginate: {
+                            first:      "Premier",
+                            previous:   "Pr&eacute;c&eacute;dent",
+                            next:       "Suivant",
+                            last:       "Dernier"
+                        },
+                        aria: {
+                            sortAscending:  ": activer pour trier la colonne par ordre croissant",
+                            sortDescending: ": activer pour trier la colonne par ordre décroissant"
+                        }
+                    },
+
+                    "lengthMenu": [
+                        [10, 15, 20, 100],
+                        [10, 15, 20, 100] // change per page values here
+                    ],
+
+                    // set the initial value
+                    "pageLength": 10,
+                    "dom": "<'table-scrollable't><'row'<'col-md-5 col-sm-6'i><'col-md-7 col-sm-6'p>>", // horizobtal scrollable datatable
+                    // Uncomment below line("dom" parameter) to fix the dropdown overflow issue in the datatable cells. The default datatable layout
+                    // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js).
+                    // So when dropdowns used the scrollable div should be removed.
+                    //"dom": "<'row' <'col-md-12'T>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r>t<'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>",
+                });
                 tipsterEdit();
                 tipsterDelete();
             }
@@ -113,13 +156,14 @@ function gestionTipsters(){
     }
 
     function tipsterEdit(){
-        var form = $('#tipsterform-edit');
-        $('.tipsterEditButton').click(function() {
-            var suivi = $(this).attr('data-suivi');
-            form.find(idEdit).val($(this).attr('data-id'));
-            form.find(nameInput).val($(this).attr('data-name'));
-            form.find(amountInput).val($(this).attr('data-mt'));
-            form.find(suiviSelect+' option[value="'+suivi+'"]').prop('selected',true);
+        EditModal.on('show.bs.modal', function (e) {
+            var invoker = $(e.relatedTarget);
+            console.log(invoker.data('id'));
+            var form = EditForm;
+            form.find(idEdit).val(invoker.data('id'));
+            form.find(nameInput).val(invoker.data('name'));
+            form.find(amountInput).val(invoker.data('mt'));
+            form.find(suiviSelect+' option[value="'+invoker.data('suivi')+'"]').prop('selected',true);
         });
     }
 
@@ -127,7 +171,7 @@ function gestionTipsters(){
     function tipsterUpdate() {
 
         // mise en variable du formulaire
-        var form = $('#tipsterform-edit');
+        var form = EditForm;
 
         form.submit(function (e) {
             e.preventDefault();
@@ -195,7 +239,7 @@ function gestionTipsters(){
         $('#tipsterstable').on('click', '.tipsterDeleteButton', function (e) {
             e.preventDefault();
             var parent = $(this).parents('tr');
-            var url1 = parent.find(idDelete).text();
+            var url1 = $(this).data('id');
             var url = 'tipster/' + url1;
             swal({
                     title: "Supprimer",
@@ -210,7 +254,6 @@ function gestionTipsters(){
                 },
                 function (isConfirm) {
                     if (isConfirm) {
-                        var error = -1;
                         $.ajax({
                             url: url,
                             method: "DELETE",

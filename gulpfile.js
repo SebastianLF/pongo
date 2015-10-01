@@ -40,6 +40,13 @@ gulp.task('tipsters-js', function() {
         .pipe(gulp.dest('public/build/js'));
 });
 
+gulp.task('bookmakers-js', function() {
+    return gulp.src(['public/js/pages/bookmakers/*.js'])
+        .pipe(concat('bookmakers.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('public/build/js'));
+});
+
 gulp.task('welcome-js', function() {
     return gulp.src(['public/js/pages/welcome/*.js'])
         .pipe(concat('welcome.js'))
