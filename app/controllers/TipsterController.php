@@ -15,8 +15,7 @@
 		 */
 		public function index()
 		{
-			$tipsters = Auth::user()->tipsters;
-			return View::make('pages.tipsters', array('tipsters' => $tipsters));
+			return App::abort('404');
 		}
 
 
@@ -37,8 +36,6 @@
 		 */
 		public function store()
 		{
-
-
 			$regles = array(
 				'name_tipster' => 'required|max:20|unique:tipsters,name,NULL,id,user_id,' . Auth::user()->id . ',deleted_at,NULL',
 				'suivi_tipster' => 'required|in:n,b',

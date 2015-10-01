@@ -328,7 +328,7 @@
                             <div class="caption caption-md col-md-5">
                                 <i class="icon-bar-chart theme-font hide"></i>
                                 <span class="caption-subject theme-font bold uppercase"><span
-                                            class="glyphicon glyphicon-user"></span> Récapitulatif tipsters</span>
+                                            class="glyphicon glyphicon-user"></span> Récap. tipsters</span>
                                 <span class="caption-helper hide">stats</span>
                             </div>
                             <div class="actions col-md-6">

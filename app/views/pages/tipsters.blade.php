@@ -3,17 +3,11 @@
     @section('content')
         @include('tipster_edit_modal')
         @include('tipster_add_modal')
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                     <div class="portlet light">
-                        <div class="portlet-title">
-                            <div class="caption caption-md">
-                                <i class="fa fa-cogs font-green-sharp"></i>
-                                <span class="caption-subject theme-font bold uppercase">Tipsters</span>
-                                <span class="caption-helper">Configuration</span>
-                            </div>
-                        </div>
+
                         <div class="portlet-body">
                             <div class="note note-success ">
                                 <dl class="dl-horizontal">
@@ -44,58 +38,8 @@
                                 tipster <span class="glyphicon glyphicon-user"></span>
                             </button>
                             <div class="row">
-
                                 <div id="tipsters-pagination" class="col-md-8 col-md-offset-2">
-                                    @if($tipsters->count() == 0)
-                                        <div class="text-center">Aucun tipster</div>
-                                    @else
-                                        <div class="table-scrollable table-scrollable-borderless" w>
-                                            <table id="tipsterstable" class="table table-hover table-light">
-                                                <thead>
-                                                <tr class="uppercase">
-                                                    <th width="25%" colspan="">Nom</th>
-                                                    <th>Suivi</th>
-                                                    <th width="25%">Montant par indice</th>
-                                                    <th width="25%"></th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                @foreach($tipsters as $tipster)
-                                                    <tr>
-                                                        <td class="idtipstertd hidden">{{$tipster->id}}</td>
-                                                        <td class="name"><img alt="" class="user img-circle" src="{{asset('img/unknown.jpg')}}" width="25px">{{' '.$tipster->name}}</td>
-                                                        <td>
 
-                                                            @if($tipster->followtype == 'n')
-                                                                <span class="">{{ 'normal' }}</span>
-                                                            @else
-                                                                <span class="">{{ 'à blanc' }}</span>
-                                                            @endif
-                                                        </td>
-                                                        <td class="">
-                                                            <span class="bold theme-font">{{round($tipster->montant_par_unite, 2)}}</span>
-                                                            <span class="bold theme-font">{{Auth::user()->devise}}</span>
-                                                        </td>
-
-                                                        <td>
-                                                            <div class="action-tipster-btn ">
-                                                                <button type="button" class="tipsterEditButton btn btn-sm bg-yellow-saffron"
-                                                                        data-target="#tipsterEditModal" data-toggle="modal" data-id="{{$tipster->id}}"
-                                                                        data-name="{{$tipster->name}}"
-                                                                        data-mt="{{round($tipster->montant_par_unite, 2)}}" data-suivi="{{$tipster->followtype}}">
-
-                                                                    <i
-                                                                            class="fa fa-pencil-square-o fa-2x"></i></button>
-                                                                <button type="button" class="tipsterDeleteButton btn btn-sm red"><i
-                                                                            class="fa fa-trash-o fa-2x"></i></button>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                @endforeach
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -107,5 +51,5 @@
 
     @section('scripts')
         @parent
-        <script src="{{asset('build/js/welcome.js')}}" type="text/javascript"></script>
+        <script src="{{asset('build/js/tipsters.js')}}" type="text/javascript"></script>
     @stop

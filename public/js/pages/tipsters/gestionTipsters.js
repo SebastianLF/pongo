@@ -17,13 +17,12 @@ function gestionTipsters(){
     var paginationContainer = '#tipsters-pagination';
     //var url_pagination = 'pagination/ajax/tipsters';
 
-    function loadTipsters(page){
-        var pg = page || 1;
+    function loadTipsters(){
         $.ajax({
-            url: 'bettor/my-tipsters-view-list',
-            data: { page: pg },
+            url: 'my-tipsters-view-list',
             type: 'get',
             success: function (data) {
+                alert(data);
                 $(paginationContainer).html(data);
                 tipsterEdit();
                 tipsterDelete();
@@ -239,6 +238,7 @@ function gestionTipsters(){
     loadTipsters();
     tipsterAdd();
     tipsterUpdate();
-    paginationOnclickTipsters();
+    //paginationOnclickTipsters();
 }
 
+gestionTipsters();

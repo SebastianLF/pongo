@@ -33,6 +33,13 @@ gulp.task('dashboard-js', function() {
         .pipe(gulp.dest('public/build/js'));
 });
 
+gulp.task('tipsters-js', function() {
+    return gulp.src(['public/js/pages/tipsters/*.js'])
+        .pipe(concat('tipsters.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('public/build/js'));
+});
+
 gulp.task('welcome-js', function() {
     return gulp.src(['public/js/pages/welcome/*.js'])
         .pipe(concat('welcome.js'))

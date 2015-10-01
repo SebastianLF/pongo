@@ -6,6 +6,8 @@
 	});
 	Route::controller('password', 'RemindersController');
 
+	Route::controller('bettor', 'BettorController');
+
 	// welcome page
 	Route::resource('welcome', 'WelcomeController');
 	Route::post('devise', 'DashboardController@postDevise');

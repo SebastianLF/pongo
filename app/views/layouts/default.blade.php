@@ -133,7 +133,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="{{url('tipster')}}">
+                            <a href="{{url('bettor/my-tipsters')}}">
                                 <i class="icon-users"></i> Mes tipsters </a>
                         </li>
                         <li>
@@ -184,7 +184,9 @@ License: You must have a valid license purchased only from themeforest(the above
                 {{$title}}
                 <small>{{isset($page_title_small) ? $page_title_small : ''}}</small>
             </h3>
-            @yield('content')
+            <div class="row">
+                @yield('content')
+            </div>
         </div>
     </div>
 </div>
