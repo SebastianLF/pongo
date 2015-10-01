@@ -250,5 +250,4 @@
         </table>
     </div>
     {{$parisencours->appends(Input::except('page'))->links()}}
-
 @endif

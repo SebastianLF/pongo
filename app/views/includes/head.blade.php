@@ -54,7 +54,7 @@
 {{ HTML::style('v4.1.0/theme/assets/global/css/components-rounded.css') }}
 {{ HTML::style('v4.1.0/theme/assets/global/css/plugins.css') }}
 {{ HTML::style('v4.1.0/theme/assets/admin/layout/css/layout.css') }}
-{{ HTML::style('v4.1.0/theme/assets/admin/layout/css/themes/darkblue.css') }}
+{{ HTML::style('v4.1.0/theme/assets/admin/layout/css/themes/darkblue.css', array('type' => 'text/css', 'id' => 'style_color', 'rel' => 'stylesheet')) }}
 {{ HTML::style('metronic_v3.8.1/theme/assets/admin/layout3/css/custom.css') }}
 
 <!-- END THEME STYLES -->

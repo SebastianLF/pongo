@@ -32,7 +32,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
 <!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
 <!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
-<body class="page-header-fixed page-quick-sidebar-over-content page-sidebar-fixed">
+<body class="page-header-fixed page-quick-sidebar-over-content page-sidebar-fixed ">
 
 <div class="page-header navbar navbar-fixed-top">
     <!-- BEGIN HEADER INNER -->
@@ -112,9 +112,9 @@ License: You must have a valid license purchased only from themeforest(the above
             <ul class="page-sidebar-menu" data-keep-expanded="true" data-auto-scroll="true"
                 data-slide-speed="200">
                 <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
-                <li class="sidebar-toggler-wrapper ">
+                <li>
                     <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-                    <div class="sidebar-toggler margin-bot">
+                    <div class="sidebar-toggler">
                     </div>
                     <!-- END SIDEBAR TOGGLER BUTTON -->
                 </li>
@@ -125,11 +125,11 @@ License: You must have a valid license purchased only from themeforest(the above
                         <span class="title">Tableau de bord</span>
                     </a>
                 </li>
-                <li>
+                <li class="start">
                     <a href="javascript:;">
                         <i class="icon-settings"></i>
                         <span class="title">Configuration</span>
-                        <span class="arrow "></span>
+                        <span class="arrow"></span>
                     </a>
                     <ul class="sub-menu">
                         <li>
@@ -143,23 +143,31 @@ License: You must have a valid license purchased only from themeforest(the above
 
                     </ul>
                 </li>
-                <li class="heading">
-                    <h3 class="uppercase">PROFIL</h3>
-                </li>
-                <li class="">
-                    <a href="{{url('profile')}}">
-                        <i class="icon-user"></i>
-                        <span class="title">Mon profil</span>
+                <li class="start">
+                    <a href="javascript:;">
+                        <i class="icon-home"></i>
+                        <span class="title">Profil</span>
+                        <span class="selected"></span>
+                        <span class="arrow"></span>
                     </a>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a href="{{url('profile')}}">
+                                <i class="icon-user"></i>
+                                <span class="title">Mon profil</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{url('user/preferences')}}">
+                                <i class="icon-user"></i>
+                                <span class="title">Mes preferences</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="{{url('user/preferences')}}">
-                        <i class="icon-user"></i>
-                        <span class="title">Mes preferences</span>
-                    </a>
-                </li>
+
                 <li class="heading">
-                    <h3 class="uppercase"> UTILES</h3>
+                    <h3 class="uppercase"> UTILITAIRES</h3>
                 </li>
                 <li class="">
                     <a href="{{url('faq')}}">
@@ -248,7 +256,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="{{asset('dist/spin.min.js')}}"></script>
     <script src="{{asset('dist/ladda.min.js')}}"></script>
 
-    <!-- datatables, le script inclut certaines options, voir http://datatables.net/download/index -->
+    <!-- datatables, le script inclut en + certaines options, voir http://datatables.net/download/index -->
     <script type="text/javascript"
             src="https://cdn.datatables.net/r/bs/jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,b-1.0.3,b-html5-1.0.3,cr-1.2.0,r-1.0.7,sc-1.3.0/datatables.min.js"></script>
 
@@ -256,8 +264,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
     <script src="{{asset('v4.1.0/theme/assets/global/scripts/metronic.js')}}" type="text/javascript"></script>
     <script src="{{asset('v4.1.0/theme/assets/admin/layout/scripts/layout.js')}}" type="text/javascript"></script>
-    <script src="{{asset('metronic_v3.8.1/theme/assets/admin/layout3/scripts/demo.js')}}"
-            type="text/javascript"></script>
+    <script src="{{asset('v4.1.0/theme/assets/admin/pages/scripts/index.js')}}" type="text/javascript"></script>
+    <script src="{{asset('v4.1.0/theme/assets/admin/layout/scripts/demo.js')}}" type="text/javascript"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/admin/pages/scripts/form-samples.js')}}"></script>
     <script src="{{asset('v4.1.0/theme/assets/admin/pages/scripts/components-dropdowns.js')}}"></script>
     <script src="{{asset('js/pages/getPaginationSelectedPage.js')}}" type="text/javascript"></script>

@@ -64,7 +64,7 @@
                         <div class="portlet-title ">
                             <div class="caption">
                                 <i class="icon-paper-plane"></i>
-                                <span class="caption-subject bold uppercase">Finaliser le pari </span>(dernière étape)
+                                <span class="caption-subject bold uppercase">Placer le pari </span>(dernière étape)
                             </div>
 
                         </div>
@@ -116,13 +116,13 @@
                                     </div>
                                 </div>
                                 <div class="col-md-offset-5 ">
-                                    <button type="submit" class="btn btn-danger ladda-button" data-style="slide-down" data-size="l"><span class="ladda-label">FINALISER LE PARI</span></button>
+                                    <button type="submit" class="btn btn-danger ladda-button" data-style="slide-down" data-size="l"><span class="ladda-label">PLACER LE PARI</span></button>
                                 </div>
                                 {{ Form::close() }}
                             </div>
-                            <div class="caption">
+                            <div class="caption selections-caption">
                                 <i class="icon-paper-plane"></i>
-                                <span class="caption-subject bold uppercase">Choisir une selection </span>(première étape)
+                                <span class="caption-subject bold uppercase">Choisir selection(s) </span>(première étape)
                             </div>
                             <hr/>
                             <div class="tabbable-custom">
@@ -314,7 +314,7 @@
                                         </div>
                                         <hr/>
                                         <div class="col-md-offset-5">
-                                            <button type="submit" class="btn green ">Ajouter selection
+                                            <button type="submit" class="btn green uppercase">Ajouter selection
                                             </button>
                                         </div>
 

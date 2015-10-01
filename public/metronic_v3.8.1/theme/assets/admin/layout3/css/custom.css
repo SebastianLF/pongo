@@ -43,6 +43,17 @@ Rounded Portlets
 }
 
 
+#automaticform-add{
+    margin-bottom: 40px;
+}
+
+/* selection caption */
+.selections-caption{
+    color: #666;
+    padding: 0 0;
+    font-size: 17px;
+}
+
 
 .glyphicon-plus-sign{
     font-size: 1.2em !important;
