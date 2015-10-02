@@ -6,7 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/js/bookmakers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/app.php" afterPath="$PROJECT_DIR$/app/config/app.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="betsmanage.iws" />
@@ -154,11 +154,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bookmakers.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bookmakers.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/pages/bookmakers.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56751466" vertical-offset="594" max-vertical-offset="1105">
+            <state vertical-scroll-proportion="-11.153846" vertical-offset="594" max-vertical-offset="1105">
               <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/config/app.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.69863015" vertical-offset="0" max-vertical-offset="3723">
+              <caret line="21" column="65" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -234,7 +244,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/pages/profile.blade.php" />
         <option value="$PROJECT_DIR$/app/views/pages/faq.blade.php" />
         <option value="$PROJECT_DIR$/app/views/pages/markets.blade.php" />
         <option value="$PROJECT_DIR$/app/views/pages/welcome.blade.php" />
@@ -285,6 +294,7 @@
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/addTicket.js" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js" />
         <option value="$PROJECT_DIR$/app/controllers/BookmakerController.php" />
+        <option value="$PROJECT_DIR$/app/config/app.php" />
       </list>
     </option>
   </component>
@@ -580,6 +590,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slfweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slfweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2388,7 +2416,13 @@
       <option name="project" value="LOCAL" />
       <updated>1443796109421</updated>
     </task>
-    <option name="localTasksCounter" value="270" />
+    <task id="LOCAL-00270" summary="table historique ladda + supprimer + export">
+      <created>1443796658794</created>
+      <option name="number" value="00270" />
+      <option name="project" value="LOCAL" />
+      <updated>1443796658794</updated>
+    </task>
+    <option name="localTasksCounter" value="271" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -2474,13 +2508,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/bookmaker_add_modal.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37861916" vertical-offset="102" max-vertical-offset="918">
-          <caret line="16" column="55" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/pages/bookmakers/bookmakerDelete.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="484">
@@ -2841,8 +2868,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pages/bookmakers.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56751466" vertical-offset="594" max-vertical-offset="1105">
+        <state vertical-scroll-proportion="-11.153846" vertical-offset="594" max-vertical-offset="1105">
           <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.69863015" vertical-offset="0" max-vertical-offset="3723">
+          <caret line="21" column="65" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="65" />
           <folding />
         </state>
       </provider>
