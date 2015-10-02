@@ -38,6 +38,7 @@ class AuthController extends Controller {
 				'password' => Input::get('password')
 			);
 			if(Auth::attempt($user)) {
+
 				return Redirect::to('dashboard');
 			}
 		    return Redirect::to('auth/login')
@@ -71,6 +72,9 @@ class AuthController extends Controller {
 
 	public function getLogout()
 	{
+		// supression des selections dans la table coupon correspondant à la session, avant de la quitter.
+		$selectionsCoupon = Coupon::where('session_id', Session::getId())->get();
+		$selectionsCoupon->delete();
 		Auth::logout();
 		return Redirect::to('auth/login');
 	}

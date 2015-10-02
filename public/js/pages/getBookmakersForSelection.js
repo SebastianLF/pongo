@@ -5,11 +5,11 @@ function getBookmakersForSelection(bookmakersSelect, accountsSelect) {
     var books = $(bookmakersSelect);
     var accounts = $(accountsSelect);
     $.ajax({
-        url: 'bookmakers',
+        url: 'bettor/only-bookmakers-with-accounts',
         dataType: 'json',
         success: function (json) {
             $.each(json, function (index, value) {
-                books.append('<option value="' + value.id + '">' + value.text + '</option>');
+                books.append('<option value="' + value.id + '">' + value.nom + '</option>');
             });
         }
     });
@@ -20,14 +20,13 @@ function getBookmakersForSelection(bookmakersSelect, accountsSelect) {
         if (val) {
             accounts.empty();
             $.ajax({
-                url: 'accounts',
+                url: 'bettor/my-bookmakers-accounts',
                 data: {book_id: val},
                 dataType: 'json',
                 success: function (json) {
                     $.each(json, function (index, value) {
                         accounts.append('<option value="' + value.pivot.id + '">' + value.pivot.nom_compte + '</option>');
                     });
-
                 }
             });
         }

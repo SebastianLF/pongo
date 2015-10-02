@@ -358,7 +358,7 @@ function addManualCouponSelection() {
         placeholder: "Choisir un bookmaker",
         cache: true,
         ajax: {
-            url: 'bookmakers',
+            url: 'allbookmakers',
             dataType: 'json',
             data: function (params) {
                 return {

@@ -246,6 +246,8 @@ var TableAdvanced = function () {
                 oTable.fnOpen(nTr, fnFormatDetails(oTable, nTr), 'details');
             }
         });
+
+
     }
 
     var initTable4 = function () {

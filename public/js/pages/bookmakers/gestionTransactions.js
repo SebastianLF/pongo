@@ -151,15 +151,45 @@ function gestionTransactions() {
     var descriptionContainer = '#description_container';
     var descriptionError = '#description_error';
 
-    var paginationContainer = $('#transactions-pagination');
+    var Container = $('#transactions');
 
-    function loadTransactions(page) {
-        page = page || '1';
+    function loadTransactions() {
         $.ajax({
-            url: 'transaction',
-            data: {page: page},
+            url: 'bettor/my-transactions-view-list',
             success: function (data) {
-                paginationContainer.html(data);
+                Container.html(data);
+                $('#transactionstable').dataTable({
+                    // Internationalisation. For more info refer to http://datatables.net/manual/i18n
+                    language: {
+                        processing:     "Traitement en cours...",
+                        search:         "Rechercher&nbsp;:",
+                        lengthMenu:    "Afficher _MENU_ &eacute;l&eacute;ments",
+                        info:           "Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
+                        infoEmpty:      "Affichage de l'&eacute;lement 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",
+                        infoFiltered:   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+                        infoPostFix:    "",
+                        loadingRecords: "Chargement en cours...",
+                        zeroRecords:    "Aucun &eacute;l&eacute;ment &agrave; afficher",
+                        emptyTable:     "Aucune donnée disponible dans le tableau",
+                        paginate: {
+                            first:      "Premier",
+                            previous:   "Pr&eacute;c&eacute;dent",
+                            next:       "Suivant",
+                            last:       "Dernier"
+                        },
+                        aria: {
+                            sortAscending:  ": activer pour trier la colonne par ordre croissant",
+                            sortDescending: ": activer pour trier la colonne par ordre décroissant"
+                        }
+                    },
+                    // set the initial value
+                    "pageLength": 10,
+                    "dom": "<'table-scrollable't><'row'<'col-md-5 col-sm-6'i><'col-md-7 col-sm-6'p>>", // horizobtal scrollable datatable
+                    // Uncomment below line("dom" parameter) to fix the dropdown overflow issue in the datatable cells. The default datatable layout
+                    // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js).
+                    // So when dropdowns used the scrollable div should be removed.
+                    //"dom": "<'row' <'col-md-12'T>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r>t<'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>",
+                });
                 getBookmakersForSelection(book, account);
             }
         });
@@ -167,7 +197,7 @@ function gestionTransactions() {
 
     function paginationOnclickTransactions() {
         // when you click on pagination numbers
-        paginationContainer.on('click', '.pagination a', function (e) {
+        Container.on('click', '.pagination a', function (e) {
             e.preventDefault();
             var pg = getPaginationSelectedPage($(this).attr('href'));
             loadTransactions(pg);
@@ -257,6 +287,6 @@ function gestionTransactions() {
 
     loadTransactions();
     transactionAdd();
-    paginationOnclickTransactions();
-
 }
+
+gestionTransactions();

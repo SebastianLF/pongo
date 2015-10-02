@@ -20,7 +20,7 @@
                             data-target="#transactionAddModal">Ajouter une transaction <span class="glyphicon glyphicon-transfer"></span>
                     </button>
                     <div class="row">
-                        <div id="transactions-pagination" class="col-md-8 col-md-offset-2">
+                        <div id="transactions" class="col-md-8 col-md-offset-2">
                         </div>
                     </div>
                 </div>

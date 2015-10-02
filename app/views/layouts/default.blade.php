@@ -18,8 +18,10 @@ License: You must have a valid license purchased only from themeforest(the above
 <html lang="en">
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
+
 <head>
     @include('includes.head', array('title' => $title))
+
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -232,6 +234,12 @@ License: You must have a valid license purchased only from themeforest(the above
             type="text/javascript"></script>
     <script src="{{asset('v4.1.0/theme/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}"
             type="text/javascript"></script>
+    <script src="{{asset('v4.1.0/theme/assets/global/plugins/bootstrap-sessiontimeout/jquery.sessionTimeout.js')}}"
+            type="text/javascript"></script>
+    <script src="{{asset('dist/bootstrap-session-timeout.min.js')}}"
+            type="text/javascript"></script>
+
+
 
     <!-- END CORE PLUGINS -->
     <!-- BEGIN PAGE LEVEL PLUGINS -->
@@ -264,8 +272,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
     <script src="{{asset('v4.1.0/theme/assets/global/scripts/metronic.js')}}" type="text/javascript"></script>
     <script src="{{asset('v4.1.0/theme/assets/admin/layout/scripts/layout.js')}}" type="text/javascript"></script>
-    <script src="{{asset('v4.1.0/theme/assets/admin/pages/scripts/index.js')}}" type="text/javascript"></script>
-    <script src="{{asset('v4.1.0/theme/assets/admin/layout/scripts/demo.js')}}" type="text/javascript"></script>
+
     <script src="{{asset('metronic_v3.8.1/theme/assets/admin/pages/scripts/form-samples.js')}}"></script>
     <script src="{{asset('v4.1.0/theme/assets/admin/pages/scripts/components-dropdowns.js')}}"></script>
     <script src="{{asset('js/pages/getPaginationSelectedPage.js')}}" type="text/javascript"></script>
@@ -275,14 +282,24 @@ License: You must have a valid license purchased only from themeforest(the above
     <script type="text/javascript">
 
         jQuery(document).ready(function () {
+
+            // pop-up keep session or not
+            $.sessionTimeout({
+                title:  "Notification d\'expiration de votre session",
+                message: 'Votre session va bienôt expirer',
+                keepAliveUrl: 'timeout-keep-alive',
+                keepAliveInterval: '20000',
+                keepAliveButton: 'Rester connecté',
+                logoutButton:'Se déconnecter',
+                logoutUrl: 'auth/login',
+                redirUrl: 'auth/login',
+                warnAfter: 3000000,
+                redirAfter: 3500000
+            });
+
+
             $('[data-toggle="tooltip"]').tooltip();
 
-            /* afficher un loader lors des chargements ajax.
-             $(document).ajaxStart(function () {
-             $('#spinner').fadeIn();
-             }).ajaxStop(function () {
-             $('#spinner').fadeOut();
-             });*/
 
             // ajouter le token a chaque requete ajax.
             $.ajaxSetup({

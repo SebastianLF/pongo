@@ -79,7 +79,7 @@ function supprimerSelection() {
 // puis introduits dans le champ de choix des comptes bookmaker du formulaire 'informations genérales'.
 function misAjourCompteBookmaker() {
     $.ajax({
-        url: 'updateaccountform',
+        url: 'bettor/update-bookmaker-account-on-form',
         success: function (data) {
             $('#automaticform-add').find('#accountsinputdashboard').html('');
             if (data.length > 0) {

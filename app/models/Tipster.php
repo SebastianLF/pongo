@@ -47,13 +47,5 @@ class Tipster extends Eloquent {
 		return $this->hasMany('MtMoisTipster');
 	}
 
-	public function getCreatedAtAttribute($date)
-	{
-    	return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('d/m/Y');
-	}
 
-	public function getUpdatedAtAttribute($date)
-	{
-    	return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('Y-m-d');
-	}
 }

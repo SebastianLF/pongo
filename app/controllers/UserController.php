@@ -5,7 +5,7 @@ class UserController extends BaseController {
 
 	public function _construct(){
 		parent::__construct();
-		$this->beforeFilter('ajax', array('only' => 'getTimezone'));
+		$this->beforeFilter('ajax', array('only' => array('getTimezone', 'timeoutKeepAlive')));
 	}
 
 	/**
@@ -105,6 +105,11 @@ class UserController extends BaseController {
 	public function getTimezone(){
 		$timezone = Auth::user()->timezone;
 		return Response::json($timezone);
+	}
+
+	// A NE PAS SPPRIMER !!
+	public function timeoutKeepAlive(){
+		return 1;
 	}
 
 

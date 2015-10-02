@@ -51,7 +51,7 @@
     {{ HTML::style('v4.1.0/theme/assets/admin/pages/css/tasks.css') }}
 <!-- END PAGE STYLES -->
 <!-- BEGIN THEME STYLES -->
-{{ HTML::style('v4.1.0/theme/assets/global/css/components-rounded.css') }}
+{{ HTML::style('v4.1.0/theme/assets/global/css/components.css', array('id' => 'style_components')) }}
 {{ HTML::style('v4.1.0/theme/assets/global/css/plugins.css') }}
 {{ HTML::style('v4.1.0/theme/assets/admin/layout/css/layout.css') }}
 {{ HTML::style('v4.1.0/theme/assets/admin/layout/css/themes/darkblue.css', array('type' => 'text/css', 'id' => 'style_color', 'rel' => 'stylesheet')) }}

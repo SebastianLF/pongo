@@ -1,7 +1,7 @@
 
 function loadBookmakersOnDashboard() {
     $.ajax({
-        url: 'comptes',
+        url: 'bettor/comptes-for-dashboard',
         type:'get',
         success: function (data) {
             $('#comptes_par_bookmakers').html(data);

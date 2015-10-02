@@ -1,15 +1,19 @@
 <table id="tipsterstable" class="table table-hover table-light">
     <thead>
     <tr class="uppercase">
-        <th width="25%">Nom</th>
+        <th>date creation</th>
+        <th width="">Nom</th>
         <th>Suivi</th>
-        <th width="25%">Montant par indice</th>
-        <th width="25%"></th>
+        <th width="">Montant par indice</th>
+        <th width=""></th>
     </tr>
     </thead>
     <tbody>
     @foreach($tipsters as $tipster)
         <tr>
+            <td><?php $date = Carbon::createFromFormat('Y-m-d H:i:s', $tipster->created_at, 'Europe/Paris');
+                $date->setTimezone(Auth::user()->timezone);?>
+                {{{' '.$date->format('d/m/Y')}}}</td>
             <td class="name"><img alt="" class="user img-circle" src="{{asset('img/unknown.jpg')}}"
                                   width="25px">{{' '.$tipster->name}}</td>
             <td>

@@ -47,9 +47,4 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function recaps(){
 		return $this->hasManyThrough('MtMoisTipster','Tipster');
 	}
-
-	public function selections()
-	{
-		return $this->hasManyThrough('Selection', 'EnCoursParis', 'user_id' , 'en_cours_pari_id');
-	}
 }

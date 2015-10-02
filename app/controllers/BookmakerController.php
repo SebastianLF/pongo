@@ -6,7 +6,7 @@
 		public function __construct()
 		{
 			parent::__construct();
-			$this->beforeFilter('ajax', array('only' => array('showComptes')));
+			$this->beforeFilter('ajax', array('only' => array('showComptes', 'getAllBookmakers')));
 		}
 
 		/**
@@ -16,9 +16,7 @@
 		 */
 		public function index()
 		{
-			// pour afficher les lignes non softdelete dans une table pivot il faut faire ca manuellement avec whereNull.
-			$bookmakers = Auth::user()->bookmakers()->orderBy('bookmaker_user.created_at', 'desc')->whereNull('deleted_at')->get();
-			return View::make('pages.bookmakers', array('bookmakers' => $bookmakers));
+
 		}
 
 
@@ -168,42 +166,10 @@
 			}
 		}
 
-		public function getMyBookmakers()
-		{
-			$nom = Input::get('q');
-			$allbookmakers = Auth::user()->bookmakers()->whereHas('comptes', function ($query) {
-				$query->where('user_id', Auth::user()->id);
-			})->where('nom', 'LIKE', '%' . $nom . '%')->groupBy('nom')->get(array('bookmakers.id', 'bookmakers.nom AS text'));
-			return Response::json($allbookmakers);
+		public function getAllBookmakers(){
+			$bookmakers = Bookmaker::all(array('id', 'nom AS text'));
+			return Response::json($bookmakers);
 		}
 
-		public function showComptes()
-		{
-			$bookmakers = Bookmaker::whereHas('comptes', function ($query) {
-				$query->where('user_id', Auth::user()->id);
-			})->with(array('comptes' => function ($query) {
-				$query->where('bookmaker_user.user_id', Auth::user()->id);
-			}))->get();
-			$view = View::make('dashboard.bookmakers', array('bookmakers' => $bookmakers));
-			return $view;
-		}
 
-		public function showMyAccounts()
-		{
-			$book_id = Input::get('book_id');
-			$accounts = Auth::user()->bookmakers()->where('bookmaker_user.bookmaker_id', '=', $book_id)->whereNull('deleted_at')->get(array('bookmaker_user.id', 'bookmaker_user.nom_compte AS text'));
-			return Response::json($accounts);
-
-		}
-
-		function updateBookmakerAccountOnForm(){
-			$selections_coupon = Coupon::where('session_id', Session::getId())->get();
-			if($selections_coupon->count() > 0){
-				$bookmaker_id = Bookmaker::where('nom', $selections_coupon->first()->bookmaker)->first()->id;
-				$comptes = Auth::user()->comptes()->where('bookmaker_user.bookmaker_id', $bookmaker_id)->get(array('id', 'bookmaker_user.nom_compte AS text'));
-				return $comptes;
-			}else{
-				return '';
-			}
-		}
 	}

@@ -1,8 +1,11 @@
     @extends('layouts.default', array('title' => 'Bookmakers', 'page_title_small' => 'comptes, transactions...'))
 
     @section('content')
+
+        <!-- compte de bookmakers -->
         @include('bookmaker_edit_modal')
         @include('bookmaker_add_modal')
+        @include('transaction_add_modal')
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -20,6 +23,26 @@
                             <div class="">
                                 <div id="bookmakers-pagination" class="">
 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- transactions -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="portlet light">
+
+                        <div class="portlet-body">
+                            <button id="transactionAddButton" type="button" class="btn yellow-crusta" data-toggle="modal"
+                                    data-target="#transactionAddModal">Ajouter une transaction <span class="glyphicon glyphicon-transfer"></span>
+                            </button>
+                            <div class="">
+                                <div id="transactions" class="">
                                 </div>
                             </div>
                         </div>

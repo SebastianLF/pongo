@@ -6,7 +6,11 @@
 	});
 	Route::controller('password', 'RemindersController');
 
-	// Controlleur ou se situe toutes les infos relatives au parieur, ce qui n'est pas la meme chose que UserController.
+	//session timeout pop up
+	Route::post('timeout-keep-alive', 'UserController@timeoutKeepAlive');
+
+
+	// Controlleur ou se situe toutes les infos relatives du parieur, ce qui n'est pas la meme chose que UserController.
 	Route::controller('bettor', 'BettorController');
 
 	// welcome page
@@ -23,8 +27,8 @@
 	Route::get('generalrecap', 'DashboardController@showGeneralRecap');
 
 	//bookmakers page
-	Route::get('bookmakers', 'BettorController@getMyBookmakers');
-	Route::get('allbookmakers', 'BookmakerController@showAllBookmakers');
+	Route::get('bookmakers', 'BettorController@getMyBookmakersPage');
+	Route::get('allbookmakers', 'BookmakerController@getAllBookmakers');
 
 	//tipsters page
 	Route::get('tipsters', 'BettorController@getMyTipsters');
@@ -45,8 +49,7 @@
 	Route::controller('user', 'UserController');
 
 
-// pour la recuperation du listing, en ajax, selon le type dans le lien, pour tipster,bookmaker ou transaction.
-	Route::get('pagination/ajax/{type}', 'ConfigController@itemTypeCheck')->where('type', 'tipsters|bookmakers');
+
 	Route::get('dashboard/ajax/{type}', 'DashboardController@itemTypeCheck')->where('type', 'parisencours|parislongterme|parisabcd|paristermine');
 
 	Route::get('comptes', 'BookmakerController@showComptes');

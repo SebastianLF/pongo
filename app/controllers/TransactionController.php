@@ -6,9 +6,8 @@
 		public function __construct()
 		{
 			parent::__construct();
-			$this->beforeFilter('ajax', array('only' => array('index', 'store')));
+			$this->beforeFilter('ajax', array('only' => array('store')));
 		}
-
 
 		/**
 		 * Display a listing of the resource.
@@ -17,18 +16,7 @@
 		 */
 		public function index()
 		{
-			$transactions = Auth::user()->transactions()->with(array('compte', 'compte.bookmaker'))->orderBy('created_at', 'DESC')->paginate(5);
-			/*$transactions = DB::table('transactions')
-				->join('bookmaker_user', 'transactions.bookmaker_user_id', '=', 'bookmaker_user.id')
-				->join('users', 'bookmaker_user.user_id', '=', 'users.id')
-				->join('bookmakers', 'bookmaker_user.bookmaker_id', '=', 'bookmakers.id')
-				->where('users.id', '=', Auth::user()->id)
-				->orderBy('transactions.created_at', 'desc')
-				->select('transactions.created_at', 'bookmakers.logo', 'bookmakers.nom' , 'bookmaker_user.nom_compte', 'transactions.type', 'transactions.montant', 'transactions.description')
-				->paginate(5);*/
-			Clockwork::info($transactions);
-			$view = View::make('transactions.listeTransactions', array('transactions' => $transactions));
-			return $view;
+
 		}
 
 
@@ -92,10 +80,6 @@
 					$transaction = new Transaction(array('type' => $type, 'montant' => $amount, 'description' => $description));
 					$compte->transactions()->save($transaction);
 
-					// mise a jour du montant du compte.
-					$compte->bankroll_actuelle += $amount;
-					$compte->save();
-
 					return Response::json(array(
 						'state' => true,
 					));
@@ -104,10 +88,6 @@
 
 					// si le retrait est superieur au montant actuelle du compte.
 					if ($amount <= $compte->bankroll_actuelle) {
-
-						// modification du montant actuelle du compte.
-						$compte->bankroll_actuelle -= $amount;
-						$compte->save();
 
 						// insertion d'une nouvelle transaction.
 						$transaction = new Transaction(array('type' => $type, 'montant' => $amount, 'description' => $description));
@@ -132,11 +112,6 @@
 					// insertion d'une nouvelle transaction.
 					$transaction = new Transaction(array('type' => $type, 'montant' => $amount, 'description' => $description));
 					$compte->transactions()->save($transaction);
-
-					// modification du montant actuelle du compte.
-					$compte->bankroll_actuelle += $amount;
-					$compte->bonus += $amount;
-					$compte->save();
 
 					return Response::json(array(
 						'state' => true,
