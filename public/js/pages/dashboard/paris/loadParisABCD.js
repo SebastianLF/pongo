@@ -1,4 +1,4 @@
-/*function loadParisABCD() {
+function loadParisABCD() {
     $.ajax({
         url: 'dashboard/ajax/parisabcd',
         data: {page: 1},
@@ -10,4 +10,4 @@
             $('#tab_15_3').html('<p>impossible de récuperer les paris ABCD</p>');
         }
     });
-}*/
+}

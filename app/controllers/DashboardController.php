@@ -76,7 +76,7 @@
 
 		public function showParisLongTerme()
 		{
-			$parislongterme = Auth::user()->enCoursParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport', 'tipster', 'compte.bookmaker')->where('pari_long_terme', '1')->orderBy('numero_pari', 'desc')->paginate(8);
+			$parislongterme = Auth::user()->enCoursParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport', 'tipster', 'compte.bookmaker')->where('pari_long_terme', '1')->orderBy('numero_pari', 'desc')->get();
 			return $parislongterme;
 		}
 
@@ -169,15 +169,18 @@
 					break;
 				case 'parislongterme':
 					$parisLongTerme = $this->showParisLongTerme();
-					$countParisLongTerme = $parisLongTerme->getTotal();
+					$countParisLongTerme = $parisLongTerme->count();
 					$view = View::make('bet.parislongterme', array('parislongterme' => $parisLongTerme, 'types_resultat' => $this->types_resultat, 'count_paris_longterme' => $countParisLongTerme));
-					return $view;
+					return array(
+						'vue' => $view->render(),
+						'count_paris_longterme' => $countParisLongTerme,
+					);
 
 					break;
 				case 'parisabcd':
-					$parisABCD = $this->showParisABCD();
+					$parisABCD = Auth::user()->enCoursParis()->with('selections.equipe1', 'selections.equipe2', 'selections.competition', 'selections.sport', 'selections.market', 'tipster', 'compte.bookmaker')->where('pari_abcd', 1)->where('pari_long_terme', 0)->orderBy('numero_pari', 'desc')->get();
 					Clockwork::info($parisABCD);
-					$countParisABCD = $parisABCD->getTotal();
+					$countParisABCD = $parisABCD->count();
 					$view = View::make('bet.parisabcd', array('parisabcd' => $parisABCD, 'types_resultat' => $this->types_resultat, 'count_paris_abcd' => $countParisABCD));
 					return $view;
 

@@ -11,10 +11,7 @@
                style="border-collapse:collapse;">
             <thead>
             <tr class="uppercase">
-                <th class="hidden"></th>
-                <th></th>
-                <th>N°</th>
-                <th>type</th>
+
                 <th>Evenement</th>
                 <th>Rencontre</th>
                 <th>Pari</th>
@@ -22,10 +19,10 @@
                 <th>Book</th>
                 <th>Cote</th>
                 <th>Mise</th>
-                <th>Resultat</th>
+                <th width="40px">Resultat</th>
                 <th>Status</th>
                 <th>bén./per.</th>
-                <th width="150px"></th>
+                <th width="120px"></th>
             </tr>
             </thead>
             <tbody>
@@ -37,19 +34,7 @@
 
                         <tr data-toggle="collapse" data-target="{{'.row'.$pari->numero_pari}}"
                             class="mainrow accordion-toggle parisencours-accordeon">
-                            <td class="hidden id">{{$pari->id}}</td>
-                            <td width="20px"></td>
-                            <td class="primary-link">{{'#'.$pari->numero_pari}}</td>
 
-                            <td>
-                                <span class="label label-sm label-success label-mini type" data-toggle="tooltip" data-title="{{'simple'}}">{{strtoupper($pari->type_profil)}}</span>
-                                @if($pari->pari_abcd)
-                                    <span class="label label-sm label-warning label-mini" data-toggle="tooltip" data-title="{{$pari->nom_abcd.' - '.$pari->lettre_abcd}}">{{'M'}}</span>
-                                @endif
-                                @if($pari->pari_live)
-                                    <span class="label label-sm label-danger label-mini" data-toggle="tooltip" data-title="{{'live'}}">{{'L'}}</span>
-                                @endif
-                            </td>
                             <td>
                                 {{{$pari->selections->first()->sport->name.', '.$pari->selections->first()->competition->name}}}
                             </td>
@@ -89,10 +74,10 @@
 
                                 <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise}}} {{'('.+$pari->nombre_unites.'u)'}}
                             </td>
-                            <td width="90px"><input type="text" name="childrowsinput[]"
+                            <td width="30px"><input type="text" name="childrowsinput[]"
                                                     class="form-control inputs-ticket"
                                                     value="" placeholder="Résultat"/></td>
-                            <td width="110px"><select name="resultatSelectionDashboardInput[]"
+                            <td width="70px"><select name="resultatSelectionDashboardInput[]"
                                                       data-value=""
                                                       class="form-control inputs-ticket">
                                     <option value="0">-Choisir-</option>
@@ -244,6 +229,5 @@
 
         </table>
     </div>
-    {{$parislongterme->appends(Input::except('page'))->links()}}
 
 @endif

@@ -171,5 +171,10 @@
 			return Response::json($bookmakers);
 		}
 
+		public function getAllBookmakersOnAutocomplete(){
+			$bookmakers = Bookmaker::where('nom', 'LIKE', '%' . Input::get('q') . '%')->get(array('bookmakers.id', 'bookmakers.nom AS text'));
+			return Response::json($bookmakers);
+		}
+
 
 	}

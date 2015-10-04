@@ -1,13 +1,21 @@
 function loadParisLongTerme() {
-
+    var table = $('#parislongtermetable');
+    var onglet_span = $('#onglet_paris_long_terme').find('span');
     $.ajax({
         url: 'dashboard/ajax/parislongterme',
-        data: {page: '1'},
         type: 'get',
-        success: function (msg) {
+        success: function (data) {
 
             // chargement des paris long terme dans la div.
-            $('#tab_15_2').html(msg);
+            $('#tab_15_2').html(data.vue);
+            $('#parislongtermetable').dataTable();
+
+            // afficher le count dans le bon endroit.
+            if (data.count_paris_longterme == 0) {
+                onglet_span.text('');
+            } else {
+                onglet_span.html(data.count_paris_longterme);
+            }
 
             // activation des tooltip.
             $('[data-toggle="tooltip"]').tooltip();

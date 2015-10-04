@@ -53,7 +53,7 @@
 						$bookmakers_differents = false;
 					}
 				}
-				if (!$bookmakers_differents && (Input::get('followtype') == 'n')) {
+				if (!$bookmakers_differents && (Input::get('followtypeinputdashboard') == 'n')) {
 
 					// vérification si il existe au moins un compte bookmaker correspondant au bookmaker des selections.
 					$comptes = Auth::user()->comptes()->whereHas('bookmaker', function ($query) use ($bookmaker) {

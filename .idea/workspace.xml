@@ -6,6 +6,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/BookmakerController.php" afterPath="$PROJECT_DIR$/app/controllers/BookmakerController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/DashboardController.php" afterPath="$PROJECT_DIR$/app/controllers/DashboardController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/EnCoursParisController.php" afterPath="$PROJECT_DIR$/app/controllers/EnCoursParisController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js" afterPath="$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" afterPath="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/js/dashboard.js" afterPath="$PROJECT_DIR$/public/build/js/dashboard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/dashboard/dashboard.js" afterPath="$PROJECT_DIR$/public/js/pages/dashboard/dashboard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/default.blade.php" afterPath="$PROJECT_DIR$/app/views/layouts/default.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/includes/footer.blade.php" afterPath="$PROJECT_DIR$/app/views/includes/footer.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisABCD.js" afterPath="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisABCD.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisLongTerme.js" afterPath="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisLongTerme.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/parislongterme.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/parislongterme.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="betsmanage.iws" />
@@ -103,22 +117,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="gestionTransactions.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/pages/bookmakers/gestionTransactions.js">
+      <file leaf-file-name="default.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/default.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="2839">
-              <caret line="192" column="38" selection-start-line="192" selection-start-column="38" selection-end-line="192" selection-end-column="38" />
+            <state vertical-scroll-proportion="6.0" vertical-offset="3641" max-vertical-offset="5797">
+              <caret line="205" column="25" selection-start-line="205" selection-start-column="25" selection-end-line="205" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getBookmakersForSelection.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/pages/getBookmakersForSelection.js">
+      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="697">
-              <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-              <folding />
+            <state vertical-scroll-proportion="-8.5" vertical-offset="357" max-vertical-offset="6596">
+              <caret line="34" column="67" selection-start-line="34" selection-start-column="67" selection-end-line="34" selection-end-column="67" />
+              <folding>
+                <marker date="1443921817243" expanded="true" signature="3652:3803" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,18 +142,8 @@
       <file leaf-file-name="addTicket.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/addTicket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1125" max-vertical-offset="7939">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="7939">
               <caret line="81" column="21" selection-start-line="81" selection-start-column="21" selection-end-line="81" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookmakerController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/BookmakerController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.807693" vertical-offset="2540" max-vertical-offset="3077">
-              <caret line="169" column="65" selection-start-line="169" selection-start-column="65" selection-end-line="169" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -146,48 +152,66 @@
       <file leaf-file-name="addManualCouponSelection.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="5756" max-vertical-offset="10999">
-              <caret line="364" column="34" selection-start-line="364" selection-start-column="34" selection-end-line="364" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="5678" max-vertical-offset="10999">
+              <caret line="360" column="18" selection-start-line="360" selection-start-column="18" selection-end-line="360" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bookmakers.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/pages/bookmakers.blade.php">
+      <file leaf-file-name="loadParisEnCours.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.153846" vertical-offset="594" max-vertical-offset="1105">
-              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="5967">
+              <caret line="15" column="64" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/config/app.php">
+      <file leaf-file-name="loadParisLongTerme.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisLongTerme.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5322896" vertical-offset="102" max-vertical-offset="3723">
-              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2720">
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listeTransactions.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/transactions/listeTransactions.blade.php">
+      <file leaf-file-name="parislongterme.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/bet/parislongterme.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.576923" vertical-offset="92" max-vertical-offset="901">
-              <caret line="17" column="70" selection-start-line="17" selection-start-column="70" selection-end-line="17" selection-end-column="70" />
+            <state vertical-scroll-proportion="0.5983437" vertical-offset="2550" max-vertical-offset="4046">
+              <caret line="167" column="62" selection-start-line="167" selection-start-column="62" selection-end-line="167" selection-end-column="62" />
+              <folding>
+                <element signature="e#508#541#0#HTML" expanded="true" />
+                <marker date="1443926189347" expanded="true" signature="2982:3368" placeholder="..." />
+                <marker date="1443926189347" expanded="true" signature="6585:6858" placeholder="..." />
+                <marker date="1443926189347" expanded="true" signature="6626:6857" placeholder="..." />
+                <marker date="1443926189347" expanded="true" signature="11034:11321" placeholder="..." />
+                <marker date="1443926189347" expanded="true" signature="11075:11320" placeholder="..." />
+                <marker date="1443926189347" expanded="true" signature="13391:13649" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DashboardController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2673" max-vertical-offset="3468">
+              <caret line="175" column="72" selection-start-line="175" selection-start-column="72" selection-end-line="175" selection-end-column="72" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BettorController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/BettorController.php">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.615385" vertical-offset="1066" max-vertical-offset="1717">
-              <caret line="82" column="44" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1870">
+              <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -243,13 +267,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/pages/faq.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/pages/markets.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/pages/welcome.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/tipsters/tipsters.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/pages/preferences.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/dashboard/bookmakers.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/ConfigController.php" />
         <option value="$PROJECT_DIR$/app/views/bookmakers/bookmakers.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/ParieurController.php" />
         <option value="$PROJECT_DIR$/public/js/pages/configuration/tipsters/gestionTipsters.js" />
@@ -263,7 +280,6 @@
         <option value="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
         <option value="$PROJECT_DIR$/public/v4.1.0/theme/templates/admin/index_2.html" />
         <option value="$PROJECT_DIR$/app/views/includes/subview/inits.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/public/metronic_v3.8.1/theme/assets/admin/layout3/css/custom.css" />
         <option value="$PROJECT_DIR$/public/v4.1.0/theme/templates/admin/ui_session_timeout.html" />
         <option value="$PROJECT_DIR$/app/views/includes/head.blade.php" />
@@ -271,7 +287,6 @@
         <option value="$PROJECT_DIR$/app/config/session.php" />
         <option value="$PROJECT_DIR$/app/models/User.php" />
         <option value="$PROJECT_DIR$/app/controllers/AuthController.php" />
-        <option value="$PROJECT_DIR$/app/views/layouts/default.blade.php" />
         <option value="$PROJECT_DIR$/public/v4.1.0/theme/assets/admin/pages/scripts/table-advanced.js" />
         <option value="$PROJECT_DIR$/app/models/Tipster.php" />
         <option value="$PROJECT_DIR$/app/views/tipsters/listeTipsters.blade.php" />
@@ -282,7 +297,6 @@
         <option value="$PROJECT_DIR$/public/js/pages/bookmakers/gestionTransactions.js" />
         <option value="$PROJECT_DIR$/public/js/pages/bookmakers/gestionBookmakers.js" />
         <option value="$PROJECT_DIR$/app/views/pages/bookmakers.blade.php" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/controllers/UserController.php" />
         <option value="$PROJECT_DIR$/public/js/pages/getBookmakersForSelection.js" />
         <option value="$PROJECT_DIR$/app/controllers/TransactionController.php" />
@@ -291,12 +305,23 @@
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/loadBookmakersOnDashboard.js" />
         <option value="$PROJECT_DIR$/app/controllers/BettorController.php" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/addTicket.js" />
-        <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js" />
-        <option value="$PROJECT_DIR$/app/controllers/BookmakerController.php" />
         <option value="$PROJECT_DIR$/app/config/app.php" />
+        <option value="$PROJECT_DIR$/app/controllers/EnCoursParisController.php" />
+        <option value="$PROJECT_DIR$/app/controllers/BookmakerController.php" />
+        <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js" />
+        <option value="$PROJECT_DIR$/app/views/layouts/default.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/includes/footer.blade.php" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisABCD.js" />
+        <option value="$PROJECT_DIR$/public/js/pages/dashboard/dashboard.js" />
+        <option value="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/DashboardController.php" />
+        <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisLongTerme.js" />
+        <option value="$PROJECT_DIR$/app/views/bet/parislongterme.blade.php" />
       </list>
     </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <gulpfiles>
@@ -336,6 +361,9 @@
         </tasks>
       </GulpfileState>
     </gulpfiles>
+  </component>
+  <component name="PhpServers">
+    <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true">
     <include_path>
@@ -415,7 +443,7 @@
         </expanded-state>
         <selected-state>
           <State>
-            <id>Spelling</id>
+            <id>XSLT</id>
           </State>
         </selected-state>
       </profile-state>
@@ -534,6 +562,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slfweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slfweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="build" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -606,17 +660,18 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="database.main" />
+    <property name="options.lastSelected" value="IntelliLang.Configuration" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -639,21 +694,21 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="278" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="218" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="307" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="240" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="309" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="242" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="983" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="762" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="301" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="236" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="300" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="235" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="301" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="236" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="975" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="755" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
@@ -746,14 +801,11 @@
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
-    <configuration default="true" type="com.intellij.database.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
-      <option name="VM_PARAMETERS" value="" />
-      <option name="USER_CFG_CLASS" />
-      <option name="CONTEXT_PROVIDER" />
-      <method />
-    </configuration>
     <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
       <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" server_id="9c38a47a-f546-4546-9941-55de3dcf70fd" server_name="slfweb">
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -762,9 +814,6 @@
       <tasks />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" server_id="9c38a47a-f546-4546-9941-55de3dcf70fd" server_name="slfweb">
       <method />
     </configuration>
     <configuration default="false" name="dashboard.blade.php" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" uri="http://localhost/betsmanage/public/dashboard">
@@ -800,1338 +849,6 @@
       <created>1411579515527</created>
       <option name="number" value="Default" />
       <updated>1411579515527</updated>
-    </task>
-    <task id="LOCAL-00001" summary="test avec php storm">
-      <created>1435958800498</created>
-      <option name="number" value="00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1435958800498</updated>
-    </task>
-    <task id="LOCAL-00002" summary="test avec php storm">
-      <created>1435961138469</created>
-      <option name="number" value="00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1435961138469</updated>
-    </task>
-    <task id="LOCAL-00003" summary="test avec php storm">
-      <created>1435961367445</created>
-      <option name="number" value="00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1435961367445</updated>
-    </task>
-    <task id="LOCAL-00004" summary="test avec php storm">
-      <created>1435961460826</created>
-      <option name="number" value="00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1435961460826</updated>
-    </task>
-    <task id="LOCAL-00005" summary="test avec php storm">
-      <created>1436001205373</created>
-      <option name="number" value="00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1436001205373</updated>
-    </task>
-    <task id="LOCAL-00006" summary="test avec php storm">
-      <created>1436002022692</created>
-      <option name="number" value="00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1436002022692</updated>
-    </task>
-    <task id="LOCAL-00007" summary="test avec php storm">
-      <created>1436013948475</created>
-      <option name="number" value="00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1436013948475</updated>
-    </task>
-    <task id="LOCAL-00008" summary="test avec php storm">
-      <created>1436014319353</created>
-      <option name="number" value="00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1436014319353</updated>
-    </task>
-    <task id="LOCAL-00009" summary="test avec php storm">
-      <created>1436014878293</created>
-      <option name="number" value="00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1436014878293</updated>
-    </task>
-    <task id="LOCAL-00010" summary="test avec php storm">
-      <created>1436017815220</created>
-      <option name="number" value="00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1436017815220</updated>
-    </task>
-    <task id="LOCAL-00011" summary="test avec php storm">
-      <created>1436018292739</created>
-      <option name="number" value="00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1436018292739</updated>
-    </task>
-    <task id="LOCAL-00012" summary="test avec php storm">
-      <created>1436018566734</created>
-      <option name="number" value="00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1436018566734</updated>
-    </task>
-    <task id="LOCAL-00013" summary="test avec php storm">
-      <created>1436018992827</created>
-      <option name="number" value="00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1436018992827</updated>
-    </task>
-    <task id="LOCAL-00014" summary="test avec php storm">
-      <created>1436019478645</created>
-      <option name="number" value="00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1436019478645</updated>
-    </task>
-    <task id="LOCAL-00015" summary="test avec php storm">
-      <created>1436020709886</created>
-      <option name="number" value="00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1436020709886</updated>
-    </task>
-    <task id="LOCAL-00016" summary="test avec php storm">
-      <created>1436020848929</created>
-      <option name="number" value="00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1436020848929</updated>
-    </task>
-    <task id="LOCAL-00017" summary="test avec php storm">
-      <created>1436020958531</created>
-      <option name="number" value="00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1436020958531</updated>
-    </task>
-    <task id="LOCAL-00018" summary="test avec php storm">
-      <created>1436021501294</created>
-      <option name="number" value="00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1436021501294</updated>
-    </task>
-    <task id="LOCAL-00019" summary="test avec php storm">
-      <created>1436022707228</created>
-      <option name="number" value="00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1436022707228</updated>
-    </task>
-    <task id="LOCAL-00020" summary="test avec php storm">
-      <created>1436023124450</created>
-      <option name="number" value="00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1436023124450</updated>
-    </task>
-    <task id="LOCAL-00021" summary="test avec php storm">
-      <created>1436024661293</created>
-      <option name="number" value="00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1436024661293</updated>
-    </task>
-    <task id="LOCAL-00022" summary="test avec php storm">
-      <created>1436026241452</created>
-      <option name="number" value="00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1436026241452</updated>
-    </task>
-    <task id="LOCAL-00023" summary="test avec php storm">
-      <created>1436028626827</created>
-      <option name="number" value="00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1436028626827</updated>
-    </task>
-    <task id="LOCAL-00024" summary="test avec php storm">
-      <created>1436030210563</created>
-      <option name="number" value="00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1436030210563</updated>
-    </task>
-    <task id="LOCAL-00025" summary="test avec php storm">
-      <created>1436030848575</created>
-      <option name="number" value="00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1436030848575</updated>
-    </task>
-    <task id="LOCAL-00026" summary="test avec php storm">
-      <created>1436031103032</created>
-      <option name="number" value="00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1436031103032</updated>
-    </task>
-    <task id="LOCAL-00027" summary="test avec php storm">
-      <created>1436040815418</created>
-      <option name="number" value="00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1436040815418</updated>
-    </task>
-    <task id="LOCAL-00028" summary="test avec php storm">
-      <created>1436104929129</created>
-      <option name="number" value="00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1436104929129</updated>
-    </task>
-    <task id="LOCAL-00029" summary="test avec php storm">
-      <created>1436106346780</created>
-      <option name="number" value="00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1436106346780</updated>
-    </task>
-    <task id="LOCAL-00030" summary="test avec php storm">
-      <created>1436106618354</created>
-      <option name="number" value="00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1436106618354</updated>
-    </task>
-    <task id="LOCAL-00031" summary="test avec php storm">
-      <created>1436106883988</created>
-      <option name="number" value="00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1436106883988</updated>
-    </task>
-    <task id="LOCAL-00032" summary="test avec php storm">
-      <created>1436107480730</created>
-      <option name="number" value="00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1436107480730</updated>
-    </task>
-    <task id="LOCAL-00033" summary="test avec php storm">
-      <created>1436110899344</created>
-      <option name="number" value="00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1436110899344</updated>
-    </task>
-    <task id="LOCAL-00034" summary="test avec php storm">
-      <created>1436140428629</created>
-      <option name="number" value="00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1436140428629</updated>
-    </task>
-    <task id="LOCAL-00035" summary="test avec php storm">
-      <created>1436179295909</created>
-      <option name="number" value="00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1436179295909</updated>
-    </task>
-    <task id="LOCAL-00036" summary="test avec php storm">
-      <created>1436183698975</created>
-      <option name="number" value="00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1436183698975</updated>
-    </task>
-    <task id="LOCAL-00037" summary="test avec php storm">
-      <created>1436184152138</created>
-      <option name="number" value="00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1436184152138</updated>
-    </task>
-    <task id="LOCAL-00038" summary="test avec php storm">
-      <created>1436184433089</created>
-      <option name="number" value="00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1436184433089</updated>
-    </task>
-    <task id="LOCAL-00039" summary="test avec php storm">
-      <created>1436184474406</created>
-      <option name="number" value="00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1436184474406</updated>
-    </task>
-    <task id="LOCAL-00040" summary="test avec php storm">
-      <created>1436184504413</created>
-      <option name="number" value="00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1436184504413</updated>
-    </task>
-    <task id="LOCAL-00041" summary="test avec php storm">
-      <created>1436185007829</created>
-      <option name="number" value="00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1436185007829</updated>
-    </task>
-    <task id="LOCAL-00042" summary="test avec php storm">
-      <created>1436185242806</created>
-      <option name="number" value="00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1436185242806</updated>
-    </task>
-    <task id="LOCAL-00043" summary="test avec php storm">
-      <created>1436220394123</created>
-      <option name="number" value="00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1436220394123</updated>
-    </task>
-    <task id="LOCAL-00044" summary="test avec php storm">
-      <created>1436223669961</created>
-      <option name="number" value="00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1436223669961</updated>
-    </task>
-    <task id="LOCAL-00045" summary="test avec php storm">
-      <created>1436224758320</created>
-      <option name="number" value="00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1436224758320</updated>
-    </task>
-    <task id="LOCAL-00046" summary="test avec php storm">
-      <created>1436298253370</created>
-      <option name="number" value="00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1436298253370</updated>
-    </task>
-    <task id="LOCAL-00047" summary="test avec php storm">
-      <created>1436298912117</created>
-      <option name="number" value="00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1436298912117</updated>
-    </task>
-    <task id="LOCAL-00048" summary="test avec php storm">
-      <created>1436414433163</created>
-      <option name="number" value="00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1436414433163</updated>
-    </task>
-    <task id="LOCAL-00049" summary="test avec php storm">
-      <created>1436417509825</created>
-      <option name="number" value="00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1436417509825</updated>
-    </task>
-    <task id="LOCAL-00050" summary="test avec php storm">
-      <created>1436421330820</created>
-      <option name="number" value="00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1436421330820</updated>
-    </task>
-    <task id="LOCAL-00051" summary="test avec php storm">
-      <created>1436428065838</created>
-      <option name="number" value="00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1436428065838</updated>
-    </task>
-    <task id="LOCAL-00052" summary="test avec php storm">
-      <created>1436428470095</created>
-      <option name="number" value="00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1436428470095</updated>
-    </task>
-    <task id="LOCAL-00053" summary="test avec php storm">
-      <created>1436429651855</created>
-      <option name="number" value="00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1436429651855</updated>
-    </task>
-    <task id="LOCAL-00054" summary="test avec php storm">
-      <created>1436458330014</created>
-      <option name="number" value="00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1436458330014</updated>
-    </task>
-    <task id="LOCAL-00055" summary="test avec php storm">
-      <created>1436458730788</created>
-      <option name="number" value="00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1436458730788</updated>
-    </task>
-    <task id="LOCAL-00056" summary="test avec php storm">
-      <created>1436459991318</created>
-      <option name="number" value="00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1436459991318</updated>
-    </task>
-    <task id="LOCAL-00057" summary="test avec php storm">
-      <created>1436460002365</created>
-      <option name="number" value="00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1436460002365</updated>
-    </task>
-    <task id="LOCAL-00058" summary="test avec php storm">
-      <created>1436460015081</created>
-      <option name="number" value="00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1436460015081</updated>
-    </task>
-    <task id="LOCAL-00059" summary="test avec php storm">
-      <created>1436460034555</created>
-      <option name="number" value="00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1436460034555</updated>
-    </task>
-    <task id="LOCAL-00060" summary="test avec php storm">
-      <created>1436460355020</created>
-      <option name="number" value="00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1436460355020</updated>
-    </task>
-    <task id="LOCAL-00061" summary="test avec php storm">
-      <created>1436461552295</created>
-      <option name="number" value="00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1436461552295</updated>
-    </task>
-    <task id="LOCAL-00062" summary="test avec php storm">
-      <created>1436461618739</created>
-      <option name="number" value="00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1436461618739</updated>
-    </task>
-    <task id="LOCAL-00063" summary="test avec php storm">
-      <created>1436477270807</created>
-      <option name="number" value="00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1436477270807</updated>
-    </task>
-    <task id="LOCAL-00064" summary="test avec php storm">
-      <created>1436478251528</created>
-      <option name="number" value="00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1436478251528</updated>
-    </task>
-    <task id="LOCAL-00065" summary="test avec php storm">
-      <created>1436478394405</created>
-      <option name="number" value="00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1436478394405</updated>
-    </task>
-    <task id="LOCAL-00066" summary="test avec php storm">
-      <created>1436568188794</created>
-      <option name="number" value="00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1436568188795</updated>
-    </task>
-    <task id="LOCAL-00067" summary="test avec php storm">
-      <created>1436569485659</created>
-      <option name="number" value="00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1436569485659</updated>
-    </task>
-    <task id="LOCAL-00068" summary="test avec php storm">
-      <created>1436593274343</created>
-      <option name="number" value="00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1436593274343</updated>
-    </task>
-    <task id="LOCAL-00069" summary="test avec php storm">
-      <created>1436642685153</created>
-      <option name="number" value="00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1436642685153</updated>
-    </task>
-    <task id="LOCAL-00070" summary="test avec php storm">
-      <created>1436750564690</created>
-      <option name="number" value="00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1436750564690</updated>
-    </task>
-    <task id="LOCAL-00071" summary="test avec php storm">
-      <created>1436840829615</created>
-      <option name="number" value="00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1436840829616</updated>
-    </task>
-    <task id="LOCAL-00072" summary="test avec php storm">
-      <created>1436945082595</created>
-      <option name="number" value="00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1436945082595</updated>
-    </task>
-    <task id="LOCAL-00073" summary="test avec php storm">
-      <created>1436972330256</created>
-      <option name="number" value="00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1436972330256</updated>
-    </task>
-    <task id="LOCAL-00074" summary="test avec php storm">
-      <created>1437059308320</created>
-      <option name="number" value="00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1437059308320</updated>
-    </task>
-    <task id="LOCAL-00075" summary="test avec php storm">
-      <created>1437074676629</created>
-      <option name="number" value="00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1437074676629</updated>
-    </task>
-    <task id="LOCAL-00076" summary="test avec php storm">
-      <created>1437167585340</created>
-      <option name="number" value="00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1437167585340</updated>
-    </task>
-    <task id="LOCAL-00077" summary="test avec php storm">
-      <created>1437220416681</created>
-      <option name="number" value="00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1437220416681</updated>
-    </task>
-    <task id="LOCAL-00078" summary="test avec php storm">
-      <created>1437223174370</created>
-      <option name="number" value="00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1437223174370</updated>
-    </task>
-    <task id="LOCAL-00079" summary="test avec php storm">
-      <created>1437223410771</created>
-      <option name="number" value="00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1437223410771</updated>
-    </task>
-    <task id="LOCAL-00080" summary="test avec php storm">
-      <created>1437320209597</created>
-      <option name="number" value="00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1437320209597</updated>
-    </task>
-    <task id="LOCAL-00081" summary="test avec php storm">
-      <created>1437400755068</created>
-      <option name="number" value="00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1437400755068</updated>
-    </task>
-    <task id="LOCAL-00082" summary="test avec php storm">
-      <created>1437400978002</created>
-      <option name="number" value="00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1437400978002</updated>
-    </task>
-    <task id="LOCAL-00083" summary="test avec php storm">
-      <created>1437405125232</created>
-      <option name="number" value="00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1437405125232</updated>
-    </task>
-    <task id="LOCAL-00084" summary="test avec php storm">
-      <created>1437408203966</created>
-      <option name="number" value="00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1437408203966</updated>
-    </task>
-    <task id="LOCAL-00085" summary="test avec php storm">
-      <created>1437408531972</created>
-      <option name="number" value="00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1437408531972</updated>
-    </task>
-    <task id="LOCAL-00086" summary="test avec php storm">
-      <created>1437408752093</created>
-      <option name="number" value="00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1437408752093</updated>
-    </task>
-    <task id="LOCAL-00087" summary="test avec php storm">
-      <created>1437413005145</created>
-      <option name="number" value="00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1437413005145</updated>
-    </task>
-    <task id="LOCAL-00088" summary="test avec php storm">
-      <created>1437413825269</created>
-      <option name="number" value="00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1437413825269</updated>
-    </task>
-    <task id="LOCAL-00089" summary="test avec php storm">
-      <created>1437420250495</created>
-      <option name="number" value="00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1437420250495</updated>
-    </task>
-    <task id="LOCAL-00090" summary="test avec php storm">
-      <created>1437422634500</created>
-      <option name="number" value="00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1437422634500</updated>
-    </task>
-    <task id="LOCAL-00091" summary="test avec php storm">
-      <created>1437426307991</created>
-      <option name="number" value="00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1437426307991</updated>
-    </task>
-    <task id="LOCAL-00092" summary="orm-group">
-      <created>1437615613652</created>
-      <option name="number" value="00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1437615613652</updated>
-    </task>
-    <task id="LOCAL-00093" summary="orm-group">
-      <created>1437842083248</created>
-      <option name="number" value="00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1437842083248</updated>
-    </task>
-    <task id="LOCAL-00094" summary="orm-group">
-      <created>1437842172158</created>
-      <option name="number" value="00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1437842172158</updated>
-    </task>
-    <task id="LOCAL-00095" summary="orm-group">
-      <created>1437893840358</created>
-      <option name="number" value="00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1437893840358</updated>
-    </task>
-    <task id="LOCAL-00096" summary="orm-group">
-      <created>1438179181696</created>
-      <option name="number" value="00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1438179181696</updated>
-    </task>
-    <task id="LOCAL-00097" summary="orm-group">
-      <created>1438702691044</created>
-      <option name="number" value="00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1438702691044</updated>
-    </task>
-    <task id="LOCAL-00098" summary="orm-group">
-      <created>1439816340254</created>
-      <option name="number" value="00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1439816340254</updated>
-    </task>
-    <task id="LOCAL-00099" summary="orm-group">
-      <created>1439816391821</created>
-      <option name="number" value="00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1439816391821</updated>
-    </task>
-    <task id="LOCAL-00100" summary="orm-group">
-      <created>1439816399905</created>
-      <option name="number" value="00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1439816399905</updated>
-    </task>
-    <task id="LOCAL-00101" summary="orm-group">
-      <created>1439817616163</created>
-      <option name="number" value="00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1439817616163</updated>
-    </task>
-    <task id="LOCAL-00102" summary="orm-group">
-      <created>1439818509413</created>
-      <option name="number" value="00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1439818509413</updated>
-    </task>
-    <task id="LOCAL-00103" summary="orm-group">
-      <created>1439819706243</created>
-      <option name="number" value="00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1439819706243</updated>
-    </task>
-    <task id="LOCAL-00104" summary="orm-group">
-      <created>1439820660730</created>
-      <option name="number" value="00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1439820660730</updated>
-    </task>
-    <task id="LOCAL-00105" summary="orm-group">
-      <created>1439821127384</created>
-      <option name="number" value="00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1439821127384</updated>
-    </task>
-    <task id="LOCAL-00106" summary="orm-group">
-      <created>1439823239651</created>
-      <option name="number" value="00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1439823239651</updated>
-    </task>
-    <task id="LOCAL-00107" summary="orm-group">
-      <created>1439837649788</created>
-      <option name="number" value="00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1439837649788</updated>
-    </task>
-    <task id="LOCAL-00108" summary="orm-group">
-      <created>1439837976842</created>
-      <option name="number" value="00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1439837976842</updated>
-    </task>
-    <task id="LOCAL-00109" summary="orm-group">
-      <created>1439837990961</created>
-      <option name="number" value="00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1439837990961</updated>
-    </task>
-    <task id="LOCAL-00110" summary="orm-group">
-      <created>1439837998136</created>
-      <option name="number" value="00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1439837998136</updated>
-    </task>
-    <task id="LOCAL-00111" summary="orm-group">
-      <created>1439909166212</created>
-      <option name="number" value="00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1439909166212</updated>
-    </task>
-    <task id="LOCAL-00112" summary="orm-group">
-      <created>1440166320310</created>
-      <option name="number" value="00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1440166320310</updated>
-    </task>
-    <task id="LOCAL-00113" summary="orm-group">
-      <created>1440253226367</created>
-      <option name="number" value="00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1440253226367</updated>
-    </task>
-    <task id="LOCAL-00114" summary="orm-group">
-      <created>1440253409338</created>
-      <option name="number" value="00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1440253409338</updated>
-    </task>
-    <task id="LOCAL-00115" summary="orm-group">
-      <created>1440253990818</created>
-      <option name="number" value="00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1440253990818</updated>
-    </task>
-    <task id="LOCAL-00116" summary="orm-group">
-      <created>1440254333017</created>
-      <option name="number" value="00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1440254333017</updated>
-    </task>
-    <task id="LOCAL-00117" summary="orm-group">
-      <created>1440254701323</created>
-      <option name="number" value="00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1440254701323</updated>
-    </task>
-    <task id="LOCAL-00118" summary="orm-group">
-      <created>1440259405106</created>
-      <option name="number" value="00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1440259405106</updated>
-    </task>
-    <task id="LOCAL-00119" summary="orm-group">
-      <created>1440262252250</created>
-      <option name="number" value="00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1440262252250</updated>
-    </task>
-    <task id="LOCAL-00120" summary="orm-group">
-      <created>1440273878039</created>
-      <option name="number" value="00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1440273878039</updated>
-    </task>
-    <task id="LOCAL-00121" summary="orm-group">
-      <created>1440291711014</created>
-      <option name="number" value="00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1440291711014</updated>
-    </task>
-    <task id="LOCAL-00122" summary="orm-group">
-      <created>1440341343010</created>
-      <option name="number" value="00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1440341343010</updated>
-    </task>
-    <task id="LOCAL-00123" summary="orm-group">
-      <created>1440357311295</created>
-      <option name="number" value="00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1440357311295</updated>
-    </task>
-    <task id="LOCAL-00124" summary="orm-group">
-      <created>1440468872313</created>
-      <option name="number" value="00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1440468872313</updated>
-    </task>
-    <task id="LOCAL-00125" summary="orm-group">
-      <created>1440514169745</created>
-      <option name="number" value="00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1440514169745</updated>
-    </task>
-    <task id="LOCAL-00126" summary="orm-group">
-      <created>1440707889768</created>
-      <option name="number" value="00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1440707889768</updated>
-    </task>
-    <task id="LOCAL-00127" summary="orm-group">
-      <created>1440716598566</created>
-      <option name="number" value="00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1440716598566</updated>
-    </task>
-    <task id="LOCAL-00128" summary="orm-group">
-      <created>1440755007452</created>
-      <option name="number" value="00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1440755007452</updated>
-    </task>
-    <task id="LOCAL-00129" summary="orm-group">
-      <created>1440797406086</created>
-      <option name="number" value="00129" />
-      <option name="project" value="LOCAL" />
-      <updated>1440797406086</updated>
-    </task>
-    <task id="LOCAL-00130" summary="orm-group">
-      <created>1440805951163</created>
-      <option name="number" value="00130" />
-      <option name="project" value="LOCAL" />
-      <updated>1440805951163</updated>
-    </task>
-    <task id="LOCAL-00131" summary="orm-group">
-      <created>1440943214452</created>
-      <option name="number" value="00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1440943214452</updated>
-    </task>
-    <task id="LOCAL-00132" summary="orm-group">
-      <created>1440948191441</created>
-      <option name="number" value="00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1440948191441</updated>
-    </task>
-    <task id="LOCAL-00133" summary="orm-group">
-      <created>1440992761997</created>
-      <option name="number" value="00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1440992761997</updated>
-    </task>
-    <task id="LOCAL-00134" summary="orm-group">
-      <created>1441005242366</created>
-      <option name="number" value="00134" />
-      <option name="project" value="LOCAL" />
-      <updated>1441005242366</updated>
-    </task>
-    <task id="LOCAL-00135" summary="orm-group">
-      <created>1441005394912</created>
-      <option name="number" value="00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1441005394912</updated>
-    </task>
-    <task id="LOCAL-00136" summary="termine table + recap general">
-      <created>1441013557760</created>
-      <option name="number" value="00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1441013557760</updated>
-    </task>
-    <task id="LOCAL-00137" summary="termine table + recap general">
-      <created>1441013566637</created>
-      <option name="number" value="00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1441013566637</updated>
-    </task>
-    <task id="LOCAL-00138" summary="termine table + recap general">
-      <created>1441029653710</created>
-      <option name="number" value="00138" />
-      <option name="project" value="LOCAL" />
-      <updated>1441029653710</updated>
-    </task>
-    <task id="LOCAL-00139" summary="termine table + recap general">
-      <created>1441198711049</created>
-      <option name="number" value="00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1441198711049</updated>
-    </task>
-    <task id="LOCAL-00140" summary="termine table + recap general">
-      <created>1441199869594</created>
-      <option name="number" value="00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1441199869594</updated>
-    </task>
-    <task id="LOCAL-00141" summary="termine table + recap general">
-      <created>1441201799690</created>
-      <option name="number" value="00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1441201799690</updated>
-    </task>
-    <task id="LOCAL-00142" summary="termine table + recap general">
-      <created>1441219911540</created>
-      <option name="number" value="00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1441219911540</updated>
-    </task>
-    <task id="LOCAL-00143" summary="termine table + recap general">
-      <created>1441220369652</created>
-      <option name="number" value="00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1441220369652</updated>
-    </task>
-    <task id="LOCAL-00144" summary="termine table + recap general">
-      <created>1441288021532</created>
-      <option name="number" value="00144" />
-      <option name="project" value="LOCAL" />
-      <updated>1441288021532</updated>
-    </task>
-    <task id="LOCAL-00145" summary="termine table + recap general">
-      <created>1441374608763</created>
-      <option name="number" value="00145" />
-      <option name="project" value="LOCAL" />
-      <updated>1441374608763</updated>
-    </task>
-    <task id="LOCAL-00146" summary="termine table + recap general">
-      <created>1441376618717</created>
-      <option name="number" value="00146" />
-      <option name="project" value="LOCAL" />
-      <updated>1441376618717</updated>
-    </task>
-    <task id="LOCAL-00147" summary="termine table + recap general">
-      <created>1441409086347</created>
-      <option name="number" value="00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1441409086347</updated>
-    </task>
-    <task id="LOCAL-00148" summary="termine table + recap general">
-      <created>1441555550594</created>
-      <option name="number" value="00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1441555550594</updated>
-    </task>
-    <task id="LOCAL-00149" summary="termine table + recap general">
-      <created>1441573654787</created>
-      <option name="number" value="00149" />
-      <option name="project" value="LOCAL" />
-      <updated>1441573654787</updated>
-    </task>
-    <task id="LOCAL-00150" summary="termine table + recap general">
-      <created>1441574451901</created>
-      <option name="number" value="00150" />
-      <option name="project" value="LOCAL" />
-      <updated>1441574451901</updated>
-    </task>
-    <task id="LOCAL-00151" summary="termine table + recap general">
-      <created>1441575316527</created>
-      <option name="number" value="00151" />
-      <option name="project" value="LOCAL" />
-      <updated>1441575316527</updated>
-    </task>
-    <task id="LOCAL-00152" summary="termine table + recap general">
-      <created>1441575625459</created>
-      <option name="number" value="00152" />
-      <option name="project" value="LOCAL" />
-      <updated>1441575625459</updated>
-    </task>
-    <task id="LOCAL-00153" summary="termine table + recap general">
-      <created>1441646469283</created>
-      <option name="number" value="00153" />
-      <option name="project" value="LOCAL" />
-      <updated>1441646469283</updated>
-    </task>
-    <task id="LOCAL-00154" summary="termine table + recap general">
-      <created>1441646873245</created>
-      <option name="number" value="00154" />
-      <option name="project" value="LOCAL" />
-      <updated>1441646873245</updated>
-    </task>
-    <task id="LOCAL-00155" summary="termine table + recap general">
-      <created>1441646886622</created>
-      <option name="number" value="00155" />
-      <option name="project" value="LOCAL" />
-      <updated>1441646886622</updated>
-    </task>
-    <task id="LOCAL-00156" summary="termine table + recap general">
-      <created>1441647151388</created>
-      <option name="number" value="00156" />
-      <option name="project" value="LOCAL" />
-      <updated>1441647151388</updated>
-    </task>
-    <task id="LOCAL-00157" summary="termine table + recap general">
-      <created>1441647451214</created>
-      <option name="number" value="00157" />
-      <option name="project" value="LOCAL" />
-      <updated>1441647451215</updated>
-    </task>
-    <task id="LOCAL-00158" summary="termine table + recap general">
-      <created>1441650605940</created>
-      <option name="number" value="00158" />
-      <option name="project" value="LOCAL" />
-      <updated>1441650605940</updated>
-    </task>
-    <task id="LOCAL-00159" summary="termine table + recap general">
-      <created>1441652344594</created>
-      <option name="number" value="00159" />
-      <option name="project" value="LOCAL" />
-      <updated>1441652344594</updated>
-    </task>
-    <task id="LOCAL-00160" summary="termine table + recap general">
-      <created>1441653827559</created>
-      <option name="number" value="00160" />
-      <option name="project" value="LOCAL" />
-      <updated>1441653827560</updated>
-    </task>
-    <task id="LOCAL-00161" summary="termine table + recap general">
-      <created>1441654285838</created>
-      <option name="number" value="00161" />
-      <option name="project" value="LOCAL" />
-      <updated>1441654285839</updated>
-    </task>
-    <task id="LOCAL-00162" summary="termine table + recap general">
-      <created>1441654680098</created>
-      <option name="number" value="00162" />
-      <option name="project" value="LOCAL" />
-      <updated>1441654680098</updated>
-    </task>
-    <task id="LOCAL-00163" summary="termine table + recap general">
-      <created>1441655037270</created>
-      <option name="number" value="00163" />
-      <option name="project" value="LOCAL" />
-      <updated>1441655037270</updated>
-    </task>
-    <task id="LOCAL-00164" summary="termine table + recap general">
-      <created>1441655330934</created>
-      <option name="number" value="00164" />
-      <option name="project" value="LOCAL" />
-      <updated>1441655330934</updated>
-    </task>
-    <task id="LOCAL-00165" summary="termine table + recap general">
-      <created>1441665714270</created>
-      <option name="number" value="00165" />
-      <option name="project" value="LOCAL" />
-      <updated>1441665714270</updated>
-    </task>
-    <task id="LOCAL-00166" summary="termine table + recap general">
-      <created>1441666073631</created>
-      <option name="number" value="00166" />
-      <option name="project" value="LOCAL" />
-      <updated>1441666073631</updated>
-    </task>
-    <task id="LOCAL-00167" summary="termine table + recap general">
-      <created>1441667860848</created>
-      <option name="number" value="00167" />
-      <option name="project" value="LOCAL" />
-      <updated>1441667860848</updated>
-    </task>
-    <task id="LOCAL-00168" summary="termine table + recap general">
-      <created>1441744707913</created>
-      <option name="number" value="00168" />
-      <option name="project" value="LOCAL" />
-      <updated>1441744707913</updated>
-    </task>
-    <task id="LOCAL-00169" summary="termine table + recap general">
-      <created>1441745841989</created>
-      <option name="number" value="00169" />
-      <option name="project" value="LOCAL" />
-      <updated>1441745841989</updated>
-    </task>
-    <task id="LOCAL-00170" summary="termine table + recap general">
-      <created>1441747979121</created>
-      <option name="number" value="00170" />
-      <option name="project" value="LOCAL" />
-      <updated>1441747979121</updated>
-    </task>
-    <task id="LOCAL-00171" summary="termine table + recap general">
-      <created>1441748466657</created>
-      <option name="number" value="00171" />
-      <option name="project" value="LOCAL" />
-      <updated>1441748466657</updated>
-    </task>
-    <task id="LOCAL-00172" summary="termine table + recap general">
-      <created>1441751481457</created>
-      <option name="number" value="00172" />
-      <option name="project" value="LOCAL" />
-      <updated>1441751481457</updated>
-    </task>
-    <task id="LOCAL-00173" summary="termine table + recap general">
-      <created>1441751897832</created>
-      <option name="number" value="00173" />
-      <option name="project" value="LOCAL" />
-      <updated>1441751897832</updated>
-    </task>
-    <task id="LOCAL-00174" summary="termine table + recap general">
-      <created>1441752702192</created>
-      <option name="number" value="00174" />
-      <option name="project" value="LOCAL" />
-      <updated>1441752702193</updated>
-    </task>
-    <task id="LOCAL-00175" summary="termine table + recap general">
-      <created>1441754763308</created>
-      <option name="number" value="00175" />
-      <option name="project" value="LOCAL" />
-      <updated>1441754763308</updated>
-    </task>
-    <task id="LOCAL-00176" summary="termine table + recap general">
-      <created>1441811643594</created>
-      <option name="number" value="00176" />
-      <option name="project" value="LOCAL" />
-      <updated>1441811643594</updated>
-    </task>
-    <task id="LOCAL-00177" summary="termine table + recap general">
-      <created>1441812284978</created>
-      <option name="number" value="00177" />
-      <option name="project" value="LOCAL" />
-      <updated>1441812284978</updated>
-    </task>
-    <task id="LOCAL-00178" summary="termine table + recap general">
-      <created>1441812672366</created>
-      <option name="number" value="00178" />
-      <option name="project" value="LOCAL" />
-      <updated>1441812672366</updated>
-    </task>
-    <task id="LOCAL-00179" summary="termine table + recap general">
-      <created>1441814260092</created>
-      <option name="number" value="00179" />
-      <option name="project" value="LOCAL" />
-      <updated>1441814260092</updated>
-    </task>
-    <task id="LOCAL-00180" summary="termine table + recap general">
-      <created>1441849206566</created>
-      <option name="number" value="00180" />
-      <option name="project" value="LOCAL" />
-      <updated>1441849206566</updated>
-    </task>
-    <task id="LOCAL-00181" summary="termine table + recap general">
-      <created>1441851138937</created>
-      <option name="number" value="00181" />
-      <option name="project" value="LOCAL" />
-      <updated>1441851138937</updated>
-    </task>
-    <task id="LOCAL-00182" summary="termine table + recap general">
-      <created>1441896688934</created>
-      <option name="number" value="00182" />
-      <option name="project" value="LOCAL" />
-      <updated>1441896688934</updated>
-    </task>
-    <task id="LOCAL-00183" summary="termine table + recap general">
-      <created>1441911586026</created>
-      <option name="number" value="00183" />
-      <option name="project" value="LOCAL" />
-      <updated>1441911586026</updated>
-    </task>
-    <task id="LOCAL-00184" summary="termine table + recap general">
-      <created>1441911838236</created>
-      <option name="number" value="00184" />
-      <option name="project" value="LOCAL" />
-      <updated>1441911838237</updated>
-    </task>
-    <task id="LOCAL-00185" summary="termine table + recap general">
-      <created>1441912442272</created>
-      <option name="number" value="00185" />
-      <option name="project" value="LOCAL" />
-      <updated>1441912442272</updated>
-    </task>
-    <task id="LOCAL-00186" summary="termine table + recap general">
-      <created>1441914069387</created>
-      <option name="number" value="00186" />
-      <option name="project" value="LOCAL" />
-      <updated>1441914069387</updated>
-    </task>
-    <task id="LOCAL-00187" summary="termine table + recap general">
-      <created>1441919402936</created>
-      <option name="number" value="00187" />
-      <option name="project" value="LOCAL" />
-      <updated>1441919402936</updated>
-    </task>
-    <task id="LOCAL-00188" summary="termine table + recap general">
-      <created>1441937168101</created>
-      <option name="number" value="00188" />
-      <option name="project" value="LOCAL" />
-      <updated>1441937168101</updated>
-    </task>
-    <task id="LOCAL-00189" summary="termine table + recap general">
-      <created>1441989258149</created>
-      <option name="number" value="00189" />
-      <option name="project" value="LOCAL" />
-      <updated>1441989258149</updated>
-    </task>
-    <task id="LOCAL-00190" summary="termine table + recap general">
-      <created>1441989836843</created>
-      <option name="number" value="00190" />
-      <option name="project" value="LOCAL" />
-      <updated>1441989836843</updated>
-    </task>
-    <task id="LOCAL-00191" summary="preferences page modifié + panel coupon selection accordeon open or close on refresh">
-      <created>1442023677373</created>
-      <option name="number" value="00191" />
-      <option name="project" value="LOCAL" />
-      <updated>1442023677373</updated>
-    </task>
-    <task id="LOCAL-00192" summary="preferences page modifié + panel coupon selection accordeon open or close on refresh">
-      <created>1442078075058</created>
-      <option name="number" value="00192" />
-      <option name="project" value="LOCAL" />
-      <updated>1442078075058</updated>
-    </task>
-    <task id="LOCAL-00193" summary="preferences page modifié + panel coupon selection accordeon open or close on refresh">
-      <created>1442078235355</created>
-      <option name="number" value="00193" />
-      <option name="project" value="LOCAL" />
-      <updated>1442078235355</updated>
-    </task>
-    <task id="LOCAL-00194" summary="share page en cours">
-      <created>1442200323848</created>
-      <option name="number" value="00194" />
-      <option name="project" value="LOCAL" />
-      <updated>1442200323848</updated>
-    </task>
-    <task id="LOCAL-00195" summary="share page en cours">
-      <created>1442205948958</created>
-      <option name="number" value="00195" />
-      <option name="project" value="LOCAL" />
-      <updated>1442205948958</updated>
-    </task>
-    <task id="LOCAL-00196" summary="share page en cours">
-      <created>1442222318891</created>
-      <option name="number" value="00196" />
-      <option name="project" value="LOCAL" />
-      <updated>1442222318891</updated>
-    </task>
-    <task id="LOCAL-00197" summary="share page en cours">
-      <created>1442224037572</created>
-      <option name="number" value="00197" />
-      <option name="project" value="LOCAL" />
-      <updated>1442224037572</updated>
-    </task>
-    <task id="LOCAL-00198" summary="share page en cours">
-      <created>1442224290748</created>
-      <option name="number" value="00198" />
-      <option name="project" value="LOCAL" />
-      <updated>1442224290748</updated>
-    </task>
-    <task id="LOCAL-00199" summary="share page en cours">
-      <created>1442262825040</created>
-      <option name="number" value="00199" />
-      <option name="project" value="LOCAL" />
-      <updated>1442262825040</updated>
-    </task>
-    <task id="LOCAL-00200" summary="share page en cours">
-      <created>1442294601604</created>
-      <option name="number" value="00200" />
-      <option name="project" value="LOCAL" />
-      <updated>1442294601604</updated>
-    </task>
-    <task id="LOCAL-00201" summary="share page en cours">
-      <created>1442317868020</created>
-      <option name="number" value="00201" />
-      <option name="project" value="LOCAL" />
-      <updated>1442317868020</updated>
-    </task>
-    <task id="LOCAL-00202" summary="share page en cours">
-      <created>1442318325098</created>
-      <option name="number" value="00202" />
-      <option name="project" value="LOCAL" />
-      <updated>1442318325098</updated>
-    </task>
-    <task id="LOCAL-00203" summary="share page en cours">
-      <created>1442319316422</created>
-      <option name="number" value="00203" />
-      <option name="project" value="LOCAL" />
-      <updated>1442319316422</updated>
-    </task>
-    <task id="LOCAL-00204" summary="share page en cours">
-      <created>1442320597687</created>
-      <option name="number" value="00204" />
-      <option name="project" value="LOCAL" />
-      <updated>1442320597688</updated>
-    </task>
-    <task id="LOCAL-00205" summary="share page en cours">
-      <created>1442400208520</created>
-      <option name="number" value="00205" />
-      <option name="project" value="LOCAL" />
-      <updated>1442400208520</updated>
-    </task>
-    <task id="LOCAL-00206" summary="share page en cours">
-      <created>1442416764213</created>
-      <option name="number" value="00206" />
-      <option name="project" value="LOCAL" />
-      <updated>1442416764213</updated>
-    </task>
-    <task id="LOCAL-00207" summary="share page en cours">
-      <created>1442468895092</created>
-      <option name="number" value="00207" />
-      <option name="project" value="LOCAL" />
-      <updated>1442468895092</updated>
-    </task>
-    <task id="LOCAL-00208" summary="share page en cours">
-      <created>1442469499930</created>
-      <option name="number" value="00208" />
-      <option name="project" value="LOCAL" />
-      <updated>1442469499930</updated>
-    </task>
-    <task id="LOCAL-00209" summary="share page en cours">
-      <created>1442469943582</created>
-      <option name="number" value="00209" />
-      <option name="project" value="LOCAL" />
-      <updated>1442469943583</updated>
-    </task>
-    <task id="LOCAL-00210" summary="share page en cours">
-      <created>1442470416316</created>
-      <option name="number" value="00210" />
-      <option name="project" value="LOCAL" />
-      <updated>1442470416316</updated>
-    </task>
-    <task id="LOCAL-00211" summary="share page en cours">
-      <created>1442502814825</created>
-      <option name="number" value="00211" />
-      <option name="project" value="LOCAL" />
-      <updated>1442502814825</updated>
-    </task>
-    <task id="LOCAL-00212" summary="share page en cours">
-      <created>1442503228485</created>
-      <option name="number" value="00212" />
-      <option name="project" value="LOCAL" />
-      <updated>1442503228485</updated>
-    </task>
-    <task id="LOCAL-00213" summary="share page en cours">
-      <created>1442503374427</created>
-      <option name="number" value="00213" />
-      <option name="project" value="LOCAL" />
-      <updated>1442503374427</updated>
-    </task>
-    <task id="LOCAL-00214" summary="share page en cours">
-      <created>1442552068120</created>
-      <option name="number" value="00214" />
-      <option name="project" value="LOCAL" />
-      <updated>1442552068120</updated>
-    </task>
-    <task id="LOCAL-00215" summary="share page en cours">
-      <created>1442552330578</created>
-      <option name="number" value="00215" />
-      <option name="project" value="LOCAL" />
-      <updated>1442552330578</updated>
-    </task>
-    <task id="LOCAL-00216" summary="share page en cours">
-      <created>1442552845961</created>
-      <option name="number" value="00216" />
-      <option name="project" value="LOCAL" />
-      <updated>1442552845961</updated>
-    </task>
-    <task id="LOCAL-00217" summary="share page en cours">
-      <created>1442553813464</created>
-      <option name="number" value="00217" />
-      <option name="project" value="LOCAL" />
-      <updated>1442553813464</updated>
-    </task>
-    <task id="LOCAL-00218" summary="share page en cours">
-      <created>1442553856856</created>
-      <option name="number" value="00218" />
-      <option name="project" value="LOCAL" />
-      <updated>1442553856856</updated>
-    </task>
-    <task id="LOCAL-00219" summary="share page en cours">
-      <created>1442563018092</created>
-      <option name="number" value="00219" />
-      <option name="project" value="LOCAL" />
-      <updated>1442563018092</updated>
-    </task>
-    <task id="LOCAL-00220" summary="share page en cours">
-      <created>1442563564279</created>
-      <option name="number" value="00220" />
-      <option name="project" value="LOCAL" />
-      <updated>1442563564279</updated>
-    </task>
-    <task id="LOCAL-00221" summary="share page en cours">
-      <created>1442564001838</created>
-      <option name="number" value="00221" />
-      <option name="project" value="LOCAL" />
-      <updated>1442564001838</updated>
-    </task>
-    <task id="LOCAL-00222" summary="share page en cours">
-      <created>1442564475631</created>
-      <option name="number" value="00222" />
-      <option name="project" value="LOCAL" />
-      <updated>1442564475631</updated>
     </task>
     <task id="LOCAL-00223" summary="share page en cours">
       <created>1442565202583</created>
@@ -2451,33 +1168,33 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1552" height="842" extended-state="6" />
+    <frame x="-8" y="-8" width="1552" height="842" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12466488" sideWeight="0.5072727" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32816902" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28732395" sideWeight="0.49798927" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22808988" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35352114" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16760564" sideWeight="0.50067025" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21715818" sideWeight="0.23521127" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32676056" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928064" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1152815" sideWeight="0.50088495" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3253521" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22808988" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16823056" sideWeight="0.49626866" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1152815" sideWeight="0.49911505" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20422535" sideWeight="0.49932975" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12466488" sideWeight="0.49272728" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35352114" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22535211" sideWeight="0.49932975" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21715818" sideWeight="0.23521127" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16760564" sideWeight="0.50067025" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32676056" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32858595" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32957748" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35867238" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35867238" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32908848" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928064" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39977604" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39977604" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39111748" sideWeight="0.49913344" order="11" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -2513,377 +1230,381 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/pages/bookmakers/bookmakerDelete.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="484">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1642106" vertical-offset="178" max-vertical-offset="1309">
-          <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_09_16_072744_add_column_shortname.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_09_29_053137_add_softdelete_to_termineparis.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_09_16_165807_add_actif_to_competitions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bookmaker_edit_modal.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="612">
-          <caret line="17" column="51" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/pages/tipsters/gestionTipsters.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1476" max-vertical-offset="4964">
-          <caret line="63" column="46" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/v4.1.0/theme/assets/admin/layout/css/themes/darkblue.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="15725">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/v4.1.0/theme/assets/admin/pages/scripts/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.25" vertical-offset="10287" max-vertical-offset="10795">
-          <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/v4.1.0/theme/assets/admin/layout/scripts/quick-sidebar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3043">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/includes/subview/inits.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="153">
+        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="0">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/v4.1.0/theme/templates/admin/index_2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.891258" vertical-offset="64114" max-vertical-offset="65042">
+        <state vertical-scroll-proportion="0.891258" vertical-offset="0" max-vertical-offset="0">
           <caret line="4147" column="61" selection-start-line="4147" selection-start-column="61" selection-end-line="4147" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/metronic_v3.8.1/theme/assets/admin/layout3/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="628" max-vertical-offset="7616">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="46" column="1" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/metronic_v3.8.1/theme/templates/admin3/demo/timeout-keep-alive.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="508">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/dist/bootstrap-session-timeout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33464566" vertical-offset="0" max-vertical-offset="4114">
+        <state vertical-scroll-proportion="0.33464566" vertical-offset="0" max-vertical-offset="0">
           <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/packages/barryvdh/laravel-debugbar/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42323652" vertical-offset="51" max-vertical-offset="2703">
+        <state vertical-scroll-proportion="0.42323652" vertical-offset="0" max-vertical-offset="0">
           <caret line="15" column="12" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/v4.1.0/theme/templates/admin/ui_session_timeout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.846154" vertical-offset="339" max-vertical-offset="35428">
+        <state vertical-scroll-proportion="-9.846154" vertical-offset="0" max-vertical-offset="0">
           <caret line="35" column="73" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="73" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/includes/head.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-34.653847" vertical-offset="0" max-vertical-offset="1122">
+        <state vertical-scroll-proportion="-34.653847" vertical-offset="0" max-vertical-offset="0">
           <caret line="53" column="64" selection-start-line="53" selection-start-column="64" selection-end-line="53" selection-end-column="64" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/BaseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07053942" vertical-offset="0" max-vertical-offset="493">
+        <state vertical-scroll-proportion="0.07053942" vertical-offset="0" max-vertical-offset="0">
           <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/session.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.84647304" vertical-offset="255" max-vertical-offset="2482">
+        <state vertical-scroll-proportion="0.84647304" vertical-offset="0" max-vertical-offset="0">
           <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6444445" vertical-offset="2176" max-vertical-offset="5967">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/v4.1.0/theme/assets/admin/pages/scripts/table-advanced.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.030303" vertical-offset="3723" max-vertical-offset="7650">
+        <state vertical-scroll-proportion="1.030303" vertical-offset="0" max-vertical-offset="0">
           <caret line="249" column="0" selection-start-line="249" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pages/tipsters.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06439394" vertical-offset="153" max-vertical-offset="986">
+        <state vertical-scroll-proportion="0.06439394" vertical-offset="0" max-vertical-offset="0">
           <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="4386">
-          <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="60" selection-end-column="75" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/TipsterController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.7007575" vertical-offset="255" max-vertical-offset="4250">
+        <state vertical-scroll-proportion="4.7007575" vertical-offset="0" max-vertical-offset="0">
           <caret line="161" column="34" selection-start-line="161" selection-start-column="34" selection-end-line="161" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Tipster.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7746212" vertical-offset="424" max-vertical-offset="952">
+        <state vertical-scroll-proportion="0.7746212" vertical-offset="0" max-vertical-offset="0">
           <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tipsters/listeTipsters.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4185606" vertical-offset="0" max-vertical-offset="969">
+        <state vertical-scroll-proportion="0.4185606" vertical-offset="0" max-vertical-offset="0">
           <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="15" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/AuthController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59090906" vertical-offset="946" max-vertical-offset="1479">
+        <state vertical-scroll-proportion="0.59090906" vertical-offset="0" max-vertical-offset="0">
           <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="6460">
-          <caret line="315" column="67" selection-start-line="315" selection-start-column="67" selection-end-line="315" selection-end-column="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/transactions/transactions.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.807693" vertical-offset="41" max-vertical-offset="612">
+        <state vertical-scroll-proportion="-12.807693" vertical-offset="0" max-vertical-offset="0">
           <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/default.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39872068" vertical-offset="2159" max-vertical-offset="5797">
-          <caret line="138" column="66" selection-start-line="138" selection-start-column="66" selection-end-line="138" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6701245" vertical-offset="1377" max-vertical-offset="2074">
+        <state vertical-scroll-proportion="0.6701245" vertical-offset="0" max-vertical-offset="0">
           <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="11.423077" vertical-offset="1096" max-vertical-offset="1853">
-          <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bookmakers/listeBookmakers.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.307693" vertical-offset="5" max-vertical-offset="697">
+        <state vertical-scroll-proportion="-8.307693" vertical-offset="0" max-vertical-offset="0">
           <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="15" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Bookmaker.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07053942" vertical-offset="0" max-vertical-offset="482">
+        <state vertical-scroll-proportion="0.07053942" vertical-offset="0" max-vertical-offset="0">
           <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/pages/bookmakers/gestionBookmakers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65252525" vertical-offset="510" max-vertical-offset="4029">
+        <state vertical-scroll-proportion="-0.65252525" vertical-offset="0" max-vertical-offset="0">
           <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Transaction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17634855" vertical-offset="0" max-vertical-offset="482">
+        <state vertical-scroll-proportion="0.17634855" vertical-offset="0" max-vertical-offset="0">
           <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/pages/bookmakers/gestionTransactions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2839">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="192" column="38" selection-start-line="192" selection-start-column="38" selection-end-line="192" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58536583" vertical-offset="126" max-vertical-offset="884">
+        <state vertical-scroll-proportion="0.58536583" vertical-offset="0" max-vertical-offset="0">
           <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/TransactionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.807693" vertical-offset="2404" max-vertical-offset="3060">
+        <state vertical-scroll-proportion="-12.807693" vertical-offset="0" max-vertical-offset="0">
           <caret line="161" column="10" selection-start-line="161" selection-start-column="10" selection-end-line="161" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/loadBookmakersOnDashboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09497207" vertical-offset="0" max-vertical-offset="537">
+        <state vertical-scroll-proportion="0.09497207" vertical-offset="0" max-vertical-offset="0">
           <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/pages/getBookmakersForSelection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/BookmakerUser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39921722" vertical-offset="51" max-vertical-offset="578">
+        <state vertical-scroll-proportion="0.39921722" vertical-offset="0" max-vertical-offset="0">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/addTicket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1125" max-vertical-offset="7939">
-          <caret line="81" column="21" selection-start-line="81" selection-start-column="21" selection-end-line="81" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/BettorController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.615385" vertical-offset="1066" max-vertical-offset="1717">
-          <caret line="82" column="44" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/transactions/listeTransactions.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.576923" vertical-offset="92" max-vertical-offset="901">
-          <caret line="17" column="70" selection-start-line="17" selection-start-column="70" selection-end-line="17" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/BookmakerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.807693" vertical-offset="2540" max-vertical-offset="3077">
-          <caret line="169" column="65" selection-start-line="169" selection-start-column="65" selection-end-line="169" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/build/js/bookmakers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="524">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/transactions/listeTransactions.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="901">
+          <caret line="17" column="70" selection-start-line="17" selection-start-column="70" selection-end-line="17" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/pages/getBookmakersForSelection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="697">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pages/bookmakers.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="1105">
+          <caret line="13" column="50" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/BettorController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-47.076923" vertical-offset="0" max-vertical-offset="1717">
+          <caret line="72" column="54" selection-start-line="72" selection-start-column="54" selection-end-line="72" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="355.84616" vertical-offset="10187" max-vertical-offset="12189">
+          <caret line="55" column="84" selection-start-line="55" selection-start-column="84" selection-end-line="55" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AjaxController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.192308" vertical-offset="1023" max-vertical-offset="1666">
+          <caret line="88" column="12" selection-start-line="88" selection-start-column="12" selection-end-line="89" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/includes/footer.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23287672" vertical-offset="0" max-vertical-offset="511">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/BookmakerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50097847" vertical-offset="2651" max-vertical-offset="3162">
+          <caret line="171" column="9" selection-start-line="171" selection-start-column="9" selection-end-line="171" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ConfigController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1360">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/addTicket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="7939">
+          <caret line="81" column="21" selection-start-line="81" selection-start-column="21" selection-end-line="81" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.4236948" vertical-offset="0" max-vertical-offset="4386">
+          <caret line="71" column="33" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisABCD.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22928709" vertical-offset="0" max-vertical-offset="519">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2620424" vertical-offset="0" max-vertical-offset="519">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1870">
+          <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2673" max-vertical-offset="3468">
+          <caret line="175" column="72" selection-start-line="175" selection-start-column="72" selection-end-line="175" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/default.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.0" vertical-offset="3641" max-vertical-offset="5797">
+          <caret line="205" column="25" selection-start-line="205" selection-start-column="25" selection-end-line="205" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5756" max-vertical-offset="10999">
-          <caret line="364" column="34" selection-start-line="364" selection-start-column="34" selection-end-line="364" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="5678" max-vertical-offset="10999">
+          <caret line="360" column="18" selection-start-line="360" selection-start-column="18" selection-end-line="360" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pages/bookmakers.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.153846" vertical-offset="594" max-vertical-offset="1105">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        <state vertical-scroll-proportion="-8.5" vertical-offset="357" max-vertical-offset="6596">
+          <caret line="34" column="67" selection-start-line="34" selection-start-column="67" selection-end-line="34" selection-end-column="67" />
+          <folding>
+            <marker date="1443921817243" expanded="true" signature="3652:3803" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="5967">
+          <caret line="15" column="64" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/app.php">
+    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisLongTerme.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5322896" vertical-offset="102" max-vertical-offset="3723">
-          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2720">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/bet/parislongterme.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5983437" vertical-offset="2550" max-vertical-offset="4046">
+          <caret line="167" column="62" selection-start-line="167" selection-start-column="62" selection-end-line="167" selection-end-column="62" />
+          <folding>
+            <element signature="e#508#541#0#HTML" expanded="true" />
+            <marker date="1443926189347" expanded="true" signature="2982:3368" placeholder="..." />
+            <marker date="1443926189347" expanded="true" signature="6585:6858" placeholder="..." />
+            <marker date="1443926189347" expanded="true" signature="6626:6857" placeholder="..." />
+            <marker date="1443926189347" expanded="true" signature="11034:11321" placeholder="..." />
+            <marker date="1443926189347" expanded="true" signature="11075:11320" placeholder="..." />
+            <marker date="1443926189347" expanded="true" signature="13391:13649" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

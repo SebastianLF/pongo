@@ -25,6 +25,7 @@
 	Route::get('lettreabcd', 'EnCoursParisController@getlettreABCD');
 	Route::get('recaps', 'DashboardController@showRecaps');
 	Route::get('generalrecap', 'DashboardController@showGeneralRecap');
+	Route::get('all-bookmakers-on-autocomplete', 'BookmakerController@getAllBookmakersOnAutocomplete');
 
 	//bookmakers page
 	Route::get('bookmakers', 'BettorController@getMyBookmakersPage');
