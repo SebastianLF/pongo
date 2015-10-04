@@ -5,6 +5,7 @@
         </div>
     </div>
 @else
+
     <table id="paristerminetable" class="table table-bordered table-condensed">
         <thead>
         <tr class="uppercase">

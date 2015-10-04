@@ -57,8 +57,8 @@
                             <td>
                                 @if($pari->selections->first()->isMatch)
                                     <?php $date = Carbon::createFromFormat('Y-m-d H:i:s', $pari->selections->first()->date_match, 'Europe/Paris');
-                                    $date->setTimezone(Auth::user()->timezone);?>
-                                    {{{' '.$date->format('d/m H:i').' |'}}}
+                                        $date->setTimezone(Auth::user()->timezone);?>
+                                        {{{' '.$date->format('d/m H:i').' |'}}}
                                     <span>
                                         <img src="{{asset($pari->selections->first()->equipe1->country->shortname != '' ? 'img/flags/'.$pari->selections->first()->equipe1->country->shortname.'.png' : 'img/flags/unknown2.png')}}" class="img-flag" alt="country"/>{{' '.$pari->selections->first()->equipe1->name.' -'}}
                                     </span>

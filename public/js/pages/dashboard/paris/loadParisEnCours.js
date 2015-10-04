@@ -35,8 +35,6 @@ function loadParisEnCours() {
 }
 
 function loadParisTermine() {
-
-
     $.ajax({
         url: 'dashboard/ajax/paristermine',
         data: {page: 1},

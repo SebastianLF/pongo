@@ -2,13 +2,14 @@
  * Created by sebs on 19/04/2015.
  */
 
-function parisEnCoursEnclose(tablename, formname, urlgiven) {
-    var table = $(tablename);
-    var form = $(formname);
-    var url = urlgiven;
+function parisEnCoursEnclose(tablename,url) {
+    var table = tablename;
+    var bouton_valider = $('.boutonvalider');
+
 // click sur le bouton valider du paris en cours , qui va le transferer vers historique(termineParis)
-    $(tablename + ' ' + formname).submit(function (e) {
+    bouton_valider.on('click', function (e) {
         e.preventDefault();
+        /*
         var parent = $(this).closest('.mainrow');
         var wrapper = $(this).closest('.wrapperRow');
         var retour = parent.find('.tdretour span.subretour');
@@ -26,15 +27,30 @@ function parisEnCoursEnclose(tablename, formname, urlgiven) {
             childrowsstatus = parent.next().find('input[name="childrowsinput[]"]').serialize();
         }
         console.log(childrows);
-        console.log(childrowsstatus);
+        console.log(childrowsstatus);*/
+
+
+        var tr_main = bouton_valider.parent('tr');
+        var tr_childs = tr_main.next('tr.details');
+        var type_profil = $(this).data('pari-type');
+        var status = [];
+        if(type_profil == 's'){
+            alert(tr_main);
+            var length = tr_main.find('select[name="status[]"]').length;
+            alert(length);
+            console.log(length);
+        }else{
+            var length = tr_childs.find('select[name="status[]"]').length;
+            alert(length);
+            console.log(length);
+        }
 
         $.ajax({
             url: url,
             type: 'post',
-            data: childrows + '&' + childrowsstatus + '&ticket-id=' + id,
+            data: '',
             dataType: 'json',
             success: function (data) {
-
                 if (data.etat == 0) {
                     toastr.error(data.msg, 'Validation');
                 } else {
@@ -44,9 +60,6 @@ function parisEnCoursEnclose(tablename, formname, urlgiven) {
                     loadBookmakersOnDashboard();
                     loadGeneralRecapsOnDashboard();
                 }
-            },
-            error: function () {
-                console.log("valider un pari en cours ne fonctionne pas");
             }
         });
     });
