@@ -8,17 +8,15 @@
 @if(Auth::check())
     <meta name="_token" content="{{ csrf_token() }}" />
 @endif
-<!--ZingChart Script-->
-<!--<script src="http://cdn.zingchart.com/zingchart.min.js"></script>-->
-<!--Start of Zopim Live Chat Script
-<!--<script type="text/javascript">
-      window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
-              d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
-              _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+        <!--Start of Zopim Live Chat Script-->
+    <script type="text/javascript">
+        window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+                d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+                _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
             $.src="//v2.zopim.com/?2yLYoTe7KZc5eXH3mViXVyumTMmOeU8a";z.t=+new Date;$.
                     type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
-</script>-->
-<!--End of Zopim Live Chat Script-->
+    </script>
+    <!--End of Zopim Live Chat Script-->
 <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"

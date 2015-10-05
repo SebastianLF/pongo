@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/default.blade.php" afterPath="$PROJECT_DIR$/app/views/layouts/default.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/includes/head.blade.php" afterPath="$PROJECT_DIR$/app/views/includes/head.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="betsmanage.iws" />
@@ -129,11 +129,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="default.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/default.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.91955835">
+            <state vertical-scroll-proportion="-213.73077">
               <caret line="348" column="36" selection-start-line="348" selection-start-column="36" selection-end-line="348" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="head.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/includes/head.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2949527">
+              <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -227,7 +237,6 @@
         <option value="$PROJECT_DIR$/public/v4.1.0/theme/templates/admin/index_2.html" />
         <option value="$PROJECT_DIR$/app/views/includes/subview/inits.blade.php" />
         <option value="$PROJECT_DIR$/public/v4.1.0/theme/templates/admin/ui_session_timeout.html" />
-        <option value="$PROJECT_DIR$/app/views/includes/head.blade.php" />
         <option value="$PROJECT_DIR$/app/config/packages/barryvdh/laravel-debugbar/config.php" />
         <option value="$PROJECT_DIR$/app/config/session.php" />
         <option value="$PROJECT_DIR$/app/models/User.php" />
@@ -273,6 +282,7 @@
         <option value="$PROJECT_DIR$/app/views/pages/landing.blade.php" />
         <option value="$PROJECT_DIR$/app/views/bet/parislongterme.blade.php" />
         <option value="$PROJECT_DIR$/app/views/layouts/default.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/includes/head.blade.php" />
       </list>
     </option>
   </component>
@@ -831,12 +841,6 @@
       <option name="number" value="Default" />
       <updated>1411579515527</updated>
     </task>
-    <task id="LOCAL-00225" summary="share page en cours">
-      <created>1442565849740</created>
-      <option name="number" value="00225" />
-      <option name="project" value="LOCAL" />
-      <updated>1442565849740</updated>
-    </task>
     <task id="LOCAL-00226" summary="share page en cours">
       <created>1442566063443</created>
       <option name="number" value="00226" />
@@ -1125,7 +1129,13 @@
       <option name="project" value="LOCAL" />
       <updated>1444047307405</updated>
     </task>
-    <option name="localTasksCounter" value="274" />
+    <task id="LOCAL-00274" summary="table historique ladda + supprimer + export">
+      <created>1444048315200</created>
+      <option name="number" value="00274" />
+      <option name="project" value="LOCAL" />
+      <updated>1444048315200</updated>
+    </task>
+    <option name="localTasksCounter" value="275" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1208,17 +1218,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/bet/parislongterme.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-          <folding>
-            <marker date="1444045603439" expanded="true" signature="5985:6258" placeholder="..." />
-            <marker date="1444045603439" expanded="true" signature="6026:6257" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1581,8 +1580,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/default.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.91955835">
+        <state vertical-scroll-proportion="-213.73077">
           <caret line="348" column="36" selection-start-line="348" selection-start-column="36" selection-end-line="348" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/includes/head.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2949527">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
           <folding />
         </state>
       </provider>
