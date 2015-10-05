@@ -1,32 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - sbs@localhost" uuid="df636a34-977d-4dba-b7e3-b636c8873f85">
-      <secret-storage>master_key</secret-storage>
-      <user-name>root</user-name>
-      <schema-pattern>sbs.*</schema-pattern>
-      <default-schemas>sbs.*</default-schemas>
-    </data-source>
-    <data-source name="MySQL - slfweb@slfweb.mysql.eu1.frbit.com" uuid="2226fdbd-0f31-48fa-8a3c-f51c98371bf0">
-      <secret-storage>master_key</secret-storage>
-      <user-name>slfweb</user-name>
-      <schema-pattern>slfweb.*</schema-pattern>
-      <default-schemas>slfweb.*</default-schemas>
-      <ssh-properties>
-        <enabled>true</enabled>
-        <proxy-host>ssh37.eu1.frbit.com</proxy-host>
-        <proxy-port>22</proxy-port>
-        <secret-storage>master_key</secret-storage>
-        <user>u-slfweb</user>
-        <use-password>false</use-password>
-        <private-key-path>C:\Users\sebs\.ssh\id_rsa</private-key-path>
-      </ssh-properties>
-    </data-source>
-    <data-source name="MySQL - homestead@127.0.0.1" uuid="bdacbe7c-d15d-4e81-9d7e-31eeab200255">
-      <secret-storage>master_key</secret-storage>
-      <user-name>homestead</user-name>
-      <schema-pattern>homestead.*</schema-pattern>
-      <default-schemas>homestead.*</default-schemas>
-    </data-source>
+    <data-source name="MySQL - sbs@localhost" uuid="df636a34-977d-4dba-b7e3-b636c8873f85" />
+    <data-source name="MySQL - slfweb@slfweb.mysql.eu1.frbit.com" uuid="2226fdbd-0f31-48fa-8a3c-f51c98371bf0" />
+    <data-source name="MySQL - homestead@127.0.0.1" uuid="bdacbe7c-d15d-4e81-9d7e-31eeab200255" />
   </component>
 </project>

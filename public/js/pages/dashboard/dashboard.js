@@ -3,12 +3,12 @@
  */
 
     //paris
-parisEnCoursDelete();
+//parisEnCoursDelete();
 getBookmakersForSelection();
-loadParisEnCours();
+//loadParisEnCours();
 loadParisLongTerme();
-loadParisABCD();
-cashOut();
+//loadParisABCD();
+//cashOut();
 //loadParisABCD();
 loadParisTermine();
 
