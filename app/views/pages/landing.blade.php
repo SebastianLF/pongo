@@ -74,8 +74,10 @@ License: You must have a valid license purchased only from themeforest(the above
                 <img class="img-responsive" src="{{asset('img/landing-logo.png')}}" alt="illustration">
                 <div class="intro-text">
                     <span class="name">pongo beta 1.0</span>
+                    <span class="skills">Tableau de bord pour parieur sportif</span><br>
                     <hr class="star-light">
-                    <span class="skills">Historique personnel de vos paris - Suivi de vos tipsters - Suivi de vos bookmakers</span></div>
+                    <span class="subskills">Gestion de vos paris, tipsters, bookmakers.<br> Consultez simplement, controlez efficacement.</span>
+                </div>
             </div>
         </div>
         <div class="row">

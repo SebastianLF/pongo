@@ -48,6 +48,12 @@ function parisEnCoursEnclose(tablename, url) {
 
         if(tr_childs.length == 0 && type_profil == 'c'){
             swal("Erreur", "cliquez sur la croix pour dérouler le combiné et selectionner les status.")
+        }else if(tr_childs.length > 0 && type_profil == 'c'){
+
+        }else if(type_profil == 's'){
+            $.each(status, function(index, value){
+                if(value == 0 || value != 2){}
+            });
         }
         //si les status ont tous été bien renseigné ou alors si il y a au moins un pari perdu alors on peut finaliser le pari.
         else if ((status.indexOf(0) != -1 && status.indexOf(2) == -1)) {

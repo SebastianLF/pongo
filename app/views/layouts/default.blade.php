@@ -213,7 +213,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/respond.min.js')}}"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/excanvas.min.js')}}"></script>
     <![endif]-->
-    <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/jquery.min.js')}}"
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
             type="text/javascript"></script>
     <script src="{{asset('metronic_v3.8.1/theme/assets/global/plugins/jquery-migrate.min.js')}}"
             type="text/javascript"></script>
@@ -327,10 +327,23 @@ License: You must have a valid license purchased only from themeforest(the above
         });
         @include('includes.subview.inits')
     </script>
+<!-- ClickDesk Live Chat Service for websites -->
+<script type='text/javascript'>
+    var _glc =_glc || []; _glc.push('all_ag9zfmNsaWNrZGVza2NoYXRyDwsSBXVzZXJzGNHOpacNDA');
+    var glcpath = (('https:' == document.location.protocol) ? 'https://my.clickdesk.com/clickdesk-ui/browser/' :
+            'http://my.clickdesk.com/clickdesk-ui/browser/');
+    var glcp = (('https:' == document.location.protocol) ? 'https://' : 'http://');
+    var glcspt = document.createElement('script'); glcspt.type = 'text/javascript';
+    glcspt.async = true; glcspt.src = glcpath + 'livechat-new.js';
+    var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(glcspt, s);
+</script>
+<!-- End of ClickDesk -->
     @show
 
 
             <!-- END JAVASCRIPTS -->
+
+
 </body>
 <!-- END BODY -->
 </html>

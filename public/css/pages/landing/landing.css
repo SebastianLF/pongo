@@ -25,6 +25,11 @@ header .intro-text .skills {
     font-weight: 300;
 }
 
+header .intro-text .subskills {
+    font-size: 1.20em;
+    font-weight: 300;
+}
+
 header {
     text-align: center;
     color: #fff;
