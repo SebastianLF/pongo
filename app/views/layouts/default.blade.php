@@ -328,24 +328,7 @@ License: You must have a valid license purchased only from themeforest(the above
         @include('includes.subview.inits')
     </script>
 <!-- ClickDesk Live Chat Service for websites -->
-<script type='text/javascript'>
-    var _glc =_glc || []; _glc.push('all_ag9zfmNsaWNrZGVza2NoYXRyDwsSBXVzZXJzGNHOpacNDA');
-    var glcpath = (('https:' == document.location.protocol) ? 'https://my.clickdesk.com/clickdesk-ui/browser/' :
-            'http://my.clickdesk.com/clickdesk-ui/browser/');
-    var glcp = (('https:' == document.location.protocol) ? 'https://' : 'http://');
-    var glcspt = document.createElement('script'); glcspt.type = 'text/javascript';
-    glcspt.async = true; glcspt.src = glcpath + 'livechat-new.js';
-    var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(glcspt, s);
-</script>
-<!-- End of ClickDesk -->
-<!--Start of Zopim Live Chat Script-->
-<script type="text/javascript">
-    window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
-            d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
-            _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
-        $.src="//v2.zopim.com/?2yLYoTe7KZc5eXH3mViXVyumTMmOeU8a";z.t=+new Date;$.
-                type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
-</script>
+
 <!--End of Zopim Live Chat Script-->
     @show
 
