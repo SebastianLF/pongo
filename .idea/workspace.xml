@@ -803,12 +803,6 @@
       <option name="number" value="Default" />
       <updated>1411579515527</updated>
     </task>
-    <task id="LOCAL-00233" summary="share page en cours">
-      <created>1442670199702</created>
-      <option name="number" value="00233" />
-      <option name="project" value="LOCAL" />
-      <updated>1442670199702</updated>
-    </task>
     <task id="LOCAL-00234" summary="share page en cours">
       <created>1442670273091</created>
       <option name="number" value="00234" />
@@ -1097,7 +1091,13 @@
       <option name="project" value="LOCAL" />
       <updated>1444233759742</updated>
     </task>
-    <option name="localTasksCounter" value="282" />
+    <task id="LOCAL-00282" summary="installation des date language[trigger:composer install]">
+      <created>1444233778806</created>
+      <option name="number" value="00282" />
+      <option name="project" value="LOCAL" />
+      <updated>1444233778806</updated>
+    </task>
+    <option name="localTasksCounter" value="283" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1121,7 +1121,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1924" height="1050" extended-state="0" />
+    <frame x="-9" y="-9" width="1924" height="1050" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3253521" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
