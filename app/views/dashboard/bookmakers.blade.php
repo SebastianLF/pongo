@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="portlet-body">
-        @if(empty($bookmakers))
+        @if($bookmakers->count() > 0)
             <div class="text-center">Aucun bookmaker.</div>
         @else
         <div class="panel-group accordion" id="accordion3">
