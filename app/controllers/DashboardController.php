@@ -67,9 +67,6 @@
 
 		public function showTipsters()
 		{
-			if (Request::ajax()) {
-
-			}
 		}
 
 

@@ -15,6 +15,7 @@ class CreateTermineParisTable extends Migration {
 		Schema::create('termine_paris', function(Blueprint $table) {
 			$table->increments('id');
 			$table->timestamps();
+
 			$table->string('followtype',2);// type de suivi
 			$table->string('type_profil',2); // simple ou combiné
 			$table->integer('numero_pari'); // numero du pari
