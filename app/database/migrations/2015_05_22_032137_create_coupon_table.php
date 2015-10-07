@@ -20,7 +20,7 @@ class CreateCouponTable extends Migration {
 			$table->string('scope');
 			$table->integer('bookmaker_id');
 			$table->string('bookmaker');
-			$table->decimal('odd_value');
+			$table->decimal('odd_value',8,3);
 			$table->double('odd_doubleParam')->nullable();
 			$table->double('odd_doubleParam2')->nullable();
 			$table->double('odd_doubleParam3')->nullable();
