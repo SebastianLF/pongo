@@ -16,8 +16,8 @@ class CreateSelectionsTable extends Migration {
 			$table->increments('id');
 			$table->timestamps();
 			$table->dateTime('date_match'); // date de la rencontre
-			$table->decimal('cote',8,2);
-			$table->decimal('cote_apres_status');
+			$table->decimal('cote',8,3);
+			$table->decimal('cote_apres_status',8,3);
 			$table->tinyInteger('status')->default(0); // gagné , perdu , remboursé etc..
 			$table->string('pick');
 			$table->integer('game_id')->nullable();
@@ -32,7 +32,7 @@ class CreateSelectionsTable extends Migration {
 			$table->boolean('isLive');
 			$table->boolean('isMatch');
 			$table->string('score')->nullable();
-			$table->string('resultat')->nullable();
+			$table->string('resultat')->nullable()->default(null);
 			$table->unsignedInteger('market_id')->nullable();
 			$table->unsignedInteger('scope_id')->nullable();
 			$table->unsignedInteger('sport_id')->nullable();

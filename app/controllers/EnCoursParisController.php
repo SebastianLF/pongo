@@ -259,7 +259,7 @@
 
 					return Response::json(array(
 						'etat' => 1,
-						'msg' => 'Ticket ajouté',
+						'msg' => 'Pari ajouté',
 					));
 				}
 			}
@@ -287,30 +287,32 @@
 			if (is_null($pari)) {
 				return Response::json(array(
 					'etat' => 0,
-					'msg' => 'cet id n\'existe pas',
+					'msg' => 'ce pari n\'existe pas',
 				));
 			}
 
 			if ($pari->followtype == 'n') {
-				$compte = $pari->compte()->first();
-				if ($compte->bankroll_actuelle < $pari->mise_totale) {
+				$pari_deleted = $pari->delete();
+				Clockwork::info($pari_deleted);
+
+				if(!$pari_deleted){
 					return Response::json(array(
 						'etat' => 0,
-						'msg' => 'Le compte se retrouve avec une bankroll inférieur à 0 si ce ticket est supprimé.'
+						'msg' => 'Le pari n\'a pas été supprimé correctement.'
 					));
 				}
+				$compte = $pari->compte()->first();
 				$compte->bankroll_actuelle += $pari->mise_totale;
 				$compte->save();
-				$pari->delete();
 				return Response::json(array(
 					'etat' => 1,
-					'msg' => 'Ticket Suzpprimé'
+					'msg' => 'Pari supprimé !'
 				));
 			} else {
 				$pari->delete();
 				return Response::json(array(
 					'etat' => 1,
-					'msg' => 'Ticket Supprimé'
+					'msg' => 'Pari supprimé !'
 				));
 			}
 
@@ -703,7 +705,7 @@
 
 				return Response::json(array(
 					'etat' => 1,
-					'msg' => 'pari ajouté avec succes'
+					'msg' => 'pari ajouté'
 				));
 			}
 		}

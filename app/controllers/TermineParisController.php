@@ -36,17 +36,16 @@
 		public function store()
 		{
 			$regles = array(
-				'ticket-id' => 'required|exists:en_cours_paris,id,user_id,' . Auth::user()->id,
+				'pari-id' => 'required|exists:en_cours_paris,id,user_id,' . Auth::user()->id,
 			);
 
 			$messages = array(
-				'ticket-id.required' => 'Un numero de ticket est obligatoire.',
-				'ticket-id.exists' => 'Ce ticket n\'existe dans votre compte.',
+				'pari-id.required' => 'Un identifiant de pari doit être envoyé.',
+				'pari-id.exists' => 'Ce pari n\'existe pas.',
 			);
 
 			$validator = Validator::make(Input::all(), $regles, $messages);
-			$validator->each('childrowsinput', ['sometimes']);
-			$validator->each('resultatSelectionDashboardInput', ['between:1,6']);
+			$validator->each('status', ['between:1,6']);
 
 			if ($validator->fails()) {
 				return Response::json(array(
@@ -54,8 +53,14 @@
 					'msg' => $validator->getMessageBag()->toArray()
 				));
 			} else {
-				$id = Input::get('ticket-id');
+				$id = Input::get('pari-id');
 				$encoursparis = Auth::user()->enCoursParis()->where('id', $id)->first();
+				if(is_null($encoursparis)){
+					return Response::json(array(
+						'etat' => 0,
+						'msg' => 'pari en cours introuvable.',
+					));
+				}
 				$mt_par_unite = $encoursparis->mt_par_unite;
 				$mise = $encoursparis->mise_totale;
 				$cote = $encoursparis->cote;
@@ -68,9 +73,7 @@
 				$nom_abcd = null;
 				$lettre_abcd = null;
 
-				$resultats_array = Input::get('childrowsinput');
-				$status_array = Input::get('resultatSelectionDashboardInput');
-				Clockwork::info($resultats_array);
+				$status_array = explode(',', Input::get('status')[0]);
 				Clockwork::info($status_array);
 
 				/*
@@ -86,9 +89,15 @@
 				$cote_general = 1;
 				$nb = $encoursparis->selections()->count();
 				$selections = $encoursparis->selections()->get();
+				if(is_null($selections)){
+					return Response::json(array(
+						'etat' => 0,
+						'msg' => 'Les selections du pari en cours sont introuvables.',
+					));
+				}
+
 				for ($i = 0; $i < $nb; $i++) {
 					$status_s = $status_array[$i];
-					$resultat_s = $resultats_array[$i];
 					$cote = $selections[$i]->cote;
 					$cote_selection = 1;
 					switch ($status_s) {
@@ -113,9 +122,14 @@
 							$cote_selection = 1;
 							break;
 					}
-					$selections[$i]->resultat = $resultat_s;
 					$selections[$i]->status = $status_s;
-					$selections[$i]->save();
+					$selection_saved_correctly = $selections[$i]->save();
+					if(!$selection_saved_correctly){
+						return Response::json(array(
+							'etat' => 0,
+							'msg' => 'Erreur dans la définition du status de la ou les selections du pari n°'.$selections[$i]->id,
+						));
+					}
 
 					// les calculs pour termine paris
 					$retour_devise = $mise * $cote_general;
@@ -162,6 +176,13 @@
 
 				// ajout du paris dans la table termine paris.
 				$termine_paris_ajoute = Auth::user()->termineParis()->save($termine_pari);
+				if(!$termine_paris_ajoute){
+					return Response::json(array(
+						'etat' => 0,
+						'msg' => 'Erreur, ce pari n\'a pas été crée correctement dans l\'historique',
+					));
+				}
+
 
 				// mise en global pour que la variable soit accessible dans la boucle ci-dessous.
 				$id_termine = $termine_paris_ajoute->id;
@@ -172,10 +193,23 @@
 						$selection->termine_pari_id = $id_termine;
 						$selection->en_cours_pari_id = NULL;
 						$selection->save();
+						if(!$selection){
+							return Response::json(array(
+								'etat' => 0,
+								'msg' => 'La ou les selections n \'ont pas été sauvegardé correctement. au moment de l\'affectation de l\'historique.',
+							));
+						}
 					}
 
 					// suppression du pari en cours.
-					$encoursparis->delete();
+					$encoursparis_delete_correctly = $encoursparis->delete();
+					if(!$encoursparis_delete_correctly){
+						return Response::json(array(
+							'etat' => 0,
+							'msg' => 'Ce pari en cours n\' a pas été supprimé correctement.',
+						));
+					}
+
 
 					// mis a jour des bankrolls des bookmakers uniquement si le followtype est de type normal.
 					if ($followtype == 'n') {
@@ -183,6 +217,12 @@
 						$book = BookmakerUser::find($book_id);
 						$book->bankroll_actuelle += $retour_devise;
 						$book->save();
+						if(!$book){
+							return Response::json(array(
+								'etat' => 0,
+								'msg' => 'La mise à jour du solde du bookmaker n\'a pas fonctionné.',
+							));
+						}
 					}
 
 					return Response::json(array(
@@ -241,6 +281,7 @@
 		public function destroy($id)
 		{
 			$pari = Auth::user()->termineParis()->where('id', $id)->first();
+			Clockwork::info($pari);
 
 			if(!is_null($pari)){
 				if(!$pari->cashouted){

@@ -327,12 +327,7 @@ License: You must have a valid license purchased only from themeforest(the above
         });
         @include('includes.subview.inits')
     </script>
-<!-- ClickDesk Live Chat Service for websites -->
-
-<!--End of Zopim Live Chat Script-->
-    @show
-
-
+@show
             <!-- END JAVASCRIPTS -->
 
 

@@ -3,20 +3,14 @@
  */
 
     //paris
-//parisEnCoursDelete();
 getBookmakersForSelection();
-//loadParisEnCours();
+loadParisEnCours();
 loadParisLongTerme();
-//loadParisABCD();
-//cashOut();
-//loadParisABCD();
+loadParisABCD();
 loadParisTermine();
-
-// dashboard
-// loadRecapsOnDashboard();
 loadGeneralRecapsOnDashboard();
 loadBookmakersOnDashboard();
-
+cashOut();
 // formulaire d'ajout de pari
 gestionTicket();
 addManualCouponSelection();

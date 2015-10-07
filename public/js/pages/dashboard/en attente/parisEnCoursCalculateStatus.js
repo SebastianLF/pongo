@@ -3,7 +3,7 @@
  */
 
 // calcul pour l affichage du profit du ticket.
-function calculProfits(type, status, grand_parent_var, profits_var, mise_var, devise_var) {
+/*function calculProfits(type, status, grand_parent_var, profits_var, mise_var, devise_var) {
     var mise = mise_var;
     var result = mise;
     var grand_parent = grand_parent_var;
@@ -224,3 +224,4 @@ function parisEnCoursCalculateStatus(tablename) {
         }
     });
 }
+*/

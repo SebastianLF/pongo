@@ -58,9 +58,7 @@
                 <td>
                     @if($pari->type_profil == 's')
                         @if($pari->selections->first()->isMatch)
-                            <?php $date = Carbon::createFromFormat('Y-m-d H:i:s', $pari->selections->first()->date_match, 'Europe/Paris');
-                            $date->setTimezone(Auth::user()->timezone);?>
-                            {{{' ('.$date->format('d/m H:i').') '.$pari->selections->first()->game_name}}}
+                            {{{$pari->selections->first()->game_name}}}
                         @else
                             {{{'N/A'}}}
                         @endif
@@ -109,10 +107,10 @@
 
 
                 <td width="120px">
-                    {{ Form::button('<i class="fa fa-check"></i>', array('data-pari-type' => $pari->type_profil, 'data-pari-id' => $pari->id, 'class' => 'boutonvalider btn btn-sm green-jungle buttons-actions-ticket')) }}
-                    {{ Form::button('<i class="fa fa-trash-o"></i>', array('data-pari-type' => $pari->type_profil, 'data-pari-id' => $pari->id, 'class' => 'boutonsupprimer btn btn-sm red buttons-actions-ticket')) }}
+                    {{ Form::button('<i class="fa fa-check"></i>', array('data-pari-type' => $pari->type_profil, 'data-pari-id' => $pari->id, 'class' => 'boutonvalider btn btn-sm ladda-button green-jungle buttons-actions-ticket')) }}
+                    {{ Form::button('<i class="fa fa-trash"></i>', array('data-pari-type' => $pari->type_profil, 'data-pari-id' => $pari->id, 'data-style' => "zoom-in", 'class' => 'boutonsupprimer btn btn-sm ladda-button red buttons-actions-ticket')) }}
                     @if($pari->followtype == 'n')
-                        {{ Form::button('<i class="fa fa-briefcase"></i>', array('type' => 'submit', 'class' => 'btn btn-sm grey-gallery form-bouton-paris buttons-actions-ticket', 'data-toggle' => 'modal', 'data-target' => '#cashoutModal', 'data-hover' => 'tooltip', 'data-id' => $pari->id, 'title' => 'Cash Out')) }}
+                        {{ Form::button('<i class="fa fa-briefcase"></i>', array('type' => 'submit', 'class' => 'btn btn-sm grey-gallery form-bouton-paris buttons-actions-ticket boutoncashout', 'data-toggle' => 'modal', 'data-target' => '#cashoutModal', 'data-hover' => 'tooltip', 'data-id' => $pari->id, 'title' => 'Cash Out')) }}
                     @endif
                 </td>
             </tr>

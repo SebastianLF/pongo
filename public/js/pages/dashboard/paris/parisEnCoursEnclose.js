@@ -2,33 +2,14 @@
  * Created by sebs on 19/04/2015.
  */
 
-function parisEnCoursEnclose(tablename, url) {
+function parisEnCoursEnclose(tablename, type) {
     var table = tablename;
     var bouton_valider = table.find('.boutonvalider');
 
 // click sur le bouton valider du paris en cours , qui va le transferer vers historique(termineParis)
-    bouton_valider.on('click', function (e) {
+    table.on('click', '.boutonvalider', function (e) {
         e.preventDefault();
-        /*
-         var parent = $(this).closest('.mainrow');
-         var wrapper = $(this).closest('.wrapperRow');
-         var retour = parent.find('.tdretour span.subretour');
-         var id = parent.find('.id').text();
-         var childrows = [];
-         var childrowsstatus = [];
-         var subrow = parent.next().find('.child-row input');
-         var type = parent.find('.type').text();
-
-         if (type == 'S') {
-         childrows = parent.find('select[name="resultatSelectionDashboardInput[]"]').serialize();
-         childrowsstatus = parent.find('input[name="childrowsinput[]"]').serialize();
-         } else {
-         childrows = parent.next().find('select[name="resultatSelectionDashboardInput[]"]').serialize();
-         childrowsstatus = parent.next().find('input[name="childrowsinput[]"]').serialize();
-         }
-         console.log(childrows);
-         console.log(childrowsstatus);*/
-
+        var l = Ladda.create(this);
         var tr_main = $(this).closest('tr');
         var tr_childs = tr_main.next('tr.details');
         var type_profil = $(this).data('pari-type');
@@ -38,50 +19,43 @@ function parisEnCoursEnclose(tablename, url) {
         if (type_profil == 's') {
             status.push(tr_main.find('select[name="status[]"]').val());
         } else {
-            alert(tr_childs.html());
-            status = tr_childs.find('select[name="status[]"]').each(function () {
+            tr_childs.find('select[name="status[]"]').each(function () {
                 status.push($(this).val())
             });
         }
+        console.log(status);
 
-        alert(status);
-
-        if(tr_childs.length == 0 && type_profil == 'c'){
-            swal("Erreur", "cliquez sur la croix pour dérouler le combiné et selectionner les status.")
-        }else if(tr_childs.length > 0 && type_profil == 'c'){
-
-        }else if(type_profil == 's'){
-            $.each(status, function(index, value){
-                if(value == 0 || value != 2){}
-            });
+        if (tr_childs.length == 0 && type_profil == 'c') {
+            swal("Erreur", "Cliquez sur la croix pour dérouler le combiné et selectionnez les status pour chaque pari du combiné.")
         }
-        //si les status ont tous été bien renseigné ou alors si il y a au moins un pari perdu alors on peut finaliser le pari.
-        else if ((status.indexOf(0) != -1 && status.indexOf(2) == -1)) {
+        //si les status ont tous Ã©tÃ© bien renseignÃ© ou alors si il y a au moins un pari perdu alors on peut finaliser le pari.
+        else if ((status.indexOf('0') != -1 && status.indexOf('2') == -1)) {
             if (type_profil == 's') {
-                swal("Erreur", "Vous devez selectionnez un status")
-            } else {
-                swal("Erreur", "Vous êtes obligé de selectionner le status pour chaque selection du combiné sauf si un des paris a le status perdu.")
+                swal("Erreur", "Vous devez selectionnez un status !")
+            }
+            if (type_profil == 'c') {
+                swal("Erreur", "Vous êtes obligé de selectionner le status pour chaque pari du combiné. Si vous souhaitez valider le combiné plus rapidement il faut qu'au moins un des paris ait le status 'perdu', les status des autres paris n'ont alors pas besoin d'être renseignés.");
             }
         } else {
-            swal("OK", "OK");
-            /*$.ajax({
-             url: url,
-             type: 'post',
-             data: '',
-             dataType: 'json',
-             success: function (data) {
-             if (data.etat == 0) {
-             toastr.error(data.msg, 'Validation');
-             } else {
-             toastr.success(data.msg, 'Validation');
-             loadParisEnCours();
-             loadParisTermine();
-             loadBookmakersOnDashboard();
-             loadGeneralRecapsOnDashboard();
-             }
-             }
-             });*/
+            l.start();
+            $.ajax({
+                url: 'historique',
+                type: 'post',
+                data: 'status[]='+status+'&pari-id='+$(this).data('pari-id'),
+                dataType: 'json',
+                success: function (data) {
+                    if (data.etat == 0) {
+                        toastr.error(data.msg, 'Validation');
+                    } else {
+                        toastr.success(data.msg, 'Validation');
+                        if(type == 'lt'){loadParisLongTerme();}else if(type == 'm'){loadParisABCD();}else if(type == 'c'){loadParisEnCours();}
+                        loadNeededWhenAddToHistory();
+                    }
+                },
+                complete: function () {
+                    l.stop();
+                }
+            });
         }
-
     });
 }

@@ -61,6 +61,8 @@
 	});
 
 
+
+
 	// validator extension
 	Validator::extend('european_odd', function ($attribute, $value, $parameters) {
 		if (preg_match("/^\d+(\.\d{1,3})?$/", $value) && $value >= 1) {

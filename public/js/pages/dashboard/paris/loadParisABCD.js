@@ -1,15 +1,12 @@
-function loadParisLongTerme() {
-
-    var onglet_span = $('#onglet_paris_long_terme').find('span');
+function loadParisABCD() {
+    var onglet_span = $('#count_paris_abcd').find('span');
     $.ajax({
-        url: 'dashboard/ajax/parislongterme',
+        url: 'dashboard/ajax/parisabcd',
         type: 'get',
         success: function (data) {
+            $('#tab_15_3').html(data);
 
-            // chargement des paris long terme dans la div.
-            $('#tab_15_2').html(data.vue);
-
-            var table = $("#parislongtermetable");
+            var table = $("#parismartingaletable");
 
             /*
              * Insert a 'details' column to the table
@@ -29,7 +26,7 @@ function loadParisLongTerme() {
             });
 
 
-            var oTable = $("#parislongtermetable").dataTable({
+            var oTable = $("#parismartingaletable").dataTable({
 
                 // Internationalisation. For more info refer to http://datatables.net/manual/i18n
                 language: {
@@ -70,7 +67,7 @@ function loadParisLongTerme() {
 
             });
 
-            var tableWrapper = $('#parislongtermetable_wrapper'); // datatable creates the table wrapper by adding with id {your_table_jd}_wrapper
+            var tableWrapper = $('#parismartingaletable_wrapper'); // datatable creates the table wrapper by adding with id {your_table_jd}_wrapper
             tableWrapper.find('.dataTables_length select').select2(); // initialize select2 dropdown
 
             table.on('click', ' tbody td .row-details', function () {
@@ -89,23 +86,20 @@ function loadParisLongTerme() {
             });
 
             // afficher le count dans le bon endroit.
-            if (data.count_paris_longterme == 0) {
+            if (data.count_paris_abcd == 0) {
                 onglet_span.text('');
             } else {
-                onglet_span.html(data.count_paris_longterme);
+                onglet_span.html(data.count_paris_abcd);
             }
 
             // activation des tooltip.
             $('[data-toggle="tooltip"]').tooltip();
 
-            parisEnCoursEnclose(table, 'lt');
-            parisEnCoursDelete(table, 'lt');
-
+            parisEnCoursEnclose(table, 'm');
+            parisEnCoursDelete(table, 'm');
         },
         error: function (data) {
-            console.log("le chargement des paris long terme n\'a pas fonctionné");
-
+            $('#tab_15_3').html('<p>impossible de récuperer les paris ABCD</p>');
         }
     });
 }
-

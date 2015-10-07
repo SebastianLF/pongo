@@ -194,18 +194,14 @@ function gestionTicket() {
                                     toastr.error(json.msg[keyname], 'Erreur:');
                                 }
                             } else {
-
                                 toastr.error(json.msg, 'Erreur:');
-
                             }
-
                         } else if (json.etat == 1) {
                             tipster.val(null).trigger('change');
                             resetGeneralForm();
                             refreshSelections();
+                            loadNeededWhenAddToCurrentBets();
                             toastr.success(json.msg, 'Pari');
-                            loadParisEnCours();
-                            loadBookmakersOnDashboard();
                         }
                     },
                     error: function (json) {

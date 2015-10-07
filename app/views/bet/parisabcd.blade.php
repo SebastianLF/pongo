@@ -1,192 +1,122 @@
 @if($count_paris_abcd == '0')
     <div class="row">
         <div class="col-lg-4 col-lg-offset-4">
-            <span class="glyphicon glyphicon-plus-sign"></span> Ajouter un pari classique à l'aide du formulaire d'ajout ci-dessous <span class="glyphicon glyphicon-hand-down"></span>
+            <span class="glyphicon glyphicon-plus-sign"></span> Ajouter un pari classique à l'aide du formulaire d'ajout
+            dans le panneau ci-dessous <span class="glyphicon glyphicon-hand-down"></span>
         </div>
     </div>
 @else
-
-<div class="table-scrollable table-scrollable-borderless">
-    <table id="parisabcdtable" class="table table-condensed table-hover table-light"
-           style="border-collapse:collapse;">
+    <table id="parismartingaletable" class="table table-condensed table-bordered">
         <thead>
         <tr class="uppercase">
-            <th id="count" class="hidden ">{{$count_paris_abcd}}</th>
             <th></th>
-            <th>N°</th>
-            <th>date ajout</th>
-            <th>type</th>
-            <th colspan="3" align="center">Apercu</th>
-            <th>Pari <span class="glyphicon glyphicon-info-sign"></span></th>
-            <th>Cote</th>
+            <th>identifiant</th>
+            <th>date r.</th>
+            <th>Sport</th>
+            <th>Competition</th>
+            <th>Rencontre</th>
+            <th>Pari</th>
             <th>Tipster</th>
-            <th>Bookmaker</th>
+            <th>Book</th>
+            <th>Cote</th>
             <th>Mise</th>
-            <th>intitulé</th>
-            <th>profits</th>
+            <th>Status</th>
             <th></th>
         </tr>
         </thead>
         <tbody>
         @foreach($parisabcd as $pari)
-            <div class="wrapperRow">
-                <a href="">
-                    <tr data-toggle="collapse" data-target="{{'.row'.$pari->numero_pari}}"
-                        class="mainrow accordion-toggle parisabcd-accordeon">
-
-                        <td class="hidden id">{{$pari->id}}</td>
-
-                        <td class="subbetclick"><span data-toggle="collapse"
-                                                      data-target="{{'.row'.$pari->numero_pari}}"
-                                                      class="glyphicon glyphicon-chevron-right"></span></td>
-                        <td><a href="javascript:;" class="primary-link">#{{$pari->numero_pari}}</a></td>
-                        <td>{{$pari->created_at->format('d/m/Y')}}</td>
-                        <td>
-                            <span class="label label-sm label-success label-mini">{{$pari->type_profil == 's' ? 'simple' : 'combiné' }}</span>
-                            <span class="label label-sm label-danger label-mini">{{$pari->pari_abcd ? 'ABCD' : '' }}</span>
-                        </td>
-                        <td>
-                <span data-toggle="tooltip"
-                      title="{{isset($pari->selections[0]->sport) ? $pari->selections[0]->sport->name : 'aucun'}}">
-                    @if(isset($pari->selections[0]->sport))
-                        <img width="25px"
-                             src="{{isset($pari->selections[0]->sport->logo) ? asset('img/logos/sports').'/'.$pari->selections[0]->sport->logo : ''}}"
-                             alt=""/>{{isset($pari->selections[0]->sport->logo) ? '' : $pari->selections[0]->sport->name}}
+            <?php $app = App::make('pari_affichage');
+            $selections_final = $pari->selections;
+            foreach ($selections_final as $selections) {
+                $pariAffichage = $app->display($selections->market_id, $selections->pick, $selections->odd_doubleParam1, $selections->odd_doubleParam2, $selections->odd_doubleParam3, $selections->odd_participantParameterName, $selections->odd_participantParameterName2, $selections->odd_participantParameterName3, $selections->home_team, $selections->away_team);
+                $selections['pariAffichage'] = $pariAffichage;
+            } ?>
+            <tr data-selections='{{{$selections_final}}}' data-pari-id='{{{$pari->id}}}' data-pari-type='{{{$pari->type_profil}}}'>
+                <td>{{{'#'.$pari->numero_pari}}}</td>
+                <td>{{$pari->nom_abcd.' - '.$pari->lettre_abcd}}</td>
+                <td>
+                    @if($pari->type_profil == 's')
+                        <?php $date = Carbon::createFromFormat('Y-m-d H:i:s', $pari->selections->first()->date_match, 'Europe/Paris');
+                        $date->setTimezone(Auth::user()->timezone);?>
+                        {{{' '.$date->format('d/m/Y H:i')}}}
                     @else
-                        {{'non spéc.'}}
+                        <span class="label label-sm label-success label-mini">combiné</span>
                     @endif
-                </span>
-                        </td>
-                        <td>
-                <span data-toggle="tooltip"
-                      title="{{isset($pari->selections[0]->competition) ? $pari->selections[0]->competition->name : 'aucun'}}">
-                    @if(isset($pari->selections[0]->competition))
-                        <img width="30px"
-                             src="{{isset($pari->selections[0]->competition->logo) ? asset('img/logos/sports').'/'.$pari->selections[0]->competition->logo : ''}}"
-                             alt=""/>{{{isset($pari->selections[0]->competition->logo)? '' : $pari->selections[0]->competition->name}}}
+
+                </td>
+                <td>
+                    @if($pari->type_profil == 's')
+                        {{{$pari->selections->first()->sport->name}}}
                     @else
-                        {{'non spéc.'}}
+                        <span class="label label-sm label-success label-mini">combiné</span>
                     @endif
-                </span>
-                        </td>
-                        <td>
-                <span data-toggle="tooltip"
-                      title="{{isset($pari->selections[0]->equipe1) ? $pari->selections[0]->equipe1->name : 'aucun'}}">
-                    @if(isset($pari->selections[0]->equipe1))
-                        <img width="30px"
-                             src="{{isset($pari->selections[0]->equipe1->logo) ? asset('img/logos/sports').'/'.$pari->selections[0]->equipe1->logo : ''}}"
-                             alt=""/>{{isset($pari->selections[0]->equipe1->logo) ? '':$pari->selections[0]->equipe1->name}}
+                </td>
+                <td>@if($pari->type_profil == 's')
+                        {{{$pari->selections->first()->competition->name}}}
                     @else
-                        {{'non spéc.'}}
-                    @endif
-                </span>
-                <span data-toggle="tooltip"
-                      title="{{isset($pari->selections[0]->equipe2) ? $pari->selections[0]->equipe2->name  : 'aucun'}}">
-                    @if(isset($pari->selections[0]->equipe2))
-                        <img width="25px"
-                             src="{{isset($pari->selections[0]->equipe2->logo) ? asset('img/logos/sports').'/'.$pari->selections[0]->equipe2->logo : ''}}"
-                             alt=""/>{{isset($pari->selections[0]->equipe2->logo) ? '':$pari->selections[0]->equipe2->name}}
-                    @endif
-                </span>
-                        </td>
-                        <td>
-
-                        </td>
-
-                        <td class="fit tdcote">{{$pari->cote}}</td>
-                        <td>{{$pari->tipster->name}}</td>
-                        <td>
-                <span data-toggle="tooltip"
-                      title="{{isset($pari->compte->bookmaker->nom) ? $pari->compte->bookmaker->nom : 'à blanc' }}">
-                    @if(isset($pari->compte))
-                        <img width="60px"
-                             src="{{isset($pari->compte->bookmaker->logo) ? asset('img/logos/bookmakers').'/'.$pari->compte->bookmaker->logo : ''}}"
-                             alt=""/>{{isset($pari->compte->bookmaker->logo) ? '' : $pari->compte->bookmaker->nom }}
+                        <span class="label label-sm label-success label-mini">combiné</span>
+                    @endif</td>
+                <td>
+                    @if($pari->type_profil == 's')
+                        @if($pari->selections->first()->isMatch)
+                            {{{$pari->selections->first()->game_name}}}
+                        @else
+                            {{{'N/A'}}}
+                        @endif
                     @else
-                        <span class="label label-sm label-success label-mini">à blanc</span>
+                        <span class="label label-sm label-success label-mini">combiné</span>
                     @endif
-                </span>
-                        </td>
-                        <td class="tdmise bold">
-                            <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{' '.$user->devise}}}
-                        </td>
-                        <td>
-                            <span class="theme-font bold">{{$pari->nom_abcd}} - {{$pari->lettre_abcd}}</span>
-                        </td>
-                        <td class="bold"><span class="profits">Selectionnez un status</span><span
-                                    class="devise hide">{{{' '.$user->devise}}}</span></td>
-                        <td>
-                            {{ Form::open(array('route' => 'historique.store', 'class' => 'validerform form-bouton-paris' ,'role' => 'form', )) }}
-                            {{ Form::button('<i class="fa fa-check"></i>', array('type' => 'submit', 'class' => 'boutonvalider btn btn-sm green', 'disabled' => 'disabled')) }}
-                            {{ Form::close() }}
+                </td>
 
-                            {{ Form::open(array('route' => 'historique.destroy', 'class' => 'supprimerform form-bouton-paris','role' => 'form')) }}
-                            {{ Form::button('<i class="fa fa-times"></i>', array('type' => 'submit', 'class' => 'boutonsupprimer btn btn-sm red', )) }}
-                            {{ Form::close() }}
-                        </td>
-                    </tr>
-                    <tr class="subrow">
-                        <td colspan="17" class="childtable cancel-padding">
-                            <div class="{{'accordian-body collapse row'.$pari->numero_pari}}">
-                                <table class="table table-striped child-table table-bordered">
-                                    <thead>
+                <td class="blue">
+                    @if($pari->type_profil == 's')
+                        {{$pariAffichage}}
+                        {{' ('.$pari->selections->first()->scope->representation.') '}}
+                        @if($pari->selections->first()->score)
+                            {{' ('.$pari->selections->first()->score.' LIVE!) '}}
+                        @endif
+                    @else
+                        <span class="label label-sm label-success label-mini">combiné</span>
+                    @endif
+                </td>
+                <td>{{$pari->tipster->name}}</td>
+                <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}
+                </td>
+                <td class="fit tdcote">{{$pari->cote}}</td>
+                <td class="tdmise  bold">
 
-                                    <tr>
-                                        <th>date rencontre</th>
-                                        <th>sport</th>
-                                        <th>competition</th>
-                                        <th>equipe/joueur n°1</th>
-                                        <th>equipe/joueur n°2</th>
-                                        <th>cote</th>
-                                        <th>score/autre</th>
-                                        <th>status</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
+                    <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise}}} {{'('.+$pari->nombre_unites.'u)'}}
+                </td>
 
-                                    @foreach($pari->selections as $selection)
-                                        <tr class="child-table-tr">
-                                            <td class="hidden child-id">{{$selection->id}}</td>
-                                            <td>{{isset($selection->date_match) ? $selection->date_match : 'non spéc.'}}</td>
-                                            <td>{{isset($selection->sport) ? $selection->sport->name : 'non spéc.'}}</td>
-                                            <td>{{isset($selection->competition) ? $selection->competition->name : 'non spéc.'}}</td>
-                                            <td>{{isset($selection->equipe1) ? $selection->equipe1->name : 'non spéc.'}}</td>
-                                            <td>{{isset($selection->equipe2) ? $selection->equipe2->name : 'non spéc.'}}</td>
-                                            <td>
-                                                <span class="cote-td">{{$selection->cote}}</span>{{empty($selection->cote_apres_status) ? '' : ' ('.($selection->cote_apres_status).')'}}
-                                            </td>
-                                            <td><input type="text" name="childrowsinput[]"
-                                                       class="form-control input-sm"
-                                                       value="{{empty($selection->infos_pari) ? '' : $selection->infos_pari}}"/>
-                                            </td>
-                                            <td class="status-td">
-                                                <select name="resultatSelectionDashboardInput[]"
-                                                        data-value="{{$selection->status}}"
-                                                        class="form-control input-sm">
-                                                    <option value="0">--Selectionnez--</option>
-                                                    @foreach($types_resultat as $key => $type)
-                                                        <option value="{{$key}}"><a href="javascript:;"
-                                                                                    class="btn btn-xs">{{$type}}</a>
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
+                <td width="90px">
+                    @if($pari->type_profil == 's')
+                        <select name="status[]"
+                                data-value=""
+                                class="form-control inputs-ticket">
+                            <option value="0">-Choisir-</option>
+                            @foreach($types_resultat as $key => $type)
+                                <option value="{{$key}}"><a href="javascript:;"
+                                                            class="btn btn-xs">{{$type}}</a>
+                                </option>
+                            @endforeach
+                        </select>
+                    @else
+                        <span class="label label-sm label-success label-mini">combiné</span>
+                    @endif
 
-                            </div>
-                        </td>
+                </td>
 
 
-                    </tr>
-                </a>
-            </div>
+                <td width="120px">
+                    {{ Form::button('<i class="fa fa-check"></i>', array('data-pari-type' => $pari->type_profil, 'data-pari-id' => $pari->id, 'data-style' => "zoom-in", 'class' => 'boutonvalider btn btn-sm ladda-button green-jungle buttons-actions-ticket')) }}
+                    {{ Form::button('<i class="fa fa-trash"></i>', array('data-pari-type' => $pari->type_profil, 'data-pari-id' => $pari->id, 'data-style' => "zoom-in", 'class' => 'boutonsupprimer btn btn-sm ladda-button red buttons-actions-ticket')) }}
+                    @if($pari->followtype == 'n')
+                        {{ Form::button('<i class="fa fa-briefcase"></i>', array('type' => 'submit', 'class' => 'btn btn-sm grey-gallery form-bouton-paris buttons-actions-ticket', 'data-toggle' => 'modal', 'data-target' => '#cashoutModal', 'data-hover' => 'tooltip', 'data-id' => $pari->id, 'title' => 'Cash Out')) }}
+                    @endif
+                </td>
+            </tr>
         @endforeach
         </tbody>
-
     </table>
-</div>
-{{$parisabcd->appends(Input::except('page'))->links()}}
 @endif

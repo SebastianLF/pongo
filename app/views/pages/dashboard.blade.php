@@ -34,12 +34,12 @@
                                 <li id="onglet_paris_long_terme">
                                     <a href="#tab_15_2" data-toggle="tab">
                                         Paris long terme en cours <span
-                                                class="badge badge-default"></span></a>
+                                                class="badge badge-danger"></span></a>
                                 </li>
                                 <li id="onglet_paris_long_terme">
                                     <a href="#tab_15_3" data-toggle="tab">
                                         Paris Martingale en cours <span
-                                                class="badge badge-default"></span></a>
+                                                class="badge badge-danger"></span></a>
                                 </li>
                                 <li id="onglet_paris_termine">
                                     <a href="#tab_15_4" data-toggle="tab">
@@ -147,7 +147,7 @@
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane fade" id="tab_automatique">
-                                        <!-- @if(App::environment('local'))
+                                        @if(App::environment('local'))
                                             <iframe src={{"http://stage.betbrain.com/?portalId=1312&userSessionId=".Session::getId()}} height="600"
                                                     width="100%" frameborder="0">Odds service provided in
                                                 co-operation
@@ -155,13 +155,13 @@
                                                 <a href="http://www.betbrain.com"
                                                    target="_blank"><b>BetBrain.com</b></a>
                                             </iframe>
-                                        @else @endif -->
+                                        @else
                                         <iframe src={{"http://betbrain.com/?portalId=1326&userSessionId=".Session::getId()}} height="600"
                                                 width="100%" frameborder="0">Odds service provided in
                                             co-operation with <a href="http://www.betbrain.com"
                                                                  target="_blank"><b>BetBrain.com</b></a>
                                         </iframe>
-
+                                        @endif
                                     </div>
                                     <div class="tab-pane active fade in" id="tab_manuel">
                                         <div class="note note-success ">

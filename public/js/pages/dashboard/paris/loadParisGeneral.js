@@ -53,3 +53,75 @@ function fnFormatDetailsForChildsParisEnCours(oTable, selections, type) {
 
     return sOut;
 }
+
+
+
+function loadNeededWhenAddToHistory(){
+    loadParisTermine();
+    loadBookmakersOnDashboard();
+    loadGeneralRecapsOnDashboard();
+}
+
+function loadNeededWhenAddToCurrentBets(){
+    loadParisEnCours();
+    loadParisLongTerme();
+    loadParisABCD();
+    loadBookmakersOnDashboard();
+}
+
+function cashOut() {
+
+    var modal = $('#cashoutModal');
+    // passage de parametres vers le modal.
+    modal.on('show.bs.modal', function (e) {
+
+        //get data-id attribute of the clicked element
+        var pari_id = $(e.relatedTarget).data('id');
+
+        //populate the textbox
+        $(e.currentTarget).find('input[name="ticket-id"]').val(pari_id);
+    });
+
+    // cash out modal
+    var cashout_form = $('#cashout-update');
+    var cashout_select = cashout_form.find('#cashout-select');
+    var cashout_array = [{id: 'c', text: 'classic cash out'}, {id: 'p', text: 'partial cash out'}];
+    cashout_select.select2({
+        minimumResultsForSearch: Infinity,
+        cache: true,
+        data: cashout_array
+    });
+
+
+    // envoi du form.
+    cashout_form.submit(function (e) {
+        e.preventDefault();
+        var inputs = cashout_form.serialize();
+        $.ajax({
+            url: 'cashout',
+            type: 'post',
+            data: inputs,
+            dataType: 'json',
+            success: function (data) {
+                if (data.etat) {
+                    toastr.success(data.msg, data.head);
+                    loadParisEnCours();
+                    loadParisTermine();
+                    loadBookmakersOnDashboard();
+                    loadParisLongTerme();
+                    loadGeneralRecapsOnDashboard();
+                    modal.hide();
+
+                } else {
+                    for (key in data.msg) {
+                        keyname = key;
+                        toastr.error(data.msg[keyname], 'Erreur:');
+                    }
+                }
+            },
+            error: function () {
+
+            }
+        });
+    });
+}
