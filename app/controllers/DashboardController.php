@@ -21,12 +21,12 @@
 
 		public function showDashboard()
 		{
-			/*Excel::selectSheetsByIndex(0)->load('xls/BettingTypes.xls', function ($reader) {
+			Excel::selectSheetsByIndex(0)->load('xls/BettingTypes.xls', function ($reader) {
 				// Getting all results
 				$results = $reader->get();
 				Clockwork::info($results);
 				foreach($results as $result){
-					Market::create(array('id' => $result->id, 'name' => $result->name, 'description' => $result->description));
+					Market::create(array('id' => $result->id, 'name' => $result->name, 'representation' => $result->name, 'description' => $result->description));
 				}
 			});
 
@@ -46,7 +46,7 @@
 					$name = trim($result->name);
 					Bookmaker::create(array('nom' => $name));
 				}
-			});*/
+			});
 
 			JavaScript::put([
 				'timezone' => Auth::user()->timezone,
