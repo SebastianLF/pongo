@@ -14,7 +14,7 @@
         <tr>
             <td><?php $date = Carbon::createFromFormat('Y-m-d H:i:s', $transaction->created_at, 'Europe/Paris');
                 $date->setTimezone(Auth::user()->timezone);?>
-                {{{' '.$date->format('d/m/Y')}}}</td>
+                {{' '.$date->format('d/m/Y')}}</td>
             <td class="">{{$transaction->compte->bookmaker->nom}}</td>
             <td class="">{{$transaction->compte->nom_compte}}</td>
             <td>

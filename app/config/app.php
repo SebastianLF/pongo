@@ -136,6 +136,7 @@ return array(
         'Dollar\Generators\GeneratorsServiceProvider',
 		'Maatwebsite\Excel\ExcelServiceProvider',
 		'Laracasts\Utilities\UtilitiesServiceProvider',
+		'Jenssegers\Date\DateServiceProvider',
 	),
 
 	/*
@@ -207,7 +208,7 @@ return array(
 		'Debugbar' 		  => 'Barryvdh\Debugbar\Facade',
         'Clockwork'         => 'Clockwork\Support\Laravel\Facade',
 		'Excel' => 'Maatwebsite\Excel\Facades\Excel',
-
+		'Date' => 'Jenssegers\Date\Date::class',
 	),
 
 );

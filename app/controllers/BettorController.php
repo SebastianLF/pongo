@@ -43,10 +43,7 @@ class BettorController extends BaseController {
 
 	public function getMyTransactionsViewList()
 	{
-
-		Clockwork::info(Transaction::where('id', 1)->with(array('compte'))->get());
-
-		$transactions = Auth::user()->transactions()->with(array('compte'))->get();
+		$transactions = Auth::user()->transactions()->with(array('compte', 'compte.bookmaker'))->get();
 		Clockwork::info($transactions);
 		$view = View::make('transactions.listeTransactions', array('transactions' => $transactions));
 		return $view;

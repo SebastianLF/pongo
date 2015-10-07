@@ -54,7 +54,7 @@ License: You must have a valid license purchased only from themeforest(the above
             <ul class="nav navbar-nav pull-right">
 
                 <li class="header-date username username-hide-on-mobile">
-                    <span class="fa fa-calendar"></span> {{Carbon::now(Auth::user()->timezone)->formatLocalized('%d %B %Y')}}
+                    <span class="fa fa-calendar"></span> {{$date}}
                 </li>
                 <!-- BEGIN TODO DROPDOWN -->
                 <li class="droddown dropdown-separator">

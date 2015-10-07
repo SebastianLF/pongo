@@ -360,6 +360,11 @@ select{
     text-align: center;
 }
 
+.recaps-tipsters-date{
+    background-color: #fff !important;
+    border: 0px solid #e5e5e5 !important;
+}
+
 
 .table-bookmakersOnDashboard{
     margin: 0;

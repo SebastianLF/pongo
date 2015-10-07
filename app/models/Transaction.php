@@ -6,8 +6,6 @@ class Transaction extends Eloquent {
     protected $fillable = array('type', 'montant', 'description' );
 
     public function compte(){
-        return $this->belongsTo('BookmakerUser','bookmaker_user_id');
+        return $this->belongsTo('BookmakerUser','bookmaker_user_id')->withTrashed();
     }
-
-
 }

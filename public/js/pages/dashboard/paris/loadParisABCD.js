@@ -1,10 +1,11 @@
 function loadParisABCD() {
-    var onglet_span = $('#count_paris_abcd').find('span');
+    var onglet_span = $('#onglet_paris_martingale').find('span');
     $.ajax({
         url: 'dashboard/ajax/parisabcd',
         type: 'get',
         success: function (data) {
-            $('#tab_15_3').html(data);
+
+            $('#tab_15_3').html(data.vue);
 
             var table = $("#parismartingaletable");
 

@@ -2,7 +2,7 @@
 
 	use Carbon\Carbon;
 	use Laracasts\Utilities\JavaScript\Facades\JavaScript;
-	use yajra\Datatables\Datatables;
+	use Jenssegers\Date\Date;
 
 
 	class DashboardController extends BaseController
@@ -52,7 +52,11 @@
 				'timezone' => Auth::user()->timezone,
 			]);
 
-			return View::make('pages.dashboard');
+			Date::setLocale('fr');
+
+			$date = Date::now()->format('l j F Y');
+
+			return View::make('pages.dashboard', array('date' => $date));
 		}
 
 		public function getTipsters()
@@ -158,7 +162,7 @@
 					));
 					break;
 				case 'parislongterme':
-					$parislongterme = Auth::user()->enCoursParis()->with('selections.equipe1', 'selections.equipe1.country', 'selections.equipe2', 'selections.equipe2.country', 'selections.competition', 'selections.sport', 'selections.scope', 'compte.bookmaker', 'tipster')->where('pari_long_terme', '1')->orderBy('numero_pari', 'desc')->get();
+					$parislongterme = Auth::user()->enCoursParis()->with('selections.equipe1', 'selections.equipe1.country', 'selections.equipe2', 'selections.equipe2.country', 'selections.competition', 'selections.sport', 'selections.scope', 'compte.bookmaker', 'tipster')->where('pari_long_terme', 1)->orderBy('numero_pari', 'desc')->get();
 					$countParisLongTerme = $parislongterme->count();
 					$view = View::make('bet.parislongterme', array('parislongterme' => $parislongterme, 'types_resultat' => $this->types_resultat, 'count_paris_longterme' => $countParisLongTerme));
 					return array(
@@ -171,8 +175,12 @@
 					$parisABCD = Auth::user()->enCoursParis()->with('selections.equipe1', 'selections.equipe1.country', 'selections.equipe2', 'selections.equipe2.country', 'selections.competition', 'selections.sport', 'selections.scope', 'compte.bookmaker', 'tipster')->where('pari_abcd', 1)->where('pari_long_terme', 0)->orderBy('numero_pari', 'desc')->get();
 					Clockwork::info($parisABCD);
 					$countParisABCD = $parisABCD->count();
+					Clockwork::info($countParisABCD);
 					$view = View::make('bet.parisabcd', array('parisabcd' => $parisABCD, 'types_resultat' => $this->types_resultat, 'count_paris_abcd' => $countParisABCD));
-					return $view;
+					return array(
+						'vue' => $view->render(),
+						'count_paris_abcd' => $countParisABCD,
+					);
 
 					break;
 				case 'paristermine':
