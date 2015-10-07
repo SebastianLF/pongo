@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="[">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2015_01_25_162808_create_en_cours_paris_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2015_01_25_162808_create_en_cours_paris_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2015_02_01_035211_create_termine_paris_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2015_02_01_035211_create_termine_paris_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2015_05_22_032137_create_coupon_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2015_05_22_032137_create_coupon_table.php" />
+    <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="betsmanage.iws" />
@@ -61,8 +58,8 @@
       <file leaf-file-name="DashboardController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75814754">
-              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6123499">
+              <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
               <folding>
                 <element signature="e#8#26#0#PHP" expanded="true" />
               </folding>
@@ -806,12 +803,6 @@
       <option name="number" value="Default" />
       <updated>1411579515527</updated>
     </task>
-    <task id="LOCAL-00230" summary="share page en cours">
-      <created>1442570820038</created>
-      <option name="number" value="00230" />
-      <option name="project" value="LOCAL" />
-      <updated>1442570820038</updated>
-    </task>
     <task id="LOCAL-00231" summary="share page en cours">
       <created>1442669847276</created>
       <option name="number" value="00231" />
@@ -1100,7 +1091,13 @@
       <option name="project" value="LOCAL" />
       <updated>1444228916875</updated>
     </task>
-    <option name="localTasksCounter" value="279" />
+    <task id="LOCAL-00279" summary="composer require jenssegers/date">
+      <created>1444229221878</created>
+      <option name="number" value="00279" />
+      <option name="project" value="LOCAL" />
+      <updated>1444229221878</updated>
+    </task>
+    <option name="localTasksCounter" value="280" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1174,7 +1171,8 @@
     <MESSAGE value="essai correction bug paris en cours enclose" />
     <MESSAGE value="new table historique" />
     <MESSAGE value="table historique ladda + supprimer + export" />
-    <option name="LAST_COMMIT_MESSAGE" value="table historique ladda + supprimer + export" />
+    <MESSAGE value="composer require jenssegers/date" />
+    <option name="LAST_COMMIT_MESSAGE" value="composer require jenssegers/date" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1594,8 +1592,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75814754">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6123499">
+          <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
           <folding>
             <element signature="e#8#26#0#PHP" expanded="true" />
           </folding>
