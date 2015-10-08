@@ -371,12 +371,24 @@ select{
     padding: 0;
 }
 
+#automaticform-add hr{
+    margin: 2px 0;
+}
+
+#panier-selections-add-ticket .checkbox-inline{
+    padding-top: 0 !important;
+}
+
 .table-termine{
     vertical-align: middle !important;
 }
 
 .subrow{
     border-spacing: 0px !important;
+}
+
+.bordercg1{
+    border: 1px solid #e0e0e0 !important;
 }
 
 .table-subrow-combine{

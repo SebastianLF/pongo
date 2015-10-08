@@ -67,10 +67,10 @@
     <div class="row">
         <div class="col-md-8">
             <div class="portlet light ">
-                <div class="portlet-title ">
-                    <div class="caption">
+                <div class="portlet-title center-block">
+                    <div class="caption ">
                         <i class="icon-paper-plane"></i>
-                        <span class="caption-subject bold uppercase">Placer le pari </span>(dernière étape)
+                        <span class="caption-subject bold uppercase">Ajouter un pari </span>
                     </div>
 
                 </div>
@@ -96,51 +96,30 @@
                                  role="tabpanel"
                                  aria-labelledby="headingSelections">
                                 <div class="panel-body">
-                                    <div id="automatic-selections">
+                                    <div class="row" style="padding: 5px;">
+                                        <div class="col-md-8 bordercg1" style="min-height: 95px;">
+                                            <div id="automatic-selections">
 
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 bordercg1">
+                                            @include('bet/automatic_addbet')
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="panel panel-default ">
-                            <div class="panel-heading red-sunglo" role="tab" id="headingInfosGenerales">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse"
-                                       data-parent="#accordion-add-ticket"
-                                       href="#infos-generales-add-ticket"
-                                       aria-expanded="false" aria-controls="infos-generales-add-ticket">
-                                        Informations générales
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="infos-generales-add-ticket" class="panel-collapse collapse"
-                                 role="tabpanel"
-                                 aria-labelledby="headingInfosGenerales">
-                                <div class="panel-body">
-                                    @include('bet/automatic_addbet')
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-offset-5 ">
-                            <button type="submit" class="btn btn-danger ladda-button" data-style="slide-down"
-                                    data-size="l"><span class="ladda-label">PLACER LE PARI</span></button>
-                        </div>
                         {{ Form::close() }}
                     </div>
-                    <div class="caption selections-caption">
-                        <i class="icon-paper-plane"></i>
-                        <span class="caption-subject bold uppercase">Choisir selection(s) </span>(première étape)
-                    </div>
-                    <hr/>
                     <div class="tabbable-custom">
                         <ul class="nav nav-tabs">
                             <li class="">
                                 <a href="#tab_automatique" data-toggle="tab" aria-expanded="true">
-                                    Automatique </a>
+                                    Selection automatique </a>
                             </li>
                             <li class="active">
                                 <a href="#tab_manuel" data-toggle="tab" aria-expanded="false">
-                                    Manuel </a>
+                                    Selection manuelle </a>
                             </li>
 
                         </ul>

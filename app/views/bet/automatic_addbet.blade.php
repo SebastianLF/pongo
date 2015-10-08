@@ -1,4 +1,4 @@
-<div class="col-lg-5 col-md-12 col-sm-12 col-xs-12  center-block">
+
     <div class="form-body " style="padding:5px;">
         <div class="row">
             <div class="col-md-3">
@@ -44,6 +44,7 @@
                 </div>
             </div>
         </div>
+        <hr>
         <!--/row-->
         <div id="typestakecontainer" class="row">
             <div class="col-md-3">
@@ -67,7 +68,7 @@
             <div class="col-md-3 col-md-offset-1 typestakeunites">
                 <div class="form-group">
                     <div class="">
-                        <label class="">Mise en unités</label>
+                        <label class="">Mise en U</label>
                     </div>
                     <div class="input-group">
                         <div class="input-group-addon">u</div>
@@ -84,7 +85,7 @@
                         <label class="">Conversion en {{Auth::user()->devise}}</label>
                     </div>
                     <div class="input-group">
-                        <div class="input-group-addon">€</div>
+                        <div class="input-group-addon">{{Auth::user()->devise}}</div>
                         <input type="text" id="amountconversion"
                                name="amountconversion"
                                class="form-control input-sm" readonly>
@@ -97,7 +98,7 @@
                         <label class="">Mise en {{Auth::user()->devise}}</label>
                     </div>
                     <div class="input-group">
-                        <div class="input-group-addon">€</div>
+                        <div class="input-group-addon">{{Auth::user()->devise}}</div>
                         <input type="text" id="amountinputdashboard"
                                name="amountinputdashboard"
                                class="form-control input-sm">
@@ -105,6 +106,7 @@
                 </div>
             </div>
         </div>
+        <hr>
         <div id="bookmakercontainer" class="row">
 
             <!--/span-->
@@ -125,6 +127,7 @@
             <!--/span-->
         </div>
         <!--/row-->
+        <hr>
 
         <!--/span-->
         <div id="optionscontainer" class="row">
@@ -134,17 +137,6 @@
                         <label class="checkbox-inline">
                             <input type="checkbox" id="ticketABCD"
                                    value="ticketABCD">Pari ABCD
-                        </label>
-                        <!-- <label class="checkbox-inline">
-                             <input type="checkbox" id="ticketGratuit"
-                                    value="ticketGratuit">Pari gratuit <span
-                                     class="glyphicon glyphicon-question-sign"
-                                     data-toggle="tooltip"
-                                     title="Pari Gratuit: à cocher uniquement lorsque le bookmaker"></span>
-                         </label> -->
-                        <label class="checkbox-inline">
-                            <input type="checkbox" id="ticketLongTerme"
-                                   value="ticketLongTerme">Pari long terme
                         </label>
                     </div>
                 </div>
@@ -179,10 +171,16 @@
                     </div>
                 </div>
             </div>
-
             <!--/span-->
         </div>
+        <hr>
+        <div id="submitboutoncontainer" class="row">
+            <div class="text-center col-md-12">
+                <button type="submit" class="btn btn-danger ladda-button" data-style="slide-down" data-size="l"><span class="ladda-label">AJOUTER LE PARI</span></button>
+            </div>
+        </div>
+
     </div>
-</div>
+
 
 

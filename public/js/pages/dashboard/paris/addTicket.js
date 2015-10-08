@@ -146,7 +146,6 @@ function gestionTicket() {
             var l = Ladda.create(this);
 
 
-            followtype.prop('disabled', false); // sinon le follwotype n est pas evnoye puisqu il ne peut pas y avoir de readonly pour les select. Le followtype est remis en disabled avec le callback 'complete' de la requete ajax d'ajout.
             var data = form.serialize();
             var linesnum = form.find('.betline').length;
             if (linesnum == '') {
@@ -159,29 +158,22 @@ function gestionTicket() {
             } else if (linesnum >= 1) {
                 //serialize doesnt retrieve .text() of an input
                 var ticketABCD;
-                var ticketGratuit;
-                var ticketLongTerme;
                 if (abcd_checkbox.is(":checked")) {
                     ticketABCD = 1;
                 } else {
                     ticketABCD = 0;
                 }
-                if (gratuit_checkbox.is(":checked")) {
-                    ticketGratuit = 1;
-                } else {
-                    ticketGratuit = 0;
-                }
-                if (longterme_checkbox.is(":checked")) {
-                    ticketLongTerme = 1;
-                } else {
-                    ticketLongTerme = 0;
-                }
+
+                var optionlt = [];
+                $('#automaticform-add').find('input[name="optionlt[]"]').each(function(){
+                    if ($(this).is(":checked")) {optionlt.push(1);} else {optionlt.push(0);}
+                });
 
                 l.start();
                 $.ajax({
                     url: 'encourspari/auto',
                     type: 'post',
-                    data: data + '&linesnum=' + linesnum + '&ticketABCD=' + ticketABCD + '&ticketGratuit=' + ticketGratuit + '&ticketLongTerme=' + ticketLongTerme,
+                    data: data + '&linesnum=' + linesnum + '&ticketABCD=' + ticketABCD + '&optionlt=' +optionlt,
                     dataType: 'json',
                     success: function (json) {
                         var keyname;
@@ -208,7 +200,6 @@ function gestionTicket() {
                         console.log('erreur ajout de pari');
                     },
                     complete: function () {
-                        followtype.prop('disabled', true); // remettre le followtype sur disabled.
                         l.stop();
                     }
                 });
@@ -217,7 +208,7 @@ function gestionTicket() {
     }
 
     function resetGeneralForm() {
-        followtype.val(null).trigger('change').prop('disabled', true);
+        followtype.val(null).trigger('change');
         amount_per_unit.val(null);
         typestake.val('u').trigger("change");
         conversion_to_devise.val(0).prop('disabled', true);
@@ -309,8 +300,8 @@ function gestionTicket() {
         followtype.select2({
             cache: true,
             minimumResultsForSearch: Infinity,
-            data: [{id: "", text: ""}, {id: "n", text: "normal"}, {id: "b", text: "à blanc"}]
-        }).prop("disabled", true);
+            data: [{id: "n", text: "normal"}, {id: "b", text: "à blanc"}]
+        });
     }
 
 
