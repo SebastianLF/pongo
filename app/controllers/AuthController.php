@@ -73,8 +73,7 @@ class AuthController extends Controller {
 	public function getLogout()
 	{
 		// supression des selections dans la table coupon correspondant à la session, avant de la quitter.
-		$selectionsCoupon = Coupon::where('session_id', Session::getId())->get();
-		$selectionsCoupon->delete();
+		$selectionsCoupon = Coupon::where('session_id', Session::getId())->delete();
 		Auth::logout();
 		return Redirect::to('auth/login');
 	}
