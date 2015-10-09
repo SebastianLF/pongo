@@ -375,6 +375,10 @@ select{
     margin: 2px 0;
 }
 
+#manualselectionform-add hr{
+    margin: 2px 0;
+}
+
 #panier-selections-add-ticket .checkbox-inline{
     padding-top: 0 !important;
 }

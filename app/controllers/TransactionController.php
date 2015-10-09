@@ -80,6 +80,9 @@
 					$transaction = new Transaction(array('type' => $type, 'montant' => $amount, 'description' => $description));
 					$compte->transactions()->save($transaction);
 
+					$compte->bankroll_actuelle += $amount;
+					$compte->save();
+
 					return Response::json(array(
 						'state' => true,
 					));
@@ -92,6 +95,9 @@
 						// insertion d'une nouvelle transaction.
 						$transaction = new Transaction(array('type' => $type, 'montant' => $amount, 'description' => $description));
 						$compte->transactions()->save($transaction);
+
+						$compte->bankroll_actuelle -= $amount;
+						$compte->save();
 
 						return Response::json(array(
 							'state' => true,
@@ -112,6 +118,9 @@
 					// insertion d'une nouvelle transaction.
 					$transaction = new Transaction(array('type' => $type, 'montant' => $amount, 'description' => $description));
 					$compte->transactions()->save($transaction);
+
+					$compte->bankroll_actuelle += $amount;
+					$compte->save();
 
 					return Response::json(array(
 						'state' => true,

@@ -142,12 +142,10 @@
                                 @endif
                             </div>
                             <div class="tab-pane active fade in" id="tab_manuel">
-                                <div class="note note-success ">
-                                    <p>Les informations a remplir dépendent du sport, renseignez le champ
-                                        sport avant le reste.</p>
-                                </div>
                                 <div class="note note-danger">
-                                    <p>Lorsque le symbole <span class="glyphicon glyphicon-save"></span>
+                                    <p>- Les informations a remplir dépendent du sport, renseignez le champ
+                                        sport avant le reste.</p>
+                                    <p>- Lorsque le symbole <span class="glyphicon glyphicon-save"></span>
                                         apparaît, c'est à vous
                                         d'inscrire le nom de l'equipe (ou du joueur) dans le champ de
                                         recherche puis le selectioner.</p>
