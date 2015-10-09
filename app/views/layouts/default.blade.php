@@ -298,7 +298,7 @@ License: You must have a valid license purchased only from themeforest(the above
             });
 
 
-            $("body").tooltip({ selector: '[data-toggle="tooltip"]' });
+            $('[data-toggle="tooltip"]').tooltip();
 
 
             // ajouter le token a chaque requete ajax.

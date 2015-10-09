@@ -52,11 +52,8 @@
 				'timezone' => Auth::user()->timezone,
 			]);
 
-			Date::setLocale('fr');
 
-			$date = Date::now()->format('l j F Y');
-
-			return View::make('pages.dashboard', array('date' => $date));
+			return View::make('pages.dashboard');
 		}
 
 		public function getTipsters()
