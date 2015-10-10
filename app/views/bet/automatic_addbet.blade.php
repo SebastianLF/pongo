@@ -138,6 +138,10 @@
                             <input type="checkbox" id="ticketABCD"
                                    value="ticketABCD">Pari ABCD
                         </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="ticketABCD"
+                                   value="ticketABCD">Pari long terme
+                        </label>
                     </div>
                 </div>
             </div>

@@ -157,11 +157,16 @@ function gestionTicket() {
                 });
             } else if (linesnum >= 1) {
                 //serialize doesnt retrieve .text() of an input
-                var ticketABCD;
+                var ticketABCD, ticketLongTerme;
                 if (abcd_checkbox.is(":checked")) {
                     ticketABCD = 1;
                 } else {
                     ticketABCD = 0;
+                }
+                if (longterme_checkbox.is(":checked")) {
+                    ticketLongTerme = 1;
+                } else {
+                    ticketLongTerme = 0;
                 }
 
                 var optionlt = [];
@@ -173,7 +178,7 @@ function gestionTicket() {
                 $.ajax({
                     url: 'encourspari/auto',
                     type: 'post',
-                    data: data + '&linesnum=' + linesnum + '&ticketABCD=' + ticketABCD + '&optionlt=' +optionlt,
+                    data: data + '&linesnum=' + linesnum + '&ticketABCD=' + ticketABCD + '&ticketLongTerme=' + ticketLongTerme,
                     dataType: 'json',
                     success: function (json) {
                         var keyname;
@@ -296,6 +301,21 @@ function gestionTicket() {
             var mt = Number(tipster_infos[0]['montant_par_unite']);
             isNaN(mt) ? amount_per_unit.val('') : amount_per_unit.val(mt);
 
+        });
+
+    }
+
+    function gestionFollowtype(){
+        followtype.on('change', function (){
+            if(tipster.val() != ''){
+                if(followtype.val() == 'n'){
+                    bookmaker_account.prop('disabled', false);
+                    bookmaker_container.fadeIn().removeClass('hidden');
+                }else{
+                    bookmaker_account.prop('disabled', true);
+                    bookmaker_container.fadeOut().addClass('hidden');
+                }
+            }
         });
         followtype.select2({
             cache: true,
@@ -440,6 +460,7 @@ function gestionTicket() {
     refreshSelections();
     ajouterTicket();
     gestionTipsters();
+    gestionFollowtype();
     typestakechoice();
     conversionMises();
     gestionBookmakerAccount();

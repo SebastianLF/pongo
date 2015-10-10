@@ -140,6 +140,7 @@
 						'nombre_unites' => $mise_unites,
 						'mise_totale' => $mise_devise,
 						'pari_abcd' => Input::get('ticketABCD'),
+						'pari_long_terme' => Input::get('ticketLongTerme'),
 						'nom_abcd' => Input::get('serieinputdashboard'),
 						'lettre_abcd' => Input::get('letterinputdashboard'),
 						'tipster_id' => $tipster->id,
@@ -156,13 +157,10 @@
 
 					$cotes = 1;
 					$odds_iterator = 0;
-					$optionlt_iterator = 0;
-					$optionlt_array = explode(',', Input::get('optionlt'));
 					$odds_array = Input::get('automatic-selection-cote');
 					$count_live = 0;
 
 					Clockwork::info(Input::get('optionlt'));
-					Clockwork::info($optionlt_array);
 
 					if (!is_null($encourparis)) {
 						foreach ($selections_coupon as $selection_coupon) {
@@ -190,7 +188,7 @@
 								'odd_participantParameterName3' => $selection_coupon->odd_participantParameterName3,
 								'odd_groupParam' => $selection_coupon->odd_groupParam,
 								'isLive' => $selection_coupon->isLive,
-								'isOutright' => $optionlt_array[$optionlt_iterator],
+								'isOutright' => 0,
 								'isMatch' => $selection_coupon->isMatch,
 								'score' => $selection_coupon->score,
 								'market_id' => $selection_coupon->market_id,
@@ -210,16 +208,13 @@
 
 							$cotes *= $odds_array[$odds_iterator];
 							$odds_iterator += 1;
-							$optionlt_iterator += 1;
 						}
 					}
 
-					Clockwork::info(in_array('1',$optionlt_array,true));
 
 					// mis a jour de la cote general.
 					$encourparis->cote = $cotes;
 					$encourparis->pari_live = $count_live > 0 ? 1 : 0;
-					$encourparis->pari_long_terme = in_array('1',$optionlt_array,true) ? 1 : 0;
 					$encourparis->save();
 					if(!$encourparis){return Response::json(array(
 						'etat' => 0,
