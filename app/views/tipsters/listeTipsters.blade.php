@@ -3,7 +3,7 @@
     <tr class="uppercase">
         <th>date creation</th>
         <th width="">Nom</th>
-        <th>Suivi</th>
+        <th>Suivi par défaut</th>
         <th width="">Montant par indice</th>
         <th width=""></th>
     </tr>

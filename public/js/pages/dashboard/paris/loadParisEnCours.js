@@ -16,15 +16,22 @@ function loadParisEnCours() {
             var nCloneTh = document.createElement('th');
             nCloneTh.className = "table-checkbox";
 
-            var nCloneTd = document.createElement('td');
-            nCloneTd.innerHTML = '<span class="row-details row-details-close"></span>';
+            var nCloneTdCombine = document.createElement('td');
+            nCloneTdCombine.innerHTML = '<span class="row-details row-details-close"></span>';
+
+            var nCloneTdSimple = document.createElement('td');
+            nCloneTdSimple.innerHTML = '<span class=""></span>';
 
             table.find('thead tr').each(function () {
                 this.insertBefore(nCloneTh, this.childNodes[0]);
             });
 
             table.find('tbody tr').each(function () {
-                this.insertBefore(nCloneTd.cloneNode(true), this.childNodes[0]);
+                if (parseInt($(this).data('data-nb-selections')) > 1) {
+                    this.insertBefore(nCloneTdCombine.cloneNode(true), this.childNodes[0]);
+                }else{
+                    this.insertBefore(nCloneTdSimple.cloneNode(true), this.childNodes[0]);
+                }
             });
 
 
@@ -32,24 +39,24 @@ function loadParisEnCours() {
 
                 // Internationalisation. For more info refer to http://datatables.net/manual/i18n
                 language: {
-                    processing:     "Traitement en cours...",
-                    search:         "Rechercher&nbsp;:",
-                    lengthMenu:    "Afficher _MENU_ &eacute;l&eacute;ments",
-                    info:           "Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
-                    infoEmpty:      "Affichage de l'&eacute;lement 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",
-                    infoFiltered:   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
-                    infoPostFix:    "",
+                    processing: "Traitement en cours...",
+                    search: "Rechercher&nbsp;:",
+                    lengthMenu: "Afficher _MENU_ &eacute;l&eacute;ments",
+                    info: "Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
+                    infoEmpty: "Affichage de l'&eacute;lement 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",
+                    infoFiltered: "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+                    infoPostFix: "",
                     loadingRecords: "Chargement en cours...",
-                    zeroRecords:    "Aucun &eacute;l&eacute;ment &agrave; afficher",
-                    emptyTable:     "Aucune donnée disponible dans le tableau",
+                    zeroRecords: "Aucun &eacute;l&eacute;ment &agrave; afficher",
+                    emptyTable: "Aucune donnée disponible dans le tableau",
                     paginate: {
-                        first:      "Premier",
-                        previous:   "Pr&eacute;c&eacute;dent",
-                        next:       "Suivant",
-                        last:       "Dernier"
+                        first: "Premier",
+                        previous: "Pr&eacute;c&eacute;dent",
+                        next: "Suivant",
+                        last: "Dernier"
                     },
                     aria: {
-                        sortAscending:  ": activer pour trier la colonne par ordre croissant",
+                        sortAscending: ": activer pour trier la colonne par ordre croissant",
                         sortDescending: ": activer pour trier la colonne par ordre décroissant"
                     }
                 },
@@ -133,7 +140,7 @@ function loadParisTermine() {
                     }
 
                     // affichage du status avec la bonne couleur.
-                    function statusAffichage(){
+                    function statusAffichage() {
                         switch (value.status) {
                             case 0:
                                 return 'N/A';
@@ -160,16 +167,20 @@ function loadParisTermine() {
                     }
 
                     // afficher N/A ou le resultat suivant ce que contient la variable resultat.
-                    function statusResultat(){
-                        if(value.resultat == '' || value.resultat == null){
+                    function statusResultat() {
+                        if (value.resultat == '' || value.resultat == null) {
                             return 'N/A';
-                        }else{return value.resultat}
+                        } else {
+                            return value.resultat
+                        }
                     }
 
-                    function affichageScore(){
-                        if(value.score == '' || value.score == null){
+                    function affichageScore() {
+                        if (value.score == '' || value.score == null) {
                             return '';
-                        }else{return '('+value.score+'LIVE!)'}
+                        } else {
+                            return '(' + value.score + 'LIVE!)'
+                        }
                     }
 
                     // structure de representation d'une ligne.
@@ -179,7 +190,7 @@ function loadParisTermine() {
                         '<td>' + value.sport.name + '</td>' +
                         '<td>' + value.competition.name + '</td>' +
                         '<td>' + rencontre + '</td>' +
-                        '<td>' + value.pariAffichage + ' ('+ value.scope.representation + ')' + affichageScore() + '</td>' +
+                        '<td>' + value.pariAffichage + ' (' + value.scope.representation + ')' + affichageScore() + '</td>' +
                         '<td>' + value.cote + '</td>' +
                         '<td>' + statusResultat() + '</td>' +
                         '<td class="uppercase">' + statusAffichage() + '</td>' +
@@ -212,24 +223,24 @@ function loadParisTermine() {
 
                 // Internationalisation. For more info refer to http://datatables.net/manual/i18n
                 language: {
-                    processing:     "Traitement en cours...",
-                    search:         "Rechercher&nbsp;:",
-                    lengthMenu:    "Afficher _MENU_ &eacute;l&eacute;ments",
-                    info:           "Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
-                    infoEmpty:      "Affichage de l'&eacute;lement 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",
-                    infoFiltered:   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
-                    infoPostFix:    "",
+                    processing: "Traitement en cours...",
+                    search: "Rechercher&nbsp;:",
+                    lengthMenu: "Afficher _MENU_ &eacute;l&eacute;ments",
+                    info: "Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
+                    infoEmpty: "Affichage de l'&eacute;lement 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",
+                    infoFiltered: "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+                    infoPostFix: "",
                     loadingRecords: "Chargement en cours...",
-                    zeroRecords:    "Aucun &eacute;l&eacute;ment &agrave; afficher",
-                    emptyTable:     "Aucune donnée disponible dans le tableau",
+                    zeroRecords: "Aucun &eacute;l&eacute;ment &agrave; afficher",
+                    emptyTable: "Aucune donnée disponible dans le tableau",
                     paginate: {
-                        first:      "Premier",
-                        previous:   "Pr&eacute;c&eacute;dent",
-                        next:       "Suivant",
-                        last:       "Dernier"
+                        first: "Premier",
+                        previous: "Pr&eacute;c&eacute;dent",
+                        next: "Suivant",
+                        last: "Dernier"
                     },
                     aria: {
-                        sortAscending:  ": activer pour trier la colonne par ordre croissant",
+                        sortAscending: ": activer pour trier la colonne par ordre croissant",
                         sortDescending: ": activer pour trier la colonne par ordre décroissant"
                     }
                 },
