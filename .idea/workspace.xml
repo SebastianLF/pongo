@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
+    <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="modif landing page - image supprimé - taille text augmenté">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/pages/landing/landing.css" afterPath="$PROJECT_DIR$/public/css/pages/landing/landing.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -115,8 +115,8 @@
       <file leaf-file-name="landing.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/pages/landing/landing.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7118644">
-              <caret line="155" column="24" selection-start-line="155" selection-start-column="24" selection-end-line="155" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.39291218">
+              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -797,12 +797,6 @@
       <option name="number" value="Default" />
       <updated>1411579515527</updated>
     </task>
-    <task id="LOCAL-00246" summary="share page en cours">
-      <created>1442939404269</created>
-      <option name="number" value="00246" />
-      <option name="project" value="LOCAL" />
-      <updated>1442939404269</updated>
-    </task>
     <task id="LOCAL-00247" summary="share page en cours">
       <created>1442940399739</created>
       <option name="number" value="00247" />
@@ -1091,7 +1085,13 @@
       <option name="project" value="LOCAL" />
       <updated>1444510014712</updated>
     </task>
-    <option name="localTasksCounter" value="295" />
+    <task id="LOCAL-00295" summary="modif landing page - image supprimé - taille text augmenté">
+      <created>1444510210823</created>
+      <option name="number" value="00295" />
+      <option name="project" value="LOCAL" />
+      <updated>1444510210823</updated>
+    </task>
+    <option name="localTasksCounter" value="296" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1582,8 +1582,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/pages/landing/landing.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7118644">
-          <caret line="155" column="24" selection-start-line="155" selection-start-column="24" selection-end-line="155" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.39291218">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
           <folding />
         </state>
       </provider>
