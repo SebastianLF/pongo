@@ -27,7 +27,8 @@ function loadParisEnCours() {
             });
 
             table.find('tbody tr').each(function () {
-                if (parseInt($(this).data('data-nb-selections')) > 1) {
+                console.log($(this).data('nb-selections'));
+                if ($(this).data('nb-selections') > 1) {
                     this.insertBefore(nCloneTdCombine.cloneNode(true), this.childNodes[0]);
                 }else{
                     this.insertBefore(nCloneTdSimple.cloneNode(true), this.childNodes[0]);
