@@ -146,7 +146,9 @@
 						'user_id' => Auth::user()->id,
 						'bookmaker_user_id' => $suivi == 'n' ? Input::get('accountsinputdashboard') : null
 					));
+
 					$encourparis->save();
+
 					if(!$encourparis){return Response::json(array(
 						'etat' => 0,
 						'msg' => 'Le pari n\'a pas été crée correctement.',

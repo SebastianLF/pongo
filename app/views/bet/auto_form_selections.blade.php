@@ -8,7 +8,6 @@
                 <th>pari</th>
                 <th>book</th>
                 <th width="80px">cote</th>
-                <th>options</th>
                 <th class="hide"></th>
                 <th></th>
             </tr>
@@ -37,12 +36,6 @@
                     <td>{{' '.$selection->bookmaker}}</td>
                     <td ><input class=" form-control input-coupon-odd" name="automatic-selection-cote[]" type="text"
                                value="{{floatval($selection->odd_value)}}"/></td>
-                    <td>
-                        <label class="checkbox-inline">
-                            <input type="checkbox" name="optionlt[]"> LT
-                        </label>
-                        <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="left" title="Long-terme"></span>
-                    </td>
                     <td width="5px">
                         <button class="boutonsupprimer btn btn-xs red"><i class="glyphicon glyphicon-trash"></i>
                         </button>

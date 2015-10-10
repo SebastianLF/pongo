@@ -58,7 +58,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     <a href="{{url('auth/login')}}">Se connecter</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="{{url('auth/inscription')}}">S'inscrire</a>
+                    <a href="{{url('')}}">S'inscrire</a>
                 </li>
 
             </ul>
@@ -71,7 +71,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <img class="img-responsive" src="{{asset('img/landing-logo.png')}}" alt="illustration">
+                <!--<img class="img-responsive" src="{{asset('img/logo-pongo-blanc.jpg')}}" alt="illustration">-->
                 <div class="intro-text">
                     <span class="name">pongo beta 1.0</span>
                     <span class="skills">Tableau de bord pour parieur sportif</span><br>
@@ -94,19 +94,16 @@ License: You must have a valid license purchased only from themeforest(the above
         <div class="container">
             <div class="row">
                 <div class="footer-col col-md-4">
-                    <h3>Historique</h3>
-                    <p>
-                        Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de tex</p>
+                    <h3><span class="glyphicon glyphicon-list-alt"></span> Liste des paris</h3>
+                    <p>Liste des paris simple,combiné,long terme,martingale en cours et historique commun de vos paris avec les différents tipsters et les différents bookmakers associés.</p>
                 </div>
                 <div class="footer-col col-md-4">
-                    <h3>Statistiques</h3>
-
-                    Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de tex
+                    <h3><span class="glyphicon glyphicon-user"></span> Tipsters</h3>
+                    <p>Gestion du montant par unité et du type de suivi normal ou à blanc. Consultation du bilan annuel,mensuel,hebdomadaire ou quotidien.</p>
                 </div>
                 <div class="footer-col col-md-4">
-                    <h3>Evolution</h3>
-                    <p>
-                        Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de tex</p>
+                    <h3><span class="icon-book-open"></span> Bookmakers</h3>
+                        <p>Profil actuel des vos comptes de bookmakers ( solde,depots,retraits,bonus ), fonctionne aussi si vous avez plusieurs comptes chez le meme bookmaker. </p>
                 </div>
             </div>
         </div>
