@@ -152,6 +152,10 @@ section h3 {
         transition: all .3s ease-in-out;
     }
 
-
+    .footer-below {
+        padding: 55px 0;
+        background-color: #364150;
+        color: #fff;
+    }
 
 }
