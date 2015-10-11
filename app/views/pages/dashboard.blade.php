@@ -126,19 +126,19 @@
                         <div class="tab-content">
                             <div class="tab-pane fade" id="tab_automatique">
                                 @if(App::environment('local'))
-                                    <iframe src={{"http://stage.betbrain.com/?portalId=1312&userSessionId=".Session::getId()}} height="600"
+                                   <!--  <iframe src={{"http://stage.betbrain.com/?portalId=1312&userSessionId=".Session::getId()}} height="600"
                                             width="100%" frameborder="0">Odds service provided in
                                         co-operation
                                         with
                                         <a href="http://www.betbrain.com"
                                            target="_blank"><b>BetBrain.com</b></a>
-                                    </iframe>
+                                    </iframe> -->
                                 @else
-                                    <iframe src={{"http://betbrain.com/?portalId=1326&userSessionId=".Session::getId()}} height="600"
+                                        <!--  <iframe src={{"http://betbrain.com/?portalId=1326&userSessionId=".Session::getId()}} height="600"
                                             width="100%" frameborder="0">Odds service provided in
                                         co-operation with <a href="http://www.betbrain.com"
                                                              target="_blank"><b>BetBrain.com</b></a>
-                                    </iframe>
+                                    </iframe>-->
                                 @endif
                             </div>
                             <div class="tab-pane active fade in" id="tab_manuel">

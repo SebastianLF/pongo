@@ -5,6 +5,7 @@ var concat = require('gulp-concat');
 var strip = require('gulp-strip-comments');
 var minifyHTML = require('gulp-minify-html');
 
+
 gulp.task('css', function(){
     return gulp.src(['public/css/*.css', 'public/css/**/*.css'])
         .pipe(minifycss())
@@ -15,6 +16,42 @@ gulp.task('css', function(){
 gulp.task('js', function() {
     return gulp.src('public/js/**/*.js')
         .pipe(concat('all.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('public/build/js'));
+});
+
+gulp.task('main-plugins', function() {
+    return gulp.src(['public/v4.1.0/theme/assets/global/plugins/jquery-migrate.min.js',
+        'public/v4.1.0/theme/assets/global/plugins/jquery-ui/jquery-ui.min.js',
+        'public/v4.1.0/theme/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js',
+        'public/v4.1.0/theme/assets/global/plugins/jquery.blockui.min.js',
+        'public/v4.1.0/theme/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js',
+        'public/v4.1.0/theme/assets/global/plugins/jquery.cokie.min.js',
+        'public/v4.1.0/theme/assets/global/plugins/uniform/jquery.uniform.min.js',
+        'public/v4.1.0/theme/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js',
+        'public/v4.1.0/theme/assets/global/plugins/smooth-scroll/smooth-scroll.js',
+        'public/v4.1.0/theme/assets/global/plugins/bootstrap-sessiontimeout/jquery.sessionTimeout.js',
+        'public/v4.1.0/theme/assets/global/plugins/bootstrap-select/bootstrap-select.min.js',
+        'public/v4.1.0/theme/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js',
+        'public/dist/bootstrap-session-timeout.min.js',
+        'public/js/plugin/select2-master/dist/js/select2.min.js',
+        'public/js/plugin/select2-master/dist/js/i18n/fr.js',
+        'public/js/plugin/toastr.js',
+        'public/js/plugin/bootstrap-daterangepicker-master/moment.min.js',
+        'public/js/plugin/bootstrap-daterangepicker-master/moment-timezone.js',
+        'public/js/plugin/sweetalert.min.js',
+        'public/js/plugin/jquery.animateNumber.min.js',
+        'public/js/plugin/bootstrap-daterangepicker-master/daterangepicker.js',
+        'public/dist/spin.min.js',
+        'public/dist/ladda.min.js',
+        'public/v4.1.0/theme/assets/global/scripts/metronic.js',
+        'public/v4.1.0/theme/assets/admin/layout/scripts/layout.js',
+        'public/v4.1.0/theme/assets/admin/pages/scripts/form-samples.js',
+        'public/v4.1.0/theme/assets/admin/pages/scripts/components-dropdowns.js',
+        'public/js/pages/getPaginationSelectedPage.js',
+        'public/js/pages/getBookmakersForSelection.js'
+    ])
+        .pipe(concat('main-plugins.js'))
         .pipe(uglify())
         .pipe(gulp.dest('public/build/js'));
 });

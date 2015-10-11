@@ -9,7 +9,7 @@
     <meta name="_token" content="{{ csrf_token() }}" />
 @endif
 
-        <!--Start of Zopim Live Chat Script-->
+        <!--Start of Zopim Live Chat Script
     <script type="text/javascript">
         window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
                 d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
@@ -17,9 +17,9 @@
             $.src="//v2.zopim.com/?2yLYoTe7KZc5eXH3mViXVyumTMmOeU8a";z.t=+new Date;$.
                     type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
     </script>
-    <!--End of Zopim Live Chat Script-->
+    End of Zopim Live Chat Script-->
 
-    <!-- Hotjar Tracking Code for slfweb.eu1.frbit.net -->
+    <!-- Hotjar Tracking Code for slfweb.eu1.frbit.net
     <script>
         (function(h,o,t,j,a,r){
             h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -29,18 +29,17 @@
             r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
             a.appendChild(r);
         })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
+    </script> -->
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
       type="text/css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs/jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,b-1.0.3,b-html5-1.0.3,cr-1.2.0,r-1.0.7,sc-1.3.0/datatables.min.css"/>
-
+    {{ HTML::style('v4.1.0/theme/assets/global/plugins/bootstrap/css/bootstrap.min.css') }}
 {{ HTML::style('dist/ladda-themeless.min.css') }}
 {{ HTML::style('v4.1.0/theme/assets/global/plugins/font-awesome/css/font-awesome.min.css') }}
 {{ HTML::style('v4.1.0/theme/assets/global/plugins/uniform/css/uniform.default.css') }}
-{{ HTML::style('v4.1.0/theme/assets/global/plugins/bootstrap/css/bootstrap.min.css') }}
 {{ HTML::style('v4.1.0/theme/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css') }}
 {{ HTML::style('v4.1.0/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css') }}
 {{ HTML::style('css/toastr.css') }}
@@ -54,9 +53,7 @@
 {{ HTML::style('v4.1.0/theme/assets/global/plugins/jqvmap/jqvmap/jqvmap.css') }}
 {{ HTML::style('v4.1.0/theme/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}
 {{ HTML::style('js/plugin/bootstrap-daterangepicker-master/daterangepicker-bs3.css') }}
-{{ HTML::style('v4.1.0/theme/assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css') }}
 {{ HTML::style('v4.1.0/theme/assets/admin/pages/css/pricing-table.css') }}
-{{ HTML::style('v4.1.0/theme/assets/global/plugins/icheck/skins/all.css') }}
 {{ HTML::style('v4.1.0/theme/assets/admin/pages/css/login.css') }}
 <!-- END PAGE LEVEL STYLES -->
 <!-- BEGIN PAGE STYLES -->
