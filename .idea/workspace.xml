@@ -2,7 +2,332 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/app.php" afterPath="$PROJECT_DIR$/app/config/app.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/fonts/FontAwesome.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/css/fonts/Simple-Line-Icons.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/css/fonts/Simple-Line-Icons.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/css/fonts/Simple-Line-Icons.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/aboutme.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/accordion-plusminus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ad.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ae.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/af.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ag.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ai.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/ajax-loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/ajax-modal-loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/al.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/am.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/amazon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/an.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ao.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/as.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/at.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/au.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/aw.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ax.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/az.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ba.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/bb.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/bd.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/be.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/behance.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/bf.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/images/bg-input-focus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/images/bg-input.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/bh.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/bi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/bj.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/blogger.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/bm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/bn.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/bo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/br.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/bs.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/bt.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/bv.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/bw.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/by.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/bz.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ca.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/catalonia.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/cc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/cd.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/cf.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/cg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ch.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ci.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ck.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/cl.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/cm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/cn.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/co.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/cr.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/cs.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/cu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/cv.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/cx.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/cy.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/cz.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/datatable-row-openclose.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/de.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/deviantart.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/dj.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/dk.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/dm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/do.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/dribbble.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/dropbox.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/dz.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ec.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ee.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/eg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/eh.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/england.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/er.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/es.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/et.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/europeanunion.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/evernote.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/facebook.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/fam.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/fi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/fj.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/fk.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/flickr.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/fm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/fo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/fonts/fontawesome-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/fonts/fontawesome-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/fonts/fontawesome-webfont.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/fonts/fontawesome-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/forrst.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/foursquare.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/fr.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ga.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/gb.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/gd.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ge.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/gf.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/gh.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/gi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/github.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/gl.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/gm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/gn.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/googleplus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/gp.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/gq.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/gr.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/gravatar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/gs.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/gt.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/gu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/gw.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/gy.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/hk.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/hm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/hn.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/hr.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ht.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/hu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/id.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ie.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/il.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/in.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/input-spinner.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/instagram.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/io.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/iq.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ir.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/is.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/it.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/jm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/jo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/jolicloud.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/jp.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ke.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/kg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/kh.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ki.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/klout.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/km.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/kn.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/kp.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/kr.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/kw.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ky.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/kz.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/la.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/last-fm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/lb.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/lc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/li.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/linkedin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/lk.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/loading-spinner-blue.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/loading-spinner-default.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/loading-spinner-grey.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/lr.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ls.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/lt.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/lu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/lv.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ly.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ma.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/mc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/md.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/me.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/mg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/mh.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/mk.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ml.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/mm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/mn.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/mo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/mp.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/mq.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/mr.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ms.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/mt.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/mu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/mv.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/mw.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/mx.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/my.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/myspace.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/mz.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/na.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/nc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ne.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/nf.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ng.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ni.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/nl.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/no.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/np.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/nr.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/nu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/nz.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/om.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/overlay-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/pa.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/pe.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/pf.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/pg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ph.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/picasa.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/pintrest.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/pk.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/pl.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/pm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/pn.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/portlet-collapse-icon-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/portlet-collapse-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/portlet-config-icon-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/portlet-config-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/portlet-expand-icon-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/portlet-expand-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/portlet-reload-icon-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/portlet-reload-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/portlet-remove-icon-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/portlet-remove-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/pr.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ps.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/pt.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/pw.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/py.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/qa.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/quora.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/re.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/reddit.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/remove-icon-small.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ro.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/rs.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/rss.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ru.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/rw.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/sa.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/sb.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/sc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/scotland.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/sd.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/se.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/sg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/sh.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/si.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/sj.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/sk.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/skype.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/sl.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/sm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/sn.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/so.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/spotify.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/images/sprite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/images/sprite_original.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/sr.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/st.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/stumbleupon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/sv.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/sy.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/syncfusion-icons-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/syncfusion-icons.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/sz.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/tc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/td.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/tf.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/tg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/th.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/tj.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/tk.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/tl.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/tm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/tn.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/to.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/tr.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/tt.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/tumblr.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/tv.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/tw.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/twitter.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/tz.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ua.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ug.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/um.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/us.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/uy.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/uz.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/va.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/vc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ve.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/vg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/vi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/vimeo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/vk.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/vn.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/vu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/wales.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/wf.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/wordpress.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ws.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/xing.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/yahoo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/ye.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/social/youtube.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/yt.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/za.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/zm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/zw.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/css/fonts/Simple-Line-Icons.dev.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/css/fonts/Simple-Line-Icons.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/fonts/fontawesome-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/css/main-css.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/build/img/flags/readme.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/includes/head.blade.php" afterPath="$PROJECT_DIR$/app/views/includes/head.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="betsmanage.iws" />
@@ -73,8 +398,8 @@
       <file leaf-file-name="default.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/default.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-32.46154">
-              <caret line="224" column="31" selection-start-line="224" selection-start-column="31" selection-end-line="224" selection-end-column="31" />
+            <state vertical-scroll-proportion="-13.5">
+              <caret line="225" column="44" selection-start-line="225" selection-start-column="44" selection-end-line="225" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -83,7 +408,7 @@
       <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.576923">
+            <state vertical-scroll-proportion="-22.384615">
               <caret line="135" column="37" selection-start-line="135" selection-start-column="37" selection-end-line="135" selection-end-column="37" />
               <folding>
                 <element signature="e#18536#18621#0#HTML" expanded="true" />
@@ -93,11 +418,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gulpfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="51" column="54" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.569378">
+              <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -106,18 +431,8 @@
       <file leaf-file-name="head.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/includes/head.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.615385">
-              <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/config/app.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7637271">
-              <caret line="27" column="56" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
+            <state vertical-scroll-proportion="-16.576923">
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -229,11 +544,11 @@
         <option value="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js" />
         <option value="$PROJECT_DIR$/app/views/pages/login.blade.php" />
-        <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/app/views/layouts/default.blade.php" />
         <option value="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/includes/head.blade.php" />
         <option value="$PROJECT_DIR$/app/config/app.php" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/app/views/includes/head.blade.php" />
       </list>
     </option>
   </component>
@@ -245,7 +560,7 @@
         <gulpfile-path>$PROJECT_DIR$/gulpfile.js</gulpfile-path>
         <tasks>
           <GulpTaskState>
-            <task-name>css</task-name>
+            <task-name>main-css</task-name>
           </GulpTaskState>
           <GulpTaskState>
             <task-name>js</task-name>
@@ -568,7 +883,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bootstrap" />
+              <option name="myItemId" value="uniform" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -606,7 +921,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bootstrap" />
+              <option name="myItemId" value="simple-line-icons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slfweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slfweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="v4.1.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="theme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="global" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -675,28 +1020,6 @@
               <option name="myItemId" value="build" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -709,24 +1032,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slfweb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -781,18 +1086,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\slfweb\public\build" />
+      <recent name="C:\wamp\www\slfweb\public\v4.1.0\theme\assets\global\css" />
+      <recent name="C:\wamp\www\slfweb\public\build\css" />
+      <recent name="C:\wamp\www\slfweb\public\build\fonts" />
       <recent name="C:\wamp\www\slfweb\public\v4.1.0\theme\assets\global\plugins" />
-      <recent name="C:\wamp\www\slfweb\public" />
-      <recent name="C:\wamp\www\slfweb\public\plugins" />
-      <recent name="C:\wamp\www\slfweb\public\js\pages\bookmakers" />
-      <recent name="C:\wamp\www\slfweb\public\dist" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\slfweb\public\build" />
+      <recent name="C:\wamp\www\slfweb\public\build\css" />
       <recent name="C:\wamp\www\slfweb\public\cdn-backdoor" />
       <recent name="C:\wamp\www\slfweb\public\js\pages\dashboard\paris" />
       <recent name="C:\wamp\www\slfweb\public\js\pages\dashboard\en attente" />
-      <recent name="C:\wamp\www\slfweb\public\js\pages\en attente" />
-      <recent name="C:\wamp\www\slfweb\app\views" />
     </key>
   </component>
   <component name="RunManager" selected="Gulp.js.dashboard-js">
@@ -922,12 +1227,6 @@
       <created>1411579515527</created>
       <option name="number" value="Default" />
       <updated>1411579515527</updated>
-    </task>
-    <task id="LOCAL-00254" summary="essai correction bug paris en cours enclose">
-      <created>1443058943403</created>
-      <option name="number" value="00254" />
-      <option name="project" value="LOCAL" />
-      <updated>1443058943403</updated>
     </task>
     <task id="LOCAL-00255" summary="essai correction bug paris en cours enclose">
       <created>1443059448430</created>
@@ -1217,7 +1516,13 @@
       <option name="project" value="LOCAL" />
       <updated>1444598947139</updated>
     </task>
-    <option name="localTasksCounter" value="303" />
+    <task id="LOCAL-00303" summary="seul les combiné peuvent etre expand desormais.">
+      <created>1444599394771</created>
+      <option name="number" value="00303" />
+      <option name="project" value="LOCAL" />
+      <updated>1444599394771</updated>
+    </task>
+    <option name="localTasksCounter" value="304" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1320,32 +1625,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/plugin/bootstrap-daterangepicker-master/daterangepicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33279222">
-          <caret line="132" column="22" selection-start-line="132" selection-start-column="22" selection-end-line="132" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/loadRecaps.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37598735">
-          <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..markets">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/BettorController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="3.2692308">
@@ -1638,14 +1917,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="95" column="17" selection-start-line="95" selection-start-column="17" selection-end-line="95" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/v4.1.0/theme/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1708,38 +1979,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="54" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/default.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-32.46154">
-          <caret line="224" column="31" selection-start-line="224" selection-start-column="31" selection-end-line="224" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/build/js/dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.885714">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.576923">
-          <caret line="135" column="37" selection-start-line="135" selection-start-column="37" selection-end-line="135" selection-end-column="37" />
-          <folding>
-            <element signature="e#18536#18621#0#HTML" expanded="true" />
-            <marker date="1444598462249" expanded="true" signature="3052:3195" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1751,18 +1995,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/includes/head.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.615385">
-          <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7637271">
           <caret line="27" column="56" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/default.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.5">
+          <caret line="225" column="44" selection-start-line="225" selection-start-column="44" selection-end-line="225" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/v4.1.0/theme/assets/global/plugins/font-awesome/css/font-awesome.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.34285715">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/v4.1.0/theme/assets/global/plugins/font-awesome/css/font-awesome.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32535884">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="95" column="17" selection-start-line="95" selection-start-column="17" selection-end-line="95" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.384615">
+          <caret line="135" column="37" selection-start-line="135" selection-start-column="37" selection-end-line="135" selection-end-column="37" />
+          <folding>
+            <element signature="e#18536#18621#0#HTML" expanded="true" />
+            <marker date="1444598462249" expanded="true" signature="3052:3195" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/includes/head.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.576923">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.569378">
+          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
           <folding />
         </state>
       </provider>

@@ -6,10 +6,31 @@ var strip = require('gulp-strip-comments');
 var minifyHTML = require('gulp-minify-html');
 
 
-gulp.task('css', function(){
-    return gulp.src(['public/css/*.css', 'public/css/**/*.css'])
+gulp.task('main-css', function(){
+    return gulp.src([
+        'public/v4.1.0/theme/assets/global/plugins/font-awesome/css/font-awesome.min.css',
+        'public/v4.1.0/theme/assets/global/plugins/uniform/css/uniform.default.css',
+        'public/v4.1.0/theme/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css',
+        'public/v4.1.0/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css',
+        'public/dist/ladda-themeless.min.css',
+        'public/css/toastr.css',
+        'public/css/sweetalert.css',
+        'public/css/select2.css',
+        'public/css/select2-bootstrap.min.css',
+        'public/v4.1.0/theme/assets/global/plugins/bootstrap-select/bootstrap-select.min.css',
+        'public/v4.1.0/theme/assets/global/plugins/fullcalendar/fullcalendar.min.css',
+        'public/v4.1.0/theme/assets/global/plugins/jqvmap/jqvmap/jqvmap.css',
+        'public/v4.1.0/theme/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css',
+        'public/js/plugin/bootstrap-daterangepicker-master/daterangepicker-bs3.css',
+        'public/v4.1.0/theme/assets/admin/pages/css/pricing-table.css',
+        'public/v4.1.0/theme/assets/admin/pages/css/login.css',
+        'public/v4.1.0/theme/assets/admin/pages/css/tasks.css',
+        'public/v4.1.0/theme/assets/global/css/plugins.css',
+        'public/v4.1.0/theme/assets/admin/layout/css/layout.css',
+        'public/metronic_v3.8.1/theme/assets/admin/layout3/css/custom.css',
+    ])
         .pipe(minifycss())
-        .pipe(concat('all.min.css'))
+        .pipe(concat('main-css.min.css'))
         .pipe(gulp.dest('public/build/css'));
 });
 
