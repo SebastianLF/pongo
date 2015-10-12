@@ -33,6 +33,7 @@ function startDecompteRefresh() {
 // fonction de rafraichissement.
 function refreshSelections() {
     var form = $('#automaticform-add');
+    var cote_generale_combine = 1;
     $.ajax({
         url: 'selections',
         success: function (data) {
@@ -40,6 +41,14 @@ function refreshSelections() {
             supprimerSelection();
             misAjourCompteBookmaker();
             openOrCloseSelectionsCouponAccordeonWhenSelectionsCouponIsRefreshed(data.count);
+
+            // calcul de la cote générale du combiné et attribution dans le input.
+            if(data.count > 1){
+                form.find('#automatic-selections').find('input[name="automatic-selection-cote[]"]').each(function(){
+                    cote_generale_combine *= $(this).val();
+                });
+                form.find('#automatic-selections table tbody').append('<tr><td></td><td>Total cote</td><td><input class=" form-control input-coupon-odd" name="total-cote-combine" type="text" value="'+cote_generale_combine+'"></td><td></td></tr>');
+            }
         },
         error: function (data) {
             form.find('#automatic-selections').html('<p>impossible de récuperer les selections</p>');
@@ -120,6 +129,8 @@ function gestionTicket() {
     var options_container = form.find('#optionscontainer');
     var bookmaker_container = form.find('#bookmakercontainer');
     var typestake_container = form.find('#typestakecontainer');
+
+    var submit_container = form.find('#submitboutoncontainer');
 
     function assignerEtatEnDebut() {
         resetGeneralForm();
@@ -226,6 +237,7 @@ function gestionTicket() {
         options_container.addClass('hidden');
         bookmaker_container.addClass('hidden');
         typestake_container.addClass('hidden');
+        submit_container.fadeOut();
         resetCheckboxs();
     }
 
@@ -283,6 +295,7 @@ function gestionTicket() {
                 typestake_container.addClass('hidden');
 
             } else {
+                submit_container.fadeIn();
                 options_container.fadeIn().removeClass('hidden');
                 bookmaker_container.fadeIn().removeClass('hidden');
                 typestake_container.fadeIn().removeClass('hidden');

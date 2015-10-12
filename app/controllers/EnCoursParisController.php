@@ -75,6 +75,7 @@
 					'accountsinputdashboard' => 'required_if:followtypeinputdashboard,n|exists:bookmaker_user,id,user_id,' . Auth::id(),
 					'stakeunitinputdashboard' => 'required_if:typestakeinputdashboard,u|unites|mise_montant_en_unites<solde:' . Input::get('accountsinputdashboard') . ',' . Input::get('followtypeinputdashboard') . ',' . Input::get('tipstersinputdashboard'),
 					'amountinputdashboard' => 'required_if:typestakeinputdashboard,f|decimal>0|mise_montant_en_devise<solde:' . Input::get('accountsinputdashboard') . ',' . Input::get('followtypeinputdashboard'),
+					'total-cote-combine' => 'required|european_odd',
 					'ticketABCD' => 'required|in:0,1',
 					'ticketLongTerme' => 'required|in:0,1',
 					'serieinputdashboard' => 'required_if:ticketABCD,1',
@@ -216,7 +217,7 @@
 
 
 					// mis a jour de la cote general.
-					$encourparis->cote = $cotes;
+					if($encourparis->type_profil == 's'){$encourparis->cote = $cotes;}else{$encourparis->cote = Input::get('total-cote-combine');}
 					$encourparis->pari_live = $count_live > 0 ? 1 : 0;
 					$encourparis->save();
 					if (!$encourparis->save()) {
