@@ -19,7 +19,10 @@
                 EFFICACITE
             </th>
             <th>
-                MISE MOY.
+                MOY. MISE
+            </th>
+            <th>
+                MOY. 1U
             </th>
 
             <th>
@@ -53,7 +56,7 @@
         <tr>
 
             <td>
-                <span class="primary-link">{{$recap_tipster->followtype == 'b' ? $recap_tipster->tipster->name.' <span class="label label-sm label-warning label-mini">B</span>' : $recap_tipster->tipster->name}}</span>
+                <span class="primary-link">{{$recap_tipster->followtype == 'b' ? $recap_tipster->tipster->name.' <span class="label label-sm label-warning label-mini" data-toggle="tooltip" data-original-title="à blanc">B</span>' : $recap_tipster->tipster->name}}</span>
             </td>
             <td>
                 <span class="bold theme-font">{{$roi}}</span>
@@ -65,7 +68,10 @@
                 {{floatval(round($recap_tipster->nombre_paris_gagnes_par_mois_tipster / $recap_tipster->nombre_paris_total * 100)).'% ('.$recap_tipster->nombre_paris_total.')'}}
             </td>
             <td>
-                {{floatval(round($recap_tipster->moyenne_mise_unites, 2)).' U (1U='.floatval(round($recap_tipster->moyenne_mt_par_unite_par_mois_tipster)).Auth::user()->devise.')'}}
+                {{floatval(round($recap_tipster->moyenne_mise_unites, 2)).' U'}}
+            </td>
+            <td>
+                {{floatval(round($recap_tipster->moyenne_mt_par_unite_par_mois_tipster)).Auth::user()->devise}}
             </td>
 
             <td>

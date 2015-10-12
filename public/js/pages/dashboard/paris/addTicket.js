@@ -36,7 +36,7 @@ function refreshSelections() {
     $.ajax({
         url: 'selections',
         success: function (data) {
-            form.find('#automatic-selections').html(data.vue);
+            form.find('#automatic-selections').html(decodeURIComponent(data.vue));
             supprimerSelection();
             misAjourCompteBookmaker();
             openOrCloseSelectionsCouponAccordeonWhenSelectionsCouponIsRefreshed(data.count);

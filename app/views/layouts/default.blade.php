@@ -207,70 +207,70 @@ License: You must have a valid license purchased only from themeforest(the above
 </div>
 
 @section('scripts')
-    <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-    <!-- BEGIN CORE PLUGINS -->
-    <!--[if lt IE 9]>
-    <script src="{{asset('v4.1.0/theme/assets/global/plugins/respond.min.js')}}"></script>
-    <script src="{{asset('v4.1.0/theme/assets/global/plugins/excanvas.min.js')}}"></script>
-    <![endif]-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
-            type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
-            type="text/javascript"></script>
-    <!-- datatables, le script inclut en + certaines options, voir http://datatables.net/download/index -->
-    <script type="text/javascript" src="https://cdn.datatables.net/r/bs/jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,b-1.0.3,b-html5-1.0.3,cr-1.2.0,r-1.0.7,sc-1.3.0/datatables.min.js"></script>
+        <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="{{asset('v4.1.0/theme/assets/global/plugins/respond.min.js')}}"></script>
+<script src="{{asset('v4.1.0/theme/assets/global/plugins/excanvas.min.js')}}"></script>
+<![endif]-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+        type="text/javascript"></script>
+<!-- datatables, le script inclut en + certaines options, voir http://datatables.net/download/index -->
+<script type="text/javascript"
+        src="https://cdn.datatables.net/r/bs/jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,b-1.0.3,b-html5-1.0.3,cr-1.2.0,r-1.0.7,sc-1.3.0/datatables.min.js"></script>
 
-    <script src="{{asset('build/js/main-plugins.js')}}" type="text/javascript"></script>
+<script src="{{asset('build/js/main-plugins.js')}}" type="text/javascript"></script>
 
-    <script type="text/javascript">
-        jQuery(document).ready(function () {
+<script type="text/javascript">
+    jQuery(document).ready(function () {
 
-            // pop-up keep session or not
-            $.sessionTimeout({
-                title:  "Notification d\'expiration de votre session",
-                message: 'Votre session va bienôt expirer',
-                keepAliveUrl: 'timeout-keep-alive',
-                keepAliveInterval: '20000',
-                keepAliveButton: 'Rester connecté',
-                logoutButton:'Se déconnecter',
-                logoutUrl: 'auth/login',
-                redirUrl: 'auth/login',
-                warnAfter: 3000000,
-                redirAfter: 3500000
-            });
-
-
-            $('[data-toggle="tooltip"]').tooltip();
-
-
-            // ajouter le token a chaque requete ajax.
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-Token': $('meta[name="_token"]').attr('content')
-                }
-            });
-
-            // toastr plugin configuration
-            toastr.options = {
-                "closeButton": true,
-                "debug": false,
-                "positionClass": "toast-top-right",
-                "onclick": null,
-                "showDuration": "500",
-                "hideDuration": "1000",
-                "timeOut": "5000",
-                "extendedTimeOut": "1000",
-                "showEasing": "swing",
-                "hideEasing": "linear",
-                "showMethod": "fadeIn",
-                "hideMethod": "fadeOut"
-            };
-
+        // pop-up keep session or not
+        $.sessionTimeout({
+            title: "Notification d\'expiration de votre session",
+            message: 'Votre session va bienôt expirer',
+            keepAliveUrl: 'timeout-keep-alive',
+            keepAliveInterval: '20000',
+            keepAliveButton: 'Rester connecté',
+            logoutButton: 'Se déconnecter',
+            logoutUrl: 'auth/login',
+            redirUrl: 'auth/login',
+            warnAfter: 3000000,
+            redirAfter: 3500000
         });
-        @include('includes.subview.inits')
-    </script>
+
+
+        $("body").tooltip({ selector: '[data-toggle="tooltip"]' });
+
+
+        // ajouter le token a chaque requete ajax.
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-Token': $('meta[name="_token"]').attr('content')
+            }
+        });
+
+        // toastr plugin configuration
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "positionClass": "toast-top-right",
+            "onclick": null,
+            "showDuration": "500",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+
+    });
+    @include('includes.subview.inits')
+</script>
 @show
-            <!-- END JAVASCRIPTS -->
+        <!-- END JAVASCRIPTS -->
 
 
 </body>

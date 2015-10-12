@@ -17,15 +17,23 @@ function loadParisLongTerme() {
             var nCloneTh = document.createElement('th');
             nCloneTh.className = "table-checkbox";
 
-            var nCloneTd = document.createElement('td');
-            nCloneTd.innerHTML = '<span class="row-details row-details-close"></span>';
+            var nCloneTdCombine = document.createElement('td');
+            nCloneTdCombine.innerHTML = '<span class="row-details row-details-close"></span>';
+
+            var nCloneTdSimple = document.createElement('td');
+            nCloneTdSimple.innerHTML = '<span class=""></span>';
 
             table.find('thead tr').each(function () {
                 this.insertBefore(nCloneTh, this.childNodes[0]);
             });
 
             table.find('tbody tr').each(function () {
-                this.insertBefore(nCloneTd.cloneNode(true), this.childNodes[0]);
+                console.log($(this).data('nb-selections'));
+                if ($(this).data('nb-selections') > 1) {
+                    this.insertBefore(nCloneTdCombine.cloneNode(true), this.childNodes[0]);
+                }else{
+                    this.insertBefore(nCloneTdSimple.cloneNode(true), this.childNodes[0]);
+                }
             });
 
 

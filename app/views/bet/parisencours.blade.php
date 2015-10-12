@@ -16,9 +16,9 @@
             <th>Rencontre</th>
             <th>Pari</th>
             <th>Tipster</th>
+            <th>Mise</th>
             <th>Book</th>
             <th>Cote</th>
-            <th>Mise</th>
             <th>Status</th>
             <th></th>
         </tr>
@@ -28,7 +28,7 @@
             <?php $app = App::make('pari_affichage');
             $selections_final = $pari->selections;
             foreach ($selections_final as $selections) {
-                $pariAffichage = $app->display($selections->market_id, $selections->pick, $selections->odd_doubleParam1, $selections->odd_doubleParam2, $selections->odd_doubleParam3, $selections->odd_participantParameterName, $selections->odd_participantParameterName2, $selections->odd_participantParameterName3, $selections->home_team, $selections->away_team);
+                $pariAffichage = $app->display($selections->market_id, $selections->pick, $selections->odd_doubleParam1, $selections->odd_doubleParam2, $selections->odd_doubleParam3, $selections->odd_participantParameterName, $selections->odd_participantParameterName2, $selections->odd_participantParameterName3, $selections->equipe1['name'], $selections->equipe2['name']);
                 $selections['pariAffichage'] = $pariAffichage;
             } ?>
             <tr data-selections='{{{$selections_final}}}' data-nb-selections='{{{$pari->selections->count()}}}' data-pari-id='{{{$pari->id}}}' data-pari-type='{{{$pari->type_profil}}}'>
@@ -79,14 +79,13 @@
                     @endif
                 </td>
                 <td>{{$pari->tipster->name}}</td>
-                <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}
-                </td>
-                <td class="fit tdcote">{{$pari->cote}}</td>
                 <td class="tdmise  bold">
 
                     <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise}}} {{'('.+$pari->nombre_unites.'u)'}}
                 </td>
-
+                <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}
+                </td>
+                <td class="fit tdcote">{{$pari->cote}}</td>
                 <td width="90px">
                     @if($pari->type_profil == 's')
                         <select name="status[]"

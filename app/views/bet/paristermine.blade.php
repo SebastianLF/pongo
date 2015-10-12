@@ -34,11 +34,11 @@
                 <?php $app = App::make('pari_affichage');
                 $selections_final = $pari->selections;
                 foreach ($selections_final as $selections) {
-                    $pariAffichage = $app->display($selections->market_id, $selections->pick, $selections->odd_doubleParam1, $selections->odd_doubleParam2, $selections->odd_doubleParam3, $selections->odd_participantParameterName, $selections->odd_participantParameterName2, $selections->odd_participantParameterName3, $selections->home_team, $selections->away_team);
+                    $pariAffichage = $app->display($selections->market_id, $selections->pick, $selections->odd_doubleParam1, $selections->odd_doubleParam2, $selections->odd_doubleParam3, $selections->odd_participantParameterName, $selections->odd_participantParameterName2, $selections->odd_participantParameterName3, $selections->equipe1['name'], $selections->equipe2['name']);
                     $selections['pariAffichage'] = $pariAffichage;
                 } ?>
                 <!-- les parentheses doivent etre des simples quotes pour data-selections car c un objet javascript -->
-                <tr data-selections='{{{$selections_final}}}'>
+                <tr data-selections='{{{$selections_final}}}' data-nb-selections='{{{$pari->selections->count()}}}' data-pari-id='{{{$pari->id}}}' data-pari-type='{{{$pari->type_profil}}}'>
 
                     <td class=""><?php $date = Carbon::createFromFormat('Y-m-d H:i:s', $pari->selections->first()->date_match, 'Europe/Paris');
                         $date->setTimezone(Auth::user()->timezone);?>

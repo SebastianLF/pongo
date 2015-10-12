@@ -1,5 +1,5 @@
 @if($count == 0)
-    <div class="text-center"> - Ici se trouvent les selections ajoutees a partir du mode automatique ou manuel ci-dessous. -</div>
+    <div class="text-center">{{utf8_decode('- Ici se trouvent les selections ajoutees à partir du mode automatique ou manuel ci-dessous. -')}} </div>
 @else
     <div class="table-responsive">
         <table class="table table-condensed">
@@ -17,7 +17,7 @@
                 <tr class="betline">
                     <td class="selection_id hidden">{{$selection->id}}</td>
 
-                    <td> @if($selection->isMatch)
+                    <td> @if($selection->isMatch)&
                             {{' '.$selection->game_name}}
                         @else
                             {{' '.$selection->league_name}}

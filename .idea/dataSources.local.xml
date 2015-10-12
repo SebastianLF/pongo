@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - sbs@localhost" uuid="df636a34-977d-4dba-b7e3-b636c8873f85" />
+    <data-source name="MySQL - sbs@localhost" uuid="df636a34-977d-4dba-b7e3-b636c8873f85">
+      <user-name>root</user-name>
+    </data-source>
     <data-source name="MySQL - slfweb@slfweb.mysql.eu1.frbit.com" uuid="2226fdbd-0f31-48fa-8a3c-f51c98371bf0">
       <secret-storage>master_key</secret-storage>
       <user-name>slfweb</user-name>

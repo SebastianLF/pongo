@@ -198,8 +198,8 @@
 			$home_country = Input::exists('home_team') ? Country::firstOrCreate(array('name' => Input::get('home_team_country_name'))) : null;
 			$away_country = Input::exists('away_team') ? Country::firstOrCreate(array('name' => Input::get('away_team_country_name'))) : null;
 			$competition = Competition::firstOrCreate(array('name' => Input::get('league_name'), 'sport_id' => $sport->id, 'country_id' => $event_country->id));
-			$home_team = Input::exists('home_team') ? Equipe::firstOrCreate(array('name' => Input::get('home_team'), 'sport_id' => $sport->id, 'country_id' => $home_country->id)) : null;
-			$away_team = Input::exists('away_team') ? Equipe::firstOrCreate(array('name' => Input::get('away_team'), 'sport_id' => $sport->id, 'country_id' => $away_country->id)) : null;
+			$home_team = Input::exists('home_team') ? Equipe::firstOrCreate(array('name' => utf8_decode(Input::get('home_team')), 'sport_id' => $sport->id, 'country_id' => $home_country->id)) : null;
+			$away_team = Input::exists('away_team') ? Equipe::firstOrCreate(array('name' => utf8_decode(Input::get('away_team')), 'sport_id' => $sport->id, 'country_id' => $away_country->id)) : null;
 
 			$market = Market::find(Input::get('market_id'));
 			if(is_null($market)){
@@ -283,10 +283,10 @@
 			$selections_coupon = Coupon::where('session_id', Session::getId())->get();
 			$count = $selections_coupon->count();
 
-			$view = View::make('bet/auto_form_selections', array(
-				'selections' => $selections_coupon,
-				'count' => $count
-			));
+				$view = View::make('bet/auto_form_selections', array(
+					'selections' => $selections_coupon,
+					'count' => $count
+				));
 
 			$array_msg = array();
 			$bookmaker_select = '';
@@ -346,12 +346,12 @@
 			}
 
 			// return
-			return Response::json(array(
-				'vue' => $view->render(),
+			return array(
+				'vue' => (string) $view,
 				'bookmaker_id' => $bookmaker_select != '' ? $bookmaker_select->id : '',
 				'msg' => $array_msg,
 				'count' => $count
-			));
+			);
 		}
 
 

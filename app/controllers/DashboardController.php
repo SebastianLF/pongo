@@ -90,7 +90,7 @@
 			$total_profit_devise = $this->setCouleur(floatval(round($recap_general->sum('montant_profit'), 2)), Auth::user()->devise);
 			//$total_profit_unites = $this->setCouleur(floatval(round($recap_general->sum('unites_profit'), 2)), 'U');
 
-			return array('tipsters_view' => $recap_tipsters_view->render(), 'total_profit_devise' => $total_profit_devise);
+			return View::make('recaps.tipstersrecap', array('recap_tipsters' => $recap_tipsters, 'cote_moyenne_general' => $cote_moyenne_general, 'mise_unites_moyenne_general' => $mise_unites_moyenne_general, 'mt_par_unite_moyenne_general' => $mt_par_unite_moyenne_general.Auth::user()->devise));
 		}
 
 		function setCouleur($nombre, $monnaie){

@@ -30,7 +30,7 @@ function loadGeneralRecapsOnDashboard() {
         type: 'get',
         data: {range: range},
         success: function (data) {
-            $('#tipsters-general-recap').html(data.tipsters_view);
+            $('#tipsters-general-recap').html(data);
             //$('#total-recap-profits-devise').html(data.total_profit_devise);
             //$('#total-recap-profits-unites').html(data.total_profit_unites);
         }
