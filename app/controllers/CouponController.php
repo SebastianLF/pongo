@@ -198,8 +198,8 @@
 			$home_country = Input::exists('home_team') ? Country::firstOrCreate(array('name' => Input::get('home_team_country_name'))) : null;
 			$away_country = Input::exists('away_team') ? Country::firstOrCreate(array('name' => Input::get('away_team_country_name'))) : null;
 			$competition = Competition::firstOrCreate(array('name' => Input::get('league_name'), 'sport_id' => $sport->id, 'country_id' => $event_country->id));
-			$home_team = Input::exists('home_team') ? Equipe::firstOrCreate(array('name' => utf8_decode(Input::get('home_team')), 'sport_id' => $sport->id, 'country_id' => $home_country->id)) : null;
-			$away_team = Input::exists('away_team') ? Equipe::firstOrCreate(array('name' => utf8_decode(Input::get('away_team')), 'sport_id' => $sport->id, 'country_id' => $away_country->id)) : null;
+			$home_team = Input::exists('home_team') ? Equipe::firstOrCreate(array('name' => mb_convert_encoding(Input::get('home_team'), 'UTF-8', 'UTF-8'), 'sport_id' => $sport->id, 'country_id' => $home_country->id)) : null;
+			$away_team = Input::exists('away_team') ? Equipe::firstOrCreate(array('name' => mb_convert_encoding(Input::get('away_team'), 'UTF-8', 'UTF-8'), 'sport_id' => $sport->id, 'country_id' => $away_country->id)) : null;
 
 			$market = Market::find(Input::get('market_id'));
 			if(is_null($market)){
