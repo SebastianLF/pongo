@@ -12,3 +12,7 @@
         - 4 : pari 1/2 perdu
         - 5 : pari remboursé
         - 6 : pari cashouted
+
+
+2) calculs de:
+    - pinnacle : 1,943 * 25 = 23.58 - à la calculette = 1,943 * 25 = 23.575
