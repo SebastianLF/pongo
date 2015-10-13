@@ -85,7 +85,7 @@
                 </td>
                 <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}
                 </td>
-                <td class="fit tdcote">{{$pari->cote}}</td>
+                <td class="fit tdcote">{{floatval($pari->cote)}}</td>
                 <td width="90px">
                     @if($pari->type_profil == 's')
                         <select name="status[]"

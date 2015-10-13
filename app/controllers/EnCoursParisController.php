@@ -75,7 +75,7 @@
 					'accountsinputdashboard' => 'required_if:followtypeinputdashboard,n|exists:bookmaker_user,id,user_id,' . Auth::id(),
 					'stakeunitinputdashboard' => 'required_if:typestakeinputdashboard,u|unites|mise_montant_en_unites<solde:' . Input::get('accountsinputdashboard') . ',' . Input::get('followtypeinputdashboard') . ',' . Input::get('tipstersinputdashboard'),
 					'amountinputdashboard' => 'required_if:typestakeinputdashboard,f|decimal>0|mise_montant_en_devise<solde:' . Input::get('accountsinputdashboard') . ',' . Input::get('followtypeinputdashboard'),
-					'total-cote-combine' => 'required|european_odd',
+					'total-cote-combine' => 'cote_generale_if_combine:'.$count.'|european_odd',
 					'ticketABCD' => 'required|in:0,1',
 					'ticketLongTerme' => 'required|in:0,1',
 					'serieinputdashboard' => 'required_if:ticketABCD,1',

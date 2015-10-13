@@ -64,6 +64,14 @@
 
 
 	// validator extension
+
+	Validator::extend('cote_generale_if_combine', function ($attribute, $value, $parameters) {
+		if (($parameters[0] > 1 && isset($value)) || $parameters[0] == 1) {
+			return true;
+		}
+		return false;
+	});
+
 	Validator::extend('european_odd', function ($attribute, $value, $parameters) {
 		if (preg_match("/^\d+(\.\d{1,3})?$/", $value) && $value >= 1) {
 			return true;
