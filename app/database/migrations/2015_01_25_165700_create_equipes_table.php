@@ -16,6 +16,7 @@ class CreateEquipesTable extends Migration {
             $table->increments('id');
             $table->string('name', 100);
             $table->string('logo');
+			$table->tinyInteger('status')->default(0);
 			$table->unsignedInteger('sport_id');
             $table->integer('country_id')->unsigned()->nullable();
 			$table->timestamps();

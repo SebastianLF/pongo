@@ -19,7 +19,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-    @include('includes.head', array('title' => 'Pongo'))
+    @include('includes.head', array('title' => 'Se connecter'))
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -37,20 +37,20 @@ License: You must have a valid license purchased only from themeforest(the above
     {{ Form::open(array('url' => 'auth/login', 'method' => 'post', 'class' => '')) }}
     <h3 class="form-title">Se connecter</h3>
     <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-    <small class="text-danger">{{ $errors->first('name') }}</small>
-    <label class="control-label visible-ie8 visible-ie9">Nom</label>
-    <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-        {{ Form::text('name', null, array('class' => 'form-control form-control-solid placeholder-no-fix', 'placeholder' => 'Nom')) }}
+    <small class="text-danger">{{ $errors->first('email') }}</small>
+    <label class="control-label visible-ie8 visible-ie9">Email</label>
+    <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+        {{ Form::text('email', null, array('class' => 'form-control form-control-solid placeholder-no-fix', 'placeholder' => 'Email')) }}
     </div>
 
-    <small class="text-danger">{{ Session::get('pass') }}</small>
-    <div class="form-group {{ Session::has('pass') ? 'has-error' : '' }}">
+    <small class="text-danger">{{ $errors->first('password') }}{{Session::get('password')}}</small>
+    <div class="form-group {{ $errors->has('password') || Session::has('password')? 'has-error' : '' }}">
         <label class="control-label visible-ie8 visible-ie9">Mot de passe</label>
         {{ Form::password('password', array('class' => 'form-control form-control-solid placeholder-no-fix', 'placeholder' => 'Mot de passe')) }}
     </div>
 
     <div class="form-actions">
-        {{ Form::submit('GO !', array('class' => 'btn btn-success uppercase')) }}
+        {{ Form::submit('Se connecter', array('class' => 'btn btn-success uppercase')) }}
         <a href="{{url('password/remind')}}" id="forget-password" class="forget-password">Mot de passe oublié?</a>
     </div>
 
@@ -80,12 +80,6 @@ License: You must have a valid license purchased only from themeforest(the above
         type="text/javascript"></script>
 <script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/bootstrap/js/bootstrap.min.js')}}"
         type="text/javascript"></script>
-<script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js')}}"
-        type="text/javascript"></script>
-<script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js')}}"
-        type="text/javascript"></script>
-<script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/jquery.blockui.min.js')}}"
-        type="text/javascript"></script>
 <script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/jquery.cokie.min.js')}}"
         type="text/javascript"></script>
 <script src="{{asset('metronic_v3.6.2/theme/assets/global/plugins/uniform/jquery.uniform.min.js')}}"
@@ -97,7 +91,6 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
 <script src="{{asset('metronic_v3.6.2/theme/assets/global/scripts/metronic.js')}}" type="text/javascript"></script>
 <script src="{{asset('metronic_v3.6.2/theme/assets/admin/layout3/scripts/layout.js')}}" type="text/javascript"></script>
-<script src="{{asset('metronic_v3.6.2/theme/assets/admin/layout3/scripts/demo.js')}}" type="text/javascript"></script>
 <script src="{{asset('metronic_v3.6.2/theme/assets/admin/pages/scripts/login.js')}}" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>

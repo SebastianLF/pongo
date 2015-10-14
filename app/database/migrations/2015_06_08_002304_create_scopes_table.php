@@ -17,6 +17,7 @@ class CreateScopesTable extends Migration {
 			$table->string('name');
 			$table->string('priorite');
 			$table->string('representation');
+			$table->tinyInteger('status')->default(0);
 			$table->timestamps();
 		});
 	}

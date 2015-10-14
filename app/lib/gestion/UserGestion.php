@@ -16,14 +16,15 @@ class UserGestion implements UserGestionInterface {
 		$user->devise = 'aucun';
 		$user->timezone = 'Europe/Paris';
 		$user->langue = 'fr';
-		$user->type_cote = 'euro';
+		$user->type_cote = 'decimal';
 		$user->compteur_pari = 0;
 		$user->save();
         $id = $user->id;
 
         //creation du tipster par defaut
 		$tispter = new Tipster;
-		$tispter->name = $user->name;
+		$tispter->name = 'Tipster Exemple #1';
+		$tispter->montant_par_unite = 20;
 		$tispter->followtype = 'n';
         $user->tipsters()->save($tispter);
 	}

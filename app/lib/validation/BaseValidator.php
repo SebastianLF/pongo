@@ -1,6 +1,7 @@
 <?php
  namespace lib\validation;
 
+use Clockwork;
 use Validator;
 use Input;
 
@@ -13,7 +14,7 @@ abstract class BaseValidator implements ValidatorInterface {
 	{
 		if(!is_null($id)) $this->regles = str_replace('id', $id, $this->regles);
 
-		$message = array('name.required' => 'Le nom est obligatoire', 'name.exists' => 'Le nom est invalide');
+		$message = array('email.required' => 'L\'email est obligatoire', 'email.exists' => 'Cet email est introuvable.');
 
 		$validation = Validator::make(Input::all(), $this->regles, $message);
 

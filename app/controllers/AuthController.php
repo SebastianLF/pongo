@@ -34,7 +34,7 @@ class AuthController extends Controller {
 		  ->withInput();
 		} else {
 			$user = array(
-				'name' => Input::get('name'),
+				'email' => Input::get('email'),
 				'password' => Input::get('password')
 			);
 			if(Auth::attempt($user)) {
@@ -42,7 +42,7 @@ class AuthController extends Controller {
 				return Redirect::to('dashboard');
 			}
 		    return Redirect::to('auth/login')
-		    ->with('pass', 'Le mot de passe n\'est pas correct !')
+		    ->with('password', 'Le mot de passe n\'est pas correct !')
 		    ->withInput();
 		}
 	}
@@ -61,8 +61,13 @@ class AuthController extends Controller {
 		  ->withErrors($this->create_validation->errors());
 		} else {
 			$this->user_gestion->store();
-			return Redirect::to('auth/inscriptionok')
-			->with('ok','L\'utilisateur a bien été créé.');
+			$user = array(
+				'email' => Input::get('email'),
+				'password' => Input::get('password')
+			);
+			if(Auth::attempt($user)) {
+				return Redirect::to('welcome/create');
+			}
 		}
 	}
 

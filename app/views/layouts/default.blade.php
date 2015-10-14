@@ -240,9 +240,6 @@ License: You must have a valid license purchased only from themeforest(the above
         });
 
 
-        $("body").tooltip({ selector: '[data-toggle="tooltip"]' });
-
-
         // ajouter le token a chaque requete ajax.
         $.ajaxSetup({
             headers: {

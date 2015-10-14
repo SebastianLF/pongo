@@ -19,6 +19,7 @@ class CreateMarketsTable extends Migration {
 			$table->string('representation');
 			$table->string('fr');
 			$table->string('priorite');
+			$table->tinyInteger('status')->default(0);
 			$table->boolean('isMatch')->default(0);
 			$table->timestamps();
 		});

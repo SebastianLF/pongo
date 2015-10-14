@@ -17,6 +17,7 @@ class CreateBookmakersTable extends Migration {
 			$table->timestamps();
 			$table->string('nom');
 			$table->string('logo');
+			$table->tinyInteger('status')->default(0);
 			$table->tinyInteger('pirorite')->default(3);
 		});
 	}

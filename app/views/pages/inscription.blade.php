@@ -35,23 +35,17 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- END LOGO -->
 <!-- BEGIN LOGIN -->
 <div class="content">
-    {{ Form::open(array('url' => 'auth/inscription', 'method' => 'post', 'class' => '')) }}
+    {{ Form::open(array('url' => 'auth/inscription', 'method' => 'post')) }}
         <h3>S'inscrire</h3>
 
         <p class="hint">
             Entrez vos informations personnelles:
         </p>
         <div class="form-group">
-            <small class="text-danger">{{ $errors->first('name') }}</small>
-            <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-            <label class="control-label visible-ie8 visible-ie9">Nom</label>
-            <input class="form-control placeholder-no-fix" type="text" placeholder="Nom" name="name"/>
-        </div>
-        <div class="form-group">
             <small class="text-danger">{{ $errors->first('email') }}</small>
             <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
             <label class="control-label visible-ie8 visible-ie9">Email</label>
-            <input class="form-control placeholder-no-fix" type="text" placeholder="E-mail" name="email"/>
+            <input class="form-control placeholder-no-fix" type="email" placeholder="Email" name="email"/>
         </div>
         <div class="form-group">
             <small class="text-danger">{{ $errors->first('password') }}</small>
@@ -66,7 +60,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
         <div class="form-actions">
             <button type="button" id="register-back-btn" class="btn btn-default"><a href="{{URL::previous()}}">RETOUR</a></button>
-            <button type="submit" id="register-submit-btn" class="btn btn-success uppercase pull-right">ENVOYER</button>
+            <button type="submit" id="register-submit-btn" class="btn btn-success uppercase pull-right">S'INSCRIRE</button>
         </div>
     {{ Form::close() }}
     <!-- END REGISTRATION FORM -->
