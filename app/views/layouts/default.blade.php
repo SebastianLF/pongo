@@ -229,7 +229,7 @@ License: You must have a valid license purchased only from themeforest(the above
         $.sessionTimeout({
             title: "Notification d\'expiration de votre session",
             message: 'Votre session va bienôt expirer',
-            keepAliveUrl: 'timeout-keep-alive',
+            keepAliveUrl: '/timeout-keep-alive',
             keepAliveInterval: '20000',
             keepAliveButton: 'Rester connecté',
             logoutButton: 'Se déconnecter',
