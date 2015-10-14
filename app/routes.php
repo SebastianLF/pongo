@@ -4,6 +4,7 @@
 	Route::get('/', function(){
 		return View::make('pages.landing');
 	});
+	Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 	Route::controller('password', 'RemindersController');
 
 	//session timeout pop up

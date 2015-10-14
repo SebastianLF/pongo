@@ -30,9 +30,8 @@
 	| build a basic log file setup which creates a single file for logs.
 	|
 	*/
-
-	Log::useFiles(storage_path() . '/logs/laravel.log');
-
+	$logFile = 'laravel.log';
+	Log::useDailyFiles(storage_path().'/logs/'.$logFile);
 	/*
 	|--------------------------------------------------------------------------
 	| Application Error Handler

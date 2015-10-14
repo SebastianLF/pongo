@@ -15,7 +15,7 @@ return array(
 
 
 
-	'debug' => false,
+	'debug' => true,
 
 
 	/*
@@ -137,6 +137,8 @@ return array(
 		'Maatwebsite\Excel\ExcelServiceProvider',
 		'Laracasts\Utilities\UtilitiesServiceProvider',
 		'Jenssegers\Date\DateServiceProvider',
+		'Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider',
+
 	),
 
 	/*
