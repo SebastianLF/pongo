@@ -4,14 +4,10 @@
 
             <span class="caption-subject bold theme-font uppercase"><i class="icon-book-open"></i> Solde Bookmakers</span>
         </div>
-        <div class="tools">
-            <a href="javascript:;" class="collapse">
-            </a>
-        </div>
     </div>
     <div class="portlet-body">
         @if($bookmakers->count() == 0)
-            <div class="text-center">Aucun bookmaker.</div>
+            <div class="text-center">Aucun bookmaker. {{ HTML::link('bookmakers', 'Cliquez ici pour ajouter un compte de bookmaker')}}</div>
         @else
         <div class="panel-group accordion" id="accordion3">
         @foreach($bookmakers as $bookmaker)

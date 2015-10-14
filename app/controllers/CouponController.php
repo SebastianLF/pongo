@@ -189,6 +189,14 @@
 
 		public function postAutomaticSelections()
 		{
+			$home_team = utf8_encode(Input::get('home_team'));
+			$away_team = utf8_encode(Input::get('away_team'));
+			$bookmaker = utf8_encode(Input::get('bookmaker'));
+			$sport = utf8_encode(Input::get('sport_Name'));
+			$event_country = utf8_encode(Input::get('event_country_name'));
+			$home_country = utf8_encode(Input::get('home_team_country_name'));
+			$away_country = utf8_encode(Input::get('away_team_country_name'));
+
 			// données a entrer dans la bd dans le but de grossir la bd.
 			$date = Carbon::createFromFormat('Y-m-d H:i:s', Input::get('game_time'), 'UTC');
 			$date->setTimezone('Europe/Paris');
@@ -222,7 +230,7 @@
 			if(!$sport->markets->contains($market->id)){
 				$sport->markets()->save($market);
 			}
-			if(!$sport ->scopes->contains($scope->id)){
+			if(!$sport->scopes->contains($scope->id)){
 				$sport->scopes()->save($scope);
 			}
 

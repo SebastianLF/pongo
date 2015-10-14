@@ -22,15 +22,6 @@
                             {{Form::open(array('route' => array('profile.store'), 'class' => 'form-horizontal form-bordered'))}}
                             <div class="form-body">
                                 <div class="form-group">
-                                    <label class="control-label col-md-3">Nom</label>
-
-                                    <div class="col-md-4">
-                                    <span class="form-control-static">{{Auth::user()->name}}</span>
-
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
                                     <label class="control-label col-md-3">Email</label>
 
                                     <div class="col-md-4">
