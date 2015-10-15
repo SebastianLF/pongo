@@ -239,6 +239,7 @@ License: You must have a valid license purchased only from themeforest(the above
             redirAfter: 3500000
         });
 
+        $("body").tooltip({ selector: '[data-toggle="tooltip"]' });
 
         // ajouter le token a chaque requete ajax.
         $.ajaxSetup({

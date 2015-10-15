@@ -159,6 +159,10 @@ select{
     text-align: center !important;
 }
 
+.table-paris input[name="amount-returned[]"]{
+    width: 80px !important;
+}
+
 .label-combine{
     background-color: #45B6AF;
     opacity: 0.5 !important;
@@ -455,6 +459,15 @@ select{
     font-size: 13px;
     margin: 0 0 0 0 !important;
 }
+
+.table-paris .input-group-addon-amount-returned{
+    padding: 0px 0px !important;
+}
+
+.table-paris>tbody>tr>td{
+    padding: 4px;
+}
+
 
 .buttons-actions-ticket{
     padding: 4px 7px 4px 7px;

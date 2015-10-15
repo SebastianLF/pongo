@@ -13,6 +13,7 @@ function parisEnCoursEnclose(tablename, type) {
         var tr_main = $(this).closest('tr');
         var tr_childs = tr_main.next('tr.details');
         var type_profil = $(this).data('pari-type');
+        var amount_returned = tr_main.find('input[name="amount-returned"]').val();
 
         var status = [];
 
@@ -41,11 +42,15 @@ function parisEnCoursEnclose(tablename, type) {
             $.ajax({
                 url: 'historique',
                 type: 'post',
-                data: 'status[]='+status+'&pari-id='+$(this).data('pari-id'),
+                data: 'status[]='+status+'&pari-id='+$(this).data('pari-id')+'&amount-returned='+amount_returned,
                 dataType: 'json',
                 success: function (data) {
                     if (data.etat == 0) {
-                        toastr.error(data.msg, 'Validation');
+                        var errorString = '';
+                        $.each( data.msg, function( key, value) {
+                            errorString += value + '</br>';
+                        });
+                        toastr.error(errorString, 'Erreur:');
                     } else {
                         toastr.success(data.msg, 'Validation');
                         if(type == 'lt'){loadParisLongTerme();}else if(type == 'm'){loadParisABCD();}else if(type == 'c'){loadParisEnCours();}

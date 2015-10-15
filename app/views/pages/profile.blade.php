@@ -1,8 +1,6 @@
 @extends('layouts.default', array('title' => 'Profil') )
 
 @section('content')
-
-
         <div class="container">
             <div class="row">
                 @if(Session::has('mdp_updated'))

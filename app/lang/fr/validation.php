@@ -76,6 +76,7 @@ return [
 
 
 
+
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
@@ -86,6 +87,7 @@ return [
     | specify a specific custom language line for a given attribute rule.
     |
     */
+    "amount_returned" => "Le montant retourné n'est pas valide.",
 
     "european_odd" => "les cotes doivent etre du type 1.50",
     "cashout" => "le montant doit etre un nombre décimal supérieur à 0 et 2 chiffres après la virgule maximum.",

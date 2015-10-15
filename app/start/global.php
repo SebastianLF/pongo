@@ -85,6 +85,13 @@
 		return false;
 	});
 
+	Validator::extend('amount_returned', function ($attribute, $value, $parameters) {
+		if (preg_match("/^\d+(\.\d{1,3})?$/", $value)) {
+			return true;
+		}
+		return false;
+	});
+
 	Validator::extend('decimal>0', function ($attribute, $value, $parameters) {
 		if (preg_match("/^\d+(\.\d{1,2})?$/", $value) && $value > 0) {
 			return true;

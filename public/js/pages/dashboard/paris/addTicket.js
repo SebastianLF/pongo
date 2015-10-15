@@ -194,8 +194,6 @@ function gestionTicket() {
                     success: function (json) {
                         var keyname;
                         if (json.etat == 0) {
-                            console.log(json.msg);
-                            console.log($.isArray(json.msg));
                             if ($.isArray(json.msg)) {
                                 for (key in json.msg) {
                                     keyname = key;

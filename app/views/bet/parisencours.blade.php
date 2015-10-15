@@ -6,7 +6,7 @@
         </div>
     </div>
 @else
-    <table id="parisencourstable" class="table table-condensed table-bordered">
+    <table id="parisencourstable" class="table table-condensed table-bordered table-paris">
         <thead>
         <tr class="uppercase">
             <th></th>
@@ -20,6 +20,7 @@
             <th>Book</th>
             <th>Cote</th>
             <th>Status</th>
+            <th>retourné <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="montant retourné. Exemple: cote à 2 et mise de 50 {{Auth::user()->devise}}, le montant retourné sera 100 {{Auth::user()->devise}}"></span></th>
             <th></th>
         </tr>
         </thead>
@@ -85,8 +86,8 @@
                 </td>
                 <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}
                 </td>
-                <td class="fit tdcote">{{floatval($pari->cote)}}</td>
-                <td width="90px">
+                <td width="10px" class="fit tdcote">{{floatval($pari->cote)}}</td>
+                <td width="30px">
                     @if($pari->type_profil == 's')
                         <select name="status[]"
                                 data-value=""
@@ -103,8 +104,7 @@
                     @endif
 
                 </td>
-
-
+                <td width="10px"><div class="input-group "><input type="text" width="50px" name="amount-returned" class="form-control inputs-ticket"><div class="input-group-addon input-group-addon-amount-returned">{{Auth::user()->devise}}</div></div></td>
                 <td width="120px">
                     {{ Form::button('<i class="fa fa-check"></i>', array('data-pari-type' => $pari->type_profil, 'data-pari-id' => $pari->id, 'data-style' => "zoom-in", 'class' => 'boutonvalider btn btn-sm ladda-button green-jungle buttons-actions-ticket')) }}
                     {{ Form::button('<i class="fa fa-trash"></i>', array('data-pari-type' => $pari->type_profil, 'data-pari-id' => $pari->id, 'data-style' => "zoom-in", 'class' => 'boutonsupprimer btn btn-sm ladda-button red buttons-actions-ticket')) }}

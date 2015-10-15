@@ -37,11 +37,13 @@
 		{
 			$regles = array(
 				'pari-id' => 'required|exists:en_cours_paris,id,user_id,' . Auth::user()->id,
+				'amount-returned' => 'required|amount_returned',
 			);
 
 			$messages = array(
 				'pari-id.required' => 'Un identifiant de pari doit être envoyé.',
 				'pari-id.exists' => 'Ce pari n\'existe pas.',
+				'amount-returned.required' => 'Le montant retourné est obligatoire.',
 			);
 
 			$validator = Validator::make(Input::all(), $regles, $messages);
@@ -82,7 +84,7 @@
 					3 = 1/2 gagné,
 					4 = 1/2 perdu,
 					5 = remboursé,
-					6 = cashouted
+					6 = cashouted,
 				*/
 
 				$status_termine_pari = null;
@@ -131,10 +133,10 @@
 						));
 					}
 
-					// les calculs pour termine paris
-					$retour_devise = $mise * $cote_general;
+					// calculs des différents montants à partir du montant retourné.
+					$retour_devise = Input::get('amount-returned');
 					$profit_devise = $retour_devise - $mise;
-					$retour_unites = $nombre_unites * $cote_general;
+					$retour_unites = $retour_devise / $mt_par_unite;
 					$profit_unites = $retour_unites - $nombre_unites;
 
 					if ($encoursparis->type_profil == 's') {
@@ -187,6 +189,8 @@
 				// mise en global pour que la variable soit accessible dans la boucle ci-dessous.
 				$id_termine = $termine_paris_ajoute->id;
 
+
+				// attacher les selections au pari termine et détacher le pari en cours.
 				$iterator_resultats = 0;
 				if($termine_paris_ajoute){
 					foreach ($selections as $selection) {

@@ -19,7 +19,6 @@
             <th>Cote</th>
             <th>Mise</th>
             <th>Status</th>
-            <th>Resultat</th>
             <th>Retour</th>
             <th>PROFITS</th>
             <th></th>
@@ -126,17 +125,7 @@
                         }?>
 
                     </td>
-                    <td>
-                        @if($pari->type_profil == 's')
-                            @if(is_null($pari->selections->first()->resultat) || $pari->selections->first()->resultat == '')
-                                {{'N/A'}}
-                            @else
-                                {{$pari->selections->first()->resultat}}
-                            @endif
-                        @else
-                            <span class="label label-sm label-success label-mini">combiné</span>
-                        @endif
-                    </td>
+
                     <td><span class="{{'bold'}} {{$pari->mise_totale > $pari->montant_retour ? ' font-red-haze' : '' }} {{$pari->mise_totale < $pari->montant_retour ? ' font-green-sharp' : '' }}">
                                         <span class="">{{floatval($pari->montant_retour).''.Auth::user()->devise}}
                                             <span>{{' ('.floatval($pari->unites_retour).'u)'}}</span></span>
