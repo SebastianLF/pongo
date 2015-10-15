@@ -200,21 +200,21 @@
 			// données a entrer dans la bd dans le but de grossir la bd.
 			$date = Carbon::createFromFormat('Y-m-d H:i:s', Input::get('game_time'), 'UTC');
 			$date->setTimezone('Europe/Paris');
-			$bookmaker = Bookmaker::firstOrCreate(array('nom' => Input::get('bookmaker')));
-			$sport = Sport::firstOrCreate(array('name' => Input::get('sport_Name')));
-			$event_country = Country::firstOrCreate(array('name' => Input::get('event_country_name')));
-			$home_country = Input::exists('home_team') ? Country::firstOrCreate(array('name' => Input::get('home_team_country_name'))) : null;
-			$away_country = Input::exists('away_team') ? Country::firstOrCreate(array('name' => Input::get('away_team_country_name'))) : null;
-			$competition = Competition::firstOrCreate(array('name' => Input::get('league_name'), 'sport_id' => $sport->id, 'country_id' => $event_country->id));
+			$bookmaker = Bookmaker::firstOrCreate(array('nom' => utf8_encode(Input::get('bookmaker'))));
+			$sport = Sport::firstOrCreate(array('name' => utf8_encode(Input::get('sport_Name'))));
+			$event_country = Country::firstOrCreate(array('name' => utf8_encode(Input::get('event_country_name'))));
+			$home_country = Input::exists('home_team') ? Country::firstOrCreate(array('name' => utf8_encode(Input::get('home_team_country_name')))) : null;
+			$away_country = Input::exists('away_team') ? Country::firstOrCreate(array('name' => utf8_encode(Input::get('away_team_country_name')))) : null;
+			$competition = Competition::firstOrCreate(array('name' => utf8_encode(Input::get('league_name')), 'sport_id' => $sport->id, 'country_id' => $event_country->id));
 			$home_team = Input::exists('home_team') ? Equipe::firstOrCreate(array('name' => utf8_encode(Input::get('home_team')), 'sport_id' => $sport->id, 'country_id' => $home_country->id)) : null;
 			$away_team = Input::exists('away_team') ? Equipe::firstOrCreate(array('name' => utf8_encode(Input::get('away_team')), 'sport_id' => $sport->id, 'country_id' => $away_country->id)) : null;
 
 			$market = Market::find(Input::get('market_id'));
 			if(is_null($market)){
-				$market = Market::firstOrCreate(array('id' => Input::get('market_id'), 'name' => Input::get('market'))); // le nom peut etre change du coté de betbrain donc on recherche uniquement par id.
+				$market = Market::firstOrCreate(array('id' => Input::get('market_id'), 'name' => utf8_encode(Input::get('market')))); // le nom peut etre change du coté de betbrain donc on recherche uniquement par id.
 			}
 
-			$scope = Scope::firstOrCreate(array('name' => Input::get('scope'))); // recherche par nom parceque betbrain peut envoyer un scope qui a 0 en id ce qui fait buguer.
+			$scope = Scope::firstOrCreate(array('name' => utf8_encode(Input::get('scope')))); // recherche par nom parceque betbrain peut envoyer un scope qui a 0 en id ce qui fait buguer.
 
 			if(Input::exists('home_team')) {
 					if(!$competition->equipes->contains($home_team->id)){
@@ -248,7 +248,7 @@
 			}
 
 			$coupon = new Coupon(array(
-				'pick' => Input::get('pick'),
+				'pick' => utf8_encode(Input::get('pick')),
 				'scope' => $scope->name,
 				'scope_id' => $scope->id,
 				'bookmaker' => $bookmaker->nom,
@@ -257,15 +257,15 @@
 				'odd_doubleParam' => Input::get('odd_doubleParam') == "-999.888" ? null : Input::get('odd_doubleParam'),
 				'odd_doubleParam2' => Input::get('odd_doubleParam2') == "-999.888" ? null : Input::get('odd_doubleParam2'),
 				'odd_doubleParam3' => Input::get('odd_doubleParam3') == "-999.888" ? null : Input::get('odd_doubleParam3'),
-				'odd_participantParameterName' => Input::exists('odd_participantParameterName') == "-9223372036854775808" ? null : Input::get('odd_participantParameterName') ,
-				'odd_participantParameterName2' => Input::exists('odd_participantParameterName2') == "-9223372036854775808" ? null : Input::get('odd_participantParameterName2'),
-				'odd_participantParameterName3' => Input::exists('odd_participantParameterName3') == "-9223372036854775808" ? null : Input::get('odd_participantParameterName3'),
+				'odd_participantParameterName' => Input::exists('odd_participantParameterName') == "-9223372036854775808" ? null : utf8_encode(Input::get('odd_participantParameterName')) ,
+				'odd_participantParameterName2' => Input::exists('odd_participantParameterName2') == "-9223372036854775808" ? null : utf8_encode(Input::get('odd_participantParameterName2')),
+				'odd_participantParameterName3' => Input::exists('odd_participantParameterName3') == "-9223372036854775808" ? null : utf8_encode(Input::get('odd_participantParameterName3')),
 				'odd_groupParam' => Input::get('odd_groupParam') == "-999.888" ? null : Input::get('odd_groupParam'),
 				'market_id' => $market->id,
 				'market' => $market->name,
 				'game_time' => $date,
 				'game_id' => Input::get('game_id'),
-				'game_name' => Input::get('game_name'),
+				'game_name' => utf8_encode(Input::get('game_name')),
 				'sport_id' => $sport->id,
 				'sport_name' => $sport->name,
 				'league_id' => $competition->id,
