@@ -10,17 +10,36 @@ cb(moment.tz(user.timezone).startOf('month'), moment.tz(user.timezone).endOf('mo
 $('#default-range-container').daterangepicker({
     opens: 'left',
     format: 'DD/MM/YYYY',
+    buttonClasses: ['btn btn-default'],
+    applyClass: 'btn-sm btn-primary',
+    cancelClass: 'btn-sm',
+    locale: {
+        applyLabel: 'Choisir',
+        cancelLabel: 'Annuler',
+        fromLabel: 'De',
+        toLabel: 'à',
+        customRangeLabel: 'personnalisé',
+        daysOfWeek: ['L', 'Ma', 'Me', 'J', 'V', 'S','D'],
+        monthNames: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+        firstDay: 1
+    },
     ranges: {
         'Aujourd\'hui': [moment.tz(user.timezone), moment.tz(user.timezone)],
         'Hier': [moment.tz(user.timezone).subtract(1, 'days'), moment.tz(user.timezone).subtract(1, 'days')],
         'Cette Semaine': [moment.tz(user.timezone).startOf('isoweek'), moment.tz(user.timezone).endOf('isoweek')],
         'Semaine Précédente': [moment.tz(user.timezone).subtract(1, 'week').startOf('isoweek'), moment.tz(user.timezone).subtract(1, 'week').endOf('isoweek')],
-        'Ce Mois': [moment.tz(user.timezone).startOf('month'), moment.tz(user.timezone).endOf('month')],
+        'Ce Mois-ci': [moment.tz(user.timezone).startOf('month'), moment.tz(user.timezone).endOf('month')],
         'Mois Précédent': [moment.tz(user.timezone).subtract(1, 'month').startOf('month'), moment.tz(user.timezone).subtract(1, 'month').endOf('month')]
     }
 }, cb).on('apply.daterangepicker', function (ev, picker) {
     loadGeneralRecapsOnDashboard();
 });
+var ranges_container = $('.ranges');
+
+ranges_container.find('ul li:nth-child(1)').removeClass('active');
+ranges_container.find('ul li:nth-child(5)').addClass('active');
+
+
 
 
 function loadGeneralRecapsOnDashboard() {

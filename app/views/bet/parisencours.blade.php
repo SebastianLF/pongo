@@ -11,8 +11,8 @@
         <tr class="uppercase">
             <th></th>
             <th>date r.</th>
-            <th>Sport</th>
-            <th>Competition</th>
+            <th class="hidden-sm">Sport</th>
+            <th class="hidden-sm">Competition</th>
             <th>Rencontre</th>
             <th>Pari</th>
             <th>Tipster</th>
@@ -44,14 +44,14 @@
                     @endif
 
                 </td>
-                <td>
+                <td class="hidden-sm">
                     @if($pari->type_profil == 's')
                         {{{$pari->selections->first()->sport->name}}}
                     @else
                         <span class="label label-sm label-success label-mini">combiné</span>
                     @endif
                 </td>
-                <td>@if($pari->type_profil == 's')
+                <td class="hidden-sm">@if($pari->type_profil == 's')
                         {{{$pari->selections->first()->competition->name}}}
                     @else
                         <span class="label label-sm label-success label-mini">combiné</span>
