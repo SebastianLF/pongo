@@ -1,6 +1,6 @@
 <div class="form-body " style="padding:5px;">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-6">
             <div class="form-group">
                 <div class="">
                     <label class="">Tipster</label>
@@ -12,7 +12,7 @@
                 </select>
             </div>
         </div>
-        <div class="col-md-3 col-md-offset-1">
+        <div class="col-md-6">
             <div class="form-group">
                 <div class="">
                     <label class="">Suivi <span
@@ -26,7 +26,7 @@
                         readonly></select>
             </div>
         </div>
-        <div class="col-md-4 col-md-offset-1">
+        <div class="col-md-4 hidden">
             <div class="form-group">
                 <div class="">
                     <label class="">Montant par u. <span
@@ -46,7 +46,7 @@
     <hr>
     <!--/row-->
     <div id="typestakecontainer" class="row">
-        <div class="col-md-3">
+        <div class="col-md-6">
             <div class="form-group">
                 <div class="">
                     <label class="">Mise <span class="glyphicon glyphicon-question-sign"
@@ -64,13 +64,13 @@
             </div>
         </div>
         <!--/span-->
-        <div class="col-md-3 col-md-offset-1 typestakeunites">
+        <div class="col-md-6 typestakeunites">
             <div class="form-group">
                 <div class="">
                     <label class="">Mise en U</label>
                 </div>
                 <div class="input-group">
-                    <div class="input-group-addon">u</div>
+                    <div class="input-group-addon">U</div>
 
                     <input type="text" id="stakeunitinputdashboard"
                            name="stakeunitinputdashboard"
@@ -78,7 +78,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-md-offset-1 typestakeunites">
+        <div class="col-md-5 typestakeunites hidden">
             <div class="form-group">
                 <div class="">
                     <label class="">Conversion en {{Auth::user()->devise}}</label>
@@ -91,7 +91,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 col-md-offset-1 typestakeflat">
+        <div class="col-md-6 typestakeflat">
             <div class="form-group">
                 <div class="">
                     <label class="">Mise en {{Auth::user()->devise}}</label>
@@ -109,7 +109,7 @@
     <div id="bookmakercontainer" class="row">
 
         <!--/span-->
-        <div class="col-md-4">
+        <div class="col-md-4 ">
             <div class="form-group">
                 <div class="">
                     <label class="">Compte</label>
@@ -132,23 +132,23 @@
     <div id="optionscontainer" class="row">
         <div class="col-md-12">
             <div class="form-group">
-                <div class="col-md-12">
-                    <label class="checkbox-inline">
-                        <input type="checkbox" id="ticketABCD"
-                               value="ticketABCD">Pari ABCD
-                    </label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" id="ticketLongTerme"
-                               value="ticketLongTerme">Pari long terme
-                    </label>
-                </div>
+
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="ticketABCD"
+                           value="ticketABCD">Martingale ABCD
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="ticketLongTerme"
+                           value="ticketLongTerme">Long terme
+                </label>
+
             </div>
         </div>
         <div id="methodeabcdcontainer">
             <div class="col-md-4  col-md-offset-1">
                 <div class="form-group">
                     <div class="">
-                        <label class="">N° série ou nom</label>
+                        <label class="">N° ou nom</label>
                     </div>
                     <div class="">
                         <select name="serieinputdashboard"
