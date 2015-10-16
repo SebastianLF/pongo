@@ -8,26 +8,22 @@ var minifyHTML = require('gulp-minify-html');
 
 gulp.task('main-css', function(){
     return gulp.src([
-        'public/v4.1.0/theme/assets/global/plugins/font-awesome/css/font-awesome.min.css',
+        'public/v4.1.0/theme/assets/global/plugins/font-awesome/css/font-awesome.css',
         'public/v4.1.0/theme/assets/global/plugins/uniform/css/uniform.default.css',
-        'public/v4.1.0/theme/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css',
-        'public/v4.1.0/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css',
-        'public/dist/ladda-themeless.min.css',
-        'public/css/toastr.css',
-        'public/css/sweetalert.css',
-        'public/css/select2.css',
-        'public/css/select2-bootstrap.min.css',
-        'public/v4.1.0/theme/assets/global/plugins/bootstrap-select/bootstrap-select.min.css',
-        'public/v4.1.0/theme/assets/global/plugins/fullcalendar/fullcalendar.min.css',
-        'public/v4.1.0/theme/assets/global/plugins/jqvmap/jqvmap/jqvmap.css',
-        'public/v4.1.0/theme/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css',
-        'public/js/plugin/bootstrap-daterangepicker-master/daterangepicker-bs3.css',
+        'public/v4.1.0/theme/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.css',
+        'public/v4.1.0/theme/assets/global/plugins/simple-line-icons/simple-line-icons.css',
+        'public/v4.1.0/theme/assets/global/plugins/Ladda-master/dist/ladda-themeless.min.css',
+        'public/v4.1.0/theme/assets/global/plugins/toastr-master/build/toastr.css',
+        'public/v4.1.0/theme/assets/global/plugins/sweetalert-master/dist/sweetalert.css',
+        'public/v4.1.0/theme/assets/global/plugins/select2-master/dist/css/select2.css',
+        'public/v4.1.0/theme/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css',
+        'public/v4.1.0/theme/assets/global/plugins/bootstrap-daterangepicker-master/daterangepicker-bs3.css',
         'public/v4.1.0/theme/assets/admin/pages/css/pricing-table.css',
         'public/v4.1.0/theme/assets/admin/pages/css/login.css',
         'public/v4.1.0/theme/assets/admin/pages/css/tasks.css',
         'public/v4.1.0/theme/assets/global/css/plugins.css',
         'public/v4.1.0/theme/assets/admin/layout/css/layout.css',
-        'public/metronic_v3.8.1/theme/assets/admin/layout3/css/custom.css',
+        'public/v4.1.0/theme/assets/admin/layout/css/custom.css'
     ])
         .pipe(minifycss())
         .pipe(concat('main-css.min.css'))
@@ -42,29 +38,30 @@ gulp.task('js', function() {
 });
 
 gulp.task('main-plugins', function() {
-    return gulp.src(['public/v4.1.0/theme/assets/global/plugins/jquery-migrate.min.js',
+    return gulp.src([
+        'public/v4.1.0/theme/assets/global/plugins/jquery-migrate.min.js',
         'public/v4.1.0/theme/assets/global/plugins/jquery-ui/jquery-ui.min.js',
         'public/v4.1.0/theme/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js',
         'public/v4.1.0/theme/assets/global/plugins/jquery.blockui.min.js',
         'public/v4.1.0/theme/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js',
         'public/v4.1.0/theme/assets/global/plugins/jquery.cokie.min.js',
         'public/v4.1.0/theme/assets/global/plugins/uniform/jquery.uniform.min.js',
-        'public/v4.1.0/theme/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js',
+        'public/v4.1.0/theme/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.js',
         'public/v4.1.0/theme/assets/global/plugins/smooth-scroll/smooth-scroll.js',
         'public/v4.1.0/theme/assets/global/plugins/bootstrap-sessiontimeout/jquery.sessionTimeout.js',
-        'public/v4.1.0/theme/assets/global/plugins/bootstrap-select/bootstrap-select.min.js',
+        'public/v4.1.0/theme/assets/global/plugins/bootstrap-select/bootstrap-select.js',
         'public/v4.1.0/theme/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js',
-        'public/dist/bootstrap-session-timeout.min.js',
-        'public/js/plugin/select2-master/dist/js/select2.min.js',
-        'public/js/plugin/select2-master/dist/js/i18n/fr.js',
-        'public/js/plugin/toastr.js',
-        'public/js/plugin/bootstrap-daterangepicker-master/moment.min.js',
-        'public/js/plugin/bootstrap-daterangepicker-master/moment-timezone.js',
-        'public/js/plugin/sweetalert.min.js',
-        'public/js/plugin/jquery.animateNumber.min.js',
-        'public/js/plugin/bootstrap-daterangepicker-master/daterangepicker.js',
-        'public/dist/spin.min.js',
-        'public/dist/ladda.min.js',
+        'public/v4.1.0/theme/assets/global/plugins/bootstrap-session-timeout-master/dist/bootstrap-session-timeout.js',
+        'public/v4.1.0/theme/assets/global/plugins/select2-master/dist/js/select2.js',
+        'public/v4.1.0/theme/assets/global/plugins/select2-master/dist/js/i18n/fr.js',
+        'public/v4.1.0/theme/assets/global/plugins/toastr-master/build/toastr.min.js',
+        'public/v4.1.0/theme/assets/global/plugins/bootstrap-daterangepicker-master/moment.min.js',
+        'public/v4.1.0/theme/assets/global/plugins/bootstrap-daterangepicker-master/moment-timezone.js',
+        'public/v4.1.0/theme/assets/global/plugins/bootstrap-daterangepicker-master/daterangepicker.js',
+        'public/v4.1.0/theme/assets/global/plugins/sweetalert-master/dist/sweetalert.min.js',
+        'public/v4.1.0/theme/assets/global/plugins/jquery-animateNumber-master/jquery.animateNumber.min.js',
+        'public/v4.1.0/theme/assets/global/plugins/Ladda-master/dist/spin.min.js',
+        'public/v4.1.0/theme/assets/global/plugins/Ladda-master/dist/ladda.min.js',
         'public/v4.1.0/theme/assets/global/scripts/metronic.js',
         'public/v4.1.0/theme/assets/admin/layout/scripts/layout.js',
         'public/v4.1.0/theme/assets/admin/pages/scripts/form-samples.js',
@@ -124,7 +121,5 @@ gulp.task('minify-html', function() {
 });
 
 gulp.task('default', ["dashboard-js"], function(){
-    gulp.watch(['public/js/pages/dashboard/paris', 'public/js/pages/dashboard/'], function(){
-        gulp.run('dashboard-js');
-    });
+    gulp.watch('public/js/*.js', ['']);
 });
