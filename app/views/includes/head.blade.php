@@ -9,7 +9,7 @@
         <meta name="_token" content="{{ csrf_token() }}"/>
     @endif
 
-    <!--Start of Zopim Live Chat Script
+    <!--Start of Zopim Live Chat Script-->
     <script type="text/javascript">
         window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
                 d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
@@ -17,9 +17,9 @@
             $.src="//v2.zopim.com/?2yLYoTe7KZc5eXH3mViXVyumTMmOeU8a";z.t=+new Date;$.
                     type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
     </script>
-    End of Zopim Live Chat Script-->
+    <!--End of Zopim Live Chat Script-->
 
-    <!-- Hotjar Tracking Code for slfweb.eu1.frbit.net
+    <!-- Hotjar Tracking Code for slfweb.eu1.frbit.net -->
     <script>
         (function(h,o,t,j,a,r){
             h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -29,7 +29,7 @@
             r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
             a.appendChild(r);
         })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
-    </script> -->
+    </script>
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link rel="shortcut icon" href="{{asset('favicon.ico')}}"/>
