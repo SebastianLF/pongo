@@ -33,7 +33,7 @@
                 <?php $app = App::make('pari_affichage');
                 $selections_final = $pari->selections;
                 foreach ($selections_final as $selections) {
-                    $pariAffichage = $app->display($selections->market_id, $selections->pick, $selections->odd_doubleParam1, $selections->odd_doubleParam2, $selections->odd_doubleParam3, $selections->odd_participantParameterName, $selections->odd_participantParameterName2, $selections->odd_participantParameterName3, $selections->equipe1['name'], $selections->equipe2['name']);
+                    $pariAffichage = $app->display($selections->market_id, $selections->scope_id, $selections->pick, $selections->odd_doubleParam1, $selections->odd_doubleParam2, $selections->odd_doubleParam3, $selections->odd_participantParameterName, $selections->odd_participantParameterName2, $selections->odd_participantParameterName3, $selections->equipe1['name'], $selections->equipe2['name']);
                     $selections['pariAffichage'] = $pariAffichage;
                 } ?>
                 <!-- les parentheses doivent etre des simples quotes pour data-selections car c un objet javascript -->
