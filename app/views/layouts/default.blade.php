@@ -246,6 +246,7 @@ License: You must have a valid license purchased only from themeforest(the above
         // toastr plugin configuration
         toastr.options = {
             "closeButton": true,
+            "progressBar": true,
             "debug": false,
             "positionClass": "toast-top-right",
             "onclick": null,
@@ -258,6 +259,7 @@ License: You must have a valid license purchased only from themeforest(the above
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
         };
+
 
     });
     @include('includes.subview.inits')

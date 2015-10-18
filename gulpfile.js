@@ -121,5 +121,5 @@ gulp.task('minify-html', function() {
 });
 
 gulp.task('default', ["dashboard-js"], function(){
-    gulp.watch('public/js/*.js', ['']);
+    gulp.watch('public/js/pages/dashboard/paris/*.js', ['dashboard-js']);
 });

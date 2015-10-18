@@ -8,6 +8,7 @@ function loadParisEnCours() {
             // chargement des paris long terme dans la div.
             $('#tab_15_1').html(data.vue);
 
+
             var table = $("#parisencourstable");
 
             /*
@@ -103,9 +104,7 @@ function loadParisEnCours() {
                 onglet_span.html(data.count_paris_encours);
             }
 
-            // activation des tooltip.
-            $('[data-toggle="tooltip"]').tooltip();
-
+            calculMontantRetourne(table);
             parisEnCoursEnclose(table, 'c');
             parisEnCoursDelete(table, 'c');
         },

@@ -104,7 +104,7 @@
                     @endif
 
                 </td>
-                <td width="10px"><div class="input-group "><input type="text" width="50px" name="amount-returned" class="form-control inputs-ticket"><div class="input-group-addon input-group-addon-amount-returned">{{Auth::user()->devise}}</div></div></td>
+                <td width="10px"><div class="input-group "><input type="text" width="50px" name="amount-returned" class="form-control inputs-ticket" placeholder=""><div class="input-group-addon input-group-addon-amount-returned">{{Auth::user()->devise}}</div></div></td>
                 <td width="120px">
                     {{ Form::button('<i class="fa fa-check"></i>', array('data-pari-type' => $pari->type_profil, 'data-pari-id' => $pari->id, 'data-style' => "zoom-in", 'class' => 'boutonvalider btn btn-sm ladda-button green-jungle buttons-actions-ticket')) }}
                     {{ Form::button('<i class="fa fa-trash"></i>', array('data-pari-type' => $pari->type_profil, 'data-pari-id' => $pari->id, 'data-style' => "zoom-in", 'class' => 'boutonsupprimer btn btn-sm ladda-button red buttons-actions-ticket')) }}

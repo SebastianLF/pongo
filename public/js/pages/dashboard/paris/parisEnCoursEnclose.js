@@ -24,7 +24,6 @@ function parisEnCoursEnclose(tablename, type) {
                 status.push($(this).val())
             });
         }
-        console.log(status);
 
         if (tr_childs.length == 0 && type_profil == 'c') {
             swal("Erreur", "Cliquez sur la croix pour dérouler le combiné et selectionnez les status pour chaque pari du combiné.")

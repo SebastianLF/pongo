@@ -139,6 +139,7 @@
 					$retour_unites = $retour_devise / $mt_par_unite;
 					$profit_unites = $retour_unites - $nombre_unites;
 
+					// affectation du status du pari selon le type de pari.
 					if ($encoursparis->type_profil == 's') {
 						$status_termine_pari = $selections[0]->status;
 					} else if ($encoursparis->type_profil == 'c') {
