@@ -18,17 +18,16 @@ function loadParisEnCours() {
             nCloneTh.className = "table-checkbox";
 
             var nCloneTdCombine = document.createElement('td');
-            nCloneTdCombine.innerHTML = '<span class="row-details row-details-close"></span>';
+            nCloneTdCombine.innerHTML = '<span class="row-details glyphicon glyphicon-chevron-right blue"></span>';
 
             var nCloneTdSimple = document.createElement('td');
-            nCloneTdSimple.innerHTML = '<span class=""></span>';
+            nCloneTdSimple.innerHTML = '<span class="glyphicon glyphicon-minus"></span>';
 
             table.find('thead tr').each(function () {
                 this.insertBefore(nCloneTh, this.childNodes[0]);
             });
 
             table.find('tbody tr').each(function () {
-                console.log($(this).data('nb-selections'));
                 if ($(this).data('nb-selections') > 1) {
                     this.insertBefore(nCloneTdCombine.cloneNode(true), this.childNodes[0]);
                 }else{
@@ -62,6 +61,7 @@ function loadParisEnCours() {
                         sortDescending: ": activer pour trier la colonne par ordre décroissant"
                     }
                 },
+                "ordering": false,
                 //stateSave: true,
 
                 "lengthMenu": [
@@ -88,14 +88,14 @@ function loadParisEnCours() {
                 var type = $(this).parents('tr').data('pari-type');
                 if (oTable.fnIsOpen(nTr)) {
                     /* This row is already open - close it */
-                    $(this).addClass("row-details-close").removeClass("row-details-open");
+                    $(this).addClass("glyphicon-chevron-right").removeClass("glyphicon-chevron-down");
                     oTable.fnClose(nTr);
 
-                    //remet à vide le montant retourné lors du collapse du combiné.
+                    //remet a zero
                     $(this).closest('tr').find('input[name="amount-returned"]').val('');
                 } else {
                     /* Open this row */
-                    $(this).addClass("row-details-open").removeClass("row-details-close");
+                    $(this).addClass("glyphicon-chevron-down").removeClass("glyphicon-chevron-right");
                     oTable.fnOpen(nTr, fnFormatDetailsForChildsParisEnCours(oTable, selections, type), 'details');
                 }
             });

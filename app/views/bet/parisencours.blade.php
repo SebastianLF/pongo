@@ -9,7 +9,7 @@
     <table id="parisencourstable" class="table table-light table-condensed table-hover table-paris">
         <thead>
         <tr class="uppercase">
-            <th></th>
+            <th>N°</th>
             <th>date r.</th>
             <th class="hidden-sm">Sport</th>
             <th class="hidden-sm">Competition</th>
@@ -19,7 +19,7 @@
             <th>Book</th>
             <th>Cote</th>
             <th>Status</th>
-            <th>retourné <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="montant retourné. Exemple: cote à 2 et mise de 50 {{Auth::user()->devise}}, le montant retourné sera 100 {{Auth::user()->devise}}"></span></th>
+            <th>Mt. retour <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="montant retourné. Exemple: cote à 2 et mise de 50 {{Auth::user()->devise}}, le montant retourné sera 100 {{Auth::user()->devise}}"></span></th>
             <th></th>
         </tr>
         </thead>
