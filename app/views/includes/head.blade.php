@@ -19,7 +19,7 @@
     </script>
     <!--End of Zopim Live Chat Script-->
 
-    <!-- Hotjar Tracking Code for slfweb.eu1.frbit.net -->
+    <!-- Hotjar Tracking Code for slfweb.eu1.frbit.net
     <script>
         (function(h,o,t,j,a,r){
             h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -29,7 +29,7 @@
             r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
             a.appendChild(r);
         })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
+    </script>-->
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link rel="shortcut icon" href="{{asset('favicon.ico')}}"/>
