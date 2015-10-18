@@ -11,7 +11,7 @@ function fnFormatDetailsForChildsParisEnCours(oTable, selections, type) {
 
     // simple = on affiche pas le select input du tout le select input dans chacunes des selections, combine = on affiche le select input dans chacunes des selections.
     if(type == 'c'){
-        sOut = '<table class="table table-condensed table-paris-child"><thead><tr class="uppercase"><th>date rencontre</th><th>sport</th><th>competition</th><th>rencontre</th><th>pari</th><th>cote</th><th>status</th></tr></thead><tbody>';
+        sOut = '<table class="table table-condensed table-paris-child"><thead><tr class="uppercase"><th>date rencontre</th><th>sport</th><th>competition</th><th>pari</th><th>cote</th><th>status</th></tr></thead><tbody>';
         sTdChild = '<td class="uppercase"><select name="status[]" data-value="" class="form-control inputs-ticket"><option value="0">-Choisir-</option><option value="1">Gagné</option><option value="2">Perdu</option><option value="3">1/2 Gagné</option><option value="4">1/2 Perdu</option><option value="5">Remboursé</option></select></td>';
     }else if(type == 's'){
         sOut = '<table class="table table-condensed table-paris-child"><thead><tr class="uppercase"><th>date rencontre</th><th>sport</th><th>competition</th><th>rencontre</th><th>pari</th><th>cote</th></tr></thead><tbody>';
@@ -26,15 +26,15 @@ function fnFormatDetailsForChildsParisEnCours(oTable, selections, type) {
 
         // afficher la rencontre ou pas.
         if (value.game_name == null) {
-            rencontre = 'N/A'
+            rencontre = ''
         } else {
-            rencontre = '<span><img src="img/flags/' + value.equipe1.country.shortname + '.png" class="img-flag"> ' + value.equipe1.name + ' - </span>' + '<span><img src="img/flags/' + value.equipe2.country.shortname + '.png" class="img-flag"> ' + value.equipe2.name + '</span>'
+            rencontre = value.equipe1.name + ' - ' + value.equipe2.name + ' / ';
         }
 
         function affichageScore(){
             if(value.score == '' || value.score == null){
                 return '';
-            }else{return '('+value.score+'LIVE!)'}
+            }else{return value.score+' LIVE!'}
         }
 
         // structure de representation d'une ligne.
@@ -43,10 +43,9 @@ function fnFormatDetailsForChildsParisEnCours(oTable, selections, type) {
             '<td>' + moment.tz(value.date_match, 'Europe/Paris').tz(user.timezone).format("DD/MM/YYYY HH:mm") + '</td>' +
             '<td>' + value.sport.name + '</td>' +
             '<td>' + value.competition.name + '</td>' +
-            '<td>' + rencontre + '</td>' +
-            '<td>' + value.pariAffichage + ' ('+ value.scope.representation + ')' + affichageScore() + '</td>' +
-            '<td>' + value.cote + '</td>' +
-            sTdChild +
+            '<td>' + rencontre + '<span class="blue">'+value.pariAffichage + ' ('+ value.scope.representation + ')</span>' + ' <span class="label label-sm label-danger label-mini">'+affichageScore()+'</span></td>' +
+            '<td>' + parseFloat(Math.round(value.cote * 1000) / 1000) + '</td>' +
+            sTdChild + // table childs
             '</tr>';
     });
     sOut += '</tbody></table>';

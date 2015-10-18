@@ -6,14 +6,13 @@
         </div>
     </div>
 @else
-    <table id="parisencourstable" class="table table-condensed table-bordered table-paris">
+    <table id="parisencourstable" class="table table-light table-condensed table-hover table-paris">
         <thead>
         <tr class="uppercase">
             <th></th>
             <th>date r.</th>
             <th class="hidden-sm">Sport</th>
             <th class="hidden-sm">Competition</th>
-            <th>Rencontre</th>
             <th>Pari</th>
             <th>Tipster</th>
             <th>Mise</th>
@@ -59,25 +58,22 @@
                 <td>
                     @if($pari->type_profil == 's')
                         @if($pari->selections->first()->isMatch)
-                            {{{$pari->selections->first()->game_name}}}
+                            {{{$pari->selections->first()->game_name.' /'}}}
                         @else
-                            {{{'N/A'}}}
+                            {{{''}}}
                         @endif
-                    @else
-                        <span class="label label-sm label-success label-mini">combiné</span>
                     @endif
-                </td>
-
-                <td class="blue">
-                    @if($pari->type_profil == 's')
-                        {{$pariAffichage}}
-                        {{' ('.$pari->selections->first()->scope->representation.') '}}
-                        @if($pari->selections->first()->score)
-                            {{' ('.$pari->selections->first()->score.' LIVE!) '}}
+                    <span class="blue">
+                        @if($pari->type_profil == 's')
+                            {{$pariAffichage}}
+                            {{' ('.$pari->selections->first()->scope->representation.') '}}
+                            @if($pari->selections->first()->isLive)
+                                <span class="label label-sm label-danger label-mini">{{$pari->selections->first()->score.' LIVE!'}}</span>
+                            @endif
+                        @else
+                            <span class="label label-sm label-success label-mini">combiné</span>
                         @endif
-                    @else
-                        <span class="label label-sm label-success label-mini">combiné</span>
-                    @endif
+                    </span>
                 </td>
                 <td>{{$pari->tipster->name}}</td>
                 <td class="tdmise  bold">

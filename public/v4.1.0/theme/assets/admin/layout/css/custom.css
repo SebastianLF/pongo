@@ -119,6 +119,10 @@ Rounded Portlets
   font-size: 17px;
 }
 
+.form-control-mise-unites-coupon{
+    width: 50% !important;
+}
+
 
 .glyphicon-plus-sign{
   font-size: 1.2em !important;
@@ -212,6 +216,8 @@ select{
   font-weight: 300;
 
 }
+
+
 
 .table-pari td {
   text-align: center !important;

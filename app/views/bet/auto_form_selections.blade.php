@@ -34,7 +34,7 @@
                     </td>
 
                     <td>{{' '.$selection->bookmaker}}</td>
-                    <td ><input class=" form-control input-coupon-odd" name="automatic-selection-cote[]" type="text"
+                    <td><input class=" form-control input-coupon-odd" name="automatic-selection-cote[]" type="text"
                                value="{{floatval($selection->odd_value)}}"/></td>
                     <td width="5px">
                         <button class="boutonsupprimer btn btn-xs red"><i class="glyphicon glyphicon-trash"></i>

@@ -62,7 +62,7 @@ function loadParisEnCours() {
                         sortDescending: ": activer pour trier la colonne par ordre décroissant"
                     }
                 },
-                stateSave: true,
+                //stateSave: true,
 
                 "lengthMenu": [
                     [5, 15, 20, 100],

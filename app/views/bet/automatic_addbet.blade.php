@@ -74,7 +74,7 @@
 
                     <input type="text" id="stakeunitinputdashboard"
                            name="stakeunitinputdashboard"
-                           class="form-control input-sm">
+                           class="form-control input-sm form-control-mise-unites-coupon">
                 </div>
             </div>
         </div>
@@ -100,7 +100,7 @@
                     <div class="input-group-addon">{{Auth::user()->devise}}</div>
                     <input type="text" id="amountinputdashboard"
                            name="amountinputdashboard"
-                           class="form-control input-sm">
+                           class="form-control input-sm form-control-mise-unites-coupon">
                 </div>
             </div>
         </div>
@@ -176,7 +176,7 @@
         </div>
         <!--/span-->
     </div>
-    <hr>
+
     <div id="submitboutoncontainer" class="row">
         <div class="text-center col-md-12">
             <button type="submit" class="btn btn-danger ladda-button" data-style="slide-down" data-size="l"><span
