@@ -3101,7 +3101,7 @@
       <column name="cote" sqlType="DECIMAL" precision="8" scale="3" nullable="false" jdbcType="3"/>
       <column name="cote_apres_status" sqlType="DECIMAL" precision="8" scale="3" nullable="false" jdbcType="3"/>
       <column name="mt_par_unite" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
-      <column name="nombre_unites" sqlType="DECIMAL" precision="5" scale="2" nullable="false" jdbcType="3"/>
+      <column name="nombre_unites" sqlType="DECIMAL" precision="8" scale="3" nullable="false" jdbcType="3"/>
       <column name="mise_totale" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
       <column name="pari_long_terme" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
       <column name="pari_gratuit" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
@@ -3320,10 +3320,10 @@
       <column name="cote_apres_status" sqlType="DECIMAL" precision="8" scale="3" nullable="false" jdbcType="3"/>
       <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
       <column name="mt_par_unite" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
-      <column name="nombre_unites" sqlType="DECIMAL" precision="5" scale="2" nullable="false" jdbcType="3"/>
+      <column name="nombre_unites" sqlType="DECIMAL" precision="8" scale="3" nullable="false" jdbcType="3"/>
       <column name="mise_totale" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
-      <column name="unites_retour" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
-      <column name="unites_profit" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
+      <column name="unites_retour" sqlType="DECIMAL" precision="8" scale="3" nullable="false" jdbcType="3"/>
+      <column name="unites_profit" sqlType="DECIMAL" precision="8" scale="3" nullable="false" jdbcType="3"/>
       <column name="montant_retour" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
       <column name="montant_profit" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
       <column name="pari_long_terme" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
