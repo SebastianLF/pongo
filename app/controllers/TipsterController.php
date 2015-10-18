@@ -37,13 +37,13 @@
 		public function store()
 		{
 			$regles = array(
-				'name_tipster' => 'required|max:20|unique:tipsters,name,NULL,id,user_id,' . Auth::user()->id ,
+				'name_tipster' => 'required|max:30|unique:tipsters,name,NULL,id,user_id,' . Auth::user()->id ,
 				'suivi_tipster' => 'required|in:n,b',
 				'amount_tipster' => 'required|decimal>0',
 			);
 			$messages = array(
 				'name_tipster.required' => 'Un nom est nécéssaire',
-				'name_tipster.max' => 'Nom trop long, 20 caracteres maximum',
+				'name_tipster.max' => 'Nom trop long, 30 caracteres maximum',
 				'name_tipster.unique' => 'Un tipster à déjà été crée avec ce nom.',
 				'suivi_tipster.required' => "Un type de suvi est nécéssaire",
 				'suivi_tipster.alpha' => "Le type de suivi ne doit comporter que des lettres",
