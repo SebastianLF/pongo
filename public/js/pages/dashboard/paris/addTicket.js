@@ -337,7 +337,7 @@ function gestionTicket() {
 
 
     function typestakechoice() {
-        var types = [{id: 'u', text: 'en unités'}, {id: 'f', text: 'en devise'}];
+        var types = [{id: 'u', text: 'en unités'}, {id: 'f', text: 'libre (devise)'}];
         typestake.select2({
             minimumResultsForSearch: Infinity,
             cache: true,

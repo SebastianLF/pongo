@@ -52,7 +52,7 @@
                     <label class="">Mise <span class="glyphicon glyphicon-question-sign"
                                                data-toggle="tooltip"
                                                data-placement="bottom"
-                                               title="En unités: miser en unités par rapport au montant par unité attribué pour ce tipter, type de mise à privilégier pour un gain de temps. En montant(devise): miser en montant devise lorsque vous ne souhaitez pas respecter le principe de mise en unité, cela vous donne plus de liberté."></span></label>
+                                               title="En unités: miser en unités par rapport au montant par unité attribué pour ce tipter, type de mise à privilégier pour un gain de temps. En libre (devise): miser en montant devise lorsque vous ne souhaitez pas respecter le principe de mise en unité, cela vous donne plus de liberté."></span></label>
                 </div>
                 <div class="">
                     <select name="typestakeinputdashboard"

@@ -3,12 +3,14 @@
 namespace lib\pari;
 
 use Market;
+use Scope;
 
 class PariAffichage implements PariAffichageInterface{
 
 
-	public function display($market_id, $pick, $oddParameter1, $oddParameter2, $oddParameter3, $parameterName1, $parameterName2, $parameterName3, $home_team = null, $away_team = null){
+	public function display($market_id, $scope_id, $pick, $oddParameter1, $oddParameter2, $oddParameter3, $parameterName1, $parameterName2, $parameterName3, $home_team = null, $away_team = null){
 		$market = Market::find($market_id);
+		$scope = Scope::find($scope_id);
 		// affectation du numero d'affichage selon le type de pari.
 		// 1 , 'pick'
 		// 2 , 'pick doubleparam'
@@ -66,27 +68,27 @@ class PariAffichage implements PariAffichageInterface{
 		}*/
 
 
-		if($affichage_num == 1){return $market->name.' : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team);}
-		elseif($affichage_num == 2){return $market->name.' : '.$pick;}
-		elseif($affichage_num == 3){return $market->name.' : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team).' '.$oddParameter1;}
-		elseif($affichage_num == 4){return $market->name.' : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team).', '.$this->UniformiserNomEquipe($parameterName1,$home_team, $away_team);}
-		elseif($affichage_num == 5){return $market->name.' : '.$pick.', '.$oddParameter1.'-'.$oddParameter2.' minutes';}
+		if($affichage_num == 1){return $market->name.' ('.$scope->representation.') : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team);}
+		elseif($affichage_num == 2){return $market->name.' ('.$scope->representation.') : '.$pick;}
+		elseif($affichage_num == 3){return $market->name.' ('.$scope->representation.') : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team).' '.$oddParameter1;}
+		elseif($affichage_num == 4){return $market->name.' ('.$scope->representation.') : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team).', '.$this->UniformiserNomEquipe($parameterName1,$home_team, $away_team);}
+		elseif($affichage_num == 5){return $market->name.' ('.$scope->representation.') : '.$pick.', '.$oddParameter1.'-'.$oddParameter2.' minutes';}
 		elseif($affichage_num == 6){
 			if($oddParameter1 > 0){
-				return $market->name.' : '.$pick.', '.$parameterName1.' +'.$oddParameter1;
+				return $market->name.' ('.$scope->representation.') : '.$pick.', '.$parameterName1.' +'.$oddParameter1;
 			}else{
-				return $market->name.' : '.$pick.', '.$parameterName1.' '.$oddParameter1;
+				return $market->name.' ('.$scope->representation.') : '.$pick.', '.$parameterName1.' '.$oddParameter1;
 			}}
-		elseif($affichage_num == 7){return $market->name.' : '.$pick.' Top '.$oddParameter1;}
+		elseif($affichage_num == 7){return $market->name.' ('.$scope->representation.') : '.$pick.' Top '.$oddParameter1;}
 		elseif($affichage_num == 8){
 			if($oddParameter1 > 0){
-				return $market->name.' : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team).' +'.$oddParameter1;
+				return $market->name.' ('.$scope->representation.') : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team).' +'.$oddParameter1;
 			}else{
-				return $market->name.' : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team).' '.$oddParameter1;
+				return $market->name.' ('.$scope->representation.') : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team).' '.$oddParameter1;
 			}
 		}
-		elseif($affichage_num == 9){return $market->name.' : '.$parameterName1.', '.$pick.' '.$oddParameter1;}
-		elseif($affichage_num == 10){return $market->name.' : '.$pick.' '.$oddParameter1;}
+		elseif($affichage_num == 9){return $market->name.' ('.$scope->representation.') : '.$parameterName1.', '.$pick.' '.$oddParameter1;}
+		elseif($affichage_num == 10){return $market->name.' ('.$scope->representation.') : '.$pick.' '.$oddParameter1;}
 
 		return 'Erreur affichage pari';
 	}

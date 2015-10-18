@@ -9,6 +9,6 @@
 namespace lib\pari;
 
 interface PariAffichageInterface {
-	public function display($market_id, $pick, $oddParameter1, $oddParameter2, $oddParameter3, $parameterName1, $parameterName2, $parameterName3, $home_team, $away_team);
+	public function display($market_id, $scope_id, $pick, $oddParameter1, $oddParameter2, $oddParameter3, $parameterName1, $parameterName2, $parameterName3, $home_team, $away_team);
 }
 

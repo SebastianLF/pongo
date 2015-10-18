@@ -43,7 +43,7 @@ function fnFormatDetailsForChildsParisEnCours(oTable, selections, type) {
             '<td>' + moment.tz(value.date_match, 'Europe/Paris').tz(user.timezone).format("DD/MM/YYYY HH:mm") + '</td>' +
             '<td>' + value.sport.name + '</td>' +
             '<td>' + value.competition.name + '</td>' +
-            '<td>' + rencontre + '<span class="blue">'+value.pariAffichage + ' ('+ value.scope.representation + ')</span>' + ' <span class="label label-sm label-danger label-mini">'+affichageScore()+'</span></td>' +
+            '<td>' + rencontre + '<span class="blue">' + value.pariAffichage + '</span>' + ' <span class="label label-sm label-danger label-mini">'+affichageScore()+'</span></td>' +
             '<td>' + parseFloat(Math.round(value.cote * 1000) / 1000) + '</td>' +
             sTdChild + // table childs
             '</tr>';

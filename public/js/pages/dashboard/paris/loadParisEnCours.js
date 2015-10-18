@@ -90,6 +90,9 @@ function loadParisEnCours() {
                     /* This row is already open - close it */
                     $(this).addClass("row-details-close").removeClass("row-details-open");
                     oTable.fnClose(nTr);
+
+                    //remet à vide le montant retourné lors du collapse du combiné.
+                    $(this).closest('tr').find('input[name="amount-returned"]').val('');
                 } else {
                     /* Open this row */
                     $(this).addClass("row-details-open").removeClass("row-details-close");

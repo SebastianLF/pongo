@@ -132,12 +132,16 @@ input{
 }
 
 select{
-  padding: 5px !important;
+  padding: 5px 0 5px 0 !important;
 }
 
 .name{
   color: #65A0D0 !important;
   font-weight: 600;
+}
+
+#table-tipsters-recap td{
+    padding: 5px !important;
 }
 
 .tipster{

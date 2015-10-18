@@ -128,13 +128,15 @@
 	});
 
 	Validator::extend('mise_montant_en_devise<solde', function ($attribute, $value, $parameters) {
-		if ($parameters[1] == 'n') {
-			$bankroll_actuelle = Auth::user()->comptes()->where('id', $parameters[0])->first()->bankroll_actuelle;
-			if (($value) < $bankroll_actuelle) {
+		if (preg_match("/^\d+(\.\d{1,2})?$/", $value) && $value > 0) {
+			if ($parameters[1] == 'n') {
+				$bankroll_actuelle = Auth::user()->comptes()->where('id', $parameters[0])->first()->bankroll_actuelle;
+				if (($value) < $bankroll_actuelle) {
+					return true;
+				}
+			} elseif ($parameters[1] == 'b') {
 				return true;
 			}
-		} elseif ($parameters[1] == 'b') {
-			return true;
 		}
 		return false;
 	});

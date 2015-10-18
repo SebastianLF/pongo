@@ -25,13 +25,13 @@
         </thead>
         <tbody>
         @foreach($parisencours as $pari)
-            <?php $app = App::make('pari_affichage');
+            <?php $pari_affichage = App::make('pari_affichage');
             $selections_final = $pari->selections;
             foreach ($selections_final as $selections) {
-                $pariAffichage = $app->display($selections->market_id, $selections->pick, $selections->odd_doubleParam1, $selections->odd_doubleParam2, $selections->odd_doubleParam3, $selections->odd_participantParameterName, $selections->odd_participantParameterName2, $selections->odd_participantParameterName3, $selections->equipe1['name'], $selections->equipe2['name']);
+                $pariAffichage = $pari_affichage->display($selections->market_id, $selections->scope_id, $selections->pick, $selections->odd_doubleParam, $selections->odd_doubleParam2, $selections->odd_doubleParam3, $selections->odd_participantParameterName, $selections->odd_participantParameterName2, $selections->odd_participantParameterName3, $selections->equipe1['name'], $selections->equipe2['name']);
                 $selections['pariAffichage'] = $pariAffichage;
             } ?>
-            <tr data-selections='{{{$selections_final}}}' data-nb-selections='{{{$pari->selections->count()}}}' data-pari-id='{{{$pari->id}}}' data-pari-type='{{{$pari->type_profil}}}'>
+            <tr data-selections='{{{$selections_final}}}' data-nb-selections='{{{$pari->selections->count()}}}' data-pick="{{$selections->pick}}" data-name1='{{$selections->equipe1['name']}}' data-pari-id='{{{$pari->id}}}' data-pari-type='{{{$pari->type_profil}}}'>
                 <td>{{{'#'.$pari->numero_pari}}}</td>
                 <td>
                     @if($pari->type_profil == 's')
@@ -66,7 +66,6 @@
                     <span class="blue">
                         @if($pari->type_profil == 's')
                             {{$pariAffichage}}
-                            {{' ('.$pari->selections->first()->scope->representation.') '}}
                             @if($pari->selections->first()->isLive)
                                 <span class="label label-sm label-danger label-mini">{{$pari->selections->first()->score.' LIVE!'}}</span>
                             @endif
@@ -78,7 +77,7 @@
                 <td>{{$pari->tipster->name}}</td>
                 <td class="tdmise  bold">
 
-                    <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise}}} {{'('.+$pari->nombre_unites.'u)'}}
+                    <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise}}} {{'('.+$pari->nombre_unites.' U)'}}
                 </td>
                 <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}
                 </td>

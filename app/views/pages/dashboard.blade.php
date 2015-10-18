@@ -313,13 +313,13 @@
         <div class="col-md-4">
             <div class="portlet light ">
                 <div class="portlet-title">
-                    <div class="caption caption-md col-md-5">
+                    <div class="caption caption-md col-md-3">
                         <i class="icon-bar-chart theme-font hide"></i>
                                 <span class="caption-subject theme-font bold uppercase"><span
-                                            class="glyphicon glyphicon-user"></span> Récap. tipsters</span>
+                                            class="glyphicon glyphicon-user"></span> Tipsters</span>
                         <span class="caption-helper hide">stats</span>
                     </div>
-                    <div class="actions col-md-6">
+                    <div class="actions col-md-9">
                         <div id="default-range-container" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
                             <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
                             <span id="defaultrange" class="visible-lg-inline-block">{{Carbon::now(Auth::user()->timezone)->startOfMonth()->format('d/m/Y').' - '.Carbon::now(Auth::user()->timezone)->endOfMonth()->format('d/m/Y')}}</span>&nbsp;<b class="caret"></b>

@@ -24,7 +24,7 @@ function calculMontantRetourne(table) {
             console.log('status='+status+' cote='+cote_general+' mise='+mise);
             if(status.indexOf('0') > -1 && status.indexOf('2') == -1){montant_retourne_input.val('')}
             else if(status.indexOf('0') > -1 && status.indexOf('2') > -1){montant_retourne_input.val(0)}
-            else{montant_retourne = cote_general * mise;montant_retourne_input.val(Number(Math.round(montant_retourne * 100) / 100))}
+            else{montant_retourne = cote_general * mise;montant_retourne_input.val(parseFloat(Math.round(montant_retourne * 1000) / 1000))}
 
         }else{
             main_parent = $this.closest('tr');
@@ -35,7 +35,7 @@ function calculMontantRetourne(table) {
             if(status == '0'){montant_retourne_input.val('')}
             else{var nouvelle_cote = calcul_nouvelle_cote_par_rapport_a_status(cote, status);
                 montant_retourne = nouvelle_cote * mise;
-                montant_retourne_input.val(Number(Math.round(montant_retourne * 100) / 100));}
+                montant_retourne_input.val(parseFloat(Math.round(montant_retourne * 1000) / 1000));}
 
         }
     });

@@ -74,7 +74,7 @@
 					'typestakeinputdashboard' => 'required|in:u,f',
 					'accountsinputdashboard' => 'required_if:followtypeinputdashboard,n|exists:bookmaker_user,id,user_id,' . Auth::id(),
 					'stakeunitinputdashboard' => 'required_if:typestakeinputdashboard,u|unites|mise_montant_en_unites<solde:' . Input::get('accountsinputdashboard') . ',' . Input::get('followtypeinputdashboard') . ',' . Input::get('tipstersinputdashboard'),
-					'amountinputdashboard' => 'required_if:typestakeinputdashboard,f|decimal>0|mise_montant_en_devise<solde:' . Input::get('accountsinputdashboard') . ',' . Input::get('followtypeinputdashboard'),
+					'amountinputdashboard' => 'required_if:typestakeinputdashboard,f|mise_montant_en_devise<solde:' . Input::get('accountsinputdashboard') . ',' . Input::get('followtypeinputdashboard'),
 					'total-cote-combine' => 'cote_generale_if_combine:'.$count.'|european_odd',
 					'ticketABCD' => 'required|in:0,1',
 					'ticketLongTerme' => 'required|in:0,1',
@@ -128,7 +128,7 @@
 						$mise_devise = round($mise_unites * $tipster->montant_par_unite, 2);
 					} elseif ($type_stake == 'f') {
 						$mise_devise = Input::get('amountinputdashboard');
-						$mise_unites = round($mise_devise / $tipster->montant_par_unite, 2);
+						$mise_unites = round($mise_devise / $tipster->montant_par_unite, 3);
 					}
 
 

@@ -1,4 +1,4 @@
-<div class="table-scrollable table-scrollable-borderless">
+<div id="table-tipsters-recap" class=" table-scrollable table-scrollable-borderless">
     @if($recap_tipsters->count() == 0)
         <div class="text-center">Aucun tipster. </div>
     @else
@@ -6,27 +6,27 @@
         <thead>
         <tr class="uppercase">
 
-            <th colspan="">
+            <th>
                 NOM
             </th>
             <th>
                 ROI
             </th>
             <th>
-                COTE M.
+                C. M.
             </th>
             <th>
-                EFFICACITE
+                EFF.
             </th>
             <th>
-                MOY. MISE
+                M. M.
             </th>
             <th>
-                MOY. 1U
+                M. 1U
             </th>
 
             <th>
-                PROFITS
+                G/P
             </th>
 
         </tr>
@@ -58,19 +58,19 @@
             <td>
                 <span class="primary-link">{{$recap_tipster->followtype == 'b' ? $recap_tipster->tipster->name.' <span class="label label-sm label-warning label-mini" data-toggle="tooltip" data-original-title="à blanc">B</span>' : $recap_tipster->tipster->name}}</span>
             </td>
-            <td>
+            <td width="20px">
                 <span class="bold theme-font">{{$roi}}</span>
             </td>
-            <td>
+            <td width="30px">
                 {{number_format((float)$recap_tipster->moyenne_cote_par_mois_tipster, 2, '.', '')}}
             </td>
-            <td>
+            <td width="80px">
                 {{floatval(round($recap_tipster->nombre_paris_gagnes_par_mois_tipster / $recap_tipster->nombre_paris_total * 100)).'% ('.$recap_tipster->nombre_paris_total.')'}}
             </td>
-            <td>
-                {{floatval(round($recap_tipster->moyenne_mise_unites, 2)).' U'}}
+            <td width="70px">
+                {{floatval(round($recap_tipster->moyenne_mise_unites, 3)).' U'}}
             </td>
-            <td>
+            <td width="20px">
                 {{floatval(round($recap_tipster->moyenne_mt_par_unite_par_mois_tipster)).Auth::user()->devise}}
             </td>
 
