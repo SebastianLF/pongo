@@ -27,7 +27,7 @@
                         <?php $app = App::make('pari_affichage') ?>
                         {{$app->display($selection->market_id, $selection->scope_id, $selection->pick, $selection->odd_doubleParam, $selection->odd_doubleParam2, $selection->odd_doubleParam3,  $selection->odd_participantParameterName, $selection->odd_participantParameterName2, $selection->odd_participantParameterName3, $selection->home_team, $selection->away_team)}}
 
-                        @if(!is_null($selection->score))
+                        @if(!is_null($selection->isLive))
                             {{' ('.$selection->score.' LIVE!) '}}
                         @endif
                         </span>

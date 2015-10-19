@@ -11,10 +11,10 @@ function fnFormatDetailsForChildsParisEnCours(oTable, selections, type) {
 
     // simple = on affiche pas le select input du tout le select input dans chacunes des selections, combine = on affiche le select input dans chacunes des selections.
     if(type == 'c'){
-        sOut = '<table class="table table-condensed table-paris-child"><thead><tr class="uppercase"><th>date rencontre</th><th>sport</th><th>competition</th><th>pari</th><th>cote</th><th>status</th></tr></thead><tbody>';
+        sOut = '<table class="table table-condensed table-paris-child"><thead><tr class="uppercase"><th>date</th><th>sport</th><th>competition</th><th>pari</th><th>cote</th><th>status</th></tr></thead><tbody>';
         sTdChild = '<td class="uppercase"><select name="status[]" data-value="" class="form-control inputs-ticket"><option value="0">-Choisir-</option><option value="1">Gagné</option><option value="2">Perdu</option><option value="3">1/2 Gagné</option><option value="4">1/2 Perdu</option><option value="5">Remboursé</option></select></td>';
     }else if(type == 's'){
-        sOut = '<table class="table table-condensed table-paris-child"><thead><tr class="uppercase"><th>date rencontre</th><th>sport</th><th>competition</th><th>rencontre</th><th>pari</th><th>cote</th></tr></thead><tbody>';
+        sOut = '<table class="table table-condensed table-paris-child"><thead><tr class="uppercase"><th>date</th><th>sport</th><th>competition</th><th>rencontre</th><th>pari</th><th>cote</th></tr></thead><tbody>';
         sTdChild = '';
     }else{
         sOut = '';
