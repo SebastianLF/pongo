@@ -4,12 +4,14 @@
 	Route::get('/', function(){
 		return View::make('pages.landing');
 	});
+
+	Route::controller('admin', 'AdminController');
+
 	Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 	Route::controller('password', 'RemindersController');
 
 	//session timeout pop up
 	Route::post('timeout-keep-alive', 'UserController@timeoutKeepAlive');
-
 
 	// Controlleur ou se situe toutes les infos relatives du parieur, ce qui n'est pas la meme chose que UserController.
 	Route::controller('bettor', 'BettorController');

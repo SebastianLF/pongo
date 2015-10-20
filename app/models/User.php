@@ -15,9 +15,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	protected $hidden = array('password', 'remember_token');
 	protected $guarded = array('id');
 
-	/* Afficher l'historique*/
-	public function histories(){
-		return $this->hasMany('History');
+	public function isAdmin()
+	{
+		return $this->admin === 1;
 	}
 
 	public function tipsters(){

@@ -11,10 +11,6 @@
 	|
 	*/
 
-	App::before(function ($request) {
-
-	});
-
 
 	/*App::after(function ($request, $response) {
 		$response->headers->set('Access-Control-Allow-Origin', '*');
@@ -73,6 +69,15 @@
 	|
 	*/
 
+	Route::filter('admin', function($route, $request)
+	{
+		if ( ! Auth::user()->isAdmin()) {
+			return App::abort(401, 'You are not authorized.');
+		}
+	});
+
+
+
 	Route::filter('csrf', function () {
 
 		$token = Request::ajax() ? Request::header('X-CSRF-Token') : Input::get('_token');
@@ -81,6 +86,18 @@
 			throw new Illuminate\Session\TokenMismatchException;
 		}
 	});
+
+	/*
+	|--------------------------------------------------------------------------
+	| Custom Filter
+	|--------------------------------------------------------------------------
+	|
+	| The CSRF filter is responsible for protecting your application against
+	| cross-site request forgery attacks. If this special token in a user
+	| session does not match the one given in this request, we'll bail.
+	|
+	*/
+
 
 	Route::filter('expired', function () {
 		$bag = Session::getMetadataBag();

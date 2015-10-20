@@ -22,4 +22,10 @@
 3) lorsqu'on est sur welcome/create par exemple, sir on fait un requete ajax sur l'url 'auth/jenesaisquoi' en réalité pour une raison inconnu l'url sera 'welcome/uth/jenesaisquoi'. Il faut donc donner une adresse absolue.
 voir http://stackoverflow.com/questions/17588139/how-to-use-ajax-with-jquery-in-laravel-4 .
 
+
 4) la page welcome/create n'est pas mis en cache dans le navigateur pour éviter que les utilisateurs puissent revenir changer la devise.
+
+
+5)  - les cotes vont jusqu'à 3 decimales,
+    - les montants en devise vont jusqu'à 2 decimales,
+    - les montants en unités vont jusqu'à 3 decimales,

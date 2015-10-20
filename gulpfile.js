@@ -4,6 +4,8 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var strip = require('gulp-strip-comments');
 var minifyHTML = require('gulp-minify-html');
+var livereload = require('gulp-livereload');
+livereload({ start: true });
 
 
 gulp.task('main-css', function(){
@@ -120,6 +122,7 @@ gulp.task('minify-html', function() {
         .pipe(gulp.dest('app/dist'));
 });
 
-gulp.task('default', ["dashboard-js"], function(){
+gulp.task('watch', function(){
+    livereload.listen();
     gulp.watch('public/js/pages/dashboard/paris/*.js', ['dashboard-js']);
 });

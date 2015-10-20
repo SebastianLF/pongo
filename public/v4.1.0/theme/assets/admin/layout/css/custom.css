@@ -191,6 +191,17 @@ select{
   margin: 0px !important;
 }
 
+.td-bet{
+    border: 1px;
+    border-right: 1px solid #F2F5F8 !important;
+
+}
+
+.td-bet-options{
+    border: 1px;
+    border-left: 1px solid #F2F5F8 !important;
+}
+
 /*table{
     font-size: 12px !important;
 }*/
