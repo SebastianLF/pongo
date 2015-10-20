@@ -73,8 +73,8 @@
       <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.076923">
-              <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+            <state vertical-scroll-proportion="-9.423077">
+              <caret line="82" column="21" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -93,8 +93,8 @@
       <file leaf-file-name="admin.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/admin/admin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49913344">
-              <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.17504333">
+              <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -735,12 +735,6 @@
       <option name="number" value="Default" />
       <updated>1411579515527</updated>
     </task>
-    <task id="LOCAL-00290" summary="changement ajout de pari + choix de suivi directement dans le formulaire d'ajout de pari + checkbox lt sur la ligne de selection">
-      <created>1444339720357</created>
-      <option name="number" value="00290" />
-      <option name="project" value="LOCAL" />
-      <updated>1444339720358</updated>
-    </task>
     <task id="LOCAL-00291" summary="changement ajout de pari + choix de suivi directement dans le formulaire d'ajout de pari + checkbox lt sur la ligne de selection">
       <created>1444384003308</created>
       <option name="number" value="00291" />
@@ -1029,7 +1023,13 @@
       <option name="project" value="LOCAL" />
       <updated>1445313335258</updated>
     </task>
-    <option name="localTasksCounter" value="339" />
+    <task id="LOCAL-00339" summary="debug admin">
+      <created>1445313833066</created>
+      <option name="number" value="00339" />
+      <option name="project" value="LOCAL" />
+      <updated>1445313833067</updated>
+    </task>
+    <option name="localTasksCounter" value="340" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1107,7 +1107,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="utf8 encode when view-&gt;render() on coupon selections solved + affichage pari solved + essai uf8 decode on team with accent char on betbrain add." />
     <MESSAGE value="mb convert test" />
     <MESSAGE value="cotes combiné coupon + tentative utf8 blogabet entrées" />
     <MESSAGE value="bug combine solved" />
@@ -1132,7 +1131,8 @@
     <MESSAGE value="hotjar supprimé." />
     <MESSAGE value="modif selection coupon" />
     <MESSAGE value="ajout parti admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout parti admin" />
+    <MESSAGE value="debug admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="debug admin" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1555,6 +1555,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/TermineParis.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6170599">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..users">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1576,26 +1584,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/TermineParis.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6170599">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.076923">
-          <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+        <state vertical-scroll-proportion="-9.423077">
+          <caret line="82" column="21" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/admin/admin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49913344">
-          <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.17504333">
+          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
           <folding />
         </state>
       </provider>

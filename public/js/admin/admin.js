@@ -24,7 +24,7 @@ new Vue({
 
         afficherUser: function (e){
             e.preventDefault();
-            this.$http.post('afficheruser', {email: this.user.email}).success(function (response) {
+            this.$http.get('afficheruser', {email: this.user.email}).success(function (response) {
                 this.user.all = response;
                 this.display = true;
             });
