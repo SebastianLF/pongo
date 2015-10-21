@@ -55,7 +55,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" data-dismiss="modal" class="btn btn-default">Annuler</button>
-                <button type="submit" class="btn green">Ajouter</button>
+                <button type="submit" class="btn green ladda-button">Ajouter</button>
             </div>
             {{ Form::close() }}
         </div>

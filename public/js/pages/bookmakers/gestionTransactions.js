@@ -182,6 +182,7 @@ function gestionTransactions() {
                             sortDescending: ": activer pour trier la colonne par ordre décroissant"
                         }
                     },
+                    "ordering": false,
                     // set the initial value
                     "pageLength": 10,
                     "dom": "<'table-scrollable't><'row'<'col-md-5 col-sm-6'i><'col-md-7 col-sm-6'p>>", // horizobtal scrollable datatable
@@ -189,7 +190,7 @@ function gestionTransactions() {
                     // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js).
                     // So when dropdowns used the scrollable div should be removed.
                     //"dom": "<'row' <'col-md-12'T>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r>t<'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>",
-                });
+                }).fnPageChange( 'last' );
                 getBookmakersForSelection(book, account);
             }
         });
@@ -228,8 +229,10 @@ function gestionTransactions() {
             form.find(description).val('');
         });
 
-        form.submit(function (e) {
+        form.find('button[type="submit"]').on("click", function (e) {
             e.preventDefault();
+            var l = Ladda.create(this);
+            l.start();
             $.ajax({
                 url: 'transaction',
                 data: form.serialize(),
@@ -280,6 +283,9 @@ function gestionTransactions() {
                         $(modal).modal('hide');
                         toastr.success('Le transactions à été crée avec <strong>succès</strong>!', 'Transaction');
                     }
+                },
+                complete: function () {
+                    l.stop();
                 }
             });
         });

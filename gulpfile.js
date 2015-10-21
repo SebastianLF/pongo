@@ -25,7 +25,8 @@ gulp.task('main-css', function(){
         'public/v4.1.0/theme/assets/admin/pages/css/tasks.css',
         'public/v4.1.0/theme/assets/global/css/plugins.css',
         'public/v4.1.0/theme/assets/admin/layout/css/layout.css',
-        'public/v4.1.0/theme/assets/admin/layout/css/custom.css'
+        'public/v4.1.0/theme/assets/admin/layout/css/custom.css',
+        'public/v4.1.0/theme/assets/global/css/components-rounded.css'
     ])
         .pipe(minifycss())
         .pipe(concat('main-css.min.css'))

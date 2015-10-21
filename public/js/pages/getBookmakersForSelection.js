@@ -8,6 +8,9 @@ function getBookmakersForSelection(bookmakersSelect, accountsSelect) {
         url: 'bettor/only-bookmakers-with-accounts',
         dataType: 'json',
         success: function (json) {
+            books.html('');
+            books.append('<option value=""></option>');
+
             $.each(json, function (index, value) {
                 books.append('<option value="' + value.id + '">' + value.nom + '</option>');
             });
@@ -24,6 +27,7 @@ function getBookmakersForSelection(bookmakersSelect, accountsSelect) {
                 data: {book_id: val},
                 dataType: 'json',
                 success: function (json) {
+                    accounts.html('');
                     $.each(json, function (index, value) {
                         accounts.append('<option value="' + value.pivot.id + '">' + value.pivot.nom_compte + '</option>');
                     });

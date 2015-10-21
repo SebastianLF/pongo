@@ -29,6 +29,7 @@ function loadBookmakers() {
                         sortDescending: ": activer pour trier la colonne par ordre décroissant"
                     }
                 },
+                "ordering": false,
                 // set the initial value
                 "pageLength": 10,
                 "dom": "<'table-scrollable't><'row'<'col-md-5 col-sm-6'i><'col-md-7 col-sm-6'p>>", // horizobtal scrollable datatable
@@ -36,7 +37,7 @@ function loadBookmakers() {
                 // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js).
                 // So when dropdowns used the scrollable div should be removed.
                 //"dom": "<'row' <'col-md-12'T>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r>t<'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>",
-            });
+            }).fnPageChange( 'last' );
             editBookmakerButton();
             deleteBookmakerButton();
         }
@@ -135,9 +136,11 @@ function gestionBookmakers() {
             form.find(amountInput).val('');
         });
 
-        form.submit(function (e) {
-            var ser = $(this).serialize();
+        form.find('button[type="submit"]').on("click", function (e) {
+            var ser = form.serialize();
             e.preventDefault();
+            var l = Ladda.create(this);
+            l.start();
             $.ajax({
                 url: 'bookmaker',
                 data: ser,
@@ -179,6 +182,9 @@ function gestionBookmakers() {
                         // affiche la notification de succes.
                         toastr.success('Compte ajouté', 'Compte de Bookmaker');
                     }
+                },
+                complete: function () {
+                    l.stop();
                 }
             });
         });

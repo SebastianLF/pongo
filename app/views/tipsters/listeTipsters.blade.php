@@ -1,8 +1,8 @@
 <table id="tipsterstable" class="table table-hover table-light">
     <thead>
     <tr class="uppercase">
-        <th>date creation</th>
         <th width="">Nom</th>
+        <th>date creation</th>
         <th>Suivi par défaut</th>
         <th width="">Montant par indice</th>
         <th width=""></th>
@@ -11,11 +11,14 @@
     <tbody>
     @foreach($tipsters as $tipster)
         <tr>
+            <td class="name"><img alt="" class="user img-circle" src="{{asset('img/unknown.jpg')}}"
+                                  width="25px">{{' '.$tipster->name}}
+            </td>
             <td><?php $date = Carbon::createFromFormat('Y-m-d H:i:s', $tipster->created_at, 'Europe/Paris');
                 $date->setTimezone(Auth::user()->timezone);?>
-                {{{' '.$date->format('d/m/Y')}}}</td>
-            <td class="name"><img alt="" class="user img-circle" src="{{asset('img/unknown.jpg')}}"
-                                  width="25px">{{' '.$tipster->name}}</td>
+                {{{' '.$date->format('d/m/Y')}}}
+            </td>
+
             <td>
                 @if($tipster->followtype == 'n')
                     <span class="">{{ 'normal' }}</span>

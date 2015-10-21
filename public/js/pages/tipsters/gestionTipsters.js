@@ -59,6 +59,8 @@ function gestionTipsters(){
                         [10, 15, 20, 100] // change per page values here
                     ],
 
+                    "ordering": false,
+
                     // set the initial value
                     "pageLength": 10,
                     "dom": "<'table-scrollable't><'row'<'col-md-5 col-sm-6'i><'col-md-7 col-sm-6'p>>", // horizobtal scrollable datatable
