@@ -7,14 +7,13 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="portlet light">
-
                         <div class="portlet-body">
                             <div class="note note-success ">
                                 <dl class="dl-horizontal">
                                     <dt>Suivi par défault (le suivi qui sera selectionné par défaut lors de l'ajout d'un pari) :</dt>
                                     <dd>Si vous choisissez le type de suivi <strong>à blanc</strong> pour un tipster, les
                                         gains
-                                        et pertes ne seront pas comptabilisés dans vos bankrolls des bookmakers. Ce type de
+                                        et pertes ne seront pas comptabilisés dans vos solde des bookmakers. Ce type de
                                         suivi
                                         convient
                                         lorsqu'on veut tester l'efficacité d'un nouveau tipster.<br> Vous avez la
