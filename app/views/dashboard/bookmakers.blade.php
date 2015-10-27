@@ -9,7 +9,7 @@
         @if($bookmakers->count() == 0)
             <div class="text-center">Aucun bookmaker. {{ HTML::link('bookmakers', 'Cliquez ici pour ajouter un compte de bookmaker')}}</div>
         @else
-        <div class="panel-group accordion" id="accordion3">
+        <div class="panel-group accordion">
         @foreach($bookmakers as $bookmaker)
             <div class="panel panel-default">
 
@@ -19,11 +19,12 @@
                     @endforeach
                     <div class="panel-heading">
                         <div class="panel-title">
-                            <a class="accordion-toggle accordion-toggle-styled collapsed"
-                               data-toggle="collapse" data-parent="#accordion3" href="{{'#row'.$bookmaker->id}}">
+
+                            <a class="accordion-toggle collapsed"
+                               data-toggle="collapse" href="{{'#row'.$bookmaker->id}}">
+                                <span class="glyphicon glyphicon-chevron-right expand-glyphicon" style="float:right"></span>
                                 <span class="theme-font blue-bookmaker">{{$bookmaker->nom.' |'}}</span>
-                                     <span
-                                            class="theme-font">{{$bookmaker['comptes']->sum('bankroll_actuelle')}} {{Auth::user()->devise}}</span></span>
+                                     <span class="theme-font">{{$bookmaker['comptes']->sum('bankroll_actuelle')}} {{Auth::user()->devise}}</span></span>
                                 {{$paris_en_attente ? '<span class="badge badge-danger bcg-red" data-toggle="tooltip" data-original-title="Nombre de paris en cours associés: '.$paris_en_attente.'">'.$paris_en_attente.'</span>' : ''}}
                             </a>
                         </div>

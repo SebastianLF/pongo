@@ -2096,8 +2096,8 @@
       <column name="followtype" sqlType="VARCHAR" precision="2" scale="0" nullable="false" jdbcType="12"/>
       <column name="type_profil" sqlType="VARCHAR" precision="2" scale="0" nullable="false" jdbcType="12"/>
       <column name="numero_pari" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="cote" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
-      <column name="cote_apres_status" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
+      <column name="cote" sqlType="DECIMAL" precision="8" scale="3" nullable="false" jdbcType="3"/>
+      <column name="cote_apres_status" sqlType="DECIMAL" precision="8" scale="3" nullable="false" jdbcType="3"/>
       <column name="mt_par_unite" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
       <column name="nombre_unites" sqlType="DECIMAL" precision="5" scale="2" nullable="false" jdbcType="3"/>
       <column name="mise_totale" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
@@ -2214,8 +2214,8 @@
       <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="date_match" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
-      <column name="cote" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
-      <column name="cote_apres_status" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
+      <column name="cote" sqlType="DECIMAL" precision="8" scale="3" nullable="false" jdbcType="3"/>
+      <column name="cote_apres_status" sqlType="DECIMAL" precision="8" scale="3" nullable="false" jdbcType="3"/>
       <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
       <column name="pick" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="game_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
@@ -2306,8 +2306,8 @@
       <column name="followtype" sqlType="VARCHAR" precision="2" scale="0" nullable="false" jdbcType="12"/>
       <column name="type_profil" sqlType="VARCHAR" precision="2" scale="0" nullable="false" jdbcType="12"/>
       <column name="numero_pari" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="cote" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
-      <column name="cote_apres_status" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
+      <column name="cote" sqlType="DECIMAL" precision="8" scale="3" nullable="false" jdbcType="3"/>
+      <column name="cote_apres_status" sqlType="DECIMAL" precision="8" scale="3" nullable="false" jdbcType="3"/>
       <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
       <column name="mt_par_unite" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
       <column name="nombre_unites" sqlType="DECIMAL" precision="5" scale="2" nullable="false" jdbcType="3"/>
@@ -2393,6 +2393,7 @@
       <column name="type_cote" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="compteur_pari" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="remember_token" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="inactif" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
       <column name="admin" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
       <primary-key name="PRIMARY" columns="id"/>
       <exported-key name="bookmaker_user_user_id_foreign" table="bookmaker_user" schema="" catalog="sbs" columns="user_id"/>

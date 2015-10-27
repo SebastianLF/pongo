@@ -5,6 +5,7 @@ use User;
 use Input;
 use Hash;
 use Tipster;
+use Mail;
 
 class UserGestion implements UserGestionInterface {
 
@@ -18,8 +19,17 @@ class UserGestion implements UserGestionInterface {
 		$user->langue = 'fr';
 		$user->type_cote = 'decimal';
 		$user->compteur_pari = 0;
-		$user->save();
+
         $id = $user->id;
+
+		if($user->save()){
+			Mail::queue('emails.inscription.inscription', array(), function($message) use ($user)
+			{
+				$message->to($user->email)
+					->subject('Bienvenue sur pongo');
+			});
+		}
+
 
         //creation du tipster par defaut
 		$tispter = new Tipster;

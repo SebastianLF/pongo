@@ -1,0 +1,5 @@
+INSERT INTO slfweb.markets (id, name, description, representation, fr, priorite, status, isMatch, created_at, updated_at) VALUES (7, 'Winner', '', '', '', '', 0, 0, '2015-10-20 17:52:05', '2015-10-20 17:52:05');
+INSERT INTO slfweb.markets (id, name, description, representation, fr, priorite, status, isMatch, created_at, updated_at) VALUES (43, '1X2', '', '', '', '', 0, 0, '2015-10-18 11:07:07', '2015-10-18 11:07:07');
+INSERT INTO slfweb.markets (id, name, description, representation, fr, priorite, status, isMatch, created_at, updated_at) VALUES (46, 'Match Winner', '', '', '', '', 0, 0, '2015-10-19 05:34:13', '2015-10-19 05:34:13');
+INSERT INTO slfweb.markets (id, name, description, representation, fr, priorite, status, isMatch, created_at, updated_at) VALUES (48, 'Asian Handicap', '', '', '', '', 0, 0, '2015-10-20 16:14:28', '2015-10-20 16:14:28');
+INSERT INTO slfweb.markets (id, name, description, representation, fr, priorite, status, isMatch, created_at, updated_at) VALUES (168, 'Method Of Victory', '', '', '', '', 0, 0, '2015-10-20 16:04:19', '2015-10-20 16:04:19');

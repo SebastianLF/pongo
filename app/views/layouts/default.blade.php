@@ -34,7 +34,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
 <!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
 <!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
-<body class="page-header-fixed  page-sidebar-closed page-sidebar-fixed ">
+<body class="page-header-fixed  page-style-square page-sidebar-closed">
 
 <div class="page-header navbar navbar-fixed-top">
     <!-- BEGIN HEADER INNER -->
@@ -97,8 +97,8 @@ License: You must have a valid license purchased only from themeforest(the above
     </div>
     <!-- END HEADER INNER -->
 </div>
-
-
+<div class="clearfix">
+</div>
 <div class="page-container">
     <div class="page-sidebar-wrapper">
         <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
@@ -215,11 +215,14 @@ License: You must have a valid license purchased only from themeforest(the above
 <![endif]-->
 
 
-
 <script src="{{asset('build/js/main-plugins.js')}}" type="text/javascript"></script>
 
 <script type="text/javascript">
     jQuery(document).ready(function () {
+
+        $('[data-toggle="tooltip"]').tooltip();
+
+        $('[data-toggle="popover"]').popover();
 
         // pop-up keep session or not
         $.sessionTimeout({

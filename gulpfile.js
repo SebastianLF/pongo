@@ -17,16 +17,18 @@ gulp.task('main-css', function(){
         'public/v4.1.0/theme/assets/global/plugins/Ladda-master/dist/ladda-themeless.min.css',
         'public/v4.1.0/theme/assets/global/plugins/toastr-master/build/toastr.css',
         'public/v4.1.0/theme/assets/global/plugins/sweetalert-master/dist/sweetalert.css',
-        'public/v4.1.0/theme/assets/global/plugins/select2-master/dist/css/select2.css',
+        'public/metronic_v4.5.0/theme/assets/global/plugins/select2/css/select2.min.css',
+        'public/v4.1.0/theme/assets/global/plugins/select2/css/select2-bootstrap.min.css',
         'public/v4.1.0/theme/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css',
         'public/v4.1.0/theme/assets/global/plugins/bootstrap-daterangepicker-master/daterangepicker-bs3.css',
         'public/v4.1.0/theme/assets/admin/pages/css/pricing-table.css',
         'public/v4.1.0/theme/assets/admin/pages/css/login.css',
         'public/v4.1.0/theme/assets/admin/pages/css/tasks.css',
         'public/v4.1.0/theme/assets/global/css/plugins.css',
-        'public/v4.1.0/theme/assets/admin/layout/css/layout.css',
+        'public/metronic_v4.5.0/theme/assets/layouts/layout/css/layout.min.css',
         'public/v4.1.0/theme/assets/admin/layout/css/custom.css',
-        'public/v4.1.0/theme/assets/global/css/components-rounded.css'
+        'public/v4.1.0/theme/assets/global/css/components-rounded.css',
+        'public/metronic_v4.5.0/theme/assets/global/plugins/datatables/datatables.min.css'
     ])
         .pipe(minifycss())
         .pipe(concat('main-css.min.css'))
@@ -44,6 +46,8 @@ gulp.task('main-plugins', function() {
     return gulp.src([
         'public/v4.1.0/theme/assets/global/plugins/jquery-migrate.min.js',
         'public/v4.1.0/theme/assets/global/plugins/jquery-ui/jquery-ui.min.js',
+        'public/metronic_v4.5.0/theme/assets/global/plugins/bootstrap/js/bootstrap.min.js',
+        'public/metronic_v4.5.0/theme/assets/global/plugins/datatables/datatables.all.min.js',
         'public/v4.1.0/theme/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js',
         'public/v4.1.0/theme/assets/global/plugins/jquery.blockui.min.js',
         'public/v4.1.0/theme/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js',
@@ -55,8 +59,8 @@ gulp.task('main-plugins', function() {
         'public/v4.1.0/theme/assets/global/plugins/bootstrap-select/bootstrap-select.js',
         'public/v4.1.0/theme/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js',
         'public/v4.1.0/theme/assets/global/plugins/bootstrap-session-timeout-master/dist/bootstrap-session-timeout.js',
-        'public/v4.1.0/theme/assets/global/plugins/select2-master/dist/js/select2.js',
-        'public/v4.1.0/theme/assets/global/plugins/select2-master/dist/js/i18n/fr.js',
+        'public/v4.1.0/theme/assets/global/plugins/select2/js/select2.js',
+        'public/v4.1.0/theme/assets/global/plugins/select2/js/i18n/fr.js',
         'public/v4.1.0/theme/assets/global/plugins/toastr-master/build/toastr.min.js',
         'public/v4.1.0/theme/assets/global/plugins/bootstrap-daterangepicker-master/moment.min.js',
         'public/v4.1.0/theme/assets/global/plugins/bootstrap-daterangepicker-master/moment-timezone.js',

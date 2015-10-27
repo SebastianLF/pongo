@@ -19,7 +19,7 @@
             <th>Book</th>
             <th>Cote</th>
             <th>Status</th>
-            <th>Mt. retour <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="montant retourné. Exemple: cote à 2 et mise de 50 {{Auth::user()->devise}}, le montant retourné sera 100 {{Auth::user()->devise}}"></span></th>
+            <th>Mt. retour <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Exemple: cote à 2 et mise de 50 {{Auth::user()->devise}}, le montant retourné sera 100 {{Auth::user()->devise}}"></span></th>
             <th></th>
         </tr>
         </thead>
@@ -86,7 +86,7 @@
                     @if($pari->type_profil == 's')
                         <select name="status[]"
                                 data-value=""
-                                class="form-control inputs-ticket">
+                                class="form-control input-xs">
                             <option value="0">-Choisir-</option>
                             @foreach($types_resultat as $key => $type)
                                 <option value="{{$key}}"><a href="javascript:;"
@@ -100,7 +100,7 @@
 
                 </td>
                 <td width="10px" class="td-bet"><div class="input-group "><input type="text" width="50px" name="amount-returned" class="form-control inputs-ticket" placeholder=""><div class="input-group-addon input-group-addon-amount-returned">{{Auth::user()->devise}}</div></div></td>
-                <td width="120px" class="td-bet-options center-text">
+                <td width="130px" class="td-bet-options center-text">
                     {{ Form::button('<i class="fa fa-check"></i>', array('data-pari-type' => $pari->type_profil, 'data-pari-id' => $pari->id, 'data-style' => "zoom-in", 'class' => 'boutonvalider btn btn-sm ladda-button green-jungle buttons-actions-ticket')) }}
                     {{ Form::button('<i class="fa fa-trash"></i>', array('data-pari-type' => $pari->type_profil, 'data-pari-id' => $pari->id, 'data-style' => "zoom-in", 'class' => 'boutonsupprimer btn btn-sm ladda-button red buttons-actions-ticket')) }}
                     @if($pari->followtype == 'n')

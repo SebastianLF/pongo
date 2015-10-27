@@ -9,6 +9,7 @@ function loadParisEnCours() {
             $('#tab_15_1').html(data.vue);
 
 
+
             var table = $("#parisencourstable");
 
             /*
@@ -79,6 +80,7 @@ function loadParisEnCours() {
 
             });
 
+
             var tableWrapper = $('#parisencourstable_wrapper'); // datatable creates the table wrapper by adding with id {your_table_jd}_wrapper
             tableWrapper.find('.dataTables_length select').select2(); // initialize select2 dropdown
 
@@ -98,7 +100,10 @@ function loadParisEnCours() {
                     $(this).addClass("glyphicon-chevron-down").removeClass("glyphicon-chevron-right");
                     oTable.fnOpen(nTr, fnFormatDetailsForChildsParisEnCours(oTable, selections, type), 'details');
                 }
+                $('select[name="status[]"]').select2();
             });
+
+            $('select[name="status[]"]').select2();
 
             // afficher le count dans le bon endroit.
             if (data.count_paris_encours == 0) {

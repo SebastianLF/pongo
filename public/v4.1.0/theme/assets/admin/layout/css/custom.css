@@ -536,10 +536,13 @@ select{
 }
 
 .inputs-ticket {
-  height: 23px;
+  height: 28px;
   padding: 0 3px !important;
-  font-size: 13px;
   margin: 0 0 0 0 !important;
+}
+
+tr.details td{
+  vertical-align: middle !important;
 }
 
 .table-paris .input-group-addon-amount-returned{
@@ -560,3 +563,9 @@ select{
 .page-footer{
 
 }
+
+@media (max-width: 767px){
+  .page-content-wrapper .page-content {
+    padding: 20px 10px 10px!important;
+    overflow: inherit !important;
+  }}

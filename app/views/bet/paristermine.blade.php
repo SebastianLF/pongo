@@ -6,7 +6,7 @@
     </div>
 @else
 
-    <table id="paristerminetable" class="table table-bordered table-condensed">
+    <table id="paristerminetable" class="table table-light table-condensed table-hover table-paris">
         <thead>
         <tr class="uppercase">
             <th class="">date</th>

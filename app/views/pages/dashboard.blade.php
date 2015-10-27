@@ -2,15 +2,26 @@
 
 @section('content')
 
-        <!-- BEGIN PAGE HEAD -->
 
+
+ <!-- BEGIN PAGE HEAD -->
 <!-- END PAGE HEAD -->
 <!-- BEGIN PAGE CONTENT -->
 
 <div class="container-fluid">
+    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
 
     @include('bet/manual_bet_add_modal')
     @include('cashout_modal')
+    <div class="portlet light">
+        <div class="portlet-body">
+            <div class="note note-danger">
+                <p>
+                    Pour reporter un bug ou poser une question sur n'importequel sujet, veuillez nous contacter à l'aide de l'encadré rouge en bas a droite de la page.
+                </p>
+            </div>
+        </div>
+    </div>
 
     <div class="row margin-top-10">
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -85,11 +96,10 @@
                                        data-parent="#accordion-add-ticket"
                                        href="#panier-selections-add-ticket" aria-expanded="true"
                                        aria-controls="panier-selections-add-ticket">
+                                        <span class="glyphicon glyphicon-chevron-right expand-glyphicon" style="float:right"></span>
                                         Panier des sélections -
                                     </a>
-                                    <a id="selection-refresh" type="button"> <span
-                                                class="glyphicon glyphicon-refresh glyphicon-spin"></span>Rafraichir</a>
-                                    <span id="automatic-refresh"> - </span>
+
                                 </h4>
                             </div>
                             <div id="panier-selections-add-ticket" class="panel-collapse collapse"
@@ -98,6 +108,9 @@
                                 <div class="panel-body">
                                     <div class="row" style="padding: 5px;">
                                         <div class="col-md-8 bordercg1" style="min-height: 95px;">
+                                            <a id="selection-refresh" type="button"> <span
+                                                        class="glyphicon glyphicon-refresh glyphicon-spin"></span>Rafraichir</a>
+                                            <span id="automatic-refresh"> - </span>
                                             <div id="automatic-selections">
 
                                             </div>
@@ -356,4 +369,11 @@
 @section('scripts')
     @parent
     <script src="{{asset('build/js/dashboard.js')}}" type="text/javascript"></script>
+    <script type="text/javascript">
+        $('#panier-selections-add-ticket').on('show.bs.collapse', function () {
+            $('#headingSelections span').addClass("glyphicon-chevron-down").removeClass("glyphicon-chevron-right");
+        }).on('hide.bs.collapse', function () {
+            $('#headingSelections span').addClass("glyphicon-chevron-right").removeClass("glyphicon-chevron-down");
+        });
+    </script>
 @stop

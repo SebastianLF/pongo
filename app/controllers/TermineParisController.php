@@ -35,6 +35,18 @@
 		 */
 		public function store()
 		{
+
+			$status_array = explode(',', Input::get('status')[0]);
+			foreach($status_array as $status){
+				if( ! preg_match("(0|1|2|3|4|5|)", $status)){
+					return Response::json(array(
+						'etat' => 0,
+						'msg' => 'status invalide(s).',
+					));
+				}
+			}
+
+
 			$regles = array(
 				'pari-id' => 'required|exists:en_cours_paris,id,user_id,' . Auth::user()->id,
 				'amount-returned' => 'required|amount_returned',
@@ -47,7 +59,6 @@
 			);
 
 			$validator = Validator::make(Input::all(), $regles, $messages);
-			$validator->each('status', ['between:1,6']);
 
 			if ($validator->fails()) {
 				return Response::json(array(

@@ -37,7 +37,9 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     <link href="https://cdn.datatables.net/r/bs/jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,b-1.0.3,b-html5-1.0.3,cr-1.2.0,r-1.0.7,sc-1.3.0/datatables.min.css" rel="stylesheet" type="text/css" />
 
+
     {{ HTML::style('v4.1.0/theme/assets/global/css/components.css', array('id' => 'style_components')) }}
+    {{ HTML::style('v4.1.0/theme/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css') }}
     {{ HTML::style('v4.1.0/theme/assets/admin/layout/css/themes/darkblue.css', array('type' => 'text/css', 'id' => 'style_color', 'rel' => 'stylesheet')) }}
     {{ HTML::style('build/css/main-css.min.css') }}
 
@@ -46,9 +48,9 @@
     <!-- jQuery local fallback -->
     <script>window.jQuery || document.write('<script src="cdn-fallback/jquery.min.js"><\/script>')</script>
     <!-- Bootstrap JS CDN -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <!-- Bootstrap JS local fallback -->
-    <script>if(typeof($.fn.modal) === 'undefined') {document.write('<script src="cdn-fallback/bootstrap/js/bootstrap.min.js"><\/script>')}</script>
+    <!--<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+     Bootstrap JS local fallback
+    <script>if(typeof($.fn.modal) === 'undefined') {document.write('<script src="cdn-fallback/bootstrap/js/bootstrap.min.js"><\/script>')}</script> -->
     <!-- Bootstrap CSS local fallback -->
     <script>
         $(document).ready(function() {
