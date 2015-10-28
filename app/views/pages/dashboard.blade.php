@@ -9,8 +9,6 @@
 <!-- BEGIN PAGE CONTENT -->
 
 <div class="container-fluid">
-    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
-
     @include('bet/manual_bet_add_modal')
     @include('cashout_modal')
     <div class="portlet light">
@@ -329,7 +327,7 @@
                     <div class="caption caption-md col-md-3">
                         <i class="icon-bar-chart theme-font hide"></i>
                                 <span class="caption-subject theme-font bold uppercase"><span
-                                            class="glyphicon glyphicon-user"></span> Tipsters</span>
+                                            class="glyphicon glyphicon-user"></span> Bilan Tipsters</span>
                         <span class="caption-helper hide">stats</span>
                     </div>
                     <div class="actions col-md-9">

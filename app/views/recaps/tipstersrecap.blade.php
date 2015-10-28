@@ -1,6 +1,6 @@
 <div id="table-tipsters-recap" class=" table-scrollable table-scrollable-borderless">
     @if($recap_tipsters->count() == 0)
-        <div class="text-center">Aucun tipster. </div>
+        <div class="text-center">Aucun bilan</div>
     @else
     <table class="table table-hover table-light">
         <thead>
