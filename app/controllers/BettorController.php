@@ -35,7 +35,7 @@ class BettorController extends BaseController {
 	public function getMyBookmakersViewList()
 	{
 		// pour afficher les lignes non softdelete dans une table pivot il faut faire ca manuellement avec whereNull.
-		$bookmakers = Auth::user()->bookmakers()->whereNull('deleted_at')->get();
+		$bookmakers = Auth::user()->bookmakers()->whereNull('deleted_at')->orderBy('created_at', 'asc')->get();
 		Clockwork::info($bookmakers);
 		$view = View::make('bookmakers.listeBookmakers', array('bookmakers' => $bookmakers));
 		return $view;
@@ -43,7 +43,7 @@ class BettorController extends BaseController {
 
 	public function getMyTransactionsViewList()
 	{
-		$transactions = Auth::user()->transactions()->with(array('compte', 'compte.bookmaker'))->get();
+		$transactions = Auth::user()->transactions()->with(array('compte', 'compte.bookmaker'))->orderBy('created_at', 'asc')->get();
 		Clockwork::info($transactions);
 		$view = View::make('transactions.listeTransactions', array('transactions' => $transactions));
 		return $view;
