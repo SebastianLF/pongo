@@ -27,7 +27,7 @@ gulp.task('main-css', function(){
         'public/v4.1.0/theme/assets/global/css/plugins.css',
         'public/metronic_v4.5.0/theme/assets/layouts/layout/css/layout.min.css',
         'public/v4.1.0/theme/assets/admin/layout/css/custom.css',
-        'public/v4.1.0/theme/assets/global/css/components-rounded.css',
+        'public/v4.1.0/theme/assets/global/css/components.css',
         'public/metronic_v4.5.0/theme/assets/global/plugins/datatables/datatables.min.css'
     ])
         .pipe(minifycss())
@@ -71,6 +71,7 @@ gulp.task('main-plugins', function() {
         'public/v4.1.0/theme/assets/global/plugins/Ladda-master/dist/ladda.min.js',
         'public/v4.1.0/theme/assets/global/scripts/metronic.js',
         'public/v4.1.0/theme/assets/admin/layout/scripts/layout.js',
+        'public/v4.1.0/theme/assets/admin/layout/scripts/demo.js',
         'public/v4.1.0/theme/assets/admin/pages/scripts/form-samples.js',
         'public/v4.1.0/theme/assets/admin/pages/scripts/components-dropdowns.js',
         'public/js/pages/getPaginationSelectedPage.js',

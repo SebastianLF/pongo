@@ -8,8 +8,6 @@ function loadParisEnCours() {
             // chargement des paris long terme dans la div.
             $('#tab_15_1').html(data.vue);
 
-
-
             var table = $("#parisencourstable");
 
             /*

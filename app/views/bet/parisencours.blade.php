@@ -82,11 +82,11 @@
                 <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}
                 </td>
                 <td width="10px" class="fit tdcote td-bet">{{floatval($pari->cote)}}</td>
-                <td width="30px">
+                <td width="">
                     @if($pari->type_profil == 's')
                         <select name="status[]"
                                 data-value=""
-                                class="form-control input-xs">
+                                class="form-control pari-status">
                             <option value="0">-Choisir-</option>
                             @foreach($types_resultat as $key => $type)
                                 <option value="{{$key}}"><a href="javascript:;"

@@ -123,6 +123,10 @@ Rounded Portlets
     width: 50% !important;
 }
 
+.pari-status{
+ width: 90px !important;
+}
+
 
 .glyphicon-plus-sign{
   font-size: 1.2em !important;

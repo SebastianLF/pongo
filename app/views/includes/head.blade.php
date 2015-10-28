@@ -38,7 +38,6 @@
     <link href="https://cdn.datatables.net/r/bs/jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,b-1.0.3,b-html5-1.0.3,cr-1.2.0,r-1.0.7,sc-1.3.0/datatables.min.css" rel="stylesheet" type="text/css" />
 
 
-    {{ HTML::style('v4.1.0/theme/assets/global/css/components.css', array('id' => 'style_components')) }}
     {{ HTML::style('v4.1.0/theme/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css') }}
     {{ HTML::style('v4.1.0/theme/assets/admin/layout/css/themes/darkblue.css', array('type' => 'text/css', 'id' => 'style_color', 'rel' => 'stylesheet')) }}
     {{ HTML::style('build/css/main-css.min.css') }}
