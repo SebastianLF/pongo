@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/BettorController.php" afterPath="$PROJECT_DIR$/app/controllers/BettorController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="9a530f09-4cfd-4f98-b2e3-9a97dcdef514" name="Failed commit: Default" comment="correction cloturation paris combviné avec plus de 3 selections" />
@@ -870,12 +869,6 @@
       <option name="number" value="Default" />
       <updated>1411579515527</updated>
     </task>
-    <task id="LOCAL-00292" summary="resolution bug suppression coupons lors de la deconnexion">
-      <created>1444384345755</created>
-      <option name="number" value="00292" />
-      <option name="project" value="LOCAL" />
-      <updated>1444384345755</updated>
-    </task>
     <task id="LOCAL-00293" summary="resolution bug suppression coupons lors de la deconnexion">
       <created>1444400860622</created>
       <option name="number" value="00293" />
@@ -1164,7 +1157,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446049877193</updated>
     </task>
-    <option name="localTasksCounter" value="341" />
+    <task id="LOCAL-00341" summary="order by asc transactions">
+      <created>1446050565725</created>
+      <option name="number" value="00341" />
+      <option name="project" value="LOCAL" />
+      <updated>1446050565725</updated>
+    </task>
+    <option name="localTasksCounter" value="342" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1242,7 +1241,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="bug combine solved" />
     <MESSAGE value="login + inscription remake" />
     <MESSAGE value="login + inscription remake [trigger:composer:install]" />
     <MESSAGE value="modif sport priorite column" />
@@ -1267,7 +1265,8 @@
     <MESSAGE value="debug admin" />
     <MESSAGE value="correction cloturation paris combviné avec plus de 3 selections" />
     <MESSAGE value="bootstrap non cdn .. etc.." />
-    <option name="LAST_COMMIT_MESSAGE" value="bootstrap non cdn .. etc.." />
+    <MESSAGE value="order by asc transactions" />
+    <option name="LAST_COMMIT_MESSAGE" value="order by asc transactions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
