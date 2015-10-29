@@ -47,7 +47,7 @@ function refreshSelections() {
                 form.find('#automatic-selections').find('input[name="automatic-selection-cote[]"]').each(function(){
                     cote_generale_combine *= $(this).val();
                 });
-                form.find('#automatic-selections table tbody').append('<tr><td></td><td>Total cote</td><td><input class=" form-control input-coupon-odd" name="total-cote-combine" type="text" value="'+(Math.round(cote_generale_combine * 100) / 100)+'"></td><td></td></tr>');
+                form.find('#automatic-selections table tbody').append('<tr><td></td><td>Total cote</td><td><input class=" form-control input-coupon-odd" name="total-cote-combine" type="text" value="'+(Math.round(cote_generale_combine * 1000) / 1000)+'"></td><td></td></tr>');
             }
         },
         error: function (data) {
@@ -155,7 +155,6 @@ function gestionTicket() {
 
             // button animation
             var l = Ladda.create(this);
-
 
             var data = form.serialize();
             var linesnum = form.find('.betline').length;
