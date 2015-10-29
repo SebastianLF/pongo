@@ -98,8 +98,8 @@ function addManualCouponSelection() {
 
         competition_hr_container.hide();
         market_scope_hr_container.hide();
+        hideMarketParams();
         teamsRow.hide();
-        marketParams_hr_container.hide();
         bookmaker_hr_container.hide();
         live_hr_container.hide();
         add_selection_manual_button_container.hide();
@@ -193,6 +193,10 @@ function addManualCouponSelection() {
         }).change(function () {
             if($(this).val() == ''){
                 market_scope_hr_container.fadeOut();
+                hideMarketParams();
+                market.val(null).trigger('change');
+                marketContainer.removeClass('has-error');
+                marketError.empty();
             }else{
                 market_scope_hr_container.fadeIn();
             }
@@ -221,6 +225,9 @@ function addManualCouponSelection() {
             }
         }).change(function () {
             hideMarketParams();
+            bookmaker_hr_container.show();
+            live_hr_container.show();
+            add_selection_manual_button_container.show();
             $('[data-toggle="tooltip"]').tooltip();
             // valeur de market pour la gestion de l affichage des parametres du market.
             var val = market.val();
