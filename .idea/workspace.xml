@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/v4.1.0/theme/assets/admin/layout/css/custom.css" afterPath="$PROJECT_DIR$/public/v4.1.0/theme/assets/admin/layout/css/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/includes/head.blade.php" afterPath="$PROJECT_DIR$/app/views/includes/head.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js" afterPath="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/css/main-css.min.css" afterPath="$PROJECT_DIR$/public/build/css/main-css.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/js/main-plugins.js" afterPath="$PROJECT_DIR$/public/build/js/main-plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js" afterPath="$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" afterPath="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/js/dashboard.js" afterPath="$PROJECT_DIR$/public/build/js/dashboard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/mail.php" afterPath="$PROJECT_DIR$/app/config/mail.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="9a530f09-4cfd-4f98-b2e3-9a97dcdef514" name="Failed commit: Default" comment="correction cloturation paris combviné avec plus de 3 selections" />
@@ -77,81 +75,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <file leaf-file-name="addManualCouponSelection.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="6" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+              <caret line="108" column="31" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loadParisEnCours.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js">
+      <file leaf-file-name="mail.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/config/mail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6375465">
+              <caret line="98" column="6" selection-start-line="98" selection-start-column="6" selection-end-line="98" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.1153846">
+              <caret line="201" column="41" selection-start-line="201" selection-start-column="41" selection-end-line="201" selection-end-column="41" />
               <folding>
-                <element signature="e#1463#3869#0" expanded="false" />
+                <marker date="1446074296204" expanded="true" signature="3435:3578" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="custom.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/v4.1.0/theme/assets/admin/layout/css/custom.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59351623">
-              <caret line="125" column="13" selection-start-line="125" selection-start-column="13" selection-end-line="125" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="components_dropdowns.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/v4.1.0/theme/templates/admin/components_dropdowns.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.615385">
-              <caret line="3539" column="33" selection-start-line="3539" selection-start-column="33" selection-end-line="3539" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auto_form_selections.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.423077">
-              <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-              <folding>
-                <marker date="1446051743019" expanded="true" signature="1113:1438" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parisencours.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.5">
-              <caret line="88" column="63" selection-start-line="88" selection-start-column="63" selection-end-line="88" selection-end-column="63" />
-              <folding>
-                <marker date="1446056642387" expanded="true" signature="5903:6123" placeholder="..." />
-                <marker date="1446056642387" expanded="true" signature="6164:6377" placeholder="..." />
-                <marker date="1446056642387" expanded="true" signature="6472:6745" placeholder="..." />
-                <marker date="1446056642387" expanded="true" signature="6513:6744" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="head.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/includes/head.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.230769">
-              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -206,8 +157,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/lang/fr/validation.php" />
-        <option value="$PROJECT_DIR$/app/controllers/CouponController.php" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/loadRecaps.js" />
         <option value="$PROJECT_DIR$/app/views/pages/profile.blade.php" />
         <option value="$PROJECT_DIR$/public/metronic_v3.8.1/theme/assets/admin/layout3/css/custom.css" />
@@ -250,13 +199,15 @@
         <option value="$PROJECT_DIR$/app/views/layouts/default.blade.php" />
         <option value="$PROJECT_DIR$/app/views/bet/paristermine.blade.php" />
         <option value="$PROJECT_DIR$/app/views/recaps/tipstersrecap.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/BettorController.php" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/app/views/includes/head.blade.php" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js" />
         <option value="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
         <option value="$PROJECT_DIR$/public/v4.1.0/theme/assets/admin/layout/css/custom.css" />
+        <option value="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js" />
+        <option value="$PROJECT_DIR$/app/config/mail.php" />
       </list>
     </option>
   </component>
@@ -369,9 +320,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="130" />
+    <option name="x" value="-4" />
+    <option name="y" value="157" />
     <option name="width" value="1895" />
-    <option name="height" value="902" />
+    <option name="height" value="874" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -846,12 +798,6 @@
       <option name="number" value="Default" />
       <updated>1411579515527</updated>
     </task>
-    <task id="LOCAL-00294" summary="modif landing page - image supprimé - taille text augmenté">
-      <created>1444510014711</created>
-      <option name="number" value="00294" />
-      <option name="project" value="LOCAL" />
-      <updated>1444510014712</updated>
-    </task>
     <task id="LOCAL-00295" summary="modif landing page - image supprimé - taille text augmenté">
       <created>1444510210823</created>
       <option name="number" value="00295" />
@@ -1140,7 +1086,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446050974552</updated>
     </task>
-    <option name="localTasksCounter" value="343" />
+    <task id="LOCAL-00343" summary="taille status paris augmenté">
+      <created>1446056748128</created>
+      <option name="number" value="00343" />
+      <option name="project" value="LOCAL" />
+      <updated>1446056748128</updated>
+    </task>
+    <option name="localTasksCounter" value="344" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1149,7 +1101,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="130" width="1895" height="902" extended-state="0" />
+    <frame x="-4" y="157" width="1895" height="874" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32426304" sideWeight="0.4973046" order="13" side_tool="false" content_ui="tabs" />
@@ -1157,12 +1109,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2845805" sideWeight="0.5053996" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3265306" sideWeight="0.4973046" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42287233" sideWeight="0.49460045" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17541437" sideWeight="0.49460045" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27314815" sideWeight="0.49393532" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.196497" sideWeight="0.35023043" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.196497" sideWeight="0.34673366" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2777778" sideWeight="0.49326146" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.196497" sideWeight="0.6497696" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18007663" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.196497" sideWeight="0.6532663" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18007663" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16823056" sideWeight="0.49626866" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21715818" sideWeight="0.23521127" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35352114" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1218,7 +1170,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="login + inscription remake" />
     <MESSAGE value="login + inscription remake [trigger:composer:install]" />
     <MESSAGE value="modif sport priorite column" />
     <MESSAGE value="debug affichage total cote combine des coupons a plus de 3 decimaux" />
@@ -1243,7 +1194,8 @@
     <MESSAGE value="correction cloturation paris combviné avec plus de 3 selections" />
     <MESSAGE value="bootstrap non cdn .. etc.." />
     <MESSAGE value="order by asc transactions" />
-    <option name="LAST_COMMIT_MESSAGE" value="order by asc transactions" />
+    <MESSAGE value="taille status paris augmenté" />
+    <option name="LAST_COMMIT_MESSAGE" value="taille status paris augmenté" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1252,35 +1204,9 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..coupon">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/v4.1.0/theme/assets/global/plugins/select2/js/i18n/az.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/recaps/recaps.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.454343">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
@@ -1403,14 +1329,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5977654">
           <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/mail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4301676">
-          <caret line="123" column="5" selection-start-line="123" selection-start-column="5" selection-end-line="123" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1621,10 +1539,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bet/auto_form_selections.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.423077">
+        <state vertical-scroll-proportion="0.30666667">
           <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
           <folding>
-            <marker date="1446051743019" expanded="true" signature="1113:1438" placeholder="..." />
+            <marker date="1446051743019" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1653,16 +1571,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57359636">
-          <caret line="347" column="53" selection-start-line="347" selection-start-column="53" selection-end-line="347" selection-end-column="53" />
-          <folding>
-            <marker date="1446051743059" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/default.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3939394">
@@ -1681,7 +1589,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/includes/head.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.230769">
+        <state vertical-scroll-proportion="0.50133336">
           <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding />
         </state>
@@ -1689,7 +1597,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/v4.1.0/theme/templates/admin/components_dropdowns.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.615385">
+        <state vertical-scroll-proportion="0.8053333">
           <caret line="3539" column="33" selection-start-line="3539" selection-start-column="33" selection-end-line="3539" selection-end-column="33" />
           <folding />
         </state>
@@ -1703,16 +1611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="e#1463#3869#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="3.0448878">
@@ -1723,13 +1621,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5">
+        <state vertical-scroll-proportion="0.58933336">
           <caret line="88" column="63" selection-start-line="88" selection-start-column="63" selection-end-line="88" selection-end-column="63" />
           <folding>
-            <marker date="1446056642387" expanded="true" signature="5903:6123" placeholder="..." />
-            <marker date="1446056642387" expanded="true" signature="6164:6377" placeholder="..." />
-            <marker date="1446056642387" expanded="true" signature="6472:6745" placeholder="..." />
-            <marker date="1446056642387" expanded="true" signature="6513:6744" placeholder="..." />
+            <marker date="1446056642387" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1446056642387" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1446056642387" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1446056642387" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1738,6 +1636,65 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.59351623">
           <caret line="125" column="13" selection-start-line="125" selection-start-column="13" selection-end-line="125" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38154614">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#1463#3869#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/bet/manual_addbet.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1437871150981" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.1153846">
+          <caret line="201" column="41" selection-start-line="201" selection-start-column="41" selection-end-line="201" selection-end-column="41" />
+          <folding>
+            <marker date="1446074296204" expanded="true" signature="3435:3578" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..users">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="108" column="31" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/mail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6375465">
+          <caret line="98" column="6" selection-start-line="98" selection-start-column="6" selection-end-line="98" selection-end-column="6" />
           <folding />
         </state>
       </provider>

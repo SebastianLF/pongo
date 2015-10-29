@@ -87,13 +87,22 @@ function addManualCouponSelection() {
     var scoreError = modal_form.find('#score_error');
     var scoreContainer = modal_form.find('#score_container');
 
+    var competition_hr_container = $('#competition_hr_container');
+    var market_scope_hr_container = $('#market_scope_hr_container');
+    var marketParams_hr_container = $('#marketParams_hr_container');
+    var bookmaker_hr_container = $('#bookmaker_hr_container');
+    var live_hr_container = $('#live_hr_container');
+    var add_selection_manual_button_container = $('#add_selection_manual_button_container');
+
     function assignerEtatEnDebut() {
+
+        competition_hr_container.hide();
+        market_scope_hr_container.hide();
         teamsRow.hide();
-        pickContainer.hide();
-        oddParamContainer.hide();
-        oddParam2Container.hide();
-        oddParam3Container.hide();
-        oddParticipantParameterNameContainer.hide();
+        marketParams_hr_container.hide();
+        bookmaker_hr_container.hide();
+        live_hr_container.hide();
+        add_selection_manual_button_container.hide();
     }
 
     function gestionCheckboxs() {
@@ -131,13 +140,23 @@ function addManualCouponSelection() {
                 }
             }
         }).change(function () {
-            hideMarketParams();
+            if($(this).val() == ''){
+                competition_hr_container.fadeOut();
+            }else{
+                competition_hr_container.fadeIn();
+            }
+
             competition.val(null).trigger('change');
             competitionContainer.removeClass('has-error');
             competitionError.empty();
+            scope.val(null).trigger('change');
+            scopeContainer.removeClass('has-error');
+            scopeError.empty();
             market.val(null).trigger('change');
             marketContainer.removeClass('has-error');
             marketError.empty();
+            hideMarketParams();
+
         });
     }
 
@@ -171,6 +190,12 @@ function addManualCouponSelection() {
                 }
             },
             templateResult: formatCompet
+        }).change(function () {
+            if($(this).val() == ''){
+                market_scope_hr_container.fadeOut();
+            }else{
+                market_scope_hr_container.fadeIn();
+            }
         });
     }
 
@@ -599,9 +624,6 @@ function addManualCouponSelection() {
             liveCheckBox.prop('checked', false);
     }
 
-    // inits
-
-
     // hack pour avoir le focus sur les inputs avec select2 dans les modals.
     $.fn.modal.Constructor.prototype.enforceFocus = function () {
     };
@@ -638,4 +660,6 @@ function addManualCouponSelection() {
     gestionSelectionsPick();
     gestionSelectionsEquipes();
     assignerEtatEnDebut(); // important de le mettre a la fin sinon ca fait bugger les select2.
+
+
 }

@@ -3,8 +3,7 @@
 @section('content')
 
 
-
- <!-- BEGIN PAGE HEAD -->
+        <!-- BEGIN PAGE HEAD -->
 <!-- END PAGE HEAD -->
 <!-- BEGIN PAGE CONTENT -->
 
@@ -15,7 +14,8 @@
         <div class="portlet-body">
             <div class="note note-danger">
                 <p>
-                    Pour reporter un bug ou poser une question sur n'importequel sujet, veuillez nous contacter à l'aide de l'encadré rouge en bas a droite de la page.
+                    Pour reporter un bug ou poser une question sur n'importequel sujet, veuillez nous contacter à l'aide
+                    de l'encadré rouge en bas a droite de la page.
                 </p>
             </div>
         </div>
@@ -94,7 +94,8 @@
                                        data-parent="#accordion-add-ticket"
                                        href="#panier-selections-add-ticket" aria-expanded="true"
                                        aria-controls="panier-selections-add-ticket">
-                                        <span class="glyphicon glyphicon-chevron-right expand-glyphicon" style="float:right"></span>
+                                        <span class="glyphicon glyphicon-chevron-right expand-glyphicon"
+                                              style="float:right"></span>
                                         Panier des sélections -
                                     </a>
 
@@ -109,6 +110,7 @@
                                             <a id="selection-refresh" type="button"> <span
                                                         class="glyphicon glyphicon-refresh glyphicon-spin"></span>Rafraichir</a>
                                             <span id="automatic-refresh"> - </span>
+
                                             <div id="automatic-selections">
 
                                             </div>
@@ -137,7 +139,7 @@
                         <div class="tab-content">
                             <div class="tab-pane fade" id="tab_automatique">
                                 @if(App::environment('local'))
-                                   <!--  <iframe src={{"http://stage.betbrain.com/?portalId=1312&userSessionId=".Session::getId()}} height="600"
+                                        <!--  <iframe src={{"http://stage.betbrain.com/?portalId=1312&userSessionId=".Session::getId()}} height="600"
                                             width="100%" frameborder="0">Odds service provided in
                                         co-operation
                                         with
@@ -145,7 +147,7 @@
                                            target="_blank"><b>BetBrain.com</b></a>
                                     </iframe> -->
                                 @else
-                                         <iframe src={{"http://betbrain.com/?portalId=1326&userSessionId=".Session::getId()}} height="600"
+                                    <iframe src={{"http://betbrain.com/?portalId=1326&userSessionId=".Session::getId()}} height="600"
                                             width="100%" frameborder="0">Odds service provided in
                                         co-operation with <a href="http://www.betbrain.com"
                                                              target="_blank"><b>BetBrain.com</b></a>
@@ -156,6 +158,7 @@
                                 <div class="note note-danger">
                                     <p>- Les informations a remplir dépendent du sport, renseignez le champ
                                         sport avant le reste.</p>
+
                                     <p>- Lorsque le symbole <span class="glyphicon glyphicon-save"></span>
                                         apparaît, c'est à vous
                                         d'inscrire le nom de l'equipe (ou du joueur) dans le champ de
@@ -173,7 +176,7 @@
                                 </div>
                                 <hr/>
                                 <div class="row">
-                                    <div id="sport_container" class="col-md-3 col-md-offset-3">
+                                    <div id="sport_container" class="col-md-3 col-md-offset-4">
                                         <label for="date">Sport</label>
                                         <select name="sport"
                                                 class="form-control sportinputdashboard">
@@ -181,40 +184,43 @@
                                         </select>
                                         <span id="sport_error" class="help-block"></span>
                                     </div>
-
-                                    <div id="competition_container" class="col-md-3">
-                                        <label for="competition">Competition</label>
-                                        <select name="competition"
-                                                class="form-control competitioninputdashboard ">
-                                            <option value=""></option>
-                                        </select>
-                                        <span id="competition_error" class="help-block"></span>
-                                    </div>
                                 </div>
-
-                                <div class="row">
+                                <div id="competition_hr_container">
                                     <hr/>
-                                    <div id="market_container" class="col-md-3 col-md-offset-3">
-                                        <label for="market">Type du pari</label>
-                                        <select name="market"
-                                                class="form-control marketinputdashboard input-sm">
-                                            <option value=""></option>
-                                        </select>
-                                        <span id="market_error" class="help-block"></span>
-                                    </div>
-
-                                    <div id="scope_container" class="col-md-3">
-                                        <label for="scope">Portée du pari</label>
-                                        <select name="scope"
-                                                class="form-control scopeinputdashboard input-sm">
-                                            <option value=""></option>
-                                        </select>
-                                        <span id="scope_error" class="help-block"></span>
+                                    <div class="row">
+                                        <div id="competition_container" class="col-md-3 col-md-offset-4">
+                                            <label for="competition">Competition</label>
+                                            <select name="competition"
+                                                    class="form-control competitioninputdashboard ">
+                                                <option value=""></option>
+                                            </select>
+                                            <span id="competition_error" class="help-block"></span>
+                                        </div>
                                     </div>
                                 </div>
+                                <div id="market_scope_hr_container">
+                                    <hr/>
+                                    <div class="row">
+                                        <div id="market_container" class="col-md-3 col-md-offset-3">
+                                            <label for="market">Type du pari</label>
+                                            <select name="market"
+                                                    class="form-control marketinputdashboard input-sm">
+                                                <option value=""></option>
+                                            </select>
+                                            <span id="market_error" class="help-block"></span>
+                                        </div>
 
+                                        <div id="scope_container" class="col-md-3">
+                                            <label for="scope">Portée du pari</label>
+                                            <select name="scope"
+                                                    class="form-control scopeinputdashboard input-sm">
+                                                <option value=""></option>
+                                            </select>
+                                            <span id="scope_error" class="help-block"></span>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div id="teamsRow" class="row">
-
                                     <div id="team1_container" class="col-md-3 col-md-offset-3">
                                         <label for="team1">Equipe Domicile</label>
                                         <select name="team1"
@@ -230,91 +236,94 @@
                                         <span id="team2_error" class="help-block"></span>
 
                                     </div>
-
                                 </div>
+                                <div id="marketParams_hr_container">
+                                    <div class="row">
+                                        <div id="pick_container" class="col-md-2 col-md-offset-3">
+                                            <label for="pick">Choix du pari</label>
+                                            <select name="pick"
+                                                    class="form-control pickinputdashboard input-sm">
+                                            </select>
+                                            <span id="pick_error" class="help-block"></span>
+                                        </div>
+                                        <div id="odd_doubleParam_container" class="col-md-2">
+                                            <label for="odd_doubleParam"></label>
+                                            <select name="odd_doubleParam"
+                                                    class="form-control input-sm"></select>
+                                            <span id="odd_doubleParam_error" class="help-block"></span>
+                                        </div>
 
-                                <div class="row">
+                                        <div id="odd_doubleParam2_container" class="col-md-2">
+                                            <label for="odd_doubleParam2"></label>
+                                            <select name="odd_doubleParam2"
+                                                    class="form-control input-sm"></select>
+                                            <span id="odd_doubleParam2_error" class="help-block"></span>
+                                        </div>
 
-                                    <div id="pick_container" class="col-md-2 col-md-offset-3">
-                                        <label for="pick">Choix du pari</label>
-                                        <select name="pick"
-                                                class="form-control pickinputdashboard input-sm">
-                                        </select>
-                                        <span id="pick_error" class="help-block"></span>
-                                    </div>
-                                    <div id="odd_doubleParam_container" class="col-md-2">
-                                        <label for="odd_doubleParam"></label>
-                                        <select name="odd_doubleParam"
-                                                class="form-control input-sm"></select>
-                                        <span id="odd_doubleParam_error" class="help-block"></span>
-                                    </div>
+                                        <div id="odd_doubleParam3_container" class="col-md-2">
+                                            <label for="odd_doubleParam3"></label>
+                                            <select name="odd_doubleParam3"
+                                                    class="form-control input-sm"></select>
+                                            <span id="odd_doubleParam3_error" class="help-block"></span>
+                                        </div>
 
-                                    <div id="odd_doubleParam2_container" class="col-md-2">
-                                        <label for="odd_doubleParam2"></label>
-                                        <select name="odd_doubleParam2"
-                                                class="form-control input-sm"></select>
-                                        <span id="odd_doubleParam2_error" class="help-block"></span>
-                                    </div>
-
-                                    <div id="odd_doubleParam3_container" class="col-md-2">
-                                        <label for="odd_doubleParam3"></label>
-                                        <select name="odd_doubleParam3"
-                                                class="form-control input-sm"></select>
-                                        <span id="odd_doubleParam3_error" class="help-block"></span>
-                                    </div>
-
-                                    <div id="odd_participantParameterName_container" class="col-md-2">
-                                        <label for="odd_participantParameterName"></label>
-                                        <select name="odd_participantParameterName"
-                                                class="form-control input-sm"></select>
+                                        <div id="odd_participantParameterName_container" class="col-md-2">
+                                            <label for="odd_participantParameterName"></label>
+                                            <select name="odd_participantParameterName"
+                                                    class="form-control input-sm"></select>
                                                         <span id="odd_participantParameterName_error"
                                                               class="help-block"></span>
+                                        </div>
                                     </div>
                                 </div>
-                                <hr/>
-                                <div class="row">
-                                    <div id="bookmaker_container" class="col-md-3 col-md-offset-3">
-                                        <label for="bookmaker">Bookmaker</label>
-                                        <select name="bookmaker" class="form-control input-sm">
-                                            <option value=""></option>
-                                        </select>
-                                        <span id="bookmaker_error" class="help-block"></span>
-                                    </div>
-                                    <div id="odd_container" class="col-md-3">
-                                        <label for="odd_value">Cote</label>
-                                        <input name="odd_value"
-                                               class="form-control oddinputdashboard input-sm"
-                                               placeholder="Cote">
-                                        <span id="odd_error" class="help-block"></span>
-                                    </div>
-                                </div>
-
-                                <div class="row">
+                                <div id="bookmaker_hr_container">
                                     <hr/>
-                                    <div id="liveContainer" class="col-md-2 col-md-offset-4">
-                                        <label class="checkbox-inline">
-                                            <div class="checker" id="uniform-live"><span><input
-                                                            type="checkbox" id="live"
-                                                            value="live"></span></div>
-                                            live
-                                        </label>
-                                    </div>
-
-                                    <div id="score_container" class="col-md-2">
-                                        <label for="score">Score (en cours)</label>
-                                        <input name="score" class="form-control input-sm"
-                                               placeholder="score">
-                                        <span id="score_error" class="help-block"></span>
+                                    <div class="row">
+                                        <div id="bookmaker_container" class="col-md-3 col-md-offset-3">
+                                            <label for="bookmaker">Bookmaker</label>
+                                            <select name="bookmaker" class="form-control input-sm">
+                                                <option value=""></option>
+                                            </select>
+                                            <span id="bookmaker_error" class="help-block"></span>
+                                        </div>
+                                        <div id="odd_container" class="col-md-3">
+                                            <label for="odd_value">Cote</label>
+                                            <input name="odd_value"
+                                                   class="form-control oddinputdashboard input-sm"
+                                                   placeholder="Cote">
+                                            <span id="odd_error" class="help-block"></span>
+                                        </div>
                                     </div>
                                 </div>
-                                <hr/>
-                                <div class="col-md-offset-5">
-                                    <button type="submit" class="btn green uppercase">Ajouter selection
-                                    </button>
-                                </div>
+                                <div id="live_hr_container">
+                                    <hr/>
+                                    <div class="row">
+                                        <div id="liveContainer" class="col-md-2 col-md-offset-4">
+                                            <label class="checkbox-inline">
+                                                <div class="checker" id="uniform-live"><span><input
+                                                                type="checkbox" id="live"
+                                                                value="live"></span></div>
+                                                live
+                                            </label>
+                                        </div>
 
+                                        <div id="score_container" class="col-md-2">
+                                            <label for="score">Score (en cours)</label>
+                                            <input name="score" class="form-control input-sm"
+                                                   placeholder="score">
+                                            <span id="score_error" class="help-block"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="add_selection_manual_button_container">
+                                    <hr/>
+                                    <div class="col-md-offset-5">
+                                        <button type="submit" class="btn green uppercase">Ajouter selection
+                                        </button>
+                                    </div>
+                                </div>
                                 {{ Form::close()}}
-                                <hr/>
+
                             </div>
                         </div>
                     </div>
@@ -331,17 +340,20 @@
                         <span class="caption-helper hide">stats</span>
                     </div>
                     <div class="actions col-md-9">
-                        <div id="default-range-container" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
+                        <div id="default-range-container" class="pull-right"
+                             style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
                             <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
-                            <span id="defaultrange" class="visible-lg-inline-block">{{Carbon::now(Auth::user()->timezone)->startOfMonth()->format('d/m/Y').' - '.Carbon::now(Auth::user()->timezone)->endOfMonth()->format('d/m/Y')}}</span>&nbsp;<b class="caret"></b>
+                            <span id="defaultrange"
+                                  class="visible-lg-inline-block">{{Carbon::now(Auth::user()->timezone)->startOfMonth()->format('d/m/Y').' - '.Carbon::now(Auth::user()->timezone)->endOfMonth()->format('d/m/Y')}}</span>&nbsp;<b
+                                    class="caret"></b>
                         </div>
-                       <!-- <div class="input-group">
-                                        <span class="input-group-btn"><i class="fa fa-calendar"></i></span>
-                            <input type="text" class="form-control recaps-tipsters-date input-sm"
-                                   value=""
-                                   readonly>
-                            <span class="input-group-btn"><button class="btn btn-sm" type="button"><i class="fa fa-angle-down"></i></button></span>
-                        </div> -->
+                        <!-- <div class="input-group">
+                                         <span class="input-group-btn"><i class="fa fa-calendar"></i></span>
+                             <input type="text" class="form-control recaps-tipsters-date input-sm"
+                                    value=""
+                                    readonly>
+                             <span class="input-group-btn"><button class="btn btn-sm" type="button"><i class="fa fa-angle-down"></i></button></span>
+                         </div> -->
                     </div>
                 </div>
                 <div class="portlet-body">
