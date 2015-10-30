@@ -15,7 +15,10 @@
 
 
 2) calculs de:
-    - pinnacle : 1,943 * 25 = 23.58 - à la calculette = 1,943 * 25 = 23.575
+    - pinnacle :
+        1,943 * 25 = 23.58 - à la calculette = 1,943 * 25 = 23.575
+        1,699 * 25 = 17.48 - à la calculette = 1,943 * 25 = 23.575
+
     - bet365 : chez bet365 la cote de affiché n'est pas la cote réelle utlisé pour calculer le montant retourné c un chiffre avec de nombreux decimaux.
 
 

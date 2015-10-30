@@ -15,14 +15,14 @@ function startDecompteRefresh() {
     }
 
     function action() {
-        $('#automatic-refresh').html("- Rafraichissement auto !!");
+        $('#automatic-refresh').html(" - Rafraichissement auto !!");
         clearInterval(intervalId);
         refreshSelections();
         start();
     }
 
     function bip() {
-        $('#automatic-refresh').html("- Rafraichissement auto dans " + counter + " secondes");
+        $('#automatic-refresh').html(" - Rafraichissement auto dans " + counter + " secondes");
         counter--;
     }
 
@@ -47,7 +47,7 @@ function refreshSelections() {
                 form.find('#automatic-selections').find('input[name="automatic-selection-cote[]"]').each(function(){
                     cote_generale_combine *= $(this).val();
                 });
-                form.find('#automatic-selections table tbody').append('<tr><td></td><td>Total cote</td><td><input class=" form-control input-coupon-odd" name="total-cote-combine" type="text" value="'+(Math.round(cote_generale_combine * 1000) / 1000)+'"></td><td></td></tr>');
+                form.find('#automatic-selections table tbody').append('<tr><td></td><td>Cote combiné</td><td><input class=" form-control input-coupon-odd" name="total-cote-combine" type="text" value="'+(Math.round(cote_generale_combine * 100) / 100)+'"></td><td></td></tr>');
             }
         },
         error: function (data) {
@@ -59,10 +59,11 @@ function refreshSelections() {
 function openOrCloseSelectionsCouponAccordeonWhenSelectionsCouponIsRefreshed(count) {
     if (count > 0) {
         $('#panier-selections-add-ticket').collapse('show');
-        $('#infos-generales-add-ticket').collapse('show');
     } else {
-        $('#panier-selections-add-ticket').collapse('hide');
-        $('#infos-generales-add-ticket').collapse('hide');
+        if( ! $('#panier-selections-add-ticket').hasClass('in')) {
+            $('#panier-selections-add-ticket').collapse('hide');
+        }
+
     }
 
 }
@@ -248,7 +249,7 @@ function gestionTicket() {
     }
 
     function refreshSelectionsClick() {
-        form.find('#selection-refresh').click(function (e) {
+        $('#refresh-panier-selection-on-click').click(function (e) {
             e.preventDefault();
             refreshSelections();
         });
@@ -475,6 +476,6 @@ function gestionTicket() {
     conversionMises();
     gestionBookmakerAccount();
     gestionABCD();
-
+    startDecompteRefresh();
 
 }

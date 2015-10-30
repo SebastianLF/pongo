@@ -100,9 +100,6 @@ function addManualCouponSelection() {
         market_scope_hr_container.hide();
         hideMarketParams();
         teamsRow.hide();
-        bookmaker_hr_container.hide();
-        live_hr_container.hide();
-        add_selection_manual_button_container.hide();
     }
 
     function gestionCheckboxs() {
@@ -407,7 +404,7 @@ function addManualCouponSelection() {
 
 
     function postCouponSelection() {
-        modal_form.submit(function (e) {
+        modal_form.find('button[type="submit"]').on("click", function (e) {
             e.preventDefault();
             var data = modal_form.serialize();
             var selectionlive;
@@ -418,6 +415,8 @@ function addManualCouponSelection() {
                 selectionlive = 0;
             }
 
+            var l = Ladda.create(this);
+            l.start();
             $.ajax({
                 url: 'manualcoupon',
                 type: 'post',
@@ -532,6 +531,9 @@ function addManualCouponSelection() {
                         resetModal();
 
                     }
+                },
+                complete: function () {
+                    l.stop();
                 }
             });
         });

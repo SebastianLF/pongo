@@ -220,9 +220,11 @@ License: You must have a valid license purchased only from themeforest(the above
 <script type="text/javascript">
     jQuery(document).ready(function () {
 
-        $('[data-toggle="tooltip"]').tooltip();
+        // activate tooltip globally
+        $("body").tooltip({ selector: '[data-toggle="tooltip"]' });
 
-        $('[data-toggle="popover"]').popover();
+        //activate tooltip globally for selector with data-hover attribute (example: cash out bets)
+        $("body").tooltip({ selector: '[data-hover="tooltip"]' });
 
         // pop-up keep session or not
         $.sessionTimeout({

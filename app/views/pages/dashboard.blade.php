@@ -96,7 +96,7 @@
                                        aria-controls="panier-selections-add-ticket">
                                         <span class="glyphicon glyphicon-chevron-right expand-glyphicon"
                                               style="float:right"></span>
-                                        Panier des sélections -
+                                        Panier des sélections <div id="automatic-refresh" style="display: inline-block"></div>
                                     </a>
 
                                 </h4>
@@ -107,9 +107,6 @@
                                 <div class="panel-body">
                                     <div class="row" style="padding: 5px;">
                                         <div class="col-md-8 bordercg1" style="min-height: 95px;">
-                                            <a id="selection-refresh" type="button"> <span
-                                                        class="glyphicon glyphicon-refresh glyphicon-spin"></span>Rafraichir</a>
-                                            <span id="automatic-refresh"> - </span>
 
                                             <div id="automatic-selections">
 
@@ -134,6 +131,9 @@
                                 <a href="#tab_manuel" data-toggle="tab" aria-expanded="false">
                                     Selection manuelle </a>
                             </li>
+                            <li style="float: right"><a id="refresh-panier-selection-on-click" type="button"> <span
+                                            class="glyphicon glyphicon-refresh glyphicon-spin"></span>Rafraichir panier</a></li>
+
 
                         </ul>
                         <div class="tab-content">
@@ -156,9 +156,6 @@
                             </div>
                             <div class="tab-pane active fade in" id="tab_manuel">
                                 <div class="note note-danger">
-                                    <p>- Les informations a remplir dépendent du sport, renseignez le champ
-                                        sport avant le reste.</p>
-
                                     <p>- Lorsque le symbole <span class="glyphicon glyphicon-save"></span>
                                         apparaît, c'est à vous
                                         d'inscrire le nom de l'equipe (ou du joueur) dans le champ de
