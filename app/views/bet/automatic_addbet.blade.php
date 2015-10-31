@@ -1,5 +1,6 @@
+
 <div class="form-body " style="padding:5px;">
-    <div class="row">
+    <div class="">
         <div class="col-md-6">
             <div class="form-group">
                 <div class="">
@@ -7,7 +8,7 @@
                 </div>
                 <select id="tipstersinputdashboard"
                         name="tipstersinputdashboard"
-                        class="form-control input-sm">
+                        class="form-control" style="width: 95%">
                     <option></option>
                 </select>
             </div>
@@ -22,8 +23,7 @@
                 </div>
                 <select type="text" id="followtypeinputdashboard"
                         name="followtypeinputdashboard"
-                        class="form-control input-sm"
-                        readonly></select>
+                        class="form-control" style="width: 95%" readonly></select>
             </div>
         </div>
         <div class="col-md-4 hidden">
@@ -37,7 +37,7 @@
                 <div class="input-group">
                     <div class="input-group-addon">€</div>
                     <input type="text" id="amountperunit" name="amountperunit"
-                           class="form-control input-sm"
+                           class="form-control" style="width: 95%"
                            readonly>
                 </div>
             </div>
@@ -45,7 +45,7 @@
     </div>
     <hr>
     <!--/row-->
-    <div id="typestakecontainer" class="row">
+    <div id="typestakecontainer" class="">
         <div class="col-md-6">
             <div class="form-group">
                 <div class="">
@@ -57,7 +57,7 @@
                 <div class="">
                     <select name="typestakeinputdashboard"
                             id="typestakeinputdashboard"
-                            class="form-control input-sm">
+                            class="form-control" style="width: 95%">
 
                     </select>
                 </div>
@@ -69,12 +69,12 @@
                 <div class="">
                     <label class="">Mise en U</label>
                 </div>
-                <div class="input-group">
+                <div class="input-group" style="width: 95%">
                     <div class="input-group-addon">U</div>
 
                     <input type="text" id="stakeunitinputdashboard"
                            name="stakeunitinputdashboard"
-                           class="form-control input-sm form-control-mise-unites-coupon">
+                           class="form-control form-control-mise-coupon input-sm ">
                 </div>
             </div>
         </div>
@@ -87,7 +87,7 @@
                     <div class="input-group-addon">{{Auth::user()->devise}}</div>
                     <input type="text" id="amountconversion"
                            name="amountconversion"
-                           class="form-control input-sm" readonly>
+                           class="form-control" readonly>
                 </div>
             </div>
         </div>
@@ -96,31 +96,29 @@
                 <div class="">
                     <label class="">Mise en {{Auth::user()->devise}}</label>
                 </div>
-                <div class="input-group">
+                <div class="input-group" style="width: 95%">
                     <div class="input-group-addon">{{Auth::user()->devise}}</div>
                     <input type="text" id="amountinputdashboard"
                            name="amountinputdashboard"
-                           class="form-control input-sm form-control-mise-unites-coupon">
+                           class="form-control form-control-mise-coupon input-sm">
                 </div>
             </div>
         </div>
     </div>
     <hr>
-    <div id="bookmakercontainer" class="row">
-
+    <div id="bookmakercontainer" class="">
         <!--/span-->
-        <div class="col-md-4 ">
+        <div class="col-md-6 ">
             <div class="form-group">
                 <div class="">
                     <label class="">Compte</label>
                 </div>
-                <div class="">
-                    <select id="accountsinputdashboard"
-                            name="accountsinputdashboard"
-                            class="form-control input-sm">
-                        <option></option>
-                    </select>
-                </div>
+                <select id="accountsinputdashboard"
+                        name="accountsinputdashboard"
+                        class="form-control input-sm" style="width: 95%;">
+                    <option></option>
+                </select>
+
             </div>
         </div>
         <!--/span-->
@@ -129,7 +127,7 @@
     <hr>
 
     <!--/span-->
-    <div id="optionscontainer" class="row">
+    <div id="optionscontainer" class="">
         <div class="col-md-12">
             <div class="form-group">
 
@@ -145,29 +143,29 @@
             </div>
         </div>
         <div id="methodeabcdcontainer">
-            <div class="col-md-4  col-md-offset-1">
+            <div class="col-md-6">
                 <div class="form-group">
                     <div class="">
                         <label class="">N° ou nom</label>
                     </div>
-                    <div class="">
+                    <div >
                         <select name="serieinputdashboard"
                                 id="serieinputdashboard"
-                                class="form-control input-sm">
+                                class="form-control input-sm" style="width: 95%;">
                             <option></option>
                         </select>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-md-offset-1">
+            <div class="col-md-6">
                 <div class="form-group">
                     <div class="">
                         <label class="">Lettre</label>
                     </div>
-                    <div class="">
+                    <div >
                         <select id="letterinputdashboard"
                                 name="letterinputdashboard"
-                                class="form-control input-sm">
+                                class="form-control input-sm" style="width: 95%;">
                             <option></option>
                         </select>
                     </div>
@@ -179,7 +177,7 @@
 
     <div id="submitboutoncontainer" class="row">
         <div class="text-center col-md-12">
-            <button type="submit" class="btn btn-danger ladda-button" data-style="slide-down" data-size="l"><span
+            <button type="submit" class="btn btn-danger ladda-button" data-style="expand-right" data-size="l"><span
                         class="ladda-label">AJOUTER LE PARI</span></button>
         </div>
     </div>

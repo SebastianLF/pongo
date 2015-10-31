@@ -107,11 +107,6 @@ Rounded Portlets
 
 }
 
-
-#automaticform-add{
-  margin-bottom: 40px;
-}
-
 /* selection caption */
 .selections-caption{
   color: #666;
@@ -119,8 +114,8 @@ Rounded Portlets
   font-size: 17px;
 }
 
-.form-control-mise-unites-coupon{
-    width: 50% !important;
+.form-control-mise-coupon{
+    width: 100% !important;
 }
 
 .pari-status{
@@ -425,7 +420,7 @@ select{
   margin: 0px;
 }
 
-/* si le contenu d une cellule est trop longue elle est cachée */
+/* si le contenu d une cellule est trop longue elle est cachï¿½e */
 .table-fixed {
   table-layout:fixed;
 }
@@ -510,7 +505,7 @@ select{
   text-align: center;
 }
 
-/* remet à zero pour le plugin datetimepicker dans recap*/
+/* remet ï¿½ zero pour le plugin datetimepicker dans recap*/
 
 /* flags sprite */
 

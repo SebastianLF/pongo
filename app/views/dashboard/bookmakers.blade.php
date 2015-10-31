@@ -20,9 +20,8 @@
                     <div class="panel-heading">
                         <div class="panel-title">
 
-                            <a class="accordion-toggle collapsed"
+                            <a class="accordion-toggle accordion-toggle-styled collapsed"
                                data-toggle="collapse" href="{{'#row'.$bookmaker->id}}">
-                                <span class="glyphicon glyphicon-chevron-right expand-glyphicon" style="float:right"></span>
                                 <span class="theme-font blue-bookmaker">{{$bookmaker->nom.' |'}}</span>
                                      <span class="theme-font">{{$bookmaker['comptes']->sum('bankroll_actuelle')}} {{Auth::user()->devise}}</span></span>
                                 {{$paris_en_attente ? '<span class="badge badge-danger bcg-red" data-toggle="tooltip" data-original-title="Nombre de paris en cours associés: '.$paris_en_attente.'">'.$paris_en_attente.'</span>' : ''}}
