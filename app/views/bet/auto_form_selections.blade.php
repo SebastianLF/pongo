@@ -1,5 +1,7 @@
+
+<hr/>
 @if($count == 0)
-    <div class="text-center">{{utf8_encode('- Ici se trouvent les selections ajoutees a partir du mode automatique ou manuel ci-dessous. -')}} </div>
+    <div class="">{{utf8_encode('- Ici se trouvent les selections ajoutees a partir du mode automatique ou manuel ci-dessous. -')}} </div>
 @else
 
     <div class="table-responsive">

@@ -5,24 +5,24 @@
 
 
 function startDecompteRefresh() {
-    var counter = 4;
+    var counter = 10;
     var intervalId = null;
 
     function start() {
-        counter = 4;
+        counter = 10;
         intervalId = setInterval(bip, 1000);
-        setTimeout(action, 5000);
+        setTimeout(action, 11000);
     }
 
     function action() {
-        $('#automatic-refresh').html(" - Rafraichissement auto !!");
+        $('#automatic-refresh').html("Rafraichissement auto !!");
         clearInterval(intervalId);
         refreshSelections();
         start();
     }
 
     function bip() {
-        $('#automatic-refresh').html(" - Rafraichissement auto dans " + counter + " secondes");
+        $('#automatic-refresh').html("Rafraichissement auto dans " + counter + " secondes");
         counter--;
     }
 
@@ -40,7 +40,7 @@ function refreshSelections() {
             form.find('#automatic-selections').html(decodeURIComponent(data.vue));
             supprimerSelection();
             misAjourCompteBookmaker();
-            openOrCloseSelectionsCouponAccordeonWhenSelectionsCouponIsRefreshed(data.count);
+            //openOrCloseSelectionsCouponAccordeonWhenSelectionsCouponIsRefreshed(data.count);
 
             // calcul de la cote générale du combiné et attribution dans le input.
             if(data.count > 1){
@@ -53,6 +53,13 @@ function refreshSelections() {
         error: function (data) {
             form.find('#automatic-selections').html('<p>impossible de récuperer les selections</p>');
         }
+    });
+}
+
+function refreshSelectionsClick() {
+    $('#refresh-panier-selection-on-click').on('click', function (e) {
+        e.preventDefault();
+        refreshSelections();
     });
 }
 
@@ -248,12 +255,7 @@ function gestionTicket() {
         longterme_checkbox.parents('span').removeClass("checked");
     }
 
-    function refreshSelectionsClick() {
-        $('#refresh-panier-selection-on-click').click(function (e) {
-            e.preventDefault();
-            refreshSelections();
-        });
-    }
+
 
     function gestionTipsters() {
         tipster.select2({
