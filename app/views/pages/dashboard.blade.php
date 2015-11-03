@@ -120,7 +120,6 @@
                                             <div class="col-md-10 col-sm-9 col-xs-9">
                                                 <div class="tab-content">
                                                     <div class="tab-pane fade" id="tab_automatique" style="min-height: 600px">
-
                                                         @if(App::environment() == 'local')
                                                         <iframe src="http://stage.betbrain.com/?portalId=1312&amp;userSessionId=02e3706270c062c4ba380e6f3d7fe7857886056f" height="600" width="100%" frameborder="0" kwframeid="2">Odds service provided in
                                                             co-operation
@@ -130,7 +129,7 @@
                                                         </iframe>
                                                             @else
                                                             <iframe src="http://betbrain.com/?portalId=1326" [3] height="1090"width="955" frameborder="0">Odds service provided in co-operation with <a href="http://www.betbrain.com" [4]
-                                                                                                                                                                                                        target="_blank"><b>BetBrain.com</b></a></iframe
+                                                                                                                                                                                                        target="_blank"><b>BetBrain.com</b></a></iframe>
                                                         @endif
                                                     </div>
                                                     <div class="tab-pane active fade in" id="tab_manuel" style="min-height: 600px">
