@@ -75,7 +75,7 @@
 					'accountsinputdashboard' => 'required_if:followtypeinputdashboard,n|exists:bookmaker_user,id,user_id,' . Auth::id(),
 					'stakeunitinputdashboard' => 'required_if:typestakeinputdashboard,u|unites|mise_montant_en_unites<solde:' . Input::get('accountsinputdashboard') . ',' . Input::get('followtypeinputdashboard') . ',' . Input::get('tipstersinputdashboard'),
 					'amountinputdashboard' => 'required_if:typestakeinputdashboard,f|mise_montant_en_devise<solde:' . Input::get('accountsinputdashboard') . ',' . Input::get('followtypeinputdashboard'),
-					'total-cote-combine' => 'cote_generale_if_combine:'.$count.'|european_odd',
+					'total-cote-combine' => 'cote_generale_if_combine:' . $count . '|european_odd',
 					'ticketABCD' => 'required|in:0,1',
 					'ticketLongTerme' => 'required|in:0,1',
 					'serieinputdashboard' => 'required_if:ticketABCD,1',
@@ -128,7 +128,7 @@
 						$mise_devise = round($mise_unites * $tipster->montant_par_unite, 2);
 					} elseif ($type_stake == 'f') {
 						$mise_devise = Input::get('amountinputdashboard');
-						$mise_unites = round($mise_devise / $tipster->montant_par_unite, 3);
+						$mise_unites = $mise_devise / $tipster->montant_par_unite;
 					}
 
 
@@ -217,7 +217,11 @@
 
 
 					// mis a jour de la cote general.
-					if($encourparis->type_profil == 's'){$encourparis->cote = $cotes;}else{$encourparis->cote = Input::get('total-cote-combine');}
+					if ($encourparis->type_profil == 's') {
+						$encourparis->cote = $cotes;
+					} else {
+						$encourparis->cote = Input::get('total-cote-combine');
+					}
 					$encourparis->pari_live = $count_live > 0 ? 1 : 0;
 					$encourparis->save();
 					if (!$encourparis->save()) {
@@ -259,19 +263,28 @@
 			}
 		}
 
-		public function show($id)
-		{
-			//
-		}
-
-		public function edit($id)
-		{
-			//
-		}
 
 		public function update($id)
 		{
-			//
+			$encourspari = Auth::user()->enCoursParis()->where('id', $id)->first();
+			$status = Input::get('status');
+
+			Clockwork::info(Input::get('status'));
+
+			$selections = $encourspari->selections()->get();
+
+			foreach ($selections as $key => $selection){
+				Clockwork::info( $status[$key]);
+				$selection->status = intval($status[$key]);
+				$selection->save();
+			}
+			Clockwork::info($selections);
+
+			$encourspari->montant_retour = Input::get('montant_retour');
+			$encourspari->save();
+			Clockwork::info($encourspari);
+
+			return Response::json('ok');
 		}
 
 		public function destroy($id)
@@ -347,28 +360,6 @@
 			}
 
 		}
-
-		/*public function updateSelection(){
-			$id = Input::get('id');
-			$status = Input::get('status');
-			$info = Input::get('info');
-			$selection = Auth::user()->selections()->where('selections.id', $id)->first(array('selections.id','selections.status','selections.infos_pari'));
-
-			if(!$selection){
-				return Response::json(array(
-					'etat' => 0,
-					'message' => 'cette selection n\'existe pas.'
-				));
-			}else{
-				$selection->status = $status;
-				$selection->infos_pari = $info;
-				$selection->save();
-				return Response::json(array(
-					'etat' => 1,
-					'message' => 'Changements enregistrés',
-				));
-			}
-		}*/
 
 		public function automatic_store()
 		{

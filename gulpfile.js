@@ -28,7 +28,8 @@ gulp.task('main-css', function(){
         'public/metronic_v4.5.0/theme/assets/layouts/layout/css/layout.min.css',
         'public/v4.1.0/theme/assets/admin/layout/css/custom.css',
         'public/v4.1.0/theme/assets/global/css/components.css',
-        'public/metronic_v4.5.0/theme/assets/global/plugins/datatables/datatables.min.css'
+        'public/metronic_v4.5.0/theme/assets/global/plugins/datatables/datatables.min.css',
+        'public/css/loader.css'
     ])
         .pipe(minifycss())
         .pipe(concat('main-css.min.css'))
@@ -75,7 +76,8 @@ gulp.task('main-plugins', function() {
         'public/v4.1.0/theme/assets/admin/pages/scripts/form-samples.js',
         'public/v4.1.0/theme/assets/admin/pages/scripts/components-dropdowns.js',
         'public/js/pages/getPaginationSelectedPage.js',
-        'public/js/pages/getBookmakersForSelection.js'
+        'public/js/pages/getBookmakersForSelection.js',
+        'public/js/plugin/jquery.animateNumber.js'
     ])
         .pipe(concat('main-plugins.js'))
         .pipe(uglify())

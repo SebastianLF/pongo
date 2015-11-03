@@ -10,15 +10,9 @@ function fnFormatDetailsForChildsParisEnCours(oTable, selections, type) {
     var sTdChild;
 
     // simple = on affiche pas le select input du tout le select input dans chacunes des selections, combine = on affiche le select input dans chacunes des selections.
-    if(type == 'c'){
-        sOut = '<table class="table table-condensed table-paris-child"><thead><tr class="uppercase"><th>date</th><th>sport</th><th>competition</th><th>pari</th><th>cote</th><th>status</th></tr></thead><tbody>';
-        sTdChild = '<td class=""><select name="status[]" data-value="" class="form-control inputs-ticket"><option value="0">-Choisir-</option><option value="1">Gagné</option><option value="2">Perdu</option><option value="3">1/2 Gagné</option><option value="4">1/2 Perdu</option><option value="5">Remboursé</option></select></td>';
-    }else if(type == 's'){
-        sOut = '<table class="table table-condensed table-paris-child"><thead><tr class="uppercase"><th>date</th><th>sport</th><th>competition</th><th>rencontre</th><th>pari</th><th>cote</th></tr></thead><tbody>';
-        sTdChild = '';
-    }else{
-        sOut = '';
-    }
+
+    sOut = '<table class="table table-condensed table-paris-child"><thead><tr class="uppercase"><th>date</th><th>sport</th><th>competition</th><th>pari</th><th>cote</th><th>status</th></tr></thead><tbody>';
+
 
     // affichage de chaque selection dans le child table
     $.each(selections, function (key, value) {
@@ -31,22 +25,26 @@ function fnFormatDetailsForChildsParisEnCours(oTable, selections, type) {
             rencontre = value.equipe1.name + ' - ' + value.equipe2.name + ' / ';
         }
 
-        function affichageScore(){
-            if(value.score == '' || value.score == null){
+        function affichageScore() {
+            if (value.score == '' || value.score == null) {
                 return '';
-            }else{return value.score+' LIVE!'}
+            } else {
+                return value.score + ' LIVE!'
+            }
         }
 
-        // structure de representation d'une ligne.
+        // structure de representation d'une ligne pour les combinés.
         sOut +=
-            '<tr>' +
+            '<tr data-selection-id="' + value.id + '">' +
             '<td>' + moment.tz(value.date_match, 'Europe/Paris').tz(user.timezone).format("DD/MM/YYYY HH:mm") + '</td>' +
             '<td>' + value.sport.name + '</td>' +
             '<td>' + value.competition.name + '</td>' +
-            '<td>' + rencontre + '<span class="blue">' + value.pariAffichage + '</span>' + ' <span class="label label-sm label-danger label-mini">'+affichageScore()+'</span></td>' +
+            '<td>' + rencontre + '<span class="blue">' + value.pariAffichage + '</span>' + ' <span class="label label-sm label-danger label-mini">' + affichageScore() + '</span></td>' +
             '<td>' + parseFloat(Math.round(value.cote * 1000) / 1000) + '</td>' +
-            sTdChild + // table childs
+            '<td class=""><select name="status[]" data-value="" data-defaut-value="' + value.status + '" class="form-control inputs-ticket"><option value="0">-Choisir-</option><option value="1">Gagné</option><option value="2">Perdu</option><option value="3">1/2 Gagné</option><option value="4">1/2 Perdu</option><option value="5">Remboursé</option></select></td>'
+            +
             '</tr>';
+
     });
     sOut += '</tbody></table>';
 
@@ -54,14 +52,13 @@ function fnFormatDetailsForChildsParisEnCours(oTable, selections, type) {
 }
 
 
-
-function loadNeededWhenAddToHistory(){
+function loadNeededWhenAddToHistory() {
     loadParisTermine();
     loadBookmakersOnDashboard();
     loadGeneralRecapsOnDashboard();
 }
 
-function loadNeededWhenAddToCurrentBets(){
+function loadNeededWhenAddToCurrentBets() {
     loadParisEnCours();
     loadParisLongTerme();
     loadParisABCD();

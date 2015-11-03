@@ -21,6 +21,7 @@
 	Route::post('devise', 'DashboardController@postDevise');
 
 	// dashboard page
+	Route::resource('encourspari/selection', 'SelectionController');
 	Route::get('dashboard', 'DashboardController@showDashboard');
 	Route::post('encourspari/auto', 'EnCoursParisController@store');
 	Route::post('cashout', 'EnCoursParisController@cashOut');

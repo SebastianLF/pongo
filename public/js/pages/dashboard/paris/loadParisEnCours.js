@@ -17,7 +17,7 @@ function loadParisEnCours() {
             nCloneTh.className = "table-checkbox";
 
             var nCloneTdCombine = document.createElement('td');
-            nCloneTdCombine.innerHTML = '<span class="row-details glyphicon glyphicon-chevron-right blue"></span>';
+            nCloneTdCombine.innerHTML = '<span class="row-details glyphicon glyphicon-chevron-down blue"></span>';
 
             var nCloneTdSimple = document.createElement('td');
             nCloneTdSimple.innerHTML = '<span class="glyphicon glyphicon-minus"></span>';
@@ -88,20 +88,26 @@ function loadParisEnCours() {
                 var type = $(this).parents('tr').data('pari-type');
                 if (oTable.fnIsOpen(nTr)) {
                     /* This row is already open - close it */
-                    $(this).addClass("glyphicon-chevron-right").removeClass("glyphicon-chevron-down");
+                    $(this).addClass("glyphicon-chevron-down").removeClass("glyphicon-chevron-up");
                     oTable.fnClose(nTr);
 
                     //remet a zero
                     $(this).closest('tr').find('input[name="amount-returned"]').val('');
                 } else {
                     /* Open this row */
-                    $(this).addClass("glyphicon-chevron-down").removeClass("glyphicon-chevron-right");
+                    $(this).addClass("glyphicon-chevron-up").removeClass("glyphicon-chevron-down");
                     oTable.fnOpen(nTr, fnFormatDetailsForChildsParisEnCours(oTable, selections, type), 'details');
                 }
-                $('select[name="status[]"]').select2();
+                //trigger le status de chaque pour le type combiné
+                $('select[name="status[]"]').each(function() {
+                    $(this).val($(this).data('defaut-value'));
+                }).select2();
             });
 
-            $('select[name="status[]"]').select2();
+            //trigger le status de chaque pour le type simple
+            $('select[name="status[]"]').each(function() {
+                var temp = $(this).val($(this).data('defaut-value'));
+            }).select2();
 
             // afficher le count dans le bon endroit.
             if (data.count_paris_encours == 0) {

@@ -140,7 +140,12 @@ function gestionTicket() {
 
     var submit_container = form.find('#submitboutoncontainer');
 
+    var montant_par_unite_info_span = $('#montant-par-unite-span');
+    var montant_par_unite_info_value = $('#montant-par-unite-value');
+
+
     function assignerEtatEnDebut() {
+        montant_par_unite_info_span.hide();
         resetGeneralForm();
         abcd_checkbox.on('click', function () {
             if ($(this).is(':checked')) {
@@ -277,7 +282,9 @@ function gestionTicket() {
                     };
                 }
             }
-        }).change(function () {
+        }).on('change', function () {
+
+
             // informations du tipster.
             var tipster_infos = tipster.select2('data');
 
@@ -294,7 +301,40 @@ function gestionTicket() {
                 bookmaker_container.addClass('hidden');
                 typestake_container.addClass('hidden');
 
+                //le tooltip info est détruit.
+                montant_par_unite_info_span.fadeOut();
+                montant_par_unite_info_value.text("");
+
             } else {
+
+                //affichage des infos (montant par unité) du tipster dans le span.
+                // how many decimal places allows
+                var decimal_places = 2;
+                var decimal_factor = decimal_places === 0 ? 1 : Math.pow(10, decimal_places);
+
+                montant_par_unite_info_value
+                    .animateNumber(
+                    {
+                        number: tipster_infos[0]['montant_par_unite'] * decimal_factor,
+
+                        numberStep: function(now, tween) {
+                            var floored_number = Math.floor(now) / decimal_factor,
+                                target = $(tween.elem);
+
+                            if (decimal_places > 0) {
+                                // force decimal places even if they are 0
+                                floored_number = floored_number.toFixed(decimal_places);
+
+                                // replace '.' separator with ','
+                                // floored_number = floored_number.toString().replace('.', ',');
+                            }
+
+                            target.text(parseFloat(floored_number));
+                        }
+                    }
+                );
+                montant_par_unite_info_span.fadeIn();
+
                 submit_container.fadeIn();
                 options_container.fadeIn().removeClass('hidden');
                 bookmaker_container.fadeIn().removeClass('hidden');
@@ -313,6 +353,7 @@ function gestionTicket() {
             }
             var mt = Number(tipster_infos[0]['montant_par_unite']);
             isNaN(mt) ? amount_per_unit.val('') : amount_per_unit.val(mt);
+
 
         });
 

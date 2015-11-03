@@ -31,7 +31,7 @@
                 $pariAffichage = $pari_affichage->display($selections->market_id, $selections->scope_id, $selections->pick, $selections->odd_doubleParam, $selections->odd_doubleParam2, $selections->odd_doubleParam3, $selections->odd_participantParameterName, $selections->odd_participantParameterName2, $selections->odd_participantParameterName3, $selections->equipe1['name'], $selections->equipe2['name']);
                 $selections['pariAffichage'] = $pariAffichage;
             } ?>
-            <tr data-selections='{{{$selections_final}}}' data-nb-selections='{{{$pari->selections->count()}}}' data-pick="{{$selections->pick}}" data-name1='{{$selections->equipe1['name']}}' data-pari-id='{{{$pari->id}}}' data-pari-type='{{{$pari->type_profil}}}'>
+            <tr data-selections='{{{$selections_final}}}' data-nb-selections='{{{$pari->selections->count()}}}' data-pick="{{$selections->pick}}" data-name1='{{$selections->equipe1['name']}}' data-pari-id='{{{$pari->id}}}' data-selection-id='{{{$pari->type_profil == "s" ? $selections->id : ""}}}' data-pari-type='{{{$pari->type_profil}}}'>
                 <td>{{{'#'.$pari->numero_pari}}}</td>
                 <td>
                     @if($pari->type_profil == 's')
@@ -86,7 +86,8 @@
                     @if($pari->type_profil == 's')
                         <select name="status[]"
                                 data-value=""
-                                class="form-control pari-status">
+                                data-defaut-value="{{$pari->status}}"
+                                class="form-control pari-status ">
                             <option value="0">-Choisir-</option>
                             @foreach($types_resultat as $key => $type)
                                 <option value="{{$key}}"><a href="javascript:;"
@@ -99,7 +100,7 @@
                     @endif
 
                 </td>
-                <td width="10px" class="td-bet"><div class="input-group "><input type="text" width="50px" name="amount-returned" class="form-control inputs-ticket" placeholder=""><div class="input-group-addon input-group-addon-amount-returned">{{Auth::user()->devise}}</div></div></td>
+                <td width="10px" class="td-bet"><div class="input-group "><input type="text" width="50px" name="amount-returned" class="form-control inputs-ticket  " placeholder=""><div class="input-group-addon input-group-addon-amount-returned">{{Auth::user()->devise}}</div></div></td>
                 <td width="130px" class="td-bet-options center-text">
                     {{ Form::button('<i class="fa fa-check"></i>', array('data-pari-type' => $pari->type_profil, 'data-pari-id' => $pari->id, 'data-toggle' => "tooltip", 'title' => "Basculer définitivement vers l'historique", 'data-style' => "zoom-in", 'class' => 'boutonvalider btn btn-sm ladda-button green-jungle buttons-actions-ticket')) }}
                     {{ Form::button('<i class="fa fa-trash"></i>', array('data-pari-type' => $pari->type_profil, 'data-pari-id' => $pari->id, 'data-toggle' => "tooltip", 'title' => "Supprimer", 'data-style' => "zoom-in", 'class' => 'boutonsupprimer btn btn-sm ladda-button red buttons-actions-ticket')) }}

@@ -50,6 +50,7 @@
 
 			JavaScript::put([
 				'timezone' => Auth::user()->timezone,
+				'devise' => Auth::user()->devise,
 			]);
 
 

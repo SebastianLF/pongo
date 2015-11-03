@@ -49,7 +49,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <div class="">
-                    <label class="">Mise <span class="glyphicon glyphicon-question-sign"
+                    <label class="">Type de Mise <span class="glyphicon glyphicon-question-sign"
                                                data-toggle="tooltip"
                                                data-placement="bottom"
                                                title="En unités: miser en unités par rapport au montant par unité attribué pour ce tipter, type de mise à privilégier pour un gain de temps. En libre (devise): miser en montant devise lorsque vous ne souhaitez pas respecter le principe de mise en unité, cela vous donne plus de liberté."></span></label>
@@ -67,7 +67,7 @@
         <div class="col-md-6 typestakeunites">
             <div class="form-group">
                 <div class="">
-                    <label class="">Mise en U</label>
+                    <label class="">Mise<span id="montant-par-unite-span"> ( 1 U = <span id="montant-par-unite-value"></span></span> {{Auth::user()->devise}} )</label>
                 </div>
                 <div class="input-group" style="width: 95%">
                     <div class="input-group-addon">U</div>

@@ -23,7 +23,7 @@ class CreateTermineParisTable extends Migration {
 			$table->decimal('cote_apres_status',8,3);
 			$table->tinyInteger('status'); // gagné , perdu , remboursé etc..
 			$table->decimal('mt_par_unite',8,2); // montant par unité
-			$table->decimal('nombre_unites',8,3); // le 1 de 1/10
+			$table->decimal('nombre_unites',22,16);
 			$table->decimal('mise_totale', 8,2); // mise totale du pari
 			$table->decimal('unites_retour',8,3); //  unites misées + unites gagnées ou perdues
 			$table->decimal('unites_profit', 8,3);
