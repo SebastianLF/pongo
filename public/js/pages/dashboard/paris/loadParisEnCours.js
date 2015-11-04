@@ -83,25 +83,33 @@ function loadParisEnCours() {
             tableWrapper.find('.dataTables_length select').select2(); // initialize select2 dropdown
 
             table.on('click', ' tbody td .row-details', function () {
+
                 var nTr = $(this).parents('tr')[0];
-                var selections = $(this).parents('tr').data('selections');
+
                 var type = $(this).parents('tr').data('pari-type');
                 if (oTable.fnIsOpen(nTr)) {
                     /* This row is already open - close it */
                     $(this).addClass("glyphicon-chevron-down").removeClass("glyphicon-chevron-up");
                     oTable.fnClose(nTr);
 
-                    //remet a zero
-                    $(this).closest('tr').find('input[name="amount-returned"]').val('');
                 } else {
                     /* Open this row */
-                    $(this).addClass("glyphicon-chevron-up").removeClass("glyphicon-chevron-down");
-                    oTable.fnOpen(nTr, fnFormatDetailsForChildsParisEnCours(oTable, selections, type), 'details');
+                    var selections = '';
+                    var pari_id = $(this).parents('tr').data('pari-id') ;
+
+                    // recuperation des selections à chaque ouverture de combiné pour l afficher dans le data attribut 'selections' du tr combiné.
+                    $.getJSON( "encourspari/selectionpourcombine/"+$(this).parents('tr').data('pari-id'), function( data ) {
+
+                        // structure de l'ouverture.
+                        $(this).addClass("glyphicon-chevron-up").removeClass("glyphicon-chevron-down");
+                        oTable.fnOpen(nTr, fnFormatDetailsForChildsParisEnCours(oTable, $.parseJSON(data), type), 'details');
+
+                        //trigger le status de chaque pour le type combiné
+                        table.find("tr[data-pari-id='"+pari_id+"']").next('tr').find('select[name="status[]"]').each(function() {
+                            $(this).val($(this).data('defaut-value'));
+                        }).select2();
+                    });
                 }
-                //trigger le status de chaque pour le type combiné
-                $('select[name="status[]"]').each(function() {
-                    $(this).val($(this).data('defaut-value'));
-                }).select2();
             });
 
             //trigger le status de chaque pour le type simple
@@ -119,6 +127,9 @@ function loadParisEnCours() {
             calculMontantRetourne(table);
             parisEnCoursEnclose(table, 'c');
             parisEnCoursDelete(table, 'c');
+
+            // popover de confirmation de la cote generale pour les combinés.
+            $('.boutonvalider [data-pari-type="c"]').confirmation();
         },
         error: function (data) {
             $('#tab_15_1').html('<p>impossible de récuperer les paris</p>');

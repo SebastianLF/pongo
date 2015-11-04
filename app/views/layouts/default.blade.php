@@ -193,6 +193,7 @@ License: You must have a valid license purchased only from themeforest(the above
             <h3 class="page-title">
                 {{$title}}
                 <small>{{isset($page_title_small) ? $page_title_small : ''}}</small>
+                <div style="float:right;"><span id="overall-profit-month"></span><span id="overall-profit">234</span></div>
             </h3>
             <div class="row">
                 @yield('content')

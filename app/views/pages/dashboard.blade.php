@@ -83,7 +83,7 @@
                                         <div class="col-md-8 " style="min-height: 95px">
                                             <div style="margin-bottom: 10px;">
                                                 <button id="refresh-panier-selection-on-click" type="button" class="btn green btn-sm"><span class="glyphicon glyphicon-refresh glyphicon-spin"></span> Rafraichir</button>
-                                                <span id="automatic-refresh"></span>
+                                                <span class="font-red-sunglo" style="font-size:11px !important;"><span class="glyphicon glyphicon glyphicon-exclamation-sign"></span> Pour voir apparaitre les nouvelles sélections ajoutées à partir du mode auto, veuillez cliquer sur ce bouton.</span>
                                             </div>
                                             <div id="automatic-selections" >
 
@@ -99,7 +99,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#" href="#collapse_2" aria-expanded="true"> Selections</a>
+                                        <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#" href="#collapse_2" aria-expanded="true">Choix de(s) selections</a>
                                     </h4>
                                 </div>
                                 <div id="collapse_2" class="panel-collapse collapse in" aria-expanded="true">
@@ -121,12 +121,12 @@
                                                 <div class="tab-content">
                                                     <div class="tab-pane fade" id="tab_automatique" style="min-height: 600px">
                                                         @if(App::environment() == 'local')
-                                                        <iframe src="http://stage.betbrain.com/?portalId=1312&userSessionId={{Session::getId()}}" height="600" width="100%" frameborder="0" kwframeid="2">Odds service provided in
+                                                        <!--<iframe src="http://stage.betbrain.com/?portalId=1312&userSessionId={{Session::getId()}}" height="600" width="100%" frameborder="0" kwframeid="2">Odds service provided in
                                                             co-operation
                                                             with
                                                             &lt;a href="http://www.betbrain.com"
                                                             target="_blank"&gt;&lt;b&gt;BetBrain.com&lt;/b&gt;&lt;/a&gt;
-                                                        </iframe>
+                                                        </iframe> -->
                                                             @else
                                                             <iframe src="http://betbrain.com/?portalId=1326&userSessionId={{Session::getId()}}" [3] height="1090"width="955" frameborder="0">Odds service provided in co-operation with <a href="http://www.betbrain.com" [4]
                                                                                                                                                                                                         target="_blank"><b>BetBrain.com</b></a></iframe>

@@ -282,6 +282,7 @@
 			Clockwork::info($selections);
 
 			$encourspari->montant_retour = Input::get('montant_retour');
+			$encourspari->cote_apres_status = Input::get('cote_generale_apres_status');
 			$encourspari->save();
 			Clockwork::info($encourspari);
 
@@ -695,6 +696,26 @@
 					'msg' => 'pari ajouté'
 				));
 			}
+		}
+
+		public function recupererStatusSelectionsPourCombine($id){
+			$encoursparis = Auth::user()->enCoursParis()->where('id', $id)->with('selections.equipe1', 'selections.equipe1.country', 'selections.equipe2', 'selections.equipe2.country', 'selections.competition', 'selections.sport', 'selections.scope', 'compte.bookmaker', 'tipster')->where('pari_long_terme', '0')->where('pari_abcd', '0')->orderBy('numero_pari', 'desc')->first();
+			;
+			if( ! $encoursparis){
+				return Response::json('');
+			}
+
+			Clockwork::info($encoursparis);
+			$selections_final = $encoursparis->selections;
+
+			Clockwork::info($selections_final);
+
+			$pari_affichage = App::make('pari_affichage');
+			foreach ($selections_final as $selections) {
+				$pariAffichage = $pari_affichage->display($selections->market_id, $selections->scope_id, $selections->pick, $selections->odd_doubleParam, $selections->odd_doubleParam2, $selections->odd_doubleParam3, $selections->odd_participantParameterName, $selections->odd_participantParameterName2, $selections->odd_participantParameterName3, $selections->equipe1['name'], $selections->equipe2['name']);
+				$selections['pariAffichage'] = $pariAffichage;
+			}
+			return Response::json($selections_final->toJson());
 		}
 
 	}

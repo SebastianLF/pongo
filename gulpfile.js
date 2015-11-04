@@ -70,6 +70,7 @@ gulp.task('main-plugins', function() {
         'public/v4.1.0/theme/assets/global/plugins/jquery-animateNumber-master/jquery.animateNumber.min.js',
         'public/v4.1.0/theme/assets/global/plugins/Ladda-master/dist/spin.min.js',
         'public/v4.1.0/theme/assets/global/plugins/Ladda-master/dist/ladda.min.js',
+        'public/v4.1.0/theme/assets/global/plugins/bootstrap-confirmation/bootstrap-confirmation.min.js',
         'public/v4.1.0/theme/assets/global/scripts/metronic.js',
         'public/v4.1.0/theme/assets/admin/layout/scripts/layout.js',
         'public/v4.1.0/theme/assets/admin/layout/scripts/demo.js',

@@ -6,7 +6,7 @@
 function calculMontantRetourne(table) {
     table.on('change', 'select[name="status[]"]', function () {
         var $this = $(this);
-        var main_parent,montant_retourne_input,mise,montant_retourne;
+        var main_parent, montant_retourne_input, mise, montant_retourne;
         var selection_id = $(this).closest('tr').data('selection-id');
 
         //si combiné
@@ -25,12 +25,17 @@ function calculMontantRetourne(table) {
                 cote_general *= calcul_nouvelle_cote_par_rapport_a_status(cote, $(this).val());
             });
 
-
             mise = main_parent.find('.tdsubmise').text();
-            console.log('status='+status+' cote='+cote_general+' mise='+mise);
-            if(status.indexOf('0') > -1 && status.indexOf('2') == -1){montant_retourne_input.val('')}
-            else if(status.indexOf('0') > -1 && status.indexOf('2') > -1){montant_retourne_input.val(0)}
-            else{
+            console.log('status=' + status + ' cote=' + cote_general + ' mise=' + mise);
+            if (status.indexOf('0') > -1 && status.indexOf('2') == -1) {
+                montant_retourne_input.val('');
+                updateParisEnCours(status, main_parent.data('pari-id'), montant_retourne_input.val(), cote_general);
+            }
+            else if (status.indexOf('0') > -1 && status.indexOf('2') > -1) {
+                montant_retourne_input.val(0);
+                updateParisEnCours(status, main_parent.data('pari-id'), montant_retourne_input.val(), cote_general);
+            }
+            else {
                 montant_retourne = cote_general * mise;
 
                 //animation affichage montant retourné.
@@ -42,7 +47,7 @@ function calculMontantRetourne(table) {
                     {
                         number: montant_retourne * decimal_factor,
 
-                        numberStep: function(now, tween) {
+                        numberStep: function (now, tween) {
                             var floored_number = Math.floor(now) / decimal_factor,
                                 target = $(tween.elem);
 
@@ -62,24 +67,27 @@ function calculMontantRetourne(table) {
                         }
                     },
                     'normal',
-                    function() {
+                    function () {
                         //ajax update montant retourne et status.
-                        updateParisEnCours(status, main_parent.data('pari-id'), montant_retourne_input.val());
+                        updateParisEnCours(status, main_parent.data('pari-id'), montant_retourne_input.val(), cote_general);
                     }
                 );
 
             }
 
-        //si simple
-        }else{
+            //si simple
+        } else {
             main_parent = $this.closest('tr');
             montant_retourne_input = main_parent.find('input[name="amount-returned"]');
             status = $this.val();
 
             var cote = main_parent.find('.tdcote').text();
             mise = main_parent.find('.tdsubmise').text();
-            if(status == '0'){montant_retourne_input.val('')}
-            else{var nouvelle_cote = calcul_nouvelle_cote_par_rapport_a_status(cote, status);
+            if (status == '0') {
+                montant_retourne_input.val('')
+            }
+            else {
+                var nouvelle_cote = calcul_nouvelle_cote_par_rapport_a_status(cote, status);
                 montant_retourne = nouvelle_cote * mise;
 
                 // how many decimal places allows
@@ -91,7 +99,7 @@ function calculMontantRetourne(table) {
                     {
                         number: montant_retourne * decimal_factor,
 
-                        numberStep: function(now, tween) {
+                        numberStep: function (now, tween) {
                             var floored_number = Math.floor(now) / decimal_factor,
                                 target = $(tween.elem);
 
@@ -109,18 +117,17 @@ function calculMontantRetourne(table) {
                         }
                     },
                     'normal',
-                    function() {
+                    function () {
                         //ajax update montant retourne et status.
-                        updateParisEnCours(status, main_parent.data('pari-id'), montant_retourne_input.val());
+                        updateParisEnCours(status, main_parent.data('pari-id'), montant_retourne_input.val(), cote_general);
                     }
                 );
             }
-
         }
     });
 }
 
-function calcul_nouvelle_cote_par_rapport_a_status(cote, status){
+function calcul_nouvelle_cote_par_rapport_a_status(cote, status) {
     var cote_apres_status = 1;
     if (status == 0) {
         no_selection = true
@@ -140,19 +147,19 @@ function calcul_nouvelle_cote_par_rapport_a_status(cote, status){
 }
 
 
-function updateParisEnCours(status, pari_id, montant_retour){
+function updateParisEnCours(status, pari_id, montant_retour, cote_generale_apres_status) {
     $.ajax({
         method: "PUT",
-        url: "encourspari/"+pari_id,
-        data: { status: status, montant_retour: montant_retour },
+        url: "encourspari/" + pari_id,
+        data: {status: status, montant_retour: montant_retour, cote_generale_apres_status: cote_generale_apres_status},
         dataType: "json",
-        success : function (){
+        success: function () {
             toastr.success('le status de la selection à ete mis à jour', 'Pari');
         },
-        error : function (){
+        error: function () {
             toastr.error('Un problème est survenue, veuillez nous contacter pour résoudre le problème', 'Erreur');
         },
-        complete : function (){
+        complete: function () {
         }
     });
 }

@@ -6,13 +6,14 @@
 function fnFormatDetailsForChildsParisEnCours(oTable, selections, type) {
     //var aData = oTable.fnGetData(nTr);
 
+    console.log(selections);
+
     var sOut;
     var sTdChild;
 
     // simple = on affiche pas le select input du tout le select input dans chacunes des selections, combine = on affiche le select input dans chacunes des selections.
 
     sOut = '<table class="table table-condensed table-paris-child"><thead><tr class="uppercase"><th>date</th><th>sport</th><th>competition</th><th>pari</th><th>cote</th><th>status</th></tr></thead><tbody>';
-
 
     // affichage de chaque selection dans le child table
     $.each(selections, function (key, value) {
@@ -32,6 +33,8 @@ function fnFormatDetailsForChildsParisEnCours(oTable, selections, type) {
                 return value.score + ' LIVE!'
             }
         }
+
+        console.log(value.status);
 
         // structure de representation d'une ligne pour les combinés.
         sOut +=
@@ -121,3 +124,5 @@ function cashOut() {
         });
     });
 }
+
+
