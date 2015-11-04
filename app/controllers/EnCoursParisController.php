@@ -163,6 +163,7 @@
 					$count_live = 0;
 
 					Clockwork::info(Input::get('optionlt'));
+					Clockwork::info($odds_array);
 
 
 					foreach ($selections_coupon as $selection_coupon) {

@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/CouponController.php" afterPath="$PROJECT_DIR$/app/controllers/CouponController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/v4.1.0/theme/assets/admin/layout/css/custom.css" afterPath="$PROJECT_DIR$/public/v4.1.0/theme/assets/admin/layout/css/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" afterPath="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/js/dashboard.js" afterPath="$PROJECT_DIR$/public/build/js/dashboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/css/main-css.min.css" afterPath="$PROJECT_DIR$/public/build/css/main-css.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/dashboard/paris/parisEnCoursCalculateMontantRetourne.js" afterPath="$PROJECT_DIR$/public/js/pages/dashboard/paris/parisEnCoursCalculateMontantRetourne.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/EnCoursParisController.php" afterPath="$PROJECT_DIR$/app/controllers/EnCoursParisController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/start/global.php" afterPath="$PROJECT_DIR$/app/start/global.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="9a530f09-4cfd-4f98-b2e3-9a97dcdef514" name="Failed commit: Default" comment="correction cloturation paris combviné avec plus de 3 selections" />
@@ -99,39 +93,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
+      <file leaf-file-name="EnCoursParisController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.422807">
-              <caret line="124" column="72" selection-start-line="124" selection-start-column="72" selection-end-line="124" selection-end-column="72" />
+            <state vertical-scroll-proportion="0.622807">
+              <caret line="170" column="45" selection-start-line="170" selection-start-column="45" selection-end-line="170" selection-end-column="45" />
               <folding>
-                <marker date="1446599268988" expanded="true" signature="3852:4062" placeholder="..." />
+                <element signature="n#__construct#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
+                <element signature="n#index#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
+                <element signature="n#create#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
+                <element signature="n#update#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
+                <element signature="n#destroy#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
+                <element signature="n#getEnCoursABCD#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
+                <element signature="n#getlettreABCD#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
+                <element signature="n#automatic_store#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
+                <element signature="n#cashOut#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
+                <element signature="n#creation_termine_pari_de_type_cash_out#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
+                <element signature="n#manual_store#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/BaseController.php">
+      <file leaf-file-name="global.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/start/global.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.384615">
-              <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+            <state vertical-scroll-proportion="-11.115385">
+              <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slfweb.coupon" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..coupon">
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering />
+      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.9615383">
+              <caret line="113" column="107" selection-start-line="113" selection-start-column="107" selection-end-line="113" selection-end-column="107" />
+              <folding>
+                <marker date="1446599268988" expanded="true" signature="3852:4062" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -186,7 +187,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/parisEnCoursCalculateStatus.js" />
         <option value="$PROJECT_DIR$/app/config/app.php" />
         <option value="$PROJECT_DIR$/app/controllers/TipsterController.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/console.sql" />
@@ -230,13 +230,14 @@
         <option value="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2015_01_25_162808_create_en_cours_paris_table.php" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisGeneral.js" />
-        <option value="$PROJECT_DIR$/app/controllers/EnCoursParisController.php" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js" />
         <option value="$PROJECT_DIR$/app/controllers/BaseController.php" />
         <option value="$PROJECT_DIR$/public/v4.1.0/theme/assets/admin/layout/css/custom.css" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/parisEnCoursCalculateMontantRetourne.js" />
         <option value="$PROJECT_DIR$/app/controllers/CouponController.php" />
         <option value="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
+        <option value="$PROJECT_DIR$/app/start/global.php" />
+        <option value="$PROJECT_DIR$/app/controllers/EnCoursParisController.php" />
       </list>
     </option>
   </component>
@@ -2676,12 +2677,6 @@
       <option name="number" value="Default" />
       <updated>1411579515527</updated>
     </task>
-    <task id="LOCAL-00303" summary="seul les combiné peuvent etre expand desormais.">
-      <created>1444599394771</created>
-      <option name="number" value="00303" />
-      <option name="project" value="LOCAL" />
-      <updated>1444599394771</updated>
-    </task>
     <task id="LOCAL-00304" summary="concatenation css">
       <created>1444603425771</created>
       <option name="number" value="00304" />
@@ -2970,7 +2965,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446591868302</updated>
     </task>
-    <option name="localTasksCounter" value="352" />
+    <task id="LOCAL-00352" summary="bug betbrain panel fixed">
+      <created>1446599304093</created>
+      <option name="number" value="00352" />
+      <option name="project" value="LOCAL" />
+      <updated>1446599304093</updated>
+    </task>
+    <option name="localTasksCounter" value="353" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -3049,7 +3050,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="petites modifs" />
     <MESSAGE value="reorganisation des fichiers js et css" />
     <MESSAGE value=" + cdn" />
     <MESSAGE value="debug false" />
@@ -3074,7 +3074,8 @@
     <MESSAGE value="refonte panel d'ajout" />
     <MESSAGE value="refonte systeme calcul montant retourne" />
     <MESSAGE value="bug iframe fin de balise manquant" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug iframe fin de balise manquant" />
+    <MESSAGE value="bug betbrain panel fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug betbrain panel fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3083,18 +3084,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..users">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/mail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4479554">
@@ -3430,26 +3419,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08947369">
-          <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
-          <folding>
-            <element signature="n#__construct#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
-            <element signature="n#index#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
-            <element signature="n#create#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
-            <element signature="n#store#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
-            <element signature="n#destroy#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
-            <element signature="n#getEnCoursABCD#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
-            <element signature="n#getlettreABCD#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
-            <element signature="n#automatic_store#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
-            <element signature="n#cashOut#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
-            <element signature="n#creation_termine_pari_de_type_cash_out#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
-            <element signature="n#manual_store#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/v4.1.0/theme/assets/admin/layout/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6320755">
@@ -3500,7 +3469,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/BaseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.384615">
+        <state vertical-scroll-proportion="0.6561403">
           <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
           <folding />
         </state>
@@ -3508,10 +3477,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.422807">
-          <caret line="124" column="72" selection-start-line="124" selection-start-column="72" selection-end-line="124" selection-end-column="72" />
+        <state vertical-scroll-proportion="-7.9615383">
+          <caret line="113" column="107" selection-start-line="113" selection-start-column="107" selection-end-line="113" selection-end-column="107" />
           <folding>
             <marker date="1446599268988" expanded="true" signature="3852:4062" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/start/global.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.115385">
+          <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/EnCoursParisController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.622807">
+          <caret line="170" column="45" selection-start-line="170" selection-start-column="45" selection-end-line="170" selection-end-column="45" />
+          <folding>
+            <element signature="n#__construct#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
+            <element signature="n#index#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
+            <element signature="n#create#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
+            <element signature="n#update#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
+            <element signature="n#destroy#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
+            <element signature="n#getEnCoursABCD#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
+            <element signature="n#getlettreABCD#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
+            <element signature="n#automatic_store#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
+            <element signature="n#cashOut#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
+            <element signature="n#creation_termine_pari_de_type_cash_out#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
+            <element signature="n#manual_store#0;n#EnCoursParisController#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
