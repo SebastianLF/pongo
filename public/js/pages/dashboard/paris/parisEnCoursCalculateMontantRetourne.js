@@ -153,7 +153,6 @@ function updateParisEnCours(status, pari_id, montant_retour){
             toastr.error('Un problème est survenue, veuillez nous contacter pour résoudre le problème', 'Erreur');
         },
         complete : function (){
-            montant_retourne_input.removeClass('spinner');
         }
     });
 }

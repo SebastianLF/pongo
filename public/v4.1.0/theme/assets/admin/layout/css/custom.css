@@ -98,6 +98,9 @@ Rounded Portlets
   border-radius: 0px 0px 4px 4px !important;
 }
 
+.portlet.light .portlet-body {
+  padding-top: 0 !important;
+}
 
 .page-content{
   background: #e9edef !important;
@@ -231,7 +234,9 @@ select{
 
 }
 
-
+.table-pari{
+  font-size: 15px !important;
+}
 
 .table-pari td {
   text-align: center !important;

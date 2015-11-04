@@ -121,14 +121,14 @@
                                                 <div class="tab-content">
                                                     <div class="tab-pane fade" id="tab_automatique" style="min-height: 600px">
                                                         @if(App::environment() == 'local')
-                                                        <iframe src="http://stage.betbrain.com/?portalId=1312&amp;userSessionId=02e3706270c062c4ba380e6f3d7fe7857886056f" height="600" width="100%" frameborder="0" kwframeid="2">Odds service provided in
+                                                        <iframe src="http://stage.betbrain.com/?portalId=1312&userSessionId={{Session::getId()}}" height="600" width="100%" frameborder="0" kwframeid="2">Odds service provided in
                                                             co-operation
                                                             with
                                                             &lt;a href="http://www.betbrain.com"
                                                             target="_blank"&gt;&lt;b&gt;BetBrain.com&lt;/b&gt;&lt;/a&gt;
                                                         </iframe>
                                                             @else
-                                                            <iframe src="http://betbrain.com/?portalId=1326" [3] height="1090"width="955" frameborder="0">Odds service provided in co-operation with <a href="http://www.betbrain.com" [4]
+                                                            <iframe src="http://betbrain.com/?portalId=1326&userSessionId={{Session::getId()}}" [3] height="1090"width="955" frameborder="0">Odds service provided in co-operation with <a href="http://www.betbrain.com" [4]
                                                                                                                                                                                                         target="_blank"><b>BetBrain.com</b></a></iframe>
                                                         @endif
                                                     </div>
