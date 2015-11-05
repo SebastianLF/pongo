@@ -519,6 +519,5 @@ function gestionTicket() {
     conversionMises();
     gestionBookmakerAccount();
     gestionABCD();
-    startDecompteRefresh();
-
+    //startDecompteRefresh();
 }

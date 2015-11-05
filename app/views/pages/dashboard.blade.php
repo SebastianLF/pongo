@@ -11,6 +11,7 @@
         @include('bet/manual_bet_add_modal')
         @include('cashout_modal')
 
+
         <!-- BEGIN PAGE CONTENT INNER -->
         <div class="row">
             <div class="col-md-12">

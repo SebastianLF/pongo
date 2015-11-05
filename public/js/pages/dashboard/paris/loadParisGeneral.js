@@ -59,6 +59,7 @@ function loadNeededWhenAddToHistory() {
     loadParisTermine();
     loadBookmakersOnDashboard();
     loadGeneralRecapsOnDashboard();
+    totalProfits();
 }
 
 function loadNeededWhenAddToCurrentBets() {

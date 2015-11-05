@@ -3,6 +3,7 @@
  */
 
     //paris
+totalProfits();
 getBookmakersForSelection();
 loadParisEnCours();
 loadParisLongTerme();

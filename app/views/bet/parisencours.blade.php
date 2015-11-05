@@ -86,7 +86,7 @@
                     @if($pari->type_profil == 's')
                         <select name="status[]"
                                 data-value=""
-                                data-defaut-value="{{$pari->status}}"
+                                data-defaut-value="{{$pari->selections->first()->status}}"
                                 class="form-control pari-status ">
                             <option value="0">-Choisir-</option>
                             @foreach($types_resultat as $key => $type)

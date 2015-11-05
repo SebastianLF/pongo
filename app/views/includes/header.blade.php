@@ -5,7 +5,7 @@
 
 
         <div class="page-logo">
-            PongoZ
+            Pongo
         </div>
         <!-- END LOGO -->
         <!-- BEGIN RESPONSIVE MENU TOGGLER -->

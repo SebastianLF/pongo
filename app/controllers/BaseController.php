@@ -16,9 +16,12 @@
 
 			Date::setLocale('fr');
 
+			// date se trouvant dans le header top bar
 			$date = Date::now()->format('l j F Y');
+			$month = Date::now()->format('F');
 
 			View::share('date', $date);
+			View::share('month', $month);
 
 			/*$getMetadataBag = Session::getMetadataBag();
 			Clockwork::info(time());
