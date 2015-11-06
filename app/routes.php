@@ -21,6 +21,7 @@
 	Route::post('devise', 'DashboardController@postDevise');
 
 	// dashboard page
+	Route::resource('pari', 'PariController');
 	Route::resource('encourspari/selection', 'SelectionController');
 	Route::get('encourspari/selectionpourcombine/{id}', 'EnCoursParisController@recupererStatusSelectionsPourCombine'); // recupere les status des selections pour chaque select input correspondants au moment d ouvrir le combiné des paris en cours.
 	Route::get('dashboard', 'DashboardController@showDashboard');

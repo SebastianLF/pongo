@@ -34,3 +34,11 @@ voir http://stackoverflow.com/questions/17588139/how-to-use-ajax-with-jquery-in-
     - les montants en unités vont jusqu'à 3 decimales,
 
 6) les variables user.timezone et user.devise sont envoyé dans le footer template pour qu'ils soi accessible du cote client (javascript). voir package "laracasts/utilities": "~1.0" dans le fichier composer.json
+
+7)
+   					1 = gagné,
+   					2 = perdu,
+   					3 = 1/2 gagné,
+   					4 = 1/2 perdu,
+   					5 = remboursé,
+   					6 = cashouted,

@@ -149,6 +149,26 @@
 						'bookmaker_user_id' => $suivi == 'n' ? Input::get('accountsinputdashboard') : null
 					));
 
+					// creation du pari dans le modele PARI.
+					$pari_model = new Pari(array(
+						'followtype' => $suivi,
+						'type_profil' => $count > 1 ? 'c' : 's',
+						'numero_pari' => $numero_pari,
+						'mt_par_unite' => $tipster->montant_par_unite,
+						'nombre_unites' => $mise_unites,
+						'mise_totale' => $mise_devise,
+						'pari_abcd' => Input::get('ticketABCD'),
+						'pari_long_terme' => Input::get('ticketLongTerme'),
+						'nom_abcd' => Input::get('serieinputdashboard'),
+						'lettre_abcd' => Input::get('letterinputdashboard'),
+						'result' => 0,
+						'tipster_id' => $tipster->id,
+						'user_id' => Auth::user()->id,
+						'bookmaker_user_id' => $suivi == 'n' ? Input::get('accountsinputdashboard') : null
+					));
+
+					$pari_model->save();
+
 					if (!$encourparis->save()) {
 						$encourparis->delete();
 						return Response::json(array(
@@ -200,6 +220,7 @@
 							'competition_id' => $selection_coupon->league_id,
 							'equipe1_id' => is_null($selection_coupon->home_team) ? null : Equipe::where('name', $selection_coupon->home_team)->first()->id,
 							'equipe2_id' => is_null($selection_coupon->away_team) ? null : Equipe::where('name', $selection_coupon->away_team)->first()->id,
+							'pari_id' => $pari_model->id,
 							'en_cours_pari_id' => $encourparis->id
 						));
 
@@ -220,11 +241,15 @@
 					// mis a jour de la cote general.
 					if ($encourparis->type_profil == 's') {
 						$encourparis->cote = $cotes;
+						$pari_model->cote = $cotes;
 					} else {
 						$encourparis->cote = Input::get('total-cote-combine');
+						$pari_model->cote = Input::get('total-cote-combine');
 					}
 					$encourparis->pari_live = $count_live > 0 ? 1 : 0;
+					$pari_model->pari_live = $count_live > 0 ? 1 : 0;
 					$encourparis->save();
+					$pari_model->save();
 					if (!$encourparis->save()) {
 						$encourparis->delete();
 						return Response::json(array(

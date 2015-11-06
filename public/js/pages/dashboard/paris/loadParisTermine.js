@@ -5,7 +5,6 @@
 function loadParisTermine() {
     $.ajax({
         url: 'dashboard/ajax/paristermine',
-        data: {page: 1},
         type: 'get',
         success: function (data) {
             $('#tab_15_4').html(data);

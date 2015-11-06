@@ -106,8 +106,9 @@ Rounded Portlets
   background: #e9edef !important;
 }
 
+
 table.dataTable tbody td, table.dataTable tbody th {
-  padding: 5px 5px !important;
+  padding: 2px!important;
 }
 
 .table-scrollable{

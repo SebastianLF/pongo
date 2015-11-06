@@ -19,7 +19,7 @@ function parisEnCoursEnclose(tablename, type) {
 
         if (type_profil == 's') {
             status.push(tr_main.find('select[name="status[]"]').val());
-        } else {
+        } else if(type_profil == 'c'){
             tr_childs.find('select[name="status[]"]').each(function () {
                 status.push($(this).val())
             });
@@ -39,9 +39,9 @@ function parisEnCoursEnclose(tablename, type) {
         } else {
             l.start();
             $.ajax({
-                url: 'historique',
-                type: 'post',
-                data: 'status[]='+status+'&pari-id='+$(this).data('pari-id')+'&amount-returned='+amount_returned,
+                url: 'pari/'+$(this).data('numero-pari'),
+                type: 'PUT',
+                data: 'amount-returned='+amount_returned,
                 dataType: 'json',
                 success: function (data) {
                     if (data.etat == 0) {

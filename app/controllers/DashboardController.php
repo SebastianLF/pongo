@@ -147,7 +147,7 @@
 
 			switch ($type) {
 				case 'parisencours':
-					$parisencours = Auth::user()->enCoursParis()->with('selections.equipe1', 'selections.equipe1.country', 'selections.equipe2', 'selections.equipe2.country', 'selections.competition', 'selections.sport', 'selections.scope', 'compte.bookmaker', 'tipster')->where('pari_long_terme', '0')->where('pari_abcd', '0')->orderBy('numero_pari', 'desc')->get();
+					$parisencours = Auth::user()->enCoursParis()->with('selections.equipe1', 'selections.equipe1.country', 'selections.equipe2', 'selections.equipe2.country', 'selections.competition', 'selections.sport', 'selections.scope', 'compte.bookmaker', 'tipster')->where('result', 0)->where('pari_long_terme', '0')->where('pari_abcd', '0')->get();
      					$countParisEnCours = $parisencours->count();
 					$view = View::make('bet.parisencours', array('parisencours' => $parisencours, 'types_resultat' => $this->types_resultat, 'count_paris_encours' => $countParisEnCours));
 					return Response::json(array(
@@ -166,7 +166,7 @@
 
 					break;
 				case 'parisabcd':
-					$parisABCD = Auth::user()->enCoursParis()->with('selections.equipe1', 'selections.equipe1.country', 'selections.equipe2', 'selections.equipe2.country', 'selections.competition', 'selections.sport', 'selections.scope', 'compte.bookmaker', 'tipster')->where('pari_abcd', 1)->where('pari_long_terme', 0)->orderBy('numero_pari', 'desc')->get();
+					$parisABCD = Auth::user()->enCoursParis()->with('selections.equipe1', 'selections.equipe1.country', 'selections.equipe2', 'selections.equipe2.country', 'selections.competition', 'selections.sport', 'selections.scope', 'compte.bookmaker', 'tipster')->where('pari_abcd', 1)->where('pari_long_terme', 0)->orderBy('numero_pari', 'asc')->get();
 					$countParisABCD = $parisABCD->count();
 					$view = View::make('bet.parisabcd', array('parisabcd' => $parisABCD, 'types_resultat' => $this->types_resultat, 'count_paris_abcd' => $countParisABCD));
 					return array(
@@ -176,7 +176,9 @@
 
 					break;
 				case 'paristermine':
-					$parisTermine = Auth::user()->termineParis()->with('selections.equipe1', 'selections.equipe1.country', 'selections.equipe2', 'selections.equipe2.country', 'selections.competition', 'selections.sport', 'selections.scope', 'compte.bookmaker', 'tipster')->orderBy('created_at','DESC')->get();
+					$parisTermine = Auth::user()->termineParis()->with('selections.equipe1', 'selections.equipe1.country', 'selections.equipe2', 'selections.equipe2.country', 'selections.competition', 'selections.sport', 'selections.scope', 'compte.bookmaker', 'tipster')->orderBy('numero_pari', 'asc')->get();
+					Clockwork::info($parisTermine);
+
 					$countParisTermine = $parisTermine->count();
 					$view = View::make('bet.paristermine', array('paristermine' => $parisTermine, 'types_resultat' => $this->types_resultat, 'count_paris_termine' => $countParisTermine));
 

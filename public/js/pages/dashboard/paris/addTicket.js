@@ -199,7 +199,7 @@ function gestionTicket() {
 
                 l.start();
                 $.ajax({
-                    url: 'encourspari/auto',
+                    url: 'pari',
                     type: 'post',
                     data: data + '&linesnum=' + linesnum + '&ticketABCD=' + ticketABCD + '&ticketLongTerme=' + ticketLongTerme,
                     dataType: 'json',

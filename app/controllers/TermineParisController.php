@@ -3,50 +3,10 @@
 	class TermineParisController extends BaseController
 	{
 
-		public function __construct()
-		{
-			parent::__construct();
-		}
 
-		/**
-		 * Display a listing of the  resource.
-		 *
-		 * @return Response
-		 */
-		public function index()
-		{
-			return View::make('termines.index');
-		}
 
-		/**
-		 * Show the form for creating a new resource.
-		 *
-		 * @return Response
-		 */
-		public function create()
-		{
-			return View::make('termines.create');
-		}
-
-		/**
-		 * Store a newly created resource in storage.
-		 *
-		 * @return Response
-		 */
 		public function store()
 		{
-
-			$status_array = explode(',', Input::get('status')[0]);
-			foreach($status_array as $status){
-				if( ! preg_match("(0|1|2|3|4|5|)", $status)){
-					return Response::json(array(
-						'etat' => 0,
-						'msg' => 'status invalide(s).',
-					));
-				}
-			}
-
-
 			$regles = array(
 				'pari-id' => 'required|exists:en_cours_paris,id,user_id,' . Auth::user()->id,
 				'amount-returned' => 'required|amount_returned',
@@ -68,12 +28,7 @@
 			} else {
 				$id = Input::get('pari-id');
 				$encoursparis = Auth::user()->enCoursParis()->where('id', $id)->first();
-				if(is_null($encoursparis)){
-					return Response::json(array(
-						'etat' => 0,
-						'msg' => 'pari en cours introuvable.',
-					));
-				}
+
 				$mt_par_unite = $encoursparis->mt_par_unite;
 				$mise = $encoursparis->mise_totale;
 				$cote = $encoursparis->cote;
@@ -89,26 +44,20 @@
 				$status_array = explode(',', Input::get('status')[0]);
 				Clockwork::info($status_array);
 
-				/*
-					1 = gagné,
-					2 = perdu,
-					3 = 1/2 gagné,
-					4 = 1/2 perdu,
-					5 = remboursé,
-					6 = cashouted,
-				*/
 
 				$status_termine_pari = null;
 				$cote_general = 1;
 				$nb = $encoursparis->selections()->count();
 				$selections = $encoursparis->selections()->get();
-				if(is_null($selections)){
+				if (is_null($selections)) {
 					return Response::json(array(
 						'etat' => 0,
 						'msg' => 'Les selections du pari en cours sont introuvables.',
 					));
 				}
 
+
+				//calcul cote apres status.
 				for ($i = 0; $i < $nb; $i++) {
 					$status_s = $status_array[$i];
 					$cote = $selections[$i]->cote;
@@ -137,10 +86,10 @@
 					}
 					$selections[$i]->status = $status_s;
 					$selection_saved_correctly = $selections[$i]->save();
-					if(!$selection_saved_correctly){
+					if (!$selection_saved_correctly) {
 						return Response::json(array(
 							'etat' => 0,
-							'msg' => 'Erreur dans la définition du status de la ou les selections du pari n°'.$selections[$i]->id,
+							'msg' => 'Erreur dans la définition du status de la ou les selections du pari n°' . $selections[$i]->id,
 						));
 					}
 
@@ -190,7 +139,7 @@
 
 				// ajout du paris dans la table termine paris.
 				$termine_paris_ajoute = Auth::user()->termineParis()->save($termine_pari);
-				if(!$termine_paris_ajoute){
+				if (!$termine_paris_ajoute) {
 					return Response::json(array(
 						'etat' => 0,
 						'msg' => 'Erreur, ce pari n\'a pas été crée correctement dans l\'historique',
@@ -204,12 +153,12 @@
 
 				// attacher les selections au pari termine et détacher le pari en cours.
 				$iterator_resultats = 0;
-				if($termine_paris_ajoute){
+				if ($termine_paris_ajoute) {
 					foreach ($selections as $selection) {
 						$selection->termine_pari_id = $id_termine;
 						$selection->en_cours_pari_id = NULL;
 						$selection->save();
-						if(!$selection){
+						if (!$selection) {
 							return Response::json(array(
 								'etat' => 0,
 								'msg' => 'La ou les selections n \'ont pas été sauvegardé correctement. au moment de l\'affectation de l\'historique.',
@@ -219,7 +168,7 @@
 
 					// suppression du pari en cours.
 					$encoursparis_delete_correctly = $encoursparis->delete();
-					if(!$encoursparis_delete_correctly){
+					if (!$encoursparis_delete_correctly) {
 						return Response::json(array(
 							'etat' => 0,
 							'msg' => 'Ce pari en cours n\' a pas été supprimé correctement.',
@@ -233,7 +182,7 @@
 						$book = BookmakerUser::find($book_id);
 						$book->bankroll_actuelle += $retour_devise;
 						$book->save();
-						if(!$book){
+						if (!$book) {
 							return Response::json(array(
 								'etat' => 0,
 								'msg' => 'La mise à jour du solde du bookmaker n\'a pas fonctionné.',
@@ -255,57 +204,18 @@
 			));
 		}
 
-		/**
-		 * Display the specified resource.
-		 *
-		 * @param  int $id
-		 * @return Response
-		 */
-		public function show($id)
-		{
-			return View::make('termines.show');
-		}
-
-		/**
-		 * Show the form for editing the specified resource.
-		 *
-		 * @param  int $id
-		 * @return Response
-		 */
-		public function edit($id)
-		{
-			return View::make('termines.edit');
-		}
-
-		/**
-		 * Update the specified resource in storage.
-		 *
-		 * @param  int $id
-		 * @return Response
-		 */
-		public function update($id)
-		{
-			//
-		}
-
-		/**
-		 * Remove the specified resource from storage.
-		 *
-		 * @param  int $id
-		 * @return Response
-		 */
 		public function destroy($id)
 		{
 			$pari = Auth::user()->termineParis()->where('id', $id)->first();
 			Clockwork::info($pari);
 
-			if(!is_null($pari)){
-				if(!$pari->cashouted){
+			if (!is_null($pari)) {
+				if (!$pari->cashouted) {
 					if ($pari->followtype == 'n') {
 						$compte = $pari->compte()->first();
 						$compte->bankroll_actuelle += $pari->mise_totale;
 						$saved = $compte->save();
-						if($saved){
+						if ($saved) {
 							$pari->delete();
 						}
 						return Response::json(array(
@@ -319,7 +229,7 @@
 							'msg' => 'Pari supprimé !'
 						));
 					}
-				}else{
+				} else {
 					return Response::json(array(
 						'etat' => 0,
 						'msg' => 'Pour l\'instant, les paris cash-out ne peuvent pas être supprimés.  .'

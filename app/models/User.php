@@ -37,11 +37,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	}
 	
 	public function enCoursParis(){
-		return $this->hasMany('EnCoursParis')->orderBy('numero_pari','desc');
+		return $this->hasMany('Pari')->where('result', 0);
 	}
 
 	public function termineParis(){
-		return $this->hasMany('TermineParis');
+		return $this->hasMany('Pari')->where('result', 1);
 	}
 
 	public function recaps(){

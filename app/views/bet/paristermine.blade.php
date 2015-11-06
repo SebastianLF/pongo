@@ -10,7 +10,6 @@
         <thead>
         <tr class="uppercase">
             <th class="">date</th>
-            <th>type</th>
             <th>Evenement</th>
             <th>Rencontre</th>
             <th>Pari</th>
@@ -42,24 +41,7 @@
                     <td class=""><?php $date = Carbon::createFromFormat('Y-m-d H:i:s', $pari->selections->first()->date_match, 'Europe/Paris');
                         $date->setTimezone(Auth::user()->timezone);?>
                         {{{$date->format('d/m/Y')}}}</td>
-                    <td>
-                        @if($pari->type_profil == 's')
-                            <span class="label label-sm label-success label-mini type" data-toggle="tooltip"
-                                  data-title="{{'simple'}}">{{strtoupper($pari->type_profil)}}</span>
-                        @endif
-                        @if($pari->type_profil == 'c')
-                            <span class="label label-sm label-success label-mini type" data-toggle="tooltip"
-                                  data-title="{{'combiné'}}">{{strtoupper($pari->type_profil)}}</span>
-                        @endif
-                        @if($pari->pari_abcd)
-                            <span class="label label-sm label-warning label-mini" data-toggle="tooltip"
-                                  data-title="{{$pari->nom_abcd.' - '.$pari->lettre_abcd}}">{{'M'}}</span>
-                        @endif
-                        @if($pari->pari_live)
-                            <span class="label label-sm label-danger label-mini" data-toggle="tooltip"
-                                  data-title="{{'live'}}">{{'L'}}</span>
-                        @endif
-                    </td>
+
                     <td>
                         @if($pari->type_profil == 's')
                             {{{$pari->selections->first()->sport->name.', '.$pari->selections->first()->competition->name}}}
