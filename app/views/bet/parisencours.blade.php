@@ -9,7 +9,7 @@
     <table id="parisencourstable" class="table table-light table-condensed table-hover table-paris">
         <thead>
         <tr class="uppercase">
-            <th>N°</th>
+            <th >N°</th>
             <th>date r.</th>
             <th class="hidden-sm">Sport</th>
             <th class="hidden-sm">Competition</th>
@@ -100,9 +100,9 @@
                     @endif
 
                 </td>
-                <td width="10px" class="td-bet"><div class="input-group "><input value="{{$pari->montant_retour}}" type="text" width="50px" name="amount-returned" class="form-control inputs-ticket"><div class="input-group-addon input-group-addon-amount-returned">{{Auth::user()->devise}}</div></div></td>
+                <td width="10px" class="td-bet"><div class="input-group "><input value="{{$pari->montant_retour + 0}}" type="text" width="50px" name="amount-returned" class="form-control inputs-ticket"><div class="input-group-addon input-group-addon-amount-returned">{{Auth::user()->devise}}</div></div></td>
                 <td width="130px" class="td-bet-options center-text">
-                    {{ Form::button('<i class="fa fa-check"></i>', array('data-pari-type' => $pari->type_profil, 'data-numero-pari' => $pari->numero_pari, 'data-toggle' => "tooltip", 'title' => "Basculer définitivement vers l'historique", 'data-style' => "zoom-in", 'class' => 'boutonvalider btn btn-sm ladda-button green-jungle buttons-actions-ticket')) }}
+                    {{ Form::button('<i class="fa fa-check"></i>', array('data-pari-type' => $pari->type_profil, 'data-numero-pari' => $pari->numero_pari, 'data-toggle' => "tooltip", 'title' => "Basculer définitivement dans l'historique", 'data-style' => "zoom-in", 'class' => 'boutonvalider btn btn-sm ladda-button green-jungle buttons-actions-ticket')) }}
                     {{ Form::button('<i class="fa fa-trash"></i>', array('data-pari-type' => $pari->type_profil, 'data-numero-pari' => $pari->numero_pari, 'data-toggle' => "tooltip", 'title' => "Supprimer", 'data-style' => "zoom-in", 'class' => 'boutonsupprimer btn btn-sm ladda-button red buttons-actions-ticket')) }}
                     @if($pari->followtype == 'n')
                         <!-- {{ Form::button('<i class="fa fa-briefcase"></i>', array('type' => 'submit', 'class' => 'btn btn-sm grey-gallery form-bouton-paris buttons-actions-ticket', 'data-id' => $pari->id, 'data-toggle' => 'modal', 'data-target' => '#cashoutModal', 'data-hover' => 'tooltip', 'title' => 'Cash Out',  )) }} -->

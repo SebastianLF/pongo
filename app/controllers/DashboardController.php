@@ -147,7 +147,7 @@
 
 			switch ($type) {
 				case 'parisencours':
-					$parisencours = Auth::user()->enCoursParis()->with('selections.equipe1', 'selections.equipe1.country', 'selections.equipe2', 'selections.equipe2.country', 'selections.competition', 'selections.sport', 'selections.scope', 'compte.bookmaker', 'tipster')->where('result', 0)->where('pari_long_terme', '0')->where('pari_abcd', '0')->get();
+					$parisencours = Auth::user()->enCoursParis()->with('selections.equipe1', 'selections.equipe1.country', 'selections.equipe2', 'selections.equipe2.country', 'selections.competition', 'selections.sport', 'selections.scope', 'compte.bookmaker', 'tipster')->where('pari_long_terme', '0')->where('pari_abcd', '0')->get();
      					$countParisEnCours = $parisencours->count();
 					$view = View::make('bet.parisencours', array('parisencours' => $parisencours, 'types_resultat' => $this->types_resultat, 'count_paris_encours' => $countParisEnCours));
 					return Response::json(array(

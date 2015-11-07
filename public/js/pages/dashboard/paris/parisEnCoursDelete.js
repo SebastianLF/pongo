@@ -50,7 +50,7 @@
 }*/
 function parisEnCoursDelete(table, type) {
     table.on('click', '.boutonsupprimer', function (e) {
-        var id = $(this).data('pari-id');
+        var id = $(this).data('numero-pari');
         var l = Ladda.create(this);
         swal({
             title: "Supprimer le ticket",
@@ -66,7 +66,7 @@ function parisEnCoursDelete(table, type) {
             if (isConfirm) {
                 l.start();
                 $.ajax({
-                    url: 'encourspari/' + id,
+                    url: 'pari/pending/' + id,
                     type: 'delete',
                     success: function (data) {
                         if (data.etat == 0) {

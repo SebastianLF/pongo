@@ -14,6 +14,7 @@ return array(
     'Patchwork\\' => array($vendorDir . '/patchwork/utf8/src/Patchwork'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'Jenssegers\\Date\\' => array($vendorDir . '/jenssegers/date/src'),
+    'Doctrine\\Common\\Cache\\' => array($vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache'),
     'Barryvdh\\LaravelIdeHelper\\' => array($vendorDir . '/barryvdh/laravel-ide-helper/src'),
     'Barryvdh\\Debugbar\\' => array($vendorDir . '/barryvdh/laravel-debugbar/src'),
 );

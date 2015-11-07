@@ -20,6 +20,8 @@
 	Route::resource('welcome', 'WelcomeController');
 	Route::post('devise', 'DashboardController@postDevise');
 
+
+
 	// dashboard page
 	Route::resource('pari', 'PariController');
 	Route::resource('encourspari/selection', 'SelectionController');
@@ -108,3 +110,6 @@
 	Route::get('updateaccountform', 'BookmakerController@updateBookmakerAccountOnForm');
 
 
+	// Pari controller
+	Route::delete('pari/pending/{id}', 'PariController@deletePendingBet');
+	Route::delete('pari/closed/{id}', 'PariController@deleteClosedBet');

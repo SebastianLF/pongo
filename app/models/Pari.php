@@ -1,6 +1,13 @@
 <?php
 
-class Pari extends Eloquent {
+	use Illuminate\Database\Eloquent\SoftDeletingTrait;
+
+
+	class Pari extends Eloquent {
+
+	use SoftDeletingTrait;
+	protected $dates = ['deleted_at'];
+
 	protected $table = 'paris';
 	protected $guarded = array('id');
 

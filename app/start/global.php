@@ -45,13 +45,12 @@
 	|
 	*/
 
-	// binding pour l'affichage des parametres de pari dans le bon ordre.
-	App::bind('pari_affichage', function ($app) {
-		return new lib\pari\PariAffichage;
-	});
-
 	App::error(function (Exception $exception, $code) {
 		Log::error($exception);
+	});
+
+	App::error(function (BetNotDeletedCorrectlyException $exception){
+		Log::error('le pari n \'a pas ete supprimé correctement');
 	});
 
 
@@ -59,7 +58,20 @@
 		return Redirect::route('login')->with('message', 'Your session has expired. Please try logging in again.');
 	});
 
+	/*|--------------------------------------------------------------------------
+	| Custom Binding Handler
+	|--------------------------------------------------------------------------
+	*/
 
+	// binding pour l'affichage des parametres de pari dans le bon ordre.
+	App::bind('pari_affichage', function ($app) {
+		return new lib\pari\PariAffichage;
+	});
+
+	/*|--------------------------------------------------------------------------
+	| Custom Validator Extension Handler
+	|--------------------------------------------------------------------------
+	*/
 
 
 	// validator extension

@@ -6,7 +6,7 @@ function parisTermineDelete(){
     var tablename = $('#paristerminetable');
     tablename.find('.bouton-supprimer-historique-pari').click(function (e) {
         e.preventDefault();
-        var id = $(this).data('id');
+        var id = $(this).data('numero-pari');
 
         var l = Ladda.create(this);
 
@@ -28,7 +28,7 @@ function parisTermineDelete(){
                     // ladda animation.
                     l.start();
                     $.ajax({
-                        url: 'historique/' + id,
+                        url: 'pari/closed/' + id,
                         type: 'delete',
                         success: function (data) {
                             if (data.etat == 0) {
