@@ -103,7 +103,7 @@
 
 					// verification si ce numero de pari n'existe pas deja.
 					$numero_pari = Auth::user()->compteur_pari += 1;
-					if( ! Auth::user()->allParis()->where('numero_pari', $numero_pari)->exists()){Auth::user()->save();}
+					Auth::user()->save();
 
 					// mise
 					$mise_unites = $mise_devise = 0;
@@ -123,8 +123,8 @@
 						'mt_par_unite' => $tipster->montant_par_unite,
 						'nombre_unites' => $mise_unites,
 						'mise_totale' => $mise_devise,
-						'pari_abcd' => Input::get('ticketABCD'),
 						'pari_long_terme' => Input::get('ticketLongTerme'),
+						'pari_abcd' => Input::get('ticketABCD'),
 						'nom_abcd' => Input::get('serieinputdashboard'),
 						'lettre_abcd' => Input::get('letterinputdashboard'),
 						'result' => 0,
@@ -138,7 +138,7 @@
 					$cotes = 1;
 					$odds_iterator = 0;
 					$odds_array = Input::get('automatic-selection-cote');
-					$count_live = 0;
+					$count_live = $count_outright = 0;
 
 					Clockwork::info($odds_array);
 
@@ -146,6 +146,7 @@
 
 						// compteur, si superieur a 0 l'en cours pari est live.
 						$count_live = $selection_coupon->isLive == null ? $count_live + 0 : $count_live + 1;
+						$count_outright = $selection_coupon->isOutright == 0 ? $count_outright + 0 : $count_outright + 1;
 
 						$selection = new Selection(array(
 							'date_match' => new Carbon($selection_coupon->game_time),
@@ -161,7 +162,6 @@
 							'odd_participantParameterName3' => $selection_coupon->odd_participantParameterName3,
 							'odd_groupParam' => $selection_coupon->odd_groupParam,
 							'isLive' => $selection_coupon->isLive,
-							'isOutright' => 0,
 							'isMatch' => $selection_coupon->isMatch,
 							'score' => $selection_coupon->score,
 							'market_id' => $selection_coupon->market_id,
@@ -183,6 +183,7 @@
 					}
 
 					$pari_model->pari_live = $count_live > 0 ? 1 : 0;
+					$pari_model->pari_long_terme = $count_outright > 0 ? 1 : 0;
 
 					// mis a jour de la cote general.
 					if ($pari_model->type_profil == 's') {$pari_model->cote = $cotes;} else {$pari_model->cote = Input::get('total-cote-combine');}
@@ -193,7 +194,9 @@
 					}
 
 					// supression des selections dans le coupon apres creation du pari.
-					$selections_coupon->delete();
+					foreach($selections_coupon as $selection_coupon){
+						$selection_coupon->delete();
+					}
 
 
 					// deduction du montant dans le bookmaker correspondant uniquement si le suivi est de type normal.
@@ -262,6 +265,8 @@
 
 				$status_termine_pari = null;
 				$all_status_array = [];
+
+				Clockwork::info($all_status_array);
 				$cote_general = 1;
 				$nb = $encoursparis->selections()->count();
 				$selections = $encoursparis->selections()->get();
@@ -302,6 +307,9 @@
 
 					array_push($all_status_array, $status_s);
 
+					Clockwork::info($status_s);
+					Clockwork::info($all_status_array);
+
 					$selections[$i]->status = $status_s;
 					$selections[$i]->cote_apres_status = $cote_selection;
 
@@ -323,12 +331,17 @@
 				if ($encoursparis->type_profil == 's') {
 					$status_termine_pari = $selections[0]->status;
 				} else if ($encoursparis->type_profil == 'c') {
-					if ($profit_devise > 0) {
-						$status_termine_pari = 1;
-					} else if ($profit_devise == 0) {
+					//il est important de verifier si c un combiné 'remboursé' en tout premier.
+					if ( $this->checkIfParlayHasSameStatus($all_status_array , 5) ) {
 						$status_termine_pari = 5;
-					} else if (in_array(2, $all_status_array)) {
+					} else if ( ( $this->checkIfParlayHasSameStatus($all_status_array , 1))){
+						$status_termine_pari = 1;
+					} else if ( ( $this->checkIfParlayHasSameStatus($all_status_array , 2))){
 						$status_termine_pari = 2;
+					} else if ($profit_devise > 0 && ( in_array(3, $all_status_array, true) || in_array(4, $all_status_array, true) || in_array(5, $all_status_array, true)) ) {
+						$status_termine_pari = 7;
+					} else if ( $profit_devise < 0 && (in_array(3, $all_status_array, true) || in_array(4, $all_status_array, true) || in_array(5, $all_status_array, true)) ) {
+						$status_termine_pari = 8;
 					}
 				}
 
@@ -420,6 +433,16 @@
 			}
 
 			throw new BetNotDeletedCorrectlyException();
+		}
+
+		public function checkIfParlayHasSameStatus($array, $numero_status)
+		{
+			for($i = 0; $i < count($array) ; $i++)
+			    {
+				    if($array[$i] != $numero_status)
+			            return false;
+			    }
+			return true;
 		}
 
 	}

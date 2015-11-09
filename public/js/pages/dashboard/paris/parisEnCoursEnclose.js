@@ -25,11 +25,8 @@ function parisEnCoursEnclose(tablename, type) {
             });
         }
 
-        if (tr_childs.length == 0 && type_profil == 'c') {
-            swal("Erreur", "Cliquez sur la croix pour dérouler le combiné et selectionnez les status pour chaque pari du combiné.")
-        }
         //si les status ont tous Ã©tÃ© bien renseignÃ© ou alors si il y a au moins un pari perdu alors on peut finaliser le pari.
-        else if ((status.indexOf('0') != -1 && status.indexOf('2') == -1)) {
+        if ((status.indexOf('0') != -1 && status.indexOf('2') == -1)) {
             if (type_profil == 's') {
                 swal("Erreur", "Vous devez selectionnez un status !")
             }

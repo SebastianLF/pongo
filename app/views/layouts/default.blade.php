@@ -34,7 +34,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
 <!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
 <!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
-<body class="page-header-fixed  page-style-square page-sidebar-closed">
+<body class="page-header-fixed  page-style-square page-sidebar-closed page-sidebar-fixed">
 
 <div class="page-header navbar navbar-fixed-top">
     <!-- BEGIN HEADER INNER -->
@@ -114,12 +114,7 @@ License: You must have a valid license purchased only from themeforest(the above
             <ul class="page-sidebar-menu page-sidebar-menu-closed" data-keep-expanded="true" data-auto-scroll="true"
                 data-slide-speed="200">
                 <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
-                <li>
-                    <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-                    <div class="sidebar-toggler">
-                    </div>
-                    <!-- END SIDEBAR TOGGLER BUTTON -->
-                </li>
+
 
                 <li class="start active open">
                     <a href="{{url('dashboard')}}">
@@ -168,21 +163,21 @@ License: You must have a valid license purchased only from themeforest(the above
                     </ul>
                 </li>
 
-                <li class="heading">
+                <!-- <li class="heading">
                     <h3 class="uppercase"> UTILITAIRES</h3>
-                </li>
-                <li class="">
+                </li> -->
+                <!--<li class="">
                     <a href="{{url('faq')}}">
                         <i class=" icon-question"></i>
                         <span class="title">FAQ</span>
                     </a>
-                </li>
-                <li>
+                </li>-->
+                <!--<li>
                     <a href="{{url('market')}}">
                         <i class="icon-list"></i>
                         <span class="title">Glossaire</span>
                     </a>
-                </li>
+                </li>-->
 
             </ul>
             <!-- END SIDEBAR MENU -->

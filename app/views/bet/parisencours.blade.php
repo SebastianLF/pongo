@@ -19,7 +19,7 @@
             <th>Book</th>
             <th>Cote</th>
             <th>Status</th>
-            <th>Mt. retour <span class="glyphicon glyphicon-info-sign font-red-sunglo" data-toggle="tooltip" title="Exemple: cote à 2 et mise de 50 {{Auth::user()->devise}}, le montant retour sera 100 {{Auth::user()->devise}}"></span></th>
+            <th>Mt. retour <span class="glyphicon glyphicon-info-sign font-red-sunglo" data-toggle="tooltip" data-html="true" title="Exemple: cote à 2 et mise de 50 {{Auth::user()->devise}}, le montant retour sera 100 {{Auth::user()->devise}} . <br/><span class='font-red-sunglo'>Verifiez bien le montant, il peut etre différent de celui calculé chez le bookmaker. Si c'est le cas, remplacez le.</span>"></span></th>
             <th></th>
         </tr>
         </thead>
@@ -32,7 +32,7 @@
                 $selections['pariAffichage'] = $pariAffichage;
             } ?>
             <tr data-selections='{{{$selections_final}}}' data-nb-selections='{{{$pari->selections->count()}}}' data-pick="{{$selections->pick}}" data-name1='{{$selections->equipe1['name']}}' data-pari-id='{{{$pari->id}}}' data-selection-id='{{{$pari->type_profil == "s" ? $selections->id : ""}}}' data-pari-type='{{{$pari->type_profil}}}'>
-                <td>{{{'#'.$pari->numero_pari}}}</td>
+                <td >{{{'#'.$pari->numero_pari}}}</td>
                 <td>
                     @if($pari->type_profil == 's')
                         <?php $date = Carbon::createFromFormat('Y-m-d H:i:s', $pari->selections->first()->date_match, 'Europe/Paris');
@@ -59,8 +59,6 @@
                     @if($pari->type_profil == 's')
                         @if($pari->selections->first()->isMatch)
                             {{{$pari->selections->first()->game_name.' /'}}}
-                        @else
-                            {{{''}}}
                         @endif
                     @endif
                     <span class="blue">
@@ -77,7 +75,7 @@
                 <td>{{$pari->tipster->name}}</td>
                 <td class="tdmise  bold">
 
-                    <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise}}} {{'('.+$pari->nombre_unites.' U)'}}
+                    <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise}}} {{'('.+round($pari->nombre_unites,3).' U)'}}
                 </td>
                 <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}
                 </td>

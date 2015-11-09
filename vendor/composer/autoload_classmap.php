@@ -10,6 +10,7 @@ return array(
     'AddActifToCompetitions' => $baseDir . '/app/database/migrations/2015_09_16_165807_add_actif_to_competitions.php',
     'AddColumnShortname' => $baseDir . '/app/database/migrations/2015_09_16_072744_add_column_shortname.php',
     'AddForeignkeyPariIdToSelections' => $baseDir . '/app/database/migrations/2015_11_06_040505_add_foreignkey_pari_id_to_selections.php',
+    'AddIsOutrightToCoupon' => $baseDir . '/app/database/migrations/2015_11_07_112437_add_isoutright_to_coupon.php',
     'AddIsOutrightToMarkets' => $baseDir . '/app/database/migrations/2015_11_07_110417_add_isoutright_to_markets.php',
     'AddSoftdeleteToParis' => $baseDir . '/app/database/migrations/2015_11_07_092712_add_softdelete_to_paris.php',
     'AddSoftdeleteToTermineparis' => $baseDir . '/app/database/migrations/2015_09_29_053137_add_softdelete_to_termineparis.php',

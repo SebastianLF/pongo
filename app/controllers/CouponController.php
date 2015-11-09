@@ -141,6 +141,7 @@
 					"away_team_country_name" => Input::exists(array('team2')) ? $away_team->country()->first()->name : null,
 					"score" => Input::exists('score') ? Input::get('score') : null,
 					"isLive" => Input::exists('live') ? Input::get('live') : null,
+					"isOutright" => 0,
 					"isMatch" => Input::exists(array('team1', 'team2')) ? 1 : 0,
 					"session_id" => Session::getId(),
 				));
@@ -238,6 +239,7 @@
 				"away_team_country_name" => Input::exists('away_team_country_name') ?  $away_country->name : null,
 				"score" => Input::get('score') != 'null' ? Input::get('score') : NULL,
 				"isLive" => $isLive,
+				"isOutright" => 0,
 				"isMatch" => Input::get('isMatch') == 'true' ? 1 : 0,
 				"session_id" => Input::get('userSessionId'),
 			));

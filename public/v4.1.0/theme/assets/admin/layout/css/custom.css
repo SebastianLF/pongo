@@ -106,7 +106,6 @@ Rounded Portlets
   background: #e9edef !important;
 }
 
-
 table.dataTable tbody td, table.dataTable tbody th {
   padding: 2px!important;
 }
@@ -264,6 +263,10 @@ select{
 
 .table-paris input[name="amount-returned[]"]{
   width: 80px !important;
+}
+
+.table-paris th {
+  text-align: center !important;
 }
 
 .label-combine{
@@ -571,7 +574,8 @@ tr.details td{
 }
 
 .table-paris>tbody>tr>td{
-  padding: 4px;
+  padding: 2px;
+  text-align: center;
 }
 
 

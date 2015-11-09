@@ -1,3 +1,8 @@
+function onPageChange() {
+
+}
+
+
 function loadParisEnCours() {
     var onglet = $('#onglet_paris_en_cours');
     var onglet_span = onglet.find('span');
@@ -17,7 +22,7 @@ function loadParisEnCours() {
             nCloneTh.className = "table-checkbox";
 
             var nCloneTdCombine = document.createElement('td');
-            nCloneTdCombine.innerHTML = '<span class="row-details glyphicon glyphicon-chevron-down blue"></span>';
+            nCloneTdCombine.innerHTML = '<span class="row-details glyphicon glyphicon-triangle-bottom"></span>';
 
             var nCloneTdSimple = document.createElement('td');
             nCloneTdSimple.innerHTML = '<span class="glyphicon glyphicon-minus"></span>';
@@ -29,7 +34,7 @@ function loadParisEnCours() {
             table.find('tbody tr').each(function () {
                 if ($(this).data('nb-selections') > 1) {
                     this.insertBefore(nCloneTdCombine.cloneNode(true), this.childNodes[0]);
-                }else{
+                } else {
                     this.insertBefore(nCloneTdSimple.cloneNode(true), this.childNodes[0]);
                 }
             });
@@ -78,44 +83,44 @@ function loadParisEnCours() {
 
             });
 
-
             var tableWrapper = $('#parisencourstable_wrapper'); // datatable creates the table wrapper by adding with id {your_table_jd}_wrapper
             tableWrapper.find('.dataTables_length select').select2(); // initialize select2 dropdown
 
             table.on('click', ' tbody td .row-details', function () {
 
+                var $this = $(this);
                 var nTr = $(this).parents('tr')[0];
 
                 var type = $(this).parents('tr').data('pari-type');
                 if (oTable.fnIsOpen(nTr)) {
                     /* This row is already open - close it */
-                    $(this).addClass("glyphicon-chevron-down").removeClass("glyphicon-chevron-up");
+                    $(this).removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-bottom");
                     oTable.fnClose(nTr);
 
                 } else {
                     /* Open this row */
                     var selections = '';
-                    var pari_id = $(this).parents('tr').data('pari-id') ;
+                    var pari_id = $(this).parents('tr').data('pari-id');
 
                     // recuperation des selections à chaque ouverture de combiné pour l afficher dans le data attribut 'selections' du tr combiné.
-                    $.getJSON( "encourspari/selectionpourcombine/"+$(this).parents('tr').data('pari-id'), function( data ) {
+                    $.getJSON("encourspari/selectionpourcombine/" + $(this).parents('tr').data('pari-id'), function (data) {
 
                         // structure de l'ouverture.
-                        $(this).addClass("glyphicon-chevron-up").removeClass("glyphicon-chevron-down");
+                        $this.removeClass("glyphicon-triangle-bottom").addClass("glyphicon-triangle-top");
                         oTable.fnOpen(nTr, fnFormatDetailsForChildsParisEnCours(oTable, $.parseJSON(data), type), 'details');
 
                         //trigger le status de chaque pour le type combiné
-                        table.find("tr[data-pari-id='"+pari_id+"']").next('tr').find('select[name="status[]"]').each(function() {
+                        table.find("tr[data-pari-id='" + pari_id + "']").next('tr').find('select[name="status[]"]').each(function () {
                             $(this).val($(this).data('defaut-value'));
-                        }).select2();
+                        }).select2({minimumResultsForSearch: Infinity});
                     });
                 }
             });
 
             //trigger le status de chaque pour le type simple
-            $('select[name="status[]"]').each(function() {
-                var temp = $(this).val($(this).data('defaut-value'));
-            }).select2();
+            $('select[name="status[]"]').each(function () {
+                $(this).val($(this).data('defaut-value'));
+            }).select2({minimumResultsForSearch: Infinity});
 
             // afficher le count dans le bon endroit.
             if (data.count_paris_encours == 0) {
@@ -391,4 +396,4 @@ function loadParisEnCoursWithPage(condition) {
         });
     }
 }
-
+onPageChange();
