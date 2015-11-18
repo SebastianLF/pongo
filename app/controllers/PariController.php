@@ -293,7 +293,7 @@
 							break;
 						case 3:
 							$cote_general = $cote_general * (($cote - 1) / 2 + 1);
-							$cote_selection = [($cote - 1) / 2 + 1];
+							$cote_selection = ($cote - 1) / 2 + 1;
 							break;
 						case 4:
 							$cote_general = $cote_general * 0.5;
@@ -304,16 +304,16 @@
 							$cote_selection = 1;
 							break;
 					}
-
 					array_push($all_status_array, $status_s);
 
-					Clockwork::info($status_s);
+					Clockwork::info('status_s = '. $status_s);
 					Clockwork::info($all_status_array);
 
 					$selections[$i]->status = $status_s;
 					$selections[$i]->cote_apres_status = $cote_selection;
 
-					if (!$selections[$i]->save()) {
+
+					if (! $selections[$i]->save()) {
 						return Response::json(array(
 							'etat' => 0,
 							'msg' => 'Erreur (3)',
