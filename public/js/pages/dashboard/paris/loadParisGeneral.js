@@ -96,7 +96,7 @@ function fnFormatDetailsForChildsParisTermine(oTable, selections, type) {
             '<td>' + value.competition.name + '</td>' +
             '<td>' + rencontre + '<span class="blue">' + value.pariAffichage + '</span>' + ' <span class="label label-sm label-danger label-mini">' + affichageScore() + '</span></td>' +
             '<td>' + parseFloat(Math.round(value.cote * 1000) / 1000) + '</td>' +
-            '<td class=""><select name="status[]" data-value="" data-defaut-value="' + value.status + '" class="form-control inputs-ticket"><option value="0">-Choisir-</option><option value="1">Gagné</option><option value="2">Perdu</option><option value="3">1/2 Gagné</option><option value="4">1/2 Perdu</option><option value="5">Remboursé</option></select></td>'
+            '<td class="">value.status</td>'
             +
             '</tr>';
 
