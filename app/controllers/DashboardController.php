@@ -2,7 +2,6 @@
 
 	use Carbon\Carbon;
 	use Laracasts\Utilities\JavaScript\Facades\JavaScript;
-	use Jenssegers\Date\Date;
 
 
 	class DashboardController extends BaseController
@@ -182,7 +181,9 @@
 					$countParisTermine = $parisTermine->count();
 					$view = View::make('bet.paristermine', array('paristermine' => $parisTermine, 'types_resultat' => $this->types_resultat, 'count_paris_termine' => $countParisTermine));
 
-					return $view;
+					return Response::json(array(
+						'vue' => $view->render(),
+					));
 
 					break;
 				default:

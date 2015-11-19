@@ -76,7 +76,7 @@
                 <td>{{$pari->tipster->name}}</td>
                 <td class="tdmise  bold">
 
-                    <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise}}} {{'('.+round($pari->nombre_unites,3).' U)'}}
+                    <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise}}}
                 </td>
                 <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}
                 </td>
@@ -113,20 +113,16 @@
                 </td>
 
                 <td><span class="bold">
-                        <span class="">{{floatval($pari->montant_retour).''.Auth::user()->devise}}</span><br/>
-                        <span>{{' ('.round(floatval($pari->unites_retour), 3).' U)'}}</span>
+                        <span class="">{{floatval($pari->montant_retour).''.Auth::user()->devise}}</span>
                     </span>
                 </td>
                 <td>
                     @if($pari->montant_profit > 0)<span class="bold font-green-sharp">
-                                <span class="profits">{{' +'.floatval($pari->montant_profit)}}</span><br/><span class="devise">{{{Auth::user()->devise}}}</span>
-                                <span>{{' (+'.round(floatval($pari->unites_profit), 3).' U)'}}</span></span>
+                                <span class="profits">{{' +'.floatval($pari->montant_profit)}}</span><span class="devise">{{{Auth::user()->devise}}}</span>
                     @elseif($pari->montant_profit < 0)<span class="bold font-red-haze"><span
-                                class="profits">{{floatval($pari->montant_profit)}}</span><br/> <span class="devise">{{{Auth::user()->devise}}}</span>
-                                <span>{{' ('.round(floatval($pari->unites_profit), 3).' U)'}}</span></span>
+                                class="profits">{{floatval($pari->montant_profit)}}</span> <span class="devise">{{{Auth::user()->devise}}}</span>
                     @else($pari->montant_profit == 0)<span class="bold"><span
-                                class="profits">{{floatval($pari->montant_profit)}}</span><br/><span class="devise">{{{Auth::user()->devise}}}</span>
-                                <span>{{' ('.round(floatval($pari->unites_profit), 3).' U)'}}</span></span>
+                                class="profits">{{floatval($pari->montant_profit)}}</span><span class="devise">{{{Auth::user()->devise}}}</span>
                     @endif
                 </td>
 

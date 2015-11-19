@@ -86,6 +86,34 @@ function fnFormatDetailsForChildsParisTermine(oTable, selections, type) {
             }
         }
 
+        function affichageStatus(status){
+            switch (status) {
+                case 1:
+                    return '<span class="bold fontsize15 font-green-sharp">gagné</span>';
+                    break;
+                case 2:
+                    return '<span class="bold fontsize15 font-red-haze">perdu</span>';
+                    break;
+                case 3:
+                    return '<span class="bold fontsize15 font-green-sharp">1/2 gagné</span>';
+                    break;
+                case 4:
+                    return '<span class="bold fontsize15 font-red-haze">1/2 perdu</span>';
+                    break;
+                case 5:
+                    return '<span class="bold fontsize15">Remboursé</span>';
+                    break;
+                case 6:
+                    return '<span class="bold fontsize15 font-blue">cash out</span>';
+                    break;
+                case 7:
+                    return '<span class="bold fontsize15 font-green-sharp">GAGNE PARTIEL</span>';
+                    break;
+                case 8:
+                    return '<span class="bold fontsize15 font-red-haze">PERDU PARTIEL</span>';
+                    break;
+        } }
+
         console.log(value.status);
 
         // structure de representation d'une ligne pour les combinés.
@@ -96,7 +124,7 @@ function fnFormatDetailsForChildsParisTermine(oTable, selections, type) {
             '<td>' + value.competition.name + '</td>' +
             '<td>' + rencontre + '<span class="blue">' + value.pariAffichage + '</span>' + ' <span class="label label-sm label-danger label-mini">' + affichageScore() + '</span></td>' +
             '<td>' + parseFloat(Math.round(value.cote * 1000) / 1000) + '</td>' +
-            '<td class="">value.status</td>'
+            '<td class="uppercase">' + affichageStatus(value.status) + '</td>'
             +
             '</tr>';
 

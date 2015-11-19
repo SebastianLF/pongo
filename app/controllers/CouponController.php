@@ -141,7 +141,6 @@
 					"away_team_country_name" => Input::exists(array('team2')) ? $away_team->country()->first()->name : null,
 					"score" => Input::exists('score') ? Input::get('score') : null,
 					"isLive" => Input::exists('live') ? Input::get('live') : null,
-					"isOutright" => 0,
 					"isMatch" => Input::exists(array('team1', 'team2')) ? 1 : 0,
 					"session_id" => Session::getId(),
 				));
@@ -172,40 +171,40 @@
 			$away_team = Input::exists('away_team') ? Equipe::firstOrCreate(array('name' => utf8_encode(Input::get('away_team')), 'sport_id' => $sport->id, 'country_id' => $away_country->id)) : null;
 
 			$market = Market::find(Input::get('market_id'));
-			if(is_null($market)){
+			if (is_null($market)) {
 				$market = Market::firstOrCreate(array('id' => Input::get('market_id'), 'name' => utf8_encode(Input::get('market')))); // le nom peut etre change du coté de betbrain donc on recherche uniquement par id.
 			}
 
 			$scope = Scope::firstOrCreate(array('name' => utf8_encode(Input::get('scope')))); // recherche par nom parceque betbrain peut envoyer un scope qui a 0 en id ce qui fait buguer.
 
-			if(Input::exists('home_team')) {
-					if(!$competition->equipes->contains($home_team->id)){
-						$competition->equipes()->save($home_team);
-					}
+			if (Input::exists('home_team')) {
+				if (!$competition->equipes->contains($home_team->id)) {
+					$competition->equipes()->save($home_team);
+				}
 			}
-			if(Input::exists('away_team')) {
-				if(!$competition->equipes->contains($away_team->id)){
+			if (Input::exists('away_team')) {
+				if (!$competition->equipes->contains($away_team->id)) {
 					$competition->equipes()->save($away_team);
 				}
 			}
 
-			if(!$sport->markets->contains($market->id)){
+			if (!$sport->markets->contains($market->id)) {
 				$sport->markets()->save($market);
 			}
-			if(!$sport->scopes->contains($scope->id)){
+			if (!$sport->scopes->contains($scope->id)) {
 				$sport->scopes()->save($scope);
 			}
 
 
 			// verification si l'input islive existe et ensuite suivant si c true ou false.
 			$isLive = '';
-			if(Input::exists('isLive')){
-				if(Input::get('isLive') == 'true'){
+			if (Input::exists('isLive')) {
+				if (Input::get('isLive') == 'true') {
 					$isLive = 1;
-				}else{
+				} else {
 					$isLive = 0;
 				}
-			}else{
+			} else {
 				$isLive = 0;
 			}
 
@@ -219,7 +218,7 @@
 				'odd_doubleParam' => Input::get('odd_doubleParam') == "-999.888" ? null : Input::get('odd_doubleParam'),
 				'odd_doubleParam2' => Input::get('odd_doubleParam2') == "-999.888" ? null : Input::get('odd_doubleParam2'),
 				'odd_doubleParam3' => Input::get('odd_doubleParam3') == "-999.888" ? null : Input::get('odd_doubleParam3'),
-				'odd_participantParameterName' => Input::exists('odd_participantParameterName') == "-9223372036854775808" ? null : utf8_encode(Input::get('odd_participantParameterName')) ,
+				'odd_participantParameterName' => Input::exists('odd_participantParameterName') == "-9223372036854775808" ? null : utf8_encode(Input::get('odd_participantParameterName')),
 				'odd_participantParameterName2' => Input::exists('odd_participantParameterName2') == "-9223372036854775808" ? null : utf8_encode(Input::get('odd_participantParameterName2')),
 				'odd_participantParameterName3' => Input::exists('odd_participantParameterName3') == "-9223372036854775808" ? null : utf8_encode(Input::get('odd_participantParameterName3')),
 				'odd_groupParam' => Input::get('odd_groupParam') == "-999.888" ? null : Input::get('odd_groupParam'),
@@ -233,10 +232,10 @@
 				'league_id' => $competition->id,
 				'league_name' => $competition->name,
 				"event_country_name" => $event_country->name,
-				"home_team" => Input::exists('home_team') ?  $home_team->name : null,
-				"home_team_country_name" => Input::exists('home_team_country_name') ?  $home_country->name : null,
-				"away_team" => Input::exists('away_team') ?  $away_team->name : null,
-				"away_team_country_name" => Input::exists('away_team_country_name') ?  $away_country->name : null,
+				"home_team" => Input::exists('home_team') ? $home_team->name : null,
+				"home_team_country_name" => Input::exists('home_team_country_name') ? $home_country->name : null,
+				"away_team" => Input::exists('away_team') ? $away_team->name : null,
+				"away_team_country_name" => Input::exists('away_team_country_name') ? $away_country->name : null,
 				"score" => Input::get('score') != 'null' ? Input::get('score') : NULL,
 				"isLive" => $isLive,
 				"isOutright" => 0,
@@ -254,10 +253,10 @@
 			$selections_coupon = Coupon::where('session_id', Session::getId())->get();
 			$count = $selections_coupon->count();
 
-				$view = View::make('bet/auto_form_selections', array(
-					'selections' => $selections_coupon,
-					'count' => $count
-				));
+			$view = View::make('bet/auto_form_selections', array(
+				'selections' => $selections_coupon,
+				'count' => $count
+			));
 
 			$array_msg = array();
 			$bookmaker_select = '';
@@ -318,7 +317,7 @@
 
 			// return
 			return array(
-				'vue' => (string) $view,
+				'vue' => (string)$view,
 				'bookmaker_id' => $bookmaker_select != '' ? $bookmaker_select->id : '',
 				'msg' => $array_msg,
 				'count' => $count

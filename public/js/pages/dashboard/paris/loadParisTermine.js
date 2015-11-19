@@ -5,7 +5,7 @@ function loadParisTermine() {
         type: 'get',
         success: function (data) {
             // chargement des paris long terme dans la div.
-            $('#tab_15_4').html(data);
+            $('#tab_15_4').html(data.vue);
 
             var table = $("#paristerminetable");
 
@@ -34,7 +34,7 @@ function loadParisTermine() {
             });
 
 
-            var oTable = table.dataTable({
+            var oTable = $("#paristerminetable").dataTable({
 
                 // Internationalisation. For more info refer to http://datatables.net/manual/i18n
                 language: {
@@ -86,17 +86,20 @@ function loadParisTermine() {
                 var $this = $(this);
                 var nTr = $(this).parents('tr')[0];
 
+
                 var type = $(this).parents('tr').data('pari-type');
+                var selections = $(this).parents('tr').data('selections');
                 if (oTable.fnIsOpen(nTr)) {
-                    alert('se ferme');
 
                     /* This row is already open - close it */
                     $(this).removeClass("glyphicon-triangle-top").addClass("glyphicon-triangle-bottom");
                     oTable.fnClose(nTr);
 
                 } else {
-                    alert('s ouvre');
+
                     // structure de l'ouverture.
+                    $this.removeClass("glyphicon-triangle-bottom").addClass("glyphicon-triangle-top");
+                    oTable.fnOpen(nTr, fnFormatDetailsForChildsParisTermine(oTable, selections, type), 'details');
 
                 }
             });
