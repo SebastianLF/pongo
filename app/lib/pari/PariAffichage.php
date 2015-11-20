@@ -67,8 +67,11 @@ class PariAffichage implements PariAffichageInterface{
 			return 0;
 		}*/
 
+		if($affichage_num == 1){
+			return $this->UniformiserNomEquipe($pick, $home_team, $away_team);
+		}
 
-		if($affichage_num == 1){return $market->name.' ('.$scope->representation.') : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team);}
+		/*if($affichage_num == 1){return $market->name.' ('.$scope->representation.') : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team);}
 		elseif($affichage_num == 2){return $market->name.' ('.$scope->representation.') : '.$pick;}
 		elseif($affichage_num == 3){return $market->name.' ('.$scope->representation.') : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team).' '.$oddParameter1;}
 		elseif($affichage_num == 4){return $market->name.' ('.$scope->representation.') : '.$this->UniformiserNomEquipe($pick, $home_team, $away_team).', '.$this->UniformiserNomEquipe($parameterName1,$home_team, $away_team);}
@@ -89,7 +92,7 @@ class PariAffichage implements PariAffichageInterface{
 		}
 		elseif($affichage_num == 9){return $market->name.' ('.$scope->representation.') : '.$parameterName1.', '.$pick.' '.$oddParameter1;}
 		elseif($affichage_num == 10){return $market->name.' ('.$scope->representation.') : '.$pick.' '.$oddParameter1;}
-
+		*/
 		return 'Erreur affichage pari';
 	}
 
