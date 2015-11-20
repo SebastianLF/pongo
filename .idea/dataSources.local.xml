@@ -14,7 +14,7 @@
         <secret-storage>master_key</secret-storage>
         <user>u-slfweb</user>
         <use-password>false</use-password>
-        <private-key-path>C:\Users\seb\.ssh\id_rsa</private-key-path>
+        <private-key-path>C:\Users\sebs\.ssh\id_rsa</private-key-path>
       </ssh-properties>
     </data-source>
     <data-source name="MySQL - homestead@127.0.0.1" uuid="bdacbe7c-d15d-4e81-9d7e-31eeab200255" />
