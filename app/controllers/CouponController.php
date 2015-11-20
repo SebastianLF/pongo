@@ -238,12 +238,12 @@
 				"away_team_country_name" => Input::exists('away_team_country_name') ? $away_country->name : null,
 				"score" => Input::get('score') != 'null' ? Input::get('score') : NULL,
 				"isLive" => $isLive,
-				"isOutright" => 0,
 				"isMatch" => Input::get('isMatch') == 'true' ? 1 : 0,
 				"session_id" => Input::get('userSessionId'),
 			));
-
+			$coupon->save();
 			file_put_contents('log_index.txt', json_encode(Input::all()) . "\n\n", FILE_APPEND | LOCK_EX);
+			file_put_contents('log_index.txt', json_encode($coupon) . "\n\n", FILE_APPEND | LOCK_EX);
 			return 1;
 		}
 
