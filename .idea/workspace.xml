@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="exception refonte code pari">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/DashboardController.php" afterPath="$PROJECT_DIR$/app/controllers/DashboardController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="9a530f09-4cfd-4f98-b2e3-9a97dcdef514" name="Failed commit: Default" comment="correction cloturation paris combviné avec plus de 3 selections" />
@@ -97,8 +96,8 @@
       <file leaf-file-name="DashboardController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.09023941">
-              <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.59116024">
+              <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
               <folding>
                 <element signature="e#8#26#0#PHP" expanded="true" />
               </folding>
@@ -253,6 +252,9 @@
   </component>
   <component name="NamedScopeManager">
     <order />
+  </component>
+  <component name="PhpServers">
+    <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true">
     <include_path>
@@ -2727,12 +2729,6 @@
       <option name="number" value="Default" />
       <updated>1411579515527</updated>
     </task>
-    <task id="LOCAL-00317" summary="debug affichage total cote combine des coupons a plus de 3 decimaux">
-      <created>1444840686590</created>
-      <option name="number" value="00317" />
-      <option name="project" value="LOCAL" />
-      <updated>1444840686590</updated>
-    </task>
     <task id="LOCAL-00318" summary="ajout du champ retourné et implémentation dans le controller termine">
       <created>1444882800767</created>
       <option name="number" value="00318" />
@@ -3021,7 +3017,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447998397500</updated>
     </task>
-    <option name="localTasksCounter" value="366" />
+    <task id="LOCAL-00366" summary="exception refonte code pari">
+      <created>1447998522760</created>
+      <option name="number" value="00366" />
+      <option name="project" value="LOCAL" />
+      <updated>1447998522760</updated>
+    </task>
+    <option name="localTasksCounter" value="367" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -3502,8 +3504,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09023941">
-          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.59116024">
+          <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
           <folding>
             <element signature="e#8#26#0#PHP" expanded="true" />
           </folding>
