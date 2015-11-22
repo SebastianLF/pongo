@@ -108,6 +108,9 @@
                         case 8:
                             echo '<span class="bold fontsize15 font-red-haze">PERDU PARTIEL</span>';
                             break;
+                        case 9:
+                            echo '<span class="bold fontsize15">ANNULE</span>';
+                            break;
                     }?>
 
                 </td>

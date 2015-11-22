@@ -75,7 +75,7 @@
                 <td>{{$pari->tipster->name}}</td>
                 <td class="tdmise  bold">
 
-                    <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise}}} {{'('.+round($pari->nombre_unites,3).' U)'}}
+                    <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise}}}
                 </td>
                 <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}
                 </td>

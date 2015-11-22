@@ -303,6 +303,10 @@
 							$cote_general += 0;
 							$cote_selection = 1;
 							break;
+						case 9:
+							$cote_general += 0;
+							$cote_selection = 1;
+							break;
 					}
 					array_push($all_status_array, $status_s);
 
@@ -334,13 +338,15 @@
 					//il est important de verifier si c un combiné 'remboursé' en tout premier.
 					if ( $this->checkIfParlayHasSameStatus($all_status_array , 5) ) {
 						$status_termine_pari = 5;
+					} else if ( $this->checkIfParlayHasSameStatus($all_status_array , 9) ) {
+						$status_termine_pari = 9;
 					} else if ( ( $this->checkIfParlayHasSameStatus($all_status_array , 1))){
 						$status_termine_pari = 1;
 					} else if ( ( $this->checkIfParlayHasSameStatus($all_status_array , 2))){
 						$status_termine_pari = 2;
-					} else if ($profit_devise > 0 && ( in_array(3, $all_status_array, true) || in_array(4, $all_status_array, true) || in_array(5, $all_status_array, true)) ) {
+					} else if ($profit_devise > 0 && ( in_array(3, $all_status_array, true) || in_array(4, $all_status_array, true) || in_array(5, $all_status_array, true) || in_array(9, $all_status_array, true)) ) {
 						$status_termine_pari = 7;
-					} else if ( $profit_devise < 0 && (in_array(3, $all_status_array, true) || in_array(4, $all_status_array, true) || in_array(5, $all_status_array, true)) ) {
+					} else if ( $profit_devise < 0 && (in_array(3, $all_status_array, true) || in_array(4, $all_status_array, true) || in_array(5, $all_status_array, true) || in_array(9, $all_status_array, true)) ) {
 						$status_termine_pari = 8;
 					}
 				}
