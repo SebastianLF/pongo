@@ -174,7 +174,7 @@
 						));
 
 						// si une des selections n'a pas été ajoutée correctement on supprime le pari + toutes ses selections.
-						if ( ! $selection->save()) {
+						if (!$selection->save()) {
 							$pari_model->forceDelete();
 						}
 
@@ -186,15 +186,19 @@
 					$pari_model->pari_long_terme = $count_outright > 0 ? 1 : 0;
 
 					// mis a jour de la cote general.
-					if ($pari_model->type_profil == 's') {$pari_model->cote = $cotes;} else {$pari_model->cote = Input::get('total-cote-combine');}
+					if ($pari_model->type_profil == 's') {
+						$pari_model->cote = $cotes;
+					} else {
+						$pari_model->cote = Input::get('total-cote-combine');
+					}
 
-					if ( ! $pari_model->save()) {
+					if (!$pari_model->save()) {
 
 						$pari_model->forceDelete();
 					}
 
 					// supression des selections dans le coupon apres creation du pari.
-					foreach($selections_coupon as $selection_coupon){
+					foreach ($selections_coupon as $selection_coupon) {
 						$selection_coupon->delete();
 					}
 
@@ -246,7 +250,7 @@
 					'msg' => $validator->getMessageBag()->toArray()
 				));
 			} else {
-				$encoursparis = Auth::user()->enCoursParis()->where('numero_pari', $id)->firstOrFail();
+				$encoursparis = Auth::user()->enCoursParis()->where('id', $id)->firstOrFail();
 
 				$mt_par_unite = $encoursparis->mt_par_unite;
 				$mise = $encoursparis->mise_totale;
@@ -261,12 +265,9 @@
 				$lettre_abcd = null;
 				$status_array = [];
 
-				Clockwork::info($status_array);
-
 				$status_termine_pari = null;
 				$all_status_array = [];
 
-				Clockwork::info($all_status_array);
 				$cote_general = 1;
 				$nb = $encoursparis->selections()->count();
 				$selections = $encoursparis->selections()->get();
@@ -310,14 +311,14 @@
 					}
 					array_push($all_status_array, $status_s);
 
-					Clockwork::info('status_s = '. $status_s);
+					Clockwork::info('status_s = ' . $status_s);
 					Clockwork::info($all_status_array);
 
 					$selections[$i]->status = $status_s;
 					$selections[$i]->cote_apres_status = $cote_selection;
 
 
-					if (! $selections[$i]->save()) {
+					if (!$selections[$i]->save()) {
 						return Response::json(array(
 							'etat' => 0,
 							'msg' => 'Erreur (3)',
@@ -336,17 +337,17 @@
 					$status_termine_pari = $selections[0]->status;
 				} else if ($encoursparis->type_profil == 'c') {
 					//il est important de verifier si c un combiné 'remboursé' en tout premier.
-					if ( $this->checkIfParlayHasSameStatus($all_status_array , 5) ) {
+					if ($this->checkIfParlayHasSameStatus($all_status_array, 5)) {
 						$status_termine_pari = 5;
-					} else if ( $this->checkIfParlayHasSameStatus($all_status_array , 9) ) {
+					} else if ($this->checkIfParlayHasSameStatus($all_status_array, 9)) {
 						$status_termine_pari = 9;
-					} else if ( ( $this->checkIfParlayHasSameStatus($all_status_array , 1))){
+					} else if (($this->checkIfParlayHasSameStatus($all_status_array, 1))) {
 						$status_termine_pari = 1;
-					} else if ( ( $this->checkIfParlayHasSameStatus($all_status_array , 2))){
+					} else if (($this->checkIfParlayHasSameStatus($all_status_array, 2))) {
 						$status_termine_pari = 2;
-					} else if ($profit_devise > 0 && ( in_array(3, $all_status_array, true) || in_array(4, $all_status_array, true) || in_array(5, $all_status_array, true) || in_array(9, $all_status_array, true)) ) {
+					} else if ($profit_devise > 0 && (in_array(3, $all_status_array, true) || in_array(4, $all_status_array, true) || in_array(5, $all_status_array, true) || in_array(9, $all_status_array, true))) {
 						$status_termine_pari = 7;
-					} else if ( $profit_devise < 0 && (in_array(3, $all_status_array, true) || in_array(4, $all_status_array, true) || in_array(5, $all_status_array, true) || in_array(9, $all_status_array, true)) ) {
+					} else if ($profit_devise < 0 && (in_array(3, $all_status_array, true) || in_array(4, $all_status_array, true) || in_array(5, $all_status_array, true) || in_array(9, $all_status_array, true))) {
 						$status_termine_pari = 8;
 					}
 				}
@@ -388,40 +389,36 @@
 		}
 
 
+		public function deletePendingBet($id)
+		{
 
-		public function deletePendingBet($id){
+			$pari = Auth::user()->enCoursParis()->where('id', $id)->firstOrFail();
 
-			$pari = Auth::user()->enCoursParis()->where('numero_pari', $id)->firstOrFail();
+			// mise en variable avant le forcedelete.
+			$compte = $pari->compte()->first();
+			$followtype = $pari->followtype;
 
-			// forcedelete car si un paris en cours est supprimé, il n'y a aucun interet a garder une trace.
-			if (Clockwork::info($pari->forceDelete())) {
-
-				if ($pari->followtype == 'n') {
-					//mis à jour du solde du compte-bookmaker correspondant.
-					$compte = $pari->compte()->first();
-					$compte->bankroll_actuelle += $pari->mise_totale;
-					$compte->save();
-				}
-
-				//on rend le numero de pari de nouveau disponible.
-				Auth::user()->numero_pari -= 1;
-				Auth::user()->save();
-
-				return Response::json(array(
-					'etat' => 1,
-					'msg' => 'Pari supprimé !'
-				));
-
+			if ($followtype == 'n') {
+				//mis à jour du solde du compte-bookmaker correspondant.
+				$compte->bankroll_actuelle += $pari->mise_totale;
+				$compte->save();
 			}
 
-			throw new BetNotDeletedCorrectlyException();
+			// on utilise forcedelete et non pas delete car il n'y a aucun interet a garder une trace.
+			$pari->forceDelete();
+
+			return Response::json(array(
+				'etat' => 1,
+				'msg' => 'Pari en cours supprimé !'
+			));
+
 		}
 
 
+		public function deleteClosedBet($id)
+		{
 
-		public function deleteClosedBet($id){
-
-			$pari = Auth::user()->termineParis()->where('numero_pari', $id)->firstOrFail();
+			$pari = Auth::user()->termineParis()->where('id', $id)->firstOrFail();
 
 			if ($pari->delete()) {
 
@@ -443,11 +440,10 @@
 
 		public function checkIfParlayHasSameStatus($array, $numero_status)
 		{
-			for($i = 0; $i < count($array) ; $i++)
-			    {
-				    if($array[$i] != $numero_status)
-			            return false;
-			    }
+			for ($i = 0; $i < count($array); $i++) {
+				if ($array[$i] != $numero_status)
+					return false;
+			}
 			return true;
 		}
 

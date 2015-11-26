@@ -23,7 +23,7 @@ function fnFormatDetailsForChildsParisEnCours(oTable, selections, type) {
         if (value.game_name == null) {
             rencontre = ''
         } else {
-            rencontre = value.equipe1.name + ' - ' + value.equipe2.name + ' / ';
+            rencontre = value.equipe1.name + ' - ' + value.equipe2.name + ' » ';
         }
 
         function affichageScore() {
@@ -75,7 +75,7 @@ function fnFormatDetailsForChildsParisTermine(oTable, selections, type) {
         if (value.game_name == null) {
             rencontre = ''
         } else {
-            rencontre = value.equipe1.name + ' - ' + value.equipe2.name + ' / ';
+            rencontre = value.equipe1.name + ' - ' + value.equipe2.name + ' » ';
         }
 
         function affichageScore() {
@@ -142,6 +142,15 @@ function fnFormatDetailsForChildsParisTermine(oTable, selections, type) {
 function loadNeededWhenAddToHistory() {
     loadParisTermine();
     loadBookmakersOnDashboard();
+    loadReleveOnDashboard();
+    loadGeneralRecapsOnDashboard();
+    totalProfits();
+}
+
+function loadNeededWhenDeleteClosedBets() {
+    loadParisTermine();
+    loadBookmakersOnDashboard();
+    loadReleveOnDashboard();
     loadGeneralRecapsOnDashboard();
     totalProfits();
 }
@@ -150,6 +159,10 @@ function loadNeededWhenAddToCurrentBets() {
     loadParisEnCours();
     loadParisLongTerme();
     loadParisABCD();
+    loadBookmakersOnDashboard();
+}
+
+function loadNeededWhenDeletePendingBets() {
     loadBookmakersOnDashboard();
 }
 

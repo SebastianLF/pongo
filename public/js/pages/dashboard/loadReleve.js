@@ -1,11 +1,11 @@
 
-function cb(start, end) {
-    $('#defaultrange').html(start.format('DD/MM/YYYY') + ' - ' + end.format('DD/MM/YYYY'));
+function cb_releve(start, end) {
+    $('#defaultrange-releve').html(start.format('DD/MM/YYYY') + ' - ' + end.format('DD/MM/YYYY'));
 }
 
-cb(moment.tz(user.timezone).startOf('month'), moment.tz(user.timezone).endOf('month'));
+cb_releve(moment.tz(user.timezone).startOf('month'), moment.tz(user.timezone).endOf('month'));
 
-$('#default-range-container').daterangepicker({
+$('#default-range-container-releve').daterangepicker({
     opens: 'left',
     format: 'DD/MM/YYYY',
     buttonClasses: ['btn btn-default'],
@@ -29,20 +29,23 @@ $('#default-range-container').daterangepicker({
         'Ce Mois-ci': [moment.tz(user.timezone).startOf('month'), moment.tz(user.timezone).endOf('month')],
         'Mois Précédent': [moment.tz(user.timezone).subtract(1, 'month').startOf('month'), moment.tz(user.timezone).subtract(1, 'month').endOf('month')]
     }
-}, cb).on('apply.daterangepicker', function (ev, picker) {
-    loadGeneralRecapsOnDashboard();
+}, cb_releve).on('apply.daterangepicker', function (ev, picker) {
+    loadReleveOnDashboard();
 });
 
+var ranges_container = $('.ranges');
 
+ranges_container.find('ul li:nth-child(1)').removeClass('active');
+ranges_container.find('ul li:nth-child(5)').addClass('active');
 
-function loadGeneralRecapsOnDashboard() {
-    var range = $('#default-range-container #defaultrange').text();
+function loadReleveOnDashboard() {
+    var range = $('#default-range-container-releve #defaultrange-releve').text();
     $.ajax({
-        url: 'generalrecap',
+        url: 'releve',
         type: 'get',
         data: {range: range},
         success: function (data) {
-            $('#tipsters-general-recap').html(data);
+            $('#releve-recap').html(data);
             //$('#total-recap-profits-devise').html(data.total_profit_devise);
             //$('#total-recap-profits-unites').html(data.total_profit_unites);
         }

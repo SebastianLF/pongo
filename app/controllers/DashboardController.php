@@ -48,6 +48,7 @@
 			});*/
 
 			JavaScript::put([
+
 				'timezone' => Auth::user()->timezone,
 				'devise' => Auth::user()->devise,
 			]);
@@ -62,11 +63,14 @@
 			return $tipsters;
 		}
 
-		public function showTipsters()
-		{
+		public function showReleve(){
+			$dates = explode("-", Input::get('range'));
+			$startDate = explode("/", trim($dates[0]));
+			$startDate = Carbon::create($startDate[2], $startDate[1], $startDate[0], 0, 0, 0, Auth::user()->timezone);
+			$endDate = Carbon::createFromFormat('d/m/Y', trim($dates[1]), Auth::user()->timezone);
+			$releves_pour_chaque_jour = Auth::user()->termineParis()->where('followtype', '!=', 'b')->whereBetween('updated_at', array($startDate, $endDate))->select(DB::raw('DATE(updated_at) AS date_cloturation, SUM(montant_profit) AS profit_par_jour'))->groupBy('date_cloturation')->orderBy('date_cloturation', 'DESC')->get();
+			return View::make('recaps.releve', array('releves_pour_chaque_jour' => $releves_pour_chaque_jour));
 		}
-
-
 
 		public function showGeneralRecap(){
 
@@ -75,7 +79,7 @@
 			$startDate = explode("/", trim($dates[0]));
 			$startDate = Carbon::create($startDate[2], $startDate[1], $startDate[0], 0, 0, 0, Auth::user()->timezone);
 			$endDate = Carbon::createFromFormat('d/m/Y', trim($dates[1]), Auth::user()->timezone);
-			$recap_tipsters = Auth::user()->termineParis()->select(DB::raw('tipster_id, followtype, SUM(montant_profit) AS total_devise_profit_par_mois_tipster, SUM(montant_retour) AS total_devise_retour_par_mois_tipster, SUM(unites_profit) AS total_unites_benefs_par_mois_tipster, AVG(mt_par_unite) AS moyenne_mt_par_unite_par_mois_tipster, AVG(nombre_unites) AS moyenne_mise_unites, AVG(mise_totale) AS moyenne_mise_devise, SUM(mise_totale) AS total_investissement_par_mois_tipster, COUNT(case when status = 1 then 1 else null end) AS nombre_paris_gagnes_par_mois_tipster, COUNT(case when status = 2 then 1 else null end) AS nombre_paris_perdu_par_mois_tipster, COUNT(case when status = 5 then 1 else null end) AS nombre_paris_rembourse_par_mois_tipster, COUNT(case when status = 3 then 1 else null end) AS nombre_paris_demigagnes_par_mois_tipster, COUNT(case when status = 4 then 1 else null end) AS nombre_paris_demiperdu_par_mois_tipster, COUNT(*) AS nombre_paris_total, AVG(cote) AS moyenne_cote_par_mois_tipster'))->with('tipster')->whereBetween('created_at', array($startDate, $endDate))->groupBy('tipster_id', 'followtype')->orderBy('total_unites_benefs_par_mois_tipster', 'desc')->get();
+			$recap_tipsters = Auth::user()->termineParis()->where('status', '!=', 9)->select(DB::raw('tipster_id, followtype, SUM(montant_profit) AS total_devise_profit_par_mois_tipster, SUM(montant_retour) AS total_devise_retour_par_mois_tipster, SUM(unites_profit) AS total_unites_benefs_par_mois_tipster, AVG(mt_par_unite) AS moyenne_mt_par_unite_par_mois_tipster, AVG(nombre_unites) AS moyenne_mise_unites, AVG(mise_totale) AS moyenne_mise_devise, SUM(mise_totale) AS total_investissement_par_mois_tipster, COUNT(case when status = 1 then 1 else null end) AS nombre_paris_gagnes_par_mois_tipster, COUNT(case when status = 2 then 1 else null end) AS nombre_paris_perdu_par_mois_tipster, COUNT(case when status = 5 then 1 else null end) AS nombre_paris_rembourse_par_mois_tipster, COUNT(case when status = 3 then 1 else null end) AS nombre_paris_demigagnes_par_mois_tipster, COUNT(case when status = 4 then 1 else null end) AS nombre_paris_demiperdu_par_mois_tipster, COUNT(*) AS nombre_paris_total, AVG(cote) AS moyenne_cote_par_mois_tipster'))->with('tipster')->whereBetween('created_at', array($startDate, $endDate))->groupBy('tipster_id', 'followtype')->orderBy('total_unites_benefs_par_mois_tipster', 'desc')->get();
 			Clockwork::info($recap_tipsters);
 				//total line
 			$cote_moyenne_general = round(Auth::user()->termineParis()->whereBetween('created_at', array($startDate, $endDate))->where('followtype', '!=', 'b')->avg('cote'), 3);
@@ -107,7 +111,7 @@
 		public function showRecaps()
 		{
 			// calcul stats par mois et pour chaque type de suivi de chaque tipster. Les paris annulés ne sont pas comptabilisés (status = 9)
-			$recaps = Auth::user()->termineParis()->where('status', '!=', 9)->select(DB::raw('status, YEAR(created_at) year, MONTH(created_at) month, tipster_id, followtype, SUM(montant_profit) AS total_devise_profit_par_mois_tipster, SUM(montant_retour) AS total_devise_retour_par_mois_tipster, SUM(unites_profit) AS total_unites_benefs_par_mois_tipster, AVG(mt_par_unite) AS moyenne_mt_par_unite_par_mois_tipster, AVG(nombre_unites) AS moyenne_mise_unites, SUM(mise_totale) AS total_investissement_par_mois_tipster, COUNT(case when status = 1 then 1 else null end) AS nombre_paris_gagnes_par_mois_tipster, COUNT(case when status = 2 then 1 else null end) AS nombre_paris_perdu_par_mois_tipster, COUNT(case when status = 3 then 1 else null end) AS nombre_paris_demigagnes_par_mois_tipster, COUNT(case when status = 4 then 1 else null end) AS nombre_paris_demiperdu_par_mois_tipster, COUNT(case when status = 5 then 1 else null end) AS nombre_paris_rembourse_par_mois_tipster, COUNT(case when status = 7 then 1 else null end) AS nombre_paris_gagnespartiel_par_mois_tipster, COUNT(case when status = 8 then 1 else null end) AS nombre_paris_perdupartiel_par_mois_tipster, COUNT(case when status = 9 then 1 else null end) AS nombre_paris_annules_par_mois_tipster, COUNT(*) AS nombre_paris_total, AVG(cote) AS moyenne_cote_par_mois_tipster'))->with('tipster')->groupBy('year', 'month', 'tipster_id', 'followtype')->orderBy('year', 'desc')->orderBy('month', 'desc')->orderBy('followtype', 'desc')->get();
+			$recaps = Auth::user()->termineParis()->select(DB::raw('YEAR(created_at) year, MONTH(created_at) month, tipster_id, followtype, SUM(montant_profit) AS total_devise_profit_par_mois_tipster, SUM(montant_retour) AS total_devise_retour_par_mois_tipster, SUM(unites_profit) AS total_unites_benefs_par_mois_tipster, AVG(mt_par_unite) AS moyenne_mt_par_unite_par_mois_tipster, AVG(nombre_unites) AS moyenne_mise_unites, SUM(mise_totale) AS total_investissement_par_mois_tipster, COUNT(case when status = 1 then 1 else null end) AS nombre_paris_gagnes_par_mois_tipster, COUNT(case when status = 2 then 1 else null end) AS nombre_paris_perdu_par_mois_tipster, COUNT(case when status = 3 then 1 else null end) AS nombre_paris_demigagnes_par_mois_tipster, COUNT(case when status = 4 then 1 else null end) AS nombre_paris_demiperdu_par_mois_tipster, COUNT(case when status = 5 then 1 else null end) AS nombre_paris_rembourse_par_mois_tipster, COUNT(case when status = 7 then 1 else null end) AS nombre_paris_gagnespartiel_par_mois_tipster, COUNT(case when status = 8 then 1 else null end) AS nombre_paris_perdupartiel_par_mois_tipster, COUNT(case when status = 9 then 1 else null end) AS nombre_paris_annules_par_mois_tipster, COUNT(*) WHERE status <> 9 AS nombre_paris_total, AVG(cote) AS moyenne_cote_par_mois_tipster'))->with('tipster')->groupBy('year', 'month', 'tipster_id', 'followtype')->orderBy('year', 'desc')->orderBy('month', 'desc')->orderBy('followtype', 'desc')->get();
 
 			// pour calculer le total par mois tout court.
 			$recaps2 = Auth::user()->termineParis()->select(DB::raw('YEAR(created_at) year, MONTH(created_at) month, SUM(unites_profit) AS total_unites_par_mois'))->groupBy('year', 'month', 'followtype')->having('followtype', '=', 'n')->orderBy('year', 'desc')->orderBy('month', 'desc')->get();

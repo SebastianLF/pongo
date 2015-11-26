@@ -3,7 +3,7 @@
  */
 
 
-// fonction pour charger le profits page title overall.
+// fonction de calcul du profit dans le titre.
 function totalProfits(){
     $.getJSON( "totalprofit", function(data) {
 

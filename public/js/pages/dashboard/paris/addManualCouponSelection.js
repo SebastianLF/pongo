@@ -8,6 +8,7 @@ function addManualCouponSelection() {
     var picks = ''; //initialisation de la variable qui sera modifié a chaque choix de type de pari.
     var picks1X2 = [{id: "1", text: "Home"}, {id: "2", text: "Away"}, {id: "X", text: "Draw"}];
     var picks12 = [{id: "1", text: "Home"}, {id: "2", text: "Away"}];
+    var picksOverUnder = [{id: "Over", text: "Over"}, {id: "Under", text: "Under"}];
     var tooltip_message = "Quand cet icone apparait, aucune proposition vous sera faite, c\'est à vous d'inscrire votre réponse dans le champ de recherche. Cette réponse deviendra ensuite une proposition, vous n'avez alors plus qu'à la selectionner.";
     var manually_insertion_icon = " <span class='glyphicon glyphicon-save font-red' data-toggle='tooltip' data-title='"+tooltip_message+"'></span>";
 
@@ -240,7 +241,7 @@ function addManualCouponSelection() {
                 showTeamsInputs();
                 pickContainer.fadeIn().show();
                 pick.select2({data: picks1X2, minimumResultsForSearch: Infinity});
-                pickLabel.html("Résultat du match");
+                pickLabel.html("Vainqueur");
                 oddParticipantParameterNameLabel.text('Equipe Handicap');
                 oddParticipantParameterNameContainer.fadeIn().show();
                 oddParticipantParameterName.select2({
@@ -250,7 +251,7 @@ function addManualCouponSelection() {
                 });
                 oddParamLabel.html('Handicap'+manually_insertion_icon);
                 oddParamContainer.fadeIn().show();
-                oddParam.select2({tags: true, allowClear: true, placeholder: '2.5 ou -2.5'})
+                oddParam.select2({tags: true, allowClear: true, placeholder: 'Exemple: +2.5 ou -2.5'})
             }
             else if (val == 9) { // Double Chance
                 picks = [{id: "1X", text: "1X"}, {id: "X2", text: "X2"}, {id: "12", text: "12"}];
@@ -260,7 +261,6 @@ function addManualCouponSelection() {
                 team1.val("").trigger("change").prop("disabled", false);
                 team2.val("").trigger("change").prop("disabled", false);
                 pickLabel.html("Choix");
-
             }
             else if (val == 11) { // Half-Time / Full-Time
                 picks = [{id: "1/1", text: "1/1"}, {id: "1/X", text: "1/X"}, {id: "1/2", text: "1/2"}, {id: "X/1", text: "X/1"}, {id: "X/X", text: "X/X"}, {id: "X/2", text: "X/2"}, {id: "2/1", text: "2/1"}, {id: "2/X", text: "2/X"}, {id: "2/2", text: "2/2"}];
@@ -271,11 +271,35 @@ function addManualCouponSelection() {
                 team2.val("").trigger("change").prop("disabled", false);
                 pickLabel.html("Choix");
             }
+            else if (val == 30) { // Anytime Goalscorer
+                teamsRow.fadeIn().show();
+                pickContainer.fadeIn().show();
+                pickLabel.html("Buteur"+manually_insertion_icon);
+                pick.select2({tags: true, placeholder: 'Nom du joueur'});
+                team1.val("").trigger("change").prop("disabled", false);
+                team2.val("").trigger("change").prop("disabled", false);
+            }
+            else if (val == 37) { // Qualification
+                teamsRow.fadeIn().show();
+                pickContainer.fadeIn().show();
+                pickLabel.html('Equipe qualifié');
+                pick.select2({data: picks12, minimumResultsForSearch: Infinity});
+                team1.val("").trigger("change").prop("disabled", false);
+                team2.val("").trigger("change").prop("disabled", false);
+            }
             else if (val == 43) { // 1X2
                 teamsRow.fadeIn().show();
                 pickContainer.fadeIn().show();
                 pickLabel.html('Vainqueur');
                 pick.select2({data: picks1X2, minimumResultsForSearch: Infinity});
+                team1.val("").trigger("change").prop("disabled", false);
+                team2.val("").trigger("change").prop("disabled", false);
+            }
+            else if (val == 45) { // Correct Score
+                teamsRow.fadeIn().show();
+                pickContainer.fadeIn().show();
+                pickLabel.html("Score Exact"+manually_insertion_icon);
+                pick.select2({tags: true, placeholder: 'Exemple: 1-0 ou 1-1...'});
                 team1.val("").trigger("change").prop("disabled", false);
                 team2.val("").trigger("change").prop("disabled", false);
             }
@@ -287,6 +311,17 @@ function addManualCouponSelection() {
                 team1.val("").trigger("change").prop("disabled", false);
                 team2.val("").trigger("change").prop("disabled", false);
             }
+            else if (val == 47) { // Over Under
+                teamsRow.fadeIn().show();
+                team1.val("").trigger("change").prop("disabled", false);
+                team2.val("").trigger("change").prop("disabled", false);
+                pickContainer.fadeIn().show();
+                oddParamContainer.show();
+                oddParamLabel.html('Nombre'+manually_insertion_icon);
+                oddParam.select2({placeholder: "0.5, 1, 1.5 etc...", tags: true});
+                pickLabel.html('Type');
+                pick.select2({data: picksOverUnder, minimumResultsForSearch: Infinity});
+            }
             else if (val == 48) { // Asian Handicap
                 teamsRow.fadeIn().show();
                 team1.val("").trigger("change").prop("disabled", false);
@@ -294,10 +329,11 @@ function addManualCouponSelection() {
                 pickContainer.fadeIn().show();
                 oddParamContainer.show();
                 oddParamLabel.html('Handicap'+manually_insertion_icon);
-                oddParam.select2({placeholder: "-2.5 ou 2.5", tags: true});
+                oddParam.select2({placeholder: "Exemple: +2.5 ou -2.5", tags: true});
                 pickLabel.html('Equipe Handicap');
                 pick.select2({data: picks12, minimumResultsForSearch: Infinity});
             }
+
         });
     }
 

@@ -50,7 +50,7 @@
 }*/
 function parisEnCoursDelete(table, type) {
     table.on('click', '.boutonsupprimer', function (e) {
-        var id = $(this).data('numero-pari');
+        var id = $(this).data('id');
         var l = Ladda.create(this);
         swal({
             title: "Supprimer le ticket",
@@ -70,11 +70,12 @@ function parisEnCoursDelete(table, type) {
                     type: 'delete',
                     success: function (data) {
                         if (data.etat == 0) {
-                            toastr.error(data.msg, 'Suppression');
+                            toastr.error(data.msg);
                         } else {
                             if(type == 'lt'){loadParisLongTerme();}else if(type == 'm'){loadParisABCD();}else if(type == 'c'){loadParisEnCours();}
-                            loadBookmakersOnDashboard();
-                            toastr.success(data.msg, 'Suppression');
+                            loadNeededWhenDeletePendingBets();
+
+                            toastr.success(data.msg);
                         }
                     },
                     complete: function (){

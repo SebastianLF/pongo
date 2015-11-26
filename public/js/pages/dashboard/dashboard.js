@@ -9,6 +9,7 @@ loadParisEnCours();
 loadParisLongTerme();
 loadParisABCD();
 loadParisTermine();
+loadReleveOnDashboard();
 loadGeneralRecapsOnDashboard();
 loadBookmakersOnDashboard();
 cashOut();

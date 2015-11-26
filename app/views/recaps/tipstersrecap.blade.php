@@ -79,8 +79,8 @@
                         {{$total_unites_benefs_par_mois_tipster}}
                     </td>
                     <td>
-                        <i class="fa fa-ellipsis-h" data-toggle="tooltip" data-placement="left"
-                           data-title="<table><tbody><tr><td>mise moyenne: {{floatval(round($recap_tipster->moyenne_mise_unites, 3)).' U'}}</td></tr><tr><td>montant par unité moyen: {{floatval(round($recap_tipster->moyenne_mt_par_unite_par_mois_tipster, 2)).Auth::user()->devise}}</td></tr><tr><td>% reussite pari simple</td><td>{{Auth::user()->devise}}</td></tr></tbody></table>"
+                        <i class="fa fa-ellipsis-h" data-toggle="tooltip" data-placement="top"
+                           data-title="<table><tbody><tr><td>mise moyenne:</td><td> {{floatval(round($recap_tipster->moyenne_mise_unites, 3)).' U'}}</td></tr><tr><td>montant par unité moyen:</td><td> {{floatval(round($recap_tipster->moyenne_mt_par_unite_par_mois_tipster, 2)).Auth::user()->devise}}</td></tr><tr><td>montant par unité actuel:</td><td> {{floatval($recap_tipster->tipster->montant_par_unite).Auth::user()->devise}}</td></tr></tbody></table>"
                            data-html="true">
                         </i>
                     </td>

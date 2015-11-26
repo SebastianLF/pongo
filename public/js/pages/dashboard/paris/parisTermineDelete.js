@@ -6,7 +6,7 @@ function parisTermineDelete(){
     var tablename = $('#paristerminetable');
     tablename.find('.bouton-supprimer-historique-pari').click(function (e) {
         e.preventDefault();
-        var id = $(this).data('numero-pari');
+        var id = $(this).data('pari-id');
 
         var l = Ladda.create(this);
 
@@ -35,9 +35,7 @@ function parisTermineDelete(){
                                 toastr.error(data.msg, 'Suppression');
                             } else {
                                 toastr.success(data.msg, 'Suppression');
-                                loadParisTermine();
-                                loadBookmakersOnDashboard();
-                                loadGeneralRecapsOnDashboard();
+                                loadNeededWhenDeleteClosedBets();
                             }
                         },
                         complete: function (){

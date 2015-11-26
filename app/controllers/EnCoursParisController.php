@@ -292,6 +292,17 @@
 
 		public function update($id)
 		{
+			$validator = Validator::make(Input::all(), array(), array());
+			$validator->each('status', ['required', 'in:0,1,2,3,4,5,9']);
+
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									if ($validator->fails()) {
+				$array = $validator->getMessageBag()->first();
+				return Response::json(array(
+					'etat' => 0,
+					'msg' => $array,
+				));
+			}
+
 			$encourspari = Auth::user()->enCoursParis()->where('id', $id)->first();
 			$status = Input::get('status');
 

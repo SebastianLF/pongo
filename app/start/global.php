@@ -31,7 +31,7 @@
 	|
 	*/
 	$logFile = 'laravel.log';
-	Log::useDailyFiles(storage_path().'/logs/'.$logFile);
+	Log::useDailyFiles(storage_path() . '/logs/' . $logFile);
 	/*
 	|--------------------------------------------------------------------------
 	| Application Error Handler
@@ -49,7 +49,7 @@
 		Log::error($exception);
 	});
 
-	App::error(function (BetNotDeletedCorrectlyException $exception){
+	App::error(function (BetNotDeletedCorrectlyException $exception) {
 		Log::error('le pari n \'a pas ete supprimé correctement');
 	});
 
@@ -176,23 +176,52 @@
 		if ($market == 7) { //Winner
 			return true;
 		} elseif ($market == 8) { // 1x2 with european handicap or Home Draw Away With Handicap
-			return true;
+			if (preg_match("(1|X|2)", $value)) {
+				return true;
+			}
+			return false;
 		} elseif ($market == 9) { // Double Chance
 			if (preg_match("(1X|X2|12)", $value)) {
 				return true;
-			} else {
-				return false;
 			}
+			return false;
+
 		} elseif ($market == 11) { // Half-Time / Full-Time
 			if (preg_match("(1/1|1/X|1/2|X/1|X/X|X/2|2/1|2/X|2/2)", $value)) {
 				return true;
-			} else {
-				return false;
 			}
+			return false;
+
+		} elseif ($market == 30) { // Anytime Goalscorer
+			if (strlen($value) <= 20) {
+				return true;
+			}
+			return false;
+		} elseif ($market == 37) { // Qualification
+			if (preg_match("(1|X|2)", $value)) {
+				return true;
+			}
+			return false;
 		} elseif ($market == 43) { // 1x2
-			return true;
+			if (preg_match("(1|X|2)", $value)) {
+				return true;
+			}
+			return false;
+		} elseif ($market == 45) { // Correct Score
+			if (strlen($value) <= 10) {
+				return true;
+			}
+			return false;
 		} elseif ($market == 46) { // Match Winner / HomeAway
-			return true;
+			if (preg_match("(1|2)", $value)) {
+				return true;
+			}
+			return false;
+		} elseif ($market == 47) { // Over Under
+			if (preg_match("(Over|Under)", $value)) {
+				return true;
+			}
+			return false;
 		} elseif ($market == 48) { // Asian Handicap
 			return true;
 		}
@@ -203,14 +232,20 @@
 		$market = $parameters[0];
 
 		if ($market == 8) { //1x2 with european handicap
-			if (preg_match("/^-?[0-9]\d*(\.\d+)?$/", $value)) {
+			if (preg_match("/^[+-][0-9]*(\.[0-9]{1})?$/", $value)) {
 				return true;
 			} else {
 				return false;
 			}
 
+		} elseif ($market == 47) { // Over Under
+			if (preg_match("/^\d+(\.\d{1})?$/", $value) && ctype_digit($value) && $value > 0) {
+				return true;
+			} else {
+				return false;
+			}
 		} elseif ($market == 48) { // Asian Handicap
-			if (preg_match("/^-?[0-9]\d*(\.\d+)?$/", $value)) {
+			if (preg_match("/^([+-][0-9]+|[0])(\.[0-9]{1})?$/", $value)) {
 				return true;
 			} else {
 				return false;

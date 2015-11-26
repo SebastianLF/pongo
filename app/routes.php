@@ -31,8 +31,8 @@
 	Route::post('cashout', 'EnCoursParisController@cashOut');
 	Route::get('parisabcd', 'EnCoursParisController@getEnCoursABCD');
 	Route::get('lettreabcd', 'EnCoursParisController@getlettreABCD');
-	Route::get('recaps', 'DashboardController@showRecaps');
 	Route::get('generalrecap', 'DashboardController@showGeneralRecap');
+	Route::get('releve', 'DashboardController@showReleve');
 	Route::get('all-bookmakers-on-autocomplete', 'BookmakerController@getAllBookmakersOnAutocomplete');
 
 	//bookmakers page

@@ -36,7 +36,7 @@ function parisEnCoursEnclose(tablename, type) {
         } else {
             l.start();
             $.ajax({
-                url: 'pari/'+$(this).data('numero-pari'),
+                url: 'pari/'+$(this).data('id'),
                 type: 'PUT',
                 data: 'amount-returned='+amount_returned,
                 dataType: 'json',

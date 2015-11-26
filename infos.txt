@@ -42,3 +42,6 @@ voir http://stackoverflow.com/questions/17588139/how-to-use-ajax-with-jquery-in-
    					4 = 1/2 perdu,
    					5 = remboursé,
    					6 = cashouted,
+   					7 = gagne partiel (c'est le 1/2 gagné pour les combinés),
+   					8 = perdu partiel (c'est le 1/2 perdu pour les combinés),
+   					9 = annulé,

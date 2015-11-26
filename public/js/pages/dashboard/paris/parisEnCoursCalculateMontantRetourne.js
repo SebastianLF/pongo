@@ -9,6 +9,7 @@ function calculMontantRetourne(table) {
         var main_parent, montant_retourne_input, mise, montant_retourne;
         var selection_id = $(this).closest('tr').data('selection-id');
 
+
         //si combiné
         if ($this.closest('tr .details').length > 0) {
             var status = [];
@@ -62,8 +63,6 @@ function calculMontantRetourne(table) {
                             target
                                 .prop('number', now)
                                 .val(parseFloat(floored_number));
-
-
                         }
                     },
                     'normal',
@@ -72,14 +71,14 @@ function calculMontantRetourne(table) {
                         updateParisEnCours(status, main_parent.data('pari-id'), montant_retourne_input.val(), cote_general);
                     }
                 );
-
             }
 
             //si simple
         } else {
+            var status = [];
             main_parent = $this.closest('tr');
             montant_retourne_input = main_parent.find('input[name="amount-returned"]');
-            status = $this.val();
+            status.push($this.val());
 
             var cote = main_parent.find('.tdcote').text();
             mise = main_parent.find('.tdsubmise').text();
@@ -141,6 +140,8 @@ function calcul_nouvelle_cote_par_rapport_a_status(cote, status) {
     } else if (status == 4) {
         cote_apres_status = cote_apres_status * 0.5;
     } else if (status == 5) {
+        cote_apres_status += 0;
+    } else if (status == 9) {
         cote_apres_status += 0;
     }
     return cote_apres_status;

@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+	use Illuminate\Database\Migrations\Migration;
+	use Illuminate\Database\Schema\Blueprint;
 
-class CreateSportScopeTable extends Migration {
+	class CreateSportScopeTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -18,7 +18,6 @@ class CreateSportScopeTable extends Migration {
 			$table->tinyInteger('pirorite')->default(3);
 			$table->integer('sport_id')->unsigned();
 			$table->integer('scope_id')->unsigned();
-			$table->timestamps();
 			$table->foreign('sport_id')->references('id')->on('sports')
 				->onDelete('cascade')
 				->onUpdate('restrict');
