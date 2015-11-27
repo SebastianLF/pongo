@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="version fonctionnelle v0.1">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/DashboardController.php" afterPath="$PROJECT_DIR$/app/controllers/DashboardController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="9a530f09-4cfd-4f98-b2e3-9a97dcdef514" name="Failed commit: Default" comment="correction cloturation paris combviné avec plus de 3 selections" />
@@ -73,10 +72,10 @@
       <file leaf-file-name="DashboardController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41957104">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.46514747">
+              <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
               <folding>
-                <marker date="1448631582568" expanded="false" signature="8:82" placeholder="..." />
+                <element signature="e#8#26#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2711,12 +2710,6 @@
       <option name="number" value="Default" />
       <updated>1411579515527</updated>
     </task>
-    <task id="LOCAL-00327" summary="affichage montant retourné si combiné">
-      <created>1445137322570</created>
-      <option name="number" value="00327" />
-      <option name="project" value="LOCAL" />
-      <updated>1445137322570</updated>
-    </task>
     <task id="LOCAL-00328" summary="multiple petits debug notament live affichage">
       <created>1445143727268</created>
       <option name="number" value="00328" />
@@ -3005,7 +2998,13 @@
       <option name="project" value="LOCAL" />
       <updated>1448631590827</updated>
     </task>
-    <option name="localTasksCounter" value="376" />
+    <task id="LOCAL-00376" summary="version fonctionnelle v0.1">
+      <created>1448632149676</created>
+      <option name="number" value="00376" />
+      <option name="project" value="LOCAL" />
+      <updated>1448632149676</updated>
+    </task>
+    <option name="localTasksCounter" value="377" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -3497,10 +3496,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41957104">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.46514747">
+          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
           <folding>
-            <marker date="1448631582568" expanded="false" signature="8:82" placeholder="..." />
+            <element signature="e#8#26#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
