@@ -3,7 +3,7 @@
 	use Illuminate\Database\Migrations\Migration;
 	use Illuminate\Database\Schema\Blueprint;
 
-	class AddIsOutrightToCoupon extends Migration {
+	class AddIsoutrightToCoupon extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -24,9 +24,7 @@
 	 */
 	public function down()
 	{
-		Schema::table('coupon', function(Blueprint $table) {
-			
-		});
+
 	}
 
 }

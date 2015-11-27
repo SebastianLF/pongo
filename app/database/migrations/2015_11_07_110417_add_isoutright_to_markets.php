@@ -3,7 +3,7 @@
 	use Illuminate\Database\Migrations\Migration;
 	use Illuminate\Database\Schema\Blueprint;
 
-	class AddIsOutrightToMarkets extends Migration {
+	class AddIsoutrightToMarkets extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -24,9 +24,6 @@
 	 */
 	public function down()
 	{
-		Schema::table('markets', function(Blueprint $table) {
-			
-		});
 	}
 
 }

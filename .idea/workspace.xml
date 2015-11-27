@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="version fonctionnelle v0.1">
-      <change type="MOVED" beforePath="C:\wamp\www\slfweb\app\database\attente\2015_11_07_110417_add_isoutright_to_markets.php" afterPath="$PROJECT_DIR$/app/database/migrations/2015_11_07_110417_add_isoutright_to_markets.php" />
-      <change type="MOVED" beforePath="C:\wamp\www\slfweb\app\database\attente\2015_11_07_112437_add_isoutright_to_coupon.php" afterPath="$PROJECT_DIR$/app/database/migrations/2015_11_07_112437_add_isoutright_to_coupon.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2015_11_07_110417_add_isoutright_to_markets.php" afterPath="$PROJECT_DIR$/app/database/migrations/2015_11_07_110417_add_isoutright_to_markets.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2015_11_07_112437_add_isoutright_to_coupon.php" afterPath="$PROJECT_DIR$/app/database/migrations/2015_11_07_112437_add_isoutright_to_coupon.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -72,11 +72,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loadParisGeneral.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="loadParisGeneral.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisGeneral.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5064767">
+            <state vertical-scroll-proportion="0.0">
               <caret line="110" column="26" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015_11_07_112437_add_isoutright_to_coupon.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_11_07_112437_add_isoutright_to_coupon.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.346153">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015_11_07_110417_add_isoutright_to_markets.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_11_07_110417_add_isoutright_to_markets.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.45576409">
+              <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -184,8 +204,6 @@
         <option value="$PROJECT_DIR$/app/database/migrations/2015_11_07_092712_add_softdelete_to_paris.php" />
         <option value="$PROJECT_DIR$/app/models/Pari.php" />
         <option value="$PROJECT_DIR$/app/models/User.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2015_11_07_110417_add_isoutright_to_markets.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2015_11_07_112437_add_isoutright_to_coupon.php" />
         <option value="$PROJECT_DIR$/app/views/layouts/default.blade.php" />
         <option value="$PROJECT_DIR$/public/v4.1.0/theme/assets/admin/layout/css/custom.css" />
         <option value="$PROJECT_DIR$/app/views/bet/enattente.php" />
@@ -223,6 +241,8 @@
         <option value="$PROJECT_DIR$/app/lib/pari/PariAffichage.php" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisGeneral.js" />
         <option value="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_11_07_112437_add_isoutright_to_coupon.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_11_07_110417_add_isoutright_to_markets.php" />
       </list>
     </option>
   </component>
@@ -2701,12 +2721,6 @@
       <option name="number" value="Default" />
       <updated>1411579515527</updated>
     </task>
-    <task id="LOCAL-00323" summary="reorganisation des fichiers js et css">
-      <created>1444972876392</created>
-      <option name="number" value="00323" />
-      <option name="project" value="LOCAL" />
-      <updated>1444972876396</updated>
-    </task>
     <task id="LOCAL-00324" summary=" + cdn">
       <created>1444974363596</created>
       <option name="number" value="00324" />
@@ -2995,7 +3009,13 @@
       <option name="project" value="LOCAL" />
       <updated>1448626495483</updated>
     </task>
-    <option name="localTasksCounter" value="372" />
+    <task id="LOCAL-00372" summary="version fonctionnelle v0.1">
+      <created>1448627693253</created>
+      <option name="number" value="00372" />
+      <option name="project" value="LOCAL" />
+      <updated>1448627693253</updated>
+    </task>
+    <option name="localTasksCounter" value="373" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -3110,13 +3130,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisTermine.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.68">
@@ -3455,22 +3468,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_11_07_110417_add_isoutright_to_markets.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_11_07_112437_add_isoutright_to_coupon.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39278936">
-          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/bin/classpreloader.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3501,8 +3498,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisGeneral.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5064767">
+        <state vertical-scroll-proportion="0.0">
           <caret line="110" column="26" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_11_07_092712_add_softdelete_to_paris.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_11_07_112437_add_isoutright_to_coupon.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.346153">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_11_07_110417_add_isoutright_to_markets.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45576409">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
           <folding />
         </state>
       </provider>
