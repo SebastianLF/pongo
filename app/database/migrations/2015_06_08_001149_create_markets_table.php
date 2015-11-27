@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+	use Illuminate\Database\Migrations\Migration;
+	use Illuminate\Database\Schema\Blueprint;
 
-class CreateMarketsTable extends Migration {
+	class CreateMarketsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -20,6 +20,7 @@ class CreateMarketsTable extends Migration {
 			$table->string('fr');
 			$table->string('priorite');
 			$table->tinyInteger('status')->default(0);
+			$table->boolean('isOutright');
 			$table->boolean('isMatch')->default(0);
 			$table->timestamps();
 		});

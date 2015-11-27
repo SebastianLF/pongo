@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
+	use Illuminate\Database\Migrations\Migration;
+	use Illuminate\Database\Schema\Blueprint;
 
-class CreateCouponTable extends Migration {
+	class CreateCouponTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -44,6 +44,7 @@ class CreateCouponTable extends Migration {
 			$table->string('away_team_country_name')->nullable();
 			$table->string('score')->nullable();
 			$table->boolean('isLive');
+			$table->boolean('isOutright');
 			$table->boolean('isMatch'); // si true, sport co et sinon sport individuel.
 			$table->string('session_id');
 		});
