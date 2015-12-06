@@ -141,7 +141,7 @@
                                                         </iframe> -->
                                                     @else
                                                         <iframe src="http://betbrain.com/?portalId=1326&userSessionId={{Session::getId()}}"
-                                                                [3] height="1090" width="955" frameborder="0">Odds
+                                                                [3] height="1090" width="100%" frameborder="0">Odds
                                                             service provided in co-operation with <a
                                                                     href="http://www.betbrain.com" [4]
                                                                     target="_blank"><b>BetBrain.com</b></a></iframe>
