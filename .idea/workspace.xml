@@ -141,12 +141,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PariController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PariController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/PariController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4180328">
+            <state vertical-scroll-proportion="-7.8461537">
               <caret line="425" column="76" selection-start-line="425" selection-start-column="76" selection-end-line="425" selection-end-column="76" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="paristermine.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/bet/paristermine.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4262295">
+              <caret line="56" column="85" selection-start-line="56" selection-start-column="85" selection-end-line="56" selection-end-column="85" />
+              <folding>
+                <marker date="1449452408890" expanded="true" signature="7163:7489" placeholder="..." />
+                <marker date="1449452408890" expanded="true" signature="7212:7488" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -247,7 +260,6 @@
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/dashboard.js" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/loadRecaps.js" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/loadReleve.js" />
-        <option value="$PROJECT_DIR$/app/views/bet/paristermine.blade.php" />
         <option value="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/parisEnCoursEnclose.js" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/parisTermineDelete.js" />
@@ -272,6 +284,7 @@
         <option value="$PROJECT_DIR$/app/lib/pari/PariAffichage.php" />
         <option value="$PROJECT_DIR$/app/start/global.php" />
         <option value="$PROJECT_DIR$/app/controllers/PariController.php" />
+        <option value="$PROJECT_DIR$/app/views/bet/paristermine.blade.php" />
       </list>
     </option>
   </component>
@@ -2678,12 +2691,6 @@
       <option name="number" value="Default" />
       <updated>1411579515527</updated>
     </task>
-    <task id="LOCAL-00334" summary="petites modif table paris en cours">
-      <created>1445164070784</created>
-      <option name="number" value="00334" />
-      <option name="project" value="LOCAL" />
-      <updated>1445164070784</updated>
-    </task>
     <task id="LOCAL-00335" summary="ajout de hotjar et zopim">
       <created>1445170581201</created>
       <option name="number" value="00335" />
@@ -2972,7 +2979,13 @@
       <option name="project" value="LOCAL" />
       <updated>1449452043535</updated>
     </task>
-    <option name="localTasksCounter" value="383" />
+    <task id="LOCAL-00383" summary="modif regle validation pour le market Over Under">
+      <created>1449452373629</created>
+      <option name="number" value="00383" />
+      <option name="project" value="LOCAL" />
+      <updated>1449452373629</updated>
+    </task>
+    <option name="localTasksCounter" value="384" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -3196,13 +3209,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14237855">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bet/paristermine.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3652393">
-          <caret line="132" column="249" selection-start-line="132" selection-start-column="220" selection-end-line="132" selection-end-column="249" />
         </state>
       </provider>
     </entry>
@@ -3492,9 +3498,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/PariController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4180328">
+        <state vertical-scroll-proportion="-7.8461537">
           <caret line="425" column="76" selection-start-line="425" selection-start-column="76" selection-end-line="425" selection-end-column="76" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/bet/paristermine.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4262295">
+          <caret line="56" column="85" selection-start-line="56" selection-start-column="85" selection-end-line="56" selection-end-column="85" />
+          <folding>
+            <marker date="1449452408890" expanded="true" signature="7163:7489" placeholder="..." />
+            <marker date="1449452408890" expanded="true" signature="7212:7488" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
