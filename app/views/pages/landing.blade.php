@@ -64,7 +64,7 @@
                     <a href="{{url('auth/login')}}">Se connecter</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="{{url('')}}">S'inscrire</a>
+                    <a href="{{url('auth/inscription')}}">S'inscrire</a>
                 </li>
 
             </ul>
