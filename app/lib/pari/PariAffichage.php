@@ -97,9 +97,9 @@
 				}
 			} elseif ($affichage_num == 2) {
 				if ($pick == 'Over') {
-					return 'Plus de ' . $oddParameter1 . ' Buts';
+					return 'Plus de ' . $oddParameter1 . ' buts au total';
 				} elseif ($pick == 'Under') {
-					return 'Moins de ' . $oddParameter1 . ' Buts';
+					return 'Moins de ' . $oddParameter1 . ' buts au total';
 				}
 				return $pick . ' ' . $oddParameter1 . ' Total Goals';
 			} elseif ($affichage_num == 3) {

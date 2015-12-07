@@ -239,11 +239,11 @@
 			}
 
 		} elseif ($market == 47) { // Over Under
-			if (preg_match("/^\d+(\.\d{1})?$/", $value) && ctype_digit($value) && $value > 0) {
+			if (preg_match("/^\d+(\.\d{1})?$/", $value) && $value > 0) {
 				return true;
-			} else {
-				return false;
 			}
+			return false;
+
 		} elseif ($market == 48) { // Asian Handicap
 			if (preg_match("/^([+-][0-9]+|[0])(\.[0-9]{1})?$/", $value)) {
 				return true;
