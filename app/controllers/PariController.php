@@ -425,7 +425,7 @@
 				if ($pari->followtype == 'n') {
 					//mis à jour du solde du compte-bookmaker correspondant.
 					$compte = $pari->compte()->first();
-					$compte->bankroll_actuelle += $pari->montant_retour;
+					$compte->bankroll_actuelle -= $pari->montant_retour;
 					$compte->save();
 				}
 
