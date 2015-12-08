@@ -9,8 +9,7 @@
     <table id="paristerminetable" class="table table-light table-condensed table-hover table-paris">
         <thead>
         <tr class="uppercase">
-            <th >N°</th>
-            <th>date r.</th>
+            <th>cloturé le</th>
             <th class="hidden-sm">Sport</th>
             <th class="hidden-sm">Competition</th>
             <th>Pari</th>
@@ -33,10 +32,9 @@
                 $selections['pariAffichage'] = $pariAffichage;
             } ?>
             <tr data-selections='{{{$selections_final}}}' data-nb-selections='{{{$pari->selections->count()}}}' data-pick="{{$selections->pick}}" data-name1='{{$selections->equipe1['name']}}' data-pari-id='{{{$pari->id}}}' data-selection-id='{{{$pari->type_profil == "s" ? $selections->id : ""}}}' data-pari-type='{{{$pari->type_profil}}}'>
-                <td >{{{'#'.$pari->numero_pari}}}</td>
                 <td>
                     @if($pari->type_profil == 's')
-                        <?php $date = Carbon::createFromFormat('Y-m-d H:i:s', $pari->selections->first()->date_match, 'Europe/Paris');
+                        <?php $date = Carbon::createFromFormat('Y-m-d H:i:s', $pari->selections->first()->closed_at, 'Europe/Paris');
                         $date->setTimezone(Auth::user()->timezone);?>
                         {{{' '.$date->format('d/m/Y H:i')}}}
                     @else

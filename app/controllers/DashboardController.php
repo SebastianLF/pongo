@@ -179,7 +179,7 @@
 
 					break;
 				case 'paristermine':
-					$parisTermine = Auth::user()->termineParis()->with('selections.equipe1', 'selections.equipe1.country', 'selections.equipe2', 'selections.equipe2.country', 'selections.competition', 'selections.sport', 'selections.scope', 'compte.bookmaker', 'tipster')->orderBy('numero_pari', 'asc')->get();
+					$parisTermine = Auth::user()->termineParis()->with('selections.equipe1', 'selections.equipe1.country', 'selections.equipe2', 'selections.equipe2.country', 'selections.competition', 'selections.sport', 'selections.scope', 'compte.bookmaker', 'tipster')->orderBy('closed_at', 'desc')->get();
 					Clockwork::info($parisTermine);
 
 					$countParisTermine = $parisTermine->count();
