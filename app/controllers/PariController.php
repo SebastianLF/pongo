@@ -361,7 +361,7 @@
 				$encoursparis->result = 1;
 
 				//date de cloture du pari
-				$encoursparis->closed_at = Carbon::now(Auth::user()->timezone);
+				$encoursparis->closed_at = Carbon::now('Europe/Paris');
 
 				if ($encoursparis->save()) {
 					// mis a jour des bankrolls des bookmakers uniquement si le followtype est de type normal.
