@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="ajout du champ closed_at dans la table pari">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/DashboardController.php" afterPath="$PROJECT_DIR$/app/controllers/DashboardController.php" />
+    <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="modif td cloture paris termines">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/paristermine.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/paristermine.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -85,12 +84,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DashboardController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DashboardController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5755054">
+            <state vertical-scroll-proportion="-18.615385">
               <caret line="181" column="299" selection-start-line="181" selection-start-column="299" selection-end-line="181" selection-end-column="299" />
-              <folding />
+              <folding>
+                <marker date="1449560433919" expanded="false" signature="8:82" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -127,14 +128,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="paristermine.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="paristermine.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/bet/paristermine.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.115385">
-              <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.60642093">
+              <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
               <folding>
-                <marker date="1449560338715" expanded="true" signature="7085:7411" placeholder="..." />
-                <marker date="1449560338715" expanded="true" signature="7134:7410" placeholder="..." />
+                <marker date="1449560975288" expanded="true" signature="7047:7373" placeholder="..." />
+                <marker date="1449560975288" expanded="true" signature="7096:7372" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -259,8 +260,8 @@
         <option value="$PROJECT_DIR$/app/views/pages/landing.blade.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2015_12_08_062135_add_closedat_to_paris.php" />
         <option value="$PROJECT_DIR$/app/controllers/PariController.php" />
-        <option value="$PROJECT_DIR$/app/views/bet/paristermine.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/DashboardController.php" />
+        <option value="$PROJECT_DIR$/app/views/bet/paristermine.blade.php" />
       </list>
     </option>
   </component>
@@ -2707,12 +2708,6 @@
       <option name="number" value="Default" />
       <updated>1411579515527</updated>
     </task>
-    <task id="LOCAL-00339" summary="debug admin">
-      <created>1445313833066</created>
-      <option name="number" value="00339" />
-      <option name="project" value="LOCAL" />
-      <updated>1445313833067</updated>
-    </task>
     <task id="LOCAL-00340" summary="bootstrap non cdn .. etc..">
       <created>1446049877138</created>
       <option name="number" value="00340" />
@@ -3001,7 +2996,13 @@
       <option name="project" value="LOCAL" />
       <updated>1449559880709</updated>
     </task>
-    <option name="localTasksCounter" value="388" />
+    <task id="LOCAL-00388" summary="modif td cloture paris termines">
+      <created>1449560451945</created>
+      <option name="number" value="00388" />
+      <option name="project" value="LOCAL" />
+      <updated>1449560451945</updated>
+    </task>
+    <option name="localTasksCounter" value="389" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -3081,7 +3082,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="petites modif table paris en cours" />
     <MESSAGE value="ajout de hotjar et zopim" />
     <MESSAGE value="hotjar supprimé." />
     <MESSAGE value="modif selection coupon" />
@@ -3106,7 +3106,8 @@
     <MESSAGE value="modif taille betbrain panel" />
     <MESSAGE value="modif regle validation pour le market Over Under" />
     <MESSAGE value="ajout du champ closed_at dans la table pari" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout du champ closed_at dans la table pari" />
+    <MESSAGE value="modif td cloture paris termines" />
+    <option name="LAST_COMMIT_MESSAGE" value="modif td cloture paris termines" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -3501,6 +3502,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/PariController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.884615">
+          <caret line="357" column="63" selection-start-line="357" selection-start-column="63" selection-end-line="357" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.615385">
+          <caret line="181" column="299" selection-start-line="181" selection-start-column="299" selection-end-line="181" selection-end-column="299" />
+          <folding>
+            <marker date="1449560433919" expanded="false" signature="8:82" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..paris">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -3514,30 +3533,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/PariController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.884615">
-          <caret line="357" column="63" selection-start-line="357" selection-start-column="63" selection-end-line="357" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bet/paristermine.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385">
-          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.60642093">
+          <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
           <folding>
-            <marker date="1449560338715" expanded="true" signature="7085:7411" placeholder="..." />
-            <marker date="1449560338715" expanded="true" signature="7134:7410" placeholder="..." />
+            <marker date="1449560975288" expanded="true" signature="7047:7373" placeholder="..." />
+            <marker date="1449560975288" expanded="true" signature="7096:7372" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/DashboardController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5755054">
-          <caret line="181" column="299" selection-start-line="181" selection-start-column="299" selection-end-line="181" selection-end-column="299" />
-          <folding />
         </state>
       </provider>
     </entry>

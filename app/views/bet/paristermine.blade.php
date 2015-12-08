@@ -31,15 +31,17 @@
                 $pariAffichage = $pari_affichage->display($selections->market_id, $selections->scope_id, $selections->pick, $selections->odd_doubleParam, $selections->odd_doubleParam2, $selections->odd_doubleParam3, $selections->odd_participantParameterName, $selections->odd_participantParameterName2, $selections->odd_participantParameterName3, $selections->equipe1['name'], $selections->equipe2['name']);
                 $selections['pariAffichage'] = $pariAffichage;
             } ?>
-            <tr data-selections='{{{$selections_final}}}' data-nb-selections='{{{$pari->selections->count()}}}' data-pick="{{$selections->pick}}" data-name1='{{$selections->equipe1['name']}}' data-pari-id='{{{$pari->id}}}' data-selection-id='{{{$pari->type_profil == "s" ? $selections->id : ""}}}' data-pari-type='{{{$pari->type_profil}}}'>
+            <tr data-selections='{{{$selections_final}}}' data-nb-selections='{{{$pari->selections->count()}}}'
+                data-pick="{{$selections->pick}}" data-name1='{{$selections->equipe1['name']}}'
+                data-pari-id='{{{$pari->id}}}'
+                data-selection-id='{{{$pari->type_profil == "s" ? $selections->id : ""}}}'
+                data-pari-type='{{{$pari->type_profil}}}'>
                 <td>
-                    @if($pari->type_profil == 's')
-                        <?php $date = Carbon::createFromFormat('Y-m-d H:i:s', $pari->selections->first()->closed_at, 'Europe/Paris');
-                        $date->setTimezone(Auth::user()->timezone);?>
-                        {{{' '.$date->format('d/m/Y H:i')}}}
-                    @else
-                        <span class="label label-sm label-success label-mini">combiné</span>
-                    @endif
+
+                    <?php $date = Carbon::createFromFormat('Y-m-d H:i:s', $pari->closed_at, 'Europe/Paris');
+                    $date->setTimezone(Auth::user()->timezone);?>
+                    {{{' '.$date->format('d/m/Y H:i')}}}
+
 
                 </td>
                 <td class="hidden-sm">
@@ -119,11 +121,14 @@
                 </td>
                 <td>
                     @if($pari->montant_profit > 0)<span class="bold font-green-sharp">
-                                <span class="profits">{{' +'.floatval($pari->montant_profit)}}</span><span class="devise">{{{Auth::user()->devise}}}</span>
-                    @elseif($pari->montant_profit < 0)<span class="bold font-red-haze"><span
-                                class="profits">{{floatval($pari->montant_profit)}}</span> <span class="devise">{{{Auth::user()->devise}}}</span>
-                    @else($pari->montant_profit == 0)<span class="bold"><span
-                                class="profits">{{floatval($pari->montant_profit)}}</span><span class="devise">{{{Auth::user()->devise}}}</span>
+                                <span class="profits">{{' +'.floatval($pari->montant_profit)}}</span><span
+                                class="devise">{{{Auth::user()->devise}}}</span>
+                        @elseif($pari->montant_profit < 0)<span class="bold font-red-haze"><span
+                                    class="profits">{{floatval($pari->montant_profit)}}</span> <span class="devise">{{{Auth::user()->devise}}
+                                }</span>
+                            @else($pari->montant_profit == 0)<span class="bold"><span
+                                        class="profits">{{floatval($pari->montant_profit)}}</span><span class="devise">{{{Auth::user()->devise}}
+                                    }</span>
                     @endif
                 </td>
 
