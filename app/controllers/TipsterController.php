@@ -229,7 +229,7 @@
 		public function getMyTipsters()
 		{
 			$nom = Input::get('q');
-			$tipsters = Auth::user()->tipsters()->where('name', 'LIKE', '%' . $nom . '%')->get(array('id', 'name AS text', 'montant_par_unite', 'followtype'));
+			$tipsters = Auth::user()->tipsters()->where('visible', 1)->where('name', 'LIKE', '%' . $nom . '%')->get(array('id', 'name AS text', 'montant_par_unite', 'followtype'));
 			return Response::json($tipsters);
 		}
 

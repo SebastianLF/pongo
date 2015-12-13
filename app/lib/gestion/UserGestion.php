@@ -1,11 +1,11 @@
 <?php 
 namespace lib\gestion;
 
-use User;
-use Input;
 use Hash;
-use Tipster;
+use Input;
 use Mail;
+use Tipster;
+use User;
 
 class UserGestion implements UserGestionInterface {
 
@@ -32,10 +32,12 @@ class UserGestion implements UserGestionInterface {
 
 
         //creation du tipster par defaut
-		$tispter = new Tipster;
-		$tispter->name = 'Tipster Exemple #1';
-		$tispter->montant_par_unite = 20;
-		$tispter->followtype = 'n';
+		$tispter = new Tipster(array(
+			'name' => 'default',
+			'montant_par_unite' => 20,
+			'followtype' => 'n',
+		));
+
         $user->tipsters()->save($tispter);
 	}
 

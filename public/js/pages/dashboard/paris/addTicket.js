@@ -43,11 +43,11 @@ function refreshSelections() {
             //openOrCloseSelectionsCouponAccordeonWhenSelectionsCouponIsRefreshed(data.count);
 
             // calcul de la cote générale du combiné et attribution dans le input.
-            if(data.count > 1){
-                form.find('#automatic-selections').find('input[name="automatic-selection-cote[]"]').each(function(){
+            if (data.count > 1) {
+                form.find('#automatic-selections').find('input[name="automatic-selection-cote[]"]').each(function () {
                     cote_generale_combine *= $(this).val();
                 });
-                form.find('#automatic-selections table tbody').append('<tr><td></td><td>Cote combiné</td><td><input class=" form-control input-coupon-odd" name="total-cote-combine" type="text" value="'+(Math.round(cote_generale_combine * 100) / 100)+'"></td><td></td></tr>');
+                form.find('#automatic-selections table tbody').append('<tr><td></td><td>Cote combiné</td><td><input class=" form-control input-coupon-odd" name="total-cote-combine" type="text" value="' + (Math.round(cote_generale_combine * 100) / 100) + '"></td><td></td></tr>');
             }
         },
         error: function (data) {
@@ -67,7 +67,7 @@ function openOrCloseSelectionsCouponAccordeonWhenSelectionsCouponIsRefreshed(cou
     if (count > 0) {
         $('#panier-selections-add-ticket').collapse('show');
     } else {
-        if( ! $('#panier-selections-add-ticket').hasClass('in')) {
+        if (!$('#panier-selections-add-ticket').hasClass('in')) {
             $('#panier-selections-add-ticket').collapse('hide');
         }
 
@@ -118,6 +118,8 @@ function gestionTicket() {
     var form = $('#automaticform-add');
     var form_string = '#automaticform-add';
     var tipster = form.find('#tipstersinputdashboard');
+    var cote_tipster = form.find('#cote-tipster');
+    var cote_tipster_container = form.find('#cote-tipster-container');
     var followtype = form.find('#followtypeinputdashboard');
     var amount_per_unit = form.find('#amountperunit');
     var typestake = form.find('#typestakeinputdashboard');
@@ -136,6 +138,7 @@ function gestionTicket() {
 
     var options_container = form.find('#optionscontainer');
     var bookmaker_container = form.find('#bookmakercontainer');
+    var bookmaker_account_container = form.find('#bookmaker_account_container');
     var typestake_container = form.find('#typestakecontainer');
 
     var submit_container = form.find('#submitboutoncontainer');
@@ -145,8 +148,20 @@ function gestionTicket() {
 
 
     function assignerEtatEnDebut() {
-        montant_par_unite_info_span.hide();
-        resetGeneralForm();
+        cote_tipster_container.addClass('hidden');
+        cote_tipster.val('');
+        montant_par_unite_info_value.text(parseFloat(user.mon_mt_par_unite));
+        followtype.val(null).trigger('change');
+        amount_per_unit.val(user.mon_mt_par_unite);
+        typestake.val('f').trigger("change");
+        conversion_to_devise.val(0).prop('disabled', true);
+        devise_stake.val(0).prop('disabled', true);
+        unit_stake.val(0);
+        bookmaker_account.val(null).trigger("change").html('');
+        containerABCD.addClass("hide");
+        serieABCD.val(null).trigger("change").prop('disabled', true);
+        letterABCD.val(null).trigger("change").prop('disabled', true);
+        resetCheckboxs();
         abcd_checkbox.on('click', function () {
             if ($(this).is(':checked')) {
                 containerABCD.removeClass("hide");
@@ -193,8 +208,12 @@ function gestionTicket() {
                 }
 
                 var optionlt = [];
-                $('#automaticform-add').find('input[name="optionlt[]"]').each(function(){
-                    if ($(this).is(":checked")) {optionlt.push(1);} else {optionlt.push(0);}
+                $('#automaticform-add').find('input[name="optionlt[]"]').each(function () {
+                    if ($(this).is(":checked")) {
+                        optionlt.push(1);
+                    } else {
+                        optionlt.push(0);
+                    }
                 });
 
                 l.start();
@@ -215,8 +234,9 @@ function gestionTicket() {
                                 toastr.error(json.msg, 'Erreur:');
                             }
                         } else if (json.etat == 1) {
-                            tipster.val(null).trigger('change');
-                            resetGeneralForm();
+                            unit_stake.val(0);
+                            devise_stake.val(0);
+                            cote_tipster.val('');
                             refreshSelections();
                             loadNeededWhenAddToCurrentBets();
                             toastr.success(json.msg, 'Pari');
@@ -261,7 +281,6 @@ function gestionTicket() {
     }
 
 
-
     function gestionTipsters() {
         tipster.select2({
             allowClear: true,
@@ -284,28 +303,18 @@ function gestionTicket() {
             }
         }).on('change', function () {
 
-
             // informations du tipster.
             var tipster_infos = tipster.select2('data');
-
+            var mt = '';
             // remise à zero
             conversion_to_devise.val(0);
             devise_stake.val(0);
             unit_stake.val(0);
 
             if (tipster.val() == '') {
-                resetGeneralForm();
-                followtype.val(null).trigger('change');
-                amount_per_unit.val(null);
-                options_container.addClass('hidden');
-                bookmaker_container.addClass('hidden');
-                typestake_container.addClass('hidden');
-
-                //le tooltip info est détruit.
-                montant_par_unite_info_span.fadeOut();
-                montant_par_unite_info_value.text("");
-
-            } else {
+                followtype.val('n').trigger('change');
+                cote_tipster.val('');
+                cote_tipster_container.addClass('hidden');
 
                 //affichage des infos (montant par unité) du tipster dans le span.
                 // how many decimal places allows
@@ -315,9 +324,9 @@ function gestionTicket() {
                 montant_par_unite_info_value
                     .animateNumber(
                     {
-                        number: tipster_infos[0]['montant_par_unite'] * decimal_factor,
+                        number: user.mon_mt_par_unite * decimal_factor,
 
-                        numberStep: function(now, tween) {
+                        numberStep: function (now, tween) {
                             var floored_number = Math.floor(now) / decimal_factor,
                                 target = $(tween.elem);
 
@@ -335,43 +344,72 @@ function gestionTicket() {
                 );
                 montant_par_unite_info_span.fadeIn();
 
-                submit_container.fadeIn();
-                options_container.fadeIn().removeClass('hidden');
-                bookmaker_container.fadeIn().removeClass('hidden');
-                typestake_container.fadeIn().removeClass('hidden');
+                mt = Number(user.mon_mt_par_unite);
+                isNaN(mt) ? amount_per_unit.val('') : amount_per_unit.val(mt);
+
+            } else {
+
+                cote_tipster.val('');
+                cote_tipster_container.fadeIn().removeClass('hidden');
+
+                //affichage des infos (montant par unité) du tipster dans le span.
+                // how many decimal places allows
+                var decimal_places = 2;
+                var decimal_factor = decimal_places === 0 ? 1 : Math.pow(10, decimal_places);
+
+                montant_par_unite_info_value
+                    .animateNumber(
+                    {
+                        number: tipster_infos[0]['montant_par_unite'] * decimal_factor,
+
+                        numberStep: function (now, tween) {
+                            var floored_number = Math.floor(now) / decimal_factor,
+                                target = $(tween.elem);
+
+                            if (decimal_places > 0) {
+                                // force decimal places even if they are 0
+                                floored_number = floored_number.toFixed(decimal_places);
+
+                                // replace '.' separator with ','
+                                // floored_number = floored_number.toString().replace('.', ',');
+                            }
+
+                            target.text(parseFloat(floored_number));
+                        }
+                    }
+                );
+                montant_par_unite_info_span.fadeIn();
+
                 if (tipster_infos[0]['followtype'] == 'n') {
                     followtype.val('n').trigger('change');
-                    bookmaker_account.prop('disabled', false);
-                    bookmaker_container.removeClass('hidden');
-                    misAjourCompteBookmaker();
                 }
                 else if (tipster_infos[0]['followtype'] == 'b') {
                     followtype.val('b').trigger('change');
-                    bookmaker_account.prop('disabled', true);
-                    bookmaker_container.addClass('hidden');
                 }
+
+                mt = Number(tipster_infos[0]['montant_par_unite']);
+                isNaN(mt) ? amount_per_unit.val('') : amount_per_unit.val(mt);
             }
-            var mt = Number(tipster_infos[0]['montant_par_unite']);
-            isNaN(mt) ? amount_per_unit.val('') : amount_per_unit.val(mt);
+
 
 
         });
 
     }
 
-    function gestionFollowtype(){
-        followtype.on('change', function (){
-            if(tipster.val() != ''){
-                if(followtype.val() == 'n'){
-                    bookmaker_account.prop('disabled', false);
-                    bookmaker_container.fadeIn().removeClass('hidden');
-                }else{
-                    bookmaker_account.prop('disabled', true);
-                    bookmaker_container.fadeOut().addClass('hidden');
-                }
+    function gestionFollowtype() {
+        followtype.on('change', function () {
+
+            if (followtype.val() == 'n') {
+                bookmaker_account_container.prop('disabled', false);
+                bookmaker_account_container.fadeIn().removeClass('hidden');
+                misAjourCompteBookmaker();
+            } else {
+                bookmaker_account_container.prop('disabled', true);
+                bookmaker_account_container.fadeOut().addClass('hidden');
             }
-        });
-        followtype.select2({
+
+        }).select2({
             cache: true,
             minimumResultsForSearch: Infinity,
             data: [{id: "n", text: "normal"}, {id: "b", text: "à blanc"}]

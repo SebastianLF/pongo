@@ -124,10 +124,10 @@
                                 <span class="profits">{{' +'.floatval($pari->montant_profit)}}</span><span
                                 class="devise">{{{Auth::user()->devise}}}</span>
                         @elseif($pari->montant_profit < 0)<span class="bold font-red-haze"><span
-                                    class="profits">{{floatval($pari->montant_profit)}}</span> <span class="devise">{{{Auth::user()->devise}}
+                                    class="profits">{{floatval($pari->montant_profit)}}</span> <span class="devise">{{Auth::user()->devise}}
                                 }</span>
                             @else($pari->montant_profit == 0)<span class="bold"><span
-                                        class="profits">{{floatval($pari->montant_profit)}}</span><span class="devise">{{{Auth::user()->devise}}
+                                        class="profits">{{floatval($pari->montant_profit)}}</span><span class="devise">{{Auth::user()->devise}}
                                     }</span>
                     @endif
                 </td>

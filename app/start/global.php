@@ -125,10 +125,12 @@
 		return false;
 	});
 
-	// en cours paris's validation extension
+	/* en cours paris's validation extension */
+
+	// verifie si le montant en unites est bien inférieur au solde du compte-bookmaker correspondant.
 	Validator::extend('mise_montant_en_unites<solde', function ($attribute, $value, $parameters) {
 		if ($parameters[1] == 'n') {
-			$montant_par_unite = Auth::user()->tipsters()->where('id', $parameters[2])->first()->montant_par_unite;
+			$montant_par_unite = $parameters[2];
 			$bankroll_actuelle = Auth::user()->comptes()->where('id', $parameters[0])->first()->bankroll_actuelle;
 			if (($value * $montant_par_unite) < $bankroll_actuelle) {
 				return true;

@@ -47,10 +47,17 @@
 				}
 			});*/
 
-			JavaScript::put([
 
+			if( ! Session::has('mon_mt_par_unite')){
+				$montant_par_unite =  Auth::user()->tipsters()->where('name', 'default')->first()->montant_par_unite;
+				Session::set('mon_mt_par_unite', $montant_par_unite);
+			}
+
+
+			JavaScript::put([
 				'timezone' => Auth::user()->timezone,
 				'devise' => Auth::user()->devise,
+				'mon_mt_par_unite' => Session::get('mon_mt_par_unite') // montant par unité à passer au formulaire d'ajout pour la mise en unités.
 			]);
 
 

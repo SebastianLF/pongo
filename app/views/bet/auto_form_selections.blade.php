@@ -10,7 +10,7 @@
             <tr class="uppercase">
                 <th>pari</th>
                 <th>book</th>
-                <th width="80px">cote</th>
+                <th width="80px">ma cote</th>
                 <th class="hide"></th>
                 <th></th>
             </tr>
@@ -38,7 +38,9 @@
 
                     <td>{{' '.$selection->bookmaker}}</td>
                     <td><input class=" form-control input-coupon-odd" name="automatic-selection-cote[]" type="text"
-                               value="{{floatval($selection->odd_value)}}"/></td>
+                               value="{{floatval($selection->odd_value)}}"/>
+
+                    </td>
                     <td width="5px">
                         <button class="boutonsupprimer btn btn-xs red"><i class="glyphicon glyphicon-trash"></i>
                         </button>

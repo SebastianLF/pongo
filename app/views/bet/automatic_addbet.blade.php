@@ -1,10 +1,10 @@
 
-<div class="form-body " style="padding:5px;">
+<div class=" " style="padding:5px;">
     <div class="">
         <div class="col-md-6">
             <div class="form-group">
                 <div class="">
-                    <label class="">Tipster</label>
+                    <label class="">Tipster (optionnel)</label>
                 </div>
                 <select id="tipstersinputdashboard"
                         name="tipstersinputdashboard"
@@ -13,37 +13,31 @@
                 </select>
             </div>
         </div>
-        <div class="col-md-6">
+
+        <div id="cote-tipster-container" class="col-md-6">
             <div class="form-group">
                 <div class="">
-                    <label class="">Suivi <span
-                                class="glyphicon glyphicon-question-sign"
-                                data-toggle="tooltip" data-placement="bottom"
-                                title="Quand le type de suivi est à blanc, la mise et les gains/pertes ne seront pas déduits des bookmakers. C'est un type de suivi pour tester l'éfficacité d'un tipster avant de l'adopter."></span></label>
+                    <label class="">Cote tipster <span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-html="true" title="" data-original-title="Utile pour comparer votre cote et la cote du tipster pour les statistiques. <br></span><span class='font-red-sunglo'>Si vous ne remplissez pas ce champ, la cote du tipster aura automatiquement comme valeur la valeur de 'ma cote' ( ou 'cote combiné' si c'est un combiné ).</span>"></span></label>
                 </div>
-                <select type="text" id="followtypeinputdashboard"
-                        name="followtypeinputdashboard"
-                        class="form-control" style="width: 95%" readonly></select>
+                <input id="cote-tipster" class="cote-tipster form-control" name="cote-tipster" type="text" value=""/>
             </div>
         </div>
+
+
         <div class="col-md-4 hidden">
             <div class="form-group">
-                <div class="">
-                    <label class="">Montant par u. <span
-                                class="glyphicon glyphicon-question-sign"
-                                data-toggle="tooltip" data-placement="bottom"
-                                title="Montant par unité spécifique au tipster selectionné. Pour le changer, veuillez vous rendre sur la page configuration"></span></label>
-                </div>
+
                 <div class="input-group">
                     <div class="input-group-addon">€</div>
-                    <input type="text" id="amountperunit" name="amountperunit"
-                           class="form-control" style="width: 95%"
-                           readonly>
+                    <input type="text" id="amountperunit" name="amountperunit" class="form-control" style="width: 95%" readonly="">
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="clearfix"></div>
     <hr>
+
     <!--/row-->
     <div id="typestakecontainer" class="">
         <div class="col-md-6">
@@ -52,7 +46,7 @@
                     <label class="">Type de Mise <span class="glyphicon glyphicon-question-sign"
                                                data-toggle="tooltip"
                                                data-placement="bottom"
-                                               title="En unités: miser en unités par rapport au montant par unité attribué pour ce tipter, type de mise à privilégier pour un gain de temps. En libre (devise): miser en montant devise lorsque vous ne souhaitez pas respecter le principe de mise en unité, cela vous donne plus de liberté."></span></label>
+                                               title="Miser en unités par rapport au montant par unité défini en amont, type de mise à privilégier pour un gain de temps. Miser en montant (devise) lorsque vous ne souhaitez pas respecter le principe de mise en unité, cela vous donne plus de liberté."></span></label>
                 </div>
                 <div class="">
                     <select name="typestakeinputdashboard"
@@ -67,7 +61,7 @@
         <div class="col-md-6 typestakeunites">
             <div class="form-group">
                 <div class="">
-                    <label class="">Mise<span id="montant-par-unite-span"> ( 1 U = <span id="montant-par-unite-value"></span></span> {{Auth::user()->devise}} )</label>
+                    <label class="">Mise<span id="montant-par-unite-span"> ( 1 U = <span id="montant-par-unite-value"></span> {{Auth::user()->devise}} )</span>  </label>
                 </div>
                 <div class="input-group" style="width: 95%">
                     <div class="input-group-addon">U</div>
@@ -107,8 +101,22 @@
     </div>
     <hr>
     <div id="bookmakercontainer" class="">
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="">
+                    <label class="">Suivi <span
+                                class="glyphicon glyphicon-question-sign"
+                                data-toggle="tooltip" data-placement="bottom" data-html="true"
+                                title="Quand le type de suivi est à blanc, la mise et les gains/pertes ne seront pas comptabilisés dans le solde de vos comptes de bookmaker. C'est un type de suivi pour tester l'éfficacité de vos paris ou l'éfficacité des paris de vos tipsters avant de les adopter.<br></span><span class='font-red-sunglo'>Remplissez le champ 'type de suivi par défaut' pour chaque tipster dans la page 'Mes tipsters' pour gagner du temps.</span>"></span></label>
+                </div>
+                <select type="text" id="followtypeinputdashboard"
+                        name="followtypeinputdashboard"
+                        class="form-control" style="width: 95%" readonly></select>
+            </div>
+        </div>
         <!--/span-->
-        <div class="col-md-6 ">
+        <div id="bookmaker_account_container" class="col-md-6 ">
             <div class="form-group">
                 <div class="">
                     <label class="">Compte</label>
@@ -121,6 +129,7 @@
 
             </div>
         </div>
+
         <!--/span-->
     </div>
     <!--/row-->

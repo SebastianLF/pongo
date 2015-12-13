@@ -475,7 +475,6 @@ select{
   border: 0px solid #e5e5e5 !important;
 }
 
-
 .table-bookmakersOnDashboard{
   margin: 0;
   padding: 0;
@@ -491,6 +490,10 @@ select{
 
 #panier-selections-add-ticket .checkbox-inline{
   padding-top: 0 !important;
+}
+
+.cote-tipster{
+  height: 28px !important;
 }
 
 .table-termine{

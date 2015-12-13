@@ -14,7 +14,7 @@ class BettorController extends BaseController {
 	}
 
 	public function getMyTipstersViewList(){
-		$tipsters = $tipsters = Auth::user()->tipsters;
+		$tipsters = $tipsters = Auth::user()->tipsters()->where('name','!=','default')->get();
 		Clockwork::info($tipsters);
 		return View::make('tipsters.listeTipsters', array('tipsters' => $tipsters));
 	}

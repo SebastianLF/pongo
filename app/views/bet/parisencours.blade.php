@@ -72,14 +72,14 @@
                         @endif
                     </span>
                 </td>
-                <td>{{$pari->tipster->name}}</td>
+                <td>{{$pari->tipster->name == 'default' ? '-' : $pari->tipster->name}}</td>
                 <td class="tdmise  bold">
 
                     <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise}}}
                 </td>
                 <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}
                 </td>
-                <td width="10px" class="fit tdcote td-bet">{{floatval($pari->cote)}}</td>
+                <td width="10px" class="fit tdcote td-bet">{{floatval($pari->cote)}} @if($pari->tipster->name != 'default') {{' ('.floatval($pari->cote_tipster).') '}} @endif</td>
                 <td width="">
                     @if($pari->type_profil == 's')
                         <select name="status[]"

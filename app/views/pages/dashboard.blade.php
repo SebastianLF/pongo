@@ -76,7 +76,7 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse"
-                                       data-parent="#" href="#collapse_1" aria-expanded="true"> Formulaire</a></h4>
+                                       data-parent="#" href="#collapse_1" aria-expanded="true"> Formulaire d'ajout</a></h4>
                             </div>
                             <div id="collapse_1" class="panel-collapse collapse in" aria-expanded="true">
                                 <div class="panel-body">
@@ -108,7 +108,7 @@
                                 <h4 class="panel-title">
                                     <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse"
                                        data-parent="#" href="#collapse_2" aria-expanded="true">Choix de(s)
-                                        selections</a>
+                                        selection(s)</a>
                                 </h4>
                             </div>
                             <div id="collapse_2" class="panel-collapse collapse in" aria-expanded="true">

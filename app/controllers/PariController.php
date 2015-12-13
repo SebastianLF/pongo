@@ -60,13 +60,21 @@
 						));
 					}
 				}
+
+				//on va chercher le profil 'default' lorsque aucun tipster n'a été specifié dans le formulaire.
+				if(Input::get('tipstersinputdashboard') == ''){
+					$tipster = Auth::user()->tipsters()->where('name', 'default')->firstOrFail();
+				}else{
+					$tipster = Auth::user()->tipsters()->where('id', Input::get('tipstersinputdashboard'))->firstOrFail();
+				}
+
 				$regles = array(
-					'tipstersinputdashboard' => 'required|exists:tipsters,id,user_id,' . Auth::id(), // la validation du tipster doit etre en premiere position.
 					'followtypeinputdashboard' => 'required|in:n,b',
 					'typestakeinputdashboard' => 'required|in:u,f',
 					'accountsinputdashboard' => 'required_if:followtypeinputdashboard,n|exists:bookmaker_user,id,user_id,' . Auth::id(),
-					'stakeunitinputdashboard' => 'required_if:typestakeinputdashboard,u|unites|mise_montant_en_unites<solde:' . Input::get('accountsinputdashboard') . ',' . Input::get('followtypeinputdashboard') . ',' . Input::get('tipstersinputdashboard'),
+					'stakeunitinputdashboard' => 'required_if:typestakeinputdashboard,u|unites|mise_montant_en_unites<solde:' . Input::get('accountsinputdashboard') . ',' . Input::get('followtypeinputdashboard') . ',' . Input::get('amountperunit'),
 					'amountinputdashboard' => 'required_if:typestakeinputdashboard,f|mise_montant_en_devise<solde:' . Input::get('accountsinputdashboard') . ',' . Input::get('followtypeinputdashboard'),
+					'cote-tipster' => 'european_odd',
 					'total-cote-combine' => 'cote_generale_if_combine:' . $count . '|european_odd',
 					'ticketABCD' => 'required|in:0,1',
 					'ticketLongTerme' => 'required|in:0,1',
@@ -74,8 +82,6 @@
 					'letterinputdashboard' => 'required_if:ticketABCD,1|in:A,B,C,D',
 				);
 				$messages = array(
-					'tipstersinputdashboard.required' => 'Choisissez un tipster, si il n\'y a pas de tipster dans la liste, veuillez en créer un dans la page configuration',
-					'tipstersinputdashboard.exists' => 'Ce tipster n\'existe pas dans votre liste.',
 					'typestakeinputdashboard.in' => 'ce type de mise n\'existe pas.',
 					'stakeunitinputdashboard.required_if' => 'Vous devez mettre une mise (en unités).',
 					'amountinputdashboard.required_if' => 'Vous devez mettre une mise (en devise).',
@@ -98,7 +104,7 @@
 				} else {
 
 					$suivi = Input::get('followtypeinputdashboard');
-					$tipster = Auth::user()->tipsters()->where('id', Input::get('tipstersinputdashboard'))->firstOrFail();
+					$tipster = Auth::user()->tipsters()->where('id', $tipster->id)->firstOrFail();
 					$type_stake = Input::get('typestakeinputdashboard');
 
 					// verification si ce numero de pari n'existe pas deja.
@@ -187,13 +193,15 @@
 
 					// mis a jour de la cote general.
 					if ($pari_model->type_profil == 's') {
-						$pari_model->cote = $cotes;
+						$cote = $pari_model->cote = $cotes;
 					} else {
-						$pari_model->cote = Input::get('total-cote-combine');
+						$cote = $pari_model->cote = Input::get('total-cote-combine');
 					}
 
-					if (!$pari_model->save()) {
+					//ajouter la cote tipster si elle a été specifiée.
+					$pari_model->cote_tipster = Input::get('cote-tipster') != '' ? Input::get('cote-tipster') : $cote;
 
+					if ( ! $pari_model->save()) {
 						$pari_model->forceDelete();
 					}
 

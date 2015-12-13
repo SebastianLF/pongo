@@ -170,6 +170,14 @@
 			$home_team = Input::exists('home_team') ? Equipe::firstOrCreate(array('name' => utf8_encode(Input::get('home_team')), 'sport_id' => $sport->id, 'country_id' => $home_country->id)) : null;
 			$away_team = Input::exists('away_team') ? Equipe::firstOrCreate(array('name' => utf8_encode(Input::get('away_team')), 'sport_id' => $sport->id, 'country_id' => $away_country->id)) : null;
 
+
+			// garnir la bdd du ou des participants impliqué dans ce pari lorsque ce n'est pas un match.
+			if( ! Input::get('isMatch') === 'true' ){
+				Input::get('odd_participantParameterName') == "null" ?  : Equipe::firstOrCreate(array('name' => utf8_encode(Input::get('odd_participantParameterName')), 'sport_id' => $sport->id, 'country_id' => null )) ;
+				Input::get('odd_participantParameterName2') == "null" ?  : Equipe::firstOrCreate(array('name' => utf8_encode(Input::get('odd_participantParameterName2')), 'sport_id' => $sport->id, 'country_id' => null )) ;
+				Input::get('odd_participantParameterName3') == "null" ?  : Equipe::firstOrCreate(array('name' => utf8_encode(Input::get('odd_participantParameterName3')), 'sport_id' => $sport->id, 'country_id' => null )) ;
+			}
+
 			$market = Market::find(Input::get('market_id'));
 			if (is_null($market)) {
 				$market = Market::firstOrCreate(array('id' => Input::get('market_id'), 'name' => utf8_encode(Input::get('market')))); // le nom peut etre change du coté de betbrain donc on recherche uniquement par id.
@@ -218,9 +226,9 @@
 				'odd_doubleParam' => Input::get('odd_doubleParam') == "-999.888" ? null : Input::get('odd_doubleParam'),
 				'odd_doubleParam2' => Input::get('odd_doubleParam2') == "-999.888" ? null : Input::get('odd_doubleParam2'),
 				'odd_doubleParam3' => Input::get('odd_doubleParam3') == "-999.888" ? null : Input::get('odd_doubleParam3'),
-				'odd_participantParameterName' => Input::exists('odd_participantParameterName') == "-9223372036854775808" ? null : utf8_encode(Input::get('odd_participantParameterName')),
-				'odd_participantParameterName2' => Input::exists('odd_participantParameterName2') == "-9223372036854775808" ? null : utf8_encode(Input::get('odd_participantParameterName2')),
-				'odd_participantParameterName3' => Input::exists('odd_participantParameterName3') == "-9223372036854775808" ? null : utf8_encode(Input::get('odd_participantParameterName3')),
+				'odd_participantParameterName' => Input::get('odd_participantParameterName') == "null" ? null : utf8_encode(Input::get('odd_participantParameterName')),
+				'odd_participantParameterName2' => Input::get('odd_participantParameterName2') == "null" ? null : utf8_encode(Input::get('odd_participantParameterName2')),
+				'odd_participantParameterName3' => Input::get('odd_participantParameterName3') == "null" ? null : utf8_encode(Input::get('odd_participantParameterName3')),
 				'odd_groupParam' => Input::get('odd_groupParam') == "-999.888" ? null : Input::get('odd_groupParam'),
 				'market_id' => $market->id,
 				'market' => $market->name,
