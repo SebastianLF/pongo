@@ -173,9 +173,9 @@
 
 			// garnir la bdd du ou des participants impliqué dans ce pari lorsque ce n'est pas un match.
 			if( Input::get('isMatch') == 'false' ){
-				$participant1_created = Input::get('odd_participantParameterName') == "null" ?  'null' : Equipe::firstOrCreate(array('name' => utf8_encode(Input::get('odd_participantParameterName')), 'sport_id' => $sport->id, 'country_id' => null )) ;
-				$participant2_created = Input::get('odd_participantParameterName2') == "null" ? 'null' : Equipe::firstOrCreate(array('name' => utf8_encode(Input::get('odd_participantParameterName2')), 'sport_id' => $sport->id, 'country_id' => null )) ;
-				$participant3_created = Input::get('odd_participantParameterName3') == "null" ? 'null' : Equipe::firstOrCreate(array('name' => utf8_encode(Input::get('odd_participantParameterName3')), 'sport_id' => $sport->id, 'country_id' => null )) ;
+				$participant1_created = Input::get('odd_participantParameterName') == "null" ?  'null' : Equipe::firstOrCreate(array('name' => utf8_encode(Input::get('odd_participantParameterName')), 'sport_id' => $sport->id, 'country_id' => 27 )) ; // country id 27 = unknown
+				$participant2_created = Input::get('odd_participantParameterName2') == "null" ? 'null' : Equipe::firstOrCreate(array('name' => utf8_encode(Input::get('odd_participantParameterName2')), 'sport_id' => $sport->id, 'country_id' => 27 )) ;
+				$participant3_created = Input::get('odd_participantParameterName3') == "null" ? 'null' : Equipe::firstOrCreate(array('name' => utf8_encode(Input::get('odd_participantParameterName3')), 'sport_id' => $sport->id, 'country_id' => 27 )) ;
 
 				file_put_contents('log_index.txt', json_encode($participant1_created) . "\n\n", FILE_APPEND | LOCK_EX);
 				file_put_contents('log_index.txt', json_encode($participant2_created) . "\n\n", FILE_APPEND | LOCK_EX);
