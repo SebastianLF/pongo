@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="remaniement concept tipster et soi meme + garnir bdd de participant d un type de pari isMatch = false.">
-      <change type="DELETED" beforePath="C:\wamp\www\slfweb\app\database\migrations\2015_12_13_085742_add_outrightteam_to_coupon.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
+    <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="modif table paris en cours">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/TipsterController.php" afterPath="$PROJECT_DIR$/app/controllers/TipsterController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="9a530f09-4cfd-4f98-b2e3-9a97dcdef514" name="Failed commit: Default" comment="correction cloturation paris combviné avec plus de 3 selections" />
@@ -72,48 +73,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PariController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/PariController.php">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="204" column="51" selection-start-line="204" selection-start-column="51" selection-end-line="204" selection-end-column="51" />
+            <state vertical-scroll-proportion="-5.3076925">
+              <caret line="92" column="56" selection-start-line="92" selection-start-column="56" selection-end-line="92" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parisencours.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
+      <file leaf-file-name="TipsterController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/TipsterController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58143324">
-              <caret line="78" column="21" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
-              <folding>
-                <marker date="1450004646209" expanded="true" signature="6229:6570" placeholder="..." />
-                <marker date="1450004646209" expanded="true" signature="6266:6569" placeholder="..." />
-                <marker date="1450004646209" expanded="true" signature="6611:6913" placeholder="..." />
-                <marker date="1450004646209" expanded="true" signature="6648:6912" placeholder="..." />
-                <marker date="1450004646209" expanded="true" signature="7013:7289" placeholder="..." />
-                <marker date="1450004646209" expanded="true" signature="7054:7288" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="automatic_addbet.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/bet/automatic_addbet.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2015_12_11_152501_add_cotetipster_to_paris.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_12_11_152501_add_cotetipster_to_paris.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.769231">
-              <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.6824104">
+              <caret line="237" column="51" selection-start-line="237" selection-start-column="51" selection-end-line="237" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -217,7 +191,6 @@
         <option value="$PROJECT_DIR$/app/database/migrations/2015_12_11_152501_add_cotetipster_to_paris.php" />
         <option value="$PROJECT_DIR$/app/views/bet/automatic_addbet.blade.php" />
         <option value="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/TipsterController.php" />
         <option value="$PROJECT_DIR$/app/lib/gestion/UserGestion.php" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/addTicket.js" />
         <option value="$PROJECT_DIR$/app/controllers/PariController.php" />
@@ -227,6 +200,7 @@
         <option value="$PROJECT_DIR$/app/database/seeds/CountryTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/controllers/CouponController.php" />
         <option value="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/TipsterController.php" />
       </list>
     </option>
   </component>
@@ -2831,12 +2805,6 @@
       <option name="number" value="Default" />
       <updated>1411579515527</updated>
     </task>
-    <task id="LOCAL-00346" summary="mise à jour formule de calcul cote combiné dans panier des selections">
-      <created>1446158107503</created>
-      <option name="number" value="00346" />
-      <option name="project" value="LOCAL" />
-      <updated>1446158107503</updated>
-    </task>
     <task id="LOCAL-00347" summary="mise à jour formule de calcul cote combiné dans panier des selections">
       <created>1446158436227</created>
       <option name="number" value="00347" />
@@ -3125,7 +3093,13 @@
       <option name="project" value="LOCAL" />
       <updated>1450003378479</updated>
     </task>
-    <option name="localTasksCounter" value="395" />
+    <task id="LOCAL-00395" summary="modif table paris en cours">
+      <created>1450004668562</created>
+      <option name="number" value="00395" />
+      <option name="project" value="LOCAL" />
+      <updated>1450004668562</updated>
+    </task>
+    <option name="localTasksCounter" value="396" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -3205,7 +3179,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="hotjar supprimé." />
     <MESSAGE value="modif selection coupon" />
     <MESSAGE value="ajout parti admin" />
     <MESSAGE value="debug admin" />
@@ -3230,7 +3203,8 @@
     <MESSAGE value="ajout du champ closed_at dans la table pari" />
     <MESSAGE value="modif td cloture paris termines" />
     <MESSAGE value="remaniement concept tipster et soi meme + garnir bdd de participant d un type de pari isMatch = false." />
-    <option name="LAST_COMMIT_MESSAGE" value="remaniement concept tipster et soi meme + garnir bdd de participant d un type de pari isMatch = false." />
+    <MESSAGE value="modif table paris en cours" />
+    <option name="LAST_COMMIT_MESSAGE" value="modif table paris en cours" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -3442,13 +3416,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="51.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2666667">
@@ -3467,13 +3434,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6527051">
           <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/TipsterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6143106">
-          <caret line="237" column="50" selection-start-line="237" selection-start-column="50" selection-end-line="237" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -3550,19 +3510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..tipsters">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..coupon">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3610,19 +3557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..paris">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.55973816">
@@ -3649,7 +3583,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_12_11_152501_add_cotetipster_to_paris.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231">
+        <state vertical-scroll-proportion="0.49837133">
           <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
           <folding />
         </state>
@@ -3657,16 +3591,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bet/parisencours.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58143324">
+        <state vertical-scroll-proportion="-13.730769">
           <caret line="78" column="21" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
           <folding>
-            <marker date="1450004646209" expanded="true" signature="6229:6570" placeholder="..." />
-            <marker date="1450004646209" expanded="true" signature="6266:6569" placeholder="..." />
-            <marker date="1450004646209" expanded="true" signature="6611:6913" placeholder="..." />
-            <marker date="1450004646209" expanded="true" signature="6648:6912" placeholder="..." />
-            <marker date="1450004646209" expanded="true" signature="7013:7289" placeholder="..." />
-            <marker date="1450004646209" expanded="true" signature="7054:7288" placeholder="..." />
+            <marker date="1450004646209" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1450004646209" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1450004646209" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1450004646209" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1450004646209" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1450004646209" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..paris">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.3076925">
+          <caret line="92" column="56" selection-start-line="92" selection-start-column="56" selection-end-line="92" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..tipsters">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/TipsterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6824104">
+          <caret line="237" column="51" selection-start-line="237" selection-start-column="51" selection-end-line="237" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>

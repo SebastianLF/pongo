@@ -236,7 +236,7 @@
 		public function infosTipster()
 		{
 			$tipster_id = Input::get('tipster_id');
-			$tipster = Auth::user()->tipsters()->where('id', '=', $tipster_id)->first(array('montant_par_unite', 'followtype'));
+			$tipster = Auth::user()->tipsters()->where('id', '=', $tipster_id)->orderBy('name')->first(array('montant_par_unite', 'followtype'));
 			return Response::json($tipster);
 		}
 
