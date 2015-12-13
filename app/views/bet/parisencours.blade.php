@@ -17,7 +17,7 @@
             <th>Tipster</th>
             <th>Mise</th>
             <th>Book</th>
-            <th>Cote</th>
+            <th>Ma cote</th>
             <th>Status</th>
             <th>Mt. retour <span class="glyphicon glyphicon-info-sign font-red-sunglo" data-toggle="tooltip" data-html="true" title="Exemple: cote à 2 et mise de 50 {{Auth::user()->devise}}, le montant retour sera 100 {{Auth::user()->devise}} . <br/><span class='font-red-sunglo'>Verifiez bien le montant, il peut etre différent de celui calculé chez le bookmaker. Si c'est le cas, remplacez le.</span>"></span></th>
             <th></th>
@@ -79,7 +79,7 @@
                 </td>
                 <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}
                 </td>
-                <td width="10px" class="fit tdcote td-bet">{{floatval($pari->cote)}} @if($pari->tipster->name != 'default') {{' ('.floatval($pari->cote_tipster).') '}} @endif</td>
+                <td width="10px" class="fit tdcote td-bet">{{floatval($pari->cote)}} </td>
                 <td width="">
                     @if($pari->type_profil == 's')
                         <select name="status[]"
