@@ -122,7 +122,7 @@
         <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.6579378">
-              <caret line="180" column="67" selection-start-line="180" selection-start-column="67" selection-end-line="180" selection-end-column="67" />
+              <caret line="180" column="40" selection-start-line="180" selection-start-column="40" selection-end-line="180" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -2850,12 +2850,6 @@
       <option name="number" value="Default" />
       <updated>1411579515527</updated>
     </task>
-    <task id="LOCAL-00342" summary="order by asc transactions">
-      <created>1446050974552</created>
-      <option name="number" value="00342" />
-      <option name="project" value="LOCAL" />
-      <updated>1446050974552</updated>
-    </task>
     <task id="LOCAL-00343" summary="taille status paris augmenté">
       <created>1446056748128</created>
       <option name="number" value="00343" />
@@ -3144,7 +3138,13 @@
       <option name="project" value="LOCAL" />
       <updated>1449999790634</updated>
     </task>
-    <option name="localTasksCounter" value="391" />
+    <task id="LOCAL-00391" summary="remaniement concept tipster et soi meme + garnir bdd de participant d un type de pari isMatch = false.">
+      <created>1450001262786</created>
+      <option name="number" value="00391" />
+      <option name="project" value="LOCAL" />
+      <updated>1450001262786</updated>
+    </task>
+    <option name="localTasksCounter" value="392" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -3681,7 +3681,7 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6579378">
-          <caret line="180" column="67" selection-start-line="180" selection-start-column="67" selection-end-line="180" selection-end-column="67" />
+          <caret line="180" column="40" selection-start-line="180" selection-start-column="40" selection-end-line="180" selection-end-column="40" />
           <folding />
         </state>
       </provider>
