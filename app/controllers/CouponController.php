@@ -180,7 +180,6 @@
 				file_put_contents('log_index.txt', json_encode($participant1_created) . "\n\n", FILE_APPEND | LOCK_EX);
 				file_put_contents('log_index.txt', json_encode($participant2_created) . "\n\n", FILE_APPEND | LOCK_EX);
 				file_put_contents('log_index.txt', json_encode($participant3_created) . "\n\n", FILE_APPEND | LOCK_EX);
-				;
 			}
 
 			$market = Market::find(Input::get('market_id'));
