@@ -496,6 +496,30 @@ select{
   height: 28px !important;
 }
 
+.ellipsis-recap-tipsters {
+  width: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.accordion .panel .panel-title .accordion-toggle-bookmakers-solde {
+  padding: 6px 15px !important;
+}
+
+.panel-title-bookmakers-solde {
+  font-size: 14px; !important;
+}
+
+#table-releve-recap th,#table-releve-recap td{
+  padding: 4px !important;
+}
+
+#tipsters-general-recap th,#tipsters-general-recap td{
+  padding: 4px !important;
+}
+
 .table-termine{
   vertical-align: middle !important;
 }

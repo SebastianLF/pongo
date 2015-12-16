@@ -46,8 +46,6 @@ function loadReleveOnDashboard() {
         data: {range: range},
         success: function (data) {
             $('#releve-recap').html(data);
-            //$('#total-recap-profits-devise').html(data.total_profit_devise);
-            //$('#total-recap-profits-unites').html(data.total_profit_unites);
         }
     })
 }

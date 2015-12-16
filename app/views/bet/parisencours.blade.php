@@ -58,7 +58,7 @@
                 <td>
                     @if($pari->type_profil == 's')
                         @if($pari->selections->first()->isMatch)
-                            {{{$pari->selections->first()->game_name.' »'}}}
+                            {{$pari->selections->first()->game_name.' »'}}
                         @endif
                     @endif
                     <span class="blue">

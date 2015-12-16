@@ -73,7 +73,7 @@
                         @endif
                     </span>
                 </td>
-                <td>{{$pari->tipster->name}}</td>
+                <td>{{$pari->tipster->name == 'default' ? '-' : $pari->tipster->name}}</td>
                 <td class="tdmise  bold">
 
                     <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise}}}
@@ -119,16 +119,16 @@
                         <span class="">{{floatval($pari->montant_retour).''.Auth::user()->devise}}</span>
                     </span>
                 </td>
-                <td>
+                <td class="td-bet">
                     @if($pari->montant_profit > 0)<span class="bold font-green-sharp">
                                 <span class="profits">{{' +'.floatval($pari->montant_profit)}}</span><span
-                                class="devise">{{{Auth::user()->devise}}}</span>
+                                class="devise">{{Auth::user()->devise}}</span>
                         @elseif($pari->montant_profit < 0)<span class="bold font-red-haze"><span
                                     class="profits">{{floatval($pari->montant_profit)}}</span> <span class="devise">{{Auth::user()->devise}}
-                                }</span>
+                                </span>
                             @else($pari->montant_profit == 0)<span class="bold"><span
                                         class="profits">{{floatval($pari->montant_profit)}}</span><span class="devise">{{Auth::user()->devise}}
-                                    }</span>
+                                    </span>
                     @endif
                 </td>
 

@@ -356,8 +356,7 @@
                         <div id="default-range-container-releve" class="pull-right"
                              style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
                             <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
-                            <span id="defaultrange-releve"
-                                  class="visible-lg-inline-block">{{Carbon::now(Auth::user()->timezone)->startOfMonth()->format('d/m/Y').' - '.Carbon::now(Auth::user()->timezone)->endOfMonth()->format('d/m/Y')}}</span>&nbsp;<b
+                            <span id="defaultrange-releve" class="visible-lg-inline-block">{{Carbon::now(Auth::user()->timezone)->startOfMonth()->format('d/m/Y').' - '.Carbon::now(Auth::user()->timezone)->endOfMonth()->format('d/m/Y')}}</span>&nbsp;<b
                                     class="caret"></b>
                         </div>
                         <!-- <div class="input-group">
@@ -388,8 +387,7 @@
                         <div id="default-range-container" class="pull-right"
                              style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
                             <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
-                            <span id="defaultrange"
-                                  class="visible-lg-inline-block">{{Carbon::now(Auth::user()->timezone)->startOfMonth()->format('d/m/Y').' - '.Carbon::now(Auth::user()->timezone)->endOfMonth()->format('d/m/Y')}}</span>&nbsp;<b
+                            <span id="defaultrange" class="visible-lg-inline-block">{{Carbon::now(Auth::user()->timezone)->startOfMonth()->format('d/m/Y').' - '.Carbon::now(Auth::user()->timezone)->endOfMonth()->format('d/m/Y')}}</span>&nbsp;<b
                                     class="caret"></b>
                         </div>
                         <!-- <div class="input-group">
@@ -402,7 +400,7 @@
                     </div>
                 </div>
                 <div class="portlet-body">
-                    <div id="tipsters-general-recap">
+                    <div id="tipsters-general-recap" class=" table-scrollable table-scrollable-borderless">
 
                     </div>
                 </div>

@@ -18,9 +18,9 @@
                         <?php $paris_en_attente += $compte->enCoursParis->count(); ?>
                     @endforeach
                     <div class="panel-heading">
-                        <div class="panel-title">
+                        <div class="panel-title panel-title-bookmakers-solde">
 
-                            <a class="accordion-toggle accordion-toggle-styled collapsed"
+                            <a class="accordion-toggle accordion-toggle-styled collapsed accordion-toggle-bookmakers-solde"
                                data-toggle="collapse" href="{{'#row'.$bookmaker->id}}">
                                 <span class="theme-font blue-bookmaker">{{$bookmaker->nom.' |'}}</span>
                                      <span class="theme-font">{{$bookmaker['comptes']->sum('bankroll_actuelle')}} {{Auth::user()->devise}}</span></span>
