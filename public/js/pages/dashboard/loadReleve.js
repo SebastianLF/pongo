@@ -22,7 +22,7 @@ $('#default-range-container-releve').daterangepicker({
         firstDay: 1
     },
     ranges: {
-        'Aujourd\'hui': [moment.tz(user.timezone), moment.tz(user.timezone)],
+        'Aujourd\'hui': [moment.tz(user.timezone).startOf('day'), moment.tz(user.timezone).endOf('day')],
         'Hier': [moment.tz(user.timezone).subtract(1, 'days'), moment.tz(user.timezone).subtract(1, 'days')],
         'Cette Semaine': [moment.tz(user.timezone).startOf('isoweek'), moment.tz(user.timezone).endOf('isoweek')],
         'Semaine Précédente': [moment.tz(user.timezone).subtract(1, 'week').startOf('isoweek'), moment.tz(user.timezone).subtract(1, 'week').endOf('isoweek')],
@@ -46,7 +46,7 @@ function loadReleveOnDashboard() {
         data: {range: range},
         success: function (data) {
             $('#releve-recap').html(data);
-        }
+         }
     })
 }
 

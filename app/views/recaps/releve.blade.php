@@ -9,7 +9,7 @@
                 <th>
                     date
                 </th>
-                <th>quantité</th>
+                <th>qté</th>
                 <th>
                     profits
                 </th>

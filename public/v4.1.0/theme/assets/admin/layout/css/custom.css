@@ -126,7 +126,7 @@ table.dataTable tbody td, table.dataTable tbody th {
 }
 
 .pari-status{
- width: 90px !important;
+ width: 104px !important;
 }
 
 
@@ -588,6 +588,7 @@ select{
 
 .inputs-ticket {
   height: 28px;
+  width: 104px!important;
   padding: 0 3px !important;
   margin: 0 0 0 0 !important;
 }
@@ -596,18 +597,20 @@ tr.details td{
   vertical-align: middle !important;
 }
 
-.table-paris .input-group-addon-amount-returned{
-  padding: 0px 0px !important;
-}
-
 .table-paris>tbody>tr>td{
   padding: 2px;
   text-align: center;
 }
 
+.boutonvalider{
+  padding: 0px 11px !important;
+}
+
+.boutonsupprimer{
+  padding: 0px 12px !important;
+}
 
 .buttons-actions-ticket{
-  padding: 4px 7px 4px 7px;
   font-size: 0;
   line-height: 1.5;
 }

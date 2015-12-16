@@ -18,6 +18,7 @@ function loadParisEnCours() {
             /*
              * Insert a 'details' column to the table
              */
+
             var nCloneTh = document.createElement('th');
             nCloneTh.className = "table-checkbox";
 

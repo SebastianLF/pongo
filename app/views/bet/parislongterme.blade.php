@@ -1,39 +1,37 @@
 @if($count_paris_longterme == '0')
     <div class="row">
         <div class="col-lg-4 col-lg-offset-4">
-            <span class="glyphicon glyphicon-hand-down"></span> Ajouter un pari classique à l'aide du formulaire d'ajout
+            <span class="glyphicon glyphicon-hand-down"></span> Ajouter un pari long terme à l'aide du formulaire d'ajout
             dans le panneau ci-dessous
         </div>
     </div>
 @else
-    <table id="parislongtermetable" class="table table-condensed table-bordered">
+    <table id="parislongtermetable" class="table table-light table-condensed table-hover table-paris">
         <thead>
         <tr class="uppercase">
-            <th></th>
-            <th>date r.</th>
+            <th>date</th>
             <th>Sport</th>
             <th>Competition</th>
-            <th>Rencontre</th>
             <th>Pari</th>
             <th>Tipster</th>
-            <th>Book</th>
-            <th>Cote</th>
             <th>Mise</th>
-            <th>Status</th>
-            <th></th>
+            <th>Book</th>
+            <th>Ma cote</th>
+            <th data-priority="1">status</th>
+            <th data-priority="1">MT. RET.<span class="glyphicon glyphicon-info-sign font-red-sunglo" data-toggle="tooltip" data-html="true" title="Exemple: cote à 2 et mise de 50 {{Auth::user()->devise}}, le montant retour sera 100 {{Auth::user()->devise}} . <br/><span class='font-red-sunglo'>Verifiez bien le montant, il peut etre différent de celui calculé chez le bookmaker. Si c'est le cas, remplacez le.</span>"></span></th>
+            <th data-priority="1"></th>
         </tr>
         </thead>
         <tbody>
         @foreach($parislongterme as $pari)
-            <?php $app = App::make('pari_affichage');
+            <?php $pari_affichage = App::make('pari_affichage');
             $selections_final = $pari->selections;
             foreach ($selections_final as $selections) {
-                $pariAffichage = $app->display($selections->market_id, $selections->pick, $selections->odd_doubleParam1, $selections->odd_doubleParam2, $selections->odd_doubleParam3, $selections->odd_participantParameterName, $selections->odd_participantParameterName2, $selections->odd_participantParameterName3, $selections->equipe1['name'], $selections->equipe2['name']);
+                $pariAffichage = $pari_affichage->display($selections->market_id, $selections->scope_id, $selections->pick, $selections->odd_doubleParam, $selections->odd_doubleParam2, $selections->odd_doubleParam3, $selections->odd_participantParameterName, $selections->odd_participantParameterName2, $selections->odd_participantParameterName3, $selections->equipe1['name'], $selections->equipe2['name']);
                 $selections['pariAffichage'] = $pariAffichage;
             } ?>
-            <tr data-selections='{{{$selections_final}}}' data-nb-selections='{{{$pari->selections->count()}}}' data-pari-id='{{{$pari->id}}}' data-pari-type='{{{$pari->type_profil}}}'>
-                <td>{{{'#'.$pari->numero_pari}}}</td>
-                <td>
+            <tr data-selections='{{{$selections_final}}}' data-nb-selections='{{{$pari->selections->count()}}}' data-pick="{{$selections->pick}}" data-name1='{{$selections->equipe1['name']}}' data-pari-id='{{{$pari->id}}}' data-selection-id='{{{$pari->type_profil == "s" ? $selections->id : ""}}}' data-pari-type='{{{$pari->type_profil}}}'>
+                <td class="hidden-xs hidden-sm">
                     @if($pari->type_profil == 's')
                         <?php $date = Carbon::createFromFormat('Y-m-d H:i:s', $pari->selections->first()->date_match, 'Europe/Paris');
                         $date->setTimezone(Auth::user()->timezone);?>
@@ -58,40 +56,34 @@
                 <td>
                     @if($pari->type_profil == 's')
                         @if($pari->selections->first()->isMatch)
-                            {{{$pari->selections->first()->game_name}}}
+                            {{$pari->selections->first()->game_name.' »'}}
+                        @endif
+                    @endif
+                    <span class="blue">
+                        @if($pari->type_profil == 's')
+                            {{$pariAffichage}}
+                            @if($pari->selections->first()->isLive)
+                                <span class="label label-sm label-danger label-mini">{{$pari->selections->first()->score.' LIVE!'}}</span>
+                            @endif
                         @else
-                            {{{'N/A'}}}
+                            <span class="label label-sm label-success label-mini">combiné</span>
                         @endif
-                    @else
-                        <span class="label label-sm label-success label-mini">combiné</span>
-                    @endif
+                    </span>
                 </td>
-
-                <td class="blue">
-                    @if($pari->type_profil == 's')
-                        {{$pariAffichage}}
-                        {{' ('.$pari->selections->first()->scope->representation.') '}}
-                        @if($pari->selections->first()->score)
-                            {{' ('.$pari->selections->first()->score.' LIVE!) '}}
-                        @endif
-                    @else
-                        <span class="label label-sm label-success label-mini">combiné</span>
-                    @endif
-                </td>
-                <td>{{$pari->tipster->name}}</td>
-                <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}
-                </td>
-                <td class="fit tdcote">{{$pari->cote}}</td>
+                <td>{{$pari->tipster->name == 'default' ? '-' : $pari->tipster->name}}</td>
                 <td class="tdmise  bold">
 
-                    <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise}}} {{'('.+$pari->nombre_unites.'u)'}}
+                    <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise}}}
                 </td>
-
-                <td width="90px">
+                <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}
+                </td>
+                <td class="fit tdcote td-bet">{{floatval($pari->cote)}} </td>
+                <td width="" style="text-align: center;">
                     @if($pari->type_profil == 's')
                         <select name="status[]"
                                 data-value=""
-                                class="form-control inputs-ticket">
+                                data-defaut-value="{{$pari->selections->first()->status}}"
+                                class="form-control pari-status ">
                             <option value="0">-Choisir-</option>
                             @foreach($types_resultat as $key => $type)
                                 <option value="{{$key}}"><a href="javascript:;"
@@ -104,13 +96,12 @@
                     @endif
 
                 </td>
-
-
-                <td width="120px">
-                    {{ Form::button('<i class="fa fa-check"></i>', array('data-pari-type' => $pari->type_profil, 'data-pari-id' => $pari->id, 'class' => 'boutonvalider btn btn-sm ladda-button green-jungle buttons-actions-ticket')) }}
-                    {{ Form::button('<i class="fa fa-trash"></i>', array('data-pari-type' => $pari->type_profil, 'data-pari-id' => $pari->id, 'data-style' => "zoom-in", 'class' => 'boutonsupprimer btn btn-sm ladda-button red buttons-actions-ticket')) }}
+                <td width="" class="td-bet"><div class="input-group "><input value="{{$pari->montant_retour + 0}}" type="text" width="50px" name="amount-returned" class="form-control inputs-ticket"></div></td>
+                <td width="" class="td-bet-options center-text">
+                    {{ Form::button('<i class="fa fa-check"></i>', array('data-id' => $pari->id, 'data-pari-type' => $pari->type_profil, 'data-numero-pari' => $pari->numero_pari, 'data-toggle' => "tooltip", 'title' => "Basculer définitivement dans l'historique", 'data-style' => "zoom-in", 'class' => 'boutonvalider btn btn-sm ladda-button green-jungle buttons-actions-ticket')) }}
+                    {{ Form::button('<i class="fa fa-trash"></i>', array('data-id' => $pari->id, 'data-pari-type' => $pari->type_profil, 'data-numero-pari' => $pari->numero_pari, 'data-toggle' => "tooltip", 'title' => "Supprimer", 'data-style' => "zoom-in", 'class' => 'boutonsupprimer btn btn-sm ladda-button red buttons-actions-ticket')) }}
                     @if($pari->followtype == 'n')
-                        {{ Form::button('<i class="fa fa-briefcase"></i>', array('type' => 'submit', 'class' => 'btn btn-sm grey-gallery form-bouton-paris buttons-actions-ticket boutoncashout', 'data-toggle' => 'modal', 'data-target' => '#cashoutModal', 'data-hover' => 'tooltip', 'data-id' => $pari->id, 'title' => 'Cash Out')) }}
+                        <!-- {{ Form::button('<i class="fa fa-briefcase"></i>', array('type' => 'submit', 'class' => 'btn btn-sm grey-gallery form-bouton-paris buttons-actions-ticket', 'data-id' => $pari->id, 'data-toggle' => 'modal', 'data-target' => '#cashoutModal', 'data-hover' => 'tooltip', 'title' => 'Cash Out',  )) }} -->
                     @endif
                 </td>
             </tr>

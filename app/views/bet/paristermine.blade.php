@@ -133,7 +133,7 @@
                 </td>
 
                 <td width="" class="textaligncenter">
-                    {{ Form::button('<i class="fa fa-trash ladda-label"></i>', array('type' => 'submit', 'class' => 'bouton-supprimer-historique-pari btn btn-xs red ladda-button', 'data-numero-pari' => $pari->numero_pari, 'data-pari-id' => $pari->id, 'data-toggle' => 'tooltip', 'data-original-title' => 'Supprimer', 'data-style' => "zoom-in", 'data-size'=> "l")) }}
+                    {{ Form::button('<i class="fa fa-trash ladda-label"></i>', array('type' => 'submit', 'class' => 'bouton-supprimer-historique-pari btn btn-sm red ladda-button', 'data-numero-pari' => $pari->numero_pari, 'data-pari-id' => $pari->id, 'data-toggle' => 'tooltip', 'data-original-title' => 'Supprimer', 'data-style' => "zoom-in", 'data-size'=> "l")) }}
                 </td>
             </tr>
         @endforeach

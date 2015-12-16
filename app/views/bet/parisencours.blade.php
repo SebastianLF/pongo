@@ -9,18 +9,17 @@
     <table id="parisencourstable" class="table table-light table-condensed table-hover table-paris">
         <thead>
         <tr class="uppercase">
-            <th >N°</th>
-            <th>date r.</th>
-            <th class="hidden-sm">Sport</th>
-            <th class="hidden-sm">Competition</th>
+            <th>date</th>
+            <th>Sport</th>
+            <th>Competition</th>
             <th>Pari</th>
             <th>Tipster</th>
             <th>Mise</th>
             <th>Book</th>
             <th>Ma cote</th>
-            <th>Status</th>
-            <th>Mt. retour <span class="glyphicon glyphicon-info-sign font-red-sunglo" data-toggle="tooltip" data-html="true" title="Exemple: cote à 2 et mise de 50 {{Auth::user()->devise}}, le montant retour sera 100 {{Auth::user()->devise}} . <br/><span class='font-red-sunglo'>Verifiez bien le montant, il peut etre différent de celui calculé chez le bookmaker. Si c'est le cas, remplacez le.</span>"></span></th>
-            <th></th>
+            <th data-priority="1">status</th>
+            <th data-priority="1">MT. RET.<span class="glyphicon glyphicon-info-sign font-red-sunglo" data-toggle="tooltip" data-html="true" title="Exemple: cote à 2 et mise de 50 {{Auth::user()->devise}}, le montant retour sera 100 {{Auth::user()->devise}} . <br/><span class='font-red-sunglo'>Verifiez bien le montant, il peut etre différent de celui calculé chez le bookmaker. Si c'est le cas, remplacez le.</span>"></span></th>
+            <th data-priority="1"></th>
         </tr>
         </thead>
         <tbody>
@@ -32,8 +31,7 @@
                 $selections['pariAffichage'] = $pariAffichage;
             } ?>
             <tr data-selections='{{{$selections_final}}}' data-nb-selections='{{{$pari->selections->count()}}}' data-pick="{{$selections->pick}}" data-name1='{{$selections->equipe1['name']}}' data-pari-id='{{{$pari->id}}}' data-selection-id='{{{$pari->type_profil == "s" ? $selections->id : ""}}}' data-pari-type='{{{$pari->type_profil}}}'>
-                <td >{{{'#'.$pari->numero_pari}}}</td>
-                <td>
+                <td class="hidden-xs hidden-sm">
                     @if($pari->type_profil == 's')
                         <?php $date = Carbon::createFromFormat('Y-m-d H:i:s', $pari->selections->first()->date_match, 'Europe/Paris');
                         $date->setTimezone(Auth::user()->timezone);?>
@@ -43,14 +41,14 @@
                     @endif
 
                 </td>
-                <td class="hidden-sm">
+                <td>
                     @if($pari->type_profil == 's')
                         {{{$pari->selections->first()->sport->name}}}
                     @else
                         <span class="label label-sm label-success label-mini">combiné</span>
                     @endif
                 </td>
-                <td class="hidden-sm">@if($pari->type_profil == 's')
+                <td>@if($pari->type_profil == 's')
                         {{{$pari->selections->first()->competition->name}}}
                     @else
                         <span class="label label-sm label-success label-mini">combiné</span>
@@ -79,8 +77,8 @@
                 </td>
                 <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}
                 </td>
-                <td width="10px" class="fit tdcote td-bet">{{floatval($pari->cote)}} </td>
-                <td width="">
+                <td class="fit tdcote td-bet">{{floatval($pari->cote)}} </td>
+                <td width="" style="text-align: center;">
                     @if($pari->type_profil == 's')
                         <select name="status[]"
                                 data-value=""
@@ -98,8 +96,8 @@
                     @endif
 
                 </td>
-                <td width="10px" class="td-bet"><div class="input-group "><input value="{{$pari->montant_retour + 0}}" type="text" width="50px" name="amount-returned" class="form-control inputs-ticket"><div class="input-group-addon input-group-addon-amount-returned">{{Auth::user()->devise}}</div></div></td>
-                <td width="130px" class="td-bet-options center-text">
+                <td width="" class="td-bet"><div class="input-group "><input value="{{$pari->montant_retour + 0}}" type="text" width="50px" name="amount-returned" class="form-control inputs-ticket"></div></td>
+                <td width="" class="td-bet-options center-text">
                     {{ Form::button('<i class="fa fa-check"></i>', array('data-id' => $pari->id, 'data-pari-type' => $pari->type_profil, 'data-numero-pari' => $pari->numero_pari, 'data-toggle' => "tooltip", 'title' => "Basculer définitivement dans l'historique", 'data-style' => "zoom-in", 'class' => 'boutonvalider btn btn-sm ladda-button green-jungle buttons-actions-ticket')) }}
                     {{ Form::button('<i class="fa fa-trash"></i>', array('data-id' => $pari->id, 'data-pari-type' => $pari->type_profil, 'data-numero-pari' => $pari->numero_pari, 'data-toggle' => "tooltip", 'title' => "Supprimer", 'data-style' => "zoom-in", 'class' => 'boutonsupprimer btn btn-sm ladda-button red buttons-actions-ticket')) }}
                     @if($pari->followtype == 'n')

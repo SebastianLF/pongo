@@ -142,7 +142,7 @@
 
                 <label class="checkbox-inline">
                     <input type="checkbox" id="ticketABCD"
-                           value="ticketABCD">Martingale ABCD
+                           value="ticketABCD">Martingale
                 </label>
                 <label class="checkbox-inline">
                     <input type="checkbox" id="ticketLongTerme"
