@@ -119,10 +119,10 @@ function loadParisABCD() {
             }).select2({minimumResultsForSearch: Infinity});
 
             // afficher le count dans le bon endroit.
-            if (data.count_paris_encours == 0) {
+            if (data.count_paris_abcd == 0) {
                 onglet_span.text('');
             } else {
-                onglet_span.html(data.count_paris_encours);
+                onglet_span.html(data.count_paris_abcd);
             }
 
             $('#parisencourstable_paginate').bind('click', 'a', function () {
@@ -133,8 +133,8 @@ function loadParisABCD() {
             });
 
             calculMontantRetourne(table);
-            parisEnCoursEnclose(table, 'c');
-            parisEnCoursDelete(table, 'c');
+            parisEnCoursEnclose(table, 'm');
+            parisEnCoursDelete(table, 'm');
 
         },
         error: function (data) {

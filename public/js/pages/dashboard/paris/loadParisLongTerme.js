@@ -134,8 +134,8 @@ function loadParisLongTerme() {
             });
 
             calculMontantRetourne(table);
-            parisEnCoursEnclose(table, 'c');
-            parisEnCoursDelete(table, 'c');
+            parisEnCoursEnclose(table, 'lt');
+            parisEnCoursDelete(table, 'lt');
 
         },
         error: function (data) {
