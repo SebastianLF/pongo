@@ -19,14 +19,13 @@
             <tbody>
 
             @foreach($releves_pour_chaque_jour as $key => $releve_jour)
+                <?php
+                $date_cloturation = Carbon::createFromFormat('Y-m-d', $releve_jour->closed_bis_at, 'Europe/Paris');
+                $date_cloturation->setTimezone(Auth::user()->timezone);
+                $date_cloturation->format('d/m/Y')  ?>
                 <tr>
-                    <td><button class="button-releve-details"><span data-toggle="collapse" href="{{'#'.$releve_jour->closed_bis_at.'_'.$key}}" aria-expanded="false" aria-controls="collapse" class="row-details glyphicon glyphicon-triangle-bottom" style="cursor: pointer"></span></button></td>
-                    <td>
-                        <?php
-                        $date_cloturation = Carbon::createFromFormat('Y-m-d', $releve_jour->closed_bis_at, 'Europe/Paris');
-                        $date_cloturation->setTimezone(Auth::user()->timezone); ?>
-                        {{$date_cloturation->format('d/m/Y')}}
-                    </td>
+                    <td><span class="button-releve-details glyphicon glyphicon-triangle-bottom" data-date="{{$date_cloturation}}"></span></td>
+                    <td>{{$date_cloturation->format('d/m/Y')}}</td>
                     <td>{{$releve_jour->quantite}}</td>
                     <td><?php
                         $profit_par_jour = floatval(round($releve_jour->profit_par_jour, 2));

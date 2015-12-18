@@ -82,6 +82,12 @@
 			return View::make('recaps.releve', array('releves_pour_chaque_jour' => $releves_pour_chaque_jour));
 		}
 
+		public function showDetailsReleve($date){
+			$details = Auth::user()->termineParis()->where('DATE(closet_at)', $date)->get();
+			Clockwork::info($details);
+			return $details;
+		}
+
 		public function showGeneralRecap(){
 
 			// tipsters

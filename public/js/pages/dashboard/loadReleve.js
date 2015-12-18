@@ -40,13 +40,31 @@ ranges_container.find('ul li:nth-child(5)').addClass('active');
 
 function loadReleveOnDashboard() {
     var range = $('#default-range-container-releve #defaultrange-releve').text();
+
     $.ajax({
         url: 'releve',
         type: 'get',
         data: {range: range},
         success: function (data) {
             $('#releve-recap').html(data);
-         }
+
+            // details expand
+            $('#table-releve-recap').on('click', '.button-releve-details', function(){
+                var tr = $(this).closest('tr');
+                $.ajax({
+                    url: 'releve-details/'+$(this).data('date'),
+                    type: 'get',
+                    success: function (data) {
+
+                    },
+                    complete: function () {
+
+                    }
+                })
+            });
+
+
+        }
     })
 }
 
