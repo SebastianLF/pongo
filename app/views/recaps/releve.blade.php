@@ -20,7 +20,7 @@
 
             @foreach($releves_pour_chaque_jour as $key => $releve_jour)
                 <tr>
-                    <td><span data-toggle="collapse" href="{{'#'.$releve_jour->closed_bis_at.'_'.$key}}" aria-expanded="false" aria-controls="collapse" class="row-details glyphicon glyphicon-triangle-bottom" style="cursor: pointer"></span></td>
+                    <td><button class="button-releve-details"><span data-toggle="collapse" href="{{'#'.$releve_jour->closed_bis_at.'_'.$key}}" aria-expanded="false" aria-controls="collapse" class="row-details glyphicon glyphicon-triangle-bottom" style="cursor: pointer"></span></button></td>
                     <td>
                         <?php
                         $date_cloturation = Carbon::createFromFormat('Y-m-d', $releve_jour->closed_bis_at, 'Europe/Paris');

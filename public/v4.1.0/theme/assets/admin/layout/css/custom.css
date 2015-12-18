@@ -141,6 +141,20 @@ select{
   padding: 5px 0 5px 0 !important;
 }
 
+.button-releve-details:active,
+.button-releve-details:hover,
+.button-releve-details:focus,
+.button-releve-details:visited
+{
+  outline:0px !important;
+  -webkit-appearance:none;
+}
+
+.button-releve-details{
+  background-color: #fff !important;
+  border: 0 !important;
+}
+
 .name{
   color: #65A0D0 !important;
   font-weight: 600;

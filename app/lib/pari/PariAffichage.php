@@ -97,20 +97,20 @@
 				}
 			} elseif ($affichage_num == 2) {
 				if ($pick == 'Over') {
-					return 'Plus de ' . $oddParameter1 . ' buts au total';
+					return 'Over' . $oddParameter1;
 				} elseif ($pick == 'Under') {
-					return 'Moins de ' . $oddParameter1 . ' buts au total';
+					return 'Under ' . $oddParameter1;
 				}
-				return $pick . ' ' . $oddParameter1 . ' Total Goals';
+				return $pick . ' ' . $oddParameter1;
 			} elseif ($affichage_num == 3) {
 				return $pick;
 			} elseif ($affichage_num == 4) {
-				return ' Buteur Match: ' . $pick;
+				return 'Anytime goalscorer ' . $pick;
 			} elseif ($affichage_num == 5) {
 				$pick = $this->UniformiserNomEquipe($pick, $home_team, $away_team);
-				return 'Se qualifie: ' . $pick;
+				return $pick . ' to qualify';
 			} elseif ($affichage_num == 6) {
-				return 'Score Exact: ' . $pick;
+				return 'Exact score: ' . $pick;
 			} elseif ($affichage_num == 9) {
 				if ($oddParameter1 >= 0) {
 					return $this->UniformiserNomEquipe($pick, $home_team, $away_team) . ' +' . $oddParameter1;

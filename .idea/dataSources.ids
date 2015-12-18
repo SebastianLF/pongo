@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source name="MySQL - slfweb@localhost" uuid="df636a34-977d-4dba-b7e3-b636c8873f85">
-    <database-info product="MySQL" version="5.6.17" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+    <database-info product="MySQL" version="5.6.17" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
@@ -2291,7 +2291,7 @@
       <column name="equipe2_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="en_cours_pari_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="termine_pari_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="pari_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="pari_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="selections_competition_id_foreign" columns="competition_id" ref-table="competitions" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="selections_en_cours_pari_id_foreign" columns="en_cours_pari_id" ref-table="en_cours_paris" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
@@ -2318,6 +2318,8 @@
       <column name="pirorite" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="Mw=="/>
       <column name="sport_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="market_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="sport_market_market_id_foreign" columns="market_id" ref-table="markets" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
       <foreign-key name="sport_market_sport_id_foreign" columns="sport_id" ref-table="sports" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="0" delete-rule="3" deferrability="2"/>
@@ -2330,6 +2332,8 @@
       <column name="pirorite" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="Mw=="/>
       <column name="sport_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="scope_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="sport_scope_scope_id_foreign" columns="scope_id" ref-table="scopes" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
       <foreign-key name="sport_scope_sport_id_foreign" columns="sport_id" ref-table="sports" ref-schema="" ref-catalog="slfweb" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
