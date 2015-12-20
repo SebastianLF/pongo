@@ -5,7 +5,6 @@
         <table class="table table-hover table-light">
             <thead>
             <tr class="uppercase">
-                <th></th>
                 <th>
                     date
                 </th>
@@ -24,7 +23,7 @@
                 $date_cloturation->setTimezone(Auth::user()->timezone);
                 $date_cloturation->format('d/m/Y')  ?>
                 <tr>
-                    <td><span class="button-releve-details glyphicon glyphicon-triangle-bottom" data-date="{{$date_cloturation}}"></span></td>
+                    <!-- <td><span class="button-releve-details glyphicon glyphicon-triangle-bottom" data-date="{{$date_cloturation}}"></span></td> -->
                     <td>{{$date_cloturation->format('d/m/Y')}}</td>
                     <td>{{$releve_jour->quantite}}</td>
                     <td><?php
@@ -41,12 +40,22 @@
                 </tr>
 
                 <tr class="collapse" id="{{$releve_jour->closed_bis_at.'_'.$key}}">
-                    <td>zqdq</td>
-                    <td>zqdq</td>
-                    <td>zqdq</td>
-                    <td>zqdq</td>
+
                 </tr>
             @endforeach
+                <tr style="border-top: 2px solid #ddd !important;"><td class="uppercase bold">Total</td><td>{{$releves_pour_chaque_jour->sum('quantite')}}</td>
+                    <td>
+                        <?php $total = $releves_pour_chaque_jour->sum('profit_par_jour');
+                            if ($total > 0) {
+                            $total = '<span class="bold font-green-sharp">' . ' +' . $total . ' ' . Auth::user()->devise . '</span>';
+                            } elseif ($total < 0) {
+                            $total = '<span class="bold red-lose">' . $total . ' ' . Auth::user()->devise . '</span>';
+                            } elseif ($total == 0) {
+                            $total = '<span class="bold">' . $total . ' ' . Auth::user()->devise . '</span>';
+                            }?>
+                        {{$total}}
+                    </td>
+                </tr>
             </tbody>
         </table>
     @endif

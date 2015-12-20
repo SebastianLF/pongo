@@ -3,9 +3,11 @@ function cb_releve(start, end) {
     $('#defaultrange-releve').html(start.format('DD/MM/YYYY') + ' - ' + end.format('DD/MM/YYYY'));
 }
 
-cb_releve(moment.tz(user.timezone).startOf('month'), moment.tz(user.timezone).endOf('month'));
+cb_releve(moment.tz(user.timezone).subtract(7,'days'), moment.tz(user.timezone).endOf('day'));
 
 $('#default-range-container-releve').daterangepicker({
+    startDate: moment.tz(user.timezone).subtract(7,'days'),
+    endDate: moment.tz(user.timezone).endOf('day'),
     opens: 'left',
     format: 'DD/MM/YYYY',
     buttonClasses: ['btn btn-default'],
@@ -22,7 +24,7 @@ $('#default-range-container-releve').daterangepicker({
         firstDay: 1
     },
     ranges: {
-        'Aujourd\'hui': [moment.tz(user.timezone).startOf('day'), moment.tz(user.timezone).endOf('day')],
+        '7 derniers jours': [moment.tz(user.timezone).subtract(7,'days'), moment.tz(user.timezone).endOf('day')],
         'Hier': [moment.tz(user.timezone).subtract(1, 'days'), moment.tz(user.timezone).subtract(1, 'days')],
         'Cette Semaine': [moment.tz(user.timezone).startOf('isoweek'), moment.tz(user.timezone).endOf('isoweek')],
         'Semaine Précédente': [moment.tz(user.timezone).subtract(1, 'week').startOf('isoweek'), moment.tz(user.timezone).subtract(1, 'week').endOf('isoweek')],
@@ -35,8 +37,6 @@ $('#default-range-container-releve').daterangepicker({
 
 var ranges_container = $('.ranges');
 
-ranges_container.find('ul li:nth-child(1)').removeClass('active');
-ranges_container.find('ul li:nth-child(5)').addClass('active');
 
 function loadReleveOnDashboard() {
     var range = $('#default-range-container-releve #defaultrange-releve').text();
@@ -49,7 +49,7 @@ function loadReleveOnDashboard() {
             $('#releve-recap').html(data);
 
             // details expand
-            $('#table-releve-recap').on('click', '.button-releve-details', function(){
+            /*$('#table-releve-recap').on('click', '.button-releve-details', function(){
                 var tr = $(this).closest('tr');
                 $.ajax({
                     url: 'releve-details/'+$(this).data('date'),
@@ -61,9 +61,7 @@ function loadReleveOnDashboard() {
 
                     }
                 })
-            });
-
-
+            });*/
         }
     })
 }

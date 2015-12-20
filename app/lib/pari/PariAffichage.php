@@ -90,14 +90,14 @@
 				$pick = $this->UniformiserNomEquipe($pick, $home_team, $away_team);
 				$parameterName1 = $this->UniformiserNomEquipe($parameterName1, $home_team, $away_team);
 				$oddParameter1 = $oddParameter1 > 0 ? '+' . $oddParameter1 : $oddParameter1;
-				if ($pick == 'Nul') {
+				if ($pick == 'Draw') {
 					return $pick . ' - (' . $parameterName1 . ' ' . $oddParameter1 . ')';
 				} else {
 					return $pick . ' (' . $oddParameter1 . ')';
 				}
 			} elseif ($affichage_num == 2) {
 				if ($pick == 'Over') {
-					return 'Over' . $oddParameter1;
+					return 'Over ' . $oddParameter1;
 				} elseif ($pick == 'Under') {
 					return 'Under ' . $oddParameter1;
 				}
@@ -105,12 +105,12 @@
 			} elseif ($affichage_num == 3) {
 				return $pick;
 			} elseif ($affichage_num == 4) {
-				return 'Anytime goalscorer ' . $pick;
+				return $pick;
 			} elseif ($affichage_num == 5) {
 				$pick = $this->UniformiserNomEquipe($pick, $home_team, $away_team);
-				return $pick . ' to qualify';
+				return $pick;
 			} elseif ($affichage_num == 6) {
-				return 'Exact score: ' . $pick;
+				return $pick;
 			} elseif ($affichage_num == 9) {
 				if ($oddParameter1 >= 0) {
 					return $this->UniformiserNomEquipe($pick, $home_team, $away_team) . ' +' . $oddParameter1;
@@ -154,7 +154,7 @@
 				return $away_team;
 			}
 			if (!is_null($home_team) && !is_null($away_team) && ($var == 'X' || $var == 'Draw')) {
-				return 'Nul';
+				return 'Draw';
 			}
 			return $var;
 		}

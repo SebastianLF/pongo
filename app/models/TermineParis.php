@@ -2,7 +2,7 @@
 
 	use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
-class TermineParis extends Eloquent {
+	class TermineParis extends Eloquent {
 	use SoftDeletingTrait;
 	protected $dates = ['deleted_at'];
 
@@ -21,7 +21,7 @@ class TermineParis extends Eloquent {
 	}
 
 	public function selections(){
-		return $this->hasMany('Selection','termine_pari_id');
+		return $this->hasMany('Selection','pari_id');
 	}
 
 	public function compte(){

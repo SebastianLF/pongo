@@ -38,14 +38,15 @@
         </tr> -->
 
         @foreach($recap_tipsters as $recap_tipster)
+
             <?php $roi = floatval(round(($recap_tipster->total_devise_retour_par_mois_tipster - $recap_tipster->total_investissement_par_mois_tipster) / $recap_tipster->total_investissement_par_mois_tipster * 100));
-            if ($roi > 0) {
-                $roi = '<span class="bold font-green-sharp">' . $roi . '%' . '</span>';
-            } else if ($roi < 0) {
-                $roi = '<span class="bold red-lose">' . $roi . '%' . '</span>';
-            } else if ($roi == 0) {
-                $roi = '<span class="bold">' . $roi . '%' . '</span>';
+            $recap_tipster['roi'] = $roi;
+
+            Clockwork::info($recap_tipster);
+
+            if ($roi > 0) {$roi = '<span class="bold font-green-sharp">' . $roi . '%' . '</span>';} else if ($roi < 0) { $roi = '<span class="bold red-lose">' . $roi . '%' . '</span>';} else if ($roi == 0) {$roi = '<span class="bold">' . $roi . '%' . '</span>';
             }
+
             $nombre_paris_gagnes = $recap_tipster->nombre_paris_gagnes_par_mois_tipster + $recap_tipster->nombre_paris_demigagnes_par_mois_tipster + $recap_tipster->nombre_paris_gagnespartiel_par_mois_tipster;
             $nombre_paris_gagnes = '<span class="theme-font">' . $nombre_paris_gagnes . '</span>';
             $nombre_paris_perdu = $recap_tipster->nombre_paris_perdu_par_mois_tipster + $recap_tipster->nombre_paris_demiperdu_par_mois_tipster + $recap_tipster->nombre_paris_perdupartiel_par_mois_tipster;
@@ -63,7 +64,7 @@
             <tr>
 
                 <td>
-                    <span class="{{$recap_tipster->tipster->name == "default" ? 'primary-link ellipsis-recap-tipsters' : 'ellipsis-recap-tipsters'}}">{{$recap_tipster->followtype == 'b' ? $recap_tipster->tipster->name.' <span class="label label-sm label-warning label-mini" data-toggle="tooltip" data-original-title="'.utf8_encode('à blanc').'">B</span>' : ($recap_tipster->tipster->name == 'default' ? 'Mon bilan' : $recap_tipster->tipster->name) }}</span>
+                    <span class="{{$recap_tipster->tipster->name == "default" ? 'primary-link ellipsis-recap-tipsters' : 'ellipsis-recap-tipsters'}}">{{$recap_tipster->followtype == 'b' ? $recap_tipster->tipster->name.' <span class="label label-sm label-warning label-mini" data-toggle="tooltip" data-original-title="'.utf8_encode('à blanc').'">B</span>' : ($recap_tipster->tipster->name == 'default' ? 'Sans tipsters' : $recap_tipster->tipster->name) }}</span>
                 </td>
                 <td>
                     <span class="bold theme-font">{{$roi}}</span>
@@ -86,6 +87,17 @@
 
             </tr>
         @endforeach
+        <tr style="border-top: 2px solid #ddd !important;">
+            <td class="uppercase bold">Total</td>
+            <td ><?php $roi = $recap_tipsters->sum('roi') ?>
+            {{var_dump($roi)}}
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
         </tbody>
     </table>
 @endif

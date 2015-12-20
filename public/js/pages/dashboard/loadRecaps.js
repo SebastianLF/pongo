@@ -6,6 +6,8 @@ function cb(start, end) {
 cb(moment.tz(user.timezone).startOf('month'), moment.tz(user.timezone).endOf('month'));
 
 $('#default-range-container').daterangepicker({
+    startDate: moment.tz(user.timezone).startOf('month'),
+    endDate: moment.tz(user.timezone).endOf('month'),
     opens: 'left',
     format: 'DD/MM/YYYY',
     buttonClasses: ['btn btn-default'],
@@ -26,7 +28,7 @@ $('#default-range-container').daterangepicker({
         'Hier': [moment.tz(user.timezone).subtract(1, 'days'), moment.tz(user.timezone).subtract(1, 'days')],
         'Cette Semaine': [moment.tz(user.timezone).startOf('isoweek'), moment.tz(user.timezone).endOf('isoweek')],
         'Semaine Précédente': [moment.tz(user.timezone).subtract(1, 'week').startOf('isoweek'), moment.tz(user.timezone).subtract(1, 'week').endOf('isoweek')],
-        'Ce Mois-ci': [moment.tz(user.timezone).startOf('month'), moment.tz(user.timezone).endOf('month')],
+        'Mois en cours': [moment.tz(user.timezone).startOf('month'), moment.tz(user.timezone).endOf('month')],
         'Mois Précédent': [moment.tz(user.timezone).subtract(1, 'month').startOf('month'), moment.tz(user.timezone).subtract(1, 'month').endOf('month')]
     }
 }, cb).on('apply.daterangepicker', function (ev, picker) {
