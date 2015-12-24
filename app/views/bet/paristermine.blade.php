@@ -62,12 +62,18 @@
                     <span class="blue">
                         @if($pari->type_profil == 's')
                             {{$pariAffichage}}
+                            {{'('.$pari->selections->first()->market->representation.'-'.$pari->selections->first()->scope->representation.')'}}
                             @if($pari->selections->first()->isLive)
                                 <span class="label label-sm label-danger label-mini">{{$pari->selections->first()->score.' LIVE!'}}</span>
-
                             @endif
                         @else
                             <span class="label label-sm label-success label-mini">combiné</span>
+                        @endif
+                        @if($pari->pari_long_terme)
+                            <span class="label label-sm label-warning">{{' LONG TERME'}}</span>
+                        @endif
+                        @if($pari->pari_abcd)
+                            <span class="label label-sm label-warning uppercase">{{'MARTINGALE - '.$pari->nom_abcd.' '.$pari->lettre_abcd}}</span>
                         @endif
                     </span>
                 </td>

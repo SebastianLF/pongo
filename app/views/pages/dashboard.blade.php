@@ -72,7 +72,7 @@
                 <div class="portlet-body">
                     <div class="note note-danger">
                         <p>- Lorsque ce symbole apparait <span
-                                    class="glyphicon glyphicon-save"></span>
+                                    class="glyphicon glyphicon-save text-danger"></span>
                             le champ de recherche devient aussi un champ de création.
                             Tapez votre texte et le texte apparaitra dans les suggestions, vous n'avez alors plus qu'à cliquez sur la suggestion et c'est terminé. Voila comment créer vos propres suggestions dans le champ (uniquement lorsque ce symbole apparait).</p>
                     </div>
@@ -121,10 +121,10 @@
                                     <div class="row">
                                         <div class="col-md-2 col-sm-3 col-xs-3">
                                             <ul class="nav nav-tabs tabs-left">
-                                                <li class="">
+                                                <li class="active">
                                                     <a href="#tab_automatique" data-toggle="tab" aria-expanded="true">auto</a>
                                                 </li>
-                                                <li class="active">
+                                                <li class="">
                                                     <a href="#tab_manuel" data-toggle="tab"
                                                        aria-expanded="false">manu</a>
                                                 </li>
@@ -135,7 +135,7 @@
                                         </div>
                                         <div class="col-md-10 col-sm-9 col-xs-9">
                                             <div class="tab-content">
-                                                <div class="tab-pane fade" id="tab_automatique"
+                                                <div class="tab-pane active fade in" id="tab_automatique"
                                                      style="min-height: 600px">
                                                     @if(App::environment() == 'local')
                                                             <!--<iframe src="http://stage.betbrain.com/?portalId=1312&userSessionId={{Session::getId()}}" height="600" width="100%" frameborder="0" kwframeid="2">Odds service provided in
@@ -152,7 +152,7 @@
                                                                     target="_blank"><b>BetBrain.com</b></a></iframe>
                                                     @endif
                                                 </div>
-                                                <div class="tab-pane active fade in" id="tab_manuel"
+                                                <div class="tab-pane fade" id="tab_manuel"
                                                      style="min-height: 600px">
 
                                                     <form method="POST" action="{{url('coupon')}}"
