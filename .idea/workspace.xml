@@ -75,8 +75,8 @@
       <file leaf-file-name="loadParisTermine.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisTermine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8733706">
-              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5251397">
+              <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -2666,12 +2666,6 @@
       <option name="number" value="Default" />
       <updated>1411579515527</updated>
     </task>
-    <task id="LOCAL-00355" summary="implementation overall profits et details paris en cours table">
-      <created>1446707946457</created>
-      <option name="number" value="00355" />
-      <option name="project" value="LOCAL" />
-      <updated>1446707946457</updated>
-    </task>
     <task id="LOCAL-00356" summary="Model Pari...">
       <created>1446813500299</created>
       <option name="number" value="00356" />
@@ -2960,7 +2954,13 @@
       <option name="project" value="LOCAL" />
       <updated>1450937837364</updated>
     </task>
-    <option name="localTasksCounter" value="404" />
+    <task id="LOCAL-00404" summary="boutons export et recherche historique">
+      <created>1450938303934</created>
+      <option name="number" value="00404" />
+      <option name="project" value="LOCAL" />
+      <updated>1450938303934</updated>
+    </task>
+    <option name="localTasksCounter" value="405" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -3408,7 +3408,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="91" column="77" selection-start-line="91" selection-start-column="77" selection-end-line="91" selection-end-column="77" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3529,8 +3529,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisTermine.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8733706">
-          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5251397">
+          <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
           <folding />
         </state>
       </provider>

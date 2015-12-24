@@ -68,7 +68,7 @@ function loadParisTermine() {
                 ],
 
                 buttons: [
-                    'copy', 'excel', 'pdf'
+                    'copy', 'excel', 'csv'
                 ],
 
                 // set the initial value
@@ -80,6 +80,8 @@ function loadParisTermine() {
                 //"dom": "<'row' <'col-md-12'T>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r>t<'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>",
 
             });
+
+            oTable.fnPageChange( 'last' );
 
 
             var tableWrapper = $('#paristerminetable_wrapper'); // datatable creates the table wrapper by adding with id {your_table_jd}_wrapper
