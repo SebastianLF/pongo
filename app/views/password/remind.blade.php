@@ -49,7 +49,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			   name="email"/>
 	</div>
 	<div class="form-actions">
-		<button type="button" id="back-btn" class="btn btn-default"><a href="{{URL::previous()}}">RETOUR</a></button>
+		<button type="button" id="back-btn" class="btn btn-default"><a href="{{url('auth/login')}}">RETOUR</a></button>
 		<button type="submit" class="btn btn-success uppercase pull-right">Envoyer</button>
 	</div>
 	{{ Form::close() }}

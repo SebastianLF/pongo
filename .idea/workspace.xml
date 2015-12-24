@@ -1,26 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="fonctionnel avec toutes les listes de paris.">
-      <change type="DELETED" beforePath="C:\wamp\www\slfweb\app\models\EnCoursParis.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\wamp\www\slfweb\app\models\Historique.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/BookmakerUser.php" afterPath="$PROJECT_DIR$/app/models/BookmakerUser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/DashboardController.php" afterPath="$PROJECT_DIR$/app/controllers/DashboardController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/EnCoursParisController.php" afterPath="$PROJECT_DIR$/app/controllers/EnCoursParisController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/PariController.php" afterPath="$PROJECT_DIR$/app/controllers/PariController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Tipster.php" afterPath="$PROJECT_DIR$/app/models/Tipster.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js" afterPath="$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/dashboard/paris/addTicket.js" afterPath="$PROJECT_DIR$/public/js/pages/dashboard/paris/addTicket.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/automatic_addbet.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/automatic_addbet.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" afterPath="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/js/dashboard.js" afterPath="$PROJECT_DIR$/public/build/js/dashboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js" afterPath="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisGeneral.js" afterPath="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisGeneral.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/parisabcd.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/parisabcd.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/parisencours.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/parislongterme.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/parislongterme.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/paristermine.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/paristermine.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/recaps/tipstersrecap.blade.php" afterPath="$PROJECT_DIR$/app/views/recaps/tipstersrecap.blade.php" />
+    <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="liste paris fonctionnels.">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/password/remind.blade.php" afterPath="$PROJECT_DIR$/app/views/password/remind.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="9a530f09-4cfd-4f98-b2e3-9a97dcdef514" name="Failed commit: Default" comment="correction cloturation paris combviné avec plus de 3 selections" />
@@ -121,11 +103,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addManualCouponSelection.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="addManualCouponSelection.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6083499">
+            <state vertical-scroll-proportion="-9.0">
               <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/login.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.807693">
+              <caret line="36" column="42" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reset.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/password/reset.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="27.461538">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="remind.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/password/remind.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6320939">
+              <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -188,8 +200,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/database/migrations/2015_06_08_005706_create_sport_market_table.php" />
-        <option value="$PROJECT_DIR$/equipes.sql" />
         <option value="$PROJECT_DIR$/sport_market.sql" />
         <option value="$PROJECT_DIR$/sport_scope.sql" />
         <option value="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
@@ -239,6 +249,8 @@
         <option value="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/addTicket.js" />
         <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js" />
+        <option value="$PROJECT_DIR$/app/views/login.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/password/remind.blade.php" />
       </list>
     </option>
   </component>
@@ -443,6 +455,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slfweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slfweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slfweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slfweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="password" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2645,12 +2697,6 @@
       <option name="number" value="Default" />
       <updated>1411579515527</updated>
     </task>
-    <task id="LOCAL-00352" summary="bug betbrain panel fixed">
-      <created>1446599304093</created>
-      <option name="number" value="00352" />
-      <option name="project" value="LOCAL" />
-      <updated>1446599304093</updated>
-    </task>
     <task id="LOCAL-00353" summary="bug montant devise &gt;= bankroll">
       <created>1446600982435</created>
       <option name="number" value="00353" />
@@ -2939,7 +2985,13 @@
       <option name="project" value="LOCAL" />
       <updated>1450645285224</updated>
     </task>
-    <option name="localTasksCounter" value="401" />
+    <task id="LOCAL-00401" summary="liste paris fonctionnels.">
+      <created>1450933975446</created>
+      <option name="number" value="00401" />
+      <option name="project" value="LOCAL" />
+      <updated>1450933975471</updated>
+    </task>
+    <option name="localTasksCounter" value="402" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -2951,16 +3003,17 @@
     <frame x="33" y="150" width="1845" height="851" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15194148" sideWeight="0.47719297" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15194148" sideWeight="0.522807" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32333332" sideWeight="0.4973046" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928064" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2845805" sideWeight="0.5053996" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17875211" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3265306" sideWeight="0.4973046" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1868759" sideWeight="0.49460045" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16823056" sideWeight="0.49626866" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25604552" sideWeight="0.49393532" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15194148" sideWeight="0.47719297" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15194148" sideWeight="0.522807" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17875211" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16823056" sideWeight="0.49626866" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21715818" sideWeight="0.23521127" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35352114" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2970,7 +3023,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32816902" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928064" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39977604" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39002267" sideWeight="0.49393532" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31111112" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
@@ -3019,7 +3071,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ajout parti admin" />
     <MESSAGE value="debug admin" />
     <MESSAGE value="correction cloturation paris combviné avec plus de 3 selections" />
     <MESSAGE value="bootstrap non cdn .. etc.." />
@@ -3044,7 +3095,8 @@
     <MESSAGE value="remaniement concept tipster et soi meme + garnir bdd de participant d un type de pari isMatch = false." />
     <MESSAGE value="modif table paris en cours" />
     <MESSAGE value="fonctionnel avec toutes les listes de paris." />
-    <option name="LAST_COMMIT_MESSAGE" value="fonctionnel avec toutes les listes de paris." />
+    <MESSAGE value="liste paris fonctionnels." />
+    <option name="LAST_COMMIT_MESSAGE" value="liste paris fonctionnels." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -3054,37 +3106,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/database/seeds/CountryTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30456027">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..countries">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/218c14b6/2226fdbd-0f31-48fa-8a3c-f51c98371bf0/slfweb..equipes">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/CouponController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.55973816">
@@ -3511,8 +3532,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/addManualCouponSelection.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6083499">
+        <state vertical-scroll-proportion="-9.0">
           <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.807693">
+          <caret line="36" column="42" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/password/reset.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="27.461538">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/password/remind.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6320939">
+          <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
           <folding />
         </state>
       </provider>
