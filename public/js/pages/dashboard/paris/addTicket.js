@@ -234,6 +234,11 @@ function gestionTicket() {
                                 toastr.error(json.msg, 'Erreur:');
                             }
                         } else if (json.etat == 1) {
+                            bookmaker_account.val(null).trigger("change").html('').prop('disabled', true);
+                            containerABCD.addClass("hide");
+                            serieABCD.val(null).trigger("change").prop('disabled', true);
+                            letterABCD.val(null).trigger("change").prop('disabled', true);
+                            resetCheckboxs();
                             unit_stake.val(0);
                             devise_stake.val(0);
                             cote_tipster.val('');
@@ -274,8 +279,6 @@ function gestionTicket() {
     function resetCheckboxs() {
         abcd_checkbox.prop('checked', false);
         abcd_checkbox.parents('span').removeClass("checked");
-        gratuit_checkbox.prop('checked', false);
-        gratuit_checkbox.parents('span').removeClass("checked");
         longterme_checkbox.prop('checked', false);
         longterme_checkbox.parents('span').removeClass("checked");
     }
@@ -390,11 +393,7 @@ function gestionTicket() {
                 mt = Number(tipster_infos[0]['montant_par_unite']);
                 isNaN(mt) ? amount_per_unit.val('') : amount_per_unit.val(mt);
             }
-
-
-
         });
-
     }
 
     function gestionFollowtype() {

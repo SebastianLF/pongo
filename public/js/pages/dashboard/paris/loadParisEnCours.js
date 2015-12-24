@@ -128,8 +128,7 @@ function loadParisEnCours() {
             if (data.count_paris_encours == 0) {
                 onglet_span.text('');
             } else {
-                onglet_span.html(data.count_paris_encours);
-            }
+                onglet_span.html(data.count_paris_encours);}
 
             $('#parisencourstable_paginate').bind('click', 'a', function () {
                 //trigger le status de chaque pour le type simple

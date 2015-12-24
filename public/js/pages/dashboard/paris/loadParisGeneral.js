@@ -35,6 +35,7 @@ function fnFormatDetailsForChildsParisEnCours(oTable, selections, type) {
         }
 
         console.log(value.status);
+        console.log(value);
 
         // structure de representation d'une ligne pour les combinés.
         sOut +=
@@ -42,10 +43,9 @@ function fnFormatDetailsForChildsParisEnCours(oTable, selections, type) {
             '<td>' + moment.tz(value.date_match, 'Europe/Paris').tz(user.timezone).format("DD/MM/YYYY HH:mm") + '</td>' +
             '<td>' + value.sport.name + '</td>' +
             '<td>' + value.competition.name + '</td>' +
-            '<td>' + rencontre + '<span class="blue">' + value.pariAffichage + '</span>' + ' <span class="label label-sm label-danger label-mini">' + affichageScore() + '</span></td>' +
+            '<td>' + rencontre + '<span class="blue">' + value.pariAffichage + ' (' + value.market.representation + '-' + value.scope.representation + ')' +  '</span>' + ' <span class="label label-sm label-danger label-mini">' + affichageScore() + '</span>' + '</td>' +
             '<td>' + parseFloat(Math.round(value.cote * 1000) / 1000) + '</td>' +
-            '<td class=""><select name="status[]" data-value="" data-defaut-value="' + value.status + '" class="form-control inputs-ticket"><option value="0">-Choisir-</option><option value="1">Gagné</option><option value="2">Perdu</option><option value="3">1/2 Gagné</option><option value="4">1/2 Perdu</option><option value="5">Remboursé</option><option value="9">Annulé</option></select></td>'
-            +
+            '<td class=""><select name="status[]" data-value="" data-defaut-value="' + value.status + '" class="form-control inputs-ticket"><option value="0">-Choisir-</option><option value="1">Gagné</option><option value="2">Perdu</option><option value="3">1/2 Gagné</option><option value="4">1/2 Perdu</option><option value="5">Remboursé</option><option value="9">Annulé</option></select></td>' +
             '</tr>';
 
     });
@@ -88,6 +88,9 @@ function fnFormatDetailsForChildsParisTermine(oTable, selections, type) {
 
         function affichageStatus(status){
             switch (status) {
+                case 0:
+                    return '<span class="bold fontsize15">non défini</span>';
+                    break;
                 case 1:
                     return '<span class="bold fontsize15 font-green-sharp">gagné</span>';
                     break;
@@ -125,7 +128,7 @@ function fnFormatDetailsForChildsParisTermine(oTable, selections, type) {
             '<td>' + moment.tz(value.date_match, 'Europe/Paris').tz(user.timezone).format("DD/MM/YYYY HH:mm") + '</td>' +
             '<td>' + value.sport.name + '</td>' +
             '<td>' + value.competition.name + '</td>' +
-            '<td>' + rencontre + '<span class="blue">' + value.pariAffichage + '</span>' + ' <span class="label label-sm label-danger label-mini">' + affichageScore() + '</span></td>' +
+            '<td>' + rencontre + '<span class="blue">' + value.pariAffichage + ' (' + value.market.representation + '-' + value.scope.representation + ')' +  '</span>' + ' <span class="label label-sm label-danger label-mini">' + affichageScore() + '</span>' + '</td>' +
             '<td>' + parseFloat(Math.round(value.cote * 1000) / 1000) + '</td>' +
             '<td class="uppercase">' + affichageStatus(value.status) + '</td>'
             +

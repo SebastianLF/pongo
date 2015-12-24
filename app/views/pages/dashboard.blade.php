@@ -70,7 +70,12 @@
 
                 </div>
                 <div class="portlet-body">
-
+                    <div class="note note-danger">
+                        <p>- Lorsque ce symbole apparait <span
+                                    class="glyphicon glyphicon-save"></span>
+                            le champ de recherche devient aussi un champ de création.
+                            Tapez votre texte et le texte apparaitra dans les suggestions, vous n'avez alors plus qu'à cliquez sur la suggestion et c'est terminé. Voila comment créer vos propres suggestions dans le champ (uniquement lorsque ce symbole apparait).</p>
+                    </div>
                     <div class="panel-group accordion" id="">
                         <div class="panel panel-default">
                             <div class="panel-heading">
@@ -149,14 +154,7 @@
                                                 </div>
                                                 <div class="tab-pane active fade in" id="tab_manuel"
                                                      style="min-height: 600px">
-                                                    <div class="note note-danger">
-                                                        <p>- Lorsque le symbole <span
-                                                                    class="glyphicon glyphicon-save"></span>
-                                                            apparaît, c'est à vous
-                                                            d'inscrire le nom de l'equipe (ou du joueur) dans le champ
-                                                            de
-                                                            recherche puis le selectioner.</p>
-                                                    </div>
+
                                                     <form method="POST" action="{{url('coupon')}}"
                                                           accept-charset="UTF-8" id="manualselectionform-add"
                                                           role="form"><input name="_token" type="hidden"

@@ -735,16 +735,13 @@
 		}
 
 		public function recupererStatusSelectionsPourCombine($id){
-			$encoursparis = Auth::user()->enCoursParis()->where('id', $id)->with('selections.equipe1', 'selections.equipe1.country', 'selections.equipe2', 'selections.equipe2.country', 'selections.competition', 'selections.sport', 'selections.scope', 'compte.bookmaker', 'tipster')->where('pari_long_terme', '0')->where('pari_abcd', '0')->orderBy('numero_pari', 'desc')->first();
+			$encoursparis = Auth::user()->enCoursParis()->where('id', $id)->with('selections.equipe1', 'selections.equipe1.country', 'selections.equipe2', 'selections.equipe2.country', 'selections.competition', 'selections.sport', 'selections.market', 'selections.scope', 'compte.bookmaker', 'tipster')->first();
 			;
 			if( ! $encoursparis){
 				return Response::json('');
 			}
 
-			Clockwork::info($encoursparis);
 			$selections_final = $encoursparis->selections;
-
-			Clockwork::info($selections_final);
 
 			$pari_affichage = App::make('pari_affichage');
 			foreach ($selections_final as $selections) {

@@ -37,12 +37,9 @@
                 data-selection-id='{{{$pari->type_profil == "s" ? $selections->id : ""}}}'
                 data-pari-type='{{{$pari->type_profil}}}'>
                 <td>
-
                     <?php $date = Carbon::createFromFormat('Y-m-d H:i:s', $pari->closed_at, 'Europe/Paris');
                     $date->setTimezone(Auth::user()->timezone);?>
                     {{{' '.$date->format('d/m/Y H:i')}}}
-
-
                 </td>
                 <td class="hidden-sm">
                     @if($pari->type_profil == 's')
@@ -67,6 +64,7 @@
                             {{$pariAffichage}}
                             @if($pari->selections->first()->isLive)
                                 <span class="label label-sm label-danger label-mini">{{$pari->selections->first()->score.' LIVE!'}}</span>
+
                             @endif
                         @else
                             <span class="label label-sm label-success label-mini">combiné</span>
@@ -78,7 +76,7 @@
 
                     <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise}}}
                 </td>
-                <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}
+                <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-info">à blanc</span>' : $pari->compte->bookmaker->nom }}
                 </td>
                 <td width="10px" class="fit tdcote td-bet">{{floatval($pari->cote)}}</td>
                 <td width="" class="uppercase">

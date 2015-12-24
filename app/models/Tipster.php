@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Eloquent\SoftDeletingTrait;
+	use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
-class Tipster extends Eloquent {
+	class Tipster extends Eloquent {
 
 	use SoftDeletingTrait;
 
@@ -36,16 +36,13 @@ class Tipster extends Eloquent {
     }
 
 	public function termineParis(){
-		return $this->hasMany('TermineParis');
+		return $this->hasMany('Pari')->where('result', 1);
 	}
 
 	public function enCoursParis(){
-		return $this->hasMany('EnCoursParis');
+		return $this->hasMany('Pari')->where('result', 0);
 	}
 
-	public function recap(){
-		return $this->hasMany('MtMoisTipster');
-	}
 
 
 }

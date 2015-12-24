@@ -62,11 +62,15 @@
                     <span class="blue">
                         @if($pari->type_profil == 's')
                             {{$pariAffichage}}
+                            {{'('.$pari->selections->first()->market->representation.'-'.$pari->selections->first()->scope->representation.')'}}
                             @if($pari->selections->first()->isLive)
                                 <span class="label label-sm label-danger label-mini">{{$pari->selections->first()->score.' LIVE!'}}</span>
                             @endif
                         @else
                             <span class="label label-sm label-success label-mini">combiné</span>
+                        @endif
+                        @if($pari->pari_abcd)
+                            <span class="label label-sm label-warning uppercase">{{'MARTINGALE - '.$pari->nom_abcd.' '.$pari->lettre_abcd}}</span>
                         @endif
                     </span>
                 </td>
@@ -75,7 +79,7 @@
 
                     <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise}}}
                 </td>
-                <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}
+                <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-info">à blanc</span>' : $pari->compte->bookmaker->nom }}
                 </td>
                 <td class="fit tdcote td-bet">{{floatval($pari->cote)}} </td>
                 <td width="" style="text-align: center;">
@@ -97,7 +101,7 @@
 
                 </td>
                 <td width="" class="td-bet"><div class="input-group "><input value="{{$pari->montant_retour + 0}}" type="text" width="50px" name="amount-returned" class="form-control inputs-ticket"></div></td>
-                <td width="" class="td-bet-options center-text">
+                <td width="10px" class="td-bet-options center-text">
                     {{ Form::button('<i class="fa fa-check"></i>', array('data-id' => $pari->id, 'data-pari-type' => $pari->type_profil, 'data-numero-pari' => $pari->numero_pari, 'data-toggle' => "tooltip", 'title' => "Basculer définitivement dans l'historique", 'data-style' => "zoom-in", 'class' => 'boutonvalider btn btn-sm ladda-button green-jungle buttons-actions-ticket')) }}
                     {{ Form::button('<i class="fa fa-trash"></i>', array('data-id' => $pari->id, 'data-pari-type' => $pari->type_profil, 'data-numero-pari' => $pari->numero_pari, 'data-toggle' => "tooltip", 'title' => "Supprimer", 'data-style' => "zoom-in", 'class' => 'boutonsupprimer btn btn-sm ladda-button red buttons-actions-ticket')) }}
                     @if($pari->followtype == 'n')

@@ -22,7 +22,7 @@
                                                 data-toggle="tooltip" data-html="true"
                                                 title="Exemple: cote à 2 et mise de 50 {{Auth::user()->devise}}, le montant retour sera 100 {{Auth::user()->devise}} . <br/><span class='font-red-sunglo'>Verifiez bien le montant, il peut etre différent de celui calculé chez le bookmaker. Si c'est le cas, remplacez le.</span>"></span>
             </th>
-            <th data-priority="1"></th>
+            <th data-priority="1" width="10px"></th>
         </tr>
         </thead>
         <tbody>
@@ -83,7 +83,7 @@
 
                     <span class="tdsubmise bold ">{{{round($pari->mise_totale, 2)}}}</span>{{{Auth::user()->devise}}}
                 </td>
-                <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-combine label-mini">à blanc</span>' : $pari->compte->bookmaker->nom }}
+                <td>{{is_null($pari->bookmaker_user_id) ? '<span class="label label-sm label-info">à blanc</span>' : $pari->compte->bookmaker->nom }}
                 </td>
                 <td class="fit tdcote td-bet">{{floatval($pari->cote)}} </td>
                 <td width="" style="text-align: center;">

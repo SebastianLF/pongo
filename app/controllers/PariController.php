@@ -121,6 +121,9 @@
 						$mise_unites = $mise_devise / $tipster->montant_par_unite;
 					}
 
+					$ticketlongterme = Input::get('ticketLongTerme');
+					Clockwork::info($ticketlongterme);
+
 					// creation du pari dans le modele PARI.
 					$pari_model = new Pari(array(
 						'followtype' => $suivi,
@@ -129,7 +132,7 @@
 						'mt_par_unite' => $tipster->montant_par_unite,
 						'nombre_unites' => $mise_unites,
 						'mise_totale' => $mise_devise,
-						'pari_long_terme' => Input::get('ticketLongTerme'),
+						'pari_long_terme' => $ticketlongterme,
 						'pari_abcd' => Input::get('ticketABCD'),
 						'nom_abcd' => Input::get('serieinputdashboard'),
 						'lettre_abcd' => Input::get('letterinputdashboard'),
@@ -189,7 +192,6 @@
 					}
 
 					$pari_model->pari_live = $count_live > 0 ? 1 : 0;
-					$pari_model->pari_long_terme = $count_outright > 0 ? 1 : 0;
 
 					// mis a jour de la cote general.
 					if ($pari_model->type_profil == 's') {
@@ -340,7 +342,7 @@
 				$retour_unites = $retour_devise / $mt_par_unite;
 				$profit_unites = $retour_unites - $nombre_unites;
 
-				// affectation du status generale du pari selon le type de pari.
+				// affectation du status generale du pari selon le type de profil.
 				if ($encoursparis->type_profil == 's') {
 					$status_termine_pari = $selections[0]->status;
 				} else if ($encoursparis->type_profil == 'c') {
@@ -351,7 +353,9 @@
 						$status_termine_pari = 9;
 					} else if (($this->checkIfParlayHasSameStatus($all_status_array, 1))) {
 						$status_termine_pari = 1;
-					} else if (($this->checkIfParlayHasSameStatus($all_status_array, 2))) {
+					}else if (in_array(2, $all_status_array, true)) {
+						$status_termine_pari = 2;
+					}else if (($this->checkIfParlayHasSameStatus($all_status_array, 2))) {
 						$status_termine_pari = 2;
 					} else if ($profit_devise > 0 && (in_array(3, $all_status_array, true) || in_array(4, $all_status_array, true) || in_array(5, $all_status_array, true) || in_array(9, $all_status_array, true))) {
 						$status_termine_pari = 7;

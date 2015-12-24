@@ -155,7 +155,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <div class="">
-                        <label class="">N° ou nom</label>
+                        <label class="">N° ou nom <span class="glyphicon glyphicon-save text-danger" data-toggle="tooltip" title=""></span></label>
                     </div>
                     <div >
                         <select name="serieinputdashboard"

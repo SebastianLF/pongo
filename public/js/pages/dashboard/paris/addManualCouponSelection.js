@@ -10,7 +10,7 @@ function addManualCouponSelection() {
     var picks12 = [{id: "1", text: "Home"}, {id: "2", text: "Away"}];
     var picksOverUnder = [{id: "Over", text: "Over"}, {id: "Under", text: "Under"}];
     var tooltip_message = "Quand cet icone apparait, aucune proposition vous sera faite, c\'est à vous d'inscrire votre réponse dans le champ de recherche. Cette réponse deviendra ensuite une proposition, vous n'avez alors plus qu'à la selectionner.";
-    var manually_insertion_icon = " <span class='glyphicon glyphicon-save font-red' data-toggle='tooltip' data-title='"+tooltip_message+"'></span>";
+    var manually_insertion_icon = " <span class='glyphicon glyphicon-save font-red'></span>";
 
 
 

@@ -1,9 +1,9 @@
 <?php
 
 
-use Illuminate\Database\Eloquent\SoftDeletingTrait;
+	use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
-class BookmakerUser extends Eloquent{
+	class BookmakerUser extends Eloquent{
 	use SoftDeletingTrait;
 
 
@@ -19,7 +19,7 @@ class BookmakerUser extends Eloquent{
     }
 
 	public function enCoursParis(){
-		return $this->hasMany('EnCoursParis');
+		return $this->hasMany('Pari')->where('result', 0);
 	}
 
 

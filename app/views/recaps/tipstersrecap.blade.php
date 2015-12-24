@@ -64,7 +64,7 @@
             <tr>
 
                 <td>
-                    <span class="{{$recap_tipster->tipster->name == "default" ? 'primary-link ellipsis-recap-tipsters' : 'ellipsis-recap-tipsters'}}">{{$recap_tipster->followtype == 'b' ? $recap_tipster->tipster->name.' <span class="label label-sm label-warning label-mini" data-toggle="tooltip" data-original-title="'.utf8_encode('à blanc').'">B</span>' : ($recap_tipster->tipster->name == 'default' ? 'Sans tipsters' : $recap_tipster->tipster->name) }}</span>
+                    <span class="{{$recap_tipster->tipster->name == "default" ? 'primary-link ellipsis-recap-tipsters' : 'ellipsis-recap-tipsters'}}">{{$recap_tipster->followtype == 'b' ? ' <span class="label label-sm label-info" data-toggle="tooltip" data-original-title="'.utf8_encode('à blanc').'">B</span> '.($recap_tipster->tipster->name == 'default' ? 'Sans tipsters' : $recap_tipster->tipster->name) : ($recap_tipster->tipster->name == 'default' ? 'Sans tipsters' : $recap_tipster->tipster->name) }}</span>
                 </td>
                 <td>
                     <span class="bold theme-font">{{$roi}}</span>
@@ -88,14 +88,6 @@
             </tr>
         @endforeach
         <tr style="border-top: 2px solid #ddd !important;">
-            <td class="uppercase bold">Total</td>
-            <td ><?php $roi = $recap_tipsters->sum('roi') ?>
-            {{var_dump($roi)}}
-            </td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
 
         </tr>
         </tbody>
