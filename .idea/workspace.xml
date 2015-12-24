@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="liste paris fonctionnels.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" afterPath="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
+    <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="boutons export et recherche historique">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/js/dashboard.js" afterPath="$PROJECT_DIR$/public/build/js/dashboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisTermine.js" afterPath="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisTermine.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bet/paristermine.blade.php" afterPath="$PROJECT_DIR$/app/views/bet/paristermine.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="9a530f09-4cfd-4f98-b2e3-9a97dcdef514" name="Failed commit: Default" comment="correction cloturation paris combviné avec plus de 3 selections" />
@@ -76,11 +72,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="loadParisTermine.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="loadParisTermine.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisTermine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="75" column="41" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.8733706">
+              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -103,11 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="paristermine.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="paristermine.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/bet/paristermine.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.66536206">
-              <caret line="74" column="45" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
+            <state vertical-scroll-proportion="-13.730769">
+              <caret line="75" column="71" selection-start-line="75" selection-start-column="71" selection-end-line="75" selection-end-column="71" />
               <folding>
                 <marker date="1450937748398" expanded="true" signature="7629:7955" placeholder="..." />
                 <marker date="1450937748398" expanded="true" signature="7678:7954" placeholder="..." />
@@ -222,8 +218,8 @@
         <option value="$PROJECT_DIR$/app/views/login.blade.php" />
         <option value="$PROJECT_DIR$/app/views/password/remind.blade.php" />
         <option value="$PROJECT_DIR$/app/views/pages/dashboard.blade.php" />
-        <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisTermine.js" />
         <option value="$PROJECT_DIR$/app/views/bet/paristermine.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisTermine.js" />
       </list>
     </option>
   </component>
@@ -2670,12 +2666,6 @@
       <option name="number" value="Default" />
       <updated>1411579515527</updated>
     </task>
-    <task id="LOCAL-00354" summary="implementation overall profits et details paris en cours table">
-      <created>1446684387855</created>
-      <option name="number" value="00354" />
-      <option name="project" value="LOCAL" />
-      <updated>1446684387855</updated>
-    </task>
     <task id="LOCAL-00355" summary="implementation overall profits et details paris en cours table">
       <created>1446707946457</created>
       <option name="number" value="00355" />
@@ -2964,7 +2954,13 @@
       <option name="project" value="LOCAL" />
       <updated>1450934380468</updated>
     </task>
-    <option name="localTasksCounter" value="403" />
+    <task id="LOCAL-00403" summary="boutons export et recherche historique">
+      <created>1450937837364</created>
+      <option name="number" value="00403" />
+      <option name="project" value="LOCAL" />
+      <updated>1450937837364</updated>
+    </task>
+    <option name="localTasksCounter" value="404" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -3044,7 +3040,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="debug admin" />
     <MESSAGE value="correction cloturation paris combviné avec plus de 3 selections" />
     <MESSAGE value="bootstrap non cdn .. etc.." />
     <MESSAGE value="order by asc transactions" />
@@ -3069,7 +3064,8 @@
     <MESSAGE value="modif table paris en cours" />
     <MESSAGE value="fonctionnel avec toutes les listes de paris." />
     <MESSAGE value="liste paris fonctionnels." />
-    <option name="LAST_COMMIT_MESSAGE" value="liste paris fonctionnels." />
+    <MESSAGE value="boutons export et recherche historique" />
+    <option name="LAST_COMMIT_MESSAGE" value="boutons export et recherche historique" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -3505,11 +3501,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisTermine.js">
+    <entry file="file://$PROJECT_DIR$/app/views/bet/paristermine.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="75" column="41" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
-          <folding />
+        <state vertical-scroll-proportion="-13.730769">
+          <caret line="75" column="71" selection-start-line="75" selection-start-column="71" selection-end-line="75" selection-end-column="71" />
+          <folding>
+            <marker date="1450937748398" expanded="true" signature="7629:7955" placeholder="..." />
+            <marker date="1450937748398" expanded="true" signature="7678:7954" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3528,14 +3527,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bet/paristermine.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisTermine.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66536206">
-          <caret line="74" column="45" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
-          <folding>
-            <marker date="1450937748398" expanded="true" signature="7629:7955" placeholder="..." />
-            <marker date="1450937748398" expanded="true" signature="7678:7954" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="0.8733706">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

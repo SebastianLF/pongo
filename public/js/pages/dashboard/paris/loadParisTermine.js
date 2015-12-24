@@ -59,7 +59,7 @@ function loadParisTermine() {
                         sortDescending: ": activer pour trier la colonne par ordre décroissant"
                     }
                 },
-                "ordering": false,
+                "ordering": true,
                 //stateSave: true,
 
                 "lengthMenu": [
