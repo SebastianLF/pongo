@@ -265,7 +265,7 @@ function gestionTicket() {
         conversion_to_devise.val(0).prop('disabled', true);
         devise_stake.val(0).prop('disabled', true);
         unit_stake.val(0);
-        bookmaker_account.val(null).trigger("change").html('').prop('disabled', true);
+        bookmaker_account.val(null).trigger("change").html('');
         containerABCD.addClass("hide");
         serieABCD.val(null).trigger("change").prop('disabled', true);
         letterABCD.val(null).trigger("change").prop('disabled', true);
