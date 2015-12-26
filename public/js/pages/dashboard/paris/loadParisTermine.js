@@ -68,7 +68,7 @@ function loadParisTermine() {
                 ],
 
                 buttons: [
-                    'copy', 'excel', 'csv'
+                    'copy', 'csv'
                 ],
 
                 // set the initial value

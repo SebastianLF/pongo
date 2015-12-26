@@ -74,9 +74,32 @@ function loadParisEnCours() {
                     [5, 15, 20, 100] // change per page values here
                 ],
 
+                buttons: [
+                    {
+                        extend: 'copy',
+                        header: false,
+                        exportOptions: {
+                            modifier: {
+                                page: 'current'
+                            }
+                        }
+                    },
+                    {
+                        extend: 'csv',
+                        header: true,
+                        exportOptions: {
+                            modifier: {
+                                columnDefs: [
+                                    { targets: 1 }
+                                ]
+                            }
+                        }
+                    }
+                ],
+
                 // set the initial value
                 "pageLength": 5,
-                "dom": "<'table-scrollable't><'row'<'col-md-5 col-sm-6'i><'col-md-7 col-sm-6'p>>" // horizobtal scrollable datatable
+                "dom": "<'row'<'col-md-12'Bf>><'table-scrollable't><'row'<'col-md-5 col-sm-6'i><'col-md-7 col-sm-6'p>>" // horizobtal scrollable datatable
                 // Uncomment below line("dom" parameter) to fix the dropdown overflow issue in the datatable cells. The default datatable layout
                 // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js).
                 // So when dropdowns used the scrollable div should be removed.

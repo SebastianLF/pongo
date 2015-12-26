@@ -43,7 +43,7 @@
 
                 </tr>
             @endforeach
-                <tr style="border-top: 2px solid #ddd !important;"><td class="uppercase bold">Total</td><td>{{$releves_pour_chaque_jour->sum('quantite')}}</td>
+                <tr style="border-top: 1px solid #ddd !important;"><td class="uppercase bold">Total</td><td>{{$releves_pour_chaque_jour->sum('quantite')}}</td>
                     <td>
                         <?php $total = $releves_pour_chaque_jour->sum('profit_par_jour');
                             if ($total > 0) {
