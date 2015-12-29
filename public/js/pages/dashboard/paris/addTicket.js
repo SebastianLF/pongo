@@ -234,7 +234,7 @@ function gestionTicket() {
                                 toastr.error(json.msg, 'Erreur:');
                             }
                         } else if (json.etat == 1) {
-                            bookmaker_account.val(null).trigger("change").html('').prop('disabled', true);
+                            bookmaker_account.val(null).trigger("change").html('');
                             containerABCD.addClass("hide");
                             serieABCD.val(null).trigger("change").prop('disabled', true);
                             letterABCD.val(null).trigger("change").prop('disabled', true);
