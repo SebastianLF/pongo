@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fd962596-ad91-4308-a36b-802cf33d3bd4" name="Default" comment="boutons export et recherche historique">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/js/dashboard.js" afterPath="$PROJECT_DIR$/public/build/js/dashboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js" afterPath="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisEnCours.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisTermine.js" afterPath="$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisTermine.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="9a530f09-4cfd-4f98-b2e3-9a97dcdef514" name="Failed commit: Default" comment="correction cloturation paris combviné avec plus de 3 selections" />
@@ -87,8 +84,8 @@
       <file leaf-file-name="loadParisTermine.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisTermine.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.556797">
-              <caret line="73" column="26" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.39851025">
+              <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -2663,12 +2660,6 @@
       <option name="number" value="Default" />
       <updated>1411579515527</updated>
     </task>
-    <task id="LOCAL-00359" summary="exception refonte code pari">
-      <created>1447911511717</created>
-      <option name="number" value="00359" />
-      <option name="project" value="LOCAL" />
-      <updated>1447911511717</updated>
-    </task>
     <task id="LOCAL-00360" summary="exception refonte code pari">
       <created>1447989616600</created>
       <option name="number" value="00360" />
@@ -2957,7 +2948,13 @@
       <option name="project" value="LOCAL" />
       <updated>1451110380008</updated>
     </task>
-    <option name="localTasksCounter" value="408" />
+    <task id="LOCAL-00408" summary="boutons export et recherche historique">
+      <created>1451411049667</created>
+      <option name="number" value="00408" />
+      <option name="project" value="LOCAL" />
+      <updated>1451411049667</updated>
+    </task>
+    <option name="localTasksCounter" value="409" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -3552,8 +3549,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/pages/dashboard/paris/loadParisTermine.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.556797">
-          <caret line="73" column="26" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.39851025">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
           <folding />
         </state>
       </provider>
