@@ -68,7 +68,13 @@ function loadParisTermine() {
                 ],
 
                 buttons: [
-                    'copy', 'csv'
+                    {
+                        extend: 'copy',
+                        header: false,
+                        exportOptions: {
+                            columns: [1, 2, 3, 4, 8]
+                        }
+                    }
                 ],
 
                 // set the initial value

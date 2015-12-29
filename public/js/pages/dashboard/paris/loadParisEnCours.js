@@ -79,20 +79,7 @@ function loadParisEnCours() {
                         extend: 'copy',
                         header: false,
                         exportOptions: {
-                            modifier: {
-                                page: 'current'
-                            }
-                        }
-                    },
-                    {
-                        extend: 'csv',
-                        header: true,
-                        exportOptions: {
-                            modifier: {
-                                columnDefs: [
-                                    { targets: 1 }
-                                ]
-                            }
+                            columns: [1, 2, 3, 4, 8]
                         }
                     }
                 ],
@@ -151,7 +138,8 @@ function loadParisEnCours() {
             if (data.count_paris_encours == 0) {
                 onglet_span.text('');
             } else {
-                onglet_span.html(data.count_paris_encours);}
+                onglet_span.html(data.count_paris_encours);
+            }
 
             $('#parisencourstable_paginate').bind('click', 'a', function () {
                 //trigger le status de chaque pour le type simple
