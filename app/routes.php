@@ -1,9 +1,14 @@
 <?php
 
+
+
 	//login page
 	Route::get('/', function(){
 		return View::make('pages.landing');
 	});
+
+	Route::get('test', 'DashboardController@testEnCours');
+
 
 	Route::controller('admin', 'AdminController');
 

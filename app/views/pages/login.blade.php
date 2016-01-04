@@ -56,7 +56,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <div class="create-account">
         <p>
-            <a href="{{url('')}}" id="register-btn" class="uppercase">Creer un compte</a>
+            <a href="{{url('auth/inscription')}}" id="register-btn" class="uppercase">Creer un compte</a>
         </p>
     </div>
     {{ Form::close() }}

@@ -470,6 +470,13 @@ select{
   text-overflow: ellipsis;
 }
 
+td > div {
+  width: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .table-centred tr{
   text-align: center !important;
 }
@@ -509,7 +516,7 @@ select{
   height: 28px !important;
 }
 
-.ellipsis-recap-tipsters {
+.ellipsis-td {
   width: 5px;
   white-space: nowrap;
   overflow: hidden;

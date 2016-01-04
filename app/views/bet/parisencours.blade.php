@@ -60,7 +60,7 @@
                     @else
                         <span class="label label-sm label-success label-mini">combiné</span>
                     @endif</td>
-                <td>
+                <td class="ellipsis-td">
                     @if($pari->type_profil == 's')
                         @if($pari->selections->first()->isMatch)
                             {{$pari->selections->first()->game_name.' »'}}
@@ -74,6 +74,16 @@
                                 <span class="label label-sm label-danger label-mini">{{$pari->selections->first()->score.' LIVE!'}}</span>
                             @endif
                         @else
+                            @foreach ($pari->selections as $selection)
+                                @if($selection->isMatch)
+                                    {{$selection->game_name.' »'}}
+                                @endif
+                                {{ $selection->pariAffichage }}
+                                {{'('.$selection->market->representation.'-'.$selection->scope->representation.')'}}
+                                @if($selection->isLive)
+                                    <span class="label label-sm label-danger label-mini">{{$selection->score.' LIVE!'}}</span>
+                                @endif
+                            @endforeach
                             <span class="label label-sm label-success label-mini">combiné</span>
                         @endif
                     </span>

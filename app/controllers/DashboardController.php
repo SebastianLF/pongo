@@ -160,6 +160,11 @@
 			return Response::json(array('montantprofit' => $montant_total_profit, 'roi' => round($roi,2)));
 		}
 
+		public function testEnCours(){
+			$parisencours = Auth::user()->enCoursParis()->with('selections.equipe1', 'selections.equipe1.country', 'selections.equipe2', 'selections.equipe2.country', 'selections.competition', 'selections.sport', 'selections.market', 'selections.scope', 'compte.bookmaker', 'tipster')->where('pari_long_terme', '0')->where('pari_abcd', '0')->get();
+			return Response::json($parisencours);
+		}
+
 		public function itemTypeCheck($type)
 		{
 
